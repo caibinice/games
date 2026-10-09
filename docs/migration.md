@@ -10,4 +10,33 @@
 - 实际 GitHub token / SSH 仅在忽略的 `E:/codes/games/credentials/config.ini`；仓库只提交模板与说明，构建包不包含任何凭据。
 - 修改前备份：`E:/Documents/AI/codex/backups/games-repo-migration-20261009-220038/`；记录 / 检查中间文件：`E:/Documents/AI/codex/tmp/games-repo-migration-20261009-220038/`。
 
-发布验收与 release / 回滚信息将在完成独立发布后补记在此。
+## 实际发布与验收
+
+- Games 首次代码提交：`3b16180dc5d79b9c71ea13c7a7e8839a9b34a1d7`，
+  [GitHub CI](https://github.com/caibinice/games/actions/runs/37943898047) 成功。
+- 博客只提交路由 / 兼容入口 / 手册：`71e500c02b0f2798a31a422729ef4eca52823dd1`，未混入文章修改。
+- 新 release：`20261009142427-3b16180dc5`，北京时间 2026-10-09 22:24。
+  运行代码来自上述 Games 提交；本记录是发布之后的文档补记。
+- 执行 Games `scripts/deploy.ps1 -SkipInstall` 完整门禁及独立 SSH 发布：
+  55 项 Node 测试、8 项部署测试、100 关 / 40 图目录检查、构建、凭据审计全部通过。
+- 33 个文件在迁移前源码、E 盘备份、Games 工作树、Git blob 与公网逐字节 / SHA-256 一致。
+  Git 仅保存凭据说明和模板；真实配置、Python 环境、dist 和 host key 未提交。
+- 本地构建及公网各完成三组真实手机浏览器回归：新手引导 / 工具 / Cookie / 无限续时 / 全屏、
+  100 关 / 40 图 / 隐藏跳关 / 起点底色优先放置 / 旧存档、暂存扩容 / 70 颗一次存放 / 无独立滚动条。
+  六种窗口尺寸验证，页面脚本错误均为 0；结果与截图在上述中间文件目录的 `public/`。
+- 清除博客游戏源码、测试及旧预览 / 素材工具后，博客 TypeScript、12 项测试及 55 页构建通过，
+  博客 dist 中没有拼豆目录。
+- Nginx `nginx -t`、reload、active、游戏全部文件 / MJS MIME / 缺失 404 / 无斜杠跳转、
+  博客及停车路由全部通过。公共 Nginx 片段 SHA-256 未改变：
+  `c2b3565dd358c75dfc89ec746a1c86513b8d5c7c160b1d6ca6bdec5f460f36a3`。
+
+## 本次回滚记录
+
+- 原游戏路径：`/opt/pindou/releases/20261009053915/www`。
+- 当前路径：`/opt/pindou/releases/20261009142427-3b16180dc5/www`。
+- 服务器备份：`/opt/pindou/backups/20261009142427-3b16180dc5/`。
+- 本机记录：`E:/Documents/AI/codex/backups/games-pindou-20261009-222427-698186/rollback.json`。
+- 上传包 SHA-256：`22513ef68b644c98275137868de22183a8148ae1cdafd638c7f5f42194fcce18`。
+
+游戏回滚按 [部署手册](deployment.md) 切换旧软链接；不修改玩家 Cookie。
+仓库迁移回滚时可从完整迁移备份恢复博客源码 / 工具，Nginx URL 无需更换。
