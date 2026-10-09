@@ -11,7 +11,9 @@ describe('Independent game build',()=>{
     const temp=mkdtempSync(join(work,'tmp/games-build-test-'));
     try{
       const out=join(temp,'test-dist'),manifest=build({output:out});expect(manifest.files).toHaveLength(33);expect(manifest.levels).toBe(100);expect(manifest.patterns).toBe(40);
-      for(const item of manifest.files){const bytes=readFileSync(join(out,item.path));expect(sha256(bytes)).toBe(item.sha256);expect(bytes).toEqual(readFileSync(join(ROOT,'public',item.path)));if(existsSync(join(out,item.path+'.gz')))expect(gunzipSync(readFileSync(join(out,item.path+'.gz')))).toEqual(bytes);}
+      // Native Buffer equality checks every byte without walking millions of
+      // numeric properties in Vitest's object comparator on slower CI runners.
+      for(const item of manifest.files){const bytes=readFileSync(join(out,item.path));expect(sha256(bytes)).toBe(item.sha256);expect(bytes.equals(readFileSync(join(ROOT,'public',item.path)))).toBe(true);if(existsSync(join(out,item.path+'.gz')))expect(gunzipSync(readFileSync(join(out,item.path+'.gz'))).equals(bytes)).toBe(true);}
       expect(existsSync(join(out,'credentials'))).toBe(false);expect(existsSync(join(out,'scripts'))).toBe(false);expect(existsSync(join(out,'tests'))).toBe(false);
     }finally{if(!resolve(temp).startsWith(resolve(work,'tmp')+'/')&&!resolve(temp).startsWith(resolve(work,'tmp')+'\\'))throw Error('Test cleanup escaped work root');rmSync(temp,{recursive:true,force:true});}
   });
