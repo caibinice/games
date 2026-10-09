@@ -1,0 +1,61 @@
+/* Quiet surroundings, broad color regions, and matching concave/convex tiles. */
+.playing{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.playing::-webkit-scrollbar{display:none}
+.playing .play-screen{flex:1 0 auto}
+.playing:fullscreen>.play-screen{max-height:none}
+.playing .board-card{flex:1 0 auto}
+.playing .topbar{position:sticky;top:0;z-index:5;background:#eef3e7}
+.playing .modal-backdrop{position:fixed;inset:0;left:50%;transform:translateX(-50%);width:min(100%,460px);height:100dvh}
+.playing:fullscreen .modal-backdrop{padding:max(20px,env(safe-area-inset-top)) 20px}
+.playing .scenery-wash{background:linear-gradient(#eef3e7fa,#f4f3eafa 74%,#fff8ecef)}
+.playing .topbar{padding-top:calc(8px + env(safe-area-inset-top));padding-bottom:7px}
+.playing .brand strong{font-size:20px}.playing .brand>span{font-size:7px}
+.brand[role=button]{cursor:pointer;touch-action:manipulation;user-select:none}
+.brand[role=button]:focus-visible{outline:2px solid #81a390;outline-offset:4px;border-radius:6px}
+.admin-note{font-size:11px!important;line-height:1.8!important}
+.admin-jump{display:flex;align-items:center;gap:9px;margin:14px 0 2px;font-size:12px}
+.admin-jump input{width:65px;border:1px solid #bccfac;border-radius:9px;background:#fffdf4;padding:9px;font:inherit;color:#53674d}
+.admin-jump button{flex:1;background:#e2edd9;border:1px solid #ccdcbf;border-radius:9px;padding:10px;font-size:12px}
+.admin-error{font-size:11px!important;color:#b75967!important;margin:8px 0!important}
+.art-view-tabs{display:flex;gap:8px;margin-top:14px}
+.art-view-tabs button{flex:1;border:1px solid #dce3cc;background:#eff2e7;border-radius:10px;padding:8px;font-size:11px}
+.art-view-tabs button[aria-pressed=true]{background:#829c74;color:#fff;border-color:#829c74}
+.preview-original{display:block;width:100%;height:auto;max-height:360px;object-fit:contain;border:10px solid #f0ecd9;border-radius:14px;margin:12px 0}
+.playing .board-card{padding:8px 6px 4px;border-radius:18px}
+.playing .board-heading{height:30px;margin:0 5px 5px}
+.playing .reference canvas{height:25px;width:23px}
+.playing .board-viewport{border-radius:9px;background:#e7eddf;box-shadow:inset 0 1px 3px #9d9ab838}
+.playing .board-viewport.contoured{background:transparent;box-shadow:none;border-color:transparent}
+.playing .board-controls{padding:5px 4px 2px}
+.board-legend{display:flex;justify-content:center;align-items:center;gap:9px;flex-shrink:0;font-size:9px;color:#536551;padding:6px 1px 0;white-space:nowrap}
+.board-legend>span{display:flex;align-items:center;gap:3px}
+.legend-cell{display:inline-block;position:relative;width:16px;height:16px;border:0;border-radius:3px;background:#f0a440;flex-shrink:0;--bean:#fff0ca}
+.legend-cell:is(.wrong,.done):after{content:'';position:absolute;inset:2px;background:conic-gradient(from 45deg,#71618712 0deg 90deg,#71618726 90deg 180deg,#ffffff12 180deg 270deg,#ffffff38 270deg 360deg),var(--bean);border:1px solid #aa956a75;border-radius:3px;box-shadow:inset 1px 1px 0 #fff7,0 1px 0 #88755788}
+.legend-cell.hole:after{content:'';position:absolute;inset:2px;border:0;border-radius:3px;background:#dc942f;box-shadow:inset 1px 2px 3px #94703880,inset -1px -1px 0 #fff6}
+.legend-cell.done{background:#69c39e;--bean:#69c39e}
+.legend-cell.done:after{background:linear-gradient(135deg,#fff0 16%,#fff9 29%,#fff1 39%,#fff0 52%),conic-gradient(from 45deg,#71618712 0deg 90deg,#71618726 90deg 180deg,#ffffff12 180deg 270deg,#ffffff38 270deg 360deg),var(--bean);border-color:#649f8680;box-shadow:inset 1px 1px 0 #fff7,0 1px 0 #88755788}
+.tray-slot{background:#eeeef2;border:1px solid #e4e2e9;box-shadow:inset 1px 2px 4px #9290a34d,inset -1px -1px 1px #fff;border-radius:6px}
+.tray-slot .bead{inset:2px;border-radius:4px;background:var(--color);box-shadow:inset 1px 1px 0 #fff8,inset -1px -1px 0 #77618150,0 2px 1px #8a829457;border:1px solid color-mix(in srgb,var(--color) 76%,#68628a)}
+.bead:after{content:'';display:block;position:absolute;inset:0;width:auto;height:auto;border-radius:inherit;background:conic-gradient(from 45deg,#71618712 0deg 90deg,#71618726 90deg 180deg,#ffffff12 180deg 270deg,#ffffff38 270deg 360deg);box-shadow:none}
+.bead small{font-size:11px;font-weight:800;color:white;text-shadow:0 1px 2px #233842,1px 0 #233842,-1px 0 #233842;position:relative;z-index:1}
+.tray-slot.selected{outline-color:#224f87;transform:none}
+.tray-foot{font-size:9px;color:#788573}
+.instruction{font-size:11px;color:#526b4c}
+.instruction.active{color:#78591f}
+.tutorial-guide{flex-shrink:0;background:#fffae6;border:1px solid #dbbc6c;border-radius:12px;padding:8px 11px;box-shadow:0 2px 4px #bb934612}
+.tutorial-guide>div{display:flex;justify-content:space-between;align-items:center}
+.tutorial-guide strong{font-size:11px;color:#81601e}
+.tutorial-guide button{background:transparent;font-size:10px;padding:2px 0;color:#8e7953;text-decoration:underline;text-underline-offset:2px}
+.tutorial-guide p{font-size:12px;line-height:1.6;color:#635633;margin:3px 0 0}
+.guided-control{outline:2px solid #b8871c;outline-offset:3px}
+.tray-slot.tutorial-bead{outline:2px solid #b8871c;outline-offset:1px}
+.tutorial-example{display:flex;align-items:center;gap:12px;margin:16px 0;color:#56674d}
+.tutorial-example .legend-cell{width:40px;height:40px;border-radius:7px}
+.tutorial-example .wrong:after{inset:5px;border-width:1px;border-radius:6px;box-shadow:inset 1px 2px 0 #fff7,0 2px 0 #88755788}
+.tutorial-example .hole:after{inset:5px;border-radius:6px;box-shadow:inset 2px 4px 5px #94703880,inset -1px -1px 0 #fff6}
+.tutorial-example strong{font-size:12px;line-height:1.6}
+.tutorial-example small{font-size:10px;display:block;line-height:1.8;color:#7a826c;margin-top:2px}
+.modal .guide-intro-note,.guide-tools{background:#f3efdb;padding:10px;border-radius:10px;color:#787954;font-size:11px;line-height:1.8}
+@media(max-width:360px){.board-legend{font-size:8px;gap:6px}.legend-cell{width:14px;height:14px}.instruction{font-size:10px}}
+@media(max-width:800px){.playing .modal-backdrop{width:min(100%,520px)}}
+@media(max-height:740px) and (max-width:800px){.playing .play-screen{gap:6px}.board-legend{padding-top:4px}.tutorial-guide{padding:6px 9px}}

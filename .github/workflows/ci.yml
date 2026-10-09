@@ -1,0 +1,20 @@
+name: Games checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --no-audit --no-fund
+      - run: npm run check && npm test && npm run build && npm run audit:secrets
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -p 'test_*.py'

@@ -1,0 +1,82 @@
+[
+  {
+    "key": "yarn-kitten",
+    "title": "毛线小猫",
+    "prompt": "Use case: illustration-story. Asset type: original colorful pixel illustration used as a mobile bead puzzle target and a game backdrop. Primary request: an adorable cream and orange kitten PLAYING SIDEWAYS with one huge lilac ball of yarn, its curved tail and extended paw clearly visible, a mint plant and a pink cushion in a cozy sunny room. Style: polished cute low-resolution 2D pixel art, large aligned square color blocks, deliberately simple and readable after reduction to a 20 x 22 pixel grid; one full coherent scene, not a sprite sheet. Composition: portrait approximately 10:11, kitten and yarn fill most of the frame, complete room floor in the bottom third and small window in upper third. Rich but balanced bright colors: light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac, yellow. No black or very dark colors; any outlines and eyes should be medium blue or coral. Keep distinct large flat shapes, cheerful cartoon expression, crisp edges, no grain or complex tiny detailing. No text, numbers, logo, watermark, picture frame, UI, grid lines or beads.",
+    "file": "yarn-kitten.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "716064f4e78dd54c65e3607033d95f928adea77290ed4c85c8b20a6313bd07b5"
+  },
+  {
+    "key": "balloon-corgi",
+    "title": "气球小柴",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. Primary request: a smiling little orange and cream corgi SITTING in a flower meadow while holding the string of a huge pink heart balloon. Upright ears, broad white chest, a big round yellow sun and two blue clouds; bright mint and lime meadow across lower half. Distinct vertical balloon-above-puppy composition, large readable forms.",
+    "file": "balloon-corgi.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "26731a66507a4a277d10433f555dc62bbdd89779b0e2a95eb3952dd93c6b8939"
+  },
+  {
+    "key": "mushroom-cottage",
+    "title": "蘑菇小屋",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. Primary request: a whimsical oversized CORAL MUSHROOM COTTAGE with ivory spots, a yellow arched door and a blue window, standing on a green grassy mound. A lilac winding path, two tall rounded trees, oversized pink flowers and cheerful sky with orange sun. The cottage fills central two-thirds; no animals. Big clear fairy-tale landscape silhouette.",
+    "file": "mushroom-cottage.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "e739ddfb49800cc26e680588f7b17be06c6708ede38f941201282dd7d8bc28e0"
+  },
+  {
+    "key": "fishbowl-kitten",
+    "title": "鱼缸小猫",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. Primary request: a curious cream kitten LEANING OVER a large round turquoise glass fishbowl to greet a single huge orange goldfish. Show kitten head and paws above bowl, fish and lime aquatic plant inside bowl, coral tabletop across bottom, sunny lilac wall with yellow curtain. Bowl occupies the lower center and kitten upper left, clearly different from a standing cat portrait.",
+    "file": "fishbowl-kitten.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "7b4328ee13dee86220b6335171ae25885004fc223fad764fc81a77825e4faa09"
+  },
+  {
+    "key": "mountain-lake",
+    "title": "山间湖泊",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A magnificent broad teal mountain lake in the foreground, big lilac and mint triangular mountains across the upper half, a huge warm yellow sun just above a coral-roofed tiny lakeside cottage on the right, two blocky pines on the left. Recognizable landscape composition with geometric mountain silhouettes and bright horizontal water reflections. No animals.",
+    "file": "mountain-lake.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "54c8b710ba6544fca02aebda49e051be1d988532cdb6d785896ce5c08c3918a3"
+  },
+  {
+    "key": "puppy-picnic",
+    "title": "野餐小狗",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A fluffy cream-and-coral floppy-eared puppy lying sideways on a big rose pink and ivory checkered picnic blanket. A chunky wicker basket full of oranges and a baguette occupies the right side. Large rounded lime bushes, a blue sky and warm sunshine. The horizontal puppy, basket and checkerboard blanket must be large and readable; not a centered standing animal portrait.",
+    "file": "puppy-picnic.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "f0226cc0df1655a1ccfad38e23ec15e0797668d919c0be22fb72a72482a11921"
+  },
+  {
+    "key": "moon-kitten",
+    "title": "月亮小猫",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A small pink and ivory sleepy kitten curled up inside a gigantic warm yellow crescent moon that diagonally fills most of the picture. Bright lilac and sky blue evening sky, three broad ivory cloud shapes and several large coral and yellow stars. The crescent moon is the dominant silhouette, with the kitten only nestled inside it. Cheerful pastel sky, never dark.",
+    "file": "moon-kitten.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "0eb17fb10c3b0498920c4ab222a9e2399272e06c9318e57ca2f2cbe3e0fb9ad4"
+  },
+  {
+    "key": "flower-windmill",
+    "title": "花田风车",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A giant whimsical ivory windmill with four huge sky blue diagonal blades, coral conical roof, lilac body and a yellow door on a low grassy hill. Foreground filled by orderly broad bands of pink and yellow tulips with green stems. Big fluffy clouds in a mint sky. The windmill blades dominate the silhouette, not an animal.",
+    "file": "flower-windmill.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "059cbe58d3fb166bc4b7e3577fc6974fdf71f0da16b4f0a8a7930cd2fc363328"
+  },
+  {
+    "key": "puppy-sailboat",
+    "title": "小狗扬帆",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A cute golden floppy-eared puppy peeking from a broad coral sailboat hull in bright turquoise water. A huge triangular ivory and yellow striped sail fills the upper half, mast off-center, lilac distant hills, a warm pink sun and ivory clouds. Large sail, boat, waves and puppy must be recognizable geometric silhouettes.",
+    "file": "puppy-sailboat.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "c24329bf91293e443f90b6f0ab24205a49efb2bc349dd487c085fafbfb5b38b7"
+  },
+  {
+    "key": "rainbow-waterfall",
+    "title": "彩虹瀑布",
+    "prompt": "Use case: illustration-story. Asset type: unique original pixel illustration for a mobile bead puzzle target and rotating backdrop. Style: exquisitely cute cheerful 2D pixel art with large aligned square color blocks and crisp edges, readable after reduction to 20 x 22 pixels. Portrait approximately 10:11. Complete colorful scene, one large clear subject or landscape silhouette filling the frame. Balanced light mint, teal, lime, orange, ivory, rose pink, sky blue, coral, lilac and yellow; avoid black and very dark colors, use medium blue or coral for eyes. Flat simple broad shapes, no grain, no intricate tiny details, no blank background occupying most of the canvas. No text, numbers, logos, watermark, frame, UI, bead cells, grid lines or sheet panels. A large broad rainbow with coral, yellow, lime, teal and lilac bands arching across the upper half over a cascading sky blue waterfall between mint and lilac cliffs. Waterfall pours into a round turquoise pool at the bottom, ivory spray and bright pink flowers, fluffy clouds near the rainbow ends. Clear landscape without animals or buildings.",
+    "file": "rainbow-waterfall.webp",
+    "generator": "built-in ImageGen",
+    "sha256": "36be39448a55c1a68c7551fab272f66fbae93eb0ee732c9f7fa0f70359e103be"
+  }
+]

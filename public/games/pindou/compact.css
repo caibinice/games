@@ -1,0 +1,11 @@
+/* Short phones keep a usable canvas; scroll instead of reducing beads to 4px. */
+@media (max-height:640px) and (max-width:800px) and (orientation:portrait){
+  .game-shell{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+  .game-shell::-webkit-scrollbar{display:none}
+  .topbar{position:sticky;top:0;background:#eef3e7ed;z-index:5}
+  .play-screen{flex-shrink:0;min-height:690px}
+  .home-screen{flex-shrink:0;min-height:650px}
+  .board-card{min-height:330px}
+  .board-viewport{min-height:250px}
+  .modal-backdrop{position:fixed;width:min(100%,520px);left:50%;transform:translateX(-50%);height:100dvh;bottom:auto}
+}

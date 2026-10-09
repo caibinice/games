@@ -1,0 +1,2 @@
+# Optional legacy illustration conversion; not required for play/build/deployment.
+Pillow==11.3.0
