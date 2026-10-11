@@ -1,0 +1,11 @@
+{
+  "id": "goose",
+  "name": "抓大鹅 3D",
+  "subtitle": "鹅鹅集市 · Goose Market",
+  "description": "颠一颠锅，找三个一样的，把鹅鹅带回家。",
+  "color": "#edaa67",
+  "symbol": "🪿",
+  "version": "20261011-1",
+  "facts": {"levels": 60, "themes": 8, "models": 18},
+  "vendors": ["three", "cannon-es"]
+}

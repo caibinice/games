@@ -12,6 +12,7 @@ games/
     tests/          本游戏测试与存档夹具
     tools/          本游戏素材处理工具
     docs/           本游戏玩法与历史
+  goose/            独立 3D 抓大鹅，public / tests / docs
   <new-game>/       相同结构，平级扩展
 site/               /games/ 游戏大厅
 scripts/            共享检查、构建、发布、验证工具
@@ -21,6 +22,7 @@ dist/games/         构建产物，按游戏分目录
 ```
 
 - [拼豆](https://caibinice.com/games/pindou/)：100 关 / 40 图，原存档保持兼容。
+- [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市，自制立体物品，七格三消与物理颠锅。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
 
 ## 开发与构建
@@ -57,6 +59,7 @@ pwsh -File scripts/deploy.ps1 -Games pindou   # 单独更新，保留其他游�
 
 - [多游戏发布 / 回滚 / 新增游戏](docs/deployment.md)
 - [拼豆规则与历史](games/pindou/docs/README.md)
+- [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [本机凭据](credentials/README.md)
 - [此前独立仓库迁移](docs/migration.md)
 

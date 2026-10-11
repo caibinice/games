@@ -8,7 +8,7 @@ ROUTES='/etc/nginx/snippets/ai-platform-routes.conf'
 URL='https://caibinice.com/'
 BLOCK=re.compile(r'^[ \t]*# begin-(?:games-static-app|pindou-static-game)\r?\n.*?^[ \t]*# end-(?:games-static-app|pindou-static-game)[^\r\n]*',re.M|re.S)
 TEXT={'.html','.css','.mjs','.js','.svg','.json','.webmanifest','.txt'}
-VENDORS={'three':[('build/three.module.min.js','three.module.min.js'),('build/three.core.min.js','three.core.min.js'),('LICENSE','three.LICENSE.txt')],'cannon-es':[('dist/cannon-es.js','cannon-es.js'),('LICENSE','cannon-es.LICENSE.txt')]}
+VENDORS={'three':[('build/three.module.js','three.module.js'),('build/three.core.js','three.core.js'),('LICENSE','three.LICENSE.txt')],'cannon-es':[('dist/cannon-es.js','cannon-es.js'),('LICENSE','cannon-es.LICENSE.txt')]}
 
 def catalogue(root=None):
  root=root or ROOT

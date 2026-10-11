@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "node scripts/preview.mjs",
     "preview": "node scripts/preview.mjs --dist",
@@ -12,7 +14,13 @@
     "test:deploy": "python -m unittest discover -s tests -p test_*.py",
     "build": "node scripts/build.mjs",
     "audit:secrets": "node scripts/audit-secrets.mjs",
-    "deploy:pindou": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1"
+    "deploy": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1",
+    "deploy:pindou": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games pindou",
+    "deploy:goose": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games goose"
   },
-  "devDependencies": { "vitest": "3.2.7" }
+  "devDependencies": {
+    "cannon-es": "0.20.0",
+    "three": "0.186.1",
+    "vitest": "3.2.7"
+  }
 }
