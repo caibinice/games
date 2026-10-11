@@ -62,5 +62,6 @@ pwsh -File scripts/deploy.ps1 -Games pindou   # 单独更新，保留其他游�
 - [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [本机凭据](credentials/README.md)
 - [此前独立仓库迁移](docs/migration.md)
+- [多游戏改造与抓大鹅上线验收](docs/multi-game-migration.md)
 
 GitHub CI 离线运行检查、各游戏测试及发布测试，使用本仓库独立配置，不依赖博客或其他项目。
