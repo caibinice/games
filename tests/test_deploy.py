@@ -26,10 +26,16 @@ class DeploymentTests(unittest.TestCase):
         self.assertTrue(self.root.resolve().is_relative_to(base.resolve()))
         self.patch = patch.object(deploy, 'ROOT', self.root)
         self.patch.start()
-        shutil.copytree(REPO / 'public', self.root / 'public')
+        shutil.copytree(REPO / 'games', self.root / 'games')
+        shutil.copytree(REPO / 'site', self.root / 'site')
         self.dist = self.root / 'dist'
-        shutil.copytree(self.root / 'public', self.dist)
-        self.manifest = {'version': 1, 'game': 'pindou', 'base': '/games/pindou/', 'levels': 100, 'patterns': 40, 'files': []}
+        self.dist.mkdir()
+        catalog=deploy.catalogue()
+        game=next(g for g in catalog if g['id']=='pindou')
+        for name,content in deploy.source_files([game]).items():
+            file=self.dist/name;file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(content)
+        (self.dist/'games/catalog.json').write_text(json.dumps(catalog,ensure_ascii=False),encoding='utf-8')
+        self.manifest = {'version': 2, 'base': '/games/', 'games': [game], 'files': []}
         for file in sorted(self.dist.rglob('*')):
             if not file.is_file():
                 continue
@@ -50,7 +56,7 @@ class DeploymentTests(unittest.TestCase):
         (self.root / 'credentials').mkdir()
         (self.root / 'credentials/config.ini').write_text('TOKEN_FIXTURE', encoding='utf-8')
         archive = self.root / 'package.tar.gz'
-        self.assertEqual(len(deploy.package_dist(self.dist, archive)['files']), 33)
+        self.assertEqual(len(deploy.package_dist(self.dist, archive)['files']), 37)
         with tarfile.open(archive) as tar:
             names = tar.getnames()
         self.assertIn('www/games/pindou/index.html', names)
@@ -63,7 +69,7 @@ class DeploymentTests(unittest.TestCase):
             deploy.validate_dist(self.dist)
 
     def test_rejects_stale_build_after_source_changes(self):
-        (self.root / 'public/games/pindou/engine.mjs').write_text('new source', encoding='utf-8')
+        (self.root / 'games/pindou/public/engine.mjs').write_text('new source', encoding='utf-8')
         with self.assertRaisesRegex(RuntimeError, 'stale'):
             deploy.validate_dist(self.dist)
 
@@ -92,13 +98,34 @@ class DeploymentTests(unittest.TestCase):
             deploy.validate_dist(self.dist)
 
     def test_route_merge_preserves_other_projects_and_is_idempotent(self):
-        fragment = (REPO / 'deploy/nginx/pindou.conf').read_text(encoding='utf-8')
+        fragment = (REPO / 'deploy/nginx/games.conf').read_text(encoding='utf-8')
         before = '# blog\nlocation / { root /opt/ai-blog; }\n\n' + fragment + '\n# another project\nlocation /other { root /opt/other; }\n'
         self.assertEqual(deploy.merge_routes(before, fragment), before)
         merged = deploy.merge_routes('# blog\n', fragment)
         self.assertEqual(deploy.merge_routes(merged, fragment), merged)
         with self.assertRaisesRegex(RuntimeError, 'Duplicate'):
             deploy.merge_routes(fragment + '\n' + fragment, fragment)
+
+    def test_legacy_pindou_route_upgrades_without_changing_blog(self):
+        legacy=(REPO/'deploy/nginx/pindou.conf').read_text(encoding='utf-8')
+        fragment=(REPO/'deploy/nginx/games.conf').read_text(encoding='utf-8')
+        before='# before\n'+legacy+'\n# after\n'
+        merged=deploy.merge_routes(before,fragment)
+        self.assertTrue(merged.startswith('# before\n'))
+        self.assertTrue(merged.endswith('\n# after\n'))
+        self.assertNotIn('begin-pindou-static-game',merged)
+        self.assertEqual(deploy.merge_routes(merged,fragment),merged)
+
+    def test_rejects_stale_game_metadata_and_missing_gzip(self):
+        self.manifest['games'][0]['version']='stale'
+        self.save_manifest()
+        with self.assertRaisesRegex(RuntimeError,'stale'):
+            deploy.validate_dist(self.dist)
+        self.manifest['games'][0]=next(g for g in deploy.catalogue() if g['id']=='pindou')
+        self.save_manifest()
+        (self.dist/'games/pindou/index.html.gz').unlink()
+        with self.assertRaisesRegex(RuntimeError,'Precompressed'):
+            deploy.validate_dist(self.dist)
 
     def test_reads_only_explicit_local_credentials_not_sibling_config(self):
         file = self.root / 'local.ini'

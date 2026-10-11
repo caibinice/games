@@ -1,15 +1,15 @@
 import { describe, it, expect } from 'vitest';
-import { LEVELS, SCENES, PATTERNS, getArtwork } from '../public/games/pindou/artworks.mjs';
-import { beadGeometry, tint, drawBead, completionFlash, COLOR_FLASH_MS } from '../public/games/pindou/beads.mjs';
-import { patternPixels } from '../public/games/pindou/patterns.mjs';
-import { PREVIOUS_SIMPLE_LEVELS } from '../public/games/pindou/previous-simple-artworks.mjs';
-import { PREVIOUS_ARTWORKS } from '../public/games/pindou/previous-artworks.mjs';
-import { LEGACY_COUNTS } from '../public/games/pindou/legacy-artworks.mjs';
-import { hiddenTapSequence, jumpLevelId } from '../public/games/pindou/admin.mjs';
+import { LEVELS, SCENES, PATTERNS, getArtwork } from '../public/artworks.mjs';
+import { beadGeometry, tint, drawBead, completionFlash, COLOR_FLASH_MS } from '../public/beads.mjs';
+import { patternPixels } from '../public/patterns.mjs';
+import { PREVIOUS_SIMPLE_LEVELS } from '../public/previous-simple-artworks.mjs';
+import { PREVIOUS_ARTWORKS } from '../public/previous-artworks.mjs';
+import { LEGACY_COUNTS } from '../public/legacy-artworks.mjs';
+import { hiddenTapSequence, jumpLevelId } from '../public/admin.mjs';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
-import { newGame as createGame, gameArtwork, isWon, selectBoard, selectTray, storeSelection, place, correctCount, completedColors, inventoryValid, serialize, restore, addRow, extend, undo, magnet, brush, organizeTray, connected, neighbors } from '../public/games/pindou/engine.mjs';
-import { inferGuideStep, advanceGuideStep, highlightedGuideCells } from '../public/games/pindou/guide.mjs';
+import { newGame as createGame, gameArtwork, isWon, selectBoard, selectTray, storeSelection, place, correctCount, completedColors, inventoryValid, serialize, restore, addRow, extend, undo, magnet, brush, organizeTray, connected, neighbors } from '../public/engine.mjs';
+import { inferGuideStep, advanceGuideStep, highlightedGuideCells } from '../public/guide.mjs';
 // Keep exercising original rectangular sessions as well as new silhouettes.
 const newGame=(id,seed)=>createGame(id,seed,{rectangular:true});
 
@@ -40,10 +40,10 @@ function largeGroup(count=50){
 describe('毛球拼豆 · 100关规则',()=>{
   it('十张原有插画保留为淡化背景，资源格式与哈希有效',()=>{
     expect(SCENES).toHaveLength(10);expect(new Set(SCENES.map(s=>s.key)).size).toBe(10);
-    const manifest=JSON.parse(readFileSync(new URL('../public/games/pindou/assets/scenes/manifest.json',import.meta.url),'utf8'));
+    const manifest=JSON.parse(readFileSync(new URL('../public/assets/scenes/manifest.json',import.meta.url),'utf8'));
     expect(manifest).toHaveLength(10);
     for(const scene of SCENES){
-      const image=readFileSync(new URL(`../public/games/pindou/assets/${scene.image}`,import.meta.url));
+      const image=readFileSync(new URL(`../public/assets/${scene.image}`,import.meta.url));
       expect(image.subarray(0,4).toString()).toBe('RIFF');expect(image.subarray(8,12).toString()).toBe('WEBP');
       expect(createHash('sha256').update(image).digest('hex')).toBe(manifest.find(s=>s.key===scene.key).sha256);
     }
@@ -75,7 +75,7 @@ describe('毛球拼豆 · 100关规则',()=>{
   it('选中的画板错色豆使用与暂存盒一致的蓝色实线框',()=>{
     const {c,strokes}=recordingCanvas();drawBead(c,0,0,22,'#59bfd3',{selected:true,targetColor:'#eed14b'});
     const outline=strokes.findLast(s=>s.color==='#224f87');expect(outline).toBeDefined();expect(outline.dash).toEqual([]);expect(outline.width).toBeGreaterThanOrEqual(1.8);expect(c.getLineDash()).toEqual([]);
-    expect(readFileSync(new URL('../public/games/pindou/readability.css',import.meta.url),'utf8')).toContain('.tray-slot.selected{outline-color:#224f87;');
+    expect(readFileSync(new URL('../public/readability.css',import.meta.url),'utf8')).toContain('.tray-slot.selected{outline-color:#224f87;');
   });
   it('只有选中颜色匹配的空槽提示使用虚线，普通空槽保持凹槽样式',()=>{
     const {c,strokes}=recordingCanvas();drawBead(c,0,0,22,'#59bfd3',{empty:true,selected:true});
@@ -129,9 +129,9 @@ describe('毛球拼豆 · 100关规则',()=>{
     }
   });
   it('暂存盒取消独立滚动与固定高度，全屏扩容同样随整页展开',()=>{
-    const css=readFileSync(new URL('../public/games/pindou/style.css',import.meta.url),'utf8'),tray=css.match(/\.tray-grid\{([^}]+)\}/)[1];
+    const css=readFileSync(new URL('../public/style.css',import.meta.url),'utf8'),tray=css.match(/\.tray-grid\{([^}]+)\}/)[1];
     expect(tray).toContain('overflow:visible;');expect(tray).not.toContain('max-height:');expect(tray).not.toContain('overflow-y:auto');
-    expect(readFileSync(new URL('../public/games/pindou/readability.css',import.meta.url),'utf8')).toContain('.playing:fullscreen>.play-screen{max-height:none}');
+    expect(readFileSync(new URL('../public/readability.css',import.meta.url),'utf8')).toContain('.playing:fullscreen>.play-screen{max-height:none}');
   });
   it('旧画作Cookie逐关验证后迁移，只重开换图画板，保留关卡、空间与道具',()=>{
     for(let id=2;id<=50;id++){
@@ -194,7 +194,7 @@ describe('毛球拼豆 · 100关规则',()=>{
   it('100关全部收藏记录仍在单个Cookie预算内，最后一关与各入口共用关卡总数',()=>{
     const compact={v:1,c:LEVELS.map(l=>[l.id,999999,999999]),l:100,s:false,f:false,n:false,g:2};
     expect(encodeURIComponent(JSON.stringify(compact)).length+'pindou_progress='.length).toBeLessThan(4096);
-    const app=readFileSync(new URL('../public/games/pindou/app.mjs',import.meta.url),'utf8');
+    const app=readFileSync(new URL('../public/app.mjs',import.meta.url),'utf8');
     expect(app).toContain('id===TOTAL_LEVELS');expect(app).toContain('Math.min(TOTAL_LEVELS,');expect(app).not.toContain('id===50');expect(app).not.toContain('Math.min(50,');expect(app).not.toContain('+k<=50');
   });
   it('磁铁和整理刷保持库存，次数耗尽时待免费领取',()=>{
@@ -365,7 +365,7 @@ describe('不规则图形与原存档兼容',()=>{
       expect(getArtwork(l.id,false)).toBe(base);expect(l.artKey).toBe(base.artKey);
     }
     expect(shaped).toBe(94);expect(getArtwork(1).cellCount).toBe(120);
-    expect(readFileSync(new URL('../public/games/pindou/readability.css',import.meta.url),'utf8')).toContain('.board-viewport.contoured{background:transparent;box-shadow:none;border-color:transparent}');
+    expect(readFileSync(new URL('../public/readability.css',import.meta.url),'utf8')).toContain('.board-viewport.contoured{background:transparent;box-shadow:none;border-color:transparent}');
   });
   it('新游戏默认使用轮廓，每个随机排列只填有效格，不生成一格一格的碎边',()=>{
     for(const base of LEVELS){const l=getArtwork(base.id);

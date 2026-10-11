@@ -1,46 +1,28 @@
-// A static game needs no transpiler: build the validated runtime, not the repo.
 import {cpSync,mkdirSync,readFileSync,readdirSync,writeFileSync,rmSync,lstatSync,existsSync,realpathSync} from 'node:fs';
 import {resolve,relative,join,sep,extname} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {gzipSync} from 'node:zlib';
-import {LEVELS,PATTERNS} from '../public/games/pindou/artworks.mjs';
-
-export const ROOT=resolve(fileURLToPath(new URL('..',import.meta.url)));
+import {ROOT,listGames,selectGames,gameArgument} from './catalog.mjs';
+export {ROOT};
 export const sha256=content=>createHash('sha256').update(content).digest('hex');
-export function filesIn(root){
-  return readdirSync(root,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e=>{
-    const path=join(root,e.name);if(e.isSymbolicLink())throw Error('Symlink in runtime tree: '+e.name);
-    return e.isDirectory()?filesIn(path):[path];
-  });
+export const EXTENSIONS=new Set(['.html','.css','.mjs','.js','.json','.webmanifest','.svg','.png','.webp','.jpg','.jpeg','.ico','.glb','.gltf','.mp3','.ogg','.wav','.woff2']);
+export function filesIn(root){return readdirSync(root,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(e=>{const path=join(root,e.name);if(e.isSymbolicLink())throw Error('Symlink in runtime tree');return e.isDirectory()?filesIn(path):[path];});}
+export function validateRuntime(root){const files=filesIn(root);for(const file of files){const name=relative(root,file).replaceAll(sep,'/');if(!EXTENSIONS.has(extname(file))||/(^|\/)(\.|credentials|config\.ini|.*\.(pem|key)$)/i.test(name))throw Error('Non-runtime file: '+name);if(!realpathSync(file).startsWith(realpathSync(root)+sep))throw Error('Runtime escaped source');}return files;}
+export const VENDORS={three:[['build/three.module.min.js','three.module.min.js'],['build/three.core.min.js','three.core.min.js'],['LICENSE','three.LICENSE.txt']],'cannon-es':[['dist/cannon-es.js','cannon-es.js'],['LICENSE','cannon-es.LICENSE.txt']]};
+export function runtimeEntries(games=selectGames('all'),catalog=listGames()){
+ const entries=new Map();
+ for(const g of games){const source=join(ROOT,'games',g.id,'public');for(const file of validateRuntime(source))entries.set(`games/${g.id}/`+relative(source,file).replaceAll(sep,'/'),readFileSync(file));for(const vendor of g.vendors||[])for(const[from,to]of VENDORS[vendor])entries.set(`games/${g.id}/vendor/${to}`,readFileSync(join(ROOT,'node_modules',vendor,from)));}
+ for(const file of validateRuntime(join(ROOT,'site')))entries.set('games/'+relative(join(ROOT,'site'),file).replaceAll(sep,'/'),readFileSync(file));
+ entries.set('games/catalog.json',Buffer.from(JSON.stringify(catalog,null,2)+'\n'));return entries;
 }
-export function validateRuntime(root){
-  const files=filesIn(root),allowed=new Set(['.html','.css','.mjs','.js','.json','.webmanifest','.svg','.png','.webp']);
-  for(const file of files){const name=relative(root,file).replaceAll(sep,'/');
-    if(!allowed.has(extname(file))||/(^|\/)(\.|credentials|config\.ini|.*\.(pem|key)$)/i.test(name))throw Error('Non-runtime file: '+name);
-    if(!realpathSync(file).startsWith(realpathSync(root)+sep))throw Error('Runtime escaped public directory');
-  }
-  const game=join(root,'games/pindou');
-  for(const required of ['index.html','app.mjs','engine.mjs','artworks.mjs','patterns.mjs','previous-simple-artworks.mjs','assets/scenes/manifest.json'])if(!existsSync(join(game,required)))throw Error('Missing runtime '+required);
-  const scenes=JSON.parse(readFileSync(join(game,'assets/scenes/manifest.json'),'utf8'));
-  if(scenes.length!==10||new Set(scenes.map(s=>s.key)).size!==10)throw Error('Scene manifest mismatch');
-  for(const s of scenes)if(sha256(readFileSync(join(game,'assets/scenes',s.file)))!==s.sha256)throw Error('Scene hash mismatch: '+s.file);
-  if(LEVELS.length!==100||PATTERNS.length!==40)throw Error('Catalogue differs from expected 100/40');
-  return files;
+export function build({output=join(ROOT,'dist'),games='all'}={}){
+ const catalog=listGames(),selected=selectGames(games,catalog),entries=runtimeEntries(selected,catalog),out=resolve(output);
+ if(out===ROOT||out===resolve(out,'..')||!['dist','test-dist'].includes(out.split(sep).at(-1)))throw Error('Invalid build target');
+ if(existsSync(out)&&lstatSync(out).isSymbolicLink())throw Error('Build target is a symlink');
+ rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
+ const manifest={version:2,base:'/games/',games:selected,files:[]};
+ for(const[name,bytes]of [...entries].sort(([a],[b])=>a.localeCompare(b))){const dest=join(out,name);mkdirSync(resolve(dest,'..'),{recursive:true});writeFileSync(dest,bytes);manifest.files.push({path:name,bytes:bytes.length,sha256:sha256(bytes)});if(['.html','.css','.mjs','.js','.svg','.json','.webmanifest','.txt'].includes(extname(name)))writeFileSync(dest+'.gz',gzipSync(bytes,{level:9}));}
+ writeFileSync(join(out,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');return manifest;
 }
-export function build({output=join(ROOT,'dist')}={}){
-  const source=join(ROOT,'public'),files=validateRuntime(source),out=resolve(output);
-  // Explicit target check before cleaning the known build directory on Windows.
-  if(out===ROOT||out===source||out===resolve(out, '..')||!['dist','test-dist'].includes(out.split(sep).at(-1)))throw Error('Invalid build target');
-  if(existsSync(out)&&lstatSync(out).isSymbolicLink())throw Error('Build target is a symlink');
-  rmSync(out,{recursive:true,force:true});mkdirSync(out,{recursive:true});
-  const manifest={version:1,game:'pindou',base:'/games/pindou/',levels:LEVELS.length,patterns:PATTERNS.length,files:[]};
-  for(const file of files){const name=relative(source,file).replaceAll(sep,'/'),dest=join(out,name),bytes=readFileSync(file);
-    mkdirSync(resolve(dest,'..'),{recursive:true});cpSync(file,dest);manifest.files.push({path:name,bytes:bytes.length,sha256:sha256(bytes)});
-    if(['.html','.css','.mjs','.js','.svg','.json','.webmanifest'].includes(extname(file)))writeFileSync(dest+'.gz',gzipSync(bytes,{level:9}));
-  }
-  writeFileSync(join(out,'release-manifest.json'),JSON.stringify(manifest,null,2)+'\n');return manifest;
-}
-if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
-  const manifest=build();console.log(`Built dist: ${manifest.files.length} runtime files, ${manifest.levels} levels, ${manifest.patterns} patterns; precompressed text.`);
-}
+if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){const m=build({games:gameArgument()});console.log(`Built ${m.games.map(g=>g.id).join(', ')}: ${m.files.length} files + gzip; manifest v2.`);}

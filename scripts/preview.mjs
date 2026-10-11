@@ -2,8 +2,9 @@
 import {createServer} from 'node:http';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
-import {ROOT} from './build.mjs';
-const root=resolve(ROOT,process.argv.includes('--dist')?'dist':'public');
+import {ROOT,build} from './build.mjs';
+if(!process.argv.includes('--dist'))build();
+const root=resolve(ROOT,'dist');
 const flag=process.argv.indexOf('--port'),port=flag>=0?Number(process.argv[flag+1]):4176;
 const mime={'.html':'text/html; charset=utf-8','.mjs':'application/javascript','.js':'application/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png'};
 createServer(async(req,res)=>{
@@ -16,4 +17,4 @@ createServer(async(req,res)=>{
     const content=await readFile(target);
     res.writeHead(200,{'Content-Type':mime[extname(target)]||'application/octet-stream','Cache-Control':'no-store'});res.end(content);
   }catch{res.writeHead(404,{'Content-Type':'text/plain'});res.end('Not found');}
-}).listen(port,'127.0.0.1',()=>console.log(`Games preview: http://127.0.0.1:${port}/games/pindou/ (${root})`));
+}).listen(port,'127.0.0.1',()=>console.log(`Games preview: http://127.0.0.1:${port}/games/ (${root})`));

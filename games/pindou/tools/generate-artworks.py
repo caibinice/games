@@ -11,7 +11,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 
 ROOT = Path(__file__).resolve().parents[1]
-GAME = ROOT / 'public/games/pindou'
+GAME = ROOT / 'public'
 ASSETS = GAME / 'assets/scenes'
 PALETTE = ['#bae5cd', '#57bca6', '#99d566', '#f3aa47', '#fff1cf',
            '#ef7aaa', '#65bce8', '#f28d80', '#b29ae5', '#f6d749']

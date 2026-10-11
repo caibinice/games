@@ -1,6 +1,6 @@
 * text=auto eol=lf
 # Preserve the migrated game bytes, including frozen legacy boards and assets.
-public/** -text whitespace=cr-at-eol
-public/games/pindou/index.html whitespace=cr-at-eol,-blank-at-eof
+games/*/public/** -text whitespace=cr-at-eol
+games/pindou/public/index.html whitespace=cr-at-eol,-blank-at-eof
 *.png -text
 *.webp -text
