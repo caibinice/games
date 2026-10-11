@@ -64,3 +64,14 @@ $work = 'E:\Documents\AI\codex\tmp\clean-music-preparation'
 改动前 HEAD 99 个文件已逐字节核验，完整备份：`E:/Documents/AI/codex/backups/games-clean-music-20261011-184522/games-head.zip`；同目录保存 Nginx 修改前路由。发布继续使用[原子批量发布手册](deployment.md)，不改博客、Nginx 映射、关卡和存档格式。
 
 验证属于音频信号检查与 Chromium 手机模拟；真人听感以玩家试听反馈为准。
+
+## 已发布
+
+- 运行时代码 `cae6f46aa51b60a2eed90c6e67b74acc0eaf1472`，[GitHub CI 成功](https://github.com/caibinice/games/actions/runs/38133712175)。后续本记录补写是文档提交，不改变运行时。
+- 两个入口资源版本 **20261011-5**；[抓大鹅](https://caibinice.com/games/goose/) / [拼豆](https://caibinice.com/games/pindou/) / [大厅](https://caibinice.com/games/)。刷新入口即可更新，无需清 Cookie 或重开关卡；原来关闭音乐的玩家可在设置中单独打开「背景音乐」。
+- 批量原子发布 `20261011105629-cae6f46aa5`（UTC 10:56 / 北京时间 18:56）；`/opt/games/www` → `/opt/games/releases/20261011105629-cae6f46aa5/www`。
+- 旧 release `/opt/games/releases/20261011101946-4380fa5b81/www` 保留；服务器备份 `/opt/games/backups/20261011105629-cae6f46aa5/`，本机回滚记录 `E:/Documents/AI/codex/backups/games-20261011-185629-816370/rollback.json`。
+- 公网及服务器 SFTP 55 / 55 文件 SHA-256 匹配；音频 `audio/mpeg`、字节 Range 206、JS MIME、私有 / 缺失资源 404、入口尾斜杠均通过。原始下载及中间 PCM 未发布。
+- 公网重新执行完整手机触屏音乐回归：抓鹅一轮后位置 0.524 秒，拼豆 0.509 秒，source 均不重建；输出信号有效，独立开关、存档、暂停 / 恢复和全屏无滚动通过，页面 JS 错误 0。
+- Nginx `-t` 成功且服务 active。路由与发布前逐字节相同，SHA-256 `ebe1d28d0610e9d18e2d5eb1576ed350f783829aa7249e8a097f023760dbd45f`；博客配置镜像未变，`E:/codes/ai-blog` 仍为 `7e789db` 且工作区干净。
+- 验收日志：本地处理目录内的 `quality-gates.log`、`audio-validation.json`、`music-browser-qa.log`、`music-failure-qa.log`、`music-endflow-qa.log`、`mobile-touch-qa.log`、`deploy.log`、`verify-public.log`、`public-music-qa.log`、`remote-after.log`。
