@@ -64,5 +64,6 @@ pwsh -File scripts/deploy.ps1 -Games pindou   # 单独更新，保留其他游�
 - [此前独立仓库迁移](docs/migration.md)
 - [多游戏改造与抓大鹅上线验收](docs/multi-game-migration.md)
 - [三段录屏优化与一屏沉浸布局验收](docs/video-optimization-20261011.md)
+- [抓大鹅大轮廓、实物材质与深堆翻锅优化](docs/goose-realism-20261011.md)
 
 GitHub CI 离线运行检查、各游戏测试及发布测试，使用本仓库独立配置，不依赖博客或其他项目。

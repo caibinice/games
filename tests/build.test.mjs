@@ -29,7 +29,7 @@ describe('Independent game build',()=>{
       const single=build({output:out,games:'goose'});expect(single.games.map(g=>g.id)).toEqual(['goose']);expect(existsSync(join(out,'games/pindou'))).toBe(false);
       expect(JSON.parse(readFileSync(join(out,'games/catalog.json'),'utf8')).map(g=>g.id)).toEqual(['goose','pindou']);
       for(const name of ['three.module.js','three.core.js','cannon-es.js','three.LICENSE.txt','cannon-es.LICENSE.txt'])expect(existsSync(join(out,'games/goose/vendor',name))).toBe(true);
-      const batch=build({output:out,games:'pindou,goose'});expect(batch.games.map(g=>g.id)).toEqual(['pindou','goose']);expect(batch.files).toHaveLength(50);
+      const batch=build({output:out,games:'pindou,goose'});expect(batch.games.map(g=>g.id)).toEqual(['pindou','goose']);expect(batch.files).toHaveLength(51);expect(existsSync(join(out,'games/goose/physics.mjs'))).toBe(true);
       const expected=runtimeEntries(selectGames('pindou,goose'));for(const item of batch.files)expect(readFileSync(join(out,item.path)).equals(expected.get(item.path))).toBe(true);
       for(const name of ['three.module.js','three.core.js','cannon-es.js'])expect(gunzipSync(readFileSync(join(out,'games/goose/vendor',name+'.gz'))).equals(readFileSync(join(out,'games/goose/vendor',name)))).toBe(true);
     }finally{rmSync(temp,{recursive:true,force:true});}

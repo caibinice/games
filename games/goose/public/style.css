@@ -25,3 +25,7 @@ body:has(#app.playing){height:min(var(--play-height,100dvh),100dvh);min-height:0
 @media(orientation:landscape) and (max-height:500px){#app.playing{max-width:460px}.playing .tools b{display:none}.playing .tools button{padding:6px}.playing .tray-title{display:none}.playing .board-bottom{height:22px}}
 /* Board gestures never pan/zoom the document; open dialogs keep native scrolling. */
 #app.playing{touch-action:none}#app.playing:has(dialog[open]){touch-action:auto}
+/* The whole bin moves, not a one-degree wiggle; physical props tumble inside it. */
+.toss canvas{animation:deep-toss .72s cubic-bezier(.25,.65,.35,1)}
+@keyframes deep-toss{18%{transform:translate(8px,-24px) scale(1.015)}38%{transform:translate(-10px,8px)}60%{transform:translate(6px,-14px)}82%{transform:translate(-3px,4px)}100%{transform:none}}
+@media(prefers-reduced-motion:reduce){.toss canvas{animation:none!important}}

@@ -1,52 +1,71 @@
 import * as T from './vendor/three.module.js';
 import * as C from './vendor/cannon-es.js';
-import {makeModel,makeBowl} from './models.mjs';
-import {rng} from './engine.mjs';
+import {makeModel,makeBowl,makeEnvironment} from './models.mjs';
+import {BIN,binFor,modelScale,cameraPose,spawnPoses,shakePlan} from './physics.mjs';
 import {ITEMS,themeFor} from './catalog.mjs';
+// Collision envelopes follow the main volume, not an inflated box around stems,
+// necks and handles. This is essential to make 200+ large props stack deeply.
+function addColliders(body,kind,scale,size,center){
+ const sphere=(r,p)=>body.addShape(new C.Sphere(r*scale),new C.Vec3(...p.map(n=>n*scale)));
+ const box=(half,p)=>body.addShape(new C.Box(new C.Vec3(...half.map(n=>n*scale))),new C.Vec3(...p.map(n=>n*scale)));
+ const cylinder=(r1,r2,h,p)=>body.addShape(new C.Cylinder(r1*scale,r2*scale,h*scale,10),new C.Vec3(...p.map(n=>n*scale)));
+ if(kind==='goose'||kind==='duck'){box([.55,.25,.28],[.13,-.06,0]);if(kind==='goose')cylinder(.105,.105,.75,[-.37,.55,0]);sphere(kind==='goose'?.19:.2,[kind==='goose'?-.41:-.34,kind==='goose'?.98:.29,0]);}
+ else if(kind==='corn')cylinder(.23,.23,1.65,[0,0,0]);
+ else if(kind==='carrot')cylinder(.24,.035,1.43,[0,-.2,0]);
+ else if(kind==='sausage'){cylinder(.19,.19,1.58,[.035,0,0]);sphere(.19,[-.04,-.8,0]);sphere(.19,[.02,.8,0]);}
+ else if(kind==='skewer')for(let i=0;i<5;i++)box([.21,.135,.19],[0,-.56+i*.3,0]);
+ else if(kind==='toothbrush'){box([.055,.81,.045],[0,-.2,0]);box([.14,.23,.09],[0,.82,.07]);}
+ else if(kind==='bottle'){cylinder(.25,.25,1.02,[0,-.19,0]);cylinder(.125,.125,.36,[0,.54,0]);}
+ else if(kind==='eggplant')cylinder(.15,.26,1.3,[0,-.08,0]);
+ else if(kind==='cup'){cylinder(.34,.29,.66,[0,0,0]);sphere(.16,[.41,0,0]);}
+ else if(['apple','orange','pumpkin','egg','lemon','pear','ball'].includes(kind))body.addShape(new C.Sphere(Math.max(size.x,size.z)*.45),new C.Vec3(center.x,center.y,center.z));
+ else body.addShape(new C.Box(new C.Vec3(size.x*.43,size.y*.42,size.z*.43)),new C.Vec3(center.x,center.y,center.z));
+}
 export class GooseScene{
  constructor(container,onPick,onShake){
   this.container=container;this.onPick=onPick;this.onShake=onShake;this.actors=new Map();this.flights=[];this.batches=new Map();this.active=true;this.last=0;this.dirty=true;
-  this.scene=new T.Scene();this.camera=new T.OrthographicCamera(-4.7,4.7,5.5,-5.5,.1,40);this.camera.position.set(0,13,5.6);this.camera.lookAt(0,-.8,0);
+  this.scene=new T.Scene();this.scene.environment=makeEnvironment();this.camera=new T.OrthographicCamera(-3.7,3.7,5.5,-5.5,.1,45);this.camera.position.set(0,16,6.7);this.camera.lookAt(0,.5,0);
   this.renderer=new T.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));this.renderer.shadowMap.enabled=true;this.renderer.shadowMap.type=T.PCFShadowMap;this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1;this.renderer.setClearColor(0,0);this.canvas=this.renderer.domElement;this.canvas.id='goose-canvas';this.canvas.dataset.renderMode='webgl';this.canvas.setAttribute('aria-label','3D 物品锅，点击物品收集，拖动可以颠锅');container.append(this.canvas);
-  this.scene.add(new T.HemisphereLight('#fff9e9','#b3c3b2',2.3));const light=new T.DirectionalLight('#fff6df',3);light.position.set(-4,9,5);light.castShadow=true;light.shadow.mapSize.set(1024,1024);Object.assign(light.shadow.camera,{left:-5,right:5,top:5,bottom:-5,near:.1,far:25});light.shadow.bias=-.0006;light.shadow.normalBias=.025;this.scene.add(light);
-  const ground=new T.Mesh(new T.PlaneGeometry(80,80),new T.ShadowMaterial({opacity:.045}));ground.rotation.x=-Math.PI/2;ground.position.y=-3.8;ground.receiveShadow=true;this.scene.add(ground);
-  this.world=new C.World({gravity:new C.Vec3(0,-18,0),allowSleep:true});this.world.broadphase=new C.SAPBroadphase(this.world);this.world.solver.iterations=8;this.world.defaultContactMaterial.friction=.32;this.world.defaultContactMaterial.restitution=.12;
-  const floor=new C.Body({mass:0,shape:new C.Plane()});floor.position.y=-3.5;floor.quaternion.setFromEuler(-Math.PI/2,0,0);this.world.addBody(floor);
-  for(const [x,z,sx,sz]of [[-3.32,0,.14,3.5],[3.32,0,.14,3.5],[0,-3.32,3.5,.14],[0,3.32,3.5,.14]])this.world.addBody(new C.Body({mass:0,shape:new C.Box(new C.Vec3(sx,6,sz)),position:new C.Vec3(x,1.5,z)}));
+  this.scene.add(new T.HemisphereLight('#fffdf3','#596577',1.15));const light=new T.DirectionalLight('#fff6e5',2.65);light.position.set(-5,12,6);light.castShadow=true;light.shadow.mapSize.set(1024,1024);Object.assign(light.shadow.camera,{left:-5,right:5,top:5,bottom:-5,near:.1,far:32});light.shadow.bias=-.0004;light.shadow.normalBias=.018;this.scene.add(light);const rim=new T.DirectionalLight('#dbeaff',1.05);rim.position.set(4,4,-5);this.scene.add(rim);
+  const ground=new T.Mesh(new T.PlaneGeometry(80,80),new T.ShadowMaterial({opacity:.07}));ground.rotation.x=-Math.PI/2;ground.position.y=BIN.floor-.28;ground.receiveShadow=true;this.scene.add(ground);
+  this.world=new C.World({gravity:new C.Vec3(0,-17,0),allowSleep:true});this.world.broadphase=new C.SAPBroadphase(this.world);this.world.solver.iterations=10;this.world.defaultContactMaterial.friction=.28;this.world.defaultContactMaterial.restitution=.16;
+  this.floor=new C.Body({mass:0,shape:new C.Plane()});this.floor.position.y=BIN.floor;this.floor.quaternion.setFromEuler(-Math.PI/2,0,0);this.world.addBody(this.floor);
+  for(const [x,z,sx,sz]of [[-3,0,.12,3.3],[3,0,.12,3.3],[0,-3,3.3,.12],[0,3,3.3,.12]])this.world.addBody(new C.Body({mass:0,shape:new C.Box(new C.Vec3(sx,8,sz)),position:new C.Vec3(x,1.4,z)}));
   this.ray=new T.Raycaster();this.resize=new ResizeObserver(()=>this.size());this.resize.observe(container);this.size();
   this.canvas.addEventListener('pointerdown',e=>{this.down={x:e.clientX,y:e.clientY};this.canvas.setPointerCapture(e.pointerId);});
   this.canvas.addEventListener('pointerup',e=>{if(!this.down)return;const dx=e.clientX-this.down.x,dy=e.clientY-this.down.y;this.down=null;if(Math.hypot(dx,dy)>22)this.onShake({x:dx,z:dy});else{const hit=this.hit(e.clientX,e.clientY);if(hit!==null)this.onPick(hit);}});
   this.canvas.addEventListener('pointercancel',()=>this.down=null);this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.setActive(false);container.dispatchEvent(new CustomEvent('render-lost'));});this.frame=this.frame.bind(this);this.setActive(true);
  }
- size(){const w=this.container.clientWidth,h=this.container.clientHeight;if(!w||!h)return;this.renderer.setSize(w,h);const half=Math.max(4.15,4.05*w/Math.max(h,1));this.camera.left=-half;this.camera.right=half;this.camera.top=half*h/w;this.camera.bottom=-half*h/w;this.camera.updateProjectionMatrix();this.renderer.render(this.scene,this.camera);}
+ size(){const w=this.container.clientWidth,h=this.container.clientHeight;if(!w||!h)return;this.renderer.setSize(w,h);const half=Math.max(3.65,4.12*w/Math.max(h,1));this.camera.left=-half;this.camera.right=half;this.camera.top=half*h/w;this.camera.bottom=-half*h/w;this.camera.updateProjectionMatrix();this.renderer.render(this.scene,this.camera);}
  sync(game){
-  this.game=game;const theme=themeFor(game.level);if(this.theme!==theme.id){if(this.bowl)this.scene.remove(this.bowl);this.bowl=makeBowl(theme.color);this.scene.add(this.bowl);this.theme=theme.id;}
-  const posed=new Map((game.poses||[]).map(p=>[p[0],p])),random=rng(game.seed+game.shakes*17),positions=game.items.map(i=>{
-   const column=i.id%6,row=Math.floor(i.id/6)%6,layer=Math.floor(i.id/36);
-   return[(column-2.5)*.96+(random()-.5)*.16,-2.76+layer*.94,(row-2.5)*.96+(random()-.5)*.16,random()*Math.PI,random()*6.28,random()*Math.PI];});
+  this.game=game;const theme=themeFor(game.level),bin=binFor(game.items.length),key=theme.id+':'+bin.floor;if(this.theme!==key){if(this.bowl)this.scene.remove(this.bowl);this.bowl=makeBowl(theme.color,game.items.length);this.scene.add(this.bowl);this.theme=key;this.floor.position.y=bin.floor;this.floor.aabbNeedsUpdate=true;this.world.broadphase.dirty=true;}
+  const posed=new Map((game.poses||[]).map(p=>[p[0],p])),positions=spawnPoses(game.items,game.seed,game.shakes);
   let removedPile=false;for(const[id,a]of this.actors)if(game.items[id]?.status!==0){this.world.removeBody(a.body);this.actors.delete(id);removedPile=true;}if(removedPile)for(const a of this.actors.values())a.body.wakeUp();this.dirty=true;
-  for(const item of game.items){if(item.status!==0||this.actors.has(item.id))continue;const mesh=makeModel(item.kind,theme.color),scale=1.34;mesh.scale.setScalar(scale);
+  for(const item of game.items){if(item.status!==0||this.actors.has(item.id))continue;const mesh=makeModel(item.kind,theme.color),scale=modelScale(item.kind);mesh.scale.setScalar(scale);
    const bounds=new T.Box3().setFromObject(mesh),size=bounds.getSize(new T.Vector3());
-   const center=bounds.getCenter(new T.Vector3()),shape=['apple','orange','pumpkin','egg','lemon','pear','ball'].includes(item.kind)?new C.Sphere(Math.max(size.x,size.z)*.45):new C.Box(new C.Vec3(size.x*.43,size.y*.43,size.z*.43));
+   const center=bounds.getCenter(new T.Vector3());
    const p=posed.get(item.id)?.slice(1)||positions[item.id];mesh.userData.id=item.id;mesh.traverse(o=>o.userData.id=item.id);
-   const body=new C.Body({mass:.65,position:new C.Vec3(p[0],Math.max(-2.95,p[1]),p[2]),linearDamping:.42,angularDamping:.5,sleepSpeedLimit:.22,sleepTimeLimit:.7});body.addShape(shape,new C.Vec3(center.x,center.y,center.z));body.quaternion.setFromEuler(p[3],p[4],p[5]);mesh.position.copy(body.position);mesh.quaternion.copy(body.quaternion);this.world.addBody(body);this.actors.set(item.id,{mesh,body,kind:item.kind});}
+   const body=new C.Body({mass:.8,position:new C.Vec3(Math.max(-2.4,Math.min(2.4,p[0])),Math.max(bin.floor+.55,p[1]),Math.max(-2.4,Math.min(2.4,p[2]))),linearDamping:.18,angularDamping:.22,sleepSpeedLimit:.22,sleepTimeLimit:1});addColliders(body,item.kind,scale,size,center);body.quaternion.setFromEuler(p[3],p[4],p[5]);mesh.position.copy(body.position);mesh.quaternion.copy(body.quaternion);this.world.addBody(body);this.actors.set(item.id,{mesh,body,kind:item.kind});}
+  const goal=cameraPose(game.items.length,this.actors.size);if(!this.cameraGoal){this.cameraFocusY=goal.focus;this.camera.position.set(0,goal.y,goal.z);this.camera.lookAt(0,goal.focus,0);}this.cameraGoal=goal;
   this.renderProps();
   this.size();
  }
- clear(){for(const a of this.actors.values())this.world.removeBody(a.body);this.actors.clear();this.flights=[];for(const b of this.batches.values()){this.scene.remove(b);b.dispose();}this.batches.clear();}
+ clear(){for(const a of this.actors.values())this.world.removeBody(a.body);this.actors.clear();this.flights=[];this.shakeWaves=null;this.cameraGoal=null;for(const b of this.batches.values()){this.scene.remove(b);b.dispose();}this.batches.clear();}
  renderProps(){
   for(const b of this.batches.values())b.count=0;
   for(const actor of [...this.actors.values(),...this.flights]){actor.mesh.updateMatrixWorld(true);for(const part of actor.mesh.children){const key=part.geometry.uuid+part.material.uuid;let batch=this.batches.get(key);if(!batch){batch=new T.InstancedMesh(part.geometry,part.material,256);batch.instanceMatrix.setUsage(T.DynamicDrawUsage);batch.castShadow=batch.receiveShadow=true;batch.frustumCulled=false;batch.count=0;this.scene.add(batch);this.batches.set(key,batch);}batch.setMatrixAt(batch.count++,part.matrixWorld);}}
   for(const[key,b]of this.batches)if(b.count===0){this.scene.remove(b);b.dispose();this.batches.delete(key);}else b.instanceMatrix.needsUpdate=true;
  }
- shake(){for(const a of this.actors.values()){a.body.wakeUp();a.body.applyImpulse(new C.Vec3((Math.random()-.5)*2.1,1.8+Math.random()*1.2,(Math.random()-.5)*2.1));a.body.angularVelocity.set(Math.random()*4,Math.random()*4,Math.random()*4);}this.container.classList.remove('toss');void this.container.offsetWidth;this.container.classList.add('toss');}
+ shake(direction){this.shakeWaves=shakePlan(this.game.seed,this.game.shakes,direction);this.shakeElapsed=0;this.kick(this.shakeWaves.shift());this.container.classList.remove('toss');void this.container.offsetWidth;this.container.classList.add('toss');}
+ kick(wave){for(const a of this.actors.values()){const p=wave.impulses();a.body.wakeUp();a.body.applyImpulse(new C.Vec3(p.x*a.body.mass,p.y*a.body.mass,p.z*a.body.mass));a.body.angularVelocity.set(p.rx,p.ry,p.rz);}this.dirty=true;}
  hit(x,y){const r=this.canvas.getBoundingClientRect();for(const a of this.actors.values())a.mesh.updateMatrixWorld(true);this.scene.updateMatrixWorld(true);this.ray.setFromCamera(new T.Vector2((x-r.x)/r.width*2-1,-(y-r.y)/r.height*2+1),this.camera);const objects=[...this.actors.values()].map(a=>a.mesh);if(this.bowl)objects.push(this.bowl);const found=this.ray.intersectObjects(objects,true)[0];return found?.object.userData.id??null;}
- targets(){this.scene.updateMatrixWorld(true);const r=this.canvas.getBoundingClientRect();return[...this.actors].map(([id,a])=>{const p=a.mesh.position.clone().project(this.camera),x=r.x+(p.x+1)*r.width/2,y=r.y+(1-p.y)*r.height/2;return{id,kind:a.kind,x,y,visible:this.hit(x,y)===id};}).filter(t=>t.visible&&t.x>=r.left&&t.x<=r.right&&t.y>=r.top&&t.y<=r.bottom);}
+ targets(){this.scene.updateMatrixWorld(true);const r=this.canvas.getBoundingClientRect(),found=[];for(const[id,a]of this.actors){a.mesh.updateMatrixWorld(true);for(const local of [[0,0,0],[.2,-.12,0],[0,.3,0],[0,-.3,0],[.3,0,0],[-.3,0,0]]){const p=a.mesh.localToWorld(new T.Vector3(...local)).project(this.camera),x=r.x+(p.x+1)*r.width/2,y=r.y+(1-p.y)*r.height/2;if(x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom&&this.hit(x,y)===id){found.push({id,kind:a.kind,x,y,visible:true});break;}}}return found;}
  screenPose(id){const a=this.actors.get(id);if(!a)return null;const r=this.canvas.getBoundingClientRect(),box=new T.Box3().setFromObject(a.mesh),center=box.getCenter(new T.Vector3()).project(this.camera),points=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])points.push(new T.Vector3(x,y,z).project(this.camera));const width=(Math.max(...points.map(p=>p.x))-Math.min(...points.map(p=>p.x)))*r.width/2,height=(Math.max(...points.map(p=>p.y))-Math.min(...points.map(p=>p.y)))*r.height/2;return{x:r.x+(center.x+1)*r.width/2,y:r.y+(1-center.y)*r.height/2,size:Math.max(width,height)*1.08,quaternion:this.camera.quaternion.clone().invert().multiply(a.mesh.quaternion)};}
 
  shuffle(){this.clear();this.sync(this.game);this.container.classList.remove('toss');void this.container.offsetWidth;this.container.classList.add('toss');}
  snapshot(){return[...this.actors].map(([id,a])=>{const e=new T.Euler().setFromQuaternion(a.mesh.quaternion);return[id,a.body.position.x,a.body.position.y,a.body.position.z,e.x,e.y,e.z];});}
- frame(now){if(!this.active)return;this.raf=requestAnimationFrame(this.frame);if(now-this.last<30)return;const dt=Math.min(.06,(now-this.last)/1000||.033);this.last=now;this.world.step(1/60,dt,3);if(!this.dirty&&![...this.actors.values()].some(a=>a.body.sleepState!==C.Body.SLEEPING))return;for(const a of this.actors.values()){if(a.body.position.y<-4.4||Math.max(Math.abs(a.body.position.x),Math.abs(a.body.position.z))>3.8){a.body.position.set(0,1.4,0);a.body.velocity.set(0,0,0);}a.mesh.position.copy(a.body.position);a.mesh.quaternion.copy(a.body.quaternion);}this.renderProps();this.renderer.render(this.scene,this.camera);this.dirty=false;}
+ pileStats(){const actors=[...this.actors.values()],y=actors.map(a=>a.body.position.y).sort((a,b)=>a-b),sizes=this.targets().map(t=>this.screenPose(t.id).size).sort((a,b)=>a-b);return{actors:y.length,minY:y[0],maxY:y.at(-1),medianY:y[Math.floor(y.length/2)],depthSpan:y.at(-1)-y[0],medianModelPixels:sizes[Math.floor(sizes.length/2)]||0,meanSpeed:actors.reduce((n,a)=>n+a.body.velocity.length(),0)/Math.max(1,actors.length),meanSpin:actors.reduce((n,a)=>n+a.body.angularVelocity.length(),0)/Math.max(1,actors.length),flipping:!!this.shakeWaves};}
+ frame(now){if(!this.active)return;this.raf=requestAnimationFrame(this.frame);if(now-this.last<30)return;const dt=Math.min(.06,(now-this.last)/1000||.033);this.last=now;const goal=this.cameraGoal,moving=goal&&(Math.abs(this.camera.position.y-goal.y)+Math.abs(this.camera.position.z-goal.z)>.002);if(moving){const t=Math.min(1,dt*7);this.cameraFocusY+=(goal.focus-this.cameraFocusY)*t;this.camera.position.y+=(goal.y-this.camera.position.y)*t;this.camera.position.z+=(goal.z-this.camera.position.z)*t;this.camera.lookAt(0,this.cameraFocusY,0);}if(this.shakeWaves){this.shakeElapsed+=dt*1000;while(this.shakeWaves.length&&this.shakeElapsed>=this.shakeWaves[0].at)this.kick(this.shakeWaves.shift());if(!this.shakeWaves.length)this.shakeWaves=null;}this.world.step(1/60,dt,3);if(!this.dirty&&!moving&&![...this.actors.values()].some(a=>a.body.sleepState!==C.Body.SLEEPING))return;for(const a of this.actors.values()){if(a.body.position.y<this.floor.position.y-.8||Math.max(Math.abs(a.body.position.x),Math.abs(a.body.position.z))>3.55){a.body.position.set(0,.8,0);a.body.velocity.set(0,0,0);}if(a.body.position.y>6.7){a.body.position.y=6.7;a.body.velocity.y=Math.min(0,a.body.velocity.y);}a.mesh.position.copy(a.body.position);a.mesh.quaternion.copy(a.body.quaternion);}this.renderProps();this.renderer.render(this.scene,this.camera);this.dirty=false;}
  setActive(value){this.active=value;cancelAnimationFrame(this.raf);this.last=performance.now();if(value)this.raf=requestAnimationFrame(this.frame);}
  dispose(){this.setActive(false);this.resize.disconnect();this.clear();this.renderer.dispose();this.canvas.remove();}
 }
@@ -60,10 +79,10 @@ export class CompatibleScene{
 // in WebGL mode. DOM slots retain names and touch targets for accessibility.
 export class CollectionScene{
  constructor(host){
-  this.host=host;this.scene=new T.Scene();this.camera=new T.OrthographicCamera(0,1,0,-1,.1,2000);this.camera.position.z=1000;
+  this.host=host;this.scene=new T.Scene();this.scene.environment=makeEnvironment();this.camera=new T.OrthographicCamera(0,1,0,-1,.1,2000);this.camera.position.z=1000;
   this.renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'low-power'});this.renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));this.renderer.setClearColor(0,0);this.renderer.outputColorSpace=T.SRGBColorSpace;this.renderer.toneMapping=T.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1;
   this.canvas=this.renderer.domElement;this.canvas.id='collection-canvas';this.canvas.setAttribute('aria-hidden','true');host.append(this.canvas);
-  this.scene.add(new T.HemisphereLight('#fff9e8','#8a947e',2.8));const light=new T.DirectionalLight('#fff6e7',3);light.position.set(-150,300,700);this.scene.add(light);
+  this.scene.add(new T.HemisphereLight('#fff9e8','#6f7984',1.3));const light=new T.DirectionalLight('#fff6e7',2.6);light.position.set(-150,300,700);this.scene.add(light);
   this.cloudGeometry=new T.SphereGeometry(1,8,6);this.ringGeometry=new T.TorusGeometry(.56,.025,5,32);this.extents=new Map();this.objects=new T.Group();this.scene.add(this.objects);this.jobs=[];this.enabled=false;this.observer=new ResizeObserver(()=>this.render());this.observer.observe(host);this.observer.observe(document.getElementById('tray'));this.frame=this.frame.bind(this);
   this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();host.dispatchEvent(new CustomEvent('collection-lost'));});
  }

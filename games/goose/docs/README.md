@@ -12,13 +12,13 @@
 
 本实现使用自制 Three.js 立体模型和 Cannon-es 刚体世界：锅内重力、碰撞、遮挡、颠锅、
 物品移出后重新掉落、真实 raycast 点击；不是以 2D 图片冒充 3D。
-34 种模型在 public/models.mjs 中以几何体原创组合：原有大白鹅、小黄鸭、蔬果、点心、杯瓶等
+34 种模型在 public/models.mjs 中使用原创轮廓几何和程序化 PBR 材质：原有大白鹅、小黄鸭、蔬果、点心、杯瓶等
 18 种，新增烤串、烤肠、牛排、茄子、甜椒、香蕉、西瓜、柠檬、梨、曲奇、蛋糕、可颂、冰棒、
 牙刷、皮球及贝壳。八个主题各使用自己的物品池。
 goose.svg 为自制矢量插画，仅作图标 / 收藏卡。未拷贝原版商业素材。
 Three.js / Cannon-es 的版本、源文件及许可证随构建复制为本游戏自己的 vendor 目录。
 同类模型合并材质几何并使用 InstancedMesh 批量渲染；容器的静态部件合并为四批。
-新版第 60 关 234 件物品实测 91 draw calls，仍保留每件物品独立的物理状态及遮挡 raycast。
+本次第 60 关 234 件物品实测 87 draw calls，仍保留每件物品独立的物理状态及遮挡 raycast。
 场景最高像素比限制为 1.5，静止物品休眠后跳过重绘；移走物品会唤醒其余刚体重新下落。
 
 技术参考：[Three.js WebGLRenderer](https://threejs.org/docs/pages/WebGLRenderer.html)、
@@ -42,7 +42,7 @@ Three.js / Cannon-es 的版本、源文件及许可证随构建复制为本游�
 ## 维护
 
 public/catalog.mjs：物品 / 主题 / 60 关；engine.mjs：独立库存规则及 Cookie；
-models.mjs：自制模型；scene.mjs：3D / 物理 / 点击；app.mjs：手机 UI。
+models.mjs：自制模型与材质；physics.mjs：深箱 / 排布 / 翻动 / 收尾镜头参数；scene.mjs：3D / 碰撞 / 点击；app.mjs：手机 UI。
 tests/engine.test.mjs 测试正常 / 满格 / 消除 / 道具 / 时间 / 全部 60 关可解 / 续局 / 异常存档。
 tests/legacy-v1.json 是更新前生成的 60 份真实存档；models.test.mjs 检查全部模型几何、共享克隆、深箱与烟团几何。
 
@@ -52,7 +52,7 @@ tests/legacy-v1.json 是更新前生成的 60 份真实存档；models.test.mjs 
 
 ## 2026-10-11 验收
 
-28 项测试覆盖全部 60 关、库存守恒、满格、第七件消除、道具、续时、Cookie、60 份旧存档及 34 种模型。
+35 项抓鹅测试覆盖全部 60 关、库存守恒、满格、第七件消除、道具、续时、Cookie、60 份旧存档及 34 种模型。
 真实 WebGL 浏览器回归通过：新手点击、遮挡选取、三消、撤回、暂放 / 拿回、回大厅续局、
 刷新续局、暂停、按钮 / 拖锅物理运动、手动全屏、通关 / 下一关 / 收藏、60 关目录、跳关边界和取消、
 满格免费继续 / 磁铁、倒计时免费续时及 WebGL context loss 后保留进度的兼容模式。
@@ -60,3 +60,7 @@ tests/legacy-v1.json 是更新前生成的 60 份真实存档；models.test.mjs 
 393×873 / DPR 3 的 Chromium 移动触屏模拟通过拾取、重开确认、全屏与库存检查。
 JS 页面错误为 0，资源均来自本站。本次使用桌面 Chromium 模拟手机，未做 iQOO 11 实机测试。
 三段录屏对比和完整验收见 [录屏优化记录](../../../docs/video-optimization-20261011.md)。
+
+
+大轮廓 / 实物材质、6.67 深箱、三段定向抛甩和底部收尾镜头，见
+[模型与物理优化记录](../../../docs/goose-realism-20261011.md)。刷新即可应用，本次不需要重开局。
