@@ -5,7 +5,7 @@ export function musicPreference(value, oldSound=true){
 }
 
 export class LoopMusic{
-  constructor(url,{getContext,fetcher=(url,options)=>globalThis.fetch(url,options),volume=.55}={}){
+  constructor(url,{getContext,fetcher=(url,options)=>globalThis.fetch(url,options),volume=.8}={}){
     this.url=url;this.getContext=getContext;this.fetcher=fetcher;
     this.volume=Math.min(1,Math.max(0,volume));this.wanted=false;
     this.context=null;this.buffer=null;this.loading=null;this.source=null;

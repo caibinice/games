@@ -1,4 +1,7 @@
-"""Offline recording-to-music preparation; not a build/runtime dependency.
+"""Legacy recording experiment; not used by the current published music.
+
+Spectral separation audibly damaged the instruments. Do not reuse these outputs
+for releases. Use prepare-clean-music.py; see docs/music-replacement-20261011.md.
 
 Install scripts/audio-requirements.txt in a task-local environment. Inputs and
 intermediate WAVs stay outside public/. Only the final MP3 is deployed.
