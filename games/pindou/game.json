@@ -5,7 +5,10 @@
   "description": "100 关像素拼豆，慢慢拼，慢慢治愈。",
   "color": "#87ab90",
   "symbol": "✿",
-  "version": "20261009-1",
-  "facts": {"levels": 100, "patterns": 40},
+  "version": "20261011-2",
+  "facts": {
+    "levels": 100,
+    "patterns": 40
+  },
   "vendors": []
 }

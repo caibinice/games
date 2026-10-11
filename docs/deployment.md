@@ -2,6 +2,9 @@
 
 仓库 https://github.com/caibinice/games ，默认 main。本机 `E:/codes/games`。
 
+最新双游戏交互 / 视口 / 存档验证见 [2026-10-11 录屏优化记录](video-optimization-20261011.md)。
+本次仍使用下述批量构建及原子发布流程，URL、Cookie 路径与 Nginx 映射不变。
+
 ## 目录与地址
 
 每个游戏平级放在 `games/<id>/`：`game.json`、`public/`、`tests/`、`tools/`、`docs/`。

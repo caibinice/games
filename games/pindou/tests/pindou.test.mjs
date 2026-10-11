@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { LEVELS, SCENES, PATTERNS, getArtwork } from '../public/artworks.mjs';
-import { beadGeometry, tint, drawBead, completionFlash, COLOR_FLASH_MS } from '../public/beads.mjs';
+import { beadGeometry, tint, drawBead, completionFlash, COLOR_FLASH_MS, visibleTrayRange } from '../public/beads.mjs';
 import { patternPixels } from '../public/patterns.mjs';
 import { PREVIOUS_SIMPLE_LEVELS } from '../public/previous-simple-artworks.mjs';
 import { PREVIOUS_ARTWORKS } from '../public/previous-artworks.mjs';
@@ -69,7 +69,7 @@ describe('毛球拼豆 · 100关规则',()=>{
     expect(Math.max(...PATTERNS.map(p=>new Set(p.pixels).size))).toBeGreaterThanOrEqual(7);
   });
   it('凹槽和凸豆保持相同足迹，底色在周围可见，色彩阴影没有改变色相',()=>{
-    for(const s of [14,18,22,28,80]){const g=beadGeometry(s);expect(g.span+2*g.inset).toBeCloseTo(s);expect(g.span/s).toBeCloseTo(.78);expect(g.lift).toBeGreaterThan(0);expect(g.radius).toBeLessThan(g.span/2);}
+    for(const s of [14,18,22,28,80]){const g=beadGeometry(s);expect(g.span+2*g.inset).toBeCloseTo(s);expect(g.span/s).toBeCloseTo(.72);expect(g.lift/s).toBeGreaterThanOrEqual(.08);expect(g.radius).toBeLessThan(g.span/2);}
     expect(tint('#59bfd3',0)).toBe('#59bfd3');expect(tint('#59bfd3',1)).toBe('#ffffff');expect(tint('#59bfd3',-.2)).toMatch(/^#[0-9a-f]{6}$/);
   });
   it('选中的画板错色豆使用与暂存盒一致的蓝色实线框',()=>{
@@ -128,10 +128,11 @@ describe('毛球拼豆 · 100关规则',()=>{
       expect(completedColors(s).has(0)).toBe(false);expect(tool(s).ok).toBe(true);expect(completedColors(s)).toEqual(new Set(target));expect(inventoryValid(s)).toBe(true);
     }
   });
-  it('暂存盒取消独立滚动与固定高度，全屏扩容同样随整页展开',()=>{
+  it('暂存盒没有独立滚动条，游戏固定视口且通过连续行窗口显示扩容',()=>{
     const css=readFileSync(new URL('../public/style.css',import.meta.url),'utf8'),tray=css.match(/\.tray-grid\{([^}]+)\}/)[1];
     expect(tray).toContain('overflow:visible;');expect(tray).not.toContain('max-height:');expect(tray).not.toContain('overflow-y:auto');
     expect(readFileSync(new URL('../public/readability.css',import.meta.url),'utf8')).toContain('.playing:fullscreen>.play-screen{max-height:none}');
+    const app=readFileSync(new URL('../public/app.mjs',import.meta.url),'utf8');expect(app).toContain('visibleTrayRange(');expect(app).not.toContain('scrollIntoView(');
   });
   it('旧画作Cookie逐关验证后迁移，只重开换图画板，保留关卡、空间与道具',()=>{
     for(let id=2;id<=50;id++){
@@ -411,4 +412,8 @@ describe('不规则图形与原存档兼容',()=>{
       const b=createGame(base.id);b.board=[...l.target];const hole=l.target.findIndex(c=>c!==null);b.board[hole]=null;b.tray[0]=l.target[hole];expect(brush(b).won).toBe(true);expect(inventoryValid(b)).toBe(true);
     }
   });
+});
+
+it('unlimited tray rows have accessible contiguous windows with no capacity reduction',()=>{
+ for(const rows of [2,3,4,18,200])for(const count of [1,2,3]){const seen=new Set();for(let offset=0;offset<=rows;offset++){const r=visibleTrayRange(rows,offset,count);expect(r.end-r.start).toBe(Math.min(rows,count)*12);expect(r.end).toBeLessThanOrEqual(rows*12);for(let i=r.start;i<r.end;i++)seen.add(i);}expect(seen.size).toBe(rows*12);const last=visibleTrayRange(rows,Infinity,count);expect(last.end).toBe(rows*12);}
 });

@@ -63,16 +63,46 @@ export function makeModel(kind,accent='#90b895'){
   tube(g,'#b69cdb',[.24,.52,.24],[0,0,0],[0,0,Math.PI/2]);for(const x of [-.38,.38])part(g,cylinder(1,.2),'#e3d2ee',[.23,.25,.23],[x,0,0],[0,0,x<0?-Math.PI/2:Math.PI/2]);part(g,box(),'#fff1d4',[.095,.44,.04],[0,0,.24]);
  }else if(kind==='peas'){
   ball(g,green,[.54,.2,.2],[0,0,0]);for(const x of [-.25,0,.25])ball(g,'#b8d783',[.16,.16,.16],[x,.12,.08]);
+ }else if(kind==='skewer'){
+  tube(g,'#bc9566',[.035,1.7,.035],[0,0,0]);for(let i=0;i<4;i++){part(g,box(),i%2?'#a1b763':'#e69b68',[.37,.24,.32],[0,-.4+i*.29,0],[0,.15*i,.1]);}
+ }else if(kind==='sausage'){
+  tube(g,'#df8168',[.22,1,.22],[0,0,0]);for(const y of [-.5,.5])ball(g,'#df8168',[.22,.22,.22],[0,y,0]);for(let i=0;i<3;i++)part(g,box(),'#bc6558',[.28,.035,.035],[0,-.22+i*.22,.2],[0,0,.25]);
+ }else if(kind==='steak'){
+  ball(g,'#c68075',[.57,.15,.39],[0,0,0]);ball(g,'#ecc5a5',[.43,.035,.28],[0,.155,0]);ball(g,'#c47b70',[.38,.045,.24],[0,.18,0]);for(let i=0;i<3;i++)part(g,box(),'#a7645d',[.75,.018,.045],[0,.22,-.17+i*.17],[0,.35,0]);
+ }else if(kind==='eggplant'){
+  ball(g,'#9d85b6',[.24,.54,.23],[0,-.06,0]);tube(g,green,[.12,.18,.12],[0,.49,0],[0,0,-.3]);for(let i=0;i<3;i++)leaf(g,[(i-1)*.1,.4,0],(i-1)*.65);
+ }else if(kind==='pepper'){
+  for(let i=0;i<4;i++){const a=i*Math.PI/2;ball(g,'#91b75c',[.23,.36,.23],[Math.cos(a)*.15,0,Math.sin(a)*.15]);}tube(g,'#678c4d',[.065,.2,.065],[0,.42,0],[0,0,.2]);
+ }else if(kind==='banana'||kind==='croissant'){
+  const banana=kind==='banana',c=banana?'#f4d568':'#d9a36b';for(let i=0;i<6;i++){const a=-.85+i*.34;ball(g,c,[.16,.18,.17],[Math.sin(a)*.55,Math.cos(a)*.48-.32,0]);}for(const x of [-.46,.46])tube(g,banana?'#ae8d50':'#c38e57',[.07,.12,.07],[x,-.01,0],[0,0,x>0?-1:1]);
+ }else if(kind==='watermelon'){
+  part(g,cylinder(0,1),'#80b578',[.53,.8,.2],[0,0,0],[0,0,Math.PI]);part(g,cylinder(0,1),'#f09b9f',[.45,.69,.215],[0,.005,0],[0,0,Math.PI]);for(const x of [-.2,0,.2])ball(g,'#9a7272',[.026,.035,.014],[x,.07,.216]);
+ }else if(kind==='lemon'||kind==='pear'){
+  ball(g,kind==='lemon'?'#edd25d':'#bed171',[.35,.43,.33],[0,0,0]);if(kind==='lemon')for(const y of [-.4,.4])ball(g,'#edd25d',[.11,.12,.11],[0,y,0]);else{ball(g,'#bed171',[.22,.25,.22],[0,.3,0]);tube(g,brown,[.034,.16,.034],[0,.57,0]);leaf(g,[.13,.54,0],-1.1);}
+ }else if(kind==='cookie'){
+  tube(g,'#d5aa73',[.43,.18,.43],[0,0,0]);for(let i=0;i<6;i++){const a=i*2.4;ball(g,'#98734f',[.05,.025,.05],[Math.sin(a)*.29,.096,Math.cos(a)*.29]);}
+ }else if(kind==='cake'){
+  part(g,box(),'#fff0d6',[.65,.45,.45],[0,0,0]);for(const y of [-.12,.12])part(g,box(),'#eaa2bb',[.67,.05,.47],[0,y,0]);ball(g,'#ed8290',[.12,.15,.12],[0,.32,0]);
+ }else if(kind==='popsicle'){
+  part(g,box(),'#e3c9a4',[.13,.65,.055],[0,-.3,0]);part(g,box(),'#9eced3',[.49,.72,.22],[0,.14,0]);ball(g,'#9eced3',[.245,.2,.11],[0,.5,0]);part(g,box(),'#c6e6e3',[.045,.48,.02],[-.09,.16,.12]);
+ }else if(kind==='toothbrush'){
+  part(g,box(),'#9cc7c1',[.1,1.2,.09],[0,-.05,0]);part(g,box(),'#9cc7c1',[.23,.35,.15],[0,.61,0]);for(let i=0;i<4;i++)part(g,box(),cream,[.18,.055,.12],[0,.5+i*.08,.12]);
+ }else if(kind==='ball'){
+  ball(g,'#a9bedf',[.43,.43,.43],[0,0,0]);for(let i=0;i<5;i++){const a=i*1.25;ball(g,cream,[.17,.06,.17],[Math.sin(a)*.32,Math.cos(a)*.32,.23]);}
+ }else if(kind==='shell'){
+  for(let i=0;i<7;i++){const a=(i-3)*.22;ball(g,i%2?'#e9c5b9':'#f1dacf',[.085,.4,.18],[Math.sin(a)*.27,Math.cos(a)*.12,0]);}
  }else if(kind==='soap'){
   part(g,box(),'#b79dcf',[.69,.25,.44],[0,0,0]);ball(g,'#b79dcf',[.37,.13,.25],[0,.01,0]);part(g,box(),'#e1cfe9',[.26,.018,.14],[0,.15,0]);
  }
  const model=compact(g);models.set(key,model);return model.clone(true);
 }
+// Deep rounded-square bin with a bevelled lip and a recessed patterned floor.
+function roundedPath(path,half,r){path.moveTo(-half+r,-half);path.lineTo(half-r,-half);path.quadraticCurveTo(half,-half,half,-half+r);path.lineTo(half,half-r);path.quadraticCurveTo(half,half,half-r,half);path.lineTo(-half+r,half);path.quadraticCurveTo(-half,half,-half,half-r);path.lineTo(-half,-half+r);path.quadraticCurveTo(-half,-half,-half+r,-half);path.closePath();return path;}
+function binRing(depth){return geo('bin-ring-'+depth,()=>{const shape=roundedPath(new T.Shape(),3.46,.33);shape.holes.push(roundedPath(new T.Path(),3.19,.24));return new T.ExtrudeGeometry(shape,{depth,steps:1,bevelEnabled:true,bevelSize:.055,bevelThickness:.055,bevelSegments:2,curveSegments:5});});}
 export function makeBowl(accent){
- const g=new T.Group();part(g,cylinder(),'#f0dbc0',[3.48,.12,3.48],[0,-.16,0]);
- part(g,geo('bowl-wall',()=>new T.CylinderGeometry(3.68,3.42,.72,64,1,true)),accent,[1,1,1],[0,.2,0]);g.children.at(-1).material=mat(accent).clone();g.children.at(-1).material.side=T.DoubleSide;
- part(g,torus(3.67,.13),accent,[1,1,1],[0,.57,0],[Math.PI/2,0,0]);
- part(g,torus(3.42,.08),'#fff7dd',[1,1,1],[0,-.08,0],[Math.PI/2,0,0]);
- for(const x of [-3.98,3.98])part(g,torus(.36,.1),accent,[1,1,.9],[x,.36,0],[Math.PI/2,0,0]);
- return g;
+ const key='bin:'+accent;if(models.has(key))return models.get(key).clone(true);const g=new T.Group();part(g,box(),'#b0b49c',[6.75,.2,6.75],[0,-3.6,0]);
+ part(g,binRing(4.1),accent,[1,1,1],[0,.61,0],[Math.PI/2,0,0]);
+ part(g,binRing(.14),'#f8edce',[1,1,1],[0,.77,0],[Math.PI/2,0,0]);
+ for(let i=-3;i<=3;i++){part(g,box(),'#bdc3a8',[.025,.025,6.32],[i,-3.485,0]);part(g,box(),'#bdc3a8',[6.32,.025,.025],[0,-3.485,i]);}
+ const model=compact(g);models.set(key,model);return model.clone(true);
 }

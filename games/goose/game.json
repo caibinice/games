@@ -5,7 +5,14 @@
   "description": "颠一颠锅，找三个一样的，把鹅鹅带回家。",
   "color": "#edaa67",
   "symbol": "🪿",
-  "version": "20261011-1",
-  "facts": {"levels": 60, "themes": 8, "models": 18},
-  "vendors": ["three", "cannon-es"]
+  "version": "20261011-2",
+  "facts": {
+    "levels": 60,
+    "themes": 8,
+    "models": 34
+  },
+  "vendors": [
+    "three",
+    "cannon-es"
+  ]
 }

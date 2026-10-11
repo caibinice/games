@@ -1,11 +1,19 @@
-/* Short phones keep a usable canvas; scroll instead of reducing beads to 4px. */
-@media (max-height:640px) and (max-width:800px) and (orientation:portrait){
-  .game-shell{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
-  .game-shell::-webkit-scrollbar{display:none}
-  .topbar{position:sticky;top:0;background:#eef3e7ed;z-index:5}
-  .play-screen{flex-shrink:0;min-height:690px}
-  .home-screen{flex-shrink:0;min-height:650px}
-  .board-card{min-height:330px}
-  .board-viewport{min-height:250px}
-  .modal-backdrop{position:fixed;width:min(100%,520px);left:50%;transform:translateX(-50%);height:100dvh;bottom:auto}
+/* Compact controls on short screens; the play surface remains non-scrolling. */
+@media(max-height:640px){
+ .playing .brand>span,.playing .progress-label,.playing .board-tip,.playing .tool-wrap>span{display:none}
+ .playing .topbar{height:36px;padding-top:3px;padding-bottom:3px}
+ .playing .icon-btn{width:29px;height:29px;border-radius:10px}
+ .playing .brand strong{font-size:17px}.playing .brand svg{width:19px;height:19px}
+ .playing .level-label .eyebrow{display:none}.playing .level-bar{height:32px}
+ .playing .board-heading{height:20px;margin-bottom:3px}.playing .reference canvas{width:16px;height:17px}
+ .playing .board-controls{padding-top:2px}.playing .board-controls button{padding-top:2px;padding-bottom:2px}
+ .playing .play-screen{gap:4px}.playing .tray-card{padding:6px 7px 4px}.playing .tray-heading{margin-bottom:4px}
+ .playing .tool-button{width:37px;height:36px;border-radius:12px}.playing .tool-button svg{width:22px;height:22px}.playing .tool-wrap>strong{font-size:9px;margin-top:3px}
+ .playing .tutorial-guide{padding:4px 7px}.playing .tutorial-guide p{font-size:10px;line-height:1.35}
+ .playing .instruction{min-height:19px;font-size:9px}.playing .tray-grid{gap:3px}
+}
+@media(orientation:landscape) and (max-height:500px){
+ .playing .topbar{height:30px}.playing .level-bar{height:27px}.playing .tool-wrap>strong{display:none}
+ .playing .board-heading,.playing .play-footer{display:none}.playing .tool-button{height:28px;width:34px}.playing .tool-plus{width:18px;height:18px;top:-1px}
+ .playing .tray-heading strong{font-size:9px}.playing .tray-heading button{font-size:9px;padding:3px 6px}
 }

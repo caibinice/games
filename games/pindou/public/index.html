@@ -11,9 +11,9 @@
   <link rel="icon" type="image/svg+xml" href="./assets/icon.svg">
   <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./style.css?v=20261009-1">
-  <link rel="stylesheet" href="./compact.css?v=20261009-1">
-  <link rel="stylesheet" href="./readability.css?v=20261009-1">
+  <link rel="stylesheet" href="./style.css?v=20261011-2">
+  <link rel="stylesheet" href="./compact.css?v=20261011-2">
+  <link rel="stylesheet" href="./readability.css?v=20261011-2">
   <link rel="preload" href="./assets/meadow.webp" as="image">
 </head>
 <body>
@@ -44,7 +44,7 @@
         <div class="board-controls"><button id="mode-btn" class="mode-button" aria-pressed="false">同色连取</button><div class="zoom-controls"><button id="zoom-out" aria-label="缩小">−</button><button id="zoom-reset" aria-label="重置画板缩放"><span id="zoom-text">100%</span></button><button id="zoom-in" aria-label="放大">+</button></div><span class="board-tip">双指缩放 · 拖动画板</span></div>
       </section>
       <div id="instruction" class="instruction" role="status" aria-live="polite"><span class="step-dot">1</span><span id="instruction-text">点一组错色豆，再点下方空格暂存</span><button id="cancel-btn" hidden aria-label="取消选择">×</button></div>
-      <section class="tray-card" aria-label="暂存盒"><div class="tray-heading"><div><strong>我的暂存盒</strong><span id="tray-count">0 / 24</span></div><button id="add-row-btn">＋ 免费加一行</button></div><div id="tray" class="tray-grid"></div><div class="tray-foot"><span id="row-count">2 行空间</span><span>自由扩容，不限次数 <span class="tiny-sparkle">✧</span></span></div></section>
+      <section class="tray-card" aria-label="暂存盒"><div class="tray-heading"><div><strong>我的暂存盒</strong><span id="tray-count">0 / 24</span></div><button id="add-row-btn">＋ 免费加一行</button></div><div id="tray" class="tray-grid"></div><div class="tray-foot"><span id="row-count">2 行空间</span><div id="tray-pages" class="tray-pages" hidden><button id="tray-prev" aria-label="暂存盒前几行">‹</button><span id="tray-page-label"></span><button id="tray-next" aria-label="暂存盒后几行">›</button></div></div></section>
       <div class="toolbelt"><div class="tool-wrap"><button id="magnet-btn" class="tool-button coral" aria-label="使用磁铁"><svg><use href="#i-magnet"/></svg><span id="magnet-count" class="tool-count">1</span></button><button class="tool-plus" data-claim="magnet" aria-label="免费领取磁铁">+</button><strong>小磁铁</strong><span>归位 10 颗</span></div><div class="tool-wrap"><button id="brush-btn" class="tool-button butter" aria-label="使用整理刷"><svg><use href="#i-brush"/></svg><span id="brush-count" class="tool-count">1</span></button><button class="tool-plus" data-claim="brush" aria-label="免费领取整理刷">+</button><strong>整理刷</strong><span>暂存豆一键归位</span></div><div class="tool-wrap"><button id="time-tool-btn" class="tool-button mint" aria-label="免费增加三分钟"><svg><use href="#i-clock"/></svg><span class="free-dot">+</span></button><strong>慢慢拼</strong><span>免费 ＋3 分钟</span></div><div class="tool-wrap"><button id="undo-btn" class="tool-button lavender" aria-label="撤销上一步"><svg><use href="#i-undo"/></svg></button><strong>退一步</strong><span>撤销上次移动</span></div></div>
       <footer class="play-footer"><span><i></i>进度自动保存</span><button id="help-btn">怎么玩？</button></footer>
     </section>
@@ -54,7 +54,7 @@
     <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
   </main>
   <aside class="desktop-art" aria-hidden="true"><div class="postcard"><img src="./assets/cottage.webp" alt="" loading="lazy"><span>slow days, happy paws.</span></div><p>取出 · 暂存 · 归位<br><span>不赶时间，也不打扰。</span></p></aside>
-  <script type="module" src="./app.mjs?v=20261009-1"></script>
+  <script type="module" src="./app.mjs?v=20261011-2"></script>
 </body>
 </html>
 

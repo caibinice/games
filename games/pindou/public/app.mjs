@@ -2,7 +2,7 @@ import { LEVELS, CHAPTERS, TOTAL_LEVELS, getArtwork } from './artworks.mjs';
 import { newGame, gameArtwork, correctCount, completedColors, selectBoard, selectTray, addRow, extend, undo, magnet, brush, serialize, restore } from './engine.mjs';
 import { GUIDE_STEPS, inferGuideStep, advanceGuideStep, highlightedGuideCells } from './guide.mjs';
 import { hiddenTapSequence, jumpLevelId } from './admin.mjs';
-import { drawBead, completionFlash, COLOR_FLASH_MS } from './beads.mjs';
+import { drawBead, completionFlash, COLOR_FLASH_MS, visibleTrayRange } from './beads.mjs';
 
 const $=id=>document.getElementById(id),icon=name=>`<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const COOKIE_PATH='/games/pindou';
@@ -13,7 +13,8 @@ const defaults={v:1,completed:{},unlocked:1,last:1,sound:true,autoFullscreen:tru
 function readProgress(){try{let p=JSON.parse(readCookie('pindou_progress'));if(p?.v!==1)throw 0;if(Array.isArray(p.c))p={v:1,completed:Object.fromEntries(p.c.filter(v=>Array.isArray(v)&&v.length===3).map(([id,moves,elapsed])=>[id,{moves,elapsed}])),last:p.l,sound:p.s,autoFullscreen:p.f,numbers:p.n,tutorialDone:p.g===2};const completed={};for(const [k,v]of Object.entries(p.completed||{}))if(Number.isInteger(+k)&&+k>=1&&+k<=TOTAL_LEVELS&&Number.isFinite(v.moves)&&v.moves>=0&&Number.isFinite(v.elapsed)&&v.elapsed>=0)completed[k]=v;const highest=Math.max(0,...Object.keys(completed).map(Number));return {...defaults,...p,completed,unlocked:Math.min(TOTAL_LEVELS,Math.max(1,highest+1)),last:Math.min(TOTAL_LEVELS,Math.max(1,Math.floor(p.last)||1)),sound:p.sound!==false,autoFullscreen:p.autoFullscreen!==false,numbers:p.numbers===true,tutorialDone:p.tutorialDone===true||!!completed[1]};}catch{return {...defaults,completed:{}};}}
 let progress=readProgress(),game=restore(readCookie('pindou_session')),screen='home',modalOpen=false,modalDismiss=null,toastTimer,boardHintTimer,single=false;
 let zoom=1,panX=0,panY=0,geo={cell:1,left:0,top:0,width:1,height:1},keyboardCell=0,audio=null,lastTick=performance.now(),lastSave=0,saveTimer,confettiFrame;
-let tutorial=null;
+let tutorial=null,trayOffset=0,flightFrame,flights=[];
+const flightCanvas=document.createElement("canvas");flightCanvas.id="bead-effects";flightCanvas.setAttribute("aria-hidden","true");$("app").append(flightCanvas);const flightCtx=flightCanvas.getContext("2d");
 let placement=null,effectsFrame,completed=new Set();
 const colorFlashes=new Map();
 const ctx=$('board').getContext('2d'),pointers=new Map();let gesture=null,suppressClick=false;
@@ -36,7 +37,7 @@ function contourBase(c,level,left,top,cell){
 function contourEdge(c,level,left,top,cell){
   c.save();contourPath(c,level,left,top,cell);c.strokeStyle='#fffdf2';c.lineWidth=2;c.lineJoin='round';c.stroke();c.restore();
 }
-function stopEffects(){cancelAnimationFrame(effectsFrame);effectsFrame=null;placement=null;colorFlashes.clear();}
+function stopEffects(){cancelAnimationFrame(flightFrame);flightFrame=null;flights=[];flightCtx.clearRect(0,0,flightCanvas.width,flightCanvas.height);cancelAnimationFrame(effectsFrame);effectsFrame=null;placement=null;colorFlashes.clear();}
 function stopPlacement(){placement=null;if(!colorFlashes.size){cancelAnimationFrame(effectsFrame);effectsFrame=null;}}
 function animateEffects(){
   if(effectsFrame)return;
@@ -77,9 +78,6 @@ function draw(){
   if($('win-art')){thumb($('win-art'),gameArtwork(game),true,true);return;}
   const level=gameArtwork(game),viewport=$('board-viewport'),w=viewport.clientWidth;if(!w)return;
   viewport.classList.toggle('contoured',!!level.contoured);
-  // A tray expansion must never shrink the default board. Short displays scroll.
-  const minHeight=`${Math.ceil((w-8)*level.height/level.width+8)}px`;
-  if(viewport.style.minHeight!==minHeight)viewport.style.minHeight=minHeight;
   const h=viewport.clientHeight;if(!h)return;
   const dpr=Math.min(devicePixelRatio||1,2),canvas=$('board');if(canvas.width!==Math.round(w*dpr)||canvas.height!==Math.round(h*dpr)){canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);}
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
@@ -99,12 +97,29 @@ function draw(){
   if(level.contoured)contourEdge(ctx,level,left,top,cell);
   $('zoom-text').textContent=`${Math.round(zoom*100)}%`;
 }
+function trayRange(){return visibleTrayRange(game.rows,trayOffset,Math.min(innerHeight,window.visualViewport?.height||innerHeight)<520?1:Math.min(innerHeight,window.visualViewport?.height||innerHeight)<740?2:3);}
 function renderTray(){
-  const level=gameArtwork(game),selection=game.selection?.source==='tray'?new Set(game.selection.indices):new Set(),tray=$('tray');
+  const level=gameArtwork(game),selection=game.selection?.source==='tray'?new Set(game.selection.indices):new Set(),tray=$('tray'),range=trayRange();trayOffset=range.offset;
   const used=game.tray.filter(c=>c!==null).length;$('tray-count').textContent=`${used} / ${game.rows*12}`;$('row-count').textContent=`${game.rows} 行空间`;
-  // Every added row is visible; only the whole game page scrolls.
-  tray.innerHTML=game.tray.map((color,i)=>`<button class="tray-slot${selection.has(i)?' selected':''}" data-slot="${i}" aria-label="暂存格 ${i+1}${color===null?'，空':`，颜色 ${color+1}`}" aria-pressed="${selection.has(i)}">${color===null?'':`<span class="bead" style="--color:${level.palette[color]}">${progress.numbers?`<small>${color+1}</small>`:''}</span>`}</button>`).join('');
+  tray.innerHTML=game.tray.slice(range.start,range.end).map((color,n)=>{const i=range.start+n;return `<button class="tray-slot${selection.has(i)?' selected':''}" data-slot="${i}" aria-label="暂存格 ${i+1}${color===null?'，空':`，颜色 ${color+1}`}" aria-pressed="${selection.has(i)}">${color===null?'':'<canvas class="bead" width="80" height="80" aria-hidden="true"></canvas>'}</button>`;}).join('');
+  tray.querySelectorAll('canvas').forEach(canvas=>{const color=game.tray[+canvas.parentElement.dataset.slot];drawBead(canvas.getContext('2d'),0,0,80,level.palette[color],{targetColor:'#eeeef2',number:progress.numbers?color+1:null});});
+  $('tray-pages').hidden=!range.maxOffset;$('tray-prev').disabled=!range.offset;$('tray-next').disabled=range.offset===range.maxOffset;$('tray-page-label').textContent=`${range.offset+1}–${range.offset+range.count} / ${game.rows} 行`;
   tray.classList.toggle('accepting',game.selection?.source==='board');
+}
+function captureMove(){return{board:[...game.board],tray:[...game.tray],selection:game.selection?structuredClone(game.selection):null,points:new Map(game.selection?.indices.map(i=>[i,movePoint(game.selection.source,i)])||[])};}
+function movePoint(source,index){
+  const r=(source==='board'?$('board'):$('tray')).getBoundingClientRect();if(source==='board'){const l=gameArtwork(game);return{x:r.x+geo.left+(index%l.width+.5)*geo.cell,y:r.y+geo.top+(Math.floor(index/l.width)+.5)*geo.cell,size:geo.cell};}
+  const slot=$('tray').querySelector(`[data-slot="${index}"]`)?.getBoundingClientRect();return slot?{x:slot.x+slot.width/2,y:slot.y+slot.height/2,size:slot.width}:{x:r.x+r.width/2,y:r.y+r.height/2,size:geo.cell};
+}
+function animateMove(result,before){
+  if(!before?.selection||!result.moved||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const selection=before.selection,color=selection.color,l=gameArtwork(game),sources=selection.indices.filter(i=>selection.source==='board'?before.board[i]!==null&&game.board[i]===null:before.tray[i]===color);
+  if(selection.source==='board')sources.sort((a,b)=>(l.target[a]!==selection.priorityBackground)-(l.target[b]!==selection.priorityBackground));
+  const destinations=result.route==='store'?game.tray.map((c,i)=>c===color?i:-1).filter(i=>i>=0).slice(-result.moved):result.placed||[];
+  const now=performance.now();for(let n=0;n<Math.min(sources.length,destinations.length,96);n++)flights.push({from:before.points.get(sources[n])||movePoint(selection.source,sources[n]),to:movePoint(result.route==='store'?'tray':'board',destinations[n]),color:l.palette[color],start:now+Math.min(60,n*1.5)});
+  if(flightFrame)return;
+  const frame=time=>{flightFrame=null;const app=$('app'),r=app.getBoundingClientRect(),w=app.clientWidth,h=app.clientHeight,dpr=Math.min(devicePixelRatio||1,2);if(flightCanvas.width!==Math.round(w*dpr)||flightCanvas.height!==Math.round(h*dpr)){flightCanvas.width=Math.round(w*dpr);flightCanvas.height=Math.round(h*dpr);}flightCtx.setTransform(dpr,0,0,dpr,0,0);flightCtx.clearRect(0,0,w,h);
+    flights=flights.filter(f=>time-f.start<320);for(const f of flights){const t=Math.max(0,Math.min(1,(time-f.start)/320)),e=1-Math.pow(1-t,2),size=f.from.size*(1-e)+f.to.size*e,x=f.from.x+(f.to.x-f.from.x)*e-r.x,y=f.from.y+(f.to.y-f.from.y)*e-r.y-Math.sin(Math.PI*t)*18;flightCtx.save();rounded(flightCtx,x-size/2,y-size/2,size,size,size*.16);flightCtx.clip();drawBead(flightCtx,x-size/2,y-size/2,size,f.color,{targetColor:f.color});flightCtx.restore();}if(flights.length)flightFrame=requestAnimationFrame(frame);};flightFrame=requestAnimationFrame(frame);
 }
 function renderInstruction(){
   const s=game.selection;$('instruction').classList.toggle('active',!!s);$('cancel-btn').hidden=!s;
@@ -119,23 +134,23 @@ function updateHUD(){
   const seconds=Math.max(0,Math.ceil(game.remaining));$('timer-text').textContent=`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;$('timer-btn').classList.toggle('urgent',seconds<=30);
 }
 function renderAll(){syncCompletedColors();updateHUD();renderInstruction();renderTray();renderTutorial();draw();saveSoon();}
-function resultFeedback(result){
+function resultFeedback(result,before=null){
   if(!result.ok){const messages={correct:'颜色已一致，这一格已经拼好了',full:'暂存盒满了，点「免费加一行」扩容',color:'小方块的颜色要和空格底色相同',occupied:'先选走这里的错色豆，让格子空出来',empty:'先选画板错色豆，再点空格暂存',select:'先选画板错色豆或暂存豆', 'no-holes':'先选走错色豆，空格就能接住暂存豆',tool:'点右上角 ＋ 免费领取道具',nothing:'每颗豆都已归位'};if(messages[result.reason])hint(messages[result.reason]);return;}
   if(tutorial)tutorial.step=advanceGuideStep(tutorial.step,result,game,gameArtwork(game));
   const newly=syncCompletedColors(!!result.moved);
-  sound(result.moved?'place':'pick');animatePlacement(result.placed);renderAll();if(result.won)win();
+  sound(result.moved?'place':'pick');if(result.route==='store'){const first=game.tray.indexOf(before?.selection?.color);if(first>=0)trayOffset=Math.floor(first/12);}animatePlacement(result.placed);renderAll();animateMove(result,before);if(result.won)win();
   else if(result.moved&&result.remaining>0)toast(`已放 ${result.moved} 颗，还剩 ${result.remaining} 颗 · 继续点空格`);
   else if(newly.length)hint(`${result.placed?.length>1?`啪嗒！一口气归位 ${result.moved} 颗 · `:''}${newly.length===1?'这一色':`${newly.length} 种颜色`}全部拼齐啦 ✦`);
   else if(result.placed?.length>1)hint(`啪嗒！一口气归位 ${result.moved} 颗`);
 }
 function syncTutorial(){if(tutorial)tutorial.step=inferGuideStep(game,gameArtwork(game));}
-function boardTap(index){if(!game||modalOpen)return;if(game.selection?.source==='board'&&game.selection.indices.includes(index)){game.selection=null;syncTutorial();renderAll();return;}keyboardCell=index;resultFeedback(selectBoard(game,index,single));}
-function trayTap(index){if(!game||modalOpen)return;if(game.selection?.source==='tray'&&game.selection.indices.includes(index)){game.selection=null;syncTutorial();renderAll();return;}resultFeedback(selectTray(game,index,single));}
+function boardTap(index){if(!game||modalOpen)return;if(game.selection?.source==='board'&&game.selection.indices.includes(index)){game.selection=null;syncTutorial();renderAll();return;}keyboardCell=index;const before=captureMove();resultFeedback(selectBoard(game,index,single),before);}
+function trayTap(index){if(!game||modalOpen)return;if(game.selection?.source==='tray'&&game.selection.indices.includes(index)){game.selection=null;syncTutorial();renderAll();return;}const before=captureMove();resultFeedback(selectTray(game,index,single),before);}
 function catalogueArtwork(id){return game?.level===id?gameArtwork(game):getArtwork(id);}
 function updateHome(){const count=Object.keys(progress.completed).length,level=game?gameArtwork(game):getArtwork(progress.last||1);$('home-progress').textContent=`已收藏 ${count} / ${TOTAL_LEVELS}`;$('start-label').textContent=game?`继续第 ${String(game.level).padStart(2,'0')} 关`:count===TOTAL_LEVELS?'再来拼一幅':`开始第 ${String(progress.unlocked).padStart(2,'0')} 关`;thumb($('home-art'),level,true);if(screen==='home')$('scenery').style.backgroundImage=`url('./assets/${level.background}')`;}
 function showHome(){dismiss();stopEffects();completed=new Set();tutorial=null;$('app').classList.remove('playing');$('app').scrollTop=0;renderTutorial();screen='home';$('home-screen').hidden=false;$('play-screen').hidden=true;$('scenery').style.backgroundImage="url('./assets/meadow.webp')";updateHome();persist();}
 function enterLevel(id,existing=false,forceGuide=false){
-  dismiss();stopEffects();tutorial=null;if(!existing||!game)game=newGame(id);completed=completedColors(game);if(forceGuide)progress.tutorialDone=false;progress.last=game.level;screen='play';$('app').classList.add('playing');$('app').scrollTop=0;$('home-screen').hidden=true;$('play-screen').hidden=false;zoom=1;panX=panY=0;keyboardCell=0;
+  dismiss();stopEffects();tutorial=null;if(!existing||!game)game=newGame(id);completed=completedColors(game);if(forceGuide)progress.tutorialDone=false;progress.last=game.level;screen='play';trayOffset=0;$('app').classList.add('playing');fitViewport();$('app').scrollTop=0;$('home-screen').hidden=true;$('play-screen').hidden=false;zoom=1;panX=panY=0;keyboardCell=0;
   const level=gameArtwork(game);keyboardCell=level.target.findIndex(c=>c!==null);$('scenery').style.backgroundImage=`url('./assets/${level.background}')`;thumb($('reference-canvas'),level);lastTick=performance.now();requestAnimationFrame(()=>renderAll());persist();
   if(progress.autoFullscreen)fullscreen(false);
   if(game.status==='timeout')timeoutDialog();
@@ -184,7 +199,7 @@ function settings(){
 }
 function confirmRestart(id){modal(`<div class="center"><div class="modal-icon">${icon('paw')}</div><h2 id="modal-title">重新拼这一幅？</h2><p>这一关的画板和暂存盒会重新开始。<br>已收藏的图案会好好保留。</p><button id="restart-confirm" class="primary-button">重新开始</button><button id="restart-cancel" class="secondary-button">接着慢慢拼</button></div>`);$('restart-confirm').onclick=()=>enterLevel(id);$('restart-cancel').onclick=dismiss;}
 function help(){
-  modal(`<span class="overline">A TINY GUIDE</span><h2 id="modal-title">两条路线，都能归位</h2><ol class="help-steps"><li><b>1</b><div><strong>看底色，选错色豆</strong><br>看凸起豆子的颜色，再看周围的目标底色。两种颜色不同才需要移动；豆色和底色一致就已归位。凹下去的格子是空槽。点错色豆，连选上下左右相邻且豆色相同的错色豆，跨底色也能连选，没有数量上限。正确豆和空槽不连选。</div></li><li><b>2</b><div><strong>有同色空格？直接放！</strong><br>选中画板错色豆，直接点相同底色的凹槽空格，不用经过暂存盒。一次填满点击处连续的同色空格。先搬最初点选豆子所在底色下的选中豆，再搬其它底色下的选中豆。没放完的豆保持选中，可接着点其它地方的同色空格。</div></li><li><b>3</b><div><strong>没有空格？先暂存</strong><br>点下方空格收豆，不限制单次颗数，按剩余空位尽量收下全部选中豆；空间不足时剩余豆继续选中；暂存盒会自动排齐并归并同色。再点暂存豆，放进画板同色空格。空间满了可免费加一行。</div></li></ol><div class="help-note">✧ 100% 已能看清全部格子；同色连取可以一片归位。点「同色连取」切换单颗操作；双指、滚轮或 ＋ − 缩放，放大后可拖动画板。<br>✧ 某一色全部归位时，整色轻闪一次，原有凸豆保留立体斜面与阴影，并持续带有静态炫光。<br>✧ 不规则关卡只显示图形轮廓，图形外的留白不是空槽；同底色的外沿可以连续连取。<br>✧ 新增暂存行完整展开，只需滚动整个画面。<br>✧ 小磁铁归位 10 颗；整理刷把暂存豆放回空格。<br>✧ 道具旁 ＋ 免费领取，时钟每次 ＋3 分钟，不限次数。<br>✧ 左上角设置音效、编号、自动全屏，右上角手动全屏。<br>✧ 打开弹窗或离开页面暂停计时，进度自动保存。</div><button class="primary-button" id="help-close">懂啦，接着拼</button>`);$('help-close').onclick=dismiss;
+  modal(`<span class="overline">A TINY GUIDE</span><h2 id="modal-title">两条路线，都能归位</h2><ol class="help-steps"><li><b>1</b><div><strong>看底色，选错色豆</strong><br>看凸起豆子的颜色，再看周围的目标底色。两种颜色不同才需要移动；豆色和底色一致就已归位。凹下去的格子是空槽。点错色豆，连选上下左右相邻且豆色相同的错色豆，跨底色也能连选，没有数量上限。正确豆和空槽不连选。</div></li><li><b>2</b><div><strong>有同色空格？直接放！</strong><br>选中画板错色豆，直接点相同底色的凹槽空格，不用经过暂存盒。一次填满点击处连续的同色空格。先搬最初点选豆子所在底色下的选中豆，再搬其它底色下的选中豆。没放完的豆保持选中，可接着点其它地方的同色空格。</div></li><li><b>3</b><div><strong>没有空格？先暂存</strong><br>点下方空格收豆，不限制单次颗数，按剩余空位尽量收下全部选中豆；空间不足时剩余豆继续选中；暂存盒会自动排齐并归并同色。再点暂存豆，放进画板同色空格。空间满了可免费加一行。</div></li></ol><div class="help-note">✧ 100% 已能看清全部格子；同色连取可以一片归位。点「同色连取」切换单颗操作；双指、滚轮或 ＋ − 缩放，放大后可拖动画板。<br>✧ 某一色全部归位时，整色轻闪一次，原有凸豆保留立体斜面与阴影，并持续带有静态炫光。<br>✧ 不规则关卡只显示图形轮廓，图形外的留白不是空槽；同底色的外沿可以连续连取。<br>✧ 新增暂存行自动显示；行数多时使用暂存盒底部左右箭头翻行，全部空间都可访问，不需要滚动整个画面。<br>✧ 小磁铁归位 10 颗；整理刷把暂存豆放回空格。<br>✧ 道具旁 ＋ 免费领取，时钟每次 ＋3 分钟，不限次数。<br>✧ 左上角设置音效、编号、自动全屏，右上角手动全屏。<br>✧ 打开弹窗或离开页面暂停计时，进度自动保存。</div><button class="primary-button" id="help-close">懂啦，接着拼</button>`);$('help-close').onclick=dismiss;
 }
 function levels(chapter=game?gameArtwork(game).chapter:Math.floor((progress.unlocked-1)/10)){
   modal(`<span class="overline">THE LITTLE COLLECTION</span><h2 id="modal-title">毛球图鉴 <small style="font-size:11px;color:#a0ab90">${Object.keys(progress.completed).length} / ${TOTAL_LEVELS}</small></h2><div class="chapter-tabs">${CHAPTERS.map((c,i)=>`<button data-chapter="${i}" class="${i===chapter?'active':''}">${c.name}</button>`).join('')}</div><div class="level-grid">${LEVELS.map(l=>catalogueArtwork(l.id)).filter(l=>l.chapter===chapter).map(l=>{const done=progress.completed[l.id],locked=l.id>progress.unlocked;return `<button class="level-tile${locked?' locked':''}${game?.level===l.id?' current':''}" data-level="${l.id}" aria-label="第 ${l.id} 关 ${l.name}${locked?'，尚未解锁':''}"${locked?' aria-disabled="true"':''}><canvas id="level-art-${l.id}" width="180" height="194"></canvas><span class="tile-badge">${done?'✓ 已收藏':locked?'未解锁':game?.level===l.id?'进行中':'可以开拼'}</span><strong>${String(l.id).padStart(2,'0')} · ${l.name}</strong><small>${l.width} × ${l.height} · ${l.cellCount} 颗${done?` · ${done.moves} 步`:''}</small></button>`;}).join('')}</div>`,{className:'level-modal'});
@@ -260,10 +275,10 @@ $('brand-entry').onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&!e.repeat){e.p
 $('tutorial-skip').onclick=()=>{completeTutorial();renderAll();toast('随时可在设置里重玩新手教学');};
 $('cancel-btn').onclick=()=>{game.selection=null;syncTutorial();renderAll();};$('mode-btn').onclick=()=>{single=!single;$('mode-btn').textContent=single?'单颗操作':'同色连取';$('mode-btn').setAttribute('aria-pressed',single);if(game){game.selection=null;syncTutorial();renderAll();}toast(single?'现在一次只取一颗豆':'相邻同色错色豆连取，跨底色、不限数量');};
 $('zoom-in').onclick=()=>{zoom=Math.min(3.2,zoom+.35);draw();};$('zoom-out').onclick=()=>{zoom=Math.max(1,zoom-.35);draw();};$('zoom-reset').onclick=()=>{zoom=1;panX=panY=0;draw();};
-$('add-row-btn').onclick=()=>{
-  if(!game)return;const current=game;addRow(game);renderAll();toast(`已扩展到 ${game.rows} 行，免费空间 ＋12`);
-  requestAnimationFrame(()=>{if(game===current&&screen==='play')$('tray').querySelector(`[data-slot="${(game.rows-1)*12}"]`)?.scrollIntoView({block:'nearest',behavior:'instant'});});
-};
+$('add-row-btn').onclick=()=>{if(!game)return;addRow(game);trayOffset=trayRange().maxOffset;renderAll();toast(`已扩展到 ${game.rows} 行，新的一行已显示`);};
+$('tray-prev').onclick=()=>{trayOffset-=trayRange().count;renderTray();};$('tray-next').onclick=()=>{trayOffset+=trayRange().count;renderTray();};
 $('magnet-btn').onclick=()=>resultFeedback(magnet(game));$('brush-btn').onclick=()=>resultFeedback(brush(game));document.querySelectorAll('[data-claim]').forEach(b=>b.onclick=()=>freeTool(b.dataset.claim));
 $('time-tool-btn').onclick=addTime;$('timer-btn').onclick=addTime;$('undo-btn').onclick=()=>{if(undo(game)){stopEffects();syncTutorial();renderAll();sound();toast('已退回上一步');}};
+function fitViewport(){const height=Math.round(Math.min(innerHeight,window.visualViewport?.height||innerHeight));document.documentElement.style.setProperty('--play-height',height+'px');if(game&&screen==='play'){window.scrollTo(0,0);$('app').scrollTop=0;requestAnimationFrame(()=>{renderTray();draw();});}}
+window.addEventListener('resize',fitViewport);window.visualViewport?.addEventListener('resize',fitViewport);document.addEventListener('fullscreenchange',()=>{fitViewport();setTimeout(fitViewport,100);setTimeout(fitViewport,350);});fitViewport();
 updateHome();

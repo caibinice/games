@@ -1,9 +1,9 @@
 /* Quiet surroundings, broad color regions, and matching concave/convex tiles. */
-.playing{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.playing{overflow:hidden;overscroll-behavior:contain;scrollbar-width:none}
 .playing::-webkit-scrollbar{display:none}
-.playing .play-screen{flex:1 0 auto}
+.playing .play-screen{flex:1;min-height:0}
 .playing:fullscreen>.play-screen{max-height:none}
-.playing .board-card{flex:1 0 auto}
+.playing .board-card{flex:1;min-height:0}
 .playing .topbar{position:sticky;top:0;z-index:5;background:#eef3e7}
 .playing .modal-backdrop{position:fixed;inset:0;left:50%;transform:translateX(-50%);width:min(100%,460px);height:100dvh}
 .playing:fullscreen .modal-backdrop{padding:max(20px,env(safe-area-inset-top)) 20px}
@@ -59,3 +59,24 @@
 @media(max-width:360px){.board-legend{font-size:8px;gap:6px}.legend-cell{width:14px;height:14px}.instruction{font-size:10px}}
 @media(max-width:800px){.playing .modal-backdrop{width:min(100%,520px)}}
 @media(max-height:740px) and (max-width:800px){.playing .play-screen{gap:6px}.board-legend{padding-top:4px}.tutorial-guide{padding:6px 9px}}
+
+/* Fixed visible-viewport height, including Chrome's expanding/collapsing chrome. */
+body:has(.playing){height:min(var(--play-height,100dvh),100dvh);min-height:0;overflow:hidden;overscroll-behavior:none}
+.game-shell.playing,.game-shell.playing:fullscreen{height:min(var(--play-height,100dvh),100dvh,940px);min-height:0;overflow:hidden}
+.game-shell.playing:fullscreen,.game-shell.playing.immersive{height:min(var(--play-height,100dvh),100dvh)!important}
+.playing .topbar{position:relative;top:auto;height:48px;flex-shrink:0;padding:5px 15px}
+.playing .play-screen{flex:1;min-height:0;max-height:none;padding:0 10px max(5px,env(safe-area-inset-bottom));gap:6px;width:100%}
+.playing .level-bar{height:38px;flex-shrink:0;padding:0 2px}.playing .level-label .eyebrow{font-size:8px;margin-bottom:2px}.playing .level-label strong{font-size:12px}.playing #level-number{font-size:18px}.playing .timer{padding:6px 8px}.playing .timer strong{font-size:17px}
+.playing .board-card{flex:1;min-height:0;padding:6px 5px 3px;overflow:hidden}.playing .board-viewport{flex:1;min-height:0!important}
+.playing .board-heading{height:25px;margin:0 3px 4px}.playing .progress-label{font-size:9px}.playing .progress-track{height:4px;margin-top:5px}.playing .reference{padding:2px 5px}.playing .reference canvas{height:21px;width:19px}.playing .reference span{writing-mode:initial;font-size:8px;letter-spacing:0}
+.playing .board-legend{display:none}.playing .board-controls{padding:4px 2px 1px}.playing .board-tip{font-size:8px}
+.playing .instruction{min-height:21px;justify-content:flex-start;font-size:10px}.playing #instruction-text{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;flex:1}.playing #cancel-btn{flex-shrink:0}
+.playing .tray-card{padding:8px 9px 5px;border-radius:14px}.playing .tray-heading{margin-bottom:5px}.playing .tray-heading strong{font-size:11px}.playing .tray-heading button{font-size:10px;padding:4px 6px}
+.playing .tray-grid{gap:4px;overflow:visible;max-height:none}.tray-slot canvas.bead{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;box-shadow:none;border-radius:5px;display:block}
+.playing .tray-slot.selected{outline:2px solid #224f87;outline-offset:1px}.playing .tray-foot{height:23px;align-items:center;padding:4px 2px 0;font-size:9px}.tray-pages{display:flex;align-items:center;gap:5px}.tray-pages button{background:#e7eedc;color:#627e63;border-radius:6px;width:27px;height:23px;padding:0;font-size:20px;line-height:21px}.tray-pages span{font-variant-numeric:tabular-nums;font-size:9px}
+.playing .toolbelt{padding:1px 4px 0}.playing .tool-button{width:46px;height:44px;border-radius:14px}.playing .tool-button svg{width:27px;height:27px}.playing .tool-wrap>strong{font-size:9px;margin-top:4px}.playing .tool-wrap>span{display:none}.playing .play-footer{font-size:8px;padding:0;height:13px}
+#bead-effects{position:absolute;inset:0;width:100%;height:100%;z-index:12;pointer-events:none}.playing .toast{bottom:100px;white-space:normal;width:max-content;max-width:90%}.playing .board-bubble{font-size:10px;white-space:normal;max-width:95%;width:max-content}
+@media(max-width:800px){.game-shell.playing{height:min(var(--play-height,100dvh),100dvh);min-height:0;max-width:520px}}
+@media(max-height:640px){.playing .topbar{height:36px;padding:3px 12px}.playing .play-screen{gap:4px}.playing .level-bar{height:30px}.playing .board-heading{height:20px}.playing .tool-button{width:37px;height:36px}.playing .board-controls{padding-top:2px}.playing .tray-card{padding:6px 7px 4px}.playing .tray-heading{margin-bottom:4px}.playing .tray-grid{gap:3px}.playing .instruction{font-size:9px;min-height:19px}.playing .tutorial-guide p{font-size:10px}}
+@media(orientation:landscape) and (max-height:500px){.game-shell.playing{width:360px;min-height:0;overflow:hidden}.playing .play-screen{min-height:0;flex:1}.playing .board-card{min-height:0}.playing .topbar{height:30px}.playing .level-bar{height:27px}.playing .tool-button{height:28px;width:34px}.playing .play-footer,.playing .board-heading{display:none}}
+.playing{touch-action:none}.playing:has(.modal-backdrop){touch-action:auto}

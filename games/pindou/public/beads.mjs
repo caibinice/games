@@ -10,7 +10,14 @@ export function tint(hex,amount){
   return '#'+channels.map(v=>Math.round(amount>=0?v+(255-v)*amount:v*(1+amount)).toString(16).padStart(2,'0')).join('');
 }
 export function beadGeometry(size){
-  return {inset:size*.11,span:size*.78,radius:size*.15,lift:size*.035};
+  return {inset:size*.14,span:size*.72,radius:size*.14,lift:size*.085};
+}
+// A fixed-height game can expose an unlimited tray through contiguous row pages
+// rather than a nested scrollbar or an ever-growing document.
+export function visibleTrayRange(rows,offset=0,visibleRows=3){
+  const count=Math.min(rows,Math.max(1,visibleRows)),maxOffset=Math.max(0,rows-count);
+  offset=Math.min(maxOffset,Math.max(0,Math.floor(offset)||0));
+  return {start:offset*12,end:(offset+count)*12,offset,maxOffset,count};
 }
 function rounded(c,x,y,w,h,r){
   c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();
@@ -23,18 +30,19 @@ export function drawBead(c,x,y,size,color,{empty=false,selected=false,number=nul
   c.fillStyle=targetColor;c.fillRect(x-.1,y-.1,size+.2,size+.2);
   if(empty){
     const recess=c.createLinearGradient(bx,by,bx+span*.2,by+span);
-    recess.addColorStop(0,tint(targetColor,-.32));recess.addColorStop(.24,tint(targetColor,-.13));recess.addColorStop(1,tint(targetColor,-.05));
+    recess.addColorStop(0,tint(targetColor,-.38));recess.addColorStop(.14,tint(targetColor,-.23));recess.addColorStop(.42,tint(targetColor,-.12));recess.addColorStop(1,tint(targetColor,-.04));
     c.fillStyle=recess;rounded(c,bx,by,span,span,radius);c.fill();
     c.strokeStyle=tint(targetColor,-.22);c.lineWidth=Math.max(.55,size*.025);c.stroke();
     c.beginPath();c.moveTo(bx+radius*.6,by+span-.3);c.lineTo(bx+span-radius,by+span-.3);c.quadraticCurveTo(bx+span,by+span,bx+span,by+span-radius);c.strokeStyle=tint(targetColor,.48);c.lineWidth=Math.max(.7,size*.04);c.stroke();
   }else{
     // Colored undersides and opposing facets supply depth, not extra symbols.
-    c.fillStyle=tint(color,-.32);rounded(c,bx,by+lift,span,span,radius);c.fill();
-    const top=by-lift*.35,face=c.createLinearGradient(bx,top,bx,top+span);
-    face.addColorStop(0,tint(color,.24));face.addColorStop(.2,color);face.addColorStop(1,tint(color,-.13));
+    c.save();c.shadowColor=tint(targetColor,-.35)+'66';c.shadowBlur=size*.045;c.shadowOffsetY=size*.04;
+    c.fillStyle=tint(color,-.34);rounded(c,bx,by+lift,span,span,radius);c.fill();c.restore();
+    const top=by-lift*.55,face=c.createLinearGradient(bx,top,bx,top+span);
+    face.addColorStop(0,tint(color,.38));face.addColorStop(.22,tint(color,.12));face.addColorStop(1,tint(color,-.13));
     c.fillStyle=face;rounded(c,bx,top,span,span,radius);c.fill();
     c.save();c.clip();const cx=bx+span/2,cy=top+span/2;
-    const facets=[[[bx,top],[bx+span,top],.18],[[bx+span,top],[bx+span,top+span],-.05],[[bx+span,top+span],[bx,top+span],-.13],[[bx,top+span],[bx,top],.06]];
+    const facets=[[[bx,top],[bx+span,top],.27],[[bx+span,top],[bx+span,top+span],-.02],[[bx+span,top+span],[bx,top+span],-.17],[[bx,top+span],[bx,top],.11]];
     for(const [a,b,amount]of facets){c.fillStyle=tint(color,amount);c.beginPath();c.moveTo(...a);c.lineTo(...b);c.lineTo(cx,cy);c.closePath();c.fill();}
     if(completed){
       // A static reflection laid over the original facets: no flattening,

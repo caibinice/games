@@ -22,7 +22,7 @@ dist/games/         构建产物，按游戏分目录
 ```
 
 - [拼豆](https://caibinice.com/games/pindou/)：100 关 / 40 图，原存档保持兼容。
-- [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市，自制立体物品，七格三消与物理颠锅。
+- [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市 / 34 种自制模型，深箱堆叠、3D 七格三消与物理颠锅。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
 
 ## 开发与构建
@@ -63,5 +63,6 @@ pwsh -File scripts/deploy.ps1 -Games pindou   # 单独更新，保留其他游�
 - [本机凭据](credentials/README.md)
 - [此前独立仓库迁移](docs/migration.md)
 - [多游戏改造与抓大鹅上线验收](docs/multi-game-migration.md)
+- [三段录屏优化与一屏沉浸布局验收](docs/video-optimization-20261011.md)
 
 GitHub CI 离线运行检查、各游戏测试及发布测试，使用本仓库独立配置，不依赖博客或其他项目。
