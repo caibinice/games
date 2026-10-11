@@ -8,10 +8,10 @@ import {listGames,selectGames} from '../scripts/catalog.mjs';
 const work=process.env.GAMES_WORK_ROOT||(process.platform==='win32'?'E:/Documents/AI/codex':tmpdir());
 mkdirSync(join(work,'tmp'),{recursive:true});
 describe('Independent game build',()=>{
-  it('packs only the 33 public runtime files, preserving every module/asset byte',()=>{
+  it('packs only the 35 public runtime files, preserving every module/asset byte',()=>{
     const temp=mkdtempSync(join(work,'tmp/games-build-test-'));
     try{
-      const out=join(temp,'test-dist'),manifest=build({output:out,games:"pindou"});expect(manifest.files.filter(f=>f.path.startsWith("games/pindou/"))).toHaveLength(33);expect(manifest.games[0].facts).toEqual({levels:100,patterns:40});
+      const out=join(temp,'test-dist'),manifest=build({output:out,games:"pindou"});expect(manifest.files.filter(f=>f.path.startsWith("games/pindou/"))).toHaveLength(35);expect(manifest.games[0].facts).toEqual({levels:100,patterns:40});
       // Native Buffer equality checks every byte without walking millions of
       // numeric properties in Vitest's object comparator on slower CI runners.
       const expected=runtimeEntries(selectGames('pindou'));
@@ -29,7 +29,8 @@ describe('Independent game build',()=>{
       const single=build({output:out,games:'goose'});expect(single.games.map(g=>g.id)).toEqual(['goose']);expect(existsSync(join(out,'games/pindou'))).toBe(false);
       expect(JSON.parse(readFileSync(join(out,'games/catalog.json'),'utf8')).map(g=>g.id)).toEqual(['goose','pindou']);
       for(const name of ['three.module.js','three.core.js','cannon-es.js','three.LICENSE.txt','cannon-es.LICENSE.txt'])expect(existsSync(join(out,'games/goose/vendor',name))).toBe(true);
-      const batch=build({output:out,games:'pindou,goose'});expect(batch.games.map(g=>g.id)).toEqual(['pindou','goose']);expect(batch.files).toHaveLength(51);expect(existsSync(join(out,'games/goose/physics.mjs'))).toBe(true);
+      const batch=build({output:out,games:'pindou,goose'});expect(batch.games.map(g=>g.id)).toEqual(['pindou','goose']);expect(batch.files).toHaveLength(55);expect(existsSync(join(out,'games/goose/physics.mjs'))).toBe(true);
+      for(const id of ['pindou','goose']){expect(existsSync(join(out,`games/${id}/music.mjs`))).toBe(true);expect(existsSync(join(out,`games/${id}/assets/audio/music-loop.mp3`))).toBe(true);expect(existsSync(join(out,`games/${id}/assets/audio/music-loop.mp3.gz`))).toBe(false);}
       const expected=runtimeEntries(selectGames('pindou,goose'));for(const item of batch.files)expect(readFileSync(join(out,item.path)).equals(expected.get(item.path))).toBe(true);
       for(const name of ['three.module.js','three.core.js','cannon-es.js'])expect(gunzipSync(readFileSync(join(out,'games/goose/vendor',name+'.gz'))).equals(readFileSync(join(out,'games/goose/vendor',name)))).toBe(true);
     }finally{rmSync(temp,{recursive:true,force:true});}

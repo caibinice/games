@@ -56,7 +56,7 @@ class DeploymentTests(unittest.TestCase):
         (self.root / 'credentials').mkdir()
         (self.root / 'credentials/config.ini').write_text('TOKEN_FIXTURE', encoding='utf-8')
         archive = self.root / 'package.tar.gz'
-        self.assertEqual(len(deploy.package_dist(self.dist, archive)['files']), 37)
+        self.assertEqual(len(deploy.package_dist(self.dist, archive)['files']), 39)
         with tarfile.open(archive) as tar:
             names = tar.getnames()
         self.assertIn('www/games/pindou/index.html', names)

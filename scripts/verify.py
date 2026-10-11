@@ -10,6 +10,11 @@ def check(item):
  with urlopen(Request(url+item['path'],headers={'Accept-Encoding':'identity'}),timeout=30) as r:
   assert r.status==200 and hashlib.sha256(r.read()).hexdigest()==item['sha256'],item['path']
   if item['path'].endswith(('.mjs','.js')):assert r.headers['Content-Type'].startswith('application/javascript')
+  if item['path'].endswith('.mp3'):assert r.headers['Content-Type'].startswith('audio/mpeg')
+ if item['path'].endswith('.mp3'):
+  with urlopen(Request(url+item['path'],headers={'Range':'bytes=0-127','Accept-Encoding':'identity'}),timeout=30) as r:
+   assert r.status==206 and r.headers['Content-Range'].startswith('bytes 0-127/'),item['path']
+   assert len(r.read())==128 and r.headers['Content-Type'].startswith('audio/mpeg'),item['path']
 with ThreadPoolExecutor(max_workers=5) as pool:list(pool.map(check,manifest['files']))
 for game in manifest['games']:
  for name in ['not-found.mjs','credentials/config.ini','tests/test.mjs']:

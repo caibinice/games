@@ -4,3 +4,6 @@ games/*/public/** -text whitespace=cr-at-eol
 games/pindou/public/index.html whitespace=cr-at-eol,-blank-at-eof
 *.png -text
 *.webp -text
+*.mp3 -text
+*.ogg -text
+*.wav -text

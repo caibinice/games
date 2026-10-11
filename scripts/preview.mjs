@@ -6,7 +6,7 @@ import {ROOT,build} from './build.mjs';
 if(!process.argv.includes('--dist'))build();
 const root=resolve(ROOT,'dist');
 const flag=process.argv.indexOf('--port'),port=flag>=0?Number(process.argv[flag+1]):4176;
-const mime={'.html':'text/html; charset=utf-8','.mjs':'application/javascript','.js':'application/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png'};
+const mime={'.html':'text/html; charset=utf-8','.mjs':'application/javascript','.js':'application/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.mp3':'audio/mpeg','.ogg':'audio/ogg','.wav':'audio/wav'};
 createServer(async(req,res)=>{
   try{
     const url=new URL(req.url,'http://localhost'),name=decodeURIComponent(url.pathname),file=resolve(root,'.'+name);

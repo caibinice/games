@@ -3,14 +3,15 @@ import { newGame, gameArtwork, correctCount, completedColors, selectBoard, selec
 import { GUIDE_STEPS, inferGuideStep, advanceGuideStep, highlightedGuideCells } from './guide.mjs';
 import { hiddenTapSequence, jumpLevelId } from './admin.mjs';
 import { drawBead, completionFlash, COLOR_FLASH_MS, visibleTrayRange } from './beads.mjs';
+import { LoopMusic, musicPreference } from './music.mjs';
 
 const $=id=>document.getElementById(id),icon=name=>`<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
 const COOKIE_PATH='/games/pindou';
 function readCookie(name){try{const row=document.cookie.split('; ').find(v=>v.startsWith(`${name}=`));return row?decodeURIComponent(row.slice(name.length+1)):null;}catch{return null;}}
 function cookie(name,value){document.cookie=`${name}=${encodeURIComponent(value)}; Path=${COOKIE_PATH}; Max-Age=31536000; SameSite=Lax${location.protocol==='https:'?'; Secure':''}`;}
 function removeCookie(name){document.cookie=`${name}=; Path=${COOKIE_PATH}; Max-Age=0; SameSite=Lax`;}
-const defaults={v:1,completed:{},unlocked:1,last:1,sound:true,autoFullscreen:true,numbers:false,tutorialDone:false};
-function readProgress(){try{let p=JSON.parse(readCookie('pindou_progress'));if(p?.v!==1)throw 0;if(Array.isArray(p.c))p={v:1,completed:Object.fromEntries(p.c.filter(v=>Array.isArray(v)&&v.length===3).map(([id,moves,elapsed])=>[id,{moves,elapsed}])),last:p.l,sound:p.s,autoFullscreen:p.f,numbers:p.n,tutorialDone:p.g===2};const completed={};for(const [k,v]of Object.entries(p.completed||{}))if(Number.isInteger(+k)&&+k>=1&&+k<=TOTAL_LEVELS&&Number.isFinite(v.moves)&&v.moves>=0&&Number.isFinite(v.elapsed)&&v.elapsed>=0)completed[k]=v;const highest=Math.max(0,...Object.keys(completed).map(Number));return {...defaults,...p,completed,unlocked:Math.min(TOTAL_LEVELS,Math.max(1,highest+1)),last:Math.min(TOTAL_LEVELS,Math.max(1,Math.floor(p.last)||1)),sound:p.sound!==false,autoFullscreen:p.autoFullscreen!==false,numbers:p.numbers===true,tutorialDone:p.tutorialDone===true||!!completed[1]};}catch{return {...defaults,completed:{}};}}
+const defaults={v:1,completed:{},unlocked:1,last:1,sound:true,music:true,autoFullscreen:true,numbers:false,tutorialDone:false};
+function readProgress(){try{let p=JSON.parse(readCookie('pindou_progress'));if(p?.v!==1)throw 0;if(Array.isArray(p.c))p={v:1,completed:Object.fromEntries(p.c.filter(v=>Array.isArray(v)&&v.length===3).map(([id,moves,elapsed])=>[id,{moves,elapsed}])),last:p.l,sound:p.s,music:p.m,autoFullscreen:p.f,numbers:p.n,tutorialDone:p.g===2};const completed={};for(const [k,v]of Object.entries(p.completed||{}))if(Number.isInteger(+k)&&+k>=1&&+k<=TOTAL_LEVELS&&Number.isFinite(v.moves)&&v.moves>=0&&Number.isFinite(v.elapsed)&&v.elapsed>=0)completed[k]=v;const highest=Math.max(0,...Object.keys(completed).map(Number));return {...defaults,...p,completed,unlocked:Math.min(TOTAL_LEVELS,Math.max(1,highest+1)),last:Math.min(TOTAL_LEVELS,Math.max(1,Math.floor(p.last)||1)),sound:p.sound!==false,music:musicPreference(p.music,p.sound),autoFullscreen:p.autoFullscreen!==false,numbers:p.numbers===true,tutorialDone:p.tutorialDone===true||!!completed[1]};}catch{return {...defaults,completed:{}};}}
 let progress=readProgress(),game=restore(readCookie('pindou_session')),screen='home',modalOpen=false,modalDismiss=null,toastTimer,boardHintTimer,single=false;
 let zoom=1,panX=0,panY=0,geo={cell:1,left:0,top:0,width:1,height:1},keyboardCell=0,audio=null,lastTick=performance.now(),lastSave=0,saveTimer,confettiFrame;
 let tutorial=null,trayOffset=0,flightFrame,flights=[];
@@ -19,13 +20,18 @@ let placement=null,effectsFrame,completed=new Set();
 const colorFlashes=new Map();
 const ctx=$('board').getContext('2d'),pointers=new Map();let gesture=null,suppressClick=false;
 if(game?.status==='won')game=null;
-function persist(){cookie('pindou_progress',JSON.stringify({v:1,c:Object.entries(progress.completed).map(([id,v])=>[+id,v.moves,v.elapsed]),l:progress.last,s:progress.sound,f:progress.autoFullscreen,n:progress.numbers,g:progress.tutorialDone?2:0}));if(game&&game.status!=='won')cookie('pindou_session',serialize(game));else removeCookie('pindou_session');}
+const music=new LoopMusic(new URL('./assets/audio/music-loop.mp3?v=20261011-4',import.meta.url).href,{getContext:()=>audio??=new(window.AudioContext||window.webkitAudioContext)()});
+function syncMusic(){music.setPlaying(progress.music&&screen==='play'&&!modalOpen&&!document.hidden&&game?.status==='playing');}
+Object.defineProperty(window,'gameAudio',{value:Object.freeze({music:()=>music.state()})});
+document.addEventListener('pointerdown',()=>music.retry(),{passive:true});
+document.addEventListener('keydown',e=>{if(!e.repeat)music.retry();});
+function persist(){cookie('pindou_progress',JSON.stringify({v:1,c:Object.entries(progress.completed).map(([id,v])=>[+id,v.moves,v.elapsed]),l:progress.last,s:progress.sound,m:progress.music,f:progress.autoFullscreen,n:progress.numbers,g:progress.tutorialDone?2:0}));if(game&&game.status!=='won')cookie('pindou_session',serialize(game));else removeCookie('pindou_session');}
 function saveSoon(){clearTimeout(saveTimer);saveTimer=setTimeout(persist,150);}
 function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,2400);}
 function hint(text){clearTimeout(boardHintTimer);$('board-bubble').textContent=text;$('board-bubble').hidden=false;boardHintTimer=setTimeout(()=>$('board-bubble').hidden=true,1800);}
 function sound(kind='pick'){
   if(!progress.sound)return;
-  try{const Audio=window.AudioContext||window.webkitAudioContext;audio??=new Audio();if(audio.state==='suspended')audio.resume();const t=audio.currentTime;const notes=kind==='win'?[523.25,659.25,783.99,1046.5]:kind==='place'?[659.25,880]:[523.25];notes.forEach((freq,i)=>{const osc=audio.createOscillator(),gain=audio.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(0,t+i*.11);gain.gain.linearRampToValueAtTime(.055,t+i*.11+.015);gain.gain.exponentialRampToValueAtTime(.001,t+i*.11+.22);osc.connect(gain);gain.connect(audio.destination);osc.start(t+i*.11);osc.stop(t+i*.11+.24);});}catch{}
+  try{const Audio=window.AudioContext||window.webkitAudioContext;audio??=new Audio();if(audio.state==='suspended')audio.resume().catch(()=>{});const t=audio.currentTime;const notes=kind==='win'?[523.25,659.25,783.99,1046.5]:kind==='place'?[659.25,880]:[523.25];notes.forEach((freq,i)=>{const osc=audio.createOscillator(),gain=audio.createGain();osc.type='sine';osc.frequency.value=freq;gain.gain.setValueAtTime(0,t+i*.11);gain.gain.linearRampToValueAtTime(.055,t+i*.11+.015);gain.gain.exponentialRampToValueAtTime(.001,t+i*.11+.22);osc.connect(gain);gain.connect(audio.destination);osc.start(t+i*.11);osc.stop(t+i*.11+.24);});}catch{}
 }
 function rounded(c,x,y,w,h,r){c.beginPath();r=Math.min(r,w/2,h/2);c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
 function contourPath(c,level,left,top,cell){
@@ -148,10 +154,11 @@ function boardTap(index){if(!game||modalOpen)return;if(game.selection?.source===
 function trayTap(index){if(!game||modalOpen)return;if(game.selection?.source==='tray'&&game.selection.indices.includes(index)){game.selection=null;syncTutorial();renderAll();return;}const before=captureMove();resultFeedback(selectTray(game,index,single),before);}
 function catalogueArtwork(id){return game?.level===id?gameArtwork(game):getArtwork(id);}
 function updateHome(){const count=Object.keys(progress.completed).length,level=game?gameArtwork(game):getArtwork(progress.last||1);$('home-progress').textContent=`已收藏 ${count} / ${TOTAL_LEVELS}`;$('start-label').textContent=game?`继续第 ${String(game.level).padStart(2,'0')} 关`:count===TOTAL_LEVELS?'再来拼一幅':`开始第 ${String(progress.unlocked).padStart(2,'0')} 关`;thumb($('home-art'),level,true);if(screen==='home')$('scenery').style.backgroundImage=`url('./assets/${level.background}')`;}
-function showHome(){dismiss();stopEffects();completed=new Set();tutorial=null;$('app').classList.remove('playing');$('app').scrollTop=0;renderTutorial();screen='home';$('home-screen').hidden=false;$('play-screen').hidden=true;$('scenery').style.backgroundImage="url('./assets/meadow.webp')";updateHome();persist();}
+function showHome(){dismiss(false);stopEffects();completed=new Set();tutorial=null;$('app').classList.remove('playing');$('app').scrollTop=0;renderTutorial();screen='home';syncMusic();$('home-screen').hidden=false;$('play-screen').hidden=true;$('scenery').style.backgroundImage="url('./assets/meadow.webp')";updateHome();persist();}
 function enterLevel(id,existing=false,forceGuide=false){
-  dismiss();stopEffects();tutorial=null;if(!existing||!game)game=newGame(id);completed=completedColors(game);if(forceGuide)progress.tutorialDone=false;progress.last=game.level;screen='play';trayOffset=0;$('app').classList.add('playing');fitViewport();$('app').scrollTop=0;$('home-screen').hidden=true;$('play-screen').hidden=false;zoom=1;panX=panY=0;keyboardCell=0;
+  dismiss(false);stopEffects();tutorial=null;if(!existing||!game)game=newGame(id);completed=completedColors(game);if(forceGuide)progress.tutorialDone=false;progress.last=game.level;screen='play';trayOffset=0;$('app').classList.add('playing');fitViewport();$('app').scrollTop=0;$('home-screen').hidden=true;$('play-screen').hidden=false;zoom=1;panX=panY=0;keyboardCell=0;
   const level=gameArtwork(game);keyboardCell=level.target.findIndex(c=>c!==null);$('scenery').style.backgroundImage=`url('./assets/${level.background}')`;thumb($('reference-canvas'),level);lastTick=performance.now();requestAnimationFrame(()=>renderAll());persist();
+  syncMusic();
   if(progress.autoFullscreen)fullscreen(false);
   if(game.status==='timeout')timeoutDialog();
   else if(game.level===1&&!progress.tutorialDone){if(existing&&game.moves>0){tutorial={step:inferGuideStep(game,level)};requestAnimationFrame(renderAll);}else tutorialIntro();}
@@ -168,13 +175,13 @@ function screenOrientationLock(){return window.screen.orientation?.lock?.('portr
 document.addEventListener('fullscreenchange',()=>{$('fullscreen-btn').setAttribute('aria-label',document.fullscreenElement?'退出全屏':'进入全屏');requestAnimationFrame(draw);});
 let previousFocus=null;
 function modal(html,{close=true,onDismiss=null,className=''}={}){
-  if(modalOpen)dismiss();tick();modalOpen=true;previousFocus=document.activeElement;modalDismiss=onDismiss;
+  if(modalOpen)dismiss(false);tick();modalOpen=true;syncMusic();previousFocus=document.activeElement;modalDismiss=onDismiss;
   $('modal-root').innerHTML=`<div class="modal-backdrop"><section class="modal ${className}" role="dialog" aria-modal="true" aria-labelledby="modal-title">${close?`<button class="modal-close" aria-label="关闭">${icon('close')}</button>`:''}${html}</section></div>`;
   $('modal-root').querySelector('.modal-close')?.addEventListener('click',dismiss);
   $('modal-root').querySelector('.modal-backdrop').addEventListener('click',e=>{if(close&&e.target===e.currentTarget)dismiss();});
   requestAnimationFrame(()=>$('modal-root').querySelector('button:not(:disabled)')?.focus());
 }
-function dismiss(){const fn=modalDismiss;modalDismiss=null;modalOpen=false;$('modal-root').innerHTML='';cancelAnimationFrame(confettiFrame);$('confetti').style.display='none';lastTick=performance.now();previousFocus?.focus?.({preventScroll:true});fn?.();}
+function dismiss(resumeMusic=true){const fn=modalDismiss;modalDismiss=null;modalOpen=false;$('modal-root').innerHTML='';cancelAnimationFrame(confettiFrame);$('confetti').style.display='none';lastTick=performance.now();previousFocus?.focus?.({preventScroll:true});fn?.();if(resumeMusic)syncMusic();}
 document.addEventListener('keydown',e=>{if(!modalOpen)return;if(e.key==='Escape'&&$('modal-root').querySelector('.modal-close')){e.preventDefault();dismiss();}if(e.key==='Tab'){const focusables=[...$('modal-root').querySelectorAll('button:not(:disabled),a,input')];const first=focusables[0],last=focusables.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 function renderTutorial(){
   const active=!!tutorial&&screen==='play';$('tutorial-guide').hidden=!active;
@@ -193,8 +200,8 @@ function tutorialIntro(){
 function replayTutorial(){modal(`<div class="center"><h2 id="modal-title">再跟小橘练习一次？</h2><p>当前未完成的画板会重新开始。<br>已收藏的关卡继续保留。</p><button class="primary-button" id="replay-guide-confirm">开始第一关教学</button><button class="secondary-button" id="replay-guide-cancel">继续当前关卡</button></div>`);$('replay-guide-confirm').onclick=()=>enterLevel(1,false,true);$('replay-guide-cancel').onclick=settings;}
 function settings(){
   const graduated=tutorial?.step===6;if(graduated)completeTutorial();
-  modal(`<span class="overline">TAKE IT SLOW</span><h2 id="modal-title">小镇设置</h2><p>${graduated?'新手引导完成！再认识几个好用的开关。':'按自己的节奏拼，快乐就好。'}</p>${[['sound','轻轻的拼豆声','舒适的点击音效'],['autoFullscreen','开始时自动全屏','开始按钮尝试全屏，右上角手动切换'],['numbers','显示颜色编号','凸豆数字是豆色，凹槽数字是目标色']].map(([key,title,desc])=>`<div class="setting-row"><div>${title}<small>${desc}</small></div><button class="switch" role="switch" aria-label="${title}" aria-checked="${!!progress[key]}" data-setting="${key}"><span></span></button></div>`).join('')}${graduated?'<div class="help-note guide-tools">画板下方：同色连取 / 单颗切换，双指或 ＋ − 缩放。<br>暂存盒「加一行」、道具 ＋ 都免费，时钟每次加 3 分钟，不限次数。撤销可退回上次移动；打开弹窗会暂停计时。</div>':''}<div class="settings-actions"><button class="secondary-button" id="settings-help">玩法说明</button><button class="secondary-button" id="settings-home">回到小镇</button></div><button class="secondary-button" id="settings-guide">重玩新手教学</button>${game?'<button class="secondary-button" id="restart-level">重新拼这一关</button>':''}<p style="font-size:9px;margin-bottom:0">进度保存在当前浏览器 Cookie；清理站点数据会重新开始。</p>`);
-  $('modal-root').querySelectorAll('[data-setting]').forEach(b=>b.onclick=()=>{const key=b.dataset.setting;progress[key]=!progress[key];b.setAttribute('aria-checked',progress[key]);persist();if(game)renderAll();});
+  modal(`<span class="overline">TAKE IT SLOW</span><h2 id="modal-title">小镇设置</h2><p>${graduated?'新手引导完成！再认识几个好用的开关。':'按自己的节奏拼，快乐就好。'}</p>${[['music','录屏背景音乐','分离后的原录屏音乐，无缝循环'],['sound','轻轻的拼豆声','舒适的点击音效'],['autoFullscreen','开始时自动全屏','开始按钮尝试全屏，右上角手动切换'],['numbers','显示颜色编号','凸豆数字是豆色，凹槽数字是目标色']].map(([key,title,desc])=>`<div class="setting-row"><div>${title}<small>${desc}</small></div><button class="switch" role="switch" aria-label="${title}" aria-checked="${!!progress[key]}" data-setting="${key}"><span></span></button></div>`).join('')}${graduated?'<div class="help-note guide-tools">画板下方：同色连取 / 单颗切换，双指或 ＋ − 缩放。<br>暂存盒「加一行」、道具 ＋ 都免费，时钟每次加 3 分钟，不限次数。撤销可退回上次移动；打开弹窗会暂停计时。</div>':''}<div class="settings-actions"><button class="secondary-button" id="settings-help">玩法说明</button><button class="secondary-button" id="settings-home">回到小镇</button></div><button class="secondary-button" id="settings-guide">重玩新手教学</button>${game?'<button class="secondary-button" id="restart-level">重新拼这一关</button>':''}<p style="font-size:9px;margin-bottom:0">进度保存在当前浏览器 Cookie；清理站点数据会重新开始。</p>`);
+  $('modal-root').querySelectorAll('[data-setting]').forEach(b=>b.onclick=()=>{const key=b.dataset.setting;progress[key]=!progress[key];b.setAttribute('aria-checked',progress[key]);syncMusic();persist();if(game)renderAll();});
   $('settings-help').onclick=help;$('settings-home').onclick=showHome;$('settings-guide').onclick=replayTutorial;$('restart-level')?.addEventListener('click',()=>confirmRestart(game.level));
 }
 function confirmRestart(id){modal(`<div class="center"><div class="modal-icon">${icon('paw')}</div><h2 id="modal-title">重新拼这一幅？</h2><p>这一关的画板和暂存盒会重新开始。<br>已收藏的图案会好好保留。</p><button id="restart-confirm" class="primary-button">重新开始</button><button id="restart-cancel" class="secondary-button">接着慢慢拼</button></div>`);$('restart-confirm').onclick=()=>enterLevel(id);$('restart-cancel').onclick=dismiss;}
@@ -228,7 +235,7 @@ function preview(){
   thumb($('preview-art'),level,true);
 }
 function freeTool(tool){if(!game)return;game.tools[tool]++;saveSoon();updateHUD();toast(`${tool==='magnet'?'小磁铁':'整理刷'} ＋1，免费领取成功`);sound();}
-function addTime(){if(!game)return;extend(game);saveSoon();updateHUD();toast('又多了 3 分钟，继续慢慢拼');sound();}
+function addTime(){if(!game)return;extend(game);syncMusic();saveSoon();updateHUD();toast('又多了 3 分钟，继续慢慢拼');sound();}
 function timeoutDialog(){
   if(!game||game.status!=='timeout')return;persist();
   modal(`<div class="center"><span class="overline">NO NEED TO HURRY</span><div class="modal-icon" style="margin-top:15px">${icon('clock')}</div><h2 id="modal-title">好时光，再来三分钟</h2><p>图案和暂存豆都留在原地。<br>免费续时，不看广告，不限次数。</p><button class="primary-button" id="extend-confirm">免费 ＋3 分钟，继续拼</button><button class="secondary-button" id="timeout-home">回小镇歇一会儿</button></div>`,{close:false});
@@ -255,7 +262,7 @@ function tick(){
   game.remaining=Math.max(0,game.remaining-delta);game.elapsed+=delta;updateHUD();if(now-lastSave>5000){persist();lastSave=now;}if(game.remaining<=0){game.status='timeout';game.selection=null;syncTutorial();renderAll();timeoutDialog();}
 }
 setInterval(tick,250);
-document.addEventListener('visibilitychange',()=>{tick();lastTick=performance.now();persist();});window.addEventListener('pagehide',persist);
+document.addEventListener('visibilitychange',()=>{tick();lastTick=performance.now();syncMusic();persist();});window.addEventListener('pagehide',()=>{music.setPlaying(false);persist();});window.addEventListener('pageshow',syncMusic);
 window.addEventListener('beforeunload',persist);new ResizeObserver(()=>requestAnimationFrame(draw)).observe($('board-viewport'));
 function indexAt(x,y){const level=gameArtwork(game),r=$('board').getBoundingClientRect(),cx=Math.floor((x-r.left-geo.left)/geo.cell),cy=Math.floor((y-r.top-geo.top)/geo.cell);const i=cx>=0&&cy>=0&&cx<level.width&&cy<level.height?cy*level.width+cx:-1;return i>=0&&level.target[i]!==null?i:-1;}
 function pinchStart(){const [a,b]=[...pointers.values()];gesture={type:'pinch',distance:Math.hypot(a.x-b.x,a.y-b.y),zoom,panX,panY,centerX:(a.x+b.x)/2,centerY:(a.y+b.y)/2};suppressClick=true;}
