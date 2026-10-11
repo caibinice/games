@@ -47,7 +47,19 @@
   165 件库存无丢失，存档 Cookie 2012 字符，刷新续局通过。数值用于检查真实翻动，不代表手机帧率。
 - 第 60 关 234 件实测 87 draw calls；共享构建共 51 个运行文件。
 
-公网和具体 release 记录在发布复核后补记。
+### 公网上线复核
+
+- 运行代码提交 `ca2c02503743cd62d296ed4c70bcd4a26a7242da`；北京时间 2026-10-11 16:17 单独发布抓大鹅。
+- 当前 `/opt/games/www` 指向 `/opt/games/releases/20261011081718-ca2c025037/www`。
+- 本次 18 个公网运行文件 SHA-256 全部与构建产物匹配，模块 MIME、尾斜杠规范化、缺失 / 私有路径 404 通过。
+- 公网再次执行抓大鹅完整回归、两游戏移动触屏 / DPR 3 / 全屏零滚动模拟、6 次连续颠锅与刷新，
+  以及 11 种物品的深箱最后三件点击通关，全部通过；页面 JavaScript 错误为 0。
+- 拼豆继承的 52 个文件（含 gzip）与上一版逐字节哈希相同；没有修改拼豆源码。
+- Nginx 配置检查、active 状态通过。公共路由 SHA-256 仍为
+  `ebe1d28d0610e9d18e2d5eb1576ed350f783829aa7249e8a097f023760dbd45f`，
+  非游戏路由未变，博客镜像一致，博客工作区无变化。
+- [运行代码 GitHub CI](https://github.com/caibinice/games/actions/runs/38124259744) 成功。
+  后续仅更新本 Markdown 的发布记录，不改已验证的运行文件。
 
 ## 发布与回滚
 
@@ -61,7 +73,12 @@ pwsh -NoLogo -NoProfile -NonInteractive -File scripts/deploy.ps1 -SkipInstall -G
 
 仅替换抓大鹅产物，继承并逐文件核验拼豆未变；入口仍为
 [抓大鹅](https://caibinice.com/games/goose/)，Nginx `/games/goose/` 映射不变。
-详见 [共享发布手册](deployment.md)。发布后记录具体 release / 旧版本及 rollback.json。
+详见 [共享发布手册](deployment.md)。
+
+- 本机发布回滚：`E:/Documents/AI/codex/backups/games-20261011-161718-523988/rollback.json`。
+- 服务器发布备份：`/opt/games/backups/20261011081718-ca2c025037/`。
+- 上一版完整 release：`/opt/games/releases/20261011051924-e794b231f3/www`，仍保留两个游戏。
+  可按发布手册恢复软链接；后续如其他游戏已更新，可按旧提交重新构建并单发 goose。
 
 - 改动前 Git 跟踪源码归档：`E:/Documents/AI/codex/backups/goose-realism-20261011-154440/repository.zip`。
   88 个文件已逐字节核对 HEAD；SHA-256 `03bff4a02725a55d23acdce350d353357892872d0fb33d2b481c7926f4c34c8d`。
