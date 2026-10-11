@@ -54,8 +54,21 @@ iQOO 11 官方规格为 1440×3200，属 20:9，故加入 360×800、393×873 �
 
 两个游戏源码仍各自在 `games/goose/`、`games/pindou/`，共用构建 / 发布工具，采用
 `pwsh -File scripts/deploy.ps1 -SkipInstall` 批量发布，URL、Cookie 路径与公共 Nginx 映射不变。
-具体发布版本和公网复核结果在发布后追加；步骤见 [发布手册](deployment.md)。
+具体步骤见 [发布手册](deployment.md)。
 
 - 改动前已验证 85 个 Git 跟踪文件备份：`E:/Documents/AI/codex/backups/games-video-20261011-123338/repository/`。
 - 抽帧、截图与浏览器验收脚本：`E:/Documents/AI/codex/tmp/games-video-20261011-123338/`。
 - 服务器旧 release 保留，发布自动写入独立 rollback.json；没有修改博客、停车等其他路由。
+
+### 已发布及公网复核
+
+- 运行代码提交：`e794b231f3952360d695800582e39eea57c53ec1`；北京时间 2026-10-11 13:19 批量发布。
+- 当前 release：`/opt/games/releases/20261011051924-e794b231f3/www`，`/opt/games/www` 已原子切换。
+- [抓大鹅](https://caibinice.com/games/goose/) / [拼豆](https://caibinice.com/games/pindou/) / [大厅](https://caibinice.com/games/) 入口可用；全部 50 个公网运行文件 SHA-256 与构建产物一致，模块 MIME、缺失及私有资源 404、尾斜杠跳转通过。
+- 公网再次执行两游戏完整浏览器回归及移动触屏 / DPR 3 / 全屏零滚动模拟，全部通过；页面 JavaScript 错误为 0。
+- Nginx 配置检查和 active 状态通过，博客 / 停车入口健康。公共路由 SHA-256 仍为 `ebe1d28d0610e9d18e2d5eb1576ed350f783829aa7249e8a097f023760dbd45f`，博客镜像一致、工作区无变化。
+- [运行代码 GitHub CI](https://github.com/caibinice/games/actions/runs/38114398801) 成功；发布后的记录更新只修改 Markdown，不影响线上运行文件。
+- 本机发布回滚：`E:/Documents/AI/codex/backups/games-20261011-131924-882306/rollback.json`。
+- 服务器发布备份：`/opt/games/backups/20261011051924-e794b231f3/`。
+- 上一版：`/opt/games/releases/20261011015153-10961efcc3/www`，两个游戏文件均保留，可按发布手册回滚。
+- 体验新版只需刷新；未完成的旧抓鹅局保留旧库存，如需立即体验密集新版可在设置确认重新开锅。无需清空 Cookie。
