@@ -79,3 +79,15 @@ Set-Location E:\codes\games
 本地处理 / QA：`E:/Documents/AI/codex/tmp/goose-scenes-20261012-144803/`。改动前 101 个 Git HEAD 文件已逐字节校验，备份 `E:/Documents/AI/codex/backups/goose-scenes-20261012-144803/games-head.zip`。参考视频只读，未替换或改写。
 
 本次使用 Chromium 手机模拟和信号测量，实机与真人听感以实际游玩反馈为准。
+
+## 已发布
+
+- 运行时代码 `f0fc89378e9ae29e52892ef7a5c6261fc890f38f`，[GitHub CI 成功](https://github.com/caibinice/games/actions/runs/38222495240)。后续验收记录补写为文档提交。
+- [线上抓大鹅](https://caibinice.com/games/goose/)，入口与两条音频 URL 版本 **20261012-1**。刷新即可更新，首次轻触首页启用配乐；原静音偏好可在设置中打开，不需清进度或重开局。
+- 本次只发布 goose 的 21 个文件（本游戏 17 + 大厅 4），继承拼豆的 35 个运行时文件及其 gzip。完整服务器 56 文件 SHA-256 匹配，拼豆目录含 gzip 的 55 文件与发布前逐字节不变。
+- 原子 release `20261012081554-f0fc89378e`（UTC 08:15 / 北京时间 16:15）；`/opt/games/www` → `/opt/games/releases/20261012081554-f0fc89378e/www`。
+- 前一 release `/opt/games/releases/20261011105629-cae6f46aa5/www` 保留。远端备份 `/opt/games/backups/20261012081554-f0fc89378e/`；本机回滚 `E:/Documents/AI/codex/backups/games-20261012-161554-753722/rollback.json`。
+- 公网音频 `audio/mpeg` / Range 206、JS MIME、私有 / 缺失路径 404 与入口尾斜杠校验通过。原始 MP4 / AAC / WAV 及离线处理脚本没有发布。
+- 公网完整触屏音乐回归通过：首页 54.08 秒、游戏 61.909333 秒，完整循环后播放位置约 0 / 0.019 秒，均未重建 source；实际输出、切曲、音量 / 静音存档、暂停 / 后台恢复及全屏无滚动通过，页面错误 0。
+- Nginx 检查成功、服务 active，公共路由与发布前逐字节相同，SHA-256 `ebe1d28d0610e9d18e2d5eb1576ed350f783829aa7249e8a097f023760dbd45f`；博客 Git HEAD 与工作区均未改动。
+- 本地处理目录包含 `audio-report.json`、`reproduction.log`、`theme-visual-qa.log`、`soundtrack-qa.log`、`layout-qa.log`、`goose-regression.log`、`endflow-qa.log`、`music-failure-qa.log`、`quality-gates.log`、`deploy.log`、`verify-public.log`、`remote-after.log`、`public-soundtrack-qa.log`、`public-theme-qa.log`。
