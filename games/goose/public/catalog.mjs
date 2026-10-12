@@ -10,7 +10,7 @@ export const THEMES=[
  {id:'bakery',name:'面包小屋',tag:'把香气装进篮子',color:'#ebcbbb',goose:'吐司鹅',pool:['bread','donut','egg','cup','candy','strawberry','apple']},
  {id:'bath',name:'泡泡浴室',tag:'鹅鹅也爱泡泡澡',color:'#bfdad8',goose:'泡泡鹅',pool:['duck','soap','bottle','cup','candy','egg','fish']},
  {id:'picnic',name:'野餐时光',tag:'和鹅鹅一起放个假',color:'#c7d5bc',goose:'野餐鹅',pool:['bread','apple','orange','bottle','egg','carrot','cup']},
- {id:'kitchen',name:'暖暖厨房',tag:'锅里藏着小惊喜',color:'#ecd7a5',goose:'大厨鹅',pool:['corn','carrot','mushroom','pumpkin','peas','fish','egg']},
+ {id:'kitchen',name:'炭火烧烤',tag:'小火慢烤，满满一炉',color:'#ecd7a5',goose:'炭火鹅',pool:['corn','carrot','mushroom','pumpkin','peas','fish','egg']},
  {id:'sweets',name:'糖果乐园',tag:'不止一点点甜',color:'#d9c6dd',goose:'糖果鹅',pool:['candy','donut','strawberry','orange','cup','soap','bread']},
  {id:'harbor',name:'海边杂货',tag:'海风吹来了好运',color:'#b8d4e3',goose:'水手鹅',pool:['fish','bottle','duck','cup','soap','orange','peas']}
 ];
@@ -34,3 +34,17 @@ export const LEVELS=Array.from({length:60},(_,i)=>{
 });
 export function level(id,version=2){if(!Number.isInteger(id)||id<1||id>LEVELS.length||![1,2].includes(version))throw Error('Invalid goose level');return (version===1?LEGACY_LEVELS:LEVELS)[id-1];}
 export function themeFor(id){return THEMES.find(t=>t.id===level(id).theme);}
+
+// Presentation metadata only: IDs, pools, order and v1/v2 item identities stay
+// frozen. Different real-world containers share the same deep collision mouth.
+export const SCENES=Object.freeze({
+ farm:{type:'crate',container:'木条菜筐',surface:'乡间木桌',wood:'#a57849',rim:'#c99e67',wall:'#b39470',floor:'#9a794e',ink:'#665839'},
+ fruit:{type:'wicker',container:'藤编果篮',surface:'水果摊台面',wood:'#aa7540',rim:'#dbb881',wall:'#b58c59',floor:'#be9765',ink:'#8e6041'},
+ bakery:{type:'baking',container:'烘焙托盘',surface:'面包房工作台',wood:'#996b42',rim:'#d5b082',wall:'#bd9d79',floor:'#8d7862',ink:'#806143'},
+ bath:{type:'tub',container:'搪瓷浴盆',surface:'浴室瓷砖',wood:'#89bac0',rim:'#f5f1e3',wall:'#95c4c8',floor:'#a9d6d9',ink:'#528b95'},
+ picnic:{type:'basket',container:'野餐提篮',surface:'格纹野餐布',wood:'#a07843',rim:'#c9a773',wall:'#aa8b5c',floor:'#d3c094',ink:'#65846b'},
+ kitchen:{type:'grill',container:'炭火烧烤炉',surface:'露营烧烤桌',wood:'#a9683a',rim:'#444c4b',wall:'#59605d',floor:'#353d3d',ink:'#af744c'},
+ sweets:{type:'candy',container:'花边糖果盒',surface:'糖果店柜台',wood:'#ba8eac',rim:'#f0c5d3',wall:'#d8a7bd',floor:'#ebd0dc',ink:'#ad7892'},
+ harbor:{type:'cooler',container:'海边保冷箱',surface:'码头木板',wood:'#94b6c5',rim:'#dfebeb',wall:'#5e91ad',floor:'#b9d3de',ink:'#50768c'},
+});
+THEMES.forEach(t=>t.scene=SCENES[t.id]);

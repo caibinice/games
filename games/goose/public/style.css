@@ -30,3 +30,38 @@ body:has(#app.playing){height:min(var(--play-height,100dvh),100dvh);min-height:0
 @keyframes deep-toss{18%{transform:translate(8px,-24px) scale(1.015)}38%{transform:translate(-10px,8px)}60%{transform:translate(6px,-14px)}82%{transform:translate(-3px,4px)}100%{transform:none}}
 @media(prefers-reduced-motion:reduce){.toss canvas{animation:none!important}}
 .music-credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+/* Real theme surfaces sit behind the transparent 3D container. No backdrop
+   sprites compete with the item hit area or add WebGL draw calls. */
+.top-controls{display:flex;align-items:center;gap:13px}.top-controls #music-btn{font-size:18px;min-width:28px}.top-controls #music-btn.muted{opacity:.45;text-decoration:line-through}
+.music-volume{gap:15px}.music-volume>span{white-space:nowrap}.music-volume output{font-size:10px;color:#88967f}.music-volume input[type=range]{width:42%;accent-color:#8caa88;min-height:30px}
+#app[data-scene] .bowl-card{background:var(--scene-surface);border-color:#fff5;box-shadow:inset 0 0 35px #49392310}
+#app[data-scene] .board-top{color:var(--scene-ink)}#app[data-scene] #bowl-label{background:#fff9e8de;padding:3px 7px;border-radius:7px;letter-spacing:.4px}
+#app[data-scene] .board-bottom{background:#fff8e2dd;color:var(--scene-ink);padding-top:4px}#app[data-scene] .board-bottom button{color:var(--scene-ink)}
+#app[data-scene=farm]{--scene-surface:repeating-linear-gradient(90deg,#af885425 0 1px,transparent 1px 42px,#93683b40 42px 44px),repeating-linear-gradient(3deg,#d6c4a5 0 4px,#deccb0 4px 7px)}
+#app[data-scene=farm] .bowl-card{border-radius:13px}
+#app[data-scene=fruit]{--scene-surface:repeating-linear-gradient(0deg,#eebd6940 0 20px,transparent 20px 40px),repeating-linear-gradient(90deg,#e9b86835 0 20px,#f6e7c9 20px 40px)}
+#app[data-scene=fruit] .bowl-card{border-radius:30px}
+#app[data-scene=bakery]{--scene-surface:repeating-linear-gradient(0deg,transparent 0 46px,#ab835e40 46px 48px),repeating-linear-gradient(89deg,#ead6b3 0 3px,#efdec3 3px 6px)}
+#app[data-scene=bakery] .bowl-card{border-radius:14px}
+#app[data-scene=bath]{--scene-surface:repeating-linear-gradient(0deg,transparent 0 36px,#fff7e8 36px 39px),repeating-linear-gradient(90deg,#c5ddd9 0 36px,#fff7e8 36px 39px)}
+#app[data-scene=bath] .bowl-card{border-radius:36px}
+#app[data-scene=picnic]{--scene-surface:repeating-linear-gradient(0deg,#d5968660 0 23px,transparent 23px 46px),repeating-linear-gradient(90deg,#d5968660 0 23px,#f2e9cc 23px 46px)}
+#app[data-scene=picnic] .bowl-card{border-radius:24px}
+#app[data-scene=kitchen]{--scene-surface:repeating-linear-gradient(0deg,#c4867b 0 33px,#f7e7cc 33px 36px,#7896a4 36px 70px,#f7e7cc 70px 73px)}
+#app[data-scene=kitchen] .bowl-card{border-radius:10px}
+#app[data-scene=sweets]{--scene-surface:repeating-linear-gradient(45deg,#e8bfd336 0 13px,transparent 13px 26px),linear-gradient(130deg,#f5e6ce,#e9d7e4)}
+#app[data-scene=sweets] .bowl-card{border-radius:29px}
+#app[data-scene=harbor]{--scene-surface:repeating-linear-gradient(90deg,transparent 0 38px,#648ca047 38px 41px),repeating-linear-gradient(1deg,#c3d5d9 0 3px,#cbdbdd 3px 6px)}
+#app[data-scene=harbor] .bowl-card{border-radius:16px}
+/* The landing scene now fits the same dynamic viewport as gameplay. */
+#app:not(.playing){height:var(--play-height,100dvh);min-height:0;display:flex;flex-direction:column;padding-inline:12px;padding-bottom:max(7px,env(safe-area-inset-bottom))}
+#app:not(.playing) header{height:65px;flex-shrink:0;padding:10px 2px 6px}#app:not(.playing) .topline{height:28px;flex-shrink:0;margin:0 3px 5px}
+#home-copy{flex-shrink:0;padding:0 6px}#home-copy h1{font-size:27px;line-height:1.22;margin:7px 0}#home-copy>p{margin:0 0 11px;font-size:11px}
+#app:not(.playing) .bowl-card{flex:1;min-height:0;display:flex;flex-direction:column}#app:not(.playing) .board-top{height:33px;flex-shrink:0;padding:8px 10px 0}
+#app:not(.playing) #stage{height:auto;min-height:0;flex:1}#app:not(.playing) .board-bottom{flex-shrink:0;padding:6px 12px;font-size:10px}
+#home-actions{flex-shrink:0}#home-actions .primary{padding:13px 17px;margin-top:13px;font-size:17px;border-radius:16px}#home-actions .home-links{margin:14px 0 3px;font-size:11px}
+#home-actions .quiet{margin:6px 0;font-size:9px}#home-music-hint{color:#8b7955}#app:not(.playing) footer{height:23px;flex-shrink:0;padding:4px 0 0;font-size:8px}#app:not(.playing) footer span{display:none}
+@media(max-height:640px){#app:not(.playing) header{height:49px}#app:not(.playing) .topline{height:23px;margin-bottom:3px}#home-copy h1{font-size:20px;line-height:1.1;margin:4px 0}#home-copy .eyebrow{display:none}#home-copy>p{font-size:10px;margin-bottom:7px}#home-actions .primary{padding:10px 15px;margin-top:9px;font-size:15px}#home-actions .home-links{margin-top:9px}#app:not(.playing) footer{display:none}}
+/* Keep the original play-header footprint; in-game music lives in settings. */
+.playing #music-btn{display:none}.playing .top-controls{gap:0}
+@media(orientation:landscape) and (max-height:500px){#app:not(.playing) #home-copy{display:none}#home-actions .quiet:not(#home-music-hint){display:none}}

@@ -15,6 +15,12 @@ export class LoopMusic{
     this.wanted=!!value;
     if(this.wanted)this.retry();else this.pause();
   }
+  setVolume(value){
+    if(!Number.isFinite(value))return;
+    this.volume=Math.min(1,Math.max(0,value));
+    if(this.source){const now=this.context.currentTime,gain=this.source.gain.gain;
+      gain.cancelScheduledValues(now);gain.setValueAtTime(gain.value,now);gain.linearRampToValueAtTime(this.volume,now+.06);}
+  }
   retry(){
     if(!this.wanted)return;
     try{
@@ -65,4 +71,22 @@ export class LoopMusic{
       loading:!!this.loading,duration:this.buffer?.duration||0,position:this.position(),
       loop:this.source?.node.loop||false,starts:this.starts,volume:this.volume,error:this.error};
   }
+}
+
+// Each scene keeps one decoded buffer and its own paused musical position.
+// Stop the outgoing scene BEFORE enabling the next; late fetches cannot revive
+// an old scene. Both tracks share the same gesture-unlocked AudioContext.
+export class SceneMusic{
+  constructor(urls,options){this.tracks={home:new LoopMusic(urls.home,options),play:new LoopMusic(urls.play,options)};this.scene='home';}
+  setScene(scene,enabled){
+    if(!(scene in this.tracks))throw Error('music-scene-invalid');
+    this.scene=scene;
+    for(const [key,track]of Object.entries(this.tracks))if(key!==scene)track.setPlaying(false);
+    this.tracks[scene].setPlaying(!!enabled);
+  }
+  retry(){this.tracks[this.scene].retry();}
+  setVolume(value){for(const track of Object.values(this.tracks))track.setVolume(value);}
+  stop(){for(const track of Object.values(this.tracks))track.setPlaying(false);}
+  state(){return{...this.tracks[this.scene].state(),scene:this.scene,
+    tracks:Object.fromEntries(Object.entries(this.tracks).map(([key,track])=>[key,track.state()]))};}
 }

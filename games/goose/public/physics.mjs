@@ -7,7 +7,10 @@ const scales={corn:1.7,carrot:1.7,skewer:1.65,sausage:1.72,steak:1.78,bread:1.75
 export function modelScale(kind){return scales[kind]||1.72;}
 // A deep rim must not hide the last few objects. Only tilt/focus the camera;
 // never lift the floor, flatten the pile or mutate a saved physical pose.
-export function cameraPose(total,remaining){const t=total<=18?0:Math.max(0,Math.min(1,(48-remaining)/42)),focus=.5*(1-t)+(binFor(total).floor+1.4)*t;return{focus,y:focus+15.5,z:6.7*(1-t)+1.4*t};}
+export function cameraPose(total,remaining){const t=total<=18?0:Math.max(0,Math.min(1,(48-remaining)/42)),focus=.5*(1-t)+(binFor(total).floor+1.4)*t,tilt=total<=18?6.7:4.3;return{focus,y:focus+15.5,z:tilt*(1-t)+1.4*t};}
+// Collision hulls are intentionally approximate. Their visual extremities must
+// not poke through solid exterior walls below the lip, or become phantom picks.
+export function pilePointVisible(p){return p.y>=BIN.rim+.035||Math.max(Math.abs(p.x),Math.abs(p.z))<=BIN.innerHalf+.035;}
 export function spawnPoses(items,seed,shakes=0){
  const random=rng(seed+shakes*17),floor=binFor(items.length).floor;
  return items.map(item=>{const column=item.id%5,row=Math.floor(item.id/5)%5,layer=Math.floor(item.id/25);

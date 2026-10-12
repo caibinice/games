@@ -1,6 +1,6 @@
 import {describe,it,expect,vi} from 'vitest';
 import {readFileSync} from 'node:fs';
-import {LoopMusic as GooseMusic,musicPreference as goosePreference} from '../games/goose/public/music.mjs';
+import {LoopMusic as GooseMusic,SceneMusic,musicPreference as goosePreference} from '../games/goose/public/music.mjs';
 import {LoopMusic as PinMusic,musicPreference as pinPreference} from '../games/pindou/public/music.mjs';
 
 const settle=async()=>{for(let i=0;i<16;i++)await Promise.resolve();};
@@ -65,23 +65,36 @@ for(const [name,Player,pref] of [['goose',GooseMusic,goosePreference],['pindou',
     expect(pref(undefined,true)).toBe(true);expect(pref(undefined,false)).toBe(false);expect(pref(true,false)).toBe(true);expect(pref(false,true)).toBe(false);expect(pref('broken',false)).toBe(false);
   });
 });
-it('ships two distinct compact MP3 tracks inside independent public directories',()=>{
+it('ships the complete mono home/play recordings and keeps Pin stereo unchanged',()=>{
   const g=readFileSync(new URL('../games/goose/public/assets/audio/music-loop.mp3',import.meta.url)),p=readFileSync(new URL('../games/pindou/public/assets/audio/music-loop.mp3',import.meta.url));
-  for(const b of [g,p]){
-    expect(b.subarray(0,3).toString()).toBe('ID3');expect(b.length).toBeGreaterThan(700000);expect(b.length).toBeLessThan(900000);
+  const h=readFileSync(new URL('../games/goose/public/assets/audio/music-home.mp3',import.meta.url));
+  for(const [b,mono] of [[g,true],[h,true],[p,false]]){
+    expect(b.subarray(0,3).toString()).toBe('ID3');expect(b.length).toBeGreaterThan(700000);expect(b.length).toBeLessThan(mono?1600000:900000);
     // Skip the synchsafe ID3 size, then inspect the MPEG frame's channel mode.
     const start=10+((b[6]&127)<<21)+((b[7]&127)<<14)+((b[8]&127)<<7)+(b[9]&127);
-    expect(b[start]).toBe(255);expect(b[start+1]&224).toBe(224);expect(b[start+3]>>6).not.toBe(3);
+    expect(b[start]).toBe(255);expect(b[start+1]&224).toBe(224);expect((b[start+3]>>6)===3).toBe(mono);
   }
-  expect(g.equals(p)).toBe(false);
+  expect(g.equals(p)).toBe(false);expect(g.equals(h)).toBe(false);
 });
 it('shows each source title, author, license and modifications in game settings',()=>{
-  for(const [game,title,isrc] of [['goose','Life of Riley','USUAN1400054'],['pindou','Carefree','USUAN1400037']]){
+  for(const [game,title,isrc] of [['pindou','Carefree','USUAN1400037']]){
     const app=readFileSync(new URL(`../games/${game}/public/app.mjs`,import.meta.url),'utf8');
     expect(app).toContain(title+' — Kevin MacLeod');expect(app).toContain('isrc='+isrc);
     expect(app).toContain('https://creativecommons.org/licenses/by/4.0/');expect(app).toContain('节选、循环与音量调整');
     expect(app).not.toContain('录屏背景音乐');
   }
+  const goose=readFileSync(new URL('../games/goose/public/app.mjs',import.meta.url),'utf8');expect(goose).toContain('集市首页 / 开锅游戏自动切换');expect(goose).not.toContain('Life of Riley');
+});
+
+describe('Goose home/play soundtrack switching',()=>{
+ const make=()=>{const f=fixture(GooseMusic);return{...f,music:new SceneMusic({home:'/home.mp3',play:'/play.mp3'},{getContext:f.getContext,fetcher:f.fetcher,volume:.9})};};
+ it('does not fetch or unlock audio before a first trusted gesture',async()=>{const f=make();f.music.setScene('home',false);f.music.retry();await settle();expect(f.fetcher).not.toHaveBeenCalled();expect(f.getContext).not.toHaveBeenCalled();});
+ it('plays the home source, switches to play, and never enables both',async()=>{const f=make();f.music.setScene('home',true);await settle();expect(f.music.state().scene).toBe('home');expect(f.music.state().tracks.home.playing).toBe(true);f.music.setScene('play',true);await settle();expect(f.music.state().tracks.home.playing).toBe(false);expect(f.music.state().tracks.play.playing).toBe(true);expect(f.fetcher.mock.calls.map(c=>c[0])).toEqual(['/home.mp3','/play.mp3']);expect(f.music.state().volume).toBe(.9);});
+ it('keeps independent musical positions and reuses the decoded home buffer',async()=>{const f=make();f.music.setScene('home',true);await settle();f.context.currentTime=9;f.music.setScene('play',true);await settle();f.context.currentTime=13;f.music.setScene('home',true);expect(f.music.state().position).toBe(9);expect(f.music.state().tracks.play.position).toBe(4);expect(f.fetcher).toHaveBeenCalledTimes(2);});
+ it('a late home fetch cannot restart after entering the game',async()=>{const f=make();let resolve;f.fetcher.mockReturnValueOnce(new Promise(r=>resolve=r));f.music.setScene('home',true);await settle();f.music.setScene('play',true);await settle();resolve({ok:true,arrayBuffer:async()=>new ArrayBuffer(1)});await settle();expect(f.music.state().tracks.home.playing).toBe(false);expect(f.music.state().tracks.play.playing).toBe(true);expect(f.nodes).toHaveLength(1);});
+ it('pauses both tracks on pagehide and resumes only the chosen scene',async()=>{const f=make();f.music.setScene('home',true);await settle();f.music.stop();f.music.retry();expect(f.music.state().tracks.home.playing).toBe(false);f.music.setScene('play',true);await settle();f.music.setScene('play',false);expect(Object.values(f.music.state().tracks).every(s=>!s.playing)).toBe(true);});
+ it('adjusts both gains smoothly while leaving sound effects alone',async()=>{const f=make();f.music.setScene('home',true);await settle();f.music.setVolume(.5);expect(f.music.state().tracks.home.volume).toBe(.5);expect(f.music.state().tracks.play.volume).toBe(.5);expect(f.gains[0].gain.linearRampToValueAtTime).toHaveBeenLastCalledWith(.5,.06);f.music.setVolume(NaN);expect(f.music.state().volume).toBe(.5);f.music.setVolume(2);expect(f.music.state().volume).toBe(1);});
+ it('rejects invalid scene IDs without disturbing the current track',()=>{const f=make();expect(()=>f.music.setScene('bad',true)).toThrow('music-scene-invalid');expect(f.music.state().scene).toBe('home');});
 });
 it('cache-busts both replacement tracks and their entry modules together',()=>{
   for(const game of ['goose','pindou']){

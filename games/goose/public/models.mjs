@@ -1,5 +1,6 @@
 import * as T from './vendor/three.module.js';
 import {BIN,binFor} from './physics.mjs';
+import {SCENES} from './catalog.mjs';
 const mats=new Map(),geos=new Map(),models=new Map(),textures=new Map();
 // Small deterministic PBR maps are generated locally, not fetched from a CDN.
 function surfaceTexture(style,bump=false){
@@ -10,6 +11,7 @@ function surfaceTexture(style,bump=false){
   if(style==='baked')light=.62+n*.33-Math.max(0,Math.sin(u*21+v*13)*Math.cos(v*27-u*9))*.1;
   if(style==='meat')light=.55+n*.25+Math.pow(Math.max(0,Math.sin(u*30+Math.sin(v*19)*3)),14)*.2;
   if(style==='wood')light=.65+n*.08+Math.sin(u*50+Math.sin(v*8)*2)*.1;
+  if(style==='woven'){const a=x%16,b=y%16;light=.69+n*.04+((a<8)===(b<8)?Math.sin(a/8*Math.PI):Math.sin(b/8*Math.PI))*.21;}
   if(style==='leaf')light=.78+n*.12+Math.sin(u*90)*.06;
   const val=Math.max(0,Math.min(255,Math.round(light*255))),i=(y*size+x)*4;data.set([val,val,val,255],i);
  }
@@ -17,9 +19,9 @@ function surfaceTexture(style,bump=false){
 }
 function mat(color,metal=0,style='plain'){
  if(color?.isMaterial)return color;const key=color+':'+metal+':'+style;
- if(!mats.has(key)){const roughness={skin:.3,peel:.58,baked:.82,meat:.37,wood:.75,leaf:.65,ceramic:.18,plastic:.23,metal:.27,plain:.48}[style];
+ if(!mats.has(key)){const roughness={skin:.3,peel:.58,baked:.82,meat:.37,wood:.75,woven:.8,leaf:.65,ceramic:.18,plastic:.23,metal:.27,plain:.48}[style];
   const m=new T.MeshStandardMaterial({color,roughness,metalness:metal,envMapIntensity:.65});m.userData.surface=style;
-  if(['skin','peel','baked','meat','wood','leaf'].includes(style)){m.map=surfaceTexture(style);m.bumpMap=surfaceTexture(style,true);m.bumpScale=style==='peel'?.035:style==='baked'?.025:.012;}mats.set(key,m);
+  if(['skin','peel','baked','meat','wood','woven','leaf'].includes(style)){m.map=surfaceTexture(style);m.bumpMap=surfaceTexture(style,true);m.bumpScale=style==='peel'?.035:style==='baked'?.025:style==='woven'?.035:.012;}mats.set(key,m);
  }return mats.get(key);
 }
 const finish=(color,style,metal=0)=>mat(color,metal,style);
@@ -27,6 +29,23 @@ export function makeEnvironment(){
  if(textures.has('studio'))return textures.get('studio');const w=256,h=128,data=new Uint8Array(w*h*4);
  for(let y=0;y<h;y++)for(let x=0;x<w;x++){const u=x/w,v=y/h,softbox=Math.exp(-((u-.22)**2/.007+(v-.3)**2/.018))*.45+Math.exp(-((u-.72)**2/.006+(v-.38)**2/.04))*.3,l=.18+.38*(1-v)+softbox,i=(y*w+x)*4;data.set([l*255,l*253,l*247,255],i);}
  const tex=new T.DataTexture(data,w,h);tex.mapping=T.EquirectangularReflectionMapping;tex.colorSpace=T.LinearSRGBColorSpace;tex.needsUpdate=true;textures.set('studio',tex);return tex;
+}
+// Scene-owned copies: this mask never affects collection models or fly-in FX.
+// Apply the same world-space test to color and shadow passes, keeping above-lip
+// overhangs intact while concealing below-lip collision-hull protrusions.
+export function makePileMaterial(source){
+ const material=source.clone(),varying='varying vec3 vPileWorld;\n';
+ material.onBeforeCompile=shader=>{
+  shader.vertexShader=varying+shader.vertexShader.replace('#include <project_vertex>',`#include <project_vertex>
+   vec4 pileWorld=vec4(transformed,1.0);
+   #ifdef USE_INSTANCING
+    pileWorld=instanceMatrix*pileWorld;
+   #endif
+   vPileWorld=(modelMatrix*pileWorld).xyz;`);
+  shader.fragmentShader=varying+shader.fragmentShader.replace('#include <clipping_planes_fragment>',`#include <clipping_planes_fragment>
+   if(vPileWorld.y<${BIN.rim+.035} && max(abs(vPileWorld.x),abs(vPileWorld.z))>${BIN.innerHalf+.035})discard;`);
+ };
+ material.customProgramCacheKey=()=>material.type+':pile-wall-mask-v1';material.userData.pileWallMask=true;return material;
 }
 function geo(key,create){if(!geos.has(key))geos.set(key,create());return geos.get(key);}
 const sphere=()=>geo('sphere',()=>new T.SphereGeometry(1,18,12));
@@ -49,7 +68,7 @@ function compact(group){
   if(flat!==geometry)geometry.dispose();if(!buckets.has(mesh.material))buckets.set(mesh.material,[]);buckets.get(mesh.material).push(flat);}
  for(const[material,parts]of buckets){const geometry=new T.BufferGeometry();for(const name of ['position','normal','uv']){const components=name==='uv'?2:3,length=parts.reduce((n,p)=>n+p.getAttribute('position').count*components,0),data=new Float32Array(length);let offset=0;for(const p of parts){const a=p.getAttribute(name)?.array||new Float32Array(p.getAttribute('position').count*components);data.set(a,offset);offset+=a.length;}geometry.setAttribute(name,new T.BufferAttribute(data,components));}
   for(const p of parts)p.dispose();geometry.computeBoundingSphere();const mesh=new T.Mesh(geometry,material);mesh.castShadow=mesh.receiveShadow=true;result.add(mesh);}
- result.userData.kind=group.userData.kind;return result;
+ result.userData={...group.userData};return result;
 }
 export function makeModel(kind,accent='#90b895'){
  const key=kind+accent;if(models.has(key))return models.get(key).clone(true);
@@ -150,10 +169,88 @@ export function makeModel(kind,accent='#90b895'){
 // Deep rounded-square bin with a bevelled lip and a recessed patterned floor.
 function roundedPath(path,half,r){path.moveTo(-half+r,-half);path.lineTo(half-r,-half);path.quadraticCurveTo(half,-half,half,-half+r);path.lineTo(half,half-r);path.quadraticCurveTo(half,half,half-r,half);path.lineTo(-half+r,half);path.quadraticCurveTo(-half,half,-half,half-r);path.lineTo(-half,-half+r);path.quadraticCurveTo(-half,-half,-half+r,-half);path.closePath();return path;}
 function binRing(depth){return geo('bin-ring-'+depth,()=>{const shape=roundedPath(new T.Shape(),BIN.outerHalf,.22);shape.holes.push(roundedPath(new T.Path(),BIN.innerHalf,.15));return new T.ExtrudeGeometry(shape,{depth,steps:1,bevelEnabled:true,bevelSize:.035,bevelThickness:.035,bevelSegments:2,curveSegments:5});});}
-export function makeBowl(accent,count=123){
- const bin=binFor(count),key='bin:'+accent+':'+bin.floor;if(models.has(key))return models.get(key).clone(true);const g=new T.Group();part(g,box(),finish('#717879','metal',.42),[6.22,.18,6.22],[0,bin.floor-.12,0]);
+export function makeBowl(accent,count=123,themeId='plain'){
+ const bin=binFor(count),key='bin:'+accent+':'+bin.floor+':'+themeId;if(models.has(key))return models.get(key).clone(true);
+ if(SCENES[themeId])return makeThemedBowl(key,bin,themeId);
+ const g=new T.Group();part(g,box(),finish('#717879','metal',.42),[6.22,.18,6.22],[0,bin.floor-.12,0]);
  part(g,binRing(bin.depth),finish('#a1a9a8','metal',.38),[1,1,1],[0,BIN.rim,0],[Math.PI/2,0,0]);
  part(g,binRing(.12),finish('#d9dfd9','metal',.4),[1,1,1],[0,BIN.rim+.1,0],[Math.PI/2,0,0]);
  for(let i=-2.7;i<=2.7;i+=.45){part(g,box(),'#555f60',[.022,.025,5.7],[i,bin.floor+.018,0]);part(g,box(),'#555f60',[5.7,.025,.022],[0,bin.floor+.018,i]);}
+ const model=compact(g);models.set(key,model);return model.clone(true);
+}
+
+function makeThemedBowl(key,bin,themeId){
+ const s=SCENES[themeId],g=new T.Group(),woven=['wicker','basket'].includes(s.type),wood=s.type==='crate'||woven;
+ const style=wood?(woven?'woven':'wood'):s.type==='tub'?'ceramic':s.type==='cooler'||s.type==='candy'?'plastic':'metal',metal=style==='metal'?.48:0;
+ const wall=finish(s.wall,style,metal),edge=finish(s.rim,style,metal),base=finish(s.floor,style,metal),trim=finish(s.wood,wood?'wood':'plain');
+ g.userData={themeId,container:s.container,type:s.type,mouthHalf:BIN.innerHalf,floor:bin.floor};
+ // Every skin retains the original unobstructed mouth and physical floor.
+ part(g,box(),base,[6.22,.18,6.22],[0,bin.floor-(s.type==='grill'?.5:.12),0]);
+ part(g,binRing(bin.depth),wall,[1,1,1],[0,BIN.rim,0],[Math.PI/2,0,0]);
+ part(g,binRing(.16),edge,[1,1,1],[0,BIN.rim+.1,0],[Math.PI/2,0,0]);
+ const handle=(x,color=edge)=>part(g,torus(.3,.065),color,[1,1,.9],[x,BIN.rim-.06,0],[0,Math.PI/2,0]);
+ const rimRail=(color,height=.035)=>{
+  for(const z of [-3.06,3.06])part(g,roundedBox(),color,[6.08,height,.085],[0,BIN.rim+.17,z]);
+  for(const x of [-3.06,3.06])part(g,roundedBox(),color,[.085,height,6.08],[x,BIN.rim+.17,0]);
+ };
+ if(s.type==='crate'){
+  // Visible wooden staves, reinforcing corners, rails and iron nail heads.
+  for(const side of [-1,1])for(let i=-2.7;i<=2.71;i+=.54){
+   part(g,box(),trim,[.43,bin.depth-.05,.08],[i,BIN.rim-bin.depth/2,side*3.17]);
+   part(g,box(),trim,[.08,bin.depth-.05,.43],[side*3.17,BIN.rim-bin.depth/2,i]);
+   ball(g,'#696454',[.036,.036,.025],[i,BIN.rim-.16,side*3.22]);
+  }
+  rimRail(edge,.12);for(const x of [-2.97,2.97])for(const z of [-2.97,2.97])part(g,box(),edge,[.19,bin.depth,.19],[x,BIN.rim-bin.depth/2,z]);
+  for(let i=-2.6;i<=2.61;i+=.65)part(g,box(),trim,[.012,.02,5.7],[i,bin.floor+.02,0]);
+  for(const x of [-3.22,3.22])handle(x,trim);
+ }else if(woven){
+  // A braided rolled rim and real curved carrying handles, not a box recolor.
+  for(let i=-2.9;i<=2.91;i+=.19)for(const side of [-1,1]){
+   ball(g,edge,[.09,.07,.12],[i,BIN.rim+.19,side*3.055]);
+   ball(g,edge,[.12,.07,.09],[side*3.055,BIN.rim+.19,i]);
+  }
+  for(const x of [-3.23,3.23])handle(x,trim);
+  if(s.type==='basket')part(g,curvedTube('picnic-handle',[[-2.7,.7,-3.11],[-2,1.75,-3.12],[0,2.05,-3.12],[2,1.75,-3.12],[2.7,.7,-3.11]],.09,false),trim,[1,1,1],[0,0,0]);
+  else for(const z of [-3.12,3.12])part(g,curvedTube('fruit-handle-'+z,[[-.55,.72,z],[-.42,1.08,z],[.42,1.08,z],[.55,.72,z]],.07,false),trim,[1,1,1],[0,0,0]);
+ }else if(s.type==='baking'){
+  const steel=finish('#ded8ca','metal',.68);rimRail(steel,.085);
+  for(const x of [-3.23,3.23])handle(x,steel);
+  for(const x of [-2.8,2.8])for(const z of [-2.8,2.8])ball(g,steel,[.05,.025,.05],[x,BIN.rim+.19,z]);
+  for(let i=-2.7;i<=2.71;i+=.45)part(g,box(),trim,[5.7,.012,.012],[0,bin.floor+.02,i]);
+ }else if(s.type==='tub'){
+  // Porcelain lip, chrome plumbing and drain stay outside/below the pick area.
+  const chrome=finish('#d5dddd','metal',.75);rimRail(edge,.14);
+  part(g,curvedTube('bath-faucet',[[-1.9,.72,-3.18],[-1.9,1.4,-3.18],[-1.6,1.6,-3.1],[-1.3,1.42,-3.04]],.075,false),chrome,[1,1,1],[0,0,0]);
+  for(const x of [-2.3,-.8]){tube(g,chrome,[.07,.3,.07],[x,.91,-3.08]);part(g,torus(.11,.026),chrome,[1,1,1],[x,1.08,-3.08],[Math.PI/2,0,0]);}
+  tube(g,chrome,[.16,.025,.16],[0,bin.floor+.02,0]);
+  for(let i=0;i<4;i++)part(g,box(),wall,[.014,.016,.23],[(i-1.5)*.055,bin.floor+.034,0]);
+  for(const x of [-3.2,3.2])handle(x,chrome);
+ }else if(s.type==='grill'){
+  const steel=finish('#b6b6a6','metal',.65),coal=finish('#51423c','plain'),ember=mat('#c86c38',0,'plain');ember.emissive.set('#8b2e13');ember.emissiveIntensity=.18;
+  for(let i=-2.65;i<=2.66;i+=.38){part(g,cylinder(),steel,[.045,5.52,.045],[i,bin.floor+.03,0],[Math.PI/2,0,0]);}
+  for(const z of [-2.65,2.65])part(g,cylinder(),steel,[.055,5.5,.055],[0,bin.floor-.012,z],[0,0,Math.PI/2]);
+  const lump=geo('charcoal',()=>new T.IcosahedronGeometry(1,0));for(let x=-2.4;x<=2.41;x+=.65)for(let z=-2.4;z<=2.41;z+=.65)part(g,lump,((Math.round(x*10)+Math.round(z*10))%3)?coal:ember,[.31,.18,.32],[x,bin.floor-.24,z],[.2,x,.4]);
+  for(const x of [-3.23,3.23])handle(x,trim);
+  for(const x of [-1.6,0,1.6]){part(g,roundedBox(),trim,[.32,.2,.1],[x,.35,3.18]);ball(g,steel,[.07,.07,.06],[x,.35,3.27]);}
+  for(let x=-2.5;x<=2.51;x+=.34)part(g,box(),coal,[.18,.12,.03],[x,.1,3.165]);
+  // A long stainless barbecue fork lies on the striped worktop behind the
+  // furnace, like a scene prop rather than another selectable inventory item.
+  const q=new T.Quaternion().setFromEuler(new T.Euler(0,.68,0)),anchor=new T.Vector3(.1,.71,-4.34);
+  const tool=(geometry,color,scale,p)=>{const position=new T.Vector3(...p).applyQuaternion(q).add(anchor),m=part(g,geometry,color,scale,position.toArray());m.quaternion.copy(q);};
+  tool(roundedBox(),trim,[.23,.12,1.15],[0,0,.57]);tool(box(),steel,[.075,.045,1.42],[0,0,-.45]);
+  tool(box(),steel,[.39,.045,.08],[0,0,-1.14]);for(const x of [-.17,.17])tool(box(),steel,[.045,.045,.43],[x,0,-1.37]);
+ }else if(s.type==='candy'){
+  const cream=finish('#f4e9d8','plastic');rimRail(cream,.055);
+  for(let i=-2.9;i<=2.91;i+=.32)for(const side of [-1,1]){
+   ball(g,edge,[.18,.12,.14],[i,BIN.rim+.15,side*3.12]);ball(g,edge,[.14,.12,.18],[side*3.12,BIN.rim+.15,i]);
+  }
+  for(const x of [-3.23,3.23])handle(x,cream);
+  part(g,roundedBox(),cream,[1.1,.23,.045],[0,.25,3.18]);
+ }else if(s.type==='cooler'){
+  const hardware=finish('#adb9bd','metal',.55);rimRail(edge,.13);
+  for(const x of [-2.1,2.1]){part(g,roundedBox(),hardware,[.33,.18,.17],[x,.7,-3.14]);part(g,roundedBox(),hardware,[.19,.38,.06],[x,.32,3.18]);}
+  for(const x of [-3.23,3.23])handle(x,edge);
+  tube(g,hardware,[.1,.035,.1],[0,.12,3.2],[Math.PI/2,0,0]);
+ }
  const model=compact(g);models.set(key,model);return model.clone(true);
 }
