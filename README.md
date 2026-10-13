@@ -14,6 +14,7 @@ games/
     docs/           本游戏玩法与历史
   goose/            独立 3D 抓大鹅，public / tests / docs
   lianliankan/      果趣连连看，PC / 手机双页面，独立 engine / tests / docs
+  paopaotang/       泡泡小镇，水泡 AI 闯关 / PC 本地双人协作 / 手机触控
   <new-game>/       相同结构，平级扩展
 site/               /games/ 游戏大厅
 scripts/            共享检查、构建、发布、验证工具
@@ -25,6 +26,7 @@ dist/games/         构建产物，按游戏分目录
 - [拼豆](https://caibinice.com/games/pindou/)：100 关 / 40 图，原存档保持兼容。
 - [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市 / 34 种自制模型，深箱堆叠、3D 七格三消与物理颠锅。
 - [果趣连连看](https://caibinice.com/games/lianliankan/)：30 关 / 16 种水果，经典两折连线；[电脑版](https://caibinice.com/games/lianliankan/pc.html) / [手机版](https://caibinice.com/games/lianliankan/mobile.html)。
+- [泡泡堂 · 泡泡小镇](https://caibinice.com/games/paopaotang/)：12 关 / 6 张地图，水泡、连锁和救援，AI 闯关与 PC 本地双人协作；[电脑版](https://caibinice.com/games/paopaotang/pc.html) / [手机版](https://caibinice.com/games/paopaotang/mobile.html)。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
 
 ## 开发与构建
@@ -51,6 +53,7 @@ pwsh -File scripts/deploy.ps1 -BuildOnly
 pwsh -File scripts/deploy.ps1                # 全部游戏，一次原子切换
 pwsh -File scripts/deploy.ps1 -Games pindou   # 单独更新，保留其他游戏
 pwsh -File scripts/deploy.ps1 -Games lianliankan -SkipInstall # 只发布连连看
+pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡小镇
 # 多个游戏用逗号字符串：-Games 'pindou,goose'
 & .\.venv\Scripts\python.exe scripts/verify.py
 ```
@@ -64,6 +67,7 @@ pwsh -File scripts/deploy.ps1 -Games lianliankan -SkipInstall # 只发布连连�
 - [拼豆规则与历史](games/pindou/docs/README.md)
 - [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)
+- [泡泡小镇玩法、控制与维护](games/paopaotang/docs/README.md)
 - [连连看 PC / 手机独立上线验收](docs/lianliankan-20261013.md)
 - [本机凭据](credentials/README.md)
 - [此前独立仓库迁移](docs/migration.md)

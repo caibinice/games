@@ -1,0 +1,11 @@
+{
+  "id": "paopaotang",
+  "name": "泡泡堂 · 泡泡小镇",
+  "subtitle": "Bubble Town · 水花里的快乐",
+  "description": "放下水泡，躲开水柱，救出伙伴。经典泡泡对战，单人 AI 闯关与 PC 双人协作。",
+  "color": "#89bddb",
+  "symbol": "🫧",
+  "version": "20261013-1",
+  "facts": { "levels": 12, "maps": 6, "layouts": 2 },
+  "vendors": []
+}

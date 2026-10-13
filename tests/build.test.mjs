@@ -36,15 +36,15 @@ describe('Independent game build',()=>{
       for(const name of ['three.module.js','three.core.js','cannon-es.js'])expect(gunzipSync(readFileSync(join(out,'games/goose/vendor',name+'.gz'))).equals(readFileSync(join(out,'games/goose/vendor',name)))).toBe(true);
     }finally{rmSync(temp,{recursive:true,force:true});}
   });
-  it('builds only Fruit Link, with dedicated PC/mobile pages and the full lobby catalogue',()=>{
+  it.each(['lianliankan','paopaotang'])('builds only %s, with dedicated PC/mobile pages and the full lobby catalogue',id=>{
     const temp=mkdtempSync(join(work,'tmp/games-fruit-link-test-'));
     try{
-      const out=join(temp,'test-dist'),manifest=build({output:out,games:'lianliankan'});
-      expect(manifest.games.map(g=>g.id)).toEqual(['lianliankan']);
-      for(const page of ['index.html','pc.html','mobile.html'])expect(existsSync(join(out,'games/lianliankan',page))).toBe(true);
+      const out=join(temp,'test-dist'),manifest=build({output:out,games:id});
+      expect(manifest.games.map(g=>g.id)).toEqual([id]);
+      for(const page of ['index.html','pc.html','mobile.html'])expect(existsSync(join(out,`games/${id}`,page))).toBe(true);
       for(const id of ['pindou','goose'])expect(existsSync(join(out,'games',id))).toBe(false);
       expect(JSON.parse(readFileSync(join(out,'games/catalog.json'),'utf8')).map(g=>g.id)).toEqual(listGames().map(g=>g.id));
-      for(const file of manifest.files)expect(file.path.startsWith('games/lianliankan/')||file.path.split('/').length===2).toBe(true);
+      for(const file of manifest.files)expect(file.path.startsWith(`games/${id}/`)||file.path.split('/').length===2).toBe(true);
     }finally{rmSync(temp,{recursive:true,force:true});}
   });
   it('rejects a credentials file in the public runtime before packaging',()=>{
