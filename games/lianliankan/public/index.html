@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="经典果趣连连看，PC 和手机专属界面，两次转弯连线，30 个关卡，无广告。">
+  <meta name="theme-color" content="#f6f5ee">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <title>果趣连连看 · Fruit Link</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="entry-page">
+  <main class="entry-card">
+    <img src="./assets/icon.svg" width="80" height="80" alt="樱桃">
+    <span class="eyebrow">A LITTLE FRUIT, A LOT OF JOY</span>
+    <h1>把好心情，连起来。</h1>
+    <p>果趣连连看 · 为每块屏幕准备的小快乐</p>
+    <a class="primary-button" href="./pc.html">进入电脑版 →</a>
+    <a class="soft-button" href="./mobile.html">进入手机版 →</a>
+    <a class="quiet-link" href="/games/">返回游乐场</a>
+  </main>
+  <script>
+    const page = matchMedia('(pointer: coarse)').matches || innerWidth < 760 ? 'mobile.html' : 'pc.html';
+    location.replace(new URL('./' + page + location.search + location.hash, location.href));
+  </script>
+</body>
+</html>
