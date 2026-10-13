@@ -19,4 +19,24 @@
   .toolbelt{margin-top:12px}.toolbelt>button{padding:10px 13px}.tool-symbol{padding:6px}.keyboard-tip{margin-top:10px}.page-footer{margin-top:20px;padding:16px 0}
 }
 .mobile-shell .mobile-topbar{padding-top:11px;padding-bottom:8px}.mobile-shell .mobile-level-row{margin-top:6px;margin-bottom:4px;height:34px}.mobile-shell .mobile-preferences{margin-bottom:9px}.mobile-shell .stats-bar{padding:8px 0;margin-bottom:9px}.mobile-shell .stat>strong{font-size:22px}.mobile-shell .board-heading{padding-top:3px;padding-bottom:3px;min-height:34px}.mobile-shell .board-frame{padding-top:12px;padding-bottom:12px}.mobile-shell .toolbelt{margin-top:9px}.mobile-shell .mobile-bottom-row{margin-top:9px}.mobile-shell .mobile-footer{margin-top:8px;margin-bottom:2px;font-size:9px}.mobile-shell .mobile-footer small{margin-top:3px;font-size:6px}
+.fullscreen-button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:34px;padding:7px 11px;border:1px solid #dce5d3;border-radius:9px;background:#eef3e7;color:#7a966d;font-size:11px;white-space:nowrap}.fullscreen-button .icon{width:17px;height:17px}.fullscreen-button:hover{background:#e2ecd8}
+body[data-platform="pc"].immersive{overflow:hidden}
+body.immersive .page-shell{width:100%;max-width:none;height:100dvh;padding:12px}
+body.immersive .topbar,body.immersive .page-heading,body.immersive .side-panel,body.immersive .page-footer,body.immersive .keyboard-tip{display:none!important}
+body.immersive .game-layout{display:block;height:100%}
+body.immersive .play-panel{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;height:100%;min-height:0}
+body.immersive .stats-bar{margin:0;padding:8px 0;border-radius:13px}
+body.immersive .board-card{display:flex;flex-direction:column;min-height:0;border-radius:16px}
+body.immersive .board-heading{flex-shrink:0;padding:7px 17px}
+body.immersive .board-frame{flex-shrink:0;width:var(--immersive-board-width,70%);max-width:none;margin:auto; padding:18px}
+body.immersive .board-footer{flex-shrink:0;padding:9px 18px}
+body.immersive .harvest-track{flex-shrink:0}
+body.immersive .toolbelt{margin:0;gap:10px}
+body.immersive .toolbelt>button{padding:8px 14px;justify-content:center}
+body.immersive .toolbelt small{display:none}
+body.immersive .toolbelt b{margin-left:12px}
+body.immersive .tile{padding:5px;border-radius:10px}
+body.immersive .tile.selected{padding:4px}
+body.immersive .overlay-content{width:340px;padding:27px}
+@media(max-width:600px){.fullscreen-button>span:not([data-icon]){display:none}.fullscreen-button{padding:7px;min-width:32px}body.immersive .page-shell{padding:6px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

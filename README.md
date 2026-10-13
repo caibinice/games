@@ -69,6 +69,7 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)
 - [泡泡小镇玩法、控制与维护](games/paopaotang/docs/README.md)
 - [泡泡小镇双端提交与上线验收](docs/paopaotang-20261013.md)
+- [两款 PC 全屏与泡泡手感优化](docs/pc-immersive-latency-20261013.md)
 - [连连看 PC / 手机独立上线验收](docs/lianliankan-20261013.md)
 - [本机凭据](credentials/README.md)
 - [此前独立仓库迁移](docs/migration.md)

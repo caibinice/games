@@ -40,8 +40,8 @@ export async function browserSmoke(page) {
 
  await fixture(page,'pc','duo');
  await page.locator('#overlay-content [data-action="start"]').click();
- await page.keyboard.down('d');await page.waitForTimeout(120);await page.keyboard.up('d');
- await page.keyboard.down('ArrowUp');await page.waitForTimeout(120);await page.keyboard.up('ArrowUp');
+ await page.keyboard.down('d');await page.waitForTimeout(60);await page.keyboard.up('d');
+ await page.keyboard.down('ArrowUp');await page.waitForTimeout(60);await page.keyboard.up('ArrowUp');
  await page.keyboard.press('Space');await page.keyboard.press('Enter');await page.waitForTimeout(100);
  await page.keyboard.press('p');await waitStatus(page,'paused');
  const duo=(await state(page,'pc')).game;

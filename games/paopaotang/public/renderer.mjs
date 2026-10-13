@@ -1,5 +1,5 @@
 import {THEMES,SKINS,levelInfo} from './catalog.mjs';
-import {WALL,CRATE,TRAP_MS,movementMs} from './engine.mjs';
+import {WALL,CRATE,TRAP_MS,playerPosition,blastDangerous,BLAST_MS} from './engine.mjs';
 const T=48;
 const circle=(c,x,y,r,fill)=>{c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.fillStyle=fill;c.fill();};
 function round(c,x,y,w,h,r,fill){c.beginPath();c.roundRect(x,y,w,h,r);c.fillStyle=fill;c.fill();}
@@ -56,7 +56,7 @@ function drawBomb(c,x,y,time,placedAt,explodeAt){
   circle(c,0,0,15,fill);c.strokeStyle='#4a96c222';c.lineWidth=1;c.stroke();ellipse(c,-5,-5,4,6,'#e7fbfcaa');circle(c,7,7,2,'#b2e4f9');
   round(c,-4,-17,8,6,3,'#97bed0');line(c,0,-17,3,-22,'#d7b36e',2);star(c,3,-23,3+Math.sin(time/70),fraction>.7?'#ee9e79':'#f4d991');c.restore();
 }
-export function drawArena(canvas,game,visualTime=game.clock){
+export function drawArena(canvas,game,visualTime=game.clock,presentationTime=game.clock){
   const rect=canvas.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);
   if(rect.width<1)return;
   const width=Math.round(rect.width*ratio),height=Math.round(rect.width*game.rows/game.cols*ratio);
@@ -72,7 +72,9 @@ export function drawArena(canvas,game,visualTime=game.clock){
     }
   }
   for(const blast of game.blasts){
-    const fraction=(blast.expiresAt-game.clock)/650;c.save();c.globalAlpha=Math.min(1,fraction*2)*.9;
+    const dangerous=blastDangerous(game,blast);
+    const fraction=Math.max(0,(blast.expiresAt-presentationTime)/(BLAST_MS-(blast.damageUntil-blast.bornAt)));
+    c.save();c.globalAlpha=dangerous?.9:Math.min(.42,fraction*.42);
     const set=new Set(blast.cells);
     for(const i of blast.cells){
       const x=i%game.cols*T+24,y=Math.floor(i/game.cols)*T+24;
@@ -91,8 +93,8 @@ export function drawArena(canvas,game,visualTime=game.clock){
   for(const b of game.bombs)drawBomb(c,b.x*T+24,b.y*T+26,game.clock,b.placedAt,b.explodeAt);
   for(const p of [...game.players].sort((a,b)=>a.y-b.y)){
     if(p.status==='out')continue;
-    const progress=Math.min(1,Math.max(0,(game.clock-p.movedAt)/(movementMs(p)*.72))),t=progress*(2-progress);
-    const x=(p.fromX+(p.x-p.fromX)*t)*T+24,y=(p.fromY+(p.y-p.fromY)*t)*T+25;
+    const position=playerPosition(game,p,presentationTime),progress=position.progress;
+    const x=position.x*T+24,y=position.y*T+25;
     c.save();
     if(p.invulnerableUntil>game.clock&&Math.floor(visualTime/110)%2)c.globalAlpha=.55;
     drawAvatar(c,x,y,p.skin,{size:.86,dir:p.dir,trapped:p.status==='trapped',walk:progress<1?progress*Math.PI*2:0});

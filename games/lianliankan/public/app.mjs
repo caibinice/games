@@ -2,6 +2,7 @@ import {newGame, startGame, pauseGame, advanceTime, matchPair, findMove, shuffle
   useHint, extendTime, serialize, restore, DIFFICULTIES, LEVEL_COUNT, chapterName} from './engine.mjs';
 import {FRUITS, fruitSVG} from './fruits.mjs';
 import {icon} from './icons.mjs';
+import {setupFullscreen} from './fullscreen.mjs';
 
 const $ = id => document.getElementById(id);
 const platform = document.body.dataset.platform;
@@ -21,6 +22,22 @@ let pendingAction = null, resumeAfterDialog = false, audioContext;
 document.querySelectorAll('[data-icon]').forEach(el => { el.innerHTML = icon(el.dataset.icon); });
 if ($('fruit-bouquet')) $('fruit-bouquet').innerHTML = fruitSVG(1) + fruitSVG(7) + fruitSVG(6);
 $('rule-illustration').innerHTML = fruitSVG(7) + fruitSVG(7);
+setupFullscreen({button:$('fullscreen-button'),icon,notice:toast,onChange:()=>{
+  fitImmersiveBoard();
+  if(game.status==='running')($('board').querySelector('.tile.selected:not(:disabled)')||$('board').querySelector('.tile:not(:disabled)'))?.focus({preventScroll:true});
+}});
+function fitImmersiveBoard(){
+  const frame=$('board-frame');
+  if(!document.body.classList.contains('immersive')){frame.style.removeProperty('--immersive-board-width');return;}
+  const card=frame.closest('.board-card'),style=getComputedStyle(frame),gap=parseFloat(getComputedStyle($('board')).columnGap)||0;
+  const horizontal=parseFloat(style.paddingLeft)+parseFloat(style.paddingRight)+2;
+  const vertical=parseFloat(style.paddingTop)+parseFloat(style.paddingBottom)+2;
+  const available=card.clientHeight-card.querySelector('.board-heading').offsetHeight-card.querySelector('.board-footer').offsetHeight-card.querySelector('.harvest-track').offsetHeight;
+  const ratio=game.cols/game.rows;
+  const gridWidth=Math.min(card.clientWidth-32-horizontal,(available-vertical-gap*(1/ratio-1))*ratio);
+  frame.style.setProperty('--immersive-board-width',`${Math.max(120,gridWidth+horizontal)}px`);
+}
+if($('fullscreen-button'))new ResizeObserver(fitImmersiveBoard).observe($('board-frame').closest('.board-card'));
 
 function recordKey() { return `${game.difficulty}:${game.mode}`; }
 function currentRecord() {
@@ -156,7 +173,7 @@ function renderOverlay() {
     content.innerHTML = `${fruit}<span class="eyebrow">GOOD THINGS TAKE A LITTLE TIME</span><h2>好心情，值得再等等。</h2><p>时间到了，已经配对 ${game.removed / 2} 组。<br>${game.extensions ? '再给自己 30 秒，接着收获。' : '换个心情，再来一局吧。'}</p><button class="primary-button" data-action="${game.extensions ? 'extend' : 'restart'}">${game.extensions ? `加时 30 秒 · 剩余 ${game.extensions} 次` : '再试一次'}</button>${game.extensions ? '<button class="overlay-text-button" data-action="restart">重新开始</button>' : '<button class="overlay-text-button" data-action="zen">试试自在慢玩</button>'}`;
   }
 }
-function render() { renderSettings(); renderBoard(); renderStats(); renderOverlay(); }
+function render() { renderSettings(); renderBoard(); renderStats(); renderOverlay(); fitImmersiveBoard(); }
 function clearEffects() {
   clearTimeout(hintTimeout); clearTimeout(animationTimeout);
   $('connection').replaceChildren();
@@ -353,7 +370,7 @@ function pauseForLeave() {
 }
 document.addEventListener('visibilitychange', () => { if (document.hidden) pauseForLeave(); else lastTick = performance.now(); });
 window.addEventListener('pagehide', pauseForLeave);
-window.addEventListener('resize', () => { if (busy) $('connection').replaceChildren(); });
+window.addEventListener('resize', () => { if (busy) $('connection').replaceChildren(); fitImmersiveBoard(); });
 setInterval(() => {
   syncClock(); renderStats();
   if (game.status === 'running' && performance.now() - lastSave > 5000) save();

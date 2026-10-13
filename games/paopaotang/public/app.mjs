@@ -1,7 +1,8 @@
-import {newGame,start,pause,step,getPlayer,enemiesLeft,livingTeam,stars,serialize,restore,TRAP_MS} from './engine.mjs';
+import {newGame,start,pause,step,getPlayer,enemiesLeft,livingTeam,stars,serialize,restore,TRAP_MS,applyInput,movementMs,SIMULATION_MS} from './engine.mjs';
 import {LEVEL_COUNT,THEMES,SKINS,DIFFICULTIES,levelInfo} from './catalog.mjs';
 import {drawArena,avatarSVG} from './renderer.mjs';
 import {icon} from './icons.mjs';
+import {setupFullscreen} from './fullscreen.mjs';
 const $=id=>document.getElementById(id),platform=document.body.dataset.platform;
 const KEY=`fish-bubble-town:${platform}:v1`,pad=n=>String(n).padStart(2,'0');
 let stored={};try{stored=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch{}
@@ -14,6 +15,17 @@ const keys=new Set(),queued={p1:{},p2:{}};
 const canvas=$('game-canvas');
 document.querySelectorAll('[data-icon]').forEach(el=>el.innerHTML=icon(el.dataset.icon));
 $('help-avatars').innerHTML=avatarSVG(0)+avatarSVG(1)+avatarSVG(3);
+setupFullscreen({button:$('fullscreen-button'),icon,notice:toast,onChange:()=>{
+ fitImmersiveArena();if(game.status==='running'&&platform==='pc')canvas.focus({preventScroll:true});
+}});
+function fitImmersiveArena(){
+ const frame=$('arena-frame');
+ if(!document.body.classList.contains('immersive')){frame.style.removeProperty('--immersive-arena-width');return;}
+ const card=frame.closest('.arena-card'),available=card.clientHeight-card.querySelector('.arena-heading').offsetHeight-card.querySelector('.arena-caption').offsetHeight;
+ const width=Math.min(card.clientWidth-24,(available-2)*game.cols/game.rows+2);
+ frame.style.setProperty('--immersive-arena-width',`${Math.max(120,width)}px`);
+}
+if($('fullscreen-button'))new ResizeObserver(fitImmersiveArena).observe($('arena-frame').closest('.arena-card'));
 function recordKey(){return`${game.mode}:${game.difficulty}`;}
 function record(){const r=records[recordKey()]||{};return{unlocked:Number.isInteger(r.unlocked)?Math.max(1,Math.min(12,r.unlocked)):1,stars:r.stars&&typeof r.stars==='object'?r.stars:{}};}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({game:serialize(game),records,best,sound}));}catch{}lastSave=performance.now();}
@@ -64,6 +76,10 @@ function renderSettings(){
 }
 function renderHud(){
  const p=getPlayer(game,'p1'),seconds=Math.ceil(game.remainingMs/1000);
+ for(const player of game.players.filter(p=>p.team===0)){
+  canvas.dataset[`${player.id}X`]=player.x;canvas.dataset[`${player.id}Y`]=player.y;canvas.dataset[`${player.id}Status`]=player.status;
+ }
+ canvas.dataset.bombs=game.bombs.filter(b=>b.team===0).length;canvas.dataset.clock=game.clock;
  $('score').textContent=game.score.toLocaleString('zh-CN');$('enemies').innerHTML=`${enemiesLeft(game)}<small> 位</small>`;
  $('timer').textContent=`${pad(Math.floor(seconds/60))}:${pad(seconds%60)}`;
  document.querySelector('.scoreboard>div:last-child').classList.toggle('warning',seconds<=30&&game.status==='running');
@@ -87,7 +103,7 @@ function renderOverlay(){
  else if(game.status==='won')content.innerHTML=`${avatar}<span class="eyebrow">A SPLASHING LITTLE VICTORY</span><h2>${game.level===12?'整座小镇，都点亮啦！':'水花派对，大获全胜！'}</h2><div class="result-stars" aria-label="${stars(game)} 星">${'★'.repeat(stars(game))}${'☆'.repeat(3-stars(game))}</div><strong class="result-score">${game.score.toLocaleString('zh-CN')}</strong><p>击败 ${game.enemiesOut} 位 AI · 剩余 ${Math.ceil(game.remainingMs/1000)} 秒</p><button class="primary" data-action="${game.level===12?'levels':'next'}">${game.level===12?'看看我的旅行地图':'下一场小冒险'} ${icon('arrow')}</button><button class="overlay-text-button" data-action="restart">再玩一局</button>`;
  else content.innerHTML=`${avatar}<span class="eyebrow">EVERY SPLASH IS A NEW START</span><h2>下一朵水花，会更漂亮。</h2><p>${game.remainingMs<=0?'时间到了，派对先休息一下。':'这次被困住了，下次记得留条退路。'}<br>已经冲开 ${game.cratesBroken} 个箱子，获得 ${game.score} 分。</p><button class="primary" data-action="restart">再来一场 ${icon('restart')}</button><button class="overlay-text-button" data-action="easy">试试轻松难度</button>`;
 }
-function render(){renderSettings();renderHud();renderOverlay();drawArena(canvas,game,performance.now());}
+function render(){renderSettings();renderHud();renderOverlay();fitImmersiveArena();drawArena(canvas,game,performance.now());}
 function rememberWin(){
  best=Math.max(best,game.score);if(game.status!=='won')return;
  const r=record();r.unlocked=Math.max(r.unlocked,Math.min(12,game.level+1));r.stars[game.level]=Math.max(Number(r.stars[game.level])||0,stars(game));records[recordKey()]=r;
@@ -121,11 +137,12 @@ function handleEvents(){
  if(e.type==='out'){if(e.team===1)$('game-message').textContent=`少一位对手啦！还有 ${enemiesLeft(game)} 位`;else $('game-message').textContent='伙伴先休息一下，继续加油！';}
  if(e.type==='win'||e.type==='lose'){sfx(e.type);rememberWin();clearInput();render();save();}
  }
+ if(game.events.length)renderHud();
 }
 const actions={
  start:begin,pause:togglePause,restart:()=>requestFresh(),next:()=>{if(game.status==='won'&&game.level<12)fresh({level:game.level+1});},
  help:()=>openDialog('help-dialog'),levels:chooseLevels,skins:()=>openDialog('skins-dialog'),
- bomb:()=>{if(game.status==='running')queued.p1.bomb=true;},needle:()=>{if(game.status==='running')queued.p1.needle=true;},
+ bomb:()=>dispatchInput('p1',{bomb:true}),needle:()=>dispatchInput('p1',{needle:true}),
  easy:()=>requestFresh({difficulty:'easy',level:1}),
  sound:()=>{sound=!sound;renderSettings();save();if(sound)sfx('start');},
  confirm:()=>{resumeAfterDialog=false;$('confirm-dialog').close();pendingAction?.();pendingAction=null;},
@@ -152,40 +169,63 @@ const keyDirections={KeyW:'up',KeyA:'left',KeyS:'down',KeyD:'right',ArrowUp:'up'
 document.addEventListener('keydown',event=>{
  if(document.querySelector('dialog[open]')||event.ctrlKey||event.altKey||event.metaKey||/INPUT|SELECT|TEXTAREA/.test(event.target.tagName))return;
  if(event.code==='KeyP'||event.code==='Escape'){if(!event.repeat){event.preventDefault();togglePause();}return;}
- if(game.status!=='running'||event.target.closest('button,a'))return;
- if(keyDirections[event.code]){event.preventDefault();keys.delete(event.code);keys.add(event.code);}
- if(event.code==='Space'){event.preventDefault();if(!event.repeat)queued.p1.bomb=true;}
- if(event.code==='KeyE'){event.preventDefault();if(!event.repeat)queued.p1.needle=true;}
- if(game.mode==='duo'&&event.code==='Enter'){event.preventDefault();if(!event.repeat)queued.p2.bomb=true;}
- if(game.mode==='duo'&&['ShiftLeft','ShiftRight'].includes(event.code)){event.preventDefault();if(!event.repeat)queued.p2.needle=true;}
+ if(game.status!=='running'||event.target.closest?.('button,a'))return;
+ if(keyDirections[event.code]){
+  event.preventDefault();if(!event.repeat){
+   advanceSimulation(performance.now());keys.delete(event.code);keys.add(event.code);
+   dispatchInput(game.mode==='duo'&&event.code.startsWith('Arrow')?'p2':'p1',{direction:keyDirections[event.code]});
+  }
+ }
+ if(event.code==='Space'){event.preventDefault();if(!event.repeat)dispatchInput('p1',{bomb:true});}
+ if(event.code==='KeyE'){event.preventDefault();if(!event.repeat)dispatchInput('p1',{needle:true});}
+ if(game.mode==='duo'&&event.code==='Enter'){event.preventDefault();if(!event.repeat)dispatchInput('p2',{bomb:true});}
+ if(game.mode==='duo'&&['ShiftLeft','ShiftRight'].includes(event.code)){event.preventDefault();if(!event.repeat)dispatchInput('p2',{needle:true});}
 });
-document.addEventListener('keyup',event=>keys.delete(event.code));
+document.addEventListener('keyup',event=>{advanceSimulation(performance.now());keys.delete(event.code);});
 document.querySelectorAll('[data-direction]').forEach(button=>{
  button.addEventListener('pointerdown',event=>{
   if(game.status!=='running'||button.disabled)return;event.preventDefault();button.setPointerCapture(event.pointerId);
-  touchPointer=event.pointerId;touchDirection=button.dataset.direction;queued.p1.direction=touchDirection;document.querySelectorAll('.dpad button').forEach(b=>b.classList.remove('pressed'));button.classList.add('pressed');
+  advanceSimulation(performance.now());touchPointer=event.pointerId;touchDirection=button.dataset.direction;
+  dispatchInput('p1',{direction:touchDirection});document.querySelectorAll('.dpad button').forEach(b=>b.classList.remove('pressed'));button.classList.add('pressed');
  });
  button.addEventListener('contextmenu',event=>event.preventDefault());
 });
-function releasePointer(event){if(event.pointerId===touchPointer){touchDirection=null;touchPointer=null;document.querySelectorAll('.dpad button').forEach(b=>b.classList.remove('pressed'));}}
+function releasePointer(event){if(event.pointerId===touchPointer){advanceSimulation(performance.now());touchDirection=null;touchPointer=null;document.querySelectorAll('.dpad button').forEach(b=>b.classList.remove('pressed'));}}
 document.addEventListener('pointerup',releasePointer);document.addEventListener('pointercancel',releasePointer);
 function commandFor(control){
- const command={...queued[control]};queued[control]={};
- if(control==='p1'&&touchDirection)command.direction=touchDirection;
+ const p=getPlayer(game,control);if(!p)return{};
+ if(queued[control].until<game.clock)queued[control]={};
+ const command={};
+ if(queued[control].direction){command.direction=queued[control].direction;if(game.clock>=p.nextMove)queued[control]={};}
+ else if(control==='p1'&&touchDirection)command.direction=touchDirection;
  else{const candidates=[...keys].reverse().filter(key=>control==='p1'?key.startsWith('Key')||game.mode==='solo'&&key.startsWith('Arrow'):key.startsWith('Arrow'));if(candidates.length)command.direction=keyDirections[candidates[0]];}
  return command;
+}
+function dispatchInput(control,command){
+ if(game.status!=='running')return;
+ advanceSimulation(performance.now());if(game.status!=='running')return;
+ game.events=[];const result=applyInput(game,control,command);
+ if(command.direction)queued[control]=result.moved?{}:{direction:command.direction,until:game.clock+movementMs(getPlayer(game,control))};
+ handleEvents();renderHud();drawArena(canvas,game,performance.now(),game.clock+accumulator);
+}
+function advanceSimulation(time){
+ time=Math.max(time,lastFrame);const delta=Math.min(100,Math.max(0,time-lastFrame));lastFrame=time;
+ if(game.status==='running'&&!document.hidden){
+  accumulator+=delta;
+  while(accumulator>=SIMULATION_MS&&game.status==='running'){
+   step(game,SIMULATION_MS,{p1:commandFor('p1'),p2:commandFor('p2')});handleEvents();accumulator-=SIMULATION_MS;
+  }
+ }else accumulator=0;
 }
 function leave(){if(game.status==='running'){pause(game);clearInput();render();}save();}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)leave();else lastFrame=performance.now();});
 window.addEventListener('pagehide',leave);window.addEventListener('blur',clearInput);
 function frame(time){
- const delta=Math.min(100,Math.max(0,time-lastFrame));lastFrame=time;
+ advanceSimulation(time);
  if(game.status==='running'&&!document.hidden){
-  accumulator+=delta;
-  while(accumulator>=50&&game.status==='running'){step(game,50,{p1:commandFor('p1'),p2:commandFor('p2')});handleEvents();accumulator-=50;}
   if(time-lastSave>1200)save();music(time);
- }else accumulator=0;
- if(time-lastHud>150){renderHud();lastHud=time;}
- drawArena(canvas,game,time);requestAnimationFrame(frame);
+ }
+ if(time-lastHud>75){renderHud();lastHud=time;}
+ drawArena(canvas,game,time,game.clock+(game.status==='running'?accumulator:0));requestAnimationFrame(frame);
 }
 rememberWin();render();save();requestAnimationFrame(frame);

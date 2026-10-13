@@ -1,6 +1,7 @@
 import {LEVEL_COUNT, DIFFICULTIES, levelInfo} from './catalog.mjs';
 export const EMPTY=0, WALL=1, CRATE=2;
-export const FUSE_MS=2400, BLAST_MS=650, TRAP_MS=4500;
+export const FUSE_MS=2400, DAMAGE_MS=220, BLAST_MS=360, TRAP_MS=4500;
+export const HUMAN_MOVE_MS=125, SIMULATION_MS=10;
 export const DIRECTIONS={up:[0,-1],right:[1,0],down:[0,1],left:[-1,0]};
 const DIRECTIONS_LIST=Object.keys(DIRECTIONS);
 export const indexOf=(game,x,y)=>y*game.cols+x;
@@ -11,9 +12,9 @@ function rng(game) {
   game.seed>>>=0;return((t^t>>>14)>>>0)/4294967296;
 }
 function actor(id,team,control,x,y,skin,game) {
-  return {id,team,control,x,y,fromX:x,fromY:y,movedAt:0,nextMove:0,skin,dir:'down',status:'active',
+  return {id,team,control,x,y,fromX:x,fromY:y,movedAt:0,nextMove:0,nextThink:0,skin,dir:'down',status:'active',
     capacity:1,power:2,speed:1,needles:1,shield:0,trappedAt:0,invulnerableUntil:1000,
-    moveMs:control==='ai'?DIFFICULTIES[game.difficulty].botMove:190,lastBombAt:-10000};
+    moveMs:control==='ai'?DIFFICULTIES[game.difficulty].botMove:HUMAN_MOVE_MS,lastBombAt:-10000};
 }
 export function newGame({platform='pc',mode='solo',difficulty='normal',level=1,skin=0,seed=Date.now()}={}) {
   if(!['pc','mobile'].includes(platform)||!['solo','duo'].includes(mode)||(platform==='mobile'&&mode==='duo')||
@@ -48,7 +49,12 @@ export function pause(game){if(game.status==='running')game.status='paused';}
 export const enemiesLeft=game=>game.players.filter(p=>p.team===1&&p.status!=='out').length;
 export const livingTeam=game=>game.players.filter(p=>p.team===0&&p.status!=='out');
 export const getPlayer=(game,id)=>game.players.find(p=>p.id===id);
-export const movementMs=p=>Math.max(95,p.moveMs-(p.speed-1)*32);
+export const movementMs=p=>Math.max(p.control==='ai'?95:75,p.moveMs-(p.speed-1)*(p.control==='ai'?32:25));
+export function playerPosition(game,p,time=game.clock){
+  const progress=Math.min(1,Math.max(0,(time-p.movedAt)/movementMs(p)));
+  return{x:p.fromX+(p.x-p.fromX)*progress,y:p.fromY+(p.y-p.fromY)*progress,progress};
+}
+export const blastDangerous=(game,blast)=>game.clock<(blast.damageUntil??blast.expiresAt);
 export function blastCells(game,bomb,board=game.board,bombs=game.bombs) {
   const cells=[indexOf(game,bomb.x,bomb.y)];
   for(const[dx,dy]of Object.values(DIRECTIONS))for(let distance=1;distance<=bomb.power;distance++){
@@ -68,7 +74,7 @@ export function dangerMap(game,extraBomb=null) {
   }
   const danger=new Map();
   for(const b of bombs)for(const i of areas.get(b.id))danger.set(i,Math.min(danger.get(i)??Infinity,effective.get(b.id)));
-  for(const blast of game.blasts)for(const i of blast.cells)danger.set(i,game.clock);
+  for(const blast of game.blasts)if(blastDangerous(game,blast))for(const i of blast.cells)danger.set(i,game.clock);
   return danger;
 }
 function event(game,type,details={}){game.events.push({type,...details});}
@@ -128,7 +134,10 @@ export function movePlayer(game,id,direction) {
 function hitPlayers(game) {
   for(const p of game.players){
     if(p.status!=='active'||p.invulnerableUntil>game.clock)continue;
-    const hit=game.blasts.find(b=>b.cells.includes(indexOf(game,p.x,p.y)));
+    // Use the same interpolated centre as rendering. A logical destination
+    // is reserved immediately, but it must not be hit before the sprite arrives.
+    const position=playerPosition(game,p),cell=indexOf(game,Math.round(position.x),Math.round(position.y));
+    const hit=game.blasts.find(b=>blastDangerous(game,b)&&b.cells.includes(cell));
     if(!hit)continue;
     if(p.shield){p.shield--;p.invulnerableUntil=game.clock+1400;event(game,'shield',{player:p.id});}
     else{p.status='trapped';p.trappedAt=game.clock;event(game,'trap',{player:p.id});}
@@ -142,7 +151,7 @@ function detonate(game,ids) {
     done.add(id);
     const cells=blastCells(game,bomb,originalBoard,originalBombs);
     for(const other of originalBombs)if(cells.includes(indexOf(game,other.x,other.y))&&!done.has(other.id))queue.push(other.id);
-    game.blasts.push({id:game.nextId++,cells,owner:bomb.owner,team:bomb.team,expiresAt:game.clock+BLAST_MS});
+    game.blasts.push({id:game.nextId++,cells,owner:bomb.owner,team:bomb.team,bornAt:game.clock,damageUntil:game.clock+DAMAGE_MS,expiresAt:game.clock+BLAST_MS});
     for(const i of cells){
       game.items=game.items.filter(item=>indexOf(game,item.x,item.y)!==i||item.visibleAt>game.clock);
       if(game.board[i]!==CRATE)continue;
@@ -180,7 +189,8 @@ export function escapeDirection(game,p,extraBomb=null) {
 }
 function adjacentCrate(game,p){return Object.values(DIRECTIONS).some(([dx,dy])=>game.board[indexOf(game,p.x+dx,p.y+dy)]===CRATE);}
 export function decideAI(game,p) {
-  if(p.status!=='active'||game.clock<p.nextMove)return {};
+  if(p.status!=='active'||game.clock<p.nextMove||game.clock<(p.nextThink||0))return {};
+  p.nextThink=game.clock+50;
   const danger=dangerMap(game),here=indexOf(game,p.x,p.y);
   if(danger.has(here))return {direction:escapeDirection(game,p)};
   const friends=game.players.filter(o=>o.team===p.team&&o.status==='trapped');
@@ -199,6 +209,13 @@ export function decideAI(game,p) {
   if(!direction){const choices=DIRECTIONS_LIST.filter(d=>{const[dx,dy]=DIRECTIONS[d];return canWalk(game,p,p.x+dx,p.y+dy)&&!danger.has(indexOf(game,p.x+dx,p.y+dy));});direction=choices[Math.floor(rng(game)*choices.length)];}
   return {direction};
 }
+export function applyInput(game,id,command={}){
+  if(game.status!=='running')return{moved:false,bomb:false,needle:false};
+  const needle=!!command.needle&&useNeedle(game,id);
+  const bomb=!!command.bomb&&plantBomb(game,id);
+  const moved=!!command.direction&&movePlayer(game,id,command.direction);
+  return{moved,bomb,needle};
+}
 export function step(game,milliseconds,inputs={},{ai=true}={}) {
   game.events=[];
   if(game.status!=='running'||!Number.isFinite(milliseconds)||milliseconds<=0)return;
@@ -212,9 +229,7 @@ export function step(game,milliseconds,inputs={},{ai=true}={}) {
   finish(game);if(game.status!=='running')return;
   for(const p of game.players){
     const command=p.control==='ai'?(ai?decideAI(game,p):{}):inputs[p.control]||{};
-    if(command.needle)useNeedle(game,p.id);
-    if(command.bomb)plantBomb(game,p.id);
-    if(command.direction)movePlayer(game,p.id,command.direction);
+    applyInput(game,p.id,command);
   }
   hitPlayers(game);finish(game);
 }
@@ -236,12 +251,23 @@ export function restore(raw,platform) {
     if(!Array.isArray(g.players)||g.players.length!==original.players.length||!Array.isArray(g.bombs)||g.bombs.length>20||
        !Array.isArray(g.blasts)||g.blasts.length>30||!Array.isArray(g.items)||g.items.length>g.board.length)return null;
     const location=o=>Number.isInteger(o.x)&&Number.isInteger(o.y)&&inBounds(g,o.x,o.y)&&g.board[indexOf(g,o.x,o.y)]===EMPTY;
+    const legacyTiming=g.players.some(p=>p.control!=='ai'&&p.moveMs===190);
     for(let i=0;i<g.players.length;i++){
       const p=g.players[i],expected=original.players[i];
+      p.nextThink??=0;
       if(p.id!==expected.id||p.team!==expected.team||p.control!==expected.control||!location(p)||
          !['active','trapped','out'].includes(p.status)||!DIRECTIONS[p.dir]||!Number.isInteger(p.skin)||p.skin<0||p.skin>4)return null;
       for(const[key,max]of[['capacity',5],['power',5],['speed',3],['needles',3],['shield',2]])if(!Number.isInteger(p[key])||p[key]<(key==='needles'||key==='shield'?0:1)||p[key]>max)return null;
-      for(const key of ['fromX','fromY','movedAt','nextMove','trappedAt','invulnerableUntil','moveMs','lastBombAt'])if(!Number.isFinite(p[key]))return null;
+      for(const key of ['fromX','fromY','movedAt','nextMove','nextThink','trappedAt','invulnerableUntil','moveMs','lastBombAt'])if(!Number.isFinite(p[key]))return null;
+      if(p.control!=='ai'&&p.moveMs===190){
+        // Keep old rounds, but migrate their speed and the unconsumed part of
+        // an in-flight move instead of retaining the old 190ms cooldown.
+        const oldDuration=Math.max(95,190-(p.speed-1)*32);
+        const oldProgress=Math.min(1,Math.max(0,(g.clock-p.movedAt)/(oldDuration*.72)));
+        const progress=oldProgress*(2-oldProgress);
+        p.moveMs=HUMAN_MOVE_MS;p.movedAt=g.clock-progress*movementMs(p);
+        p.nextMove=Math.min(p.nextMove,p.movedAt+movementMs(p));
+      }
       if(p.moveMs!==expected.moveMs||!inBounds(g,p.fromX,p.fromY))return null;
     }
     const ids=new Set();
@@ -250,8 +276,16 @@ export function restore(raw,platform) {
          !Number.isInteger(b.power)||b.power<1||b.power>5||!Number.isFinite(b.explodeAt)||b.explodeAt<g.clock||
          !Number.isFinite(b.placedAt)||b.placedAt>g.clock)return null;ids.add(b.id);
     }
-    for(const b of g.blasts)if(!Array.isArray(b.cells)||b.cells.length>21||b.cells.some(i=>!Number.isInteger(i)||i<0||i>=g.board.length||g.board[i]===WALL)||!Number.isFinite(b.expiresAt)||b.expiresAt<g.clock)return null;
-    for(const item of g.items)if(!location(item)||!['capacity','power','speed','needle','shield'].includes(item.type)||!Number.isFinite(item.visibleAt))return null;
+    for(const b of g.blasts){
+      if(!Array.isArray(b.cells)||b.cells.length>21||b.cells.some(i=>!Number.isInteger(i)||i<0||i>=g.board.length||g.board[i]===WALL)||!Number.isFinite(b.expiresAt)||b.expiresAt<g.clock)return null;
+      if(b.damageUntil===undefined){b.bornAt=b.expiresAt-650;b.damageUntil=b.bornAt+DAMAGE_MS;b.expiresAt=b.bornAt+BLAST_MS;}
+      if(!Number.isFinite(b.bornAt)||!Number.isFinite(b.damageUntil)||b.bornAt>g.clock||b.damageUntil<b.bornAt||b.damageUntil>b.expiresAt)return null;
+    }
+    g.blasts=g.blasts.filter(b=>b.expiresAt>g.clock);
+    for(const item of g.items){
+      if(!location(item)||!['capacity','power','speed','needle','shield'].includes(item.type)||!Number.isFinite(item.visibleAt))return null;
+      if(legacyTiming&&item.visibleAt>g.clock)item.visibleAt=Math.max(g.clock,item.visibleAt-(650-BLAST_MS));
+    }
     if(g.status==='won'&&enemiesLeft(g)>0||g.status==='running'&&(!livingTeam(g).length||!enemiesLeft(g)||g.remainingMs<=0))return null;
     g.events=[];return g;
   }catch{return null;}

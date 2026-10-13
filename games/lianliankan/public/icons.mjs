@@ -1,4 +1,6 @@
 const paths = {
+  fullscreen: '<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>',
+  restore: '<path d="M3 8h5V3m13 5h-5V3M8 21v-5H3m13 5v-5h5"/>',
   back: '<path d="m14 5-7 7 7 7M7 12h14"/>',
   sound: '<path d="m11 5-5 4H3v6h3l5 4zM15 8q6 4 0 8m3-11q10 7 0 14"/>',
   mute: '<path d="m11 5-5 4H3v6h3l5 4zM16 9l6 6m0-6-6 6"/>',
