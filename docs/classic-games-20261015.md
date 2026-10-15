@@ -24,10 +24,17 @@
 - Playwright 本地实际页面回归：坦克首关 / 第 35 关、35 格选关、方向 + 开火、关卡检查点、全屏、手机双指；魂斗罗全八关射击、实际开火击破 Boss、续关、长短跳、暂停 / 精确存档、全屏及 API 拒绝回退、手机短按和三指跑跳射。两款页面错误为 0。
 - 手机 320 / 390 / 430px 和 844×390 横屏无横向溢出，控制区完整可见；1366×900 全屏画面放大，四张双端截图目视核验。
 - Chromium 实际解码全部 27 个音频文件成功，包括 7 轨分关 NES 音乐；未仅检查文件扩展名。
+- 八关各连续模拟 30 秒，480 次运行中存档恢复往返通过；另外目视检查基地纵深、瀑布和异形巢穴场景。
 - 凭据审计、Python 发布 / 回滚 10 项回归通过；选定构建为 69 个文件及 gzip。诊断和截图仅留 `E:\Documents\AI\codex\tmp\classic-games-20261015`。
-- 发布与线上验证结果在发布后补充。
 
 ## 发布
 
-仅发布 `tank,contra`，共享大厅自动增加两项，四款现有游戏从当前 release 原样继承；更新前保存远端文件摘要和 Nginx 路由 SHA-256。
-计划入口：[坦克大战](https://caibinice.com/games/tank/) / [魂斗罗](https://caibinice.com/games/contra/)。
+- 功能提交 `ae65bd628de2baa0c9033418bcc44eb8b4227eec`，通过本机 `127.0.0.1:20808` 代理推送 `origin/main`。
+- 原子 release：`/opt/games/releases/20261015063607-ae65bd628d/www`；只替换 `tank` / `contra`，共享大厅自动增加入口。未修改 ai-blog 部署镜像。
+- `scripts/verify.py`：69 个公网运行文件 SHA-256 全匹配，JS MIME 正常、MP3 Range 正常、缺失资源与源码 / 凭据目录 404、目录斜线跳转正常。
+- 公网 Playwright 完整回归再次通过：坦克键盘 / 第 35 关 / 全屏 / 双指触控，魂斗罗八关渲染射击 / 实际 Boss 击破 / 续关 / 精确存档 / 全屏回退 / 三指触控，页面错误均为 0。
+- 发布前后，拼豆 / 抓大鹅 / 连连看 / 泡泡小镇共 **129 个文件（含 gzip）逐字节一致**；共享 Nginx 路由 SHA-256 一致，`nginx -t` 通过。
+- `/`、`/blog/`、`/smartParking/`、`/games/`、原四款游戏入口、新两款双端页面全部 HTTP 200。
+- 本地回滚：`E:\Documents\AI\codex\backups\games-20261015-143607-892062\rollback.json`；发布归档 SHA-256 已复核。
+- 远端备份：`/opt/games/backups/20261015063607-ae65bd628d`；上一 release：`/opt/games/releases/20261015053807-df0fc76330/www`。
+- 正式入口：[坦克大战](https://caibinice.com/games/tank/) / [魂斗罗](https://caibinice.com/games/contra/)，分别有 PC 和手机页面。
