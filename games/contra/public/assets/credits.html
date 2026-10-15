@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>素材与源码来源</title></head><body style="background:#171b16;color:#d3d5bd;padding:25px;font:14px/1.8 system-ui;white-space:pre-wrap;overflow-wrap:anywhere">魂斗罗 / Contra — 单人网页复刻
+
+原游戏图形、角色和音效：Konami。
+八关原背景：NES Maps / Rick N. Bruns，原始图片完整保存，运行时只裁取游戏区域。
+https://nesmaps.com/maps/Contra/Contra.html
+
+原始精灵：vermiceli/nes-contra-us，固定提交 687d651c021fd7020f10d05b970ccb62663c94bd。
+https://github.com/vermiceli/nes-contra-us/tree/main/docs/sprite_library/contra_sprites
+186 个精灵装入一个图集；装箱时逐像素验证可见像素未改变。
+
+首关平台、断桥、水域和固定对象参考数据：IvanAmamiya/contra-nes-css。
+https://github.com/IvanAmamiya/contra-nes-css
+其他关卡碰撞由原图地形边缘标注；基地关重新实现纵深房间，瀑布关采用纵向攀登。
+
+NES 原版七轨音乐录音：VGMPF / TheAlmightyGuru，ripper Scott Worley。各关原曲，1/7 关共用 Jungle、2/4 关共用 Bases，基地 Boss 单独切曲。
+https://www.vgmpf.com/Wiki/index.php/Contra_(NES)
+
+音效公开文件来源：GitHubLXHan/contra（TestNewContra/bin/sound），mbudhathoki200/CONTRA-GAME。
+https://github.com/GitHubLXHan/contra
+https://github.com/mbudhathoki200/CONTRA-GAME
+
+上述原作媒体与适配代码分别记载来源；原作媒体未标记为 MIT 或公有领域。
+关卡控制、碰撞、武器、敌人、三种推进模式和单人网页界面为本仓库的新实现。
+未打包 ROM 或模拟器。不是原程序逐指令模拟，后七关敌军位置和数值为适配实现。
+详细文件 URL / SHA-256 与动作映射在源码 games/contra/docs/ 中。
+</body></html>

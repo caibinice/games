@@ -1,0 +1,2056 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/player_1_lives_medal.png",
+    "sha256": "a77ad993e12904e923f7fc5398568ce80a65addebf2a9319f8b74517e1606891",
+    "bytes": 136,
+    "width": 8,
+    "height": 16,
+    "source_file": "player_1_lives_medal.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "player_1_lives_medal"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_02.png",
+    "sha256": "f5ae4cf761de2dd46bcb441a7f9be42c7ba7def5be7aad401b1837e7b3a73942",
+    "bytes": 272,
+    "width": 19,
+    "height": 35,
+    "source_file": "sprite_02.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_02"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_03.png",
+    "sha256": "b052c2478f9f945992acbcb3a7013eb62bfc3ebf0401d47eca2c7e8c5333c46f",
+    "bytes": 251,
+    "width": 20,
+    "height": 31,
+    "source_file": "sprite_03.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_03"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_04.png",
+    "sha256": "932bd99c128fd381ba4a6f82fd4d7f2c199f49ced3e69278eca34033bf56917c",
+    "bytes": 243,
+    "width": 16,
+    "height": 34,
+    "source_file": "sprite_04.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_04"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_05.png",
+    "sha256": "5c1d51bbc65a60d0c0dd723422a734730e562d831e2ba506dcc665f87b5aabe4",
+    "bytes": 254,
+    "width": 18,
+    "height": 34,
+    "source_file": "sprite_05.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_05"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_06.png",
+    "sha256": "635770c4d7782152621b3f9e55184cb4321647b46255e7f56baa130743538c62",
+    "bytes": 253,
+    "width": 16,
+    "height": 35,
+    "source_file": "sprite_06.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_06"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_07.png",
+    "sha256": "76e2adae39f7098a7347253b22d7a0892e339caaad0c2eec50780b951bf07f32",
+    "bytes": 89,
+    "width": 3,
+    "height": 3,
+    "source_file": "sprite_07.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_07"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_08.png",
+    "sha256": "9aa29a68888794eff5cff27ce8b4441e5ff7fa9d772d21a25de6d91ea7172616",
+    "bytes": 209,
+    "width": 16,
+    "height": 20,
+    "source_file": "sprite_08.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_08"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_09.png",
+    "sha256": "5ea964667afb81d4cf2970b361d4394e03972156f1dbc2cba8c808c4d1e68b39",
+    "bytes": 211,
+    "width": 19,
+    "height": 16,
+    "source_file": "sprite_09.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_09"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0a.png",
+    "sha256": "c20f32e596d751415a88c6e76eb81b05b96e426e2d454b4a62c1f8da0e756e1c",
+    "bytes": 218,
+    "width": 22,
+    "height": 18,
+    "source_file": "sprite_0a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0b.png",
+    "sha256": "8f091c67a5cba7af0848fccbf02407ff3a4e6a51fe0d55ff9deebe9ad27fe431",
+    "bytes": 218,
+    "width": 15,
+    "height": 23,
+    "source_file": "sprite_0b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0c.png",
+    "sha256": "2c5bb7d5764c8384eca5361a9f1a7894e7d6d273a41861d9a4d72c49fa124473",
+    "bytes": 202,
+    "width": 32,
+    "height": 10,
+    "source_file": "sprite_0c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0d.png",
+    "sha256": "b518aa4446734de00d8b51d1da4583a70c4f30d7f4837ae813034b46f8c205a1",
+    "bytes": 267,
+    "width": 25,
+    "height": 34,
+    "source_file": "sprite_0d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0e.png",
+    "sha256": "dc680c4c813a2b4374843b41192c22cd829ad18a0aa1f159c4d945d3cca5e506",
+    "bytes": 259,
+    "width": 25,
+    "height": 32,
+    "source_file": "sprite_0e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_0f.png",
+    "sha256": "80667185a867e29c85ecb4a6808e06eb2ab58e49b937fa2b6d3aa31844d2b5c8",
+    "bytes": 257,
+    "width": 23,
+    "height": 34,
+    "source_file": "sprite_0f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_0f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_10.png",
+    "sha256": "2c1b6ff0b5ba3f66f9c20c4c69151bce988b44be7a1740a39b92827b527aacfb",
+    "bytes": 268,
+    "width": 19,
+    "height": 35,
+    "source_file": "sprite_10.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_10"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_11.png",
+    "sha256": "391d3bea40756bb3c48cb79bfa515aa5e20a229e03966371c6a266999fabaf5f",
+    "bytes": 262,
+    "width": 20,
+    "height": 33,
+    "source_file": "sprite_11.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_11"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_12.png",
+    "sha256": "4212bbef93aba8130e58645c45dfcdd2c6b4aeb0f765746ca836ce334a5c7e17",
+    "bytes": 253,
+    "width": 16,
+    "height": 35,
+    "source_file": "sprite_12.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_12"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_13.png",
+    "sha256": "be1b08dd732e851a52b5e1e50e0a3add88c2ce09da5785dd7e311ee00f613588",
+    "bytes": 272,
+    "width": 21,
+    "height": 35,
+    "source_file": "sprite_13.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_13"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_14.png",
+    "sha256": "1cd3a30a8141d40159364eaa36e4fbca0d170044d55976471042c124ddd13e42",
+    "bytes": 268,
+    "width": 21,
+    "height": 33,
+    "source_file": "sprite_14.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_14"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_15.png",
+    "sha256": "daa89fb3857e4dd643ddd11ca756c19ac10c3e6e760e32c06f5c29b28ca5c92f",
+    "bytes": 266,
+    "width": 20,
+    "height": 35,
+    "source_file": "sprite_15.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_15"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_16.png",
+    "sha256": "a33c190fbccfe4ced5d5cdbcc84a28be12ebb86d6f4cdcd69c8e4e7aee26a4fc",
+    "bytes": 256,
+    "width": 14,
+    "height": 45,
+    "source_file": "sprite_16.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_16"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_17.png",
+    "sha256": "a21279ca8c1dcd954a12474574c6054df72c6bd18a87d83013e85f5a9fb748a8",
+    "bytes": 248,
+    "width": 32,
+    "height": 16,
+    "source_file": "sprite_17.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_17"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_18.png",
+    "sha256": "45351ee8d083c4c3e772e53080e08d2be553c2ae9b8c388bac656a7e20994c45",
+    "bytes": 137,
+    "width": 16,
+    "height": 7,
+    "source_file": "sprite_18.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_18"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_19.png",
+    "sha256": "c08d2b168ba3e82cbe179cc124c1797bcb5de5021b2e71ce9527d50c7072a02a",
+    "bytes": 168,
+    "width": 16,
+    "height": 15,
+    "source_file": "sprite_19.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_19"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1a.png",
+    "sha256": "bbc5ad00f82593c12bc4e2605bb6b472616ace471317bbb73b4b280bf4022c1d",
+    "bytes": 178,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_1a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1b.png",
+    "sha256": "705c38059865377d8b4c4137854749598a64cd0f6b295248622a5c2885e02cac",
+    "bytes": 213,
+    "width": 17,
+    "height": 27,
+    "source_file": "sprite_1b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1c.png",
+    "sha256": "938d9a83726c93675496465faa3baa991d754c8e83e0b8a75a2e8af3f25c77ed",
+    "bytes": 206,
+    "width": 19,
+    "height": 18,
+    "source_file": "sprite_1c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1d.png",
+    "sha256": "50a2681d46b7df1c58c7ec4cfa93308c34eb9b4b8c02744092616d4f604abdf5",
+    "bytes": 191,
+    "width": 25,
+    "height": 16,
+    "source_file": "sprite_1d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1e.png",
+    "sha256": "967d6a19c38a54e04a333820dc77c484f135f9fbda1705cf8ee5742bc96bb658",
+    "bytes": 89,
+    "width": 3,
+    "height": 3,
+    "source_file": "sprite_1e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_1f.png",
+    "sha256": "9441deb31bc8290338f977cb9141d278e80a671b7f5552d01fdc62ccc1df3d9c",
+    "bytes": 115,
+    "width": 5,
+    "height": 5,
+    "source_file": "sprite_1f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_1f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_20.png",
+    "sha256": "1493adbdc4baf1ebcafa23d2d8f2a5946b4a5e98423a0543fa78f9efeade96ab",
+    "bytes": 119,
+    "width": 6,
+    "height": 6,
+    "source_file": "sprite_20.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_20"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_21.png",
+    "sha256": "60ffbe557015074475e6910dd5316c668130c225519aa16d37654585d417e7de",
+    "bytes": 123,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_21.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_21"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_22.png",
+    "sha256": "5a0767c6f02f6da371f7e4e03d638b282a9373110f5b308ab7e527c11d42473d",
+    "bytes": 126,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_22.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_22"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_23.png",
+    "sha256": "1bc0ca97c4b13fabf16cf00185d7ff8fdcea64774533ec81e4232e13092a2e49",
+    "bytes": 143,
+    "width": 6,
+    "height": 16,
+    "source_file": "sprite_23.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_23"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_24.png",
+    "sha256": "c85b57438b0a0e07e2c5bd550ee3423ad931014689e30a161da282f1e0863817",
+    "bytes": 129,
+    "width": 16,
+    "height": 6,
+    "source_file": "sprite_24.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_24"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_25.png",
+    "sha256": "99f1f83ffd931c92573443eed8aa852a133f9fef4bbca50bbff44d57ef1b830e",
+    "bytes": 139,
+    "width": 8,
+    "height": 13,
+    "source_file": "sprite_25.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_25"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_2f.png",
+    "sha256": "1ffac7c6f1ce625e89c58813bac3c1f20493a92637146478a12a7f09e84aedab",
+    "bytes": 191,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_2f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_2f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_30.png",
+    "sha256": "8f3127b73189cc7c701a399530f44f880842947f6c16aefc77dafb4951df2f26",
+    "bytes": 189,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_30.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_30"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_31.png",
+    "sha256": "1b7c3dc51e7eeee43ab91992dca25df5f3d866a30f2542a3994422d9cefecc57",
+    "bytes": 187,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_31.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_31"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_32.png",
+    "sha256": "e0855755e0133db026d5ccc82f8e117508de0af6513ff16dcf58f4b59b71cc38",
+    "bytes": 188,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_32.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_32"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_33.png",
+    "sha256": "ff895f8da943ab5d348617ea962be06d907adb6a36d6545bdce991ccc2e1073c",
+    "bytes": 189,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_33.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_33"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_34.png",
+    "sha256": "4bfc55b28edbbf0ba4c4a541dde384f4c39c26583a46a7646b9e6697367a0e2f",
+    "bytes": 189,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_34.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_34"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_35.png",
+    "sha256": "7073bb7fa75f486eb42e453f25f95a8160379b66ab65ee6deba25e6766ef9f7e",
+    "bytes": 324,
+    "width": 30,
+    "height": 30,
+    "source_file": "sprite_35.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_35"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_36.png",
+    "sha256": "7d3fafc8909cd3e61e0a564f62615a5d28c8c9cb8adce303099f8ea2fac8d3ab",
+    "bytes": 256,
+    "width": 23,
+    "height": 27,
+    "source_file": "sprite_36.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_36"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_37.png",
+    "sha256": "413026bb4f2461a0403f0fffde4ab876399a6a97a727273d9457518415bc2142",
+    "bytes": 184,
+    "width": 15,
+    "height": 18,
+    "source_file": "sprite_37.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_37"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_39.png",
+    "sha256": "5038ec9b8d471464ef5a6d02819b395a806d888b9099dbcb4a589bd68ad14cba",
+    "bytes": 228,
+    "width": 28,
+    "height": 28,
+    "source_file": "sprite_39.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_39"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3a.png",
+    "sha256": "0469b3006640244ff2527333f57b8da68fe7c2d03f2f54e98ca3b2c3608eaac8",
+    "bytes": 158,
+    "width": 32,
+    "height": 32,
+    "source_file": "sprite_3a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3b.png",
+    "sha256": "9bf509950cc17cf8720539104600f90129146d68f675e01d1986020d93ba80ad",
+    "bytes": 234,
+    "width": 16,
+    "height": 32,
+    "source_file": "sprite_3b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3c.png",
+    "sha256": "179154897f254c1bb30fca1660d9a057897af0ae6fc50f16c13c1f69e3b3426c",
+    "bytes": 224,
+    "width": 16,
+    "height": 31,
+    "source_file": "sprite_3c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3d.png",
+    "sha256": "4e184bf8ac00e52ef68a17fc762ed0f4affadfba2671586761185af29fd24f5f",
+    "bytes": 226,
+    "width": 16,
+    "height": 32,
+    "source_file": "sprite_3d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3e.png",
+    "sha256": "7ae6dd97e7d740a696c0ddb3d7d00d641369e051d418609811558005ae0b5398",
+    "bytes": 222,
+    "width": 15,
+    "height": 32,
+    "source_file": "sprite_3e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_3f.png",
+    "sha256": "d2d028a0c4190dcac499f114a0c6fcdfc4b5d54e4decf71ca77e4b538961ecf5",
+    "bytes": 236,
+    "width": 16,
+    "height": 32,
+    "source_file": "sprite_3f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_3f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_40.png",
+    "sha256": "f33f26cd9427bb306c676ba5b19ecd1129b3c86e908b319b2d3451fbf84cd248",
+    "bytes": 238,
+    "width": 24,
+    "height": 32,
+    "source_file": "sprite_40.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_40"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_41.png",
+    "sha256": "e01043ab74af4576a262d5f0a75bfad28817a814993fbab9d88883abe2eab671",
+    "bytes": 245,
+    "width": 24,
+    "height": 31,
+    "source_file": "sprite_41.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_41"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_42.png",
+    "sha256": "e7400823a89dbf54eeca7518a83f83913914203635149978eaffa025aae76928",
+    "bytes": 254,
+    "width": 18,
+    "height": 39,
+    "source_file": "sprite_42.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_42"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_43.png",
+    "sha256": "f6a3fa4b92df651ebba856fcfecb80f4df171520e91e39a5d51fc9898b698815",
+    "bytes": 255,
+    "width": 24,
+    "height": 32,
+    "source_file": "sprite_43.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_43"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_44.png",
+    "sha256": "dcbc7f3ab0bad9f59f96b253a557ffcdd68bdb8858b5ac2be499c95e8c4169b3",
+    "bytes": 120,
+    "width": 8,
+    "height": 7,
+    "source_file": "sprite_44.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_44"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_45.png",
+    "sha256": "2bc76189ac856ad0f5d6f8175e38c6792e88875b7c50d2673aa93213da8c11e3",
+    "bytes": 171,
+    "width": 23,
+    "height": 12,
+    "source_file": "sprite_45.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_45"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_46.png",
+    "sha256": "bb46b8e337256f03cfacaa2efce7cfb2d14c0271c107c5357ea35bdbbb13a451",
+    "bytes": 193,
+    "width": 24,
+    "height": 16,
+    "source_file": "sprite_46.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_46"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_47.png",
+    "sha256": "4474ca7d38ccbbd65d037c3e35ac513c0fda864c074648e4809053adcd1a85e4",
+    "bytes": 116,
+    "width": 7,
+    "height": 7,
+    "source_file": "sprite_47.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_47"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_48.png",
+    "sha256": "25993d4a706c42d23f52104463cd8229d2b92dcd57ddb04bba3891b935a2aebd",
+    "bytes": 321,
+    "width": 32,
+    "height": 31,
+    "source_file": "sprite_48.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_48"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_49.png",
+    "sha256": "e0a2960d825f50a75d67a1b0879ff77935cc0f70f70a374ca2e00bac06ca1a30",
+    "bytes": 177,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_49.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_49"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_4a.png",
+    "sha256": "a201b664a43d495144cf7950d9a0a350aa277d8a69dd49309368e953c172ef34",
+    "bytes": 272,
+    "width": 24,
+    "height": 27,
+    "source_file": "sprite_4a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_4a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_4b.png",
+    "sha256": "28cc2297314297939c2b7b0cbc4bd7317247c8bda99ddbc089a8bf9e020e5bf0",
+    "bytes": 163,
+    "width": 16,
+    "height": 15,
+    "source_file": "sprite_4b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_4b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_4c.png",
+    "sha256": "304a982031a6e9ed3169173598f38a2ff1bf25e5c42e70d7aaffd8a9312ab184",
+    "bytes": 228,
+    "width": 16,
+    "height": 31,
+    "source_file": "sprite_4c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_4c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_4d.png",
+    "sha256": "ba4b27a994d2b53a04a0d773f01f133481ab0ca68621fa027acf44be9a7289a7",
+    "bytes": 178,
+    "width": 24,
+    "height": 14,
+    "source_file": "sprite_4d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_4d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_4e.gif",
+    "sha256": "010bb45ce3fd003faa9d855ddb4f5ba67c48ad132fb8e28cc4175915c1c3ddfe",
+    "bytes": 3283,
+    "width": 24,
+    "height": 15,
+    "source_file": "sprite_4e.gif",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_4e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_50.png",
+    "sha256": "f1ff43a74b8d6427a3cb6d2ceba927014ab4a2ff5765259f2150bbb13f22aeb7",
+    "bytes": 283,
+    "width": 19,
+    "height": 45,
+    "source_file": "sprite_50.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_50"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_51.png",
+    "sha256": "8041e3fcb4d706ef261c0b7c70843c2444826f11dd2a8d830ac038d7ff9cb9ed",
+    "bytes": 265,
+    "width": 18,
+    "height": 40,
+    "source_file": "sprite_51.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_51"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_52.png",
+    "sha256": "1ba6498cbef4902d3db1d3afa780f792ba0e6f11021656f9b0a32e5f704a1f74",
+    "bytes": 265,
+    "width": 20,
+    "height": 41,
+    "source_file": "sprite_52.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_52"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_53.png",
+    "sha256": "a90db93d5bb6fba883e90f72f509867ce5d64f4e73b440372ae08362c7e31e1a",
+    "bytes": 260,
+    "width": 16,
+    "height": 43,
+    "source_file": "sprite_53.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_53"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_54.png",
+    "sha256": "713b66f0317d6aa3245485b84ef2564115da552636406c4d22a40f6825d4c36b",
+    "bytes": 267,
+    "width": 24,
+    "height": 32,
+    "source_file": "sprite_54.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_54"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_55.png",
+    "sha256": "75c6e57aacfb4654808eca4616f12526aae9bc262937d87adb3fcdf2245e8f6b",
+    "bytes": 300,
+    "width": 24,
+    "height": 45,
+    "source_file": "sprite_55.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_55"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_56.png",
+    "sha256": "8b5468f6e65fc3fa505e41a3e0c3aff5954535f05040342d67dc4c8ce8c42a51",
+    "bytes": 247,
+    "width": 24,
+    "height": 22,
+    "source_file": "sprite_56.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_56"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_57.png",
+    "sha256": "39f1120652bc177c5a8ce40fe945d9545e16c902ec627ac56f10bd8418be4a7e",
+    "bytes": 278,
+    "width": 19,
+    "height": 40,
+    "source_file": "sprite_57.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_57"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_58.png",
+    "sha256": "eb16f1aaacdb3193a7c2b11ae03fb168b00d24b2558e886a0b64012e90fb3b02",
+    "bytes": 275,
+    "width": 19,
+    "height": 39,
+    "source_file": "sprite_58.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_58"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_5d.png",
+    "sha256": "e379453b9a08dbbbaa7bc8423f9bc9935dda89bc0c7bb1c2b5edfd5096a151e6",
+    "bytes": 237,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_5d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_5d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_5e.png",
+    "sha256": "9108b5f72ff4090d838a285a012c5a37884c3beaed74bfed71141d2164821a2e",
+    "bytes": 242,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_5e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_5e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_5f.png",
+    "sha256": "aa96374907701e0a55d4162b44e4f1ec3ad79b23cf1cdcd1efe677c62d05ba1e",
+    "bytes": 250,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_5f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_5f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_60.png",
+    "sha256": "0cb5cc01a1410b125fc5b22b8a6b40cb2f2fecd00a64286d36cf580c3005aec5",
+    "bytes": 241,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_60.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_60"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_61.png",
+    "sha256": "059b72f1efa03077f59260f455524b924356cd21e8c26178378e17bc4330917b",
+    "bytes": 258,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_61.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_61"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_62.png",
+    "sha256": "85e4e2aa008a80c4024fcf134cdc3ba321896b011fe7df2fd7c8eb0d055a33db",
+    "bytes": 263,
+    "width": 24,
+    "height": 25,
+    "source_file": "sprite_62.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_62"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_63.png",
+    "sha256": "4591238acfe54ba134cc94b0f4551a3ad054b501ce150e4f2b7371d0078dd556",
+    "bytes": 171,
+    "width": 14,
+    "height": 14,
+    "source_file": "sprite_63.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_63"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_64.png",
+    "sha256": "a06bfcb91cdd1f3effd8e3a709899bc19409320ff7e87dda0c338d5d44579b5a",
+    "bytes": 295,
+    "width": 31,
+    "height": 31,
+    "source_file": "sprite_64.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_64"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_68.png",
+    "sha256": "63584945dab53e2f007826feaa61d31d7278f81dce6a56c62cc990432742f501",
+    "bytes": 240,
+    "width": 32,
+    "height": 30,
+    "source_file": "sprite_68.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_68"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_69.png",
+    "sha256": "31fb13b568db4533f45250672abb605efd362c1a223e7a9b3209c29ce6f280ac",
+    "bytes": 256,
+    "width": 32,
+    "height": 30,
+    "source_file": "sprite_69.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_69"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6a.png",
+    "sha256": "2e0f6f68c467d1a1ae93733206837f616791de416fc98d6394ee0c6c2d9768e0",
+    "bytes": 267,
+    "width": 32,
+    "height": 30,
+    "source_file": "sprite_6a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6b.png",
+    "sha256": "ac194487fbda4f2ae62103c8bb6ed8e4ed3fe0832794456516e1f33762f1c73f",
+    "bytes": 270,
+    "width": 32,
+    "height": 30,
+    "source_file": "sprite_6b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6c.png",
+    "sha256": "e9aa001a0ee422a8e6a0ab11f40b90d6d915cd4bc70578107a50ca06283a7b0c",
+    "bytes": 281,
+    "width": 32,
+    "height": 30,
+    "source_file": "sprite_6c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6d.png",
+    "sha256": "464abc2a3dfd400db4a9922244d8b5f353596d52fe1e8d12d99d30bb124cb4e9",
+    "bytes": 152,
+    "width": 11,
+    "height": 8,
+    "source_file": "sprite_6d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6e.png",
+    "sha256": "9f6132653d6bc6fafc6d90e46679eb8746dd2e4990d5ea621e6d6b4344871db7",
+    "bytes": 153,
+    "width": 11,
+    "height": 8,
+    "source_file": "sprite_6e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_6f.png",
+    "sha256": "43add9572658984e31aca38a93ccab464836468b20f56bdc62f78d5eedd82d53",
+    "bytes": 125,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_6f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_6f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_70.png",
+    "sha256": "75c80ff783b2e75dd364008b078fad94f961bed277112eb2414a978fda66845e",
+    "bytes": 153,
+    "width": 11,
+    "height": 8,
+    "source_file": "sprite_70.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_70"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_71.png",
+    "sha256": "c02cd1c5847e8b972c2ff87701d48577204a5815a730604a673889899cce6f43",
+    "bytes": 153,
+    "width": 11,
+    "height": 8,
+    "source_file": "sprite_71.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_71"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_72.png",
+    "sha256": "c73b52468bb804bf0f255e041e1508583b56b6f817cd69dd245d17437345b293",
+    "bytes": 125,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_72.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_72"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_73.png",
+    "sha256": "5fd85bb599dcc9849b265dedbdb0a52b2a7ae04c9a0f9dab2470b33c755583bb",
+    "bytes": 154,
+    "width": 16,
+    "height": 15,
+    "source_file": "sprite_73.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_73"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_74.png",
+    "sha256": "4c4f42ff2f99b0d6f88e9bbea57426fc2c03cc249ff9af1aeddb8439325dd300",
+    "bytes": 150,
+    "width": 12,
+    "height": 12,
+    "source_file": "sprite_74.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_74"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_75.png",
+    "sha256": "664faf33c59c37db8c5308506a941c136ddf704a4099afdd39e936d47718dfb1",
+    "bytes": 110,
+    "width": 16,
+    "height": 6,
+    "source_file": "sprite_75.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_75"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_76.png",
+    "sha256": "a58789d09d1db29738c1f9c487c1db71e0c3e5503bbbbd43d3a78fc9d273c32a",
+    "bytes": 150,
+    "width": 12,
+    "height": 12,
+    "source_file": "sprite_76.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_76"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_77.png",
+    "sha256": "509ae32c846152924a75d6ac2f09dd8e582dbd90b49eb589c077452759dbed0e",
+    "bytes": 129,
+    "width": 6,
+    "height": 16,
+    "source_file": "sprite_77.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_77"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_78.png",
+    "sha256": "957b750b330ab4f491780ff5e6b9f4f61489ff27094243076f9de26f784ae7c3",
+    "bytes": 150,
+    "width": 12,
+    "height": 12,
+    "source_file": "sprite_78.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_78"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_79.png",
+    "sha256": "42f9bf7343fff1bba4b5aa48b529e291ce872367aac6b4402efed7e2e60a352e",
+    "bytes": 182,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_79.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_79"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_7a.png",
+    "sha256": "ff2fe20de1d07b1f2257e2dc26bfae5e3a53e241667277e46f0be537405facc7",
+    "bytes": 185,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_7a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_7a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_7b.png",
+    "sha256": "ab636b0a4cf56f1887446a888dc1aa6611ff4dcc12614a5a9078a255623d47b5",
+    "bytes": 158,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_7b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_7b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_7c.png",
+    "sha256": "d1dcfe6515252557d82d0bc6e667f7ed1bd9aa88b2e3c52a977b705936c21389",
+    "bytes": 189,
+    "width": 22,
+    "height": 16,
+    "source_file": "sprite_7c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_7c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_7d.png",
+    "sha256": "541df88176f38aba792d6cad68bdee2272c30157522be2d27f0203578fa431ba",
+    "bytes": 184,
+    "width": 24,
+    "height": 16,
+    "source_file": "sprite_7d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_7d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_7e.png",
+    "sha256": "0afbe9831b47ec21b8bdacc3fd18458047660396f0fd136a89359e2e6e856075",
+    "bytes": 178,
+    "width": 22,
+    "height": 16,
+    "source_file": "sprite_7e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_7e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_82.png",
+    "sha256": "3a458a004a2cdfc9985685ef94c1c4f45f0f7b06fece420f24e46f0a2e72824d",
+    "bytes": 139,
+    "width": 8,
+    "height": 13,
+    "source_file": "sprite_82.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_82"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_83.png",
+    "sha256": "404243bfd6601ad8a6c62cf69adcc8422cc04604c903532ed8e6108d3dda0cdc",
+    "bytes": 138,
+    "width": 8,
+    "height": 12,
+    "source_file": "sprite_83.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_83"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_84.png",
+    "sha256": "3a458a004a2cdfc9985685ef94c1c4f45f0f7b06fece420f24e46f0a2e72824d",
+    "bytes": 139,
+    "width": 8,
+    "height": 13,
+    "source_file": "sprite_84.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_84"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_85.png",
+    "sha256": "86065e2491725702f63f2ce87f3d74d20bad03b09681064f72c3f4e5be2334fe",
+    "bytes": 199,
+    "width": 20,
+    "height": 23,
+    "source_file": "sprite_85.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_85"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_86.png",
+    "sha256": "f031de33f35bf3bf4eee5a7dcd4ad500b7d998d44171d7d0a92610219a3cf51b",
+    "bytes": 193,
+    "width": 21,
+    "height": 23,
+    "source_file": "sprite_86.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_86"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_87.png",
+    "sha256": "6ab50842d4d3f4addabb22c14486fc86ecabff2512b6c3bd11831127de1727f4",
+    "bytes": 177,
+    "width": 10,
+    "height": 22,
+    "source_file": "sprite_87.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_87"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_88.png",
+    "sha256": "3690decf41bf57429fd7435426e823a9ac522d39a6f1b3f787d2cc6a3f8ead27",
+    "bytes": 191,
+    "width": 15,
+    "height": 25,
+    "source_file": "sprite_88.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_88"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_89.png",
+    "sha256": "720d5861d906a2baf8c3ec9e346007e1591fe8ba43d6be4b619bfb6a13a2a62d",
+    "bytes": 198,
+    "width": 15,
+    "height": 23,
+    "source_file": "sprite_89.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_89"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8a.png",
+    "sha256": "7bb4e99f717ba8570b7815d1afb6b4eba4588061ecd22fcfa7dfb04bc3a7f4d3",
+    "bytes": 233,
+    "width": 24,
+    "height": 23,
+    "source_file": "sprite_8a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8b.png",
+    "sha256": "c0b51c4e5a1c9f9af67d8059f0f4f8bf7c10dd4eabba0651943303ca2449368e",
+    "bytes": 316,
+    "width": 24,
+    "height": 46,
+    "source_file": "sprite_8b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8c.png",
+    "sha256": "1a7acf985ca679b441138bd90b9e4f33257ebf5f79eff7463422ce0ace7149e2",
+    "bytes": 206,
+    "width": 24,
+    "height": 23,
+    "source_file": "sprite_8c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8d.png",
+    "sha256": "b43af6b7aa2513e1e203f56837dd25e492ffe0d7f15a2af9ef3e3365ef384810",
+    "bytes": 197,
+    "width": 21,
+    "height": 23,
+    "source_file": "sprite_8d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8e.png",
+    "sha256": "561f159acca9d419f1d411e12cade2dc4ce4f43e179bb1aa9fde5d901c64f81b",
+    "bytes": 176,
+    "width": 11,
+    "height": 22,
+    "source_file": "sprite_8e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_8f.png",
+    "sha256": "ad9353277cfa9d35ef847d5af156b89d05fd8322f6ec75755e3606ad5b56c595",
+    "bytes": 196,
+    "width": 18,
+    "height": 25,
+    "source_file": "sprite_8f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_8f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_90.png",
+    "sha256": "b19a181fe9983a9bd617da8b9b6f0a5220ec30c74f071f3dc38b7dbe8664157a",
+    "bytes": 199,
+    "width": 14,
+    "height": 25,
+    "source_file": "sprite_90.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_90"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_91.png",
+    "sha256": "fa6d68605b3e9971482be370f1220b5bf7040edfe26fa18a95620bd999ca1584",
+    "bytes": 270,
+    "width": 29,
+    "height": 35,
+    "source_file": "sprite_91.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_91"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_92.png",
+    "sha256": "404243bfd6601ad8a6c62cf69adcc8422cc04604c903532ed8e6108d3dda0cdc",
+    "bytes": 138,
+    "width": 8,
+    "height": 12,
+    "source_file": "sprite_92.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_92"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_93.png",
+    "sha256": "9f87c67ca002f945d5c0dd7e2a05dcc225911c2707d4ab68f0bd9dcb978359f1",
+    "bytes": 212,
+    "width": 17,
+    "height": 24,
+    "source_file": "sprite_93.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_93"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_94.png",
+    "sha256": "864dc12af5e50d22a2feb2b2436b5f3f004540101e90437d11d9ccd54749320a",
+    "bytes": 195,
+    "width": 16,
+    "height": 25,
+    "source_file": "sprite_94.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_94"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_95.png",
+    "sha256": "09910a4452ce6b6726a85738a586d617d2938edaed8787452c31a94a52fc29ab",
+    "bytes": 191,
+    "width": 15,
+    "height": 24,
+    "source_file": "sprite_95.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_95"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_96.png",
+    "sha256": "2c702160828ee90cd245c4528311c4565fce8871a44be2387e1eaf3535a48573",
+    "bytes": 201,
+    "width": 15,
+    "height": 24,
+    "source_file": "sprite_96.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_96"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_97.png",
+    "sha256": "f0ff2d8647de17b38f49fbeaf1b100e1f3061f6f46a5200aea3cf10308ee9fd9",
+    "bytes": 182,
+    "width": 24,
+    "height": 14,
+    "source_file": "sprite_97.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_97"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_98.png",
+    "sha256": "733994b387db6bcfb97d632a94bfd37943332a7fb130d2eda397ed693505afc1",
+    "bytes": 177,
+    "width": 11,
+    "height": 19,
+    "source_file": "sprite_98.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_98"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_99.png",
+    "sha256": "2c8efdcff9660c055f7d4b84d2758df6b21c68709fcc45a6e598047fbdf53f7a",
+    "bytes": 115,
+    "width": 10,
+    "height": 4,
+    "source_file": "sprite_99.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_99"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9a.png",
+    "sha256": "9a5a0ab557978adaf721328bd9bffe25bb86f69d3eb7e79cea4659a6d90ad6d2",
+    "bytes": 133,
+    "width": 16,
+    "height": 7,
+    "source_file": "sprite_9a.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9a"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9b.png",
+    "sha256": "203740a42d8e188a5fc14df2ea62943e0091e64df70d238f3b28cc1841386431",
+    "bytes": 149,
+    "width": 22,
+    "height": 8,
+    "source_file": "sprite_9b.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9b"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9c.png",
+    "sha256": "be9fe91038380ffc8fe300a01f3290d03c7a434dc41b8a9956d1e2b6963a3738",
+    "bytes": 163,
+    "width": 24,
+    "height": 11,
+    "source_file": "sprite_9c.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9c"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9d.png",
+    "sha256": "82c400bfb91771832b861da9c8c3b0796593713458357bb3d62730636b434ae0",
+    "bytes": 117,
+    "width": 6,
+    "height": 6,
+    "source_file": "sprite_9d.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9d"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9e.png",
+    "sha256": "1e5126a45db8ae38b558c8a67edb044b3ef5dd7c71b9e9a28af9329be3eaa9d9",
+    "bytes": 135,
+    "width": 10,
+    "height": 10,
+    "source_file": "sprite_9e.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9e"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_9f.png",
+    "sha256": "83078a80d6d1136ec57e1e96972110098dc8391c650292102e5dd6594c5ad81d",
+    "bytes": 146,
+    "width": 14,
+    "height": 14,
+    "source_file": "sprite_9f.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_9f"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a0.png",
+    "sha256": "079eaf846073cddd8b26055297bf7c680c48f5f4c6c4d44a5375cbee8da5fd91",
+    "bytes": 149,
+    "width": 12,
+    "height": 12,
+    "source_file": "sprite_a0.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a0"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a1.png",
+    "sha256": "ce36ec8e3058dcb15d55ed96765c4382669fb2af7a5168f8d5e528815b718799",
+    "bytes": 129,
+    "width": 8,
+    "height": 9,
+    "source_file": "sprite_a1.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a2.png",
+    "sha256": "6dc3558c37e51ce1cd53c953b0f181d3accc2d31e180edb4f1cf4b7de782db1b",
+    "bytes": 120,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_a2.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a2"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a3.png",
+    "sha256": "8a1eb1c0c7f5eeb2aa3d31c4fec103287f1e2b14cbf84e42cbc827fa32ebe89d",
+    "bytes": 129,
+    "width": 8,
+    "height": 9,
+    "source_file": "sprite_a3.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a3"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a4.png",
+    "sha256": "f09e6f0f665136da4facdbbe84eb077dd7a33b76730c1be9f9254e123041ae71",
+    "bytes": 129,
+    "width": 8,
+    "height": 9,
+    "source_file": "sprite_a4.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a4"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a5.png",
+    "sha256": "f35b1e0938be70ada950a22c76ac986427ef604e936f2599e63d01df6aac6e39",
+    "bytes": 123,
+    "width": 7,
+    "height": 7,
+    "source_file": "sprite_a5.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a5"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a6.png",
+    "sha256": "67c0d9d084f919325dd77bc9fedc1f05686fd68a5c351d8b8f5fa551e9c16139",
+    "bytes": 116,
+    "width": 6,
+    "height": 6,
+    "source_file": "sprite_a6.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a6"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a7.png",
+    "sha256": "831c85ace1d99e17af06791c8dbe16658fd2ee156e4f4ab2b3b91247e14d2459",
+    "bytes": 123,
+    "width": 7,
+    "height": 7,
+    "source_file": "sprite_a7.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a7"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a8.png",
+    "sha256": "79c9c225937588fdb424af77db0d7184e625186cdaf475ef298dfac1977e86a5",
+    "bytes": 126,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_a8.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_a9.png",
+    "sha256": "47c88a8db8ef39542697925005df9b0b8291545b5ba6fed7f7953af387fff474",
+    "bytes": 123,
+    "width": 6,
+    "height": 7,
+    "source_file": "sprite_a9.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_a9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_aa.png",
+    "sha256": "b81572a943c5a8e348aa9d8e950c617456eea53273d2881303b1847f989240bf",
+    "bytes": 146,
+    "width": 16,
+    "height": 10,
+    "source_file": "sprite_aa.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_aa"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ab.png",
+    "sha256": "2e195460384a0927a4497b24825a2bc2f04e69080d34e2e459d4e1f1b49a7626",
+    "bytes": 637,
+    "width": 59,
+    "height": 68,
+    "source_file": "sprite_ab.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ab"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ac.png",
+    "sha256": "716d0bda6a645336ff496e908dc8c8f455a8e5008c0ac78f39ede011823fc90e",
+    "bytes": 248,
+    "width": 24,
+    "height": 24,
+    "source_file": "sprite_ac.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ac"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ad.png",
+    "sha256": "bfc095eca2b3df3d04aec691bcfb7777d531e201159540c8c8ce70c36b43ba5b",
+    "bytes": 249,
+    "width": 24,
+    "height": 24,
+    "source_file": "sprite_ad.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ad"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ae.png",
+    "sha256": "a653432eddb17a87a2d006c04b0dd5a16edf63353ce3d21c916027bbf534e979",
+    "bytes": 247,
+    "width": 23,
+    "height": 24,
+    "source_file": "sprite_ae.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ae"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_af.png",
+    "sha256": "84fdd66d03a5257180f744f6bafdf53d19fd163feeba848dd96ae214e59c5444",
+    "bytes": 246,
+    "width": 24,
+    "height": 23,
+    "source_file": "sprite_af.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_af"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b0.png",
+    "sha256": "f5444287b499082b4b5fc07d35efc65c57cbfb8c7d8ef7f8c0ddc42dddd8434d",
+    "bytes": 181,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_b0.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b0"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b1.png",
+    "sha256": "fa7827beb0d67989363d3950d0b5270cbef19437df70d665b00bfc43678a22d3",
+    "bytes": 185,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_b1.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b2.png",
+    "sha256": "e574890f73f37bcfed186fe2ba31456853365305d5eb65fb08496d359b00a187",
+    "bytes": 155,
+    "width": 12,
+    "height": 13,
+    "source_file": "sprite_b2.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b2"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b3.png",
+    "sha256": "2ce6d4205765c3108c85fa634dd6c5005e1d6e5c655819597dfff13e2e5042fe",
+    "bytes": 248,
+    "width": 28,
+    "height": 26,
+    "source_file": "sprite_b3.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b3"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b4.png",
+    "sha256": "87293e4d6e7fe8f7bc583f2254470aa8d0bc28554eb51570f9169568ed0606de",
+    "bytes": 287,
+    "width": 31,
+    "height": 32,
+    "source_file": "sprite_b4.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b4"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b5.png",
+    "sha256": "743b81fb63c3a13c9d080f46c513c1041f5aabfbaa1d09b922dd4f8608c9c3a0",
+    "bytes": 274,
+    "width": 30,
+    "height": 32,
+    "source_file": "sprite_b5.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b5"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b6.png",
+    "sha256": "88222bd69de5bf5bb66c6e573049b5fde7c91946f0e519b56e7160df4d15a082",
+    "bytes": 184,
+    "width": 16,
+    "height": 16,
+    "source_file": "sprite_b6.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b6"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b7.png",
+    "sha256": "25741ef70e1169aa0dfa66ac3ddf793b412c2aedcfdcfeb781816109e5d5b72c",
+    "bytes": 615,
+    "width": 52,
+    "height": 62,
+    "source_file": "sprite_b7.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b7"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b8.png",
+    "sha256": "25741ef70e1169aa0dfa66ac3ddf793b412c2aedcfdcfeb781816109e5d5b72c",
+    "bytes": 615,
+    "width": 52,
+    "height": 62,
+    "source_file": "sprite_b8.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_b9.png",
+    "sha256": "704f4de47b5ea36cac5dffc938021b54d776fa592799237ad20a16830e4a4127",
+    "bytes": 560,
+    "width": 52,
+    "height": 61,
+    "source_file": "sprite_b9.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_b9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ba.png",
+    "sha256": "975ec564dd00adf6741e3c2245d07b3eeac9fec9cec6f00e160233db12ef5264",
+    "bytes": 644,
+    "width": 63,
+    "height": 58,
+    "source_file": "sprite_ba.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ba"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_bb.png",
+    "sha256": "04f9ab06ccd7c59d01d867044e7243e473e91f207982669f61cc70e764d2ca9e",
+    "bytes": 155,
+    "width": 16,
+    "height": 11,
+    "source_file": "sprite_bb.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_bb"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_bc.png",
+    "sha256": "b2c0adf297044a39b3a4af96547cd94c2780e99777fcdaed41b93671af3e63e7",
+    "bytes": 156,
+    "width": 16,
+    "height": 11,
+    "source_file": "sprite_bc.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_bc"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_bd.png",
+    "sha256": "af416d218d684071acf1277f31447429e4c6a49c354981beeb3cc1ec5abf21f5",
+    "bytes": 361,
+    "width": 32,
+    "height": 32,
+    "source_file": "sprite_bd.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_bd"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_be.png",
+    "sha256": "02b33898443aa3d649663c0c7f960f48ec4749c544b4b9c225312648edf39287",
+    "bytes": 357,
+    "width": 31,
+    "height": 32,
+    "source_file": "sprite_be.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_be"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_bf.png",
+    "sha256": "09bda9edf634803f60f6904f8ce86b0b20c702813322c1d7eebb2b1941a22791",
+    "bytes": 117,
+    "width": 5,
+    "height": 5,
+    "source_file": "sprite_bf.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_bf"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c0.png",
+    "sha256": "c875bb194d1417683d8c9011d66775879f88da454f18e990f2af79839819a1e9",
+    "bytes": 126,
+    "width": 8,
+    "height": 8,
+    "source_file": "sprite_c0.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c0"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c1.png",
+    "sha256": "26d20c3b60c49ba8fe679db3a9a553ce44765384f720075404330a542769bd5e",
+    "bytes": 107,
+    "width": 4,
+    "height": 5,
+    "source_file": "sprite_c1.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c1"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c2.png",
+    "sha256": "0dcca59b7f26fca7c16553c49b8c7d6b6433061db37279d024621a23ec537889",
+    "bytes": 119,
+    "width": 7,
+    "height": 8,
+    "source_file": "sprite_c2.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c2"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c3.png",
+    "sha256": "23821496087b8891cedc931fc00ab08ff0a6f746736798568f8b17013cba8fa6",
+    "bytes": 544,
+    "width": 60,
+    "height": 60,
+    "source_file": "sprite_c3.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c3"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c4.png",
+    "sha256": "73181c2a5835a32363684d7777b775d0016200fe8dd429c7d2f8cd4ad795573f",
+    "bytes": 116,
+    "width": 4,
+    "height": 14,
+    "source_file": "sprite_c4.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c4"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c5.png",
+    "sha256": "864828171bf503a3d333c2942e1df92528ff711273b897ae0bc2d8eb639ba04d",
+    "bytes": 149,
+    "width": 16,
+    "height": 11,
+    "source_file": "sprite_c5.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c5"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c6.png",
+    "sha256": "710f213cd7bc421af4389d92fe57992867185ceefa228f54a5494cb5455861da",
+    "bytes": 152,
+    "width": 16,
+    "height": 12,
+    "source_file": "sprite_c6.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c6"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c7.png",
+    "sha256": "23e4a23a3fc7be0d8c41a4a37d1f5249faa3af539e9beb82b2c60e9c976b02e5",
+    "bytes": 149,
+    "width": 16,
+    "height": 11,
+    "source_file": "sprite_c7.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c7"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c8.png",
+    "sha256": "db946f594aaadc4f293e38ea610dcfcad05e060d77d871b5c765048be5707d6c",
+    "bytes": 171,
+    "width": 15,
+    "height": 16,
+    "source_file": "sprite_c8.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_c9.png",
+    "sha256": "af91d3b64d5a5d46495027debc1dfedfae95a5ccc8035ab163b57525fa542258",
+    "bytes": 176,
+    "width": 21,
+    "height": 15,
+    "source_file": "sprite_c9.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_c9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ca.png",
+    "sha256": "cfb544d844a1e0acafa94114517edf40877d99b01f0c31317e077124032b0090",
+    "bytes": 200,
+    "width": 32,
+    "height": 22,
+    "source_file": "sprite_ca.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ca"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_cb.png",
+    "sha256": "1f424abeeefc025dee405911a59d03978be48b3b5f333b43deb82f391e8139e1",
+    "bytes": 215,
+    "width": 48,
+    "height": 18,
+    "source_file": "sprite_cb.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_cb"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_cc.png",
+    "sha256": "f77917a39248782083b423889eb7e30aac4c590ec0ddec777465a2e3b0da1b0d",
+    "bytes": 253,
+    "width": 48,
+    "height": 31,
+    "source_file": "sprite_cc.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_cc"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_cd.png",
+    "sha256": "cddb3f9bc762f3508022343c9445ff4b6633103a1a44ec83f8d35556e84538ee",
+    "bytes": 252,
+    "width": 48,
+    "height": 31,
+    "source_file": "sprite_cd.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_cd"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_ce.png",
+    "sha256": "6dbad3de9a717f0eddedae1a18addb44f4979c58cf7c695755e95d3a1a936c99",
+    "bytes": 249,
+    "width": 48,
+    "height": 31,
+    "source_file": "sprite_ce.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_ce"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/vermiceli/nes-contra-us/687d651c021fd7020f10d05b970ccb62663c94bd/docs/sprite_library/contra_sprites/sprite_cf.png",
+    "sha256": "3b6ba7f995c32897f2e272f90c02a959639b0f77734f40a5f0cf5fb34602c9dd",
+    "bytes": 156,
+    "width": 30,
+    "height": 8,
+    "source_file": "sprite_cf.png",
+    "packed_into": "assets/sprites.png",
+    "atlas_key": "sprite_cf"
+  },
+  {
+    "file": "assets/backgrounds/stage-1.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage1BG.png",
+    "sha256": "b3ca096dc5d87fc2d2628b5986085f27ea6ad914b5e440b3ad8ac6847a815712",
+    "bytes": 22187,
+    "width": 3840,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-2.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage2BG.png",
+    "sha256": "55c178bc63569da40c12f35d0892e46525ff39ad30f9522aa539ffe780706dfe",
+    "bytes": 16870,
+    "width": 2048,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-3.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage3BG.png",
+    "sha256": "d55a14ab80c4f7cee6ed365a4990a9e8e1332a90cba9bed488de742ffb787573",
+    "bytes": 24557,
+    "width": 256,
+    "height": 2656,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-4.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage4BG.png",
+    "sha256": "54485c5837244b53adb102a58cd2d1041553d03fdb3c0655fe5b451dbebe1a64",
+    "bytes": 17071,
+    "width": 2816,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-5.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage5BG.png",
+    "sha256": "62129482d4d8d842e1baa0d01a0a4aa8d2a6e219eefe1afc2865d18498b6905c",
+    "bytes": 28657,
+    "width": 5616,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-6.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage6BG.png",
+    "sha256": "18d7a5f3fc97b3e787bc885a4e7ca6cac06cefb63dbd04f3597c6725637a206a",
+    "bytes": 21079,
+    "width": 3712,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-7.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage7BG.png",
+    "sha256": "639fb518a919eba410ae4128ad86a5c3d597256a3af40e8ae09edaad5521595d",
+    "bytes": 28659,
+    "width": 4352,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/backgrounds/stage-8.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage8BG.png",
+    "sha256": "0e4697a88751e640b6b1322b12c8d4c2e058f31fd255a5bb65e2c1147f1e2ecb",
+    "bytes": 33604,
+    "width": 3328,
+    "height": 240,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-boss01_boom.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/boss01_boom.wav",
+    "sha256": "dcabc398202acfd1c7541182e41486d1d35d7e793dcae85da128eb4b0d821bb9",
+    "bytes": 52962,
+    "duration": 2.4,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-enemy_four_five_boom.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/enemy_four_five_boom.wav",
+    "sha256": "76b82c1f0678a7b3d6b2fea5e2a4062237b326b86e213e393405a6cc5fb522ed",
+    "bytes": 18107,
+    "duration": 0.819,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-gameover.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/gameover.wav",
+    "sha256": "2b884aab6fe36df193ac62e588d42e7c3bbb0482ccb1458689f9ebba6b2ddf8b",
+    "bytes": 84867,
+    "duration": 3.847,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-get_prop.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/get_prop.wav",
+    "sha256": "781ea0f89062d7ba167c784cf7d277c1cafe7ee192d6ffcd8e13003263ec1d1f",
+    "bytes": 24295,
+    "duration": 1.1,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-hitsnd1.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/hitsnd1.wav",
+    "sha256": "15c5c5a89b18744a0218ef10f80aaa9ba20d68887a13309f2b25f0c8fe85165d",
+    "bytes": 8862,
+    "duration": 0.4,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-hitsnd2.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/hitsnd2.wav",
+    "sha256": "1aa2f55b65baa10cbfc5fde532fcc07f52e1ebfd9f8cfd37c31cc98fc54f6b96",
+    "bytes": 10528,
+    "duration": 0.475,
+    "rate": 22050,
+    "channels": 1,
+    "included": false
+  },
+  {
+    "file": "assets/audio/laya-pause.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/pause.wav",
+    "sha256": "bc78795c34a07d5a7425fbeaddf8770c3f45c582b5c01e1eac39bd016141980b",
+    "bytes": 11698,
+    "duration": 0.529,
+    "rate": 22050,
+    "channels": 1,
+    "included": false
+  },
+  {
+    "file": "assets/audio/laya-stone_boom.wav",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/stone_boom.wav",
+    "sha256": "208fa74cfef00e5a8f206cfa322953008069c51ce332be4a13c3612f982f7f79",
+    "bytes": 9229,
+    "duration": 0.417,
+    "rate": 22050,
+    "channels": 1,
+    "included": true
+  },
+  {
+    "file": "assets/audio/laya-background.mp3",
+    "url": "https://raw.githubusercontent.com/GitHubLXHan/contra/master/TestNewContra/bin/sound/background.mp3",
+    "sha256": "824121ce217068a30e83a120d72ee8da16ff3fdfb7926633b1067925ba7a6d68",
+    "bytes": 874169,
+    "included": false
+  },
+  {
+    "file": "assets/audio/canvas-dead.mp3",
+    "url": "https://raw.githubusercontent.com/mbudhathoki200/CONTRA-GAME/master/src/assets/sounds/dead.mp3",
+    "sha256": "a33a815571e054c9146d86ef4437a3b17beeb307494e67e7a8db9fd42d83a468",
+    "bytes": 20332,
+    "included": true
+  },
+  {
+    "file": "assets/audio/canvas-enemy-hit.mp3",
+    "url": "https://raw.githubusercontent.com/mbudhathoki200/CONTRA-GAME/master/src/assets/sounds/enemy-hit.mp3",
+    "sha256": "ca74140b4cf70a7aa02ee658f01dce94c8159b23f5441f2abd197bcb01b7289a",
+    "bytes": 13883,
+    "included": false
+  },
+  {
+    "file": "assets/audio/canvas-game-over.mp3",
+    "url": "https://raw.githubusercontent.com/mbudhathoki200/CONTRA-GAME/master/src/assets/sounds/game-over.mp3",
+    "sha256": "9807a0b7fc033e157af6bc00021c0fdd55a4c488394d188ed6503b4343bc4eb7",
+    "bytes": 125165,
+    "included": true
+  },
+  {
+    "file": "assets/audio/canvas-title.mp3",
+    "url": "https://raw.githubusercontent.com/mbudhathoki200/CONTRA-GAME/master/src/assets/sounds/title.mp3",
+    "sha256": "f20da27328cd8f6107d469caec3bd164332e0ed922f8094be498560b2a48adc7",
+    "bytes": 114716,
+    "included": false
+  },
+  {
+    "file": "assets/backgrounds/stage-1-objects.png",
+    "url": "https://nesmaps.com/maps/Contra/ContraMapStage1.png",
+    "sha256": "785a1fec76ba2d347424193db3b465897b6cdb29d0c53fff0a53626cb95ccb78",
+    "bytes": 27024,
+    "included": true
+  }
+]

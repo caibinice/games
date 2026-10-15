@@ -1,0 +1,122 @@
+{
+  "logo": {
+    "x": 288,
+    "y": 48,
+    "w": 192,
+    "h": 72,
+    "map": "stage-1",
+    "visibleRgbaSha256": "ace7f97d93cf40127f546db9f40661965f31be4853117868894cecce5bcf8eae"
+  },
+  "heroes": {
+    "x": 384,
+    "y": 120,
+    "w": 96,
+    "h": 72,
+    "map": "stage-1",
+    "visibleRgbaSha256": "b0e7b5d0336cf97caf0e58b9085e7b87a2b86bfff9de88afe7b8f707bf7db019"
+  },
+  "mountain": {
+    "x": 544,
+    "y": 0,
+    "w": 256,
+    "h": 112,
+    "map": "stage-1",
+    "visibleRgbaSha256": "8ba4d406863c497ac0a06d1ce36698bc43e7ec52ee57a98d5413810c8e0c1135"
+  },
+  "forest": {
+    "x": 2944,
+    "y": 16,
+    "w": 32,
+    "h": 56,
+    "map": "stage-1",
+    "visibleRgbaSha256": "91f7c65db3e9e8194554548101e4d00c94e3e22778ac24655db593a0db7f9a24"
+  },
+  "trunk": {
+    "x": 2944,
+    "y": 80,
+    "w": 32,
+    "h": 64,
+    "map": "stage-1",
+    "visibleRgbaSha256": "2cef3137b3d2570e3600b06558a07cc0ba6021d23bbb9cd30eeefceafa02365a"
+  },
+  "grass": {
+    "x": 544,
+    "y": 104,
+    "w": 32,
+    "h": 24,
+    "map": "stage-1",
+    "visibleRgbaSha256": "236317733df31dc167d1d3647c6bd0139e447df0917b87ec092289b4ad207d72"
+  },
+  "rock": {
+    "x": 544,
+    "y": 128,
+    "w": 64,
+    "h": 64,
+    "map": "stage-1",
+    "visibleRgbaSha256": "26439c9c49f5988a3a3d3158e577217ceab5a7f90b6c7a28852d3707fca67321"
+  },
+  "bridge": {
+    "x": 1296,
+    "y": 112,
+    "w": 64,
+    "h": 32,
+    "map": "stage-1",
+    "visibleRgbaSha256": "89c34830125e56844719b1c7caec767b2b5912cfeec9f4a4b0b278b844993a33"
+  },
+  "water": {
+    "x": 544,
+    "y": 216,
+    "w": 64,
+    "h": 24,
+    "map": "stage-1",
+    "visibleRgbaSha256": "288c1749b7e51e968bd3c93526b5f5efb6c5045c59101de5fbb5ab3b0ae49c78"
+  },
+  "fortress": {
+    "x": 3776,
+    "y": 48,
+    "w": 64,
+    "h": 160,
+    "map": "stage-1",
+    "visibleRgbaSha256": "43491f02ac0372432ccafac388d6aaf9e259c5d33825fc8a8660f03a09aa72d7"
+  },
+  "core": {
+    "x": 3736,
+    "y": 160,
+    "w": 24,
+    "h": 24,
+    "map": "stage-1",
+    "visibleRgbaSha256": "b0f84dee618a86a38ebc7749b0278049949d314896628b20ee1e033cd49efe71"
+  },
+  "gun": {
+    "x": 3728,
+    "y": 120,
+    "w": 24,
+    "h": 24,
+    "map": "stage-1",
+    "visibleRgbaSha256": "0fbae32afdd1e705e43f4355fb42a0cdebbf26b266fffb6083ff0fcb3ce687ab"
+  },
+  "crate": {
+    "map": "stage-1-objects",
+    "x": 832,
+    "y": 144,
+    "w": 32,
+    "h": 32,
+    "visibleRgbaSha256": "8624d58e57c1e0e7e66cc0967a36ccf9f519862ecc1a3b8bb3c3d2ae6e8ce2d9"
+  },
+  "turret": {
+    "map": "stage-1-objects",
+    "x": 1760,
+    "y": 144,
+    "w": 32,
+    "h": 32,
+    "visibleRgbaSha256": "3bda3421b85e53bee53bdf4af772662df65c1f221bf5700d32fba1ac56aa32d3"
+  },
+  "red-turret": {
+    "map": "stage-1-objects",
+    "x": 2560,
+    "y": 144,
+    "w": 32,
+    "h": 32,
+    "visibleRgbaSha256": "1745707746c1bc60e6add19fb8eb12ba25a7b63a29bcdac90ec79fcdc9d8810c"
+  }
+}

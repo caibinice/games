@@ -1,0 +1,15 @@
+{
+  "id": "tank",
+  "name": "坦克大战",
+  "subtitle": "BATTLE CITY · 35 STAGES",
+  "description": "守住老鹰基地，击退 20 辆敌军。35 关经典布局、六种道具、原汁原味的单人坦克战。",
+  "color": "#dfb95f",
+  "symbol": "▣",
+  "version": "20261015-1",
+  "facts": {
+    "levels": 35,
+    "layouts": 2,
+    "players": 1
+  },
+  "vendors": []
+}

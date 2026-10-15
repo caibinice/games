@@ -1,0 +1,82 @@
+[
+  {
+    "stage": 1,
+    "file": "backgrounds/stage-1.png",
+    "x": 512,
+    "y": 16,
+    "width": 3328,
+    "height": 224,
+    "scroll": "horizontal",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 2,
+    "file": "backgrounds/stage-2.png",
+    "x": 512,
+    "y": 16,
+    "width": 1536,
+    "height": 224,
+    "scroll": "base-rooms",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 3,
+    "file": "backgrounds/stage-3.png",
+    "x": 0,
+    "y": 0,
+    "width": 256,
+    "height": 2176,
+    "scroll": "vertical-up",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 4,
+    "file": "backgrounds/stage-4.png",
+    "x": 512,
+    "y": 16,
+    "width": 2304,
+    "height": 224,
+    "scroll": "base-rooms",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 5,
+    "file": "backgrounds/stage-5.png",
+    "x": 512,
+    "y": 16,
+    "width": 5104,
+    "height": 224,
+    "scroll": "horizontal",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 6,
+    "file": "backgrounds/stage-6.png",
+    "x": 512,
+    "y": 16,
+    "width": 3200,
+    "height": 224,
+    "scroll": "horizontal",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 7,
+    "file": "backgrounds/stage-7.png",
+    "x": 512,
+    "y": 16,
+    "width": 3840,
+    "height": 224,
+    "scroll": "horizontal",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  },
+  {
+    "stage": 8,
+    "file": "backgrounds/stage-8.png",
+    "x": 512,
+    "y": 16,
+    "width": 2816,
+    "height": 224,
+    "scroll": "horizontal",
+    "note": "Stage3 art ends at y2176; below is NES Maps credits. Other crops follow stage1 convention; verify collision separately."
+  }
+]

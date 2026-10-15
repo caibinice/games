@@ -1,0 +1,906 @@
+{
+  "defaultFacing": {
+    "player": "right",
+    "soldier": "left"
+  },
+  "frameKeys": {
+    "player": {
+      "idle": [
+        "0f"
+      ],
+      "run": [
+        "0d",
+        "0e",
+        "0f"
+      ],
+      "upRight": [
+        "10",
+        "11",
+        "12"
+      ],
+      "downRight": [
+        "13",
+        "14",
+        "15"
+      ],
+      "up": [
+        "16"
+      ],
+      "prone": [
+        "17"
+      ],
+      "spin": [
+        "08",
+        "09"
+      ],
+      "water": [
+        "1b",
+        "1c",
+        "1d"
+      ],
+      "submerged": [
+        "19"
+      ],
+      "death": [
+        "0a",
+        "0b",
+        "0c"
+      ]
+    },
+    "soldier": {
+      "run": [
+        "3b",
+        "3c",
+        "3d",
+        "3f",
+        "3c",
+        "3e"
+      ],
+      "sniper": [
+        "43"
+      ],
+      "jump": [
+        "40"
+      ]
+    },
+    "projectile": {
+      "rifle": [
+        "07"
+      ],
+      "enemy": [
+        "1e"
+      ],
+      "machine": [
+        "1f"
+      ],
+      "spread": [
+        "1f",
+        "20",
+        "21"
+      ],
+      "fire": [
+        "22"
+      ],
+      "laser": [
+        "23",
+        "24",
+        "25"
+      ]
+    },
+    "pickup": {
+      "S": [
+        "2f"
+      ],
+      "B": [
+        "30"
+      ],
+      "F": [
+        "31"
+      ],
+      "L": [
+        "32"
+      ],
+      "R": [
+        "33"
+      ],
+      "M": [
+        "34"
+      ],
+      "capsule": [
+        "4d"
+      ]
+    },
+    "boss": {
+      "baseEye": [
+        "5d",
+        "5e",
+        "5f",
+        "60",
+        "61",
+        "62"
+      ],
+      "giant": [
+        "b7",
+        "b8",
+        "b9",
+        "ba",
+        "c3"
+      ],
+      "alienBundle": [
+        "ac",
+        "ad",
+        "ae",
+        "af"
+      ],
+      "bugger": [
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "godomuga": [
+        "68",
+        "69",
+        "6a",
+        "6b",
+        "6c"
+      ]
+    },
+    "effect": {
+      "explosion": [
+        "37",
+        "36",
+        "35",
+        "39",
+        "3a"
+      ]
+    }
+  },
+  "dimensions": {
+    "player_1_lives_medal": {
+      "width": 8,
+      "height": 16
+    },
+    "sprite_02": {
+      "width": 19,
+      "height": 35
+    },
+    "sprite_03": {
+      "width": 20,
+      "height": 31
+    },
+    "sprite_04": {
+      "width": 16,
+      "height": 34
+    },
+    "sprite_05": {
+      "width": 18,
+      "height": 34
+    },
+    "sprite_06": {
+      "width": 16,
+      "height": 35
+    },
+    "sprite_07": {
+      "width": 3,
+      "height": 3
+    },
+    "sprite_08": {
+      "width": 16,
+      "height": 20
+    },
+    "sprite_09": {
+      "width": 19,
+      "height": 16
+    },
+    "sprite_0a": {
+      "width": 22,
+      "height": 18
+    },
+    "sprite_0b": {
+      "width": 15,
+      "height": 23
+    },
+    "sprite_0c": {
+      "width": 32,
+      "height": 10
+    },
+    "sprite_0d": {
+      "width": 25,
+      "height": 34
+    },
+    "sprite_0e": {
+      "width": 25,
+      "height": 32
+    },
+    "sprite_0f": {
+      "width": 23,
+      "height": 34
+    },
+    "sprite_10": {
+      "width": 19,
+      "height": 35
+    },
+    "sprite_11": {
+      "width": 20,
+      "height": 33
+    },
+    "sprite_12": {
+      "width": 16,
+      "height": 35
+    },
+    "sprite_13": {
+      "width": 21,
+      "height": 35
+    },
+    "sprite_14": {
+      "width": 21,
+      "height": 33
+    },
+    "sprite_15": {
+      "width": 20,
+      "height": 35
+    },
+    "sprite_16": {
+      "width": 14,
+      "height": 45
+    },
+    "sprite_17": {
+      "width": 32,
+      "height": 16
+    },
+    "sprite_18": {
+      "width": 16,
+      "height": 7
+    },
+    "sprite_19": {
+      "width": 16,
+      "height": 15
+    },
+    "sprite_1a": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_1b": {
+      "width": 17,
+      "height": 27
+    },
+    "sprite_1c": {
+      "width": 19,
+      "height": 18
+    },
+    "sprite_1d": {
+      "width": 25,
+      "height": 16
+    },
+    "sprite_1e": {
+      "width": 3,
+      "height": 3
+    },
+    "sprite_1f": {
+      "width": 5,
+      "height": 5
+    },
+    "sprite_20": {
+      "width": 6,
+      "height": 6
+    },
+    "sprite_21": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_22": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_23": {
+      "width": 6,
+      "height": 16
+    },
+    "sprite_24": {
+      "width": 16,
+      "height": 6
+    },
+    "sprite_25": {
+      "width": 8,
+      "height": 13
+    },
+    "sprite_2f": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_30": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_31": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_32": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_33": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_34": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_35": {
+      "width": 30,
+      "height": 30
+    },
+    "sprite_36": {
+      "width": 23,
+      "height": 27
+    },
+    "sprite_37": {
+      "width": 15,
+      "height": 18
+    },
+    "sprite_39": {
+      "width": 28,
+      "height": 28
+    },
+    "sprite_3a": {
+      "width": 32,
+      "height": 32
+    },
+    "sprite_3b": {
+      "width": 16,
+      "height": 32
+    },
+    "sprite_3c": {
+      "width": 16,
+      "height": 31
+    },
+    "sprite_3d": {
+      "width": 16,
+      "height": 32
+    },
+    "sprite_3e": {
+      "width": 15,
+      "height": 32
+    },
+    "sprite_3f": {
+      "width": 16,
+      "height": 32
+    },
+    "sprite_40": {
+      "width": 24,
+      "height": 32
+    },
+    "sprite_41": {
+      "width": 24,
+      "height": 31
+    },
+    "sprite_42": {
+      "width": 18,
+      "height": 39
+    },
+    "sprite_43": {
+      "width": 24,
+      "height": 32
+    },
+    "sprite_44": {
+      "width": 8,
+      "height": 7
+    },
+    "sprite_45": {
+      "width": 23,
+      "height": 12
+    },
+    "sprite_46": {
+      "width": 24,
+      "height": 16
+    },
+    "sprite_47": {
+      "width": 7,
+      "height": 7
+    },
+    "sprite_48": {
+      "width": 32,
+      "height": 31
+    },
+    "sprite_49": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_4a": {
+      "width": 24,
+      "height": 27
+    },
+    "sprite_4b": {
+      "width": 16,
+      "height": 15
+    },
+    "sprite_4c": {
+      "width": 16,
+      "height": 31
+    },
+    "sprite_4d": {
+      "width": 24,
+      "height": 14
+    },
+    "sprite_4e": {
+      "width": 24,
+      "height": 15
+    },
+    "sprite_50": {
+      "width": 19,
+      "height": 45
+    },
+    "sprite_51": {
+      "width": 18,
+      "height": 40
+    },
+    "sprite_52": {
+      "width": 20,
+      "height": 41
+    },
+    "sprite_53": {
+      "width": 16,
+      "height": 43
+    },
+    "sprite_54": {
+      "width": 24,
+      "height": 32
+    },
+    "sprite_55": {
+      "width": 24,
+      "height": 45
+    },
+    "sprite_56": {
+      "width": 24,
+      "height": 22
+    },
+    "sprite_57": {
+      "width": 19,
+      "height": 40
+    },
+    "sprite_58": {
+      "width": 19,
+      "height": 39
+    },
+    "sprite_5d": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_5e": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_5f": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_60": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_61": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_62": {
+      "width": 24,
+      "height": 25
+    },
+    "sprite_63": {
+      "width": 14,
+      "height": 14
+    },
+    "sprite_64": {
+      "width": 31,
+      "height": 31
+    },
+    "sprite_68": {
+      "width": 32,
+      "height": 30
+    },
+    "sprite_69": {
+      "width": 32,
+      "height": 30
+    },
+    "sprite_6a": {
+      "width": 32,
+      "height": 30
+    },
+    "sprite_6b": {
+      "width": 32,
+      "height": 30
+    },
+    "sprite_6c": {
+      "width": 32,
+      "height": 30
+    },
+    "sprite_6d": {
+      "width": 11,
+      "height": 8
+    },
+    "sprite_6e": {
+      "width": 11,
+      "height": 8
+    },
+    "sprite_6f": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_70": {
+      "width": 11,
+      "height": 8
+    },
+    "sprite_71": {
+      "width": 11,
+      "height": 8
+    },
+    "sprite_72": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_73": {
+      "width": 16,
+      "height": 15
+    },
+    "sprite_74": {
+      "width": 12,
+      "height": 12
+    },
+    "sprite_75": {
+      "width": 16,
+      "height": 6
+    },
+    "sprite_76": {
+      "width": 12,
+      "height": 12
+    },
+    "sprite_77": {
+      "width": 6,
+      "height": 16
+    },
+    "sprite_78": {
+      "width": 12,
+      "height": 12
+    },
+    "sprite_79": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_7a": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_7b": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_7c": {
+      "width": 22,
+      "height": 16
+    },
+    "sprite_7d": {
+      "width": 24,
+      "height": 16
+    },
+    "sprite_7e": {
+      "width": 22,
+      "height": 16
+    },
+    "sprite_82": {
+      "width": 8,
+      "height": 13
+    },
+    "sprite_83": {
+      "width": 8,
+      "height": 12
+    },
+    "sprite_84": {
+      "width": 8,
+      "height": 13
+    },
+    "sprite_85": {
+      "width": 20,
+      "height": 23
+    },
+    "sprite_86": {
+      "width": 21,
+      "height": 23
+    },
+    "sprite_87": {
+      "width": 10,
+      "height": 22
+    },
+    "sprite_88": {
+      "width": 15,
+      "height": 25
+    },
+    "sprite_89": {
+      "width": 15,
+      "height": 23
+    },
+    "sprite_8a": {
+      "width": 24,
+      "height": 23
+    },
+    "sprite_8b": {
+      "width": 24,
+      "height": 46
+    },
+    "sprite_8c": {
+      "width": 24,
+      "height": 23
+    },
+    "sprite_8d": {
+      "width": 21,
+      "height": 23
+    },
+    "sprite_8e": {
+      "width": 11,
+      "height": 22
+    },
+    "sprite_8f": {
+      "width": 18,
+      "height": 25
+    },
+    "sprite_90": {
+      "width": 14,
+      "height": 25
+    },
+    "sprite_91": {
+      "width": 29,
+      "height": 35
+    },
+    "sprite_92": {
+      "width": 8,
+      "height": 12
+    },
+    "sprite_93": {
+      "width": 17,
+      "height": 24
+    },
+    "sprite_94": {
+      "width": 16,
+      "height": 25
+    },
+    "sprite_95": {
+      "width": 15,
+      "height": 24
+    },
+    "sprite_96": {
+      "width": 15,
+      "height": 24
+    },
+    "sprite_97": {
+      "width": 24,
+      "height": 14
+    },
+    "sprite_98": {
+      "width": 11,
+      "height": 19
+    },
+    "sprite_99": {
+      "width": 10,
+      "height": 4
+    },
+    "sprite_9a": {
+      "width": 16,
+      "height": 7
+    },
+    "sprite_9b": {
+      "width": 22,
+      "height": 8
+    },
+    "sprite_9c": {
+      "width": 24,
+      "height": 11
+    },
+    "sprite_9d": {
+      "width": 6,
+      "height": 6
+    },
+    "sprite_9e": {
+      "width": 10,
+      "height": 10
+    },
+    "sprite_9f": {
+      "width": 14,
+      "height": 14
+    },
+    "sprite_a0": {
+      "width": 12,
+      "height": 12
+    },
+    "sprite_a1": {
+      "width": 8,
+      "height": 9
+    },
+    "sprite_a2": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_a3": {
+      "width": 8,
+      "height": 9
+    },
+    "sprite_a4": {
+      "width": 8,
+      "height": 9
+    },
+    "sprite_a5": {
+      "width": 7,
+      "height": 7
+    },
+    "sprite_a6": {
+      "width": 6,
+      "height": 6
+    },
+    "sprite_a7": {
+      "width": 7,
+      "height": 7
+    },
+    "sprite_a8": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_a9": {
+      "width": 6,
+      "height": 7
+    },
+    "sprite_aa": {
+      "width": 16,
+      "height": 10
+    },
+    "sprite_ab": {
+      "width": 59,
+      "height": 68
+    },
+    "sprite_ac": {
+      "width": 24,
+      "height": 24
+    },
+    "sprite_ad": {
+      "width": 24,
+      "height": 24
+    },
+    "sprite_ae": {
+      "width": 23,
+      "height": 24
+    },
+    "sprite_af": {
+      "width": 24,
+      "height": 23
+    },
+    "sprite_b0": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_b1": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_b2": {
+      "width": 12,
+      "height": 13
+    },
+    "sprite_b3": {
+      "width": 28,
+      "height": 26
+    },
+    "sprite_b4": {
+      "width": 31,
+      "height": 32
+    },
+    "sprite_b5": {
+      "width": 30,
+      "height": 32
+    },
+    "sprite_b6": {
+      "width": 16,
+      "height": 16
+    },
+    "sprite_b7": {
+      "width": 52,
+      "height": 62
+    },
+    "sprite_b8": {
+      "width": 52,
+      "height": 62
+    },
+    "sprite_b9": {
+      "width": 52,
+      "height": 61
+    },
+    "sprite_ba": {
+      "width": 63,
+      "height": 58
+    },
+    "sprite_bb": {
+      "width": 16,
+      "height": 11
+    },
+    "sprite_bc": {
+      "width": 16,
+      "height": 11
+    },
+    "sprite_bd": {
+      "width": 32,
+      "height": 32
+    },
+    "sprite_be": {
+      "width": 31,
+      "height": 32
+    },
+    "sprite_bf": {
+      "width": 5,
+      "height": 5
+    },
+    "sprite_c0": {
+      "width": 8,
+      "height": 8
+    },
+    "sprite_c1": {
+      "width": 4,
+      "height": 5
+    },
+    "sprite_c2": {
+      "width": 7,
+      "height": 8
+    },
+    "sprite_c3": {
+      "width": 60,
+      "height": 60
+    },
+    "sprite_c4": {
+      "width": 4,
+      "height": 14
+    },
+    "sprite_c5": {
+      "width": 16,
+      "height": 11
+    },
+    "sprite_c6": {
+      "width": 16,
+      "height": 12
+    },
+    "sprite_c7": {
+      "width": 16,
+      "height": 11
+    },
+    "sprite_c8": {
+      "width": 15,
+      "height": 16
+    },
+    "sprite_c9": {
+      "width": 21,
+      "height": 15
+    },
+    "sprite_ca": {
+      "width": 32,
+      "height": 22
+    },
+    "sprite_cb": {
+      "width": 48,
+      "height": 18
+    },
+    "sprite_cc": {
+      "width": 48,
+      "height": 31
+    },
+    "sprite_cd": {
+      "width": 48,
+      "height": 31
+    },
+    "sprite_ce": {
+      "width": 48,
+      "height": 31
+    },
+    "sprite_cf": {
+      "width": 30,
+      "height": 8
+    }
+  },
+  "reference": "https://github.com/IvanAmamiya/contra-nes-css/blob/main/css-renderer.js"
+}

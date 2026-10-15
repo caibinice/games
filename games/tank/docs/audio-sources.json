@@ -1,0 +1,74 @@
+[
+  {
+    "file": "public/assets/audio/bullet_hit_1.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/bullet_hit_1.ogg",
+    "sha256": "64a7507562754fee9ff3ab1beadd7a7e47f43556fdd3737ac20443798a97fc66",
+    "bytes": 5191
+  },
+  {
+    "file": "public/assets/audio/bullet_hit_2.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/bullet_hit_2.ogg",
+    "sha256": "91c2f2478f3ff1d2033505e9dc8e925d2d692de026f0c2e317befdcff357a15c",
+    "bytes": 5277
+  },
+  {
+    "file": "public/assets/audio/bullet_shot.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/bullet_shot.ogg",
+    "sha256": "28a200e1248790961a8d1e107c5f62210bb18fc993aed35dfeee6ea2fc71e3bd",
+    "bytes": 5397
+  },
+  {
+    "file": "public/assets/audio/explosion_1.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/explosion_1.ogg",
+    "sha256": "ed354087fec017f22fff753389f2ecdfae19733a7a63585c25533cb635c0544a",
+    "bytes": 7436
+  },
+  {
+    "file": "public/assets/audio/explosion_2.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/explosion_2.ogg",
+    "sha256": "e429c8b27bf7202dcd921f629059996a9d61b48c408850ffe07dea33d29ed2a3",
+    "bytes": 10381
+  },
+  {
+    "file": "public/assets/audio/game_over.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/game_over.ogg",
+    "sha256": "f1b26561d6d1dc13b423ee55033aeec9541b27714961455b0941453e669840df",
+    "bytes": 23724
+  },
+  {
+    "file": "public/assets/audio/pause.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/pause.ogg",
+    "sha256": "9bb8a7e3ef697f44942e975b6f99c5fcf3988600b7ec933065686c2c85d9e47d",
+    "bytes": 11832
+  },
+  {
+    "file": "public/assets/audio/powerup_appear.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/powerup_appear.ogg",
+    "sha256": "34e2d39f5d2de2d2f52a951cf4744024a29ac5598322991cb1a2db2ba557e22f",
+    "bytes": 10471
+  },
+  {
+    "file": "public/assets/audio/powerup_pick.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/powerup_pick.ogg",
+    "sha256": "dc243c9761a25d6191cca6614f3cbfa1ee7ff36a30841ae912062eb996a5ca34",
+    "bytes": 13144
+  },
+  {
+    "file": "public/assets/audio/snow_slide.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/snow_slide.ogg",
+    "sha256": "f7456fe0e8d1a6561a76c0aad0e340b3c44f3d5708e299cee3d48ffebad9c306",
+    "bytes": 5223
+  },
+  {
+    "file": "public/assets/audio/stage_start.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/stage_start.ogg",
+    "sha256": "f221ff0899b2ac8dcce7ebe0f1e36d550c3ba8fb6ee095767cfc557fb6bea60c",
+    "bytes": 64821
+  },
+  {
+    "file": "public/assets/audio/statistics_1.ogg",
+    "url": "https://raw.githubusercontent.com/feichao93/battle-city/86c41c8c3c49cd27255bcf63167091d1061801fa/src/audio/sounds/statistics_1.ogg",
+    "sha256": "7a1cc79fe2831042daf077f2d2321c263fffefd7b02a9fe252e6f43da10c9194",
+    "bytes": 4665
+  }
+]

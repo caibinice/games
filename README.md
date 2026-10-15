@@ -15,6 +15,8 @@ games/
   goose/            独立 3D 抓大鹅，public / tests / docs
   lianliankan/      果趣连连看，PC / 手机双页面，独立 engine / tests / docs
   paopaotang/       泡泡小镇，水泡 AI 闯关 / PC 本地双人协作 / 手机触控
+  tank/            坦克大战，35 关经典单人守城 / PC 全屏 / 手机触控
+  contra/          魂斗罗，8 关单人战役 / 三种推进模式 / 原版像素与音乐
   <new-game>/       相同结构，平级扩展
 site/               /games/ 游戏大厅
 scripts/            共享检查、构建、发布、验证工具
@@ -27,6 +29,8 @@ dist/games/         构建产物，按游戏分目录
 - [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市 / 34 种自制模型，深箱堆叠、3D 七格三消与物理颠锅。
 - [果趣连连看](https://caibinice.com/games/lianliankan/)：30 关 / 16 种水果，逐章扩大棋盘与种类，经典两折连线；[电脑版](https://caibinice.com/games/lianliankan/pc.html) / [手机版](https://caibinice.com/games/lianliankan/mobile.html)。
 - [泡泡堂 · 泡泡小镇](https://caibinice.com/games/paopaotang/)：30 关 / 6 个主题，逐步扩大地图与丰富道具，水泡、连锁和救援，AI 闯关与 PC 本地双人协作；[电脑版](https://caibinice.com/games/paopaotang/pc.html) / [手机版](https://caibinice.com/games/paopaotang/mobile.html)。
+- [坦克大战](https://caibinice.com/games/tank/)：35 关、单人守卫老鹰、四类敌军、六种道具、像素地形和经典音效；[电脑版](https://caibinice.com/games/tank/pc.html) / [手机版](https://caibinice.com/games/tank/mobile.html)。
+- [魂斗罗](https://caibinice.com/games/contra/)：8 关、横向 / 瀑布纵向 / 基地纵深战斗、八向射击与五类武器、Boss、原版背景 / 精灵 / 分关音乐；[电脑版](https://caibinice.com/games/contra/pc.html) / [手机版](https://caibinice.com/games/contra/mobile.html)。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
 
 ## 开发与构建
@@ -68,6 +72,9 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)
 - [泡泡小镇玩法、控制与维护](games/paopaotang/docs/README.md)
+- [坦克大战玩法、源码与素材来源](games/tank/docs/README.md)
+- [魂斗罗玩法、素材来源与还原范围](games/contra/docs/README.md)
+- [坦克大战 / 魂斗罗双端上线验收](docs/classic-games-20261015.md)
 - [泡泡小镇双端提交与上线验收](docs/paopaotang-20261013.md)
 - [30 关递进、大地图与机器人手感调整](docs/game-progression-20261015.md)
 - [两款 PC 全屏与泡泡手感优化](docs/pc-immersive-latency-20261013.md)
