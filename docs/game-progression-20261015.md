@@ -33,4 +33,13 @@
 
 ## 发布记录
 
-待提交后执行现有选定游戏原子发布，并核验公网资源、其他游戏哈希与路由字节。
+- 功能提交：`df0fc76330496265b58775b2a7e5be385ccb97a8`，已通过本机 `127.0.0.1:20808` 代理推送 `origin/main`。
+- 原子 release：`/opt/games/releases/20261015053807-df0fc76330/www`。
+- 只替换 `lianliankan` / `paopaotang`，其他游戏继承旧 release；未写入 ai-blog 部署镜像。
+- `scripts/verify.py`：25 个公网运行文件 SHA-256 全部匹配，JS MIME 正常，缺失资源 404，目录斜线跳转正常。
+- 公网 Playwright 大地图回归全部通过：两款双端第 1 / 15 / 30 关、匹配 / 移动 / 放泡、保存续玩、末关处理与 12→13 解锁，页面错误为 0。
+- 发布前后核验：拼豆 / 抓大鹅共 87 个文件（含 gzip）完全相同，共享 Nginx 路由配置逐字节相同，`nginx -t` 通过。
+- `/`、`/games/`、`/blog/`、`/smartParking/`、另外两款游戏及本次两款 PC / 手机页面均返回 200。
+- 本地回滚：`E:\Documents\AI\codex\backups\games-20261015-133807-906806\rollback.json`；归档 SHA-256 已复核。
+- 远端备份：`/opt/games/backups/20261015053807-df0fc76330`；上一 release：`/opt/games/releases/20261013054746-6d95beb5bb/www`。
+- 入口：[连连看](https://caibinice.com/games/lianliankan/) / [泡泡小镇](https://caibinice.com/games/paopaotang/)。
