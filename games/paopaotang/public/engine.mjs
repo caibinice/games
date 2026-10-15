@@ -1,7 +1,7 @@
-import {LEVEL_COUNT, DIFFICULTIES, levelInfo} from './catalog.mjs';
+import {LEVEL_COUNT, DIFFICULTIES, levelInfo, arenaSpec, aiProfile} from './catalog.mjs';
 export const EMPTY=0, WALL=1, CRATE=2;
 export const FUSE_MS=2400, DAMAGE_MS=220, BLAST_MS=360, TRAP_MS=4500;
-export const HUMAN_MOVE_MS=125, SIMULATION_MS=10;
+export const HUMAN_MOVE_MS=165, SIMULATION_MS=10;
 export const DIRECTIONS={up:[0,-1],right:[1,0],down:[0,1],left:[-1,0]};
 const DIRECTIONS_LIST=Object.keys(DIRECTIONS);
 export const indexOf=(game,x,y)=>y*game.cols+x;
@@ -14,18 +14,21 @@ function rng(game) {
 function actor(id,team,control,x,y,skin,game) {
   return {id,team,control,x,y,fromX:x,fromY:y,movedAt:0,nextMove:0,nextThink:0,skin,dir:'down',status:'active',
     capacity:1,power:2,speed:1,needles:1,shield:0,trappedAt:0,invulnerableUntil:1000,
-    moveMs:control==='ai'?DIFFICULTIES[game.difficulty].botMove:HUMAN_MOVE_MS,lastBombAt:-10000};
+    moveMs:control==='ai'?(game.version===1?DIFFICULTIES[game.difficulty].botMove:arenaSpec(game.level,game.platform,game.difficulty).botMove):HUMAN_MOVE_MS,
+    lastBombAt:-10000,reactAt:0,threatUntil:0};
 }
-export function newGame({platform='pc',mode='solo',difficulty='normal',level=1,skin=0,seed=Date.now()}={}) {
+export const newGame=options=>createGame(options);
+function createGame({platform='pc',mode='solo',difficulty='normal',level=1,skin=0,seed=Date.now()}={},legacy=false) {
   if(!['pc','mobile'].includes(platform)||!['solo','duo'].includes(mode)||(platform==='mobile'&&mode==='duo')||
      !DIFFICULTIES[difficulty]||!Number.isInteger(level)||level<1||level>LEVEL_COUNT||!Number.isInteger(skin)||skin<0||skin>4)throw Error('Invalid arena options');
-  const cols=platform==='pc'?13:11,rows=11;
-  const game={version:1,platform,mode,difficulty,level,skin,cols,rows,seed:Number(seed)>>>0,clock:0,
-    remainingMs:DIFFICULTIES[difficulty].seconds*1000,status:'ready',board:Array(cols*rows).fill(EMPTY),
+  if(legacy&&level>12)throw Error('Invalid legacy level');
+  const spec=arenaSpec(level,platform,difficulty),cols=legacy?(platform==='pc'?13:11):spec.cols,rows=legacy?11:spec.rows;
+  const game={version:legacy?1:2,motionVersion:2,platform,mode,difficulty,level,skin,cols,rows,seed:Number(seed)>>>0,clock:0,
+    remainingMs:(legacy?DIFFICULTIES[difficulty].seconds:spec.seconds)*1000,status:'ready',board:Array(cols*rows).fill(EMPTY),
     players:[],bombs:[],blasts:[],items:[],events:[],score:0,nextId:1,cratesBroken:0,enemiesOut:0};
   for(let y=0;y<rows;y++)for(let x=0;x<cols;x++){
     const solid=x===0||y===0||x===cols-1||y===rows-1||(x%2===0&&y%2===0);
-    game.board[indexOf(game,x,y)]=solid?WALL:rng(game)<DIFFICULTIES[difficulty].density?CRATE:EMPTY;
+    game.board[indexOf(game,x,y)]=solid?WALL:rng(game)<(legacy?DIFFICULTIES[difficulty].density:spec.density)?CRATE:EMPTY;
   }
   const spawns=[[1,1],[cols-2,rows-2],[cols-2,1],[1,rows-2]];
   // Each spawn needs a complete L-shaped retreat, not just an empty neighbor:
@@ -38,9 +41,11 @@ export function newGame({platform='pc',mode='solo',difficulty='normal',level=1,s
   }
   game.players.push(actor('p1',0,'p1',1,1,skin,game));
   if(mode==='duo')game.players.push(actor('p2',0,'p2',1,rows-2,(skin+1)%5,game));
-  const enemies=mode==='duo'?2:difficulty==='hard'?3:levelInfo(level).enemies;
+  const enemies=mode==='duo'?2:difficulty==='hard'?3:legacy?(level<4?2:3):spec.enemies;
   for(let i=0;i<enemies;i++){
-    const[x,y]=spawns[i+1];game.players.push(actor('bot'+(i+1),1,'ai',x,y,(skin+i+2)%5,game));
+    const[x,y]=spawns[i+1],bot=actor('bot'+(i+1),1,'ai',x,y,(skin+i+2)%5,game);
+    if(!legacy){bot.capacity=spec.stage>=3?2:1;bot.power=spec.stage>=4?3:2;}
+    game.players.push(bot);
   }
   return game;
 }
@@ -49,7 +54,7 @@ export function pause(game){if(game.status==='running')game.status='paused';}
 export const enemiesLeft=game=>game.players.filter(p=>p.team===1&&p.status!=='out').length;
 export const livingTeam=game=>game.players.filter(p=>p.team===0&&p.status!=='out');
 export const getPlayer=(game,id)=>game.players.find(p=>p.id===id);
-export const movementMs=p=>Math.max(p.control==='ai'?95:75,p.moveMs-(p.speed-1)*(p.control==='ai'?32:25));
+export const movementMs=p=>Math.max(p.control==='ai'?180:115,p.moveMs-(p.speed-1)*25);
 export function playerPosition(game,p,time=game.clock){
   const progress=Math.min(1,Math.max(0,(time-p.movedAt)/movementMs(p)));
   return{x:p.fromX+(p.x-p.fromX)*progress,y:p.fromY+(p.y-p.fromY)*progress,progress};
@@ -157,7 +162,7 @@ function detonate(game,ids) {
       if(game.board[i]!==CRATE)continue;
       game.board[i]=EMPTY;game.cratesBroken++;if(bomb.team===0)game.score+=20;
       if(rng(game)<.54){
-        const types=['capacity','power','speed','needle','shield'];
+        const types=game.version===1?['capacity','power','speed','needle','shield']:levelInfo(game.level).itemTypes;
         // New drops are visible only once the water column has passed.
         game.items.push({id:game.nextId++,x:i%game.cols,y:Math.floor(i/game.cols),type:types[Math.floor(rng(game)*types.length)],visibleAt:game.clock+BLAST_MS});
       }
@@ -190,9 +195,22 @@ export function escapeDirection(game,p,extraBomb=null) {
 function adjacentCrate(game,p){return Object.values(DIRECTIONS).some(([dx,dy])=>game.board[indexOf(game,p.x+dx,p.y+dy)]===CRATE);}
 export function decideAI(game,p) {
   if(p.status!=='active'||game.clock<p.nextMove||game.clock<(p.nextThink||0))return {};
-  p.nextThink=game.clock+50;
+  p.nextThink=game.clock+80;
   const danger=dangerMap(game),here=indexOf(game,p.x,p.y);
-  if(danger.has(here))return {direction:escapeDirection(game,p)};
+  if(danger.has(here)){
+    if(!p.threatUntil||game.clock>=p.threatUntil){
+      const profile=aiProfile(game.level,game.difficulty),deadline=danger.get(here);
+      // Roll once per threat, never every simulation tick. A bot can hesitate
+      // until close to impact, but still checks an exit before its own bomb.
+      const ownBomb=game.bombs.some(b=>b.owner===p.id&&b.x===p.x&&b.y===p.y);
+      const mistaken=!ownBomb&&rng(game)<profile.mistake;
+      const delay=mistaken?Math.max(profile.reaction,deadline-game.clock-120-rng(game)*180):profile.reaction+rng(game)*80;
+      p.reactAt=game.clock+delay;p.threatUntil=deadline+DAMAGE_MS;
+    }
+    if(game.clock<p.reactAt)return {};
+    return {direction:escapeDirection(game,p)};
+  }
+  p.threatUntil=0;p.reactAt=0;
   const friends=game.players.filter(o=>o.team===p.team&&o.status==='trapped');
   if(friends.length){const targets=new Set(friends.map(f=>indexOf(game,f.x,f.y)));const dir=route(game,p,i=>targets.has(i));if(dir)return{direction:dir};}
   const phantom={id:-1,owner:p.id,team:p.team,x:p.x,y:p.y,power:p.power,placedAt:game.clock,explodeAt:game.clock+FUSE_MS};
@@ -242,8 +260,8 @@ export const serialize=game=>JSON.stringify({...game,events:[]});
 export function restore(raw,platform) {
   try{
     const g=typeof raw==='string'?JSON.parse(raw):structuredClone(raw);
-    const original=newGame({platform:g.platform,mode:g.mode,difficulty:g.difficulty,level:g.level,skin:g.skin,seed:0});
-    if(g.version!==1||(platform&&g.platform!==platform)||g.cols!==original.cols||g.rows!==original.rows||
+    const original=createGame({platform:g.platform,mode:g.mode,difficulty:g.difficulty,level:g.level,skin:g.skin,seed:0},g.version===1);
+    if(![1,2].includes(g.version)||(platform&&g.platform!==platform)||g.cols!==original.cols||g.rows!==original.rows||
        !['ready','running','paused','won','lost'].includes(g.status)||!Array.isArray(g.board)||g.board.length!==g.cols*g.rows||
        g.board.some(v=>![EMPTY,WALL,CRATE].includes(v)))return null;
     for(let i=0;i<g.board.length;i++)if((g.board[i]===WALL)!==(original.board[i]===WALL))return null;
@@ -254,19 +272,26 @@ export function restore(raw,platform) {
     const legacyTiming=g.players.some(p=>p.control!=='ai'&&p.moveMs===190);
     for(let i=0;i<g.players.length;i++){
       const p=g.players[i],expected=original.players[i];
-      p.nextThink??=0;
+      p.nextThink??=0;p.reactAt??=0;p.threatUntil??=0;
       if(p.id!==expected.id||p.team!==expected.team||p.control!==expected.control||!location(p)||
          !['active','trapped','out'].includes(p.status)||!DIRECTIONS[p.dir]||!Number.isInteger(p.skin)||p.skin<0||p.skin>4)return null;
       for(const[key,max]of[['capacity',5],['power',5],['speed',3],['needles',3],['shield',2]])if(!Number.isInteger(p[key])||p[key]<(key==='needles'||key==='shield'?0:1)||p[key]>max)return null;
-      for(const key of ['fromX','fromY','movedAt','nextMove','nextThink','trappedAt','invulnerableUntil','moveMs','lastBombAt'])if(!Number.isFinite(p[key]))return null;
-      if(p.control!=='ai'&&p.moveMs===190){
+      for(const key of ['fromX','fromY','movedAt','nextMove','nextThink','trappedAt','invulnerableUntil','moveMs','lastBombAt','reactAt','threatUntil'])if(!Number.isFinite(p[key]))return null;
+      if(p.control!=='ai'&&[125,190].includes(p.moveMs)){
         // Keep old rounds, but migrate their speed and the unconsumed part of
         // an in-flight move instead of retaining the old 190ms cooldown.
-        const oldDuration=Math.max(95,190-(p.speed-1)*32);
-        const oldProgress=Math.min(1,Math.max(0,(g.clock-p.movedAt)/(oldDuration*.72)));
-        const progress=oldProgress*(2-oldProgress);
+        const eased=p.moveMs===190,oldDuration=eased?Math.max(95,190-(p.speed-1)*32):Math.max(75,125-(p.speed-1)*25);
+        const oldProgress=Math.min(1,Math.max(0,(g.clock-p.movedAt)/(oldDuration*(eased?.72:1))));
+        const progress=eased?oldProgress*(2-oldProgress):oldProgress;
         p.moveMs=HUMAN_MOVE_MS;p.movedAt=g.clock-progress*movementMs(p);
-        p.nextMove=Math.min(p.nextMove,p.movedAt+movementMs(p));
+        p.nextMove=p.movedAt+movementMs(p);
+      }
+      if(p.control==='ai'&&g.version===1&&g.motionVersion!==2){
+        const oldDuration=Math.max(95,p.moveMs-(p.speed-1)*32);
+        const oldProgress=Math.min(1,Math.max(0,(g.clock-p.movedAt)/(oldDuration*.72)));
+        // v1 with 125ms humans used linear motion; the original 190ms build eased it.
+        const progress=legacyTiming?oldProgress*(2-oldProgress):Math.min(1,Math.max(0,(g.clock-p.movedAt)/oldDuration));
+        p.movedAt=g.clock-progress*movementMs(p);p.nextMove=p.movedAt+movementMs(p);
       }
       if(p.moveMs!==expected.moveMs||!inBounds(g,p.fromX,p.fromY))return null;
     }
@@ -287,6 +312,6 @@ export function restore(raw,platform) {
       if(legacyTiming&&item.visibleAt>g.clock)item.visibleAt=Math.max(g.clock,item.visibleAt-(650-BLAST_MS));
     }
     if(g.status==='won'&&enemiesLeft(g)>0||g.status==='running'&&(!livingTeam(g).length||!enemiesLeft(g)||g.remainingMs<=0))return null;
-    g.events=[];return g;
+    g.motionVersion=2;g.events=[];return g;
   }catch{return null;}
 }

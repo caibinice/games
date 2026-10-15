@@ -106,10 +106,10 @@ describe('Solvable independent PC / mobile boards', () => {
     game.board = arranged.board;
     for (const [a, b] of arranged.solution) { expect(findPath(game, a, b)).not.toBeNull(); game.board[a] = game.board[b] = 0; }
   });
-  it('validates configuration and has thirty increasingly timed levels', () => {
+  it('validates configuration and has thirty progressively larger levels with scaled time', () => {
     for (const options of [{platform:'unknown'}, {difficulty:'unknown'}, {mode:'unknown'}, {level:0}, {level:31}]) expect(() => newGame(options)).toThrow();
     expect(LEVEL_COUNT).toBe(30);
-    expect(newGame({level:30}).durationMs).toBeLessThan(newGame({level:1}).durationMs);
+    expect(newGame({level:30}).durationMs).toBeGreaterThan(newGame({level:1}).durationMs);
     expect(newGame({platform:'pc'}).board).toHaveLength(80);
     expect(newGame({platform:'mobile'}).board).toHaveLength(48);
     expect(() => generateBoard(3, 3, 12)).toThrow();

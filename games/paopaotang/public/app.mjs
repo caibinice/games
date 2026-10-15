@@ -1,5 +1,5 @@
 import {newGame,start,pause,step,getPlayer,enemiesLeft,livingTeam,stars,serialize,restore,TRAP_MS,applyInput,movementMs,SIMULATION_MS} from './engine.mjs';
-import {LEVEL_COUNT,THEMES,SKINS,DIFFICULTIES,levelInfo} from './catalog.mjs';
+import {LEVEL_COUNT,THEMES,SKINS,DIFFICULTIES,levelInfo,arenaSpec} from './catalog.mjs';
 import {drawArena,avatarSVG} from './renderer.mjs';
 import {icon} from './icons.mjs';
 import {setupFullscreen} from './fullscreen.mjs';
@@ -27,7 +27,7 @@ function fitImmersiveArena(){
 }
 if($('fullscreen-button'))new ResizeObserver(fitImmersiveArena).observe($('arena-frame').closest('.arena-card'));
 function recordKey(){return`${game.mode}:${game.difficulty}`;}
-function record(){const r=records[recordKey()]||{};return{unlocked:Number.isInteger(r.unlocked)?Math.max(1,Math.min(12,r.unlocked)):1,stars:r.stars&&typeof r.stars==='object'?r.stars:{}};}
+function record(){const r=records[recordKey()]||{};return{unlocked:Number.isInteger(r.unlocked)?Math.max(1,Math.min(LEVEL_COUNT,r.unlocked)):1,stars:r.stars&&typeof r.stars==='object'?r.stars:{}};}
 function save(){try{localStorage.setItem(KEY,JSON.stringify({game:serialize(game),records,best,sound}));}catch{}lastSave=performance.now();}
 function clearInput(){keys.clear();touchDirection=null;touchPointer=null;queued.p1={};queued.p2={};document.querySelectorAll('.dpad button').forEach(b=>b.classList.remove('pressed'));}
 function toast(text){$('toast').textContent=text;$('toast').classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>$('toast').classList.remove('visible'),2300);}
@@ -65,9 +65,9 @@ function renderSettings(){
  $('difficulty-select').value=game.difficulty;
  if($('p2-guide'))$('p2-guide').hidden=game.mode!=='duo';
  if($('level-tag'))$('level-tag').textContent=`ROUND ${pad(game.level)}`;
- if($('map-name'))$('map-name').textContent=levelInfo(game.level).name;
+ if($('map-name'))$('map-name').textContent=`${levelInfo(game.level).name} · ${game.cols}×${game.rows}`;
  if($('mobile-map'))$('mobile-map').textContent=`第 ${pad(game.level)} 关 · ${THEMES[levelInfo(game.level).theme].name}`;
- if($('level-progress'))$('level-progress').textContent=`${pad(record().unlocked)} / 12`;
+ if($('level-progress'))$('level-progress').textContent=`${pad(record().unlocked)} / ${LEVEL_COUNT}`;
  $('mode-badge').textContent=game.mode==='duo'?'双人 · 协作闯关':platform==='pc'?'单人 · AI 对战':'AI 对战';
  $('arena-frame').style.setProperty('--arena-ratio',game.cols/game.rows);
  canvas.style.setProperty('--arena-ratio',game.cols/game.rows);
@@ -98,15 +98,15 @@ function renderHud(){
 function renderOverlay(){
  const overlay=$('arena-overlay'),content=$('overlay-content');overlay.hidden=game.status==='running';if(overlay.hidden)return;
  const avatar=`<div class="overlay-avatar">${avatarSVG(game.skin)}</div>`;
- if(game.status==='ready')content.innerHTML=`${avatar}<span class="eyebrow">WELCOME TO THE WATER PARTY</span><h2>一起，玩出一点水花。</h2><p>${THEMES[levelInfo(game.level).theme].name} · 第 ${pad(game.level)} 关<br>${DIFFICULTIES[game.difficulty].name}难度 · ${game.mode==='duo'?'双人协作':'单人闯关'} · ${enemiesLeft(game)} 位 AI 对手</p><button class="primary" data-action="start">开始派对 ${icon('arrow')}</button><small class="overlay-note">${platform==='mobile'?'左手方向，右手水泡。':'WASD 移动，空格放水泡。'}<br>点击开始后才计时，不用着急。</small>`;
+ if(game.status==='ready')content.innerHTML=`${avatar}<span class="eyebrow">WELCOME TO THE WATER PARTY</span><h2>一起，玩出一点水花。</h2><p>${THEMES[levelInfo(game.level).theme].name} · 第 ${pad(game.level)} 关<br>${DIFFICULTIES[game.difficulty].name}难度 · ${game.mode==='duo'?'双人协作':'单人闯关'} · ${enemiesLeft(game)} 位 AI 对手<br>${game.cols}×${game.rows} 地图 · ${game.version===1?5:levelInfo(game.level).itemTypes.length} 类掉落道具</p><button class="primary" data-action="start">开始派对 ${icon('arrow')}</button><small class="overlay-note">${platform==='mobile'?'左手方向，右手水泡。':'WASD 移动，空格放水泡。'}<br>点击开始后才计时，不用着急。</small>`;
  else if(game.status==='paused')content.innerHTML=`${avatar}<span class="eyebrow">TAKE A LITTLE BREATH</span><h2>水花等等，好心情还在。</h2><p>游戏已暂停，倒计时和水泡都停住了。<br>准备好了，再一起出发。</p><button class="primary" data-action="start">继续派对 ${icon('play')}</button><button class="overlay-text-button" data-action="restart">重新开始这一关</button>`;
- else if(game.status==='won')content.innerHTML=`${avatar}<span class="eyebrow">A SPLASHING LITTLE VICTORY</span><h2>${game.level===12?'整座小镇，都点亮啦！':'水花派对，大获全胜！'}</h2><div class="result-stars" aria-label="${stars(game)} 星">${'★'.repeat(stars(game))}${'☆'.repeat(3-stars(game))}</div><strong class="result-score">${game.score.toLocaleString('zh-CN')}</strong><p>击败 ${game.enemiesOut} 位 AI · 剩余 ${Math.ceil(game.remainingMs/1000)} 秒</p><button class="primary" data-action="${game.level===12?'levels':'next'}">${game.level===12?'看看我的旅行地图':'下一场小冒险'} ${icon('arrow')}</button><button class="overlay-text-button" data-action="restart">再玩一局</button>`;
+ else if(game.status==='won')content.innerHTML=`${avatar}<span class="eyebrow">A SPLASHING LITTLE VICTORY</span><h2>${game.level===LEVEL_COUNT?'整座小镇，都点亮啦！':'水花派对，大获全胜！'}</h2><div class="result-stars" aria-label="${stars(game)} 星">${'★'.repeat(stars(game))}${'☆'.repeat(3-stars(game))}</div><strong class="result-score">${game.score.toLocaleString('zh-CN')}</strong><p>击败 ${game.enemiesOut} 位 AI · 剩余 ${Math.ceil(game.remainingMs/1000)} 秒</p><button class="primary" data-action="${game.level===LEVEL_COUNT?'levels':'next'}">${game.level===LEVEL_COUNT?'看看我的旅行地图':'下一场小冒险'} ${icon('arrow')}</button><button class="overlay-text-button" data-action="restart">再玩一局</button>`;
  else content.innerHTML=`${avatar}<span class="eyebrow">EVERY SPLASH IS A NEW START</span><h2>下一朵水花，会更漂亮。</h2><p>${game.remainingMs<=0?'时间到了，派对先休息一下。':'这次被困住了，下次记得留条退路。'}<br>已经冲开 ${game.cratesBroken} 个箱子，获得 ${game.score} 分。</p><button class="primary" data-action="restart">再来一场 ${icon('restart')}</button><button class="overlay-text-button" data-action="easy">试试轻松难度</button>`;
 }
 function render(){renderSettings();renderHud();renderOverlay();fitImmersiveArena();drawArena(canvas,game,performance.now());}
 function rememberWin(){
  best=Math.max(best,game.score);if(game.status!=='won')return;
- const r=record();r.unlocked=Math.max(r.unlocked,Math.min(12,game.level+1));r.stars[game.level]=Math.max(Number(r.stars[game.level])||0,stars(game));records[recordKey()]=r;
+ const r=record();r.unlocked=Math.max(r.unlocked,Math.min(LEVEL_COUNT,game.level+1));r.stars[game.level]=Math.max(Number(r.stars[game.level])||0,stars(game));records[recordKey()]=r;
 }
 function fresh(options={}){
  clearInput();game=newGame({platform,mode:game.mode,difficulty:game.difficulty,level:game.level,skin:game.skin,...options});
@@ -122,9 +122,10 @@ function requestFresh(options={}){
 function chooseLevels(){
  const r=record();$('level-grid').replaceChildren(...Array.from({length:LEVEL_COUNT},(_,i)=>{
  const level=i+1,b=document.createElement('button');b.dataset.level=level;b.disabled=level>r.unlocked;b.className=level===game.level?'current':'';
+ const spec=arenaSpec(level,platform,game.difficulty);
  const earned=Math.max(0,Math.min(3,Number(r.stars[level])||0));
- b.innerHTML=`${pad(level)}<small>${THEMES[levelInfo(level).theme].name}</small><b>${earned?'★'.repeat(earned):level>r.unlocked?'· · ·':'START'}</b>`;
- b.setAttribute('aria-label',`第 ${level} 关，${levelInfo(level).name}，${level>r.unlocked?'尚未解锁':'可进入'}`);return b;
+ b.innerHTML=`${pad(level)}<small>${THEMES[levelInfo(level).theme].name}<span class="level-detail">${spec.cols}×${spec.rows} · ${spec.itemTypes.length}类道具</span></small><b>${earned?'★'.repeat(earned):level>r.unlocked?'· · ·':'START'}</b>`;
+ b.setAttribute('aria-label',`第 ${level} 关，${levelInfo(level).name}，${spec.cols} 列 ${spec.rows} 行，${spec.itemTypes.length} 类道具，${level>r.unlocked?'尚未解锁':'可进入'}`);return b;
  }));openDialog('levels-dialog');
 }
 function handleEvents(){
@@ -140,7 +141,7 @@ function handleEvents(){
  if(game.events.length)renderHud();
 }
 const actions={
- start:begin,pause:togglePause,restart:()=>requestFresh(),next:()=>{if(game.status==='won'&&game.level<12)fresh({level:game.level+1});},
+ start:begin,pause:togglePause,restart:()=>requestFresh(),next:()=>{if(game.status==='won'&&game.level<LEVEL_COUNT)fresh({level:game.level+1});},
  help:()=>openDialog('help-dialog'),levels:chooseLevels,skins:()=>openDialog('skins-dialog'),
  bomb:()=>dispatchInput('p1',{bomb:true}),needle:()=>dispatchInput('p1',{needle:true}),
  easy:()=>requestFresh({difficulty:'easy',level:1}),

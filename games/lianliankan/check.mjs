@@ -3,7 +3,7 @@ import {FRUITS} from './public/fruits.mjs';
 export function check() {
   if (FRUITS.length !== 16 || LEVEL_COUNT !== 30) throw Error('Fruit Link catalogue mismatch');
   for (const platform of ['pc', 'mobile']) for (const difficulty of Object.keys(DIFFICULTIES)) {
-    for (const level of [1, 10, 30]) {
+    for (let level = 1; level <= LEVEL_COUNT; level++) {
       const game = newGame({platform, difficulty, level, seed: 100 + level});
       if (!inventoryValid(game) || !restore(serialize(game), platform)) throw Error('Invalid Fruit Link inventory');
     }

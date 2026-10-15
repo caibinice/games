@@ -5,8 +5,8 @@ function arena(options={}){const g=newGame({seed:8,...options});g.board=g.board.
 function advance(g,ms,inputs={},ai=false){for(let remaining=ms;remaining>0;remaining-=50)step(g,Math.min(50,remaining),inputs,{ai});}
 function relocate(p,x,y){Object.assign(p,{x,y,fromX:x,fromY:y,nextMove:0});}
 describe('Independent arenas and safe spawn zones',()=>{
- it.each(['pc','mobile'])('generates all twelve valid %s arenas for three difficulty levels',platform=>{
-  for(const difficulty of ['easy','normal','hard'])for(let level=1;level<=12;level++){
+ it.each(['pc','mobile'])('generates all thirty valid %s arenas for three difficulty levels',platform=>{
+  for(const difficulty of ['easy','normal','hard'])for(let level=1;level<=30;level++){
    const g=newGame({platform,difficulty,level,seed:level});expect(restore(serialize(g),platform)).not.toBeNull();
    for(const p of g.players){expect(g.board[indexOf(g,p.x,p.y)]).toBe(EMPTY);expect(Object.values([[1,0],[-1,0],[0,1],[0,-1]]).filter(([dx,dy])=>g.board[indexOf(g,p.x+dx,p.y+dy)]===EMPTY).length).toBeGreaterThanOrEqual(2);}
    for(const p of g.players)expect(escapeDirection(g,p,{id:-1,owner:p.id,team:p.team,x:p.x,y:p.y,power:p.power,explodeAt:FUSE_MS})).not.toBeNull();
@@ -16,7 +16,7 @@ describe('Independent arenas and safe spawn zones',()=>{
   expect(newGame({seed:12}).board).toEqual(newGame({seed:12}).board);expect(newGame({seed:13}).board).not.toEqual(newGame({seed:12}).board);
   expect(newGame().cols).toBe(13);expect(newGame({platform:'mobile'}).cols).toBe(11);
   const duo=newGame({mode:'duo'});expect(duo.players.filter(p=>p.team===0).map(p=>p.control)).toEqual(['p1','p2']);expect(enemiesLeft(duo)).toBe(2);
-  for(const options of [{platform:'other'},{mode:'online'},{platform:'mobile',mode:'duo'},{difficulty:'other'},{level:13},{skin:8}])expect(()=>newGame(options)).toThrow();
+  for(const options of [{platform:'other'},{mode:'online'},{platform:'mobile',mode:'duo'},{difficulty:'other'},{level:31},{skin:8}])expect(()=>newGame(options)).toThrow();
  });
  it('does not advance time or accept actions until started, or while paused',()=>{
   const g=newGame(),raw=serialize(g);step(g,50);expect(serialize(g)).toBe(raw);expect(plantBomb(g,'p1')).toBe(false);
@@ -118,7 +118,7 @@ describe('Escape-aware AI and bounded saved state',()=>{
  });
  it('rejects corrupt terrain, dimensions, players, coordinates, item types and oversized effects',()=>{
   const g=arena();const mutations=[g=>g.board.pop(),g=>g.board[0]=EMPTY,g=>g.players[0].x=99,g=>g.players[0].capacity=99,
-   g=>g.players[0].team=1,g=>g.players[0].control='ai',g=>g.clock=Infinity,g=>g.cols=99,g=>g.level=13,g=>g.mode='online',g=>g.status='won',
+   g=>g.players[0].team=1,g=>g.players[0].control='ai',g=>g.clock=Infinity,g=>g.cols=99,g=>g.level=31,g=>g.mode='online',g=>g.status='won',
    g=>g.items=[{id:5,x:1,y:1,type:'other',visibleAt:0}],g=>g.blasts=[{cells:[0],expiresAt:500}],g=>g.bombs=Array(21).fill({})];
   for(const mutate of mutations){const clone=structuredClone(g);mutate(clone);expect(restore(clone)).toBeNull();}
   expect(restore('not json')).toBeNull();

@@ -1,5 +1,5 @@
 import {newGame, startGame, pauseGame, advanceTime, matchPair, findMove, shuffleBoard,
-  useHint, extendTime, serialize, restore, DIFFICULTIES, LEVEL_COUNT, chapterName} from './engine.mjs';
+  useHint, extendTime, serialize, restore, DIFFICULTIES, LEVEL_COUNT, chapterName, levelSpec} from './engine.mjs';
 import {FRUITS, fruitSVG} from './fruits.mjs';
 import {icon} from './icons.mjs';
 import {setupFullscreen} from './fullscreen.mjs';
@@ -95,6 +95,7 @@ function renderSound() {
   button.setAttribute('aria-label', sound ? '关闭音效' : '开启音效');
   button.setAttribute('aria-pressed', String(sound));
 }
+function roundFruitKinds() { return game.version === 1 ? Math.min(16, DIFFICULTIES[game.difficulty].fruits + Math.floor((game.level - 1) / 10)) : levelSpec(game.level, platform, game.difficulty).fruits; }
 function renderSettings() {
   document.querySelectorAll('[data-difficulty]').forEach(b => {
     b.classList.toggle('active', b.dataset.difficulty === game.difficulty);
@@ -106,8 +107,8 @@ function renderSettings() {
   });
   if ($('difficulty-select')) $('difficulty-select').value = game.difficulty;
   if ($('level-tag')) $('level-tag').textContent = `LEVEL ${pad(game.level)}`;
-  if ($('chapter')) $('chapter').textContent = chapterName(game.level);
-  if ($('mobile-level')) $('mobile-level').textContent = `第 ${pad(game.level)} 关 · ${chapterName(game.level)}`;
+  if ($('chapter')) $('chapter').textContent = `${chapterName(game.level)} · ${game.cols}×${game.rows}`;
+  if ($('mobile-level')) $('mobile-level').textContent = `第 ${pad(game.level)} 关 · ${game.cols}×${game.rows} · ${roundFruitKinds()} 种`;
   if ($('level-progress')) $('level-progress').textContent = `${pad(currentRecord().unlocked)} / 30`;
   renderSound();
 }
@@ -163,7 +164,7 @@ function renderOverlay() {
   if (overlay.hidden) return;
   const fruit = `<div class="overlay-fruit">${fruitSVG(game.status === 'won' ? 7 : game.status === 'lost' ? 6 : 1)}</div>`;
   if (game.status === 'ready') {
-    content.innerHTML = `${fruit}<span class="eyebrow">WELCOME TO YOUR LITTLE ORCHARD</span><h2>让快乐，一对对发生。</h2><p>相同水果 · 最多两次转弯<br>${DIFFICULTIES[game.difficulty].name}难度 · ${game.board.length} 颗水果 · ${game.mode === 'zen' ? '自在慢玩' : '计时挑战'}</p><button class="primary-button" data-action="start">开始收获 ${icon('arrow')}</button><span class="overlay-footnote">点击开始后${game.mode === 'zen' ? '，慢慢玩就好。' : '才计时，不用着急。'}</span>`;
+    content.innerHTML = `${fruit}<span class="eyebrow">WELCOME TO YOUR LITTLE ORCHARD</span><h2>让快乐，一对对发生。</h2><p>相同水果 · 最多两次转弯<br>${DIFFICULTIES[game.difficulty].name}难度 · ${game.cols}×${game.rows} · ${roundFruitKinds()} 种水果<br>${game.board.length} 颗水果 · ${game.mode === 'zen' ? '自在慢玩' : '计时挑战'}</p><button class="primary-button" data-action="start">开始收获 ${icon('arrow')}</button><span class="overlay-footnote">点击开始后${game.mode === 'zen' ? '，慢慢玩就好。' : '才计时，不用着急。'}</span>`;
   } else if (game.status === 'paused') {
     content.innerHTML = `${fruit}<span class="eyebrow">TAKE A LITTLE BREATH</span><h2>歇一会儿，甜还在。</h2><p>游戏已暂停，时间也停在这里。<br>准备好了，就接着找吧。</p><button class="primary-button" data-action="start">继续游戏 ${icon('play')}</button><button class="overlay-text-button" data-action="restart">重新开始这一关</button>`;
   } else if (game.status === 'won') {
@@ -293,9 +294,10 @@ function levels() {
     const level = i + 1, button = document.createElement('button');
     button.dataset.level = level; button.disabled = level > record.unlocked;
     button.className = level === game.level ? 'current' : '';
+    const spec = levelSpec(level, platform, game.difficulty);
     const stars = Math.min(3, Math.max(0, Number(record.stars[level]) || 0));
-    button.innerHTML = `${pad(level)}<small>${stars ? '★'.repeat(stars) : level > record.unlocked ? '· · ·' : 'START'}</small>`;
-    button.setAttribute('aria-label', `第 ${level} 关，${chapterName(level)}，${level > record.unlocked ? '尚未解锁' : stars ? `${stars} 星` : '待收获'}`);
+    button.innerHTML = `${pad(level)}<span class="level-detail">${spec.cols}×${spec.rows} · ${spec.fruits}种</span><small>${stars ? '★'.repeat(stars) : level > record.unlocked ? '· · ·' : 'START'}</small>`;
+    button.setAttribute('aria-label', `第 ${level} 关，${chapterName(level)}，${spec.cols} 列 ${spec.rows} 行，${spec.fruits} 种水果，${level > record.unlocked ? '尚未解锁' : stars ? `${stars} 星` : '待收获'}`);
     return button;
   }));
   openDialog('levels-dialog');

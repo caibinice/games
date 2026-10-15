@@ -1,4 +1,4 @@
-export const LEVEL_COUNT = 12;
+export const LEVEL_COUNT = 30;
 export const THEMES = [
   {name:'晴天草坪',tag:'SUNNY MEADOW',floor:'#e5edc8',alt:'#deE8bd',wall:'#91b477',box:'#d8a775',sky:'#e9f4f7',accent:'#719c68'},
   {name:'糖果街区',tag:'CANDY AVENUE',floor:'#f7e1d9',alt:'#f1d7d0',wall:'#baa6c7',box:'#e49e9a',sky:'#fcf0ea',accent:'#c1879e'},
@@ -20,6 +20,22 @@ export const DIFFICULTIES = {
   hard:{name:'高手',density:.58,botMove:235,botBomb:.8,seconds:150},
 };
 export function levelInfo(level) {
-  const theme=THEMES[Math.floor((level-1)/2)];
-  return {id:level,theme:Math.floor((level-1)/2),name:theme.name+(level%2?' · 初见':' · 派对'),enemies:level<4?2:3};
+  if(!Number.isInteger(level)||level<1||level>LEVEL_COUNT)throw Error('Invalid level');
+  const stage=Math.floor((level-1)/5),round=(level-1)%5;
+  return {id:level,theme:stage,stage,round,name:THEMES[stage].name+' · '+['初见','寻宝','绕行','交锋','派对'][round],
+    enemies:level<6?2:3,itemTypes:['capacity','power','needle','speed','shield'].slice(0,Math.min(5,stage+2))};
+}
+const MAPS={pc:[[13,11],[13,11],[15,11],[15,13],[17,13],[17,15]],mobile:[[11,11],[11,11],[13,11],[13,11],[13,13],[13,13]]};
+export function arenaSpec(level,platform='pc',difficulty='normal'){
+  const info=levelInfo(level),d=DIFFICULTIES[difficulty];
+  if(!MAPS[platform]||!d)throw Error('Invalid arena');
+  const[cols,rows]=MAPS[platform][info.stage];
+  return{...info,cols,rows,density:Math.min(.68,d.density+info.stage*.018+info.round*.004),
+    seconds:d.seconds+Math.round((cols*rows-MAPS[platform][0][0]*11)*.45),botMove:d.botMove-info.stage*4};
+}
+export function aiProfile(level,difficulty='normal'){
+  const stage=levelInfo(level).stage;
+  if(!DIFFICULTIES[difficulty])throw Error('Invalid difficulty');
+  return{mistake:({easy:.34,normal:.27,hard:.21})[difficulty]-stage*.018,
+    reaction:({easy:230,normal:180,hard:140})[difficulty]-stage*8};
 }

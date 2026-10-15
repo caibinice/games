@@ -40,3 +40,5 @@ body.immersive .tile.selected{padding:4px}
 body.immersive .overlay-content{width:340px;padding:27px}
 @media(max-width:600px){.fullscreen-button>span:not([data-icon]){display:none}.fullscreen-button{padding:7px;min-width:32px}body.immersive .page-shell{padding:6px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.level-detail{display:block;font-size:9px;font-weight:400;line-height:1.6;color:var(--muted,#8b9c86);margin-top:4px;white-space:nowrap}

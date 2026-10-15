@@ -9,6 +9,27 @@ export const DIFFICULTIES = {
 };
 export const CHAPTERS = ['阳光果园', '蜜桃午后', '青柠小径', '樱桃集市', '热带假日', '丰收派对'];
 export const chapterName = level => CHAPTERS[Math.min(5, Math.floor((level - 1) / 5))];
+const MAPS = {
+  pc: {
+    easy: [[10,6],[10,8],[12,8],[12,10],[14,10],[16,10]],
+    normal: [[10,8],[12,8],[12,10],[14,10],[14,12],[16,12]],
+    hard: [[12,8],[12,10],[14,10],[14,12],[16,12],[18,12]],
+  },
+  mobile: {
+    easy: [[6,6],[6,8],[6,10],[8,8],[8,10],[8,12]],
+    normal: [[6,8],[6,10],[8,8],[8,10],[8,12],[8,12]],
+    hard: [[6,10],[8,8],[8,10],[8,12],[8,12],[8,12]],
+  },
+};
+export function levelSpec(level, platform = 'pc', difficulty = 'normal') {
+  if (!Number.isInteger(level) || level < 1 || level > LEVEL_COUNT || !MAPS[platform]?.[difficulty]) throw Error('Invalid level');
+  const stage = Math.floor((level - 1) / 5), spec = DIFFICULTIES[difficulty];
+  const [cols, rows] = MAPS[platform][difficulty][stage];
+  const fruits = Math.min(FRUIT_COUNT, ({easy:8, normal:10, hard:12})[difficulty] + Math.floor((level - 1) / 3));
+  // A bigger board earns more time; pressure rises gently inside each chapter.
+  const extraPairs = (cols * rows - spec[platform][0] * spec[platform][1]) / 2;
+  return {cols, rows, fruits, stage, seconds: spec.seconds + extraPairs * 3 - (level - 1) * 2};
+}
 const DIRECTIONS = [[0, -1], [1, 0], [0, 1], [-1, 0]];
 export function random(seed = Date.now()) {
   let value = Number(seed) >>> 0;
@@ -108,10 +129,10 @@ export function generateBoard(cols, rows, fruits, seed = Date.now()) {
 export function newGame({platform = 'pc', difficulty = 'normal', level = 1, mode = 'timed', seed = Date.now()} = {}) {
   if (!['pc', 'mobile'].includes(platform) || !DIFFICULTIES[difficulty] || !['timed', 'zen'].includes(mode) ||
       !Number.isInteger(level) || level < 1 || level > LEVEL_COUNT) throw Error('Invalid game options');
-  const spec = DIFFICULTIES[difficulty], [cols, rows] = spec[platform];
-  const durationMs = Math.max(90, spec.seconds - (level - 1) * 2) * 1000;
-  return {version: 1, platform, difficulty, level, mode, cols, rows,
-    board: generateBoard(cols, rows, Math.min(FRUIT_COUNT, spec.fruits + Math.floor((level - 1) / 10)), seed).board,
+  const {cols, rows, fruits, seconds} = levelSpec(level, platform, difficulty);
+  const durationMs = seconds * 1000;
+  return {version: 2, platform, difficulty, level, mode, cols, rows,
+    board: generateBoard(cols, rows, fruits, seed).board,
     status: 'ready', score: 0, removed: 0, combo: 0, lastMatchAt: 0, elapsedMs: 0,
     remainingMs: durationMs, durationMs, hints: 3, shuffles: 3, extensions: 2, autoShuffles: 0};
 }
@@ -178,10 +199,11 @@ export function restore(raw, platform) {
     const game = typeof raw === 'string' ? JSON.parse(raw) : structuredClone(raw);
     const spec = DIFFICULTIES[game.difficulty];
     if (!spec || !['pc', 'mobile'].includes(game.platform) || (platform && game.platform !== platform) ||
-        game.version !== 1 || !['timed', 'zen'].includes(game.mode) ||
+        ![1, 2].includes(game.version) || !['timed', 'zen'].includes(game.mode) ||
         !Number.isInteger(game.level) || game.level < 1 || game.level > LEVEL_COUNT ||
-        !['ready', 'running', 'paused', 'won', 'lost'].includes(game.status) ||
-        game.cols !== spec[game.platform][0] || game.rows !== spec[game.platform][1] || !inventoryValid(game)) return null;
+        !['ready', 'running', 'paused', 'won', 'lost'].includes(game.status)) return null;
+    const layout = game.version === 1 ? {cols:spec[game.platform][0], rows:spec[game.platform][1]} : levelSpec(game.level, game.platform, game.difficulty);
+    if (game.cols !== layout.cols || game.rows !== layout.rows || !inventoryValid(game)) return null;
     for (const key of ['score', 'removed', 'combo', 'lastMatchAt', 'elapsedMs', 'remainingMs', 'durationMs', 'hints', 'shuffles', 'extensions', 'autoShuffles']) {
       if (!Number.isFinite(game[key]) || game[key] < 0 || game[key] > 1e9) return null;
     }

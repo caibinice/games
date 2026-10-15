@@ -25,8 +25,8 @@ dist/games/         构建产物，按游戏分目录
 
 - [拼豆](https://caibinice.com/games/pindou/)：100 关 / 40 图，原存档保持兼容。
 - [抓大鹅 3D](https://caibinice.com/games/goose/)：60 关 / 8 个集市 / 34 种自制模型，深箱堆叠、3D 七格三消与物理颠锅。
-- [果趣连连看](https://caibinice.com/games/lianliankan/)：30 关 / 16 种水果，经典两折连线；[电脑版](https://caibinice.com/games/lianliankan/pc.html) / [手机版](https://caibinice.com/games/lianliankan/mobile.html)。
-- [泡泡堂 · 泡泡小镇](https://caibinice.com/games/paopaotang/)：12 关 / 6 张地图，水泡、连锁和救援，AI 闯关与 PC 本地双人协作；[电脑版](https://caibinice.com/games/paopaotang/pc.html) / [手机版](https://caibinice.com/games/paopaotang/mobile.html)。
+- [果趣连连看](https://caibinice.com/games/lianliankan/)：30 关 / 16 种水果，逐章扩大棋盘与种类，经典两折连线；[电脑版](https://caibinice.com/games/lianliankan/pc.html) / [手机版](https://caibinice.com/games/lianliankan/mobile.html)。
+- [泡泡堂 · 泡泡小镇](https://caibinice.com/games/paopaotang/)：30 关 / 6 个主题，逐步扩大地图与丰富道具，水泡、连锁和救援，AI 闯关与 PC 本地双人协作；[电脑版](https://caibinice.com/games/paopaotang/pc.html) / [手机版](https://caibinice.com/games/paopaotang/mobile.html)。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
 
 ## 开发与构建
@@ -69,6 +69,7 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)
 - [泡泡小镇玩法、控制与维护](games/paopaotang/docs/README.md)
 - [泡泡小镇双端提交与上线验收](docs/paopaotang-20261013.md)
+- [30 关递进、大地图与机器人手感调整](docs/game-progression-20261015.md)
 - [两款 PC 全屏与泡泡手感优化](docs/pc-immersive-latency-20261013.md)
 - [连连看 PC / 手机独立上线验收](docs/lianliankan-20261013.md)
 - [本机凭据](credentials/README.md)
