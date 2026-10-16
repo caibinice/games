@@ -75,6 +75,7 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [坦克大战玩法、源码与素材来源](games/tank/docs/README.md)
 - [魂斗罗玩法、素材来源与还原范围](games/contra/docs/README.md)
 - [坦克大战 / 魂斗罗双端上线验收](docs/classic-games-20261015.md)
+- [两款经典游戏作弊 / 辅助与独立计分](docs/classic-cheats-20261016.md)
 - [泡泡小镇双端提交与上线验收](docs/paopaotang-20261013.md)
 - [30 关递进、大地图与机器人手感调整](docs/game-progression-20261015.md)
 - [两款 PC 全屏与泡泡手感优化](docs/pc-immersive-latency-20261013.md)

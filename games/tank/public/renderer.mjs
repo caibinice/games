@@ -885,7 +885,7 @@ function draw(canvas, g) {
   c.font = "bold 9px monospace";
   c.fillStyle = "#000";
   c.fillText("IP", 225, 150);
-  c.fillText(String(Math.max(0, g.lives - 1)), 237, 161);
+  c.fillText(g.cheats?.infiniteLives ? "\u221E" : String(Math.max(0, g.lives - 1)), g.cheats?.infiniteLives ? 229 : 237, 161);
   const remaining = scene?.remainingBotCount ?? 20;
   for (let i = 0; i < remaining; i++) {
     const x = 225 + i % 2 * 9, y = 18 + Math.floor(i / 2) * 10;

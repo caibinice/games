@@ -52,7 +52,10 @@ export function draw(canvas,g,a){
   if(bullet.weapon==='L'){c.save();c.translate(Math.round(bullet.x),Math.round(bullet.y));c.rotate(Math.atan2(bullet.vy,bullet.vx));stamp(c,a,'24',0,3);c.restore();}
   else stamp(c,a,bullet.weapon==='F'?'22':bullet.weapon==='S'?['1f','20','21'][Math.floor(g.clock/60)%3]:bullet.weapon==='M'?'1f':'07',bullet.x,bullet.y+2);
  }
- for(const bullet of g.enemyBullets)stamp(c,a,'1e',bullet.x,bullet.y+2);
+ for(const bullet of g.enemyBullets){
+  if(g.cheats?.slowBullets){c.fillStyle='#ffdf00';c.fillRect(Math.round(bullet.x)-3,Math.round(bullet.y)-3,6,6);c.fillStyle='#fff';c.fillRect(Math.round(bullet.x)-1,Math.round(bullet.y)-1,2,2);}
+  else stamp(c,a,'1e',bullet.x,bullet.y+2);
+ }
  const p=g.player,phase=Math.floor(g.clock/100),aiming=g.clock-p.lastFire<250;
  let sprite;
  if(p.deadUntil>g.clock)sprite=['0a','0b','0c'][Math.min(2,Math.floor((g.clock-(p.deadUntil-900))/250))];
@@ -65,10 +68,11 @@ export function draw(canvas,g,a){
  else if(aiming&&p.aimY>.2)sprite=['13','14','15'][p.vx?phase%3:0];
  else sprite=p.vx?['0d','0e','0f'][phase%3]:'0f';
  if(p.deadUntil>g.clock||p.invulnerableUntil<=g.clock||Math.floor(g.clock/70)%2===0)stamp(c,a,sprite,p.x,p.y,p.dir<0,1,!p.onGround&&!p.deadUntil&&phase%4>=2);
+ if(g.cheats?.invincible&&!p.deadUntil){c.strokeStyle='#8cf4ff';c.strokeRect(Math.round(p.x)-9,Math.round(p.y)-p.h-2,18,p.h+4);}
  for(const e of g.explosions){const frame=Math.min(4,Math.floor((g.clock-e.bornAt)/90));stamp(c,a,['37','36','35','39','3a'][frame],e.x,e.y+12,false,e.big?1.4:1);}
  if(g.bossDefeatedAt){const ex=g.boss.x,ey=g.boss.y;for(let i=0;i<7;i++)stamp(c,a,['37','36','35'][Math.floor(g.clock/100+i)%3],ex+Math.sin(i*7+g.clock/100)*28,ey-30+Math.cos(i*5+g.clock/140)*25);}
  c.restore();
- c.fillStyle='#0009';c.fillRect(0,0,256,14);c.font='bold 8px monospace';c.fillStyle='#fff';c.fillText('1P '+String(g.score).padStart(6,'0'),7,10);c.fillText('REST '+String(g.lives).padStart(2,'0'),184,10);
+ c.fillStyle='#0009';c.fillRect(0,0,256,14);c.font='bold 8px monospace';c.fillStyle='#fff';c.fillText('1P '+String(g.score).padStart(6,'0'),7,10);c.fillText('REST '+(g.cheats?.infiniteLives?'INF':String(g.lives).padStart(2,'0')),184,10);
  c.fillStyle='#e40058';c.fillText(g.player.weapon+(g.player.rapid?' R':''),137,10);
  if(g.bossActive&&b){c.fillStyle='#222';c.fillRect(64,17,128,4);c.fillStyle='#d82800';c.fillRect(64,17,128*Math.max(0,b.hp/b.maxHP),4);}
  if(g.transitionUntil>g.clock){c.fillStyle='#000b';c.fillRect(0,0,256,224);c.fillStyle='#fff';c.font='10px monospace';c.fillText('NEXT AREA',96,110);}

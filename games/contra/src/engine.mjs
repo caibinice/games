@@ -3,6 +3,15 @@ export {STAGES,LEVEL_COUNT,levelInfo};
 export const WIDTH=256,HEIGHT=224,TICK_MS=1000/60,TITLE='魂斗罗',STORAGE='fish-contra';
 export const JUMP_SPEED=360,GRAVITY=680,RUN_SPEED=90;
 export const MODES=[['classic','经典 · 3 条生命'],['practice','30 命练习']];
+export const CHEAT_OPTIONS=[
+ {key:'infiniteLives',label:'无限生命',description:'受击 / 坠落后继续重生，不消耗生命。'},
+ {key:'airJump',label:'空中连跳',description:'空中松开后再次按跳跃，可无限接跳；长按仍只跳一次。'},
+ {key:'slowBullets',label:'慢速高亮敌弹',description:'敌弹速度降至 55%，亮色放大显示；不减慢角色和自己的子弹。'},
+ {key:'invincible',label:'无敌护盾',description:'免疫敌弹、碰撞和机关；坠落仍回安全点重生。'},
+];
+export const normalizeCheats=(raw={})=>Object.fromEntries(CHEAT_OPTIONS.map(o=>[o.key,raw?.[o.key]===true]));
+export const isAssisted=g=>g.assisted===true;
+export function setCheat(g,key,enabled){if(!CHEAT_OPTIONS.some(o=>o.key===key)||typeof enabled!=='boolean')return false;g.cheats[key]=enabled;if(enabled)g.assisted=true;if(key==='infiniteLives'&&enabled&&g.status!=='lost')g.lives=Math.max(1,g.lives);return true;}
 export const WEAPONS={N:{interval:240,speed:270,limit:4},M:{interval:100,speed:330,limit:10},S:{interval:200,speed:280,limit:25},L:{interval:350,speed:480,limit:5},F:{interval:180,speed:220,limit:8}};
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function random(g){let t=g.seed+=0x6d2b79f5;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);g.seed>>>=0;return((t^t>>>14)>>>0)/4294967296;}
@@ -10,12 +19,13 @@ const sound=(g,name)=>g.events.push({type:'sound',name});
 export const body=p=>({x:p.x-p.w/2,y:p.y-p.h,w:p.w,h:p.h});
 export const overlaps=(a,b)=>a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;
 function supporting(stage,x,min=0){return stage.platforms.filter(p=>x>=p.x-2&&x<=p.x+p.w+2&&p.y>=min).sort((a,b)=>a.y-b.y)[0];}
-export function newGame({level=1,platform='pc',mode='classic',seed=Date.now(),carry}={}){
+export function newGame({level=1,platform='pc',mode='classic',seed=Date.now(),carry,cheats={},assisted=false}={}){
  if(!Number.isInteger(level)||level<1||level>LEVEL_COUNT||!['pc','mobile'].includes(platform)||!MODES.some(([v])=>v===mode))throw Error('Invalid contra options');
  const stage=STAGES[level-1],x=stage.kind==='base'?128:32;
  const surface=stage.kind==='vertical'?stage.platforms.filter(p=>p.y>stage.height-200&&p.x<=x&&p.x+p.w>=x).sort((a,b)=>b.y-a.y)[0]:supporting(stage,x);
  const y=stage.kind==='base'?204:surface?.y??(stage.kind==='vertical'?stage.height-48:192);
- const g={version:1,platform,mode,level,kind:stage.kind,stage,seed:Number(seed)>>>0,status:'ready',clock:0,score:carry?.score||0,lives:carry?.lives||(mode==='practice'?30:3),
+ const options=normalizeCheats(cheats);
+ const g={version:1,platform,mode,level,kind:stage.kind,stage,seed:Number(seed)>>>0,status:'ready',clock:0,score:carry?.score||0,lives:carry?.lives||(mode==='practice'?30:3),cheats:options,assisted:assisted===true||Object.values(options).some(Boolean),
   player:{x,y,w:12,h:28,vx:0,vy:0,dir:1,aimX:1,aimY:0,weapon:carry?.weapon||'N',rapid:false,onGround:true,water:false,prone:false,invulnerableUntil:2000,deadUntil:0,lastFire:-1000,lastGround:0,jumpAt:-1000},
   cameraX:0,cameraY:stage.kind==='vertical'?stage.height-HEIGHT:0,checkpoint:{x,y},bullets:[],enemyBullets:[],enemies:[],pickups:[],capsules:[],explosions:[],bridges:stage.bridges.map(b=>({...b,triggerAt:0,broken:false})),
   hazards:[],movingPlatforms:stage.kind==='vertical'?[{id:1,x:112,y:605,w:32,h:8,baseX:112,previousX:112,phase:0}]:[],events:[],nextId:1,nextRunner:3600,nextCapsule:7500,room:0,cores:[],roomOpen:false,advanceTime:0,transitionUntil:0,boss:null,bossActive:false,bossDefeatedAt:0,spawned:[],jumpHeld:false,jumpBufferUntil:0,dropUntil:0,nextLife:(carry?.score||0)<30000?30000:(Math.floor((carry?.score||0)/100000)+1)*100000};
@@ -66,14 +76,14 @@ export function fire(g,command={}){
  for(const offset of angles){const angle=base+offset;g.bullets.push({id:g.nextId++,x:p.x+dx*10,y:p.y-(p.prone?6:p.water?8:19)+dy*7,vx:Math.cos(angle)*w.speed,vy:Math.sin(angle)*w.speed,weapon:p.weapon,ttl:1800,damage:p.weapon==='L'?3:1,hitIds:[]});}
  sound(g,'shot');return true;
 }
-function hit(g){
- const p=g.player;if(g.status!=='running'||g.bossDefeatedAt||p.deadUntil>g.clock||p.invulnerableUntil>g.clock)return;
- g.lives=Math.max(0,g.lives-1);p.deadUntil=g.clock+900;p.vx=0;p.vy=-80;sound(g,'dead');effect(g,p.x,p.y-12);
+function hit(g,fall=false){
+ const p=g.player;if(g.status!=='running'||g.bossDefeatedAt||p.deadUntil>g.clock||!fall&&(p.invulnerableUntil>g.clock||g.cheats.invincible))return;
+ if(!g.cheats.infiniteLives)g.lives=Math.max(0,g.lives-1);p.deadUntil=g.clock+900;p.vx=0;p.vy=-80;sound(g,'dead');effect(g,p.x,p.y-12);
 }
 export function damagePlayer(g){hit(g);}
 function respawn(g){
  const p=g.player;if(!p.deadUntil||p.deadUntil>g.clock)return;
- if(g.lives===0){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
+ if(g.lives===0&&!g.cheats.infiniteLives){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
  Object.assign(p,{x:clamp(g.checkpoint.x,g.cameraX+10,g.stage.width-10),y:g.checkpoint.y,vy:0,vx:0,h:28,onGround:false,water:false,prone:false,weapon:'N',rapid:false,deadUntil:0,invulnerableUntil:g.clock+2300});
  g.enemyBullets=[];g.jumpHeld=false;
 }
@@ -134,7 +144,8 @@ function updateBullets(g,dt){
    if(boss.hp===0){g.bossDefeatedAt=g.clock||1;g.score+=5000;g.enemyBullets=[];g.enemies=[];effect(g,boss.x,boss.y-24,true);sound(g,'boss');}
   }
  }
- for(const b of g.enemyBullets){b.vy+=b.gravity*dt;b.x+=b.vx*dt;b.y+=b.vy*dt;b.ttl-=dt*1000;if(overlaps({x:b.x-2,y:b.y-2,w:4,h:4},body(p))){hit(g);b.ttl=0;}}
+ const enemyDt=dt*(g.cheats.slowBullets?.55:1);
+ for(const b of g.enemyBullets){b.vy+=b.gravity*enemyDt;b.x+=b.vx*enemyDt;b.y+=b.vy*enemyDt;b.ttl-=enemyDt*1000;if(overlaps({x:b.x-2,y:b.y-2,w:4,h:4},body(p))){hit(g);b.ttl=0;}}
  const visible=b=>b.ttl>0&&b.x>=g.cameraX-40&&b.x<=g.cameraX+WIDTH+40&&b.y>=g.cameraY-40&&b.y<=g.cameraY+HEIGHT+60;
  g.bullets=g.bullets.filter(visible);g.enemyBullets=g.enemyBullets.filter(visible);
 }
@@ -162,16 +173,17 @@ export function step(g,milliseconds,command={}){
   if(p.deadUntil>g.clock){p.vy+=350*dt;p.y=Math.min(g.stage.height+80,p.y+p.vy*dt);}else{
    const direction=(command.right?1:0)-(command.left?1:0);if(direction)p.dir=direction;p.vx=p.prone?0:direction*(p.water?55:RUN_SPEED);
    if(p.onGround)p.lastGround=g.clock;
-   if(g.jumpBufferUntil>=g.clock&&g.clock-p.lastGround<=80){
-    if(command.down&&g.kind!=='base'){g.dropUntil=g.clock+220;p.y+=3;p.onGround=false;}
+   if(g.jumpBufferUntil>=g.clock&&(g.clock-p.lastGround<=80||g.cheats.airJump)){
+    if(command.down&&g.kind!=='base'&&(!g.cheats.airJump||p.onGround)){g.dropUntil=g.clock+220;p.y+=3;p.onGround=false;}
     else{p.vy=-JUMP_SPEED;p.onGround=false;p.water=false;p.jumpAt=g.clock;}
     g.jumpBufferUntil=0;p.lastGround=g.clock-1000;
    }
    if(!command.jump&&p.vy<-180&&g.clock-p.jumpAt>120)p.vy=-180;
    if(g.kind==='base')baseStep(g,dt,command);
    else{p.x=clamp(p.x+p.vx*dt,g.cameraX+7,g.stage.width-8);p.water=false;physics(g,p,dt);}
+   if(g.cheats.airJump&&p.y<28){p.y=28;p.vy=Math.max(0,p.vy);}
    if(command.fire)fire(g,command);
-   if((g.kind==='vertical'&&p.y>g.cameraY+HEIGHT+30)||p.y>g.stage.height+24){p.invulnerableUntil=0;hit(g);}
+   if((g.kind==='vertical'&&p.y>g.cameraY+HEIGHT+30)||p.y>g.stage.height+24){p.invulnerableUntil=0;hit(g,true);}
    if(p.onGround&&!g.hazards.some(h=>Math.abs(h.x-p.x)<40)){g.checkpoint={x:p.x,y:p.y};}
   }
   if(g.kind==='vertical'){g.cameraY=Math.min(g.cameraY,clamp(p.y-145,0,g.stage.height-HEIGHT));if(g.cameraY<75)activateBoss(g);}
@@ -205,6 +217,7 @@ export function restore(raw,platform){try{
  for(const b of [...g.bullets,...g.enemyBullets])if(!Number.isFinite(b.vx)||!Number.isFinite(b.vy)||!Number.isFinite(b.ttl))return null;
  if(g.boss&&(!Number.isFinite(g.boss.hp)||g.boss.hp<0||g.boss.hp>200))return null;
  if(g.status==='won'&&(!g.boss||g.boss.hp!==0)||g.status==='lost'&&g.lives!==0)return null;
+ g.cheats=normalizeCheats(g.cheats);g.assisted=g.assisted===true||Object.values(g.cheats).some(Boolean);
  g.stage=stage;g.events=[];return g;
  }catch{return null;}}
 export function snapshot(g){return{level:g.level,status:g.status,clock:g.clock,player:{...g.player},bullets:g.bullets.map(b=>({...b})),cameraX:g.cameraX,cameraY:g.cameraY,boss:g.boss?{...g.boss}:null,room:g.room};}

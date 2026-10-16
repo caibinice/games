@@ -367,6 +367,7 @@ export default class BattleScene {
     if (tank == null) {
       return
     }
+    if (slot.state.infiniteLives) slot.state.lives += 1
     tank.alive = false
     this.explosions.push(new Explosion({ x: tank.x + 8, y: tank.y + 8 }, 'big'))
     this.audio.play('explosion_1')

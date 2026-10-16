@@ -35,7 +35,7 @@ export function draw(canvas:HTMLCanvasElement,g:any){
   for(const e of scene.explosions){const shape=e.shape(),size=explosionSize(shape);sprite(c,'explosion'+shape,size,size,e.cx-size/2,e.cy-size/2,a=>drawExplosion(a,shape));}
   c.font='7px monospace';c.fillStyle='#fff';for(const p of scene.scorePopups)if(p.visible)c.fillText(String(p.score),p.x,p.y+6);
  }
- c.restore();c.font='bold 9px monospace';c.fillStyle='#000';c.fillText('IP',225,150);c.fillText(String(Math.max(0,g.lives-1)),237,161);
+ c.restore();c.font='bold 9px monospace';c.fillStyle='#000';c.fillText('IP',225,150);c.fillText(g.cheats?.infiniteLives?'∞':String(Math.max(0,g.lives-1)),g.cheats?.infiniteLives?229:237,161);
  const remaining=scene?.remainingBotCount??20;for(let i=0;i<remaining;i++){const x=225+i%2*9,y=18+Math.floor(i/2)*10;c.fillStyle='#000';c.fillRect(x,y,6,7);c.fillRect(x+2,y-2,2,4);c.fillStyle='#636363';c.fillRect(x+2,y+3,2,2);}
  c.fillStyle='#000';c.fillRect(226,184,2,17);c.fillStyle='#000';c.fillRect(228,184,12,8);c.fillStyle='#636363';c.fillRect(231,186,7,4);c.fillStyle='#000';c.fillText(String(g.level).padStart(2,'0'),229,213);
  if(s.phase==='enter'){const h=s.curtain*104;c.fillStyle='#636363';c.fillRect(8,16,208,h);c.fillRect(8,224-h,208,h);if(s.curtain>.95){c.fillStyle='#000';c.font='bold 12px monospace';c.textAlign='center';c.fillText(`STAGE ${g.level}`,112,124);c.textAlign='left';}}

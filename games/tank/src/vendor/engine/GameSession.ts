@@ -34,6 +34,8 @@ export interface PlayerState {
   color: TankColor
   spawnPos: Point
   lives: number
+  /** Site adapter: refund a life on death while the optional assist is enabled. */
+  infiniteLives?: boolean
   score: number
   /** 上一关结束时存活坦克的等级；下一关直接以该等级出生且不扣命 */
   reservedTankLevel: TankLevel | null

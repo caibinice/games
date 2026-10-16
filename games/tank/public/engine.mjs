@@ -89,6 +89,8 @@ var Tank = class {
   frozenTimeout = 0;
   /** >0 表示开火冷却中 */
   cooldown = 0;
+  /** Site adapter: optional player-only rapid-fire assist; default remains classic. */
+  rapidFire = false;
   /** >0 表示处于无敌头盔保护中（ms） */
   helmetDuration = 0;
   /** 是否可见（被队友击中冻结时闪烁） */
@@ -2140,10 +2142,11 @@ function bulletStartPosition(tank) {
   }
 }
 function fireTank(tank, shouldFire, delta, bullets, audio) {
+  const rapid = tank.side === "player" && tank.rapidFire;
   let nextCooldown = tank.cooldown <= 0 ? 0 : tank.cooldown - delta;
   if (tank.cooldown <= 0 && shouldFire) {
     const active = bullets.filter((b) => b.tankId === tank.tankId && !b.dead).length;
-    if (active < bulletLimit(tank)) {
+    if (active < (rapid ? 8 : bulletLimit(tank))) {
       const { x, y } = bulletStartPosition(tank);
       if (tank.side === "player") {
         audio.play("bullet_shot");
@@ -2159,7 +2162,7 @@ function fireTank(tank, shouldFire, delta, bullets, audio) {
           y
         })
       );
-      nextCooldown = bulletInterval(tank);
+      nextCooldown = rapid ? 75 : bulletInterval(tank);
     }
   }
   tank.cooldown = nextCooldown;
@@ -2770,6 +2773,7 @@ var BattleScene = class {
     if (tank == null) {
       return;
     }
+    if (slot.state.infiniteLives) slot.state.lives += 1;
     tank.alive = false;
     this.explosions.push(new Explosion({ x: tank.x + 8, y: tank.y + 8 }, "big"));
     this.audio.play("explosion_1");
@@ -4558,8 +4562,40 @@ var TICK_MS = 1e3 / 60;
 var TITLE = "\u5766\u514B\u5927\u6218";
 var STORAGE = "fish-tank";
 var MODES = [["classic", "\u7ECF\u5178 \xB7 3 \u8F86\u5766\u514B"]];
+var CHEAT_OPTIONS = [
+  { key: "infiniteLives", label: "\u65E0\u9650\u5766\u514B", description: "\u9635\u4EA1\u540E\u6301\u7EED\u91CD\u751F\uFF1B\u8001\u9E70\u57FA\u5730\u4ECD\u9700\u4FDD\u62A4\u3002" },
+  { key: "rapidFire", label: "\u8D85\u7EA7\u8FDE\u53D1", description: "\u6309\u4F4F\u5F00\u706B\u9AD8\u901F\u53D1\u5C04\uFF0C\u6700\u591A\u540C\u65F6 8 \u53D1\u73A9\u5BB6\u5B50\u5F39\u3002" },
+  { key: "autoPowerUps", label: "\u81EA\u52A8\u968F\u673A\u9053\u5177", description: "\u6218\u6597\u4E2D\u6BCF 8 \u79D2\u5728\u8EAB\u8FB9\u7A7A\u5730\u751F\u6210\u968F\u673A\u9053\u5177\u3002" }
+];
+var normalizeCheats = (raw = {}) => Object.fromEntries(CHEAT_OPTIONS.map((o) => [o.key, raw?.[o.key] === true]));
+var isAssisted = (g) => g.assisted === true;
+function setCheat(g, key, enabled) {
+  if (!CHEAT_OPTIONS.some((o) => o.key === key) || typeof enabled !== "boolean") return false;
+  g.cheats[key] = enabled;
+  if (enabled) g.assisted = true;
+  if (key === "autoPowerUps") g.nextCheatDrop = g.clock + 8e3;
+  return true;
+}
+function spawnRandomPowerUp(g) {
+  const scene = g.session.scene, player = scene?.tanks.find((t) => t.side === "player" && t.alive);
+  if (!["running", "paused"].includes(g.status) || g.session.phase !== "playing" || scene?.status !== "playing" || !player) return null;
+  const positions = [];
+  const world = { map: scene.map, tanks: [], restrictedAreas: [] };
+  for (let y = 0; y <= 192; y += 8) for (let x = 0; x <= 192; x += 8) {
+    const d = Math.hypot(x - player.x, y - player.y);
+    if (d < 20 || d > 56 || scene.powerUps.some((p) => !p.dead && Math.hypot(p.x - x, p.y - y) < 16)) continue;
+    if (canTankMove(world, { rect: () => ({ x, y, width: 16, height: 16 }) })) positions.push({ x, y });
+  }
+  const pos = positions.length ? positions[Math.floor(g.cheatRandom() * positions.length)] : { x: player.x, y: player.y };
+  const names = ["tank", "star", "grenade", "timer", "helmet", "shovel"], name = names[Math.floor(g.cheatRandom() * names.length)];
+  if (scene.powerUps.length >= 6) scene.powerUps.splice(0, scene.powerUps.length - 5);
+  scene.powerUps.push(new PowerUp(name, pos.x, pos.y));
+  g.assisted = true;
+  g.events.push({ type: "sound", name: "powerup_appear" });
+  return name;
+}
 var levelInfo = (level) => ({ name: `STAGE ${String(level).padStart(2, "0")}`, kind: "base-defense", description: "\u5B88\u536B\u8001\u9E70 \xB7 \u51FB\u9000 20 \u8F86\u654C\u519B" });
-function newGame({ level = 1, seed = Date.now(), platform = "pc", mode = "classic" } = {}) {
+function newGame({ level = 1, seed = Date.now(), platform = "pc", mode = "classic", cheats = {}, assisted = false } = {}) {
   if (!Number.isInteger(level) || level < 1 || level > LEVEL_COUNT || !["pc", "mobile"].includes(platform) || mode !== "classic") throw Error("Invalid tank options");
   let g;
   const session = new GameSession(
@@ -4569,7 +4605,8 @@ function newGame({ level = 1, seed = Date.now(), platform = "pc", mode = "classi
     { play: (name) => g?.events.push({ type: "sound", name }) },
     { autopilot: false, random: seededRandom(seed) }
   );
-  g = { version: 1, level, seed, platform, mode, status: "ready", clock: 0, score: 0, lives: 3, events: [], session, input: new InputManager([PLAYER1_CONTROL]), accumulator: 0, lastVictory: 0 };
+  const options = normalizeCheats(cheats);
+  g = { version: 1, level, seed, platform, mode, status: "ready", clock: 0, score: 0, lives: 3, events: [], session, input: new InputManager([PLAYER1_CONTROL]), accumulator: 0, lastVictory: 0, cheats: options, assisted: assisted === true || Object.values(options).some(Boolean), cheatRandom: seededRandom(Number(seed) >>> 0 ^ 1632582066), nextCheatDrop: 8e3 };
   return g;
 }
 function start(g) {
@@ -4588,6 +4625,13 @@ function step(g, milliseconds, command = {}) {
   for (const action of command.order || Object.keys(PLAYER1_CONTROL)) if (command[action] && action in PLAYER1_CONTROL) g.input.keyDown(PLAYER1_CONTROL[action]);
   g.accumulator += Math.min(100, milliseconds);
   while (g.accumulator + 1e-8 >= TICK_MS && g.status === "running") {
+    const before = g.session.scene;
+    g.session.players[0].infiniteLives = g.cheats.infiniteLives;
+    if (g.cheats.infiniteLives && before?.status === "playing" && !before.tanks.some((t) => t.side === "player" && t.alive) && !before.flickers.some((f) => f.tank.side === "player")) g.session.players[0].lives = Math.max(1, g.session.players[0].lives);
+    for (const t of before?.tanks || []) if (t.side === "player") {
+      t.rapidFire = g.cheats.rapidFire;
+      if (t.rapidFire) t.cooldown = Math.min(t.cooldown, 75);
+    }
     g.session.step(TICK_MS, g.input);
     g.input.endTick();
     g.clock += TICK_MS;
@@ -4607,9 +4651,14 @@ function step(g, milliseconds, command = {}) {
       g.status = s.cleared ? "won" : "lost";
       g.events.push({ type: g.status });
     }
+    if (!g.cheats.autoPowerUps) g.nextCheatDrop = g.clock + 8e3;
+    else if (s.phase === "playing" && scene?.status === "playing" && g.clock >= g.nextCheatDrop) {
+      spawnRandomPowerUp(g);
+      g.nextCheatDrop = g.clock + 8e3;
+    }
   }
 }
-var serialize = (g) => JSON.stringify({ version: 1, level: g.level, seed: g.seed, platform: g.platform, mode: g.mode, status: "ready" });
+var serialize = (g) => JSON.stringify({ version: 1, level: g.level, seed: g.seed, platform: g.platform, mode: g.mode, status: "ready", cheats: g.cheats, assisted: g.assisted });
 function restore(raw, platform) {
   try {
     const d = typeof raw === "string" ? JSON.parse(raw) : raw;
@@ -4632,6 +4681,7 @@ function summary(g) {
 }
 export {
   Bullet,
+  CHEAT_OPTIONS,
   GameSession,
   HEIGHT,
   InputManager,
@@ -4646,14 +4696,18 @@ export {
   TerrainMap,
   WIDTH,
   expandBots,
+  isAssisted,
   levelInfo,
   newGame,
+  normalizeCheats,
   parseStage,
   pause,
   restore,
   seededRandom,
   serialize,
+  setCheat,
   snapshot,
+  spawnRandomPowerUp,
   stages,
   start,
   step,

@@ -28,11 +28,12 @@ export function fireTank(
   bullets: Bullet[],
   audio: AudioPort,
 ): void {
+  const rapid = tank.side === 'player' && tank.rapidFire
   let nextCooldown = tank.cooldown <= 0 ? 0 : tank.cooldown - delta
 
   if (tank.cooldown <= 0 && shouldFire) {
     const active = bullets.filter((b) => b.tankId === tank.tankId && !b.dead).length
-    if (active < bulletLimit(tank)) {
+    if (active < (rapid ? 8 : bulletLimit(tank))) {
       const { x, y } = bulletStartPosition(tank)
       if (tank.side === 'player') {
         audio.play('bullet_shot')
@@ -48,7 +49,7 @@ export function fireTank(
           y,
         }),
       )
-      nextCooldown = bulletInterval(tank)
+      nextCooldown = rapid ? 75 : bulletInterval(tank)
     }
   }
 

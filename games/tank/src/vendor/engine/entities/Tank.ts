@@ -43,6 +43,8 @@ export default class Tank {
   frozenTimeout = 0
   /** >0 表示开火冷却中 */
   cooldown = 0
+  /** Site adapter: optional player-only rapid-fire assist; default remains classic. */
+  rapidFire = false
   /** >0 表示处于无敌头盔保护中（ms） */
   helmetDuration = 0
   /** 是否可见（被队友击中冻结时闪烁） */

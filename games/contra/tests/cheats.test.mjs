@@ -1,0 +1,23 @@
+import {describe,it,expect} from 'vitest';
+import {newGame,start,pause,step,TICK_MS,setCheat,isAssisted,serialize,restore,damagePlayer,CHEAT_OPTIONS} from '../public/engine.mjs';
+const tick=(g,n=1,command={})=>{for(let i=0;i<n;i++)step(g,TICK_MS,command);};
+function battle(level=1){const g=newGame({level,seed:902});g.spawned=[];g.nextRunner=g.nextCapsule=1e9;start(g);return g;}
+describe('Optional Contra cheats',()=>{
+ it('keeps classic settings off and accepts only known booleans',()=>{const g=newGame({cheats:{infiniteLives:'true',unknown:true}});expect(isAssisted(g)).toBe(false);expect(Object.values(g.cheats).some(Boolean)).toBe(false);expect(setCheat(g,'unknown',true)).toBe(false);expect(setCheat(g,'airJump',1)).toBe(false);});
+ it('infinite lives survive repeated last-life deaths with normal respawn/weapon loss',()=>{const g=battle();g.lives=1;setCheat(g,'infiniteLives',true);
+  for(let i=0;i<8;i++){g.player.invulnerableUntil=0;g.player.weapon='S';damagePlayer(g);damagePlayer(g);expect(g.lives).toBe(1);tick(g,55);expect(g.status).toBe('running');expect(g.player.deadUntil).toBe(0);expect(g.player.weapon).toBe('N');}
+  setCheat(g,'infiniteLives',false);g.player.invulnerableUntil=0;damagePlayer(g);tick(g,55);expect(g.status).toBe('lost');expect(g.lives).toBe(0);
+ });
+ it('enabling unlimited lives during the final death animation rescues the round',()=>{const g=battle();g.lives=1;g.player.invulnerableUntil=0;damagePlayer(g);expect(g.lives).toBe(0);setCheat(g,'infiniteLives',true);tick(g,55);expect(g.status).toBe('running');expect(g.player.deadUntil).toBe(0);expect(restore(serialize(g),'pc')).toBeTruthy();});
+ it.each([1,2,3,4,5,6,7,8])('stage %i permits new airborne jump presses but not held-key auto jumping',level=>{
+  const g=battle(level);setCheat(g,'airJump',true);g.player.invulnerableUntil=1e9;tick(g,1,{jump:true});tick(g,6,{jump:true});const v=g.player.vy;tick(g,1);tick(g,1,{jump:true});expect(g.player.vy).toBeLessThan(v-50);const fresh=g.player.vy;tick(g,3,{jump:true});expect(g.player.vy).toBeGreaterThan(fresh);setCheat(g,'airJump',false);tick(g);const off=g.player.vy;tick(g,1,{jump:true});expect(g.player.vy).toBeGreaterThan(off);
+ });
+ it('air jumps are bounded by the top of the map and saves remain valid',()=>{const g=battle();setCheat(g,'airJump',true);setCheat(g,'invincible',true);for(let i=0;i<300;i++){tick(g,1,{jump:i%6===0});expect(g.player.y).toBeGreaterThanOrEqual(28);expect(restore(serialize(g),'pc')).toBeTruthy();}});
+ it('slows both new and in-flight enemy bullets to 55%, leaving player timing untouched',()=>{
+  const results=[];for(const enabled of [false,true]){const g=battle();setCheat(g,'slowBullets',enabled);g.enemyBullets=[{x:100,y:30,vx:100,vy:0,gravity:0,ttl:4200}];tick(g,60,{fire:true});results.push({x:g.enemyBullets[0].x,clock:g.clock,xPlayer:g.player.x,fire:g.player.lastFire});}
+  expect(results[0].x).toBeCloseTo(200);expect(results[1].x).toBeCloseTo(155);expect(results[0].clock).toBe(results[1].clock);expect(results[0].xPlayer).toBe(results[1].xPlayer);expect(results[0].fire).toBe(results[1].fire);
+ });
+ it('invincibility blocks damage, disables immediately, but never strands the player in a pit',()=>{const g=battle();g.player.invulnerableUntil=0;setCheat(g,'invincible',true);damagePlayer(g);expect(g.lives).toBe(3);expect(g.player.deadUntil).toBe(0);setCheat(g,'infiniteLives',true);g.player.y=g.stage.height+25;g.player.onGround=false;tick(g);expect(g.player.deadUntil).toBeGreaterThan(g.clock);tick(g,55);expect(g.player.y).toBeLessThan(g.stage.height);expect(g.lives).toBe(3);setCheat(g,'invincible',false);g.player.invulnerableUntil=0;damagePlayer(g);expect(g.player.deadUntil).toBeGreaterThan(g.clock);});
+ it.each(['pc','mobile'])('preserves options, assisted history and paused clock for %s',platform=>{const g=newGame({platform,seed:7});for(const o of CHEAT_OPTIONS)setCheat(g,o.key,true);start(g);tick(g,20,{jump:true});pause(g);const r=restore(serialize(g),platform);expect(r.cheats).toEqual(g.cheats);expect(r.assisted).toBe(true);const time=r.clock;tick(r,100);expect(r.clock).toBe(time);for(const o of CHEAT_OPTIONS)setCheat(r,o.key,false);expect(isAssisted(r)).toBe(true);expect(newGame({cheats:r.cheats,assisted:r.assisted}).assisted).toBe(true);expect(newGame({cheats:r.cheats}).assisted).toBe(false);});
+ it('upgrades genuine old v1 saves without resetting combat or turning on assists',()=>{const g=battle(4);tick(g,60,{fire:true});const old=JSON.parse(serialize(g));delete old.cheats;delete old.assisted;const r=restore(JSON.stringify(old),'pc');expect(r.level).toBe(4);expect(r.clock).toBe(g.clock);expect(r.bullets).toEqual(g.bullets);expect(isAssisted(r)).toBe(false);expect(Object.values(r.cheats).some(Boolean)).toBe(false);});
+});

@@ -2523,6 +2523,21 @@ var JUMP_SPEED = 360;
 var GRAVITY = 680;
 var RUN_SPEED = 90;
 var MODES = [["classic", "\u7ECF\u5178 \xB7 3 \u6761\u751F\u547D"], ["practice", "30 \u547D\u7EC3\u4E60"]];
+var CHEAT_OPTIONS = [
+  { key: "infiniteLives", label: "\u65E0\u9650\u751F\u547D", description: "\u53D7\u51FB / \u5760\u843D\u540E\u7EE7\u7EED\u91CD\u751F\uFF0C\u4E0D\u6D88\u8017\u751F\u547D\u3002" },
+  { key: "airJump", label: "\u7A7A\u4E2D\u8FDE\u8DF3", description: "\u7A7A\u4E2D\u677E\u5F00\u540E\u518D\u6B21\u6309\u8DF3\u8DC3\uFF0C\u53EF\u65E0\u9650\u63A5\u8DF3\uFF1B\u957F\u6309\u4ECD\u53EA\u8DF3\u4E00\u6B21\u3002" },
+  { key: "slowBullets", label: "\u6162\u901F\u9AD8\u4EAE\u654C\u5F39", description: "\u654C\u5F39\u901F\u5EA6\u964D\u81F3 55%\uFF0C\u4EAE\u8272\u653E\u5927\u663E\u793A\uFF1B\u4E0D\u51CF\u6162\u89D2\u8272\u548C\u81EA\u5DF1\u7684\u5B50\u5F39\u3002" },
+  { key: "invincible", label: "\u65E0\u654C\u62A4\u76FE", description: "\u514D\u75AB\u654C\u5F39\u3001\u78B0\u649E\u548C\u673A\u5173\uFF1B\u5760\u843D\u4ECD\u56DE\u5B89\u5168\u70B9\u91CD\u751F\u3002" }
+];
+var normalizeCheats = (raw = {}) => Object.fromEntries(CHEAT_OPTIONS.map((o) => [o.key, raw?.[o.key] === true]));
+var isAssisted = (g) => g.assisted === true;
+function setCheat(g, key, enabled) {
+  if (!CHEAT_OPTIONS.some((o) => o.key === key) || typeof enabled !== "boolean") return false;
+  g.cheats[key] = enabled;
+  if (enabled) g.assisted = true;
+  if (key === "infiniteLives" && enabled && g.status !== "lost") g.lives = Math.max(1, g.lives);
+  return true;
+}
 var WEAPONS = { N: { interval: 240, speed: 270, limit: 4 }, M: { interval: 100, speed: 330, limit: 10 }, S: { interval: 200, speed: 280, limit: 25 }, L: { interval: 350, speed: 480, limit: 5 }, F: { interval: 180, speed: 220, limit: 8 } };
 var clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 function random(g) {
@@ -2538,11 +2553,12 @@ var overlaps = (a, b) => a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h &
 function supporting(stage, x, min = 0) {
   return stage.platforms.filter((p) => x >= p.x - 2 && x <= p.x + p.w + 2 && p.y >= min).sort((a, b) => a.y - b.y)[0];
 }
-function newGame({ level = 1, platform = "pc", mode = "classic", seed = Date.now(), carry } = {}) {
+function newGame({ level = 1, platform = "pc", mode = "classic", seed = Date.now(), carry, cheats = {}, assisted = false } = {}) {
   if (!Number.isInteger(level) || level < 1 || level > LEVEL_COUNT || !["pc", "mobile"].includes(platform) || !MODES.some(([v]) => v === mode)) throw Error("Invalid contra options");
   const stage = STAGES[level - 1], x = stage.kind === "base" ? 128 : 32;
   const surface = stage.kind === "vertical" ? stage.platforms.filter((p) => p.y > stage.height - 200 && p.x <= x && p.x + p.w >= x).sort((a, b) => b.y - a.y)[0] : supporting(stage, x);
   const y = stage.kind === "base" ? 204 : surface?.y ?? (stage.kind === "vertical" ? stage.height - 48 : 192);
+  const options = normalizeCheats(cheats);
   const g = {
     version: 1,
     platform,
@@ -2555,6 +2571,8 @@ function newGame({ level = 1, platform = "pc", mode = "classic", seed = Date.now
     clock: 0,
     score: carry?.score || 0,
     lives: carry?.lives || (mode === "practice" ? 30 : 3),
+    cheats: options,
+    assisted: assisted === true || Object.values(options).some(Boolean),
     player: { x, y, w: 12, h: 28, vx: 0, vy: 0, dir: 1, aimX: 1, aimY: 0, weapon: carry?.weapon || "N", rapid: false, onGround: true, water: false, prone: false, invulnerableUntil: 2e3, deadUntil: 0, lastFire: -1e3, lastGround: 0, jumpAt: -1e3 },
     cameraX: 0,
     cameraY: stage.kind === "vertical" ? stage.height - HEIGHT : 0,
@@ -2685,10 +2703,10 @@ function fire(g, command = {}) {
   sound(g, "shot");
   return true;
 }
-function hit(g) {
+function hit(g, fall = false) {
   const p = g.player;
-  if (g.status !== "running" || g.bossDefeatedAt || p.deadUntil > g.clock || p.invulnerableUntil > g.clock) return;
-  g.lives = Math.max(0, g.lives - 1);
+  if (g.status !== "running" || g.bossDefeatedAt || p.deadUntil > g.clock || !fall && (p.invulnerableUntil > g.clock || g.cheats.invincible)) return;
+  if (!g.cheats.infiniteLives) g.lives = Math.max(0, g.lives - 1);
   p.deadUntil = g.clock + 900;
   p.vx = 0;
   p.vy = -80;
@@ -2701,7 +2719,7 @@ function damagePlayer(g) {
 function respawn(g) {
   const p = g.player;
   if (!p.deadUntil || p.deadUntil > g.clock) return;
-  if (g.lives === 0) {
+  if (g.lives === 0 && !g.cheats.infiniteLives) {
     g.status = "lost";
     sound(g, "lose");
     g.events.push({ type: "lost" });
@@ -2836,11 +2854,12 @@ function updateBullets(g, dt) {
       }
     }
   }
+  const enemyDt = dt * (g.cheats.slowBullets ? 0.55 : 1);
   for (const b of g.enemyBullets) {
-    b.vy += b.gravity * dt;
-    b.x += b.vx * dt;
-    b.y += b.vy * dt;
-    b.ttl -= dt * 1e3;
+    b.vy += b.gravity * enemyDt;
+    b.x += b.vx * enemyDt;
+    b.y += b.vy * enemyDt;
+    b.ttl -= enemyDt * 1e3;
     if (overlaps({ x: b.x - 2, y: b.y - 2, w: 4, h: 4 }, body(p))) {
       hit(g);
       b.ttl = 0;
@@ -2926,8 +2945,8 @@ function step(g, milliseconds, command = {}) {
       if (direction) p.dir = direction;
       p.vx = p.prone ? 0 : direction * (p.water ? 55 : RUN_SPEED);
       if (p.onGround) p.lastGround = g.clock;
-      if (g.jumpBufferUntil >= g.clock && g.clock - p.lastGround <= 80) {
-        if (command.down && g.kind !== "base") {
+      if (g.jumpBufferUntil >= g.clock && (g.clock - p.lastGround <= 80 || g.cheats.airJump)) {
+        if (command.down && g.kind !== "base" && (!g.cheats.airJump || p.onGround)) {
           g.dropUntil = g.clock + 220;
           p.y += 3;
           p.onGround = false;
@@ -2947,10 +2966,14 @@ function step(g, milliseconds, command = {}) {
         p.water = false;
         physics(g, p, dt);
       }
+      if (g.cheats.airJump && p.y < 28) {
+        p.y = 28;
+        p.vy = Math.max(0, p.vy);
+      }
       if (command.fire) fire(g, command);
       if (g.kind === "vertical" && p.y > g.cameraY + HEIGHT + 30 || p.y > g.stage.height + 24) {
         p.invulnerableUntil = 0;
-        hit(g);
+        hit(g, true);
       }
       if (p.onGround && !g.hazards.some((h) => Math.abs(h.x - p.x) < 40)) {
         g.checkpoint = { x: p.x, y: p.y };
@@ -3032,6 +3055,8 @@ function restore(raw, platform) {
     for (const b of [...g.bullets, ...g.enemyBullets]) if (!Number.isFinite(b.vx) || !Number.isFinite(b.vy) || !Number.isFinite(b.ttl)) return null;
     if (g.boss && (!Number.isFinite(g.boss.hp) || g.boss.hp < 0 || g.boss.hp > 200)) return null;
     if (g.status === "won" && (!g.boss || g.boss.hp !== 0) || g.status === "lost" && g.lives !== 0) return null;
+    g.cheats = normalizeCheats(g.cheats);
+    g.assisted = g.assisted === true || Object.values(g.cheats).some(Boolean);
     g.stage = stage;
     g.events = [];
     return g;
@@ -3049,6 +3074,7 @@ function summary(g) {
   return { weapon: g.player.weapon, enemies: g.enemies.length, objective: g.bossActive ? `${g.stage.boss} \xB7 ${g.boss?.hp || 0}/${g.boss?.maxHP || 0}` : g.kind === "base" ? `\u623F\u95F4 ${g.room + 1}/${g.stage.rooms} \xB7 ${g.roomOpen ? "\u6838\u5FC3\u51FB\u7834\uFF0C\u6309 \u2191 \u524D\u8FDB" : "\u51FB\u7834\u7EA2\u8272\u6838\u5FC3"}` : g.kind === "vertical" ? "\u5411\u4E0A\u7A81\u7834\u7011\u5E03" : "\u5411\u53F3\u63A8\u8FDB\uFF0C\u6D88\u706D\u5173\u5E95 Boss", phase: g.bossActive ? "boss" : g.kind };
 }
 export {
+  CHEAT_OPTIONS,
   GRAVITY,
   HEIGHT,
   JUMP_SPEED,
@@ -3064,12 +3090,15 @@ export {
   body,
   damagePlayer,
   fire,
+  isAssisted,
   levelInfo,
   newGame,
+  normalizeCheats,
   overlaps,
   pause,
   restore,
   serialize,
+  setCheat,
   snapshot,
   start,
   step,
