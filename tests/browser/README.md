@@ -3,7 +3,7 @@
 这三个文件是 Playwright CLI 的 `run-code` 函数，不是 Vitest / Playwright Test 测试规范。使用独立会话、已构建的本地预览。先打开并检查对应页面快照，再执行：
 
 ```powershell
-$code=Get-Content E:/codes/games/tests/browser/racer-pc.mjs -Raw
+$code=(Get-Content E:/codes/games/tests/browser/racer-pc.mjs -Raw).TrimEnd().TrimEnd(';')
 playwright-cli -s=games-check run-code $code
 playwright-cli -s=games-check eval 'window.__qaResult'
 ```
