@@ -1,0 +1,7 @@
+node_modules/
+dist/
+site/
+web/build-manifest.json
+web/src/legacy/
+web/src/pages/legacy/
+games/*/public/app.mjs

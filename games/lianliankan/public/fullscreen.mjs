@@ -1,6 +1,8 @@
 // Self-contained per-game controller: native fullscreen, with a window-sized
 // theatre layout when the browser does not expose the native API.
-export function setupFullscreen({button,icon,onChange=()=>{},notice=()=>{}}){
+export function setupFullscreen({button,icon,onChange=()=>{},notice=()=>{},scope=globalThis}){
+  const document=scope.document;
+  scope.onDispose?.(()=>{document.body.classList.remove('immersive');if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});});
   if(!button)return{toggle:()=>{},active:()=>false};
   const root=document.documentElement;let owned=false,busy=false;
   const active=()=>document.body.classList.contains('immersive');

@@ -78,12 +78,12 @@ it('ships the complete mono home/play recordings and keeps Pin stereo unchanged'
 });
 it('shows each source title, author, license and modifications in game settings',()=>{
   for(const [game,title,isrc] of [['pindou','Carefree','USUAN1400037']]){
-    const app=readFileSync(new URL(`../games/${game}/public/app.mjs`,import.meta.url),'utf8');
+    const app=readFileSync(new URL(`../games/${game}/public/runtime.mjs`,import.meta.url),'utf8');
     expect(app).toContain(title+' — Kevin MacLeod');expect(app).toContain('isrc='+isrc);
     expect(app).toContain('https://creativecommons.org/licenses/by/4.0/');expect(app).toContain('节选、循环与音量调整');
     expect(app).not.toContain('录屏背景音乐');
   }
-  const goose=readFileSync(new URL('../games/goose/public/app.mjs',import.meta.url),'utf8');expect(goose).toContain('集市首页 / 开锅游戏自动切换');expect(goose).not.toContain('Life of Riley');
+  const goose=readFileSync(new URL('../games/goose/public/runtime.mjs',import.meta.url),'utf8');expect(goose).toContain('集市首页 / 开锅游戏自动切换');expect(goose).not.toContain('Life of Riley');
 });
 
 describe('Goose home/play soundtrack switching',()=>{
@@ -98,8 +98,8 @@ describe('Goose home/play soundtrack switching',()=>{
 });
 it('cache-busts both replacement tracks and their entry modules together',()=>{
   for(const game of ['goose','pindou']){
-    const app=readFileSync(new URL(`../games/${game}/public/app.mjs`,import.meta.url),'utf8'),html=readFileSync(new URL(`../games/${game}/public/index.html`,import.meta.url),'utf8');
+    const app=readFileSync(new URL(`../games/${game}/public/runtime.mjs`,import.meta.url),'utf8'),html=readFileSync(new URL(`../games/${game}/public/index.html`,import.meta.url),'utf8');
     const version=app.match(/music-loop\.mp3\?v=([\w-]+)/)[1];
-    expect(html).toContain('app.mjs?v='+version);expect(version).not.toBe('20261011-4');
+    expect(html).toContain('src="./app.mjs"');const loader=readFileSync(new URL(`../games/${game}/public/app.mjs`,import.meta.url),'utf8');expect(loader).toMatch(/entry-[\w-]+\.mjs/);expect(readFileSync(new URL(`../web/src/legacy/${game}.mjs`,import.meta.url),'utf8')).toBe(app);expect(version).not.toBe('20261011-4');
   }
 });

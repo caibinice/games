@@ -1,0 +1,93 @@
+{
+  "packs": [
+    {
+      "pack": "car-kit",
+      "author": "Kenney",
+      "page": "https://kenney.nl/assets/car-kit",
+      "url": "https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip",
+      "license": "CC0-1.0",
+      "sha256": "fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4",
+      "bytes": 4814237
+    },
+    {
+      "pack": "sci-fi-sounds",
+      "author": "Kenney",
+      "page": "https://kenney.nl/assets/sci-fi-sounds",
+      "url": "https://kenney.nl/media/pages/assets/sci-fi-sounds/6b296f9ecf-1677589334/kenney_sci-fi-sounds.zip",
+      "license": "CC0-1.0",
+      "sha256": "119340f351a5098ad814f78719438c0da355a9ce8a4c8a3af6a8d48aa3d49e04",
+      "bytes": 5875104
+    },
+    {
+      "pack": "impact-sounds",
+      "author": "Kenney",
+      "page": "https://kenney.nl/assets/impact-sounds",
+      "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "license": "CC0-1.0",
+      "sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "bytes": 800850
+    }
+  ],
+  "runtime": [
+    {
+      "file": "assets/audio/engine.ogg",
+      "bytes": 111411,
+      "sha256": "6d665dfc961e2d522c866bdcf12fc0ac56c885c0c7117e830df84ba8eecd655c",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/audio/impact.ogg",
+      "bytes": 11616,
+      "sha256": "964c5fcfb91e7710e2af25c2243c8b7160756b223b0984bacc9eb25bfeea057b",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/audio/land.ogg",
+      "bytes": 7117,
+      "sha256": "a96f879fec0864a8938e0c745b6996a6c5679c16a234ce31a01cc995e8401003",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/audio/skid.ogg",
+      "bytes": 42919,
+      "sha256": "e62a42c0a4af29ed69b37cfc80d088a6808c59f8f725285ebcc3f409267965a0",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/audio/thruster.ogg",
+      "bytes": 201216,
+      "sha256": "0fdc474d93f209debf1fc4ea77765a669dcb7676db31b4d8a0a509685bccf374",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/jet-r.glb",
+      "bytes": 277744,
+      "sha256": "96bcd59af7cd64a0ea8b62457bfd16bbb503c27105857663fe0b83dc44f3544b",
+      "license": "Project original"
+    },
+    {
+      "file": "assets/sedan.glb",
+      "bytes": 172216,
+      "sha256": "b532ea7d2c59f7f6b22b138cf1955218a2c1898f1cea932af4d3fd563c3959b7",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/suv.glb",
+      "bytes": 207572,
+      "sha256": "9df31f6e89e927a8176fc792aa125f0b19dc1ba29d2025bfef7c4f4d6ab1778a",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/Textures/colormap.png",
+      "bytes": 12371,
+      "sha256": "f3622a03a20c6696065cae9cbe391351be873508af190c2ebd1d420c055787a5",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/truck.glb",
+      "bytes": 176360,
+      "sha256": "5e1bc66c343501dd7d5734b57e672dd949bf95d7abdce680c6508cef99d374f8",
+      "license": "CC0-1.0"
+    }
+  ]
+}

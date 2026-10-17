@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#edf3e7">
@@ -15,47 +14,4 @@
   <link rel="stylesheet" href="./compact.css?v=20261011-5">
   <link rel="stylesheet" href="./readability.css?v=20261011-5">
   <link rel="preload" href="./assets/meadow.webp" as="image">
-</head>
-<body>
-  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="12" cy="16" rx="6" ry="5"/><ellipse cx="5" cy="8" rx="2.6" ry="3.5" transform="rotate(-22 5 8)"/><ellipse cx="11" cy="5" rx="2.5" ry="3.5"/><ellipse cx="17" cy="6" rx="2.5" ry="3.5" transform="rotate(18 17 6)"/><ellipse cx="21" cy="11" rx="2" ry="3" transform="rotate(30 21 11)"/></symbol>
-    <symbol id="i-gear" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1-2 3 2 2v3l-1 2 3 3 3-1 2 2 3-1 1-3 3-1 1-3-2-2V8l-3-2-2 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
-    <symbol id="i-full" viewBox="0 0 24 24"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-undo" viewBox="0 0 24 24"><path d="M8 6 3 11l5 5M4 11h9a7 7 0 0 1 0 14" transform="translate(0 -3)" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-magnet" viewBox="0 0 24 24"><path d="M5 4v9a7 7 0 0 0 14 0V4h-5v9a2 2 0 0 1-4 0V4Z" fill="#dd9194" stroke="#aa6872" stroke-width="1.4"/><path d="M5 4h5v5H5zm9 0h5v5h-5z" fill="#f4d895" stroke="#aa6872" stroke-width="1.4"/></symbol>
-    <symbol id="i-brush" viewBox="0 0 24 24"><path d="m11 3-2 10h7L14 3Z" fill="#d69e72" stroke="#ab7655" stroke-width="1.4"/><path d="m7 12-4 8q9 5 18 0l-4-8Z" fill="#f3d495" stroke="#bf9b60" stroke-width="1.4"/><path d="m8 15-1 5m5-5v6m4-6 1 5" stroke="#bf9b60" stroke-width="1.4"/></symbol>
-    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 8q6 4 0 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-  </svg>
-  <aside class="desktop-note" aria-hidden="true"><div class="side-paw"><svg><use href="#i-paw"/></svg></div><p class="eyebrow">A LITTLE MOMENT OF JOY</p><h1>一颗一颗，<br>拼出好心情。</h1><p>欢迎来到毛球小镇。<br>把缤纷归位，让时光慢下来。</p><div class="side-rule"></div><span>100 个治愈关卡 · 没有广告 · 自在慢玩</span></aside>
-  <main id="app" class="game-shell">
-    <div class="scenery" id="scenery"></div><div class="scenery-wash"></div>
-    <header class="topbar"><button id="settings-btn" class="icon-btn" aria-label="设置"><svg><use href="#i-gear"/></svg></button><div id="brand-entry" class="brand" role="button" tabindex="0" aria-label="拼就完了"><div><svg><use href="#i-paw"/></svg><strong>拼就完了</strong></div><span>毛 球 小 镇 · MELLOW BEADS</span></div><button id="fullscreen-btn" class="icon-btn" aria-label="进入全屏"><svg><use href="#i-full"/></svg></button></header>
-    <section id="play-screen" class="play-screen" hidden>
-      <div class="level-bar"><button id="levels-btn" class="level-label"><span id="chapter-label" class="eyebrow">毛球花园</span><strong><span id="level-number">01</span><span id="level-name">花园里的小橘</span><svg><use href="#i-grid"/></svg></strong></button><button id="timer-btn" class="timer" aria-label="免费增加三分钟"><svg><use href="#i-clock"/></svg><strong id="timer-text">03:00</strong><span>+</span></button></div>
-      <section id="tutorial-guide" class="tutorial-guide" hidden aria-live="polite"><div><strong id="tutorial-step">新手引导</strong><button id="tutorial-skip">跳过引导</button></div><p id="tutorial-text"></p></section>
-      <section class="board-card" aria-label="拼豆画板">
-        <div class="board-heading"><div><span class="progress-label">小图案，慢慢来</span><strong id="progress-text">0%</strong><div class="progress-track"><i id="progress-bar"></i></div></div><button id="preview-btn" class="reference" aria-label="查看完整图案"><canvas id="reference-canvas" width="60" height="66"></canvas><span>看图案</span></button></div>
-        <div id="board-viewport" class="board-viewport"><canvas id="board" tabindex="0" role="application" aria-label="拼豆画板；周围是目标底色，凸起的是豆子，凹槽空格可接同色豆；整色完成后保留凸豆立体效果并带有静态炫光；相邻同色错色豆跨底色连续选取；支持直接归位、暂存、双指缩放、方向键和回车"></canvas><div id="board-bubble" class="board-bubble" hidden></div></div>
-        <div class="board-legend" aria-label="画板颜色图例"><span><i class="legend-cell wrong"></i>周围底色 · 凸豆颜色</span><span><i class="legend-cell hole"></i>凹槽空格</span><span><i class="legend-cell done"></i>整色已完成</span></div>
-        <div class="board-controls"><button id="mode-btn" class="mode-button" aria-pressed="false">同色连取</button><div class="zoom-controls"><button id="zoom-out" aria-label="缩小">−</button><button id="zoom-reset" aria-label="重置画板缩放"><span id="zoom-text">100%</span></button><button id="zoom-in" aria-label="放大">+</button></div><span class="board-tip">双指缩放 · 拖动画板</span></div>
-      </section>
-      <div id="instruction" class="instruction" role="status" aria-live="polite"><span class="step-dot">1</span><span id="instruction-text">点一组错色豆，再点下方空格暂存</span><button id="cancel-btn" hidden aria-label="取消选择">×</button></div>
-      <section class="tray-card" aria-label="暂存盒"><div class="tray-heading"><div><strong>我的暂存盒</strong><span id="tray-count">0 / 24</span></div><button id="add-row-btn">＋ 免费加一行</button></div><div id="tray" class="tray-grid"></div><div class="tray-foot"><span id="row-count">2 行空间</span><div id="tray-pages" class="tray-pages" hidden><button id="tray-prev" aria-label="暂存盒前几行">‹</button><span id="tray-page-label"></span><button id="tray-next" aria-label="暂存盒后几行">›</button></div></div></section>
-      <div class="toolbelt"><div class="tool-wrap"><button id="magnet-btn" class="tool-button coral" aria-label="使用磁铁"><svg><use href="#i-magnet"/></svg><span id="magnet-count" class="tool-count">1</span></button><button class="tool-plus" data-claim="magnet" aria-label="免费领取磁铁">+</button><strong>小磁铁</strong><span>归位 10 颗</span></div><div class="tool-wrap"><button id="brush-btn" class="tool-button butter" aria-label="使用整理刷"><svg><use href="#i-brush"/></svg><span id="brush-count" class="tool-count">1</span></button><button class="tool-plus" data-claim="brush" aria-label="免费领取整理刷">+</button><strong>整理刷</strong><span>暂存豆一键归位</span></div><div class="tool-wrap"><button id="time-tool-btn" class="tool-button mint" aria-label="免费增加三分钟"><svg><use href="#i-clock"/></svg><span class="free-dot">+</span></button><strong>慢慢拼</strong><span>免费 ＋3 分钟</span></div><div class="tool-wrap"><button id="undo-btn" class="tool-button lavender" aria-label="撤销上一步"><svg><use href="#i-undo"/></svg></button><strong>退一步</strong><span>撤销上次移动</span></div></div>
-      <footer class="play-footer"><span><i></i>进度自动保存</span><button id="help-btn">怎么玩？</button></footer>
-    </section>
-    <section id="home-screen" class="home-screen"><div class="home-tag"><span>✧</span> 给自己一段可爱的时光 <span>✧</span></div><h1>一颗颗小豆，<br>一个个小美好。</h1><p>蝴蝶、水果、动物，还有软软的小家具。<br>在毛球小镇，慢慢拼就好。</p><div class="home-polaroid"><canvas id="home-art" width="300" height="330"></canvas><span>今天，也要有好心情。 <svg><use href="#i-paw"/></svg></span><i class="tape"></i></div><div class="home-bottom"><div class="home-stats"><span><strong>100</strong>个治愈关卡</span><span><strong>∞</strong>免费续时</span><span><strong>0</strong>广告打扰</span></div><button id="start-btn" class="primary-button"><span id="start-label">开始拼豆</span><svg><use href="#i-arrow"/></svg></button><div class="home-links"><button id="home-levels-btn">关卡图鉴 <svg><use href="#i-grid"/></svg></button><span id="home-progress">已收藏 0 / 100</span></div></div></section>
-    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-    <div id="modal-root"></div>
-    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
-  </main>
-  <aside class="desktop-art" aria-hidden="true"><div class="postcard"><img src="./assets/cottage.webp" alt="" loading="lazy"><span>slow days, happy paws.</span></div><p>取出 · 暂存 · 归位<br><span>不赶时间，也不打扰。</span></p></aside>
-  <script type="module" src="./app.mjs?v=20261011-5"></script>
-</body>
-</html>
-
-
+</head><body><div id="vue-root"></div><script type="module" src="./app.mjs"></script></body></html>

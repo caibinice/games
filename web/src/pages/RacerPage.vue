@@ -1,0 +1,540 @@
+<script setup>
+import { ref, shallowReactive, computed, onMounted, onBeforeUnmount } from 'vue';
+import * as E from '../../../games/racer/public/engine.mjs';
+import { createAudio } from '../../../games/racer/public/audio.mjs';
+import { useLandscapeFullscreen } from '../composables/useLandscapeFullscreen.mjs';
+import TouchStick from '../components/TouchStick.vue';
+import TouchAction from '../components/TouchAction.vue';
+import GameModal from '../components/GameModal.vue';
+const props = defineProps({ platform: String }),
+  mobile = props.platform === 'mobile',
+  canvas = ref(),
+  full = useLandscapeFullscreen(mobile),
+  dialog = ref(''),
+  notice = ref('');
+const key = E.STORAGE + ':' + props.platform + ':v1';
+let stored = {};
+try {
+  stored = JSON.parse(localStorage.getItem(key) || '{}') || {};
+} catch {}
+let game = E.restore(stored.game) || E.newGame(),
+  scene,
+  audio,
+  frame,
+  last = 0,
+  accumulator = 0,
+  hudAt = 0,
+  toastTimer,
+  disposed = false;
+const records = ref(
+    Object.fromEntries(
+      Object.entries(
+        stored.records && typeof stored.records === 'object' ? stored.records : {},
+      ).filter(([id, done]) => Number.isInteger(+id) && +id >= 1 && +id <= 30 && done === true),
+    ),
+  ),
+  best = ref(Number.isFinite(stored.best) ? Math.max(0, stored.best) : 0);
+const state = shallowReactive({
+  status: 'ready',
+  level: game.level,
+  mode: game.mode,
+  loaded: false,
+  error: '',
+  speed: 0,
+  score: 0,
+  distance: 0,
+  energy: 100,
+  hp: 3,
+  jet: 0,
+  cooldown: 0,
+  combo: 0,
+  coins: 0,
+  color: ['#5bb9c8', '#ef764f', '#d9e2e4'].includes(stored.color) ? stored.color : '#5bb9c8',
+  sound: stored.sound !== false,
+});
+const input = { left: false, right: false, jet: false, boost: false },
+  sources = new Map();
+const info = computed(() => E.levelInfo(state.level)),
+  progress = computed(() => Math.min(100, (state.distance / info.value.distance) * 100));
+const style = computed(() => ({
+  '--play-width': full.viewport.value.width + 'px',
+  '--play-height': full.viewport.value.height + 'px',
+}));
+const badge = computed(() =>
+  state.jet ? 'AIR ROLL' : state.cooldown > 0 ? 'RECHARGING' : 'COLD GAS READY',
+);
+function clear() {
+  sources.clear();
+  for (const k in input) input[k] = false;
+}
+function save() {
+  try {
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        game: E.serialize(game),
+        records: records.value,
+        best: best.value,
+        color: state.color,
+        sound: state.sound,
+      }),
+    );
+  } catch {}
+}
+function sync() {
+  Object.assign(state, {
+    status: game.status,
+    level: game.level,
+    mode: game.mode,
+    speed: Math.round(game.speed * 3.6),
+    score: E.totalScore(game),
+    distance: Math.floor(game.distance),
+    energy: game.energy,
+    hp: game.hp,
+    jet: game.jet,
+    cooldown: game.cooldown,
+    combo: game.combo,
+    coins: game.coins,
+  });
+  if (canvas.value)
+    Object.assign(canvas.value.dataset, {
+      status: game.status,
+      level: game.level,
+      x: game.x,
+      lane: game.lane,
+      height: game.height,
+      roll: game.roll,
+      distance: game.distance,
+      hp: game.hp,
+      cooldown: game.cooldown,
+    });
+}
+function toast(text) {
+  notice.value = text;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => (notice.value = ''), 1500);
+}
+function events() {
+  for (const e of game.events) {
+    audio?.play(e.type);
+    if (e.type === 'jet') toast('冷气喷流 · 腾空侧滚');
+    if (e.type === 'clear') toast('空中翻越 +' + (150 + game.combo * 15));
+    if (e.type === 'near') toast('惊险擦过 +80');
+    if (e.type === 'hit') toast('车身受损 · 小心变道');
+    if (['won', 'lost'].includes(e.type)) {
+      best.value = Math.max(best.value, E.totalScore(game));
+      if (e.type === 'won') records.value = { ...records.value, [game.level]: true };
+      audio?.setRunning(false);
+      clear();
+      sync();
+      save();
+    }
+  }
+}
+function loop(now) {
+  if (disposed) return;
+  const dt = Math.min(0.1, Math.max(0, (now - last) / 1000));
+  last = now;
+  if (game.status === 'running') {
+    accumulator += dt;
+    while (accumulator >= 1 / 60 && game.status === 'running') {
+      E.step(game, 1 / 60, input);
+      events();
+      accumulator -= 1 / 60;
+    }
+  }
+  scene?.update(game, now);
+  audio?.update(game.speed);
+  if (now - hudAt > 60) {
+    sync();
+    hudAt = now;
+  }
+  frame = requestAnimationFrame(loop);
+}
+function start() {
+  if (!state.loaded) return;
+  if (mobile) void full.enter();
+  clear();
+  audio.unlock();
+  E.start(game);
+  audio.setRunning(true);
+  last = performance.now();
+  accumulator = 0;
+  sync();
+  save();
+  canvas.value.focus({ preventScroll: true });
+}
+function pause() {
+  E.pause(game);
+  audio?.setRunning(false);
+  clear();
+  sync();
+  save();
+}
+function togglePause() {
+  if (game.status === 'paused') start();
+  else pause();
+}
+function fresh(level = game.level, mode = game.mode) {
+  pause();
+  game = E.newGame({ level, mode, seed: Date.now() });
+  sync();
+  save();
+}
+function open(name) {
+  pause();
+  dialog.value = name;
+}
+function chooseLevel(n) {
+  fresh(n, 'campaign');
+  dialog.value = '';
+}
+function touch(action, pressed, source = 'touch') {
+  if (game.status !== 'running') return;
+  sources.set(source + action, pressed);
+  input[action] = [...sources].some(([k, v]) => k.endsWith(action) && v);
+}
+function stick(d) {
+  touch('left', d.left);
+  touch('right', d.right);
+}
+function color(c) {
+  state.color = c;
+  scene?.setColor(c);
+  save();
+}
+function sound() {
+  state.sound = !state.sound;
+  audio?.setEnabled(state.sound);
+  if (state.sound) audio?.unlock();
+  save();
+}
+const keys = {
+  ArrowLeft: 'left',
+  KeyA: 'left',
+  ArrowRight: 'right',
+  KeyD: 'right',
+  Space: 'jet',
+  ShiftLeft: 'boost',
+  ShiftRight: 'boost',
+};
+function keydown(e) {
+  if (
+    dialog.value ||
+    e.altKey ||
+    e.ctrlKey ||
+    e.metaKey ||
+    /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)
+  )
+    return;
+  if (keys[e.code]) {
+    e.preventDefault();
+    touch(keys[e.code], true, e.code);
+  }
+  if (e.repeat) return;
+  if (e.code === 'Enter') start();
+  if (e.code === 'KeyP') togglePause();
+  if (e.code === 'KeyF') {
+    e.preventDefault();
+    void full.toggle();
+  }
+  if (e.code === 'Escape') {
+    if (full.active.value) void full.exit();
+    else pause();
+  }
+}
+function keyup(e) {
+  if (keys[e.code]) touch(keys[e.code], false, e.code);
+}
+function visibility() {
+  if (document.hidden) pause();
+}
+onMounted(async () => {
+  document.addEventListener('keydown', keydown);
+  document.addEventListener('keyup', keyup);
+  document.addEventListener('visibilitychange', visibility);
+  window.addEventListener('blur', pause);
+  window.addEventListener('pagehide', pause);
+  try {
+    const m = await import('../../../games/racer/public/scene.mjs');
+    if (disposed) return;
+    const result = await m.createScene(canvas.value, { mobile });
+    if (disposed) {
+      result.dispose();
+      return;
+    }
+    scene = result;
+    scene.setColor(state.color);
+    audio = createAudio();
+    audio.setEnabled(state.sound);
+    state.loaded = true;
+    sync();
+    last = performance.now();
+    frame = requestAnimationFrame(loop);
+  } catch (e) {
+    state.error = '3D 场景载入失败：' + e.message;
+    console.error(e);
+  }
+});
+onBeforeUnmount(() => {
+  disposed = true;
+  pause();
+  cancelAnimationFrame(frame);
+  clearTimeout(toastTimer);
+  audio?.dispose();
+  scene?.dispose();
+  document.removeEventListener('keydown', keydown);
+  document.removeEventListener('keyup', keyup);
+  document.removeEventListener('visibilitychange', visibility);
+  window.removeEventListener('blur', pause);
+  window.removeEventListener('pagehide', pause);
+});
+</script>
+<template>
+  <main
+    class="racer-shell"
+    :class="{
+      'play-full': full.active.value,
+      'virtual-landscape': full.rotated.value,
+      'is-mobile': mobile,
+    }"
+    :style="style"
+  >
+    <header class="racer-header">
+      <a href="/games/" class="racer-brand"
+        ><span class="brand-slash">//</span> JET<span> / </span>R <small>喷气飞车 3D</small></a
+      >
+      <nav>
+        <span class="edition">SINGLE PLAYER / VOL. 01</span
+        ><a :href="mobile ? './pc.html' : './mobile.html'">{{ mobile ? '电脑版' : '手机版' }} ↗</a
+        ><button aria-label="音效开关" @click="sound">
+          {{ state.sound ? '声音开' : '声音关' }}</button
+        ><button @click="open('help')">操作指南</button>
+      </nav>
+    </header>
+    <section class="racer-title">
+      <div>
+        <span class="racer-kicker">THE ROAD IS ONLY THE BEGINNING</span>
+        <h1>地面之上，<em>还有自由。</em></h1>
+      </div>
+      <p>穿越车流，掠过海岸线。<br />用一次喷气侧滚，越过眼前的极限。</p>
+    </section>
+    <div class="racer-workspace">
+      <section class="race-viewport" aria-label="3D 赛车游戏">
+        <canvas ref="canvas" id="racer-canvas" tabindex="0" aria-label="喷气飞车 3D 赛道"></canvas>
+        <div class="race-vignette"></div>
+        <div class="race-top-hud">
+          <div class="track-info">
+            <span>ROUTE {{ String(state.level).padStart(2, '0') }} / 30</span
+            ><strong>{{ info.name }}</strong>
+            <div class="track-progress"><i :style="{ width: progress + '%' }"></i></div>
+          </div>
+          <div class="race-score">
+            <small>SCORE</small><strong>{{ String(state.score).padStart(6, '0') }}</strong
+            ><span v-if="state.combo > 1">COMBO × {{ state.combo }}</span>
+          </div>
+          <div class="race-tools">
+            <button data-action="levels" aria-label="选择关卡" @click="open('levels')">关卡</button
+            ><button id="fullscreen-button" :aria-pressed="full.active.value" @click="full.toggle">
+              {{ full.active.value ? '退出' : mobile ? '横屏全屏' : '⛶ 全屏' }}</button
+            ><button data-action="pause" @click="togglePause">
+              {{ state.status === 'paused' ? '继续' : '暂停' }}
+            </button>
+          </div>
+        </div>
+        <div class="race-bottom-hud">
+          <div class="speedometer">
+            <strong>{{ state.speed }}</strong
+            ><span
+              >KM/H
+              <b
+                >{{ '▰'.repeat(state.hp) }}<i>{{ '▱'.repeat(3 - state.hp) }}</i></b
+              ></span
+            >
+          </div>
+          <div class="jet-meter">
+            <span :class="{ ready: state.cooldown <= 0 }"
+              >{{ badge }}
+              <b>{{
+                state.cooldown > 0
+                  ? state.cooldown.toFixed(1) + 's'
+                  : Math.floor(state.energy) + '%'
+              }}</b></span
+            >
+            <div><i :style="{ width: state.energy + '%' }"></i></div>
+            <small
+              >{{
+                state.mode === 'endless'
+                  ? '无尽旅途'
+                  : state.distance + ' / ' + info.distance + ' m'
+              }}
+              · {{ state.coins }} COINS</small
+            >
+          </div>
+        </div>
+        <Transition name="race-toast"
+          ><div v-if="notice" class="race-notice" role="status">{{ notice }}</div></Transition
+        >
+        <div v-if="state.status !== 'running'" class="race-overlay">
+          <div class="race-menu">
+            <span class="racer-kicker">{{
+              state.status === 'won'
+                ? 'ROUTE COMPLETE'
+                : state.status === 'lost'
+                  ? 'ONE MORE RUN'
+                  : state.status === 'paused'
+                    ? 'TAKE A BREATH'
+                    : 'COLD GAS / HOT LAP'
+            }}</span>
+            <h2>
+              {{
+                state.status === 'won'
+                  ? '漂亮，完成穿越。'
+                  : state.status === 'lost'
+                    ? '下一次，再快一点。'
+                    : state.status === 'paused'
+                      ? '旅途暂停。'
+                      : '让速度，离开地面。'
+              }}
+            </h2>
+            <p v-if="state.error" role="alert">{{ state.error }}</p>
+            <p v-else>
+              {{
+                state.status === 'won'
+                  ? '得分 ' + state.score + ' · 剩余车身 ' + state.hp + ' / 3'
+                  : state.status === 'lost'
+                    ? '得分 ' + state.score + ' · 行驶 ' + state.distance + ' m'
+                    : mobile
+                      ? '左手悬浮摇杆变道，右手喷气腾跃。'
+                      : 'A / D 变道 · Space 喷气侧滚 · Shift 氮气加速'
+              }}
+            </p>
+            <div class="race-menu-actions">
+              <button
+                v-if="['ready', 'paused'].includes(state.status)"
+                class="race-primary"
+                data-action="start"
+                :disabled="!state.loaded"
+                @click="start"
+              >
+                {{
+                  !state.loaded
+                    ? '正在准备赛道…'
+                    : state.status === 'paused'
+                      ? '继续疾驰'
+                      : '开始疾驰'
+                }}
+                <span>↗</span></button
+              ><button
+                v-else-if="state.status === 'won' && state.level < 30"
+                class="race-primary"
+                data-action="next"
+                @click="fresh(state.level + 1)"
+              >
+                下一关 ↗</button
+              ><button v-else class="race-primary" data-action="retry" @click="fresh()">
+                再来一局 ↗</button
+              ><button class="race-secondary" @click="open('levels')">选择路线</button>
+            </div>
+            <small>30 关单人挑战 · 自动驾驶前进 · 三次碰撞机会</small>
+          </div>
+        </div>
+      </section>
+      <aside class="racer-garage">
+        <div class="garage-number">01 <span>/ YOUR MACHINE</span></div>
+        <h2>JET-R <small>CONCEPT ROADSTER</small></h2>
+        <p class="car-spec">冷气推进系统<br />四点垂直喷流 / 360° 空中侧滚</p>
+        <div class="color-options" aria-label="车身颜色">
+          <button
+            v-for="c in ['#5bb9c8', '#ef764f', '#d9e2e4']"
+            :key="c"
+            :aria-label="'车身颜色 ' + c"
+            :aria-pressed="state.color === c"
+            :class="{ selected: state.color === c }"
+            :style="{ background: c }"
+            @click="color(c)"
+          ></button
+          ><span>PAINT / 车漆</span>
+        </div>
+        <div class="garage-stat">
+          <span>个人最高分</span><strong>{{ best.toLocaleString() }}</strong>
+        </div>
+        <div class="garage-stat">
+          <span>已完成路线</span
+          ><strong>{{ Object.values(records).filter(Boolean).length }} <small>/ 30</small></strong>
+        </div>
+        <button
+          class="endless-button"
+          :class="{ selected: state.mode === 'endless' }"
+          @click="fresh(state.level, state.mode === 'endless' ? 'campaign' : 'endless')"
+        >
+          {{ state.mode === 'endless' ? '切回关卡模式' : '无尽公路模式' }} <span>∞</span>
+        </button>
+        <p class="garage-note">
+          喷气消耗 35% 能量，冷却 5.5 秒。腾空可越过车辆与路障，注意避开高架横梁。
+        </p>
+      </aside>
+    </div>
+    <footer class="racer-footer">
+      <span>INSPIRED BY THE ARCADE. BUILT FOR THE OPEN ROAD.</span
+      ><a href="./assets/credits.html">设计与素材来源 ↗</a><a href="/games/">返回游乐场</a>
+    </footer>
+    <template v-if="mobile"
+      ><TouchStick
+        :rotated="full.rotated.value"
+        four-way
+        :disabled="state.status !== 'running'"
+        @change="stick" /><TouchAction
+        action="jet"
+        label="喷气腾跃"
+        :disabled="state.status !== 'running'"
+        @change="touch('jet', $event)" /><TouchAction
+        action="boost"
+        label="氮气"
+        small
+        :disabled="state.status !== 'running'"
+        @change="touch('boost', $event)"
+    /></template>
+    <GameModal
+      v-if="dialog"
+      :id="dialog + '-dialog'"
+      :title="dialog === 'levels' ? '选择一段旅程' : '喷气飞车 · 驾驶指南'"
+      @close="dialog = ''"
+    >
+      <template v-if="dialog === 'levels'"
+        ><p>海岸、都会、天际，30 段逐渐加速的公路。</p>
+        <div class="racer-levels">
+          <button
+            v-for="n in 30"
+            :key="n"
+            :data-level="n"
+            :class="{ selected: n === state.level, completed: records[n] }"
+            @click="chooseLevel(n)"
+          >
+            <small>{{ E.levelInfo(n).name }}</small
+            >{{ String(n).padStart(2, '0') }} <span>{{ records[n] ? '✓' : '↗' }}</span>
+          </button>
+        </div></template
+      >
+      <template v-else
+        ><p>赛车自动向前加速；每局有 3 格车身，碰撞后短暂无敌。</p>
+        <p>
+          <strong>变道：</strong>键盘 A / D 或 ← /
+          →，手机左侧拖动悬浮摇杆。每次拨动切一条车道，松开可再次拨动。
+        </p>
+        <p>
+          <strong>喷气侧滚：</strong>Space / 右下大按钮。消耗 35% 能量，先上升、完成 360°
+          侧滚、自动扶正落地；车辆与矮障碍可以翻越，高横梁请从地面通过。
+        </p>
+        <p>
+          <strong>氮气：</strong>按住 Shift /
+          小按钮，消耗能量提速。金币加分，青色能量块补充能量，贴近车流擦过有额外分数。
+        </p>
+        <p>
+          F 全屏，P
+          暂停。手机开始后自动横屏；浏览器方向锁未开放时，页面会直接旋转布局。切到后台自动暂停。
+        </p></template
+      >
+    </GameModal>
+  </main>
+</template>

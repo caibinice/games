@@ -1,0 +1,11 @@
+{
+  "id":"racer",
+  "name":"喷气飞车 3D",
+  "subtitle":"JET / R · 30 STAGES",
+  "description":"穿越海岸与霓虹天际，变道躲障、氮气疾驰，冷气喷流腾空侧滚。30 关单人挑战与无尽模式。",
+  "color":"#91e8e2",
+  "symbol":"↗",
+  "version":"20261018-1",
+  "facts":{"levels":30,"layouts":2,"players":1},
+  "vendors":[]
+}

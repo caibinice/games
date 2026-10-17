@@ -1,0 +1,71 @@
+<script setup>
+import {useLegacyGame} from "../../composables/useLegacyGame.mjs";
+useLegacyGame("lianliankan");
+</script>
+<template>
+<div class="page-shell">
+    <header class="topbar">
+      <a href="/games/" class="brand" aria-label="返回游乐场"><img src="./assets/icon.svg" width="44" height="44" alt=""><span><strong>果趣连连看</strong><small>FRUIT LINK · FISH'S PLAYGROUND</small></span></a>
+      <nav class="top-actions" aria-label="游戏设置">
+        <a class="device-link" href="./mobile.html">手机版 ↗</a>
+        <span class="nav-divider"></span>
+        <button class="icon-button" data-action="sound" id="sound-button" aria-label="关闭音效" aria-pressed="true"><span data-icon="sound"></span></button>
+        <button class="icon-button" data-action="help" aria-label="玩法说明"><span data-icon="help"></span></button>
+      </nav>
+    </header>
+    <section class="page-heading">
+      <div><span class="eyebrow">MATCH A PAIR. MAKE A LITTLE JOY.</span><h1>把好心情，<span>连起来。</span><i>✦</i></h1><p>一颗草莓，一对樱桃。给今天添一点甜。</p></div>
+      <div class="best-record"><span data-icon="leaf"></span><div><small>我的最高纪录</small><strong id="best-score">0</strong></div></div>
+    </section>
+    <main class="game-layout">
+      <aside class="side-panel">
+        <section class="orchard-card">
+          <span class="eyebrow">YOUR LITTLE ORCHARD</span>
+          <div class="fruit-bouquet" id="fruit-bouquet" aria-hidden="true"></div>
+          <h2>慢一点，也很甜。</h2>
+          <p>相同的水果，<br>总能找到彼此。</p>
+        </section>
+        <section class="settings-card">
+          <h2>选一种心情 <span>01 / 03</span></h2>
+          <div class="difficulty-options" aria-label="难度">
+            <button data-difficulty="easy"><span>悠闲</span><small>轻松热身</small><i></i></button>
+            <button data-difficulty="normal"><span>经典</span><small>刚刚好的挑战</small><i></i></button>
+            <button data-difficulty="hard"><span>挑战</span><small>眼力大考验</small><i></i></button>
+          </div>
+          <div class="mode-options" aria-label="玩法模式"><button data-mode="timed">计时挑战</button><button data-mode="zen">自在慢玩</button></div>
+          <button class="level-picker" data-action="levels"><span data-icon="grid"></span><span>果园关卡</span><small id="level-progress">01 / 30</small><b>↗</b></button>
+        </section>
+        <div class="mini-tip"><span class="tip-dot"></span><p>连线最多转弯 <strong>2 次</strong>，<br>也可以绕过棋盘边缘哦。</p></div>
+        <a class="quiet-link lobby-link" href="/games/">← 返回游戏大厅</a>
+      </aside>
+      <section class="play-panel" aria-label="连连看游戏">
+        <div class="stats-bar">
+          <div class="stat"><span>本局得分</span><strong id="score">0</strong><small id="combo">从第一对开始</small></div>
+          <div class="stat"><span>剩余水果</span><strong id="remaining">80<small> 颗</small></strong><small id="matched-label">已配对 0 / 40</small></div>
+          <div class="stat timer-stat"><span><span data-icon="time"></span><span id="timer-label">剩余时间</span></span><strong id="timer">03:00</strong><small id="timer-note">每次配对 +2 秒</small></div>
+        </div>
+        <section class="board-card">
+          <div class="board-heading"><div><span class="level-tag" id="level-tag">LEVEL 01</span><h2 id="chapter">阳光果园</h2></div><div class="board-actions"><button class="fullscreen-button" id="fullscreen-button" aria-label="全屏游玩" aria-pressed="false" title="F 全屏游玩"><span data-icon="fullscreen"></span><span>全屏游玩</span></button><button class="icon-button" id="pause-button" data-action="pause" aria-label="暂停游戏"><span data-icon="pause"></span></button><button class="icon-button" data-action="restart" aria-label="重新开始"><span data-icon="restart"></span></button></div></div>
+          <div class="board-frame" id="board-frame">
+            <div class="board" id="board" role="group" aria-label="水果棋盘"></div>
+            <svg id="connection" class="connection" aria-hidden="true"></svg>
+            <div class="board-overlay" id="board-overlay"><div class="overlay-content" id="overlay-content"></div></div>
+          </div>
+          <div class="board-footer"><span id="board-message">找找看，谁和谁是一对？</span><span id="completion-label">0% 收获</span></div>
+          <div class="harvest-track"><span id="harvest-fill"></span></div>
+        </section>
+        <div class="toolbelt" aria-label="游戏道具">
+          <button data-action="hint" id="hint-button"><span class="tool-symbol" data-icon="hint"></span><span><strong>提示一下</strong><small>给你一点小灵感</small></span><b id="hint-count">3</b></button>
+          <button data-action="shuffle" id="shuffle-button"><span class="tool-symbol" data-icon="shuffle"></span><span><strong>换个位置</strong><small>换个角度找朋友</small></span><b id="shuffle-count">3</b></button>
+          <button data-action="extend" id="extend-button"><span class="tool-symbol" data-icon="plus"></span><span><strong>再给 30 秒</strong><small>好心情不必着急</small></span><b id="extend-count">2</b></button>
+        </div>
+        <p class="keyboard-tip"><kbd>F</kbd> 全屏 <span>·</span> <kbd>Space</kbd> 暂停 / 继续 <span>·</span> <kbd>H</kbd> 提示 <span>·</span> <kbd>S</kbd> 洗牌 <span>·</span> 方向键移动，回车选中</p>
+      </section>
+    </main>
+    <footer class="page-footer"><span>一点专注，一点快乐。</span><span>30 个小关卡 · 无广告 · 进度仅保存在本机</span><small>GROWN WITH JOY ✳</small></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="help-dialog" class="modal"><button class="modal-close icon-button" data-close="help-dialog" aria-label="关闭说明"><span data-icon="close"></span></button><span class="eyebrow">A SWEET LITTLE GUIDE</span><h2>很简单，快乐也是。</h2><div class="rule-illustration" id="rule-illustration" aria-hidden="true"></div><ol><li><strong>找一对相同的水果</strong><p>点击一颗，再点击另一颗。</p></li><li><strong>连线不穿过其他水果</strong><p>最多转弯 2 次，也能绕到棋盘外圈。</p></li><li><strong>全部消除，就收获好心情</strong><p>快速配对会连击加分；计时模式每对 +2 秒。无可连时免费自动洗牌。</p></li></ol><p class="modal-note">想放松？选择「自在慢玩」，没有倒计时。切到其他页面时游戏会自动暂停。</p><button class="primary-button" data-close="help-dialog">知道啦，开始收获</button></dialog>
+  <dialog id="levels-dialog" class="modal levels-modal"><button class="modal-close icon-button" data-close="levels-dialog" aria-label="关闭关卡"><span data-icon="close"></span></button><span class="eyebrow">THIRTY LITTLE MOMENTS</span><h2>我的小果园</h2><p class="modal-note">每 5 关一座新果园，棋盘变大、种类渐多。每种难度与模式单独记录。</p><div id="level-grid" class="level-grid"></div></dialog>
+  <dialog id="confirm-dialog" class="modal confirm-modal"><span class="eyebrow">A FRESH START</span><h2>开启新的一局？</h2><p id="confirm-message" class="modal-note">本局进度会重新开始，已解锁关卡和最高分保留。</p><div class="dialog-buttons"><button class="soft-button" data-close="confirm-dialog">继续本局</button><button class="primary-button" data-action="confirm">开启新一局</button></div></dialog>
+</template>

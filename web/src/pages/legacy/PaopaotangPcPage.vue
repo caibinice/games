@@ -1,0 +1,30 @@
+<script setup>
+import {useLegacyGame} from "../../composables/useLegacyGame.mjs";
+useLegacyGame("paopaotang");
+</script>
+<template>
+<div class="desktop-shell">
+  <header class="topbar"><a class="brand" href="/games/"><img src="./assets/icon.svg" width="43" height="43" alt=""><span><strong>泡泡小镇</strong><small>BUBBLE TOWN · FISH'S PLAYGROUND</small></span></a><nav aria-label="设置"><a class="device-link" href="./mobile.html">手机版 ↗</a><button class="icon-button" id="sound-button" data-action="sound" aria-label="关闭音效" aria-pressed="true"><span data-icon="sound"></span></button><button class="icon-button" data-action="help" aria-label="玩法说明"><span data-icon="help"></span></button></nav></header>
+  <section class="hero"><div><span class="eyebrow">A SPLASH OF HAPPINESS</span><h1>水花一开，<span>快乐就来。</span><i>✳</i></h1><p>熟悉的泡泡堂玩法，和伙伴一起，来一场水花派对。</p></div><div class="best"><small>我的最高分</small><strong id="best-score">0</strong></div></section>
+  <main class="desktop-layout">
+    <aside class="sidebar">
+      <section class="character-card"><span class="eyebrow">MEET YOUR LITTLE BUDDY</span><div class="character-showcase" id="character-showcase" aria-hidden="true"></div><h2 id="skin-name">蓝泡泡</h2><p>小小水泡，大大快乐。</p><div id="skin-picker" class="skin-picker" aria-label="选择角色"></div></section>
+      <section class="settings-card"><h2>今天，怎么玩？</h2><div class="mode-picker" aria-label="对战模式"><button data-mode="solo">单人闯关<small>对战 AI 好朋友</small></button><button data-mode="duo">双人协作<small>同屏一起闯关</small></button></div><label class="difficulty-label">挑战难度<select id="difficulty-select" aria-label="选择难度"><option value="easy">轻松</option><option value="normal">经典</option><option value="hard">高手</option></select></label><button class="level-picker" data-action="levels"><span data-icon="grid"></span><span>小镇地图</span><small id="level-progress">01 / 30</small><b>↗</b></button></section>
+      <section class="controls-card"><span class="eyebrow">A LITTLE REMINDER</span><p><b>P1</b> <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移动<br><kbd>Space</kbd> 水泡　<kbd>E</kbd> 救援针</p><p id="p2-guide" hidden><b>P2</b> 方向键移动<br><kbd>Enter</kbd> 水泡　<kbd>Shift</kbd> 救援针</p><small><kbd>F</kbd> 全屏 · <kbd>P</kbd> 暂停 · 队友碰到泡泡可免费救援</small></section><a href="/games/" class="quiet">← 返回游戏大厅</a>
+    </aside>
+    <section class="play-panel" aria-label="泡泡对战">
+      <div class="scoreboard"><div><span>本局得分</span><strong id="score">0</strong></div><div><span>剩余对手</span><strong id="enemies">2<small> 位</small></strong></div><div><span>剩余时间</span><strong id="timer">03:00</strong></div></div>
+      <section class="arena-card"><div class="arena-heading"><div><span class="level-tag" id="level-tag">ROUND 01</span><h2 id="map-name">晴天草坪 · 初见</h2></div><div><button class="fullscreen-button" id="fullscreen-button" aria-label="全屏游玩" aria-pressed="false" title="F 全屏游玩"><span data-icon="fullscreen"></span><span>全屏游玩</span></button><button class="icon-button" id="pause-button" data-action="pause" aria-label="暂停游戏"><span data-icon="pause"></span></button><button class="icon-button" data-action="restart" aria-label="重新开始"><span data-icon="restart"></span></button></div></div>
+        <div class="arena-frame" id="arena-frame"><canvas id="game-canvas" width="624" height="528" tabindex="0" aria-label="泡泡对战地图，WASD 移动，空格放水泡" aria-describedby="game-message"></canvas><div id="arena-overlay" class="arena-overlay"><div id="overlay-content" class="overlay-content"></div></div></div>
+        <div class="arena-caption"><span id="game-message" role="status" aria-live="polite">放下水泡，记得留一条退路哦。</span><span class="mode-badge" id="mode-badge">单人 · AI 对战</span></div>
+      </section>
+      <div class="abilities" aria-label="我的道具能力"><div><span data-icon="bubble"></span><span>水泡<small>数量</small></span><strong id="capacity">1</strong></div><div><span data-icon="power"></span><span>水柱<small>长度</small></span><strong id="power">2</strong></div><div><span data-icon="speed"></span><span>跑鞋<small>速度</small></span><strong id="speed">1</strong></div><button id="needle-button" data-action="needle" aria-label="使用救援针"><span data-icon="needle"></span><span>救援针<small id="needle-note">困住时使用 E</small></span><strong id="needle-count">1</strong></button></div>
+      <div class="team-status" id="team-status"></div><p class="round-note">水泡 2.4 秒后绽放 · 水柱会触发其他水泡 · 炸开箱子，捡起小惊喜</p>
+    </section>
+  </main><footer class="desktop-footer"><span>经典的快乐，换一座可爱的小镇。</span><span>30 个关卡 · 6 张地图 · 无广告</span><small>SMALL BUBBLES, BIG SMILES</small></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="help-dialog" class="modal"><button class="icon-button modal-close" data-close="help-dialog" aria-label="关闭说明"><span data-icon="close"></span></button><span class="eyebrow">WELCOME TO THE WATER PARTY</span><h2>小水泡，大冒险。</h2><div class="help-avatars" id="help-avatars" aria-hidden="true"></div><ol><li><strong>放水泡，记得先想退路</strong><p>P1 用 WASD 移动、空格放水泡。水泡 2.4 秒后释放十字水柱，硬障碍阻挡水流，木箱被冲开。</p></li><li><strong>捡道具，水花会更厉害</strong><p>水泡数量、水柱长度、跑鞋速度、救援针和护盾都藏在箱子里。小心连锁爆炸！</p></li><li><strong>困在泡泡里？快来救援</strong><p>4.5 秒内用 E 消耗救援针；协作时队友碰到泡泡即可救出你。对手碰到泡泡会淘汰你。</p></li><li><strong>消灭全部对手，前往下一张地图</strong><p>单人模式对战 AI；PC 双人协作共用键盘，P2 用方向键、Enter 和 Shift。不是联网对战。</p></li></ol><p class="modal-note">F 全屏游玩，F / Esc 退出；P 暂停，页面离开自动暂停，刷新可继续上次的对局。两端独立存档。</p><button class="primary" data-close="help-dialog">好，水花派对开始！</button></dialog>
+<dialog id="levels-dialog" class="modal"><button class="icon-button modal-close" data-close="levels-dialog" aria-label="关闭地图"><span data-icon="close"></span></button><span class="eyebrow">THIRTY LITTLE ADVENTURES</span><h2>小镇旅行地图</h2><p class="modal-note">过一关，点亮一颗星。各难度与模式单独解锁。</p><div id="level-grid" class="level-grid"></div></dialog>
+<dialog id="confirm-dialog" class="modal confirm-modal"><span class="eyebrow">A FRESH LITTLE PARTY</span><h2>开启新的派对？</h2><p class="modal-note">当前对局会重新开始，最高分与已解锁地图保留。</p><div class="dialog-buttons"><button class="soft" data-close="confirm-dialog">继续本局</button><button class="primary" data-action="confirm">开启新一局</button></div></dialog>
+</template>

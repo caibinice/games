@@ -1,6 +1,8 @@
 * text=auto eol=lf
 # Preserve the migrated game bytes, including frozen legacy boards and assets.
 games/*/public/** -text whitespace=cr-at-eol
+# Vite bundles embed upstream Three.js GLSL verbatim; review their Vue/scene sources.
+site/ui/** -text linguist-generated=true whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
 games/pindou/public/index.html whitespace=cr-at-eol,-blank-at-eof
 *.png -text
 *.webp -text

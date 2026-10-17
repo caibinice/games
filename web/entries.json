@@ -1,0 +1,92 @@
+[
+  {
+    "id": "pindou",
+    "page": "index",
+    "head": "\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n  <meta name=\"theme-color\" content=\"#edf3e7\">\n  <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n  <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\">\n  <meta name=\"description\" content=\"拼就完了 · 毛球小镇：100关治愈系拼豆小游戏。取豆、暂存、归位；免费道具，无广告，无限续时。\">\n  <title>拼就完了 · 毛球小镇</title>\n  <link rel=\"icon\" type=\"image/svg+xml\" href=\"./assets/icon.svg\">\n  <link rel=\"apple-touch-icon\" href=\"./assets/apple-touch-icon.png\">\n  <link rel=\"manifest\" href=\"./manifest.webmanifest\">\n  <link rel=\"stylesheet\" href=\"./style.css?v=20261011-5\">\n  <link rel=\"stylesheet\" href=\"./compact.css?v=20261011-5\">\n  <link rel=\"stylesheet\" href=\"./readability.css?v=20261011-5\">\n  <link rel=\"preload\" href=\"./assets/meadow.webp\" as=\"image\">\n"
+  },
+  {
+    "id": "goose",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#f5f0e4\"><meta name=\"apple-mobile-web-app-capable\" content=\"yes\"><title>抓大鹅 3D · 鹅鹅集市</title><meta name=\"description\" content=\"3D 颠锅三消小游戏，七格收集栏，免费道具，抓住你的鹅鹅。\"><link rel=\"icon\" href=\"./assets/goose.svg\"><link rel=\"stylesheet\" href=\"./style.css?v=20261012-1\">"
+  },
+  {
+    "id": "lianliankan",
+    "page": "index",
+    "head": "\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\n  <meta name=\"description\" content=\"经典果趣连连看，PC 和手机专属界面，两次转弯连线，30 个关卡，无广告。\">\n  <meta name=\"theme-color\" content=\"#f6f5ee\">\n  <link rel=\"icon\" href=\"./assets/icon.svg\" type=\"image/svg+xml\">\n  <title>果趣连连看 · Fruit Link</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n"
+  },
+  {
+    "id": "lianliankan",
+    "page": "pc",
+    "head": "\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\n  <meta name=\"description\" content=\"果趣连连看电脑版：经典两折连线，30 个果园关卡，支持鼠标与键盘。\">\n  <meta name=\"theme-color\" content=\"#f6f5ee\">\n  <link rel=\"icon\" href=\"./assets/icon.svg\" type=\"image/svg+xml\">\n  <title>果趣连连看 · 电脑版</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n"
+  },
+  {
+    "id": "lianliankan",
+    "page": "mobile",
+    "head": "\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\">\n  <meta name=\"description\" content=\"果趣连连看手机版：大触控水果方块，经典两折连线，30 个关卡，无广告。\">\n  <meta name=\"theme-color\" content=\"#f6f5ee\">\n  <link rel=\"icon\" href=\"./assets/icon.svg\" type=\"image/svg+xml\">\n  <title>果趣连连看 · 手机版</title>\n  <link rel=\"stylesheet\" href=\"./style.css\">\n"
+  },
+  {
+    "id": "paopaotang",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#f1f6f8\"><meta name=\"description\" content=\"泡泡堂风格水泡对战：单人 AI 闯关、PC 本地双人协作、手机触控，30 个关卡，6 套递进主题地图。\"><link rel=\"icon\" href=\"./assets/icon.svg\"><title>泡泡堂 · 泡泡小镇</title><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "paopaotang",
+    "page": "pc",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"description\" content=\"泡泡堂电脑版，单人 AI 闯关与键盘双人协作，12 关、6 张地图。\"><meta name=\"theme-color\" content=\"#f1f6f8\"><link rel=\"icon\" href=\"./assets/icon.svg\"><title>泡泡堂 · 泡泡小镇 · PC</title><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "paopaotang",
+    "page": "mobile",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"description\" content=\"泡泡堂手机版，触控方向键和水泡按钮，单人 AI 闯关，30 个关卡。\"><meta name=\"theme-color\" content=\"#f1f6f8\"><link rel=\"icon\" href=\"./assets/icon.svg\"><title>泡泡堂 · 泡泡小镇 · 手机</title><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "tank",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>坦克大战 · 单人战役</title><meta name=\"description\" content=\"坦克大战单人版，35关，电脑全屏与手机触控。\"><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "tank",
+    "page": "pc",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#151812\"><meta name=\"description\" content=\"坦克大战单人复刻版，35 关经典战役，PC 键盘、全屏与手机触控，资源本地托管。\"><title>坦克大战 · 电脑版</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "tank",
+    "page": "mobile",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#151812\"><meta name=\"description\" content=\"坦克大战单人复刻版，35 关经典战役，PC 键盘、全屏与手机触控，资源本地托管。\"><title>坦克大战 · 手机版</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "contra",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>魂斗罗 · 单人战役</title><meta name=\"description\" content=\"魂斗罗单人版，8关，电脑全屏与手机触控。\"><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "contra",
+    "page": "pc",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#151812\"><meta name=\"description\" content=\"魂斗罗单人复刻版，8 关经典战役，PC 键盘、全屏与手机触控，资源本地托管。\"><title>魂斗罗 · 电脑版</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "contra",
+    "page": "mobile",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#151812\"><meta name=\"description\" content=\"魂斗罗单人复刻版，8 关经典战役，PC 键盘、全屏与手机触控，资源本地托管。\"><title>魂斗罗 · 手机版</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "lobby",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><link rel=\"icon\" href=\"data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ctext y=%2726%27 font-size=%2728%27%3E%E2%9C%A6%3C/text%3E%3C/svg%3E\"><title>Fish 的游乐场 · Games</title><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "racer",
+    "page": "index",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#15231c\"><meta name=\"description\" content=\"喷气飞车3D：30关躲障挑战，冷气推进腾跃、360度空中侧滚。支持PC和手机横屏全屏触控。\"><title>喷气飞车 3D · JET / R</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "racer",
+    "page": "pc",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#15231c\"><meta name=\"description\" content=\"喷气飞车3D：30关躲障挑战，冷气推进腾跃、360度空中侧滚。支持PC和手机横屏全屏触控。\"><title>喷气飞车 3D · JET / R</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  },
+  {
+    "id": "racer",
+    "page": "mobile",
+    "head": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><meta name=\"theme-color\" content=\"#15231c\"><meta name=\"description\" content=\"喷气飞车3D：30关躲障挑战，冷气推进腾跃、360度空中侧滚。支持PC和手机横屏全屏触控。\"><title>喷气飞车 3D · JET / R</title><link rel=\"icon\" href=\"./assets/icon.svg\"><link rel=\"stylesheet\" href=\"./style.css\">"
+  }
+]

@@ -1,6 +1,6 @@
 # Games · Fish 的游乐场
 
-一个仓库，多个彼此独立的 PC / 手机 H5 游戏。纯静态部署到 Nginx `/games/`，不随博客构建。
+Vue 3 + Vue Router + Vite 的多游戏工程。页面和公共触控组件统一维护，游戏引擎独立；构建后仍由 Nginx 托管 `/games/`，无需额外 Node 服务，不随博客构建。
 
 ## 平级游戏目录
 
@@ -17,8 +17,11 @@ games/
   paopaotang/       泡泡小镇，水泡 AI 闯关 / PC 本地双人协作 / 手机触控
   tank/            坦克大战，35 关经典单人守城 / PC 全屏 / 手机触控
   contra/          魂斗罗，8 关单人战役 / 三种推进模式 / 原版像素与音乐
+  racer/           喷气飞车 3D，30 关 / 无尽公路 / 冷气腾空侧滚 / Blender 源模型
   <new-game>/       相同结构，平级扩展
-site/               /games/ 游戏大厅
+web/src/            Vue SFC 页面、公共组件、会话与生命周期；日常 UI 开发入口
+web/entries.json    保留旧 PC / 手机入口和各游戏主题样式
+site/               生成的大厅与不可变哈希共享包（请勿手改 app.mjs / ui）
 scripts/            共享检查、构建、发布、验证工具
 tests/              共享构建/发布测试
 credentials/        本机私有配置 + 可提交的模板
@@ -32,20 +35,23 @@ dist/games/         构建产物，按游戏分目录
 - [坦克大战](https://caibinice.com/games/tank/)：35 关、单人守卫老鹰、四类敌军、六种道具、像素地形和经典音效；[电脑版](https://caibinice.com/games/tank/pc.html) / [手机版](https://caibinice.com/games/tank/mobile.html)。
 - [魂斗罗](https://caibinice.com/games/contra/)：8 关、横向 / 瀑布纵向 / 基地纵深战斗、八向射击与五类武器、Boss、原版背景 / 精灵 / 分关音乐；[电脑版](https://caibinice.com/games/contra/pc.html) / [手机版](https://caibinice.com/games/contra/mobile.html)。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
+- [喷气飞车 3D](https://caibinice.com/games/racer/)：30 关 / 3 个章节、无尽模式、交通躲障、金币、氮气、冷气喷流腾空侧滚；[电脑版](https://caibinice.com/games/racer/pc.html) / [手机版](https://caibinice.com/games/racer/mobile.html)。
 
 ## 开发与构建
 
-Node.js 22+、Python 3.11+、PowerShell 7。
+Node.js 22.12+ / 24 LTS / 26+、Python 3.11+、PowerShell 7。
 
 ```powershell
 Set-Location E:\codes\games
 npm ci
+npm run build:frontend              # Vue 源码修改后生成兼容入口和哈希共享包
 npm run dev                         # 先构建，再预览 http://127.0.0.1:4176/games/
 npm run check
 npm test
 npm run build                       # 默认全部游戏
 npm run build -- --games pindou      # 只构建一个
 npm run audit:secrets
+npm run format                      # 格式化新 Vue / 赛车源码；之后重新 build
 ```
 
 ## 发布
@@ -68,6 +74,8 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 真实凭据、环境、测试和依赖目录不上传；第三方运行库在构建时复制并保留许可证，浏览器不依赖 CDN。
 
 - [多游戏发布 / 回滚 / 新增游戏](docs/deployment.md)
+- [Vue 3 架构、入口迁移与日常运维](docs/vue3-architecture.md)
+- [横屏触控与喷气飞车实现、验收](docs/vue3-racer-20261018.md)
 - [拼豆规则与历史](games/pindou/docs/README.md)
 - [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)

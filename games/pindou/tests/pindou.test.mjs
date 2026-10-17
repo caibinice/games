@@ -132,7 +132,7 @@ describe('毛球拼豆 · 100关规则',()=>{
     const css=readFileSync(new URL('../public/style.css',import.meta.url),'utf8'),tray=css.match(/\.tray-grid\{([^}]+)\}/)[1];
     expect(tray).toContain('overflow:visible;');expect(tray).not.toContain('max-height:');expect(tray).not.toContain('overflow-y:auto');
     expect(readFileSync(new URL('../public/readability.css',import.meta.url),'utf8')).toContain('.playing:fullscreen>.play-screen{max-height:none}');
-    const app=readFileSync(new URL('../public/app.mjs',import.meta.url),'utf8');expect(app).toContain('visibleTrayRange(');expect(app).not.toContain('scrollIntoView(');
+    const app=readFileSync(new URL('../public/runtime.mjs',import.meta.url),'utf8');expect(app).toContain('visibleTrayRange(');expect(app).not.toContain('scrollIntoView(');
   });
   it('旧画作Cookie逐关验证后迁移，只重开换图画板，保留关卡、空间与道具',()=>{
     for(let id=2;id<=50;id++){
@@ -195,7 +195,7 @@ describe('毛球拼豆 · 100关规则',()=>{
   it('100关全部收藏记录仍在单个Cookie预算内，最后一关与各入口共用关卡总数',()=>{
     const compact={v:1,c:LEVELS.map(l=>[l.id,999999,999999]),l:100,s:false,f:false,n:false,g:2};
     expect(encodeURIComponent(JSON.stringify(compact)).length+'pindou_progress='.length).toBeLessThan(4096);
-    const app=readFileSync(new URL('../public/app.mjs',import.meta.url),'utf8');
+    const app=readFileSync(new URL('../public/runtime.mjs',import.meta.url),'utf8');
     expect(app).toContain('id===TOTAL_LEVELS');expect(app).toContain('Math.min(TOTAL_LEVELS,');expect(app).not.toContain('id===50');expect(app).not.toContain('Math.min(50,');expect(app).not.toContain('+k<=50');
   });
   it('磁铁和整理刷保持库存，次数耗尽时待免费领取',()=>{

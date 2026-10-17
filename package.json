@@ -4,23 +4,32 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
   },
   "scripts": {
-    "dev": "node scripts/preview.mjs",
+    "dev": "node scripts/build-frontend.mjs && node scripts/preview.mjs",
     "preview": "node scripts/preview.mjs --dist",
     "check": "node scripts/check.mjs",
     "test": "vitest run",
     "test:deploy": "python -m unittest discover -s tests -p test_*.py",
-    "build": "node scripts/build.mjs",
+    "build": "node scripts/build-frontend.mjs && node scripts/build.mjs",
     "audit:secrets": "node scripts/audit-secrets.mjs",
     "deploy": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1",
     "deploy:pindou": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games pindou",
-    "deploy:goose": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games goose"
+    "deploy:goose": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games goose",
+    "build:frontend": "node scripts/build-frontend.mjs",
+    "format": "prettier --write web/src scripts/build-frontend.mjs games/racer/public/*.mjs games/racer/public/*.css"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "6.0.10",
     "cannon-es": "0.20.0",
+    "prettier": "3.9.10",
     "three": "0.186.1",
-    "vitest": "3.2.7"
+    "vite": "7.3.7",
+    "vitest": "5.0.5"
+  },
+  "dependencies": {
+    "vue": "3.5.44",
+    "vue-router": "4.6.4"
   }
 }
