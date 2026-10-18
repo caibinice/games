@@ -222,7 +222,7 @@ async function start() {
   try {
     // Settle fullscreen, audio hardware and the resized GPU buffer before the race clock starts.
     const fullscreenReady = mobile ? full.enter() : Promise.resolve();
-    await Promise.all([fullscreenReady, audio.unlock()]);
+    await Promise.all([fullscreenReady, audio.unlock({ primeMusic: true })]);
     await new Promise(requestAnimationFrame);
     await new Promise(requestAnimationFrame);
     if (disposed || request !== startRequest || dialog.value) return;

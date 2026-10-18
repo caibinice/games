@@ -106,9 +106,11 @@ async (page) => {
   await page.waitForTimeout(100);
   const left = await state();
   assert(+left.lane === 1 && +left.x === 0, 'quick response returns one lane');
-  await page.waitForTimeout(4800);
+  await page.waitForFunction(() => window.__samples.some((s) => +s.hp < 6));
+  await page.waitForTimeout(300);
   const damaged = await state();
-  assert(+damaged.hp > 0 && +damaged.hp < 6, 'real collisions reduce the six-point health');
+  const minimumHp = await page.evaluate(() => Math.min(...window.__samples.map((s) => +s.hp)));
+  assert(+damaged.hp > 0 && minimumHp < 6, 'real collisions reduce the six-point health');
   await page.locator('[data-action=cheats]').click();
   await page.locator('[data-cheat=infiniteEnergy]').check();
   await page.locator('[data-cheat=infiniteDurability]').check();
@@ -191,6 +193,7 @@ async (page) => {
     right,
     left,
     damaged,
+    minimumHp,
     assisted,
     stats,
     requests,

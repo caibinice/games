@@ -47,7 +47,7 @@ export function createAudio() {
     }
   }
   return {
-    unlock() {
+    unlock({ primeMusic = false } = {}) {
       if (disposed) return;
       unlocked = true;
       prepare();
@@ -55,7 +55,11 @@ export function createAudio() {
         context && context.state !== 'running'
           ? context.resume().catch(() => {})
           : Promise.resolve();
-      sync();
+      // iOS media permission is per element: prime it synchronously in the Start gesture.
+      if (primeMusic && musicEnabled && !running) {
+        master && (master.gain.value = 0);
+        music.play().catch(() => {});
+      } else sync();
       return ready;
     },
     setEnabled(v) {

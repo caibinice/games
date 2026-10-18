@@ -76,6 +76,15 @@ function audio() {
   return createAudio();
 }
 describe('Short independent racing audio', () => {
+  it('primes the BGM in the start gesture before asynchronous fullscreen preparation', () => {
+    const a = audio();
+    a.unlock({ primeMusic: true });
+    expect(all[0].paused).toBe(false);
+    a.setRunning(false);
+    expect(all[0].paused).toBe(true);
+    a.setRunning(true);
+    expect(all[0].paused).toBe(false);
+  });
   it('does not autoplay or allocate a context before the first gesture', () => {
     const a = audio();
     a.setRunning(true);
