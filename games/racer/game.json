@@ -2,10 +2,19 @@
   "id": "racer",
   "name": "喷气飞车 3D",
   "subtitle": "JET / R · 30 STAGES",
-  "description": "停车项目同款 GT 跑车，六种地图、紧凑组合车阵、长挂车与五类道具。点按换道、氮气开关、冷气喷流腾空侧滚，30 关与无尽模式。",
+  "description": "停车项目同款 GT，30 关六种地图与紧凑车阵。大按钮点按换道、2.5 秒喷气、六格耐久、金币修复与无限喷气 / 耐久辅助，165 BPM Eurobeat 疾驰。",
   "color": "#91e8e2",
   "symbol": "↗",
-  "version": "20261018-2",
-  "facts": { "levels": 30, "layouts": 2, "players": 1, "themes": 6, "formations": 8, "items": 5 },
+  "version": "20261018-3",
+  "facts": {
+    "levels": 30,
+    "layouts": 2,
+    "players": 1,
+    "themes": 6,
+    "formations": 8,
+    "items": 5,
+    "hp": 6,
+    "jetCooldown": 2.5
+  },
   "vendors": []
 }

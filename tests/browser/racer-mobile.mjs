@@ -4,6 +4,7 @@ async (page) => {
     },
     errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  await page.setViewportSize({ width: 390, height: 844 });
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setDeviceMetricsOverride', {
     width: 390,
@@ -22,6 +23,9 @@ async (page) => {
     screen.orientation.lock = () => Promise.reject(new Error('QA: orientation lock unavailable'));
   });
   await page.getByRole('button', { name: '开始疾驰 ↗' }).click();
+  await page.waitForFunction(
+    () => document.querySelector('#racer-canvas').dataset.status === 'running',
+  );
   await page.locator('.play-full.virtual-landscape').waitFor();
   const bounds = await page.locator('.racer-shell').boundingBox();
   assert(
@@ -57,17 +61,17 @@ async (page) => {
   await tap('[data-input=jet]');
   await page.waitForFunction(() => +document.querySelector('#racer-canvas').dataset.height > 3);
   const air = await state();
-  assert(+air.height > 3 && +air.cooldown > 4, 'touch jet rise and cooldown');
+  assert(+air.height > 3 && +air.cooldown > 1, 'touch jet rise and cooldown');
   assert(
     /\d\.\d+s/.test(await page.locator('[data-jet-countdown]').innerText()),
     'visible numeric cooldown',
   );
   await page.screenshot({
-    path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/mobile-jet.png',
+    path: 'E:/Documents/AI/codex/tmp/racer-feel-20261018/qa/mobile-jet.png',
   });
   await page.waitForFunction(() => +document.querySelector('#racer-canvas').dataset.height === 0);
   const landed = await state();
-  assert(+landed.height === 0 && +landed.cooldown > 2, 'landed while cooldown remains');
+  assert(+landed.height === 0 && +landed.cooldown > 0, 'landed while cooldown remains');
   await tap('[data-input=jet]');
   await page.getByRole('status').filter({ hasText: '喷气冷却还剩' }).waitFor();
   assert(
@@ -91,7 +95,7 @@ async (page) => {
   const lava = await state();
   assert(lava.theme === 'lava' && lava.model === 'parking-mobile', 'mobile LOD and lava theme');
   await page.screenshot({
-    path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/mobile-lava.png',
+    path: 'E:/Documents/AI/codex/tmp/racer-feel-20261018/qa/mobile-lava.png',
   });
   await page.keyboard.press('Escape');
   assert((await page.locator('.play-full').count()) === 0, 'window fallback exit');

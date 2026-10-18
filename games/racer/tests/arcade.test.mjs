@@ -89,7 +89,7 @@ describe('Arcade items and input', () => {
       E.collectItem(g, 'ghost');
       g.objects = [{ id: 1, type, x: 0, z: 2, passed: false }];
       tick(g, 0.4);
-      expect(g.hp).toBe(3);
+      expect(g.hp).toBe(E.MAX_HP);
     }
     const g = running();
     g.effects.ghost = 0.01;
@@ -102,20 +102,20 @@ describe('Arcade items and input', () => {
     tick(g, 0.8);
     g.objects = [{ id: 1, type: 'truck', x: 0, z: g.distance, passed: false }];
     E.step(g, 1 / 60);
-    expect(g.hp).toBe(2);
+    expect(g.hp).toBe(E.MAX_HP - 1);
     tick(g, 1.5);
-    expect(g.hp).toBe(2);
+    expect(g.hp).toBe(E.MAX_HP - 1);
     expect(E.obstacleHits({ type: 'truck', x: 0 }, 100)).toBe(true);
   });
   it('truck tails remain collidable beyond the old centre-only collision window', () => {
     const g = running();
     g.objects = [{ id: 1, type: 'truck', x: 0, z: -9, passed: false }];
     E.step(g, 1 / 60);
-    expect(g.hp).toBe(2);
+    expect(g.hp).toBe(E.MAX_HP - 1);
     const b = running();
     b.objects = [{ id: 1, type: 'truck', x: 0, z: -14, passed: false }];
     E.step(b, 1 / 60);
-    expect(b.hp).toBe(3);
+    expect(b.hp).toBe(E.MAX_HP);
   });
   it('gate has a ground opening but posts and airborne beam remain dangerous', () => {
     expect(E.obstacleHits({ type: 'gate', x: 0 }, 0, 0)).toBe(false);
@@ -143,7 +143,7 @@ describe('Arcade items and input', () => {
       E.collectItem(g, 'fullSpeed');
       E.collectItem(g, 'repair');
     }
-    expect(g.hp).toBe(3);
+    expect(g.hp).toBe(E.MAX_HP);
     for (const k of ['reverse', 'ghost', 'fullSpeed'])
       expect(g.effects[k]).toBeLessThanOrEqual(E.ITEMS[k].duration * 1.75);
   });
@@ -228,7 +228,7 @@ describe('Authored combination routes', () => {
         g.speed = E.MAX_DESIGN_SPEED;
         E.step(g, 1 / 60);
       }
-      expect(g.hp).toBe(3);
+      expect(g.hp).toBe(E.MAX_HP);
       expect(g.distance).toBeGreaterThanOrEqual(1600);
     },
   );

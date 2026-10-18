@@ -1023,3 +1023,82 @@ body.immersive {
 .racer-shell.play-full:not(.is-mobile) .track-section {
   font-size: 10px;
 }
+.durability-hud {
+  position: absolute;
+  z-index: 3;
+  left: 26px;
+  bottom: 108px;
+  width: 190px;
+  color: #d4f7df;
+  pointer-events: none;
+  text-shadow: 0 1px 5px #10201f;
+}
+.durability-hud > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+}
+.durability-hud b {
+  font: 15px monospace;
+}
+.durability-hud em {
+  font-size: 9px;
+  font-style: normal;
+  color: #ffdc92;
+}
+.durability-hud [role='progressbar'] {
+  display: flex;
+  gap: 4px;
+  margin: 7px 0 4px;
+}
+.hp-cell {
+  flex: 1;
+  height: 9px;
+  background: #0a252f94;
+  border: 1px solid #bcebd369;
+  border-radius: 2px;
+}
+.hp-cell.filled {
+  background: #b0edce;
+  box-shadow: 0 0 5px #a1ead933;
+}
+.durability-hud small {
+  font-size: 10px;
+}
+.durability-hud.assisted .hp-cell.filled {
+  background: #f3d8a1;
+}
+.racer-shell.is-mobile.play-full .durability-hud {
+  left: 22px;
+  bottom: 150px;
+  width: 200px;
+}
+.racer-shell.is-mobile.play-full .race-bottom-hud {
+  left: 242px;
+  right: 224px;
+}
+.racer-shell.compact.play-full .race-bottom-hud {
+  left: 207px;
+  right: 205px;
+}
+.racer-shell.compact.play-full .durability-hud {
+  bottom: 127px;
+  width: 178px;
+}
+.racer-shell .cheat-option {
+  border-color: #90b7a345;
+}
+.racer-shell .race-tools [data-action='cheats'][aria-pressed='true'] {
+  color: #ffe1a3;
+  border-color: #e4c27b;
+}
+.racer-shell.is-mobile .race-overlay {
+  backdrop-filter: none;
+}
+@media (max-height: 360px) {
+  .racer-shell.is-mobile.play-full .durability-hud {
+    bottom: 127px;
+    width: 178px;
+  }
+}

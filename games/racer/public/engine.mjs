@@ -5,8 +5,22 @@ export const STORAGE = 'jet-r-racer';
 export const LEVEL_COUNT = 30;
 export const LANES = [-3.2, 0, 3.2];
 export const JET_DURATION = 1.65;
-export const JET_COOLDOWN = 5.5;
-export const LANE_SPEED = 25;
+export const JET_COOLDOWN = 2.5;
+export const LANE_SPEED = 44;
+export const MAX_HP = 6;
+export const COINS_PER_REPAIR = 5;
+export function normalizeCheats(value) {
+  return {
+    infiniteEnergy: value?.infiniteEnergy === true,
+    infiniteDurability: value?.infiniteDurability === true,
+  };
+}
+export function setCheats(g, value) {
+  g.cheats = normalizeCheats(value);
+  g.assisted ||= Object.values(g.cheats).some(Boolean);
+  if (g.cheats.infiniteEnergy) g.energy = 100;
+  if (g.cheats.infiniteDurability) g.hp = MAX_HP;
+}
 export const MAX_DESIGN_SPEED = 56;
 export const ITEMS = {
   energy: {
@@ -42,7 +56,7 @@ export const ITEMS = {
     icon: '+',
     color: '#f0a9ba',
     duration: 0,
-    description: '恢复 1 格车身，最多 3 格。',
+    description: '恢复 2 格耐久，最多 6 格。',
   },
 };
 export const OBSTACLES = {
@@ -68,7 +82,7 @@ export function levelInfo(level = 1) {
     gap: 28,
   };
 }
-export function newGame({ level = 1, seed = 12345, mode = 'campaign' } = {}) {
+export function newGame({ level = 1, seed = 12345, mode = 'campaign', cheats } = {}) {
   const info = levelInfo(level);
   return {
     version: 1,
@@ -81,7 +95,10 @@ export function newGame({ level = 1, seed = 12345, mode = 'campaign' } = {}) {
     speed: info.speed * 0.8,
     x: 0,
     lane: 1,
-    hp: 3,
+    hp: MAX_HP,
+    cheats: normalizeCheats(cheats),
+    assisted: Object.values(normalizeCheats(cheats)).some(Boolean),
+    repairCoins: 0,
     energy: 100,
     cooldown: 0,
     jet: 0,
@@ -135,11 +152,11 @@ export function jetBlockReason(g) {
   if (g.status !== 'running') return 'paused';
   if (g.jet > 0) return 'airborne';
   if (g.cooldown > 0) return 'cooldown';
-  return g.energy < 35 ? 'energy' : '';
+  return !g.cheats.infiniteEnergy && g.energy < 35 ? 'energy' : '';
 }
 export function activateJet(g) {
   if (jetBlockReason(g)) return false;
-  g.energy -= 35;
+  if (!g.cheats.infiniteEnergy) g.energy -= 35;
   g.cooldown = JET_COOLDOWN;
   g.jet = JET_DURATION;
   g.jumps++;
@@ -149,7 +166,7 @@ export function activateJet(g) {
 export function toggleBoost(g) {
   if (g.status !== 'running') return 'paused';
   if (g.effects.fullSpeed > 0) return 'locked';
-  if (!g.nitroEnabled && g.energy < 3) return 'energy';
+  if (!g.cheats.infiniteEnergy && !g.nitroEnabled && g.energy < 3) return 'energy';
   g.nitroEnabled = !g.nitroEnabled;
   g.events.push({ type: 'nitro', enabled: g.nitroEnabled });
   return g.nitroEnabled ? 'on' : 'off';
@@ -234,13 +251,18 @@ export function spawnPattern(g, startZ = g.spawnAt) {
 export function collectItem(g, type) {
   if (!ITEMS[type]) return false;
   if (type === 'energy') g.energy = clamp(g.energy + 32, 0, 100);
-  else if (type === 'repair') g.hp = Math.min(3, g.hp + 1);
+  else if (type === 'repair') repair(g, 2);
   else {
     g.effects[type] = Math.min(ITEMS[type].duration * 1.75, g.effects[type] + ITEMS[type].duration);
     if (type === 'fullSpeed') g.nitroEnabled = false;
   }
   g.events.push({ type: 'pickup', item: type });
   return true;
+}
+function repair(g, amount) {
+  const before = g.hp;
+  g.hp = Math.min(MAX_HP, g.hp + amount);
+  if (g.hp > before) g.events.push({ type: 'repair', amount: g.hp - before });
 }
 export function sweptOverlap(o, x0, x1, d0, d1) {
   let enter = 0,
@@ -291,12 +313,14 @@ export function step(g, dt = 1 / 60, input = {}) {
   g.cooldown = Math.max(0, g.cooldown - dt);
   g.invulnerable = Math.max(0, g.invulnerable - dt);
   const forced = g.effects.fullSpeed > 0;
-  if (g.nitroEnabled && g.energy <= 0) {
+  if (!g.cheats.infiniteEnergy && g.nitroEnabled && g.energy <= 0) {
     g.nitroEnabled = false;
     g.events.push({ type: 'empty' });
   }
   g.boost = forced || g.nitroEnabled ? 1 : 0;
-  g.energy = clamp(g.energy + (forced ? 4 : g.nitroEnabled ? -14 : 8) * dt, 0, 100);
+  g.energy = g.cheats.infiniteEnergy
+    ? 100
+    : clamp(g.energy + (forced ? 4 : g.nitroEnabled ? -14 : 8) * dt, 0, 100);
   const target =
     levelInfo(g.level).speed +
     (g.mode === 'endless' ? Math.min(3, g.distance / 1400) : 0) +
@@ -328,12 +352,16 @@ export function step(g, dt = 1 / 60, input = {}) {
         o.passed = true;
         if (o.type === 'coin') {
           g.coins++;
+          g.repairCoins = (g.repairCoins + 1) % COINS_PER_REPAIR;
+          if (!g.repairCoins) repair(g, 1);
           g.score += 50;
           g.events.push({ type: 'coin' });
         } else collectItem(g, o.type);
       } else if (!collectible) {
         const hit = obstacleHits(o, g.height, g.x);
         if (g.effects.ghost > 0) {
+          o.ghosted = true;
+        } else if (g.cheats.infiniteDurability) {
           o.ghosted = true;
         } else if (hit && !o.hit && !g.invulnerable) {
           o.hit = true;
@@ -388,7 +416,7 @@ export function totalScore(g) {
 export function serialize(g) {
   return { version: 1, level: g.level, mode: g.mode };
 }
-export function restore(value) {
+export function restore(value, cheats) {
   if (
     value?.version !== 1 ||
     !Number.isInteger(value.level) ||
@@ -396,5 +424,5 @@ export function restore(value) {
     value.level > LEVEL_COUNT
   )
     return null;
-  return newGame({ level: value.level, mode: value.mode });
+  return newGame({ level: value.level, mode: value.mode, cheats });
 }

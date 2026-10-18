@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue';
+import { JET_COOLDOWN } from '../../../games/racer/public/engine.mjs';
 const props = defineProps({
   disabled: Boolean,
   cooldown: Number,
@@ -11,23 +12,23 @@ const props = defineProps({
 });
 const emit = defineEmits(['lane', 'jet', 'boost']);
 const pressed = ref('');
-function action(name) {
+function action(name, stamp = performance.now()) {
   if (props.disabled) return;
-  if (name === 'left' || name === 'right') emit('lane', name === 'left' ? -1 : 1);
+  if (name === 'left' || name === 'right') emit('lane', name === 'left' ? -1 : 1, stamp);
   else emit(name);
 }
 function down(e, name) {
   e.preventDefault();
   if (props.disabled) return;
-  e.currentTarget.setPointerCapture(e.pointerId);
   pressed.value = name;
-  action(name);
+  action(name, e.timeStamp);
+  e.currentTarget.setPointerCapture(e.pointerId);
 }
 function release() {
   pressed.value = '';
 }
 function click(e, name) {
-  if (e.detail === 0) action(name);
+  if (e.detail === 0) action(name, e.timeStamp);
 }
 watch(
   () => props.disabled,
@@ -74,7 +75,7 @@ watch(
     :disabled="disabled"
     :aria-disabled="airborne || cooldown > 0 || energy < 35"
     :class="{ cooling: cooldown > 0, pressed: pressed === 'jet' }"
-    :style="{ '--cooldown-angle': Math.max(0, Math.min(1, cooldown / 5.5)) * 360 + 'deg' }"
+    :style="{ '--cooldown-angle': Math.max(0, Math.min(1, cooldown / JET_COOLDOWN)) * 360 + 'deg' }"
     @pointerdown="down($event, 'jet')"
     @pointerup="release"
     @pointercancel="release"
@@ -113,7 +114,7 @@ watch(
   left: max(20px, env(safe-area-inset-left));
   bottom: max(24px, env(safe-area-inset-bottom));
   display: grid;
-  grid-template-columns: 66px 66px;
+  grid-template-columns: 96px 96px;
   gap: 10px;
   touch-action: none;
   user-select: none;
@@ -121,15 +122,15 @@ watch(
 .lane-pad > span {
   grid-column: 1/-1;
   text-align: center;
-  font-size: 9px;
+  font-size: 11px;
   color: #e0f5ed;
   letter-spacing: 1px;
   text-shadow: 0 1px 5px #0009;
 }
 .lane-pad > button {
-  height: 65px;
-  width: 66px;
-  border-radius: 16px;
+  height: 90px;
+  width: 96px;
+  border-radius: 21px;
   border: 2px solid #dcfff780;
   background: linear-gradient(155deg, #a4c9d05c, #173b424f);
   box-shadow:
@@ -143,10 +144,10 @@ watch(
   touch-action: none;
 }
 .lane-pad b {
-  font: 32px/1 system-ui;
+  font: 44px/1 system-ui;
 }
 .lane-pad small {
-  font-size: 9px;
+  font-size: 11px;
   opacity: 0.8;
 }
 .lane-pad.reversed > span {
@@ -159,7 +160,7 @@ watch(
 .lane-pad > button.pressed {
   background: #b9eee8b8;
   color: #173b3b;
-  transform: scale(0.96);
+  transform: scale(0.98);
 }
 .lane-pad > button:disabled {
   opacity: 0.4;
@@ -241,14 +242,34 @@ body:not(.immersive) .lane-pad,
 body:not(.immersive) .racer-skill {
   position: fixed;
 }
+.racer-shell.compact.play-full .lane-pad {
+  bottom: 16px;
+  grid-template-columns: 86px 86px;
+  gap: 8px;
+}
+.racer-shell.compact.play-full .lane-pad > button {
+  width: 86px;
+  height: 80px;
+}
+.racer-shell.compact.play-full .racer-skill {
+  bottom: 17px;
+  width: 84px;
+  height: 84px;
+}
+.racer-shell.compact.play-full .boost-skill {
+  width: 68px;
+  height: 68px;
+  right: 119px;
+}
 @media (max-height: 360px) {
   .lane-pad {
     bottom: 16px;
-    grid-template-columns: 59px 59px;
+    grid-template-columns: 86px 86px;
+    gap: 8px;
   }
   .lane-pad > button {
-    width: 59px;
-    height: 58px;
+    width: 86px;
+    height: 80px;
   }
   .racer-skill {
     bottom: 17px;

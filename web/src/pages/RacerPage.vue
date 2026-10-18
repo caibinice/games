@@ -16,7 +16,7 @@ let stored = {};
 try {
   stored = JSON.parse(localStorage.getItem(key) || '{}') || {};
 } catch {}
-let game = E.restore(stored.game) || E.newGame(),
+let game = E.restore(stored.game, stored.cheats) || E.newGame({ cheats: stored.cheats }),
   scene,
   audio,
   frame,
@@ -24,6 +24,10 @@ let game = E.restore(stored.game) || E.newGame(),
   accumulator = 0,
   hudAt = 0,
   toastTimer,
+  pendingInputAt = 0,
+  inputSequence = 0,
+  runEpoch = 0,
+  startRequest = 0,
   disposed = false;
 const pendingFx = [];
 const records = ref(
@@ -33,18 +37,23 @@ const records = ref(
       ).filter(([id, done]) => Number.isInteger(+id) && +id >= 1 && +id <= 30 && done === true),
     ),
   ),
-  best = ref(Number.isFinite(stored.best) ? Math.max(0, stored.best) : 0);
+  best = ref(Number.isFinite(stored.best) ? Math.max(0, stored.best) : 0),
+  assistedBest = ref(Number.isFinite(stored.assistedBest) ? Math.max(0, stored.assistedBest) : 0);
 const state = shallowReactive({
   status: 'ready',
   level: game.level,
   mode: game.mode,
   loaded: false,
+  starting: false,
   error: '',
   speed: 0,
   score: 0,
   distance: 0,
   energy: 100,
-  hp: 3,
+  hp: E.MAX_HP,
+  repairCoins: 0,
+  cheats: { ...game.cheats },
+  assisted: game.assisted,
   jet: 0,
   cooldown: 0,
   combo: 0,
@@ -84,6 +93,8 @@ function save() {
         game: E.serialize(game),
         records: records.value,
         best: best.value,
+        assistedBest: assistedBest.value,
+        cheats: state.cheats,
         color: state.color,
         sound: state.sound,
         music: state.music,
@@ -101,6 +112,9 @@ function sync() {
     distance: Math.floor(game.distance),
     energy: game.energy,
     hp: game.hp,
+    repairCoins: game.repairCoins,
+    cheats: { ...game.cheats },
+    assisted: game.assisted,
     jet: game.jet,
     cooldown: game.cooldown,
     combo: game.combo,
@@ -120,6 +134,9 @@ function sync() {
       roll: game.roll,
       distance: game.distance,
       hp: game.hp,
+      infiniteEnergy: String(game.cheats.infiniteEnergy),
+      infiniteDurability: String(game.cheats.infiniteDurability),
+      assisted: String(game.assisted),
       cooldown: game.cooldown,
       energy: game.energy,
       nitro: String(game.nitroEnabled),
@@ -142,12 +159,13 @@ function events() {
   game.events = [];
   pendingFx.push(...received);
   for (const e of received) {
-    audio?.play(e.type);
+    audio?.play(e.type, e);
     if (e.type === 'jet') toast('冷气喷流 · 腾空侧滚');
-    if (e.type === 'clear')
+    if (e.type === 'clear' && !mobile)
       toast((e.ghost ? '隐身穿越 +' : '空中翻越 +') + (150 + game.combo * 15));
-    if (e.type === 'near') toast('惊险擦过 +80');
+    if (e.type === 'near' && !mobile) toast('惊险擦过 +80');
     if (e.type === 'hit') toast('车身受损 · 小心变道');
+    if (e.type === 'repair') toast('耐久恢复 +' + e.amount);
     if (e.type === 'pickup')
       toast(
         E.ITEMS[e.item].name +
@@ -160,8 +178,11 @@ function events() {
     if (e.type === 'nitro') toast(e.enabled ? '氮气已开启 · 再点关闭' : '氮气已关闭');
     if (e.type === 'empty') toast('能量耗尽，氮气已自动关闭');
     if (['won', 'lost'].includes(e.type)) {
-      best.value = Math.max(best.value, E.totalScore(game));
-      if (e.type === 'won') records.value = { ...records.value, [game.level]: true };
+      if (game.assisted) assistedBest.value = Math.max(assistedBest.value, E.totalScore(game));
+      else {
+        best.value = Math.max(best.value, E.totalScore(game));
+        if (e.type === 'won') records.value = { ...records.value, [game.level]: true };
+      }
       audio?.setRunning(false);
       clear();
       sync();
@@ -182,28 +203,44 @@ function loop(now) {
     }
   }
   game.events = pendingFx.splice(0);
-  scene?.update(game, now);
-  audio?.update(game.speed);
+  scene?.update(game, now, accumulator);
+  if (pendingInputAt && canvas.value) {
+    canvas.value.dataset.inputRenderMs = Math.max(0, performance.now() - pendingInputAt);
+    canvas.value.dataset.inputSequence = ++inputSequence;
+    pendingInputAt = 0;
+  }
   if (now - hudAt > 60) {
     sync();
     hudAt = now;
   }
   frame = requestAnimationFrame(loop);
 }
-function start() {
-  if (!state.loaded) return;
-  if (mobile) void full.enter();
-  clear();
-  audio.unlock();
-  E.start(game);
-  audio.setRunning(true);
-  last = performance.now();
-  accumulator = 0;
-  sync();
-  save();
-  canvas.value.focus({ preventScroll: true });
+async function start() {
+  if (!state.loaded || state.starting || game.status === 'running') return;
+  const request = ++startRequest;
+  state.starting = true;
+  try {
+    // Settle fullscreen, audio hardware and the resized GPU buffer before the race clock starts.
+    const fullscreenReady = mobile ? full.enter() : Promise.resolve();
+    await Promise.all([fullscreenReady, audio.unlock()]);
+    await new Promise(requestAnimationFrame);
+    await new Promise(requestAnimationFrame);
+    if (disposed || request !== startRequest || dialog.value) return;
+    clear();
+    E.start(game);
+    canvas.value.dataset.runEpoch = ++runEpoch;
+    audio.setRunning(true);
+    last = performance.now();
+    accumulator = 0;
+    sync();
+    save();
+    canvas.value.focus({ preventScroll: true });
+  } finally {
+    state.starting = false;
+  }
 }
 function pause() {
+  startRequest++;
   E.pause(game);
   audio?.setRunning(false);
   clear();
@@ -216,7 +253,7 @@ function togglePause() {
 }
 function fresh(level = game.level, mode = game.mode) {
   pause();
-  game = E.newGame({ level, mode, seed: Date.now() });
+  game = E.newGame({ level, mode, seed: Date.now(), cheats: state.cheats });
   sync();
   save();
 }
@@ -228,9 +265,25 @@ function chooseLevel(n) {
   fresh(n, 'campaign');
   dialog.value = '';
 }
-function lane(delta) {
+function cheat(name, checked) {
+  E.setCheats(game, { ...state.cheats, [name]: checked });
+  sync();
+  save();
+}
+function contextLost(e) {
+  e.preventDefault();
+  pause();
+  state.loaded = false;
+  state.error = '图形正在恢复，游戏已暂停';
+}
+function contextRestored() {
+  state.loaded = true;
+  state.error = '';
+  toast('画面已恢复，点击继续');
+}
+function lane(delta, stamp = performance.now()) {
   if (game.status !== 'running') return;
-  E.changeLane(game, delta);
+  if (E.changeLane(game, delta)) pendingInputAt = stamp;
   sync();
 }
 function jet() {
@@ -396,7 +449,14 @@ onBeforeUnmount(() => {
     </section>
     <div class="racer-workspace">
       <section class="race-viewport" aria-label="3D 赛车游戏">
-        <canvas ref="canvas" id="racer-canvas" tabindex="0" aria-label="喷气飞车 3D 赛道"></canvas>
+        <canvas
+          ref="canvas"
+          id="racer-canvas"
+          tabindex="0"
+          aria-label="喷气飞车 3D 赛道"
+          @webglcontextlost="contextLost"
+          @webglcontextrestored="contextRestored"
+        ></canvas>
         <div class="race-vignette"></div>
         <div class="race-top-hud">
           <div class="track-info">
@@ -418,6 +478,14 @@ onBeforeUnmount(() => {
             >
               ♫{{ state.music ? '开' : '关' }}
             </button>
+            <button
+              data-action="cheats"
+              aria-label="作弊与辅助"
+              :aria-pressed="state.assisted"
+              @click="open('cheats')"
+            >
+              作弊
+            </button>
             <button data-action="levels" aria-label="选择关卡" @click="open('levels')">关卡</button
             ><button id="fullscreen-button" :aria-pressed="full.active.value" @click="full.toggle">
               {{ full.active.value ? '退出' : mobile ? '横屏全屏' : '⛶ 全屏' }}</button
@@ -425,6 +493,31 @@ onBeforeUnmount(() => {
               {{ state.status === 'paused' ? '继续' : '暂停' }}
             </button>
           </div>
+        </div>
+        <div class="durability-hud" :class="{ assisted: state.assisted }">
+          <span
+            >耐久 <b>{{ state.cheats.infiniteDurability ? '∞' : state.hp + ' / ' + E.MAX_HP }}</b>
+            <em v-if="state.assisted">辅助模式</em></span
+          >
+          <div
+            role="progressbar"
+            aria-label="车辆耐久度"
+            :aria-valuenow="state.hp"
+            :aria-valuemax="E.MAX_HP"
+            aria-valuemin="0"
+          >
+            <i
+              v-for="n in E.MAX_HP"
+              :key="n"
+              class="hp-cell"
+              :class="{ filled: n <= state.hp }"
+            ></i>
+          </div>
+          <small>{{
+            state.cheats.infiniteDurability
+              ? '无限耐久已开启'
+              : '金币修复 ' + state.repairCoins + ' / ' + E.COINS_PER_REPAIR
+          }}</small>
         </div>
         <div class="race-effects" aria-label="当前道具效果">
           <span
@@ -440,12 +533,7 @@ onBeforeUnmount(() => {
         <div class="race-bottom-hud">
           <div class="speedometer">
             <strong>{{ state.speed }}</strong
-            ><span
-              >KM/H
-              <b
-                >{{ '▰'.repeat(state.hp) }}<i>{{ '▱'.repeat(3 - state.hp) }}</i></b
-              ></span
-            >
+            ><span>KM/H</span>
           </div>
           <div class="jet-meter">
             <span :class="{ ready: state.cooldown <= 0 && state.energy >= 35 }"
@@ -496,7 +584,7 @@ onBeforeUnmount(() => {
             <p v-else>
               {{
                 state.status === 'won'
-                  ? '得分 ' + state.score + ' · 剩余车身 ' + state.hp + ' / 3'
+                  ? '得分 ' + state.score + ' · 剩余耐久 ' + state.hp + ' / ' + E.MAX_HP
                   : state.status === 'lost'
                     ? '得分 ' + state.score + ' · 行驶 ' + state.distance + ' m'
                     : mobile
@@ -509,15 +597,17 @@ onBeforeUnmount(() => {
                 v-if="['ready', 'paused'].includes(state.status)"
                 class="race-primary"
                 data-action="start"
-                :disabled="!state.loaded"
+                :disabled="!state.loaded || state.starting"
                 @click="start"
               >
                 {{
-                  !state.loaded
-                    ? '正在准备赛道…'
-                    : state.status === 'paused'
-                      ? '继续疾驰'
-                      : '开始疾驰'
+                  state.starting
+                    ? '正在进入赛道…'
+                    : !state.loaded
+                      ? '正在准备赛道…'
+                      : state.status === 'paused'
+                        ? '继续疾驰'
+                        : '开始疾驰'
                 }}
                 <span>↗</span></button
               ><button
@@ -531,7 +621,7 @@ onBeforeUnmount(() => {
                 再来一局 ↗</button
               ><button class="race-secondary" @click="open('levels')">选择路线</button>
             </div>
-            <small>六种地图 · 紧凑组合车阵 · 长挂车请绕行 · 三格车身</small>
+            <small>六格耐久 · 每 5 金币修复 1 格 · 喷气冷却 2.5 秒</small>
           </div>
         </div>
       </section>
@@ -552,7 +642,8 @@ onBeforeUnmount(() => {
           ><span>PAINT / 车漆</span>
         </div>
         <div class="garage-stat">
-          <span>个人最高分</span><strong>{{ best.toLocaleString() }}</strong>
+          <span>{{ state.assisted ? '辅助最高分' : '个人最高分' }}</span
+          ><strong>{{ (state.assisted ? assistedBest : best).toLocaleString() }}</strong>
         </div>
         <div class="garage-stat">
           <span>已完成路线</span
@@ -566,7 +657,7 @@ onBeforeUnmount(() => {
           {{ state.mode === 'endless' ? '切回关卡模式' : '无尽公路模式' }} <span>∞</span>
         </button>
         <p class="garage-note">
-          普通小车、矮路障可跳；长挂车请换道，限高门从地面穿过。喷气冷却 5.5 秒，氮气点按开关。
+          默认六格耐久，每 5 金币修复 1 格，维修道具修复 2 格。喷气冷却 2.5 秒，空中点击不会连跳。
         </p>
         <p class="garage-note">
           ♫ FEVER STADIUM · 165 BPM EUROBEAT<br />音乐与音效可分别开关，全屏内也可切换音乐。
@@ -576,7 +667,7 @@ onBeforeUnmount(() => {
             ><b>{{ item.icon }}</b
             >{{ item.name
             }}<small>{{
-              item.duration ? item.duration + 's' : type === 'energy' ? '+32%' : '+1 HP'
+              item.duration ? item.duration + 's' : type === 'energy' ? '+32%' : '+2 HP'
             }}</small></span
           >
         </div>
@@ -602,7 +693,13 @@ onBeforeUnmount(() => {
     <GameModal
       v-if="dialog"
       :id="dialog + '-dialog'"
-      :title="dialog === 'levels' ? '选择一段旅程' : '喷气飞车 · 驾驶指南'"
+      :title="
+        dialog === 'levels'
+          ? '选择一段旅程'
+          : dialog === 'cheats'
+            ? '作弊与辅助'
+            : '喷气飞车 · 驾驶指南'
+      "
       @close="dialog = ''"
     >
       <template v-if="dialog === 'levels'"
@@ -620,16 +717,46 @@ onBeforeUnmount(() => {
           </button>
         </div></template
       >
+      <template v-else-if="dialog === 'cheats'">
+        <p>设置自动保存。开启过辅助的本局单独记录分数，不计入普通通关与最高分。</p>
+        <div class="cheat-options">
+          <label class="cheat-option"
+            ><input
+              type="checkbox"
+              data-cheat="infiniteEnergy"
+              :checked="state.cheats.infiniteEnergy"
+              @change="cheat('infiniteEnergy', $event.target.checked)"
+            />
+            <span
+              ><strong>无限喷气 / 氮气</strong
+              ><small>能量始终 100%。喷气仍保留 2.5 秒冷却，空中点击不重置跳跃。</small></span
+            ></label
+          >
+          <label class="cheat-option"
+            ><input
+              type="checkbox"
+              data-cheat="infiniteDurability"
+              :checked="state.cheats.infiniteDurability"
+              @change="cheat('infiniteDurability', $event.target.checked)"
+            />
+            <span
+              ><strong>无限耐久</strong
+              ><small>始终六格耐久，碰撞不扣血、不减速，关闭后恢复普通碰撞。</small></span
+            ></label
+          >
+        </div>
+        <div class="dialog-actions"><button @click="dialog = ''">返回游戏</button></div>
+      </template>
       <template v-else
-        ><p>赛车自动向前加速；每局有 3 格车身，碰撞后短暂无敌。</p>
+        ><p>默认 6 格耐久；每 5 枚金币修复 1 格，维修道具修复 2 格，最多 6 格。</p>
         <p>
           <strong>变道：</strong>键盘 A / D 或 ← / →，手机点击左 /
           右按钮。每次点按只换一条车道，不再拖动摇杆。
         </p>
         <p>
           <strong>喷气侧滚：</strong>Space / 右下大按钮。消耗 35% 能量，先上升、完成 360°
-          侧滚、自动扶正落地；小车与矮障碍可翻越，限高门从地面穿过，长挂车请左右绕行。按钮显示 5.5
-          秒冷却，冷却 / 缺能量时点击会说明原因。
+          侧滚、自动扶正落地；小车与矮障碍可翻越，限高门从地面穿过，长挂车请左右绕行。按钮显示 2.5
+          秒冷却，空中不连跳；冷却 / 缺能量时点击会说明原因。
         </p>
         <p>
           <strong>氮气：</strong>点按 Shift /

@@ -2,6 +2,7 @@ import * as T from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { LANES, ITEMS, OBSTACLES, levelInfo } from './engine.mjs';
 import { createEnvironment } from './environment.mjs';
+import { visualPose, frameSize } from './presentation.mjs';
 
 const ASSETS = '/games/racer/assets/';
 export async function createScene(canvas, { mobile = false } = {}) {
@@ -319,6 +320,16 @@ export async function createScene(canvas, { mobile = false } = {}) {
     obstacleBatches.set(key, parts);
     return parts;
   }
+  // No mesh/material creation when a new formation first approaches the player.
+  for (const type of Object.keys(OBSTACLES))
+    for (let variant = 0; variant < (['truck', 'traffic'].includes(type) ? 2 : 1); variant++)
+      obstacleBatch({ type, variant });
+  for (const type of Object.keys(ITEMS)) {
+    const m = makeObject({ type });
+    m.visible = false;
+    m.userData.pool = type;
+    pool.set(type, [m]);
+  }
   const particleCount = mobile ? 24 : 40,
     particlePositions = new Float32Array(particleCount * 3),
     particleSizes = new Float32Array(particleCount),
@@ -359,7 +370,9 @@ export async function createScene(canvas, { mobile = false } = {}) {
     new T.LineBasicMaterial({ color: 0xe4ffff, transparent: true, opacity: 0 }),
   );
   scene.add(speedLines);
-  let width = 0,
+  let resizeCount = 0,
+    telemetryAt = 0,
+    width = 0,
     height = 0,
     prev = 0,
     shake = 0,
@@ -377,17 +390,17 @@ export async function createScene(canvas, { mobile = false } = {}) {
     for (const puff of puffs) puff.life = 0;
   }
   function resize() {
-    const w = canvas.clientWidth || 1,
-      h = canvas.clientHeight || 1;
-    if (w !== width || h !== height) {
-      width = w;
-      height = h;
-      renderer.setSize(w, h, false);
-      camera.aspect = w / h;
+    const next = frameSize(canvas.clientWidth, canvas.clientHeight, { width, height });
+    if (next.changed) {
+      width = next.width;
+      height = next.height;
+      resizeCount++;
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
     }
   }
-  function update(g, now) {
+  function update(g, now, remainder = 0) {
     resize();
     const dt = Math.min(0.05, Math.max(0, (now - prev) / 1000));
     prev = now;
@@ -396,6 +409,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
       previousGame = g;
     }
     const info = levelInfo(g.level),
+      pose = visualPose(g, remainder),
       moving = g.status === 'running',
       ghost = g.effects.ghost > 0;
     if (themeId !== info.theme.id) {
@@ -413,16 +427,16 @@ export async function createScene(canvas, { mobile = false } = {}) {
       renderer.toneMappingExposure = themeId === 'city' ? 1.5 : 1.16;
       canvas.dataset.theme = themeId;
     }
-    environment.update(info, g.distance, now);
+    environment.update(info, pose.distance, now);
     for (let i = 0; i < 100; i++) {
       matrix.makeScale(0.1, 0.025, 4);
-      matrix.setPosition(i < 50 ? -1.6 : 1.6, 0.015, -(i % 50) * 10 + (g.distance % 10));
+      matrix.setPosition(i < 50 ? -1.6 : 1.6, 0.015, -(i % 50) * 10 + (pose.distance % 10));
       marks.setMatrixAt(i, matrix);
     }
     marks.instanceMatrix.needsUpdate = true;
     for (let i = 0; i < 24; i++) {
       const side = i % 2 ? -1 : 1,
-        z = -i * 20 + (g.distance % 40);
+        z = -i * 20 + (pose.distance % 40);
       matrix.makeScale(0.13, 7, 0.13);
       matrix.setPosition(side * 7, 3.3, z);
       posts.setMatrixAt(i * 2, matrix);
@@ -438,10 +452,10 @@ export async function createScene(canvas, { mobile = false } = {}) {
     for (const parts of obstacleBatches.values()) for (const p of parts) p.mesh.count = 0;
     let coinCount = 0;
     for (const o of g.objects) {
-      if (o.passed || o.z - g.distance > 300) continue;
+      if (o.passed || o.z - pose.distance > 300) continue;
       if (o.type === 'coin') {
         if (coinCount < 160) {
-          position.set(o.x, 0.85 + Math.sin(now * 0.003 + o.id) * 0.08, -(o.z - g.distance));
+          position.set(o.x, 0.85 + Math.sin(now * 0.003 + o.id) * 0.08, -(o.z - pose.distance));
           q.setFromAxisAngle(upAxis, now * 0.0018);
           scale.setScalar(1);
           matrix.compose(position, q, scale);
@@ -451,7 +465,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
       }
       if (OBSTACLES[o.type]) {
         const parts = obstacleBatch(o);
-        matrix.makeTranslation(o.x, 0, -(o.z - g.distance));
+        matrix.makeTranslation(o.x, 0, -(o.z - pose.distance));
         for (const { mesh, transforms } of parts) {
           for (const transform of transforms) {
             instanceTransform.multiplyMatrices(matrix, transform);
@@ -472,7 +486,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
       m.position.set(
         o.x,
         ITEMS[o.type] ? Math.sin(now * 0.003 + o.id) * 0.15 : 0,
-        -(o.z - g.distance),
+        -(o.z - pose.distance),
       );
       if (ITEMS[o.type]) m.rotation.y = Math.sin(now * 0.001) * 0.28;
     }
@@ -492,28 +506,29 @@ export async function createScene(canvas, { mobile = false } = {}) {
         models.delete(id);
       }
     for (const ev of g.events) {
-      if (ev.type === 'hit') shake = 0.5;
-      if (ev.type === 'land') landing = 0.3;
+      if (ev.type === 'hit' && !mobile) shake = 0.12;
+      if (ev.type === 'land' && !mobile) landing = 0.12;
     }
     g.events = [];
     shake = Math.max(0, shake - dt);
     landing = Math.max(0, landing - dt);
-    player.position.set(g.x, 0.65 + g.height + Math.sin(now * 0.008) * 0.01, 0);
-    const steer = LANES[g.lane] - g.x;
-    player.rotation.set(0, -steer * 0.035, g.jet > 0 ? g.roll : -steer * 0.03);
-    player.visible = ghost || g.invulnerable <= 0 || Math.floor(now / 85) % 2 === 0;
+    player.position.set(pose.x, 0.65 + pose.height, 0);
+    const steer = LANES[g.lane] - pose.x;
+    player.rotation.set(0, -steer * 0.025, g.jet > 0 ? pose.roll : -steer * 0.025);
+    // Keep the whole vehicle visible: old invulnerability blink looked like missing frames.
+    player.visible = true;
     for (const [m, base] of originalMaterials) {
       const transparent = ghost || base.transparent;
       if (m.transparent !== transparent) {
         m.transparent = transparent;
         m.needsUpdate = true;
       }
-      m.opacity = base.opacity * (ghost ? 0.3 + Math.sin(now * 0.014) * 0.1 : 1);
+      m.opacity = base.opacity * (ghost ? 0.34 : 1);
       m.depthWrite = ghost ? false : base.depthWrite;
       if (m.emissive) {
-        if (ghost) {
-          m.emissive.setHex(0x65b6ce);
-          m.emissiveIntensity = 0.2;
+        if (ghost || g.invulnerable > 0) {
+          m.emissive.setHex(ghost ? 0x65b6ce : 0xbb653f);
+          m.emissiveIntensity = ghost ? 0.2 : 0.12;
         } else {
           m.emissive.copy(base.emissive);
           m.emissiveIntensity = base.emissiveIntensity;
@@ -525,14 +540,14 @@ export async function createScene(canvas, { mobile = false } = {}) {
         wheel.rotation.x = (wheel.rotation.x - (g.speed * dt) / 0.36) % (Math.PI * 2);
     flames.visible = !!g.boost && moving;
     for (let i = 0; i < 2; i++) {
-      matrix.makeScale(1, 1, 0.8 + Math.sin(now * 0.04 + i) * 0.18);
+      matrix.makeScale(1, 1, 0.88 + Math.sin(now * 0.006 + i) * 0.06);
       matrix.setPosition(i ? -0.63 : 0.63, -0.22, 3.15);
       flames.setMatrixAt(i, matrix);
     }
     flames.instanceMatrix.needsUpdate = true;
-    shadow.position.x = g.x;
-    shadow.material.opacity = (1 - g.height * 0.13) * (ghost ? 0.35 : 1);
-    shadow.scale.setScalar(1 + g.height * 0.15);
+    shadow.position.x = pose.x;
+    shadow.material.opacity = (1 - pose.height * 0.13) * (ghost ? 0.35 : 1);
+    shadow.scale.setScalar(1 + pose.height * 0.15);
     player.updateMatrixWorld(true);
     if (moving && g.jet > 0) {
       puffClock += dt;
@@ -562,11 +577,11 @@ export async function createScene(canvas, { mobile = false } = {}) {
     camera.fov += (60 + g.boost * 9 - camera.fov) * 0.08;
     camera.updateProjectionMatrix();
     camera.position.set(
-      g.x * 0.18 + (shake ? Math.sin(now * 0.045) * shake * 0.2 : 0),
-      5.45 + g.height * 0.2 - landing * 0.7,
+      pose.x * 0.18 + (shake ? Math.sin(now * 0.045) * shake * 0.2 : 0),
+      5.45 + pose.height * 0.2 - landing * 0.7,
       11.5 + g.boost * 0.8,
     );
-    camera.lookAt(g.x * 0.35, 1.1 + g.height * 0.25, -18);
+    camera.lookAt(pose.x * 0.35, 1.1 + pose.height * 0.25, -18);
     speedLines.material.opacity = g.boost ? 0.38 : 0.06;
     if (moving) {
       for (let i = 0; i < 36; i++) {
@@ -581,15 +596,54 @@ export async function createScene(canvas, { mobile = false } = {}) {
       speedGeo.attributes.position.needsUpdate = true;
     }
     renderer.render(scene, camera);
-    Object.assign(canvas.dataset, {
-      drawCalls: renderer.info.render.calls,
-      triangles: renderer.info.render.triangles,
-      model: mobile ? 'parking-mobile' : 'parking-desktop',
-      pixelRatio: renderer.getPixelRatio(),
-      shadows: String(renderer.shadowMap.enabled),
-      ghostOpacity: ghost ? [...originalMaterials.keys()][0]?.opacity : 1,
-    });
+    if (now - telemetryAt > 100) {
+      telemetryAt = now;
+      Object.assign(canvas.dataset, {
+        drawCalls: renderer.info.render.calls,
+        triangles: renderer.info.render.triangles,
+        model: mobile ? 'parking-mobile' : 'parking-desktop',
+        pixelRatio: renderer.getPixelRatio(),
+        shadows: String(renderer.shadowMap.enabled),
+        ghostOpacity: ghost ? [...originalMaterials.keys()][0]?.opacity : 1,
+        playerVisible: String(player.visible),
+        renderX: pose.x,
+        resizeCount,
+        programs: renderer.info.programs.length,
+        geometries: renderer.info.memory.geometries,
+      });
+    }
   }
+  // Precompile every map, object and normal/ghost material variant before enabling Start.
+  resize();
+  await renderer.compileAsync(scene, camera);
+  for (const m of originalMaterials.keys()) {
+    m.transparent = true;
+    m.needsUpdate = true;
+  }
+  await renderer.compileAsync(scene, camera);
+  for (const [m, base] of originalMaterials) {
+    m.transparent = base.transparent;
+    m.needsUpdate = true;
+  }
+  // Upload every geometry/texture once in the loading screen, not during the first turn/pickup.
+  const warmState = [];
+  scene.traverse((o) => {
+    warmState.push([o, o.visible, o.frustumCulled, o.isInstancedMesh ? o.count : null]);
+    o.visible = true;
+    o.frustumCulled = false;
+    if (o.isInstancedMesh && o.count === 0) o.count = 1;
+  });
+  camera.position.set(0, 5.45, 11.5);
+  camera.lookAt(0, 1.1, -18);
+  renderer.setViewport(0, 0, 1, 1);
+  renderer.render(scene, camera);
+  renderer.setViewport(0, 0, width, height);
+  for (const [o, visible, culled, count] of warmState) {
+    o.visible = visible;
+    o.frustumCulled = culled;
+    if (count !== null) o.count = count;
+  }
+  canvas.dataset.prewarmed = 'true';
   return {
     update,
     setColor(color) {

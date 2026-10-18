@@ -20,6 +20,9 @@ async (page) => {
   await page.locator('[data-action=levels]').click();
   await page.locator('button[data-level="1"]').click();
   await page.locator('[data-action=start]').click();
+  await page.waitForFunction(
+    () => document.querySelector('#racer-canvas').dataset.status === 'running',
+  );
   const state = () => page.locator('#racer-canvas').evaluate((c) => ({ ...c.dataset }));
   const seen = {},
     turns = [];

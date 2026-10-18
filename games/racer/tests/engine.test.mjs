@@ -94,7 +94,7 @@ describe('JET-R deterministic simulation', () => {
     tick(g, 0.8);
     g.objects = [{ id: 1, type, x: 0, z: g.distance + 0.1, passed: false }];
     tick(g, 0.35);
-    expect(g.hp).toBe(3);
+    expect(g.hp).toBe(E.MAX_HP);
     expect(g.cleared).toBe(1);
     expect(g.combo).toBe(1);
   });
@@ -107,7 +107,7 @@ describe('JET-R deterministic simulation', () => {
       }
       g.objects = [{ id: 1, type: 'gate', x: 0, z: g.distance + 0.1, passed: false }];
       tick(g, 0.15);
-      expect(g.hp).toBe(airborne ? 2 : 3);
+      expect(g.hp).toBe(airborne ? E.MAX_HP - 1 : E.MAX_HP);
     }
   });
   it('swept collision catches fast frames and invulnerability prevents stacking', () => {
@@ -118,15 +118,15 @@ describe('JET-R deterministic simulation', () => {
       { id: 2, type: 'barrier', x: 0, z: 4, passed: false },
     ];
     E.step(g, 0.05);
-    expect(g.hp).toBe(2);
+    expect(g.hp).toBe(E.MAX_HP - 1);
     tick(g, 0.2);
-    expect(g.hp).toBe(2);
+    expect(g.hp).toBe(E.MAX_HP - 1);
   });
   it('old obstacles never damage a car after passing', () => {
     const g = running();
     g.objects = [{ id: 1, type: 'traffic', x: 0, z: -6, passed: false }];
     tick(g, 0.2);
-    expect(g.hp).toBe(3);
+    expect(g.hp).toBe(E.MAX_HP);
   });
   it('coins and energy collect once and remain bounded', () => {
     const g = running();
@@ -173,7 +173,7 @@ describe('JET-R deterministic simulation', () => {
       expect(g.status).toBe(mode === 'campaign' ? 'won' : 'running');
     }
   });
-  it('third hit ends the run', () => {
+  it('last durability point ends the run', () => {
     const g = running();
     g.hp = 1;
     g.objects = [{ id: 1, type: 'traffic', x: 0, z: 0.1, passed: false }];
