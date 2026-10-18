@@ -35,7 +35,7 @@ dist/games/         构建产物，按游戏分目录
 - [坦克大战](https://caibinice.com/games/tank/)：35 关、单人守卫老鹰、四类敌军、六种道具、像素地形和经典音效；[电脑版](https://caibinice.com/games/tank/pc.html) / [手机版](https://caibinice.com/games/tank/mobile.html)。
 - [魂斗罗](https://caibinice.com/games/contra/)：8 关、横向 / 瀑布纵向 / 基地纵深战斗、八向射击与五类武器、Boss、原版背景 / 精灵 / 分关音乐；[电脑版](https://caibinice.com/games/contra/pc.html) / [手机版](https://caibinice.com/games/contra/mobile.html)。
 - [游戏大厅](https://caibinice.com/games/)：自动按各游戏 `game.json` 生成列表。
-- [喷气飞车 3D](https://caibinice.com/games/racer/)：30 关 / 3 个章节、无尽模式、交通躲障、金币、氮气、冷气喷流腾空侧滚；[电脑版](https://caibinice.com/games/racer/pc.html) / [手机版](https://caibinice.com/games/racer/mobile.html)。
+- [喷气飞车 3D](https://caibinice.com/games/racer/)：停车项目同款 GT、30 关 / 6 种地图、8 类紧凑车阵、长挂车、5 类道具、点按换道 / 氮气开关 / 喷气冷却及 165 BPM Eurobeat；[电脑版](https://caibinice.com/games/racer/pc.html) / [手机版](https://caibinice.com/games/racer/mobile.html)。
 
 ## 开发与构建
 
@@ -76,6 +76,7 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [多游戏发布 / 回滚 / 新增游戏](docs/deployment.md)
 - [Vue 3 架构、入口迁移与日常运维](docs/vue3-architecture.md)
 - [横屏触控与喷气飞车实现、验收](docs/vue3-racer-20261018.md)
+- [赛车组合关卡、GT 车型、道具和音乐升级](docs/racer-upgrade-20261018.md)
 - [拼豆规则与历史](games/pindou/docs/README.md)
 - [抓大鹅玩法、素材与维护](games/goose/docs/README.md)
 - [连连看玩法、双端存档与维护](games/lianliankan/docs/README.md)

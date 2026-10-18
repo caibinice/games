@@ -15,73 +15,89 @@ async (page) => {
     bounds.x >= -1 && bounds.y >= -1 && bounds.width <= 392 && bounds.height <= 846,
     'fallback rotated crop',
   );
-  assert(
-    await page.evaluate(() => !document.fullscreenElement),
-    'must exercise window-only fallback',
-  );
-  const points = await page.evaluate(() => {
-    const z = document.querySelector('[data-joystick]'),
-      r = z.getBoundingClientRect();
-    const point = (x, y) => ({ x: r.right - y, y: r.top + x });
-    const b = document.querySelector('[data-input=jet]').getBoundingClientRect();
-    return {
-      base: point(85, z.clientHeight - 85),
-      move: point(130, z.clientHeight - 85),
-      jet: { x: b.x + b.width / 2, y: b.y + b.height / 2 },
-    };
-  });
+  assert(await page.evaluate(() => !document.fullscreenElement), 'window-only fallback');
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
-  const f = (p, id) => ({ ...p, id, radiusX: 8, radiusY: 8, force: 1 });
-  await cdp.send('Input.dispatchTouchEvent', {
-    type: 'touchStart',
-    touchPoints: [f(points.base, 1)],
-  });
-  await cdp.send('Input.dispatchTouchEvent', {
-    type: 'touchMove',
-    touchPoints: [f(points.move, 1)],
-  });
-  await cdp.send('Input.dispatchTouchEvent', {
-    type: 'touchStart',
-    touchPoints: [f(points.move, 1), f(points.jet, 2)],
-  });
-  await page.waitForTimeout(650);
-  const air = await page.locator('#racer-canvas').evaluate((c) => ({ ...c.dataset }));
-  assert(Number(air.lane) === 2 && Number(air.height) > 3, 'two-finger steering/jet');
+  const point = async (selector) => {
+    const b = await page.locator(selector).boundingBox();
+    return { x: b.x + b.width / 2, y: b.y + b.height / 2, id: 1, radiusX: 8, radiusY: 8, force: 1 };
+  };
+  const tap = async (selector, hold = 35) => {
+    await cdp.send('Input.dispatchTouchEvent', {
+      type: 'touchStart',
+      touchPoints: [await point(selector)],
+    });
+    await page.waitForTimeout(hold);
+    await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  };
+  const state = () => page.locator('#racer-canvas').evaluate((c) => ({ ...c.dataset }));
+  await tap('[data-lane=right]', 250);
+  const held = await state();
+  assert(+held.lane === 2, 'holding right changes only one lane');
+  await tap('[data-lane=left]');
+  assert(+(await state()).lane === 1, 'one left click changes one lane');
+  await tap('[data-input=boost]');
+  await page.waitForTimeout(150);
+  const boosting = await state();
+  assert(boosting.nitro === 'true' && +boosting.boost > 0, 'nitro stays on after release');
+  await tap('[data-input=boost]');
+  assert((await state()).nitro === 'false', 'second click turns nitro off');
+  await tap('[data-input=jet]');
+  await page.waitForFunction(() => +document.querySelector('#racer-canvas').dataset.height > 3);
+  const air = await state();
+  assert(+air.height > 3 && +air.cooldown > 4, 'touch jet rise and cooldown');
+  assert(
+    /\d\.\d+s/.test(await page.locator('[data-jet-countdown]').innerText()),
+    'visible numeric cooldown',
+  );
   await page.screenshot({
-    path: 'E:/Documents/AI/codex/tmp/vue-racing-20261018/racer-mobile-jet.png',
+    path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/mobile-jet.png',
   });
-  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
-  await page.waitForTimeout(1200);
-  const landed = await page.locator('#racer-canvas').evaluate((c) => ({ ...c.dataset }));
-  assert(Number(landed.height) === 0, 'mobile landing');
+  await page.waitForFunction(() => +document.querySelector('#racer-canvas').dataset.height === 0);
+  const landed = await state();
+  assert(+landed.height === 0 && +landed.cooldown > 2, 'landed while cooldown remains');
+  await tap('[data-input=jet]');
+  await page.getByRole('status').filter({ hasText: '喷气冷却还剩' }).waitFor();
+  assert(
+    /冷却还剩/.test(await page.locator('.race-notice').innerText()),
+    'repeat jet explains cooldown',
+  );
   await page.locator('[data-action=pause]').click();
-  await page.locator('.race-secondary').click();
+  const paused = await state();
+  assert(paused.musicPlaying === 'false', 'pause stops background music');
+  await page.waitForTimeout(200);
+  assert((await state()).distance === paused.distance, 'pause freezes race');
+  await page.getByRole('button', { name: '选择关卡', exact: true }).click();
   assert((await page.locator('.racer-levels [data-level]').count()) === 30, '30 levels');
   const modal = await page.locator('dialog').boundingBox();
   assert(
     modal.x >= 0 && modal.y >= 0 && modal.x + modal.width <= 392 && modal.y + modal.height <= 846,
     'rotated modal bounds',
   );
-  await page.locator('[data-level="30"]').click();
-  await page.waitForTimeout(150);
+  await page.locator('[data-level="6"]').click();
+  await page.waitForTimeout(200);
+  const lava = await state();
+  assert(lava.theme === 'lava' && lava.model === 'parking-mobile', 'mobile LOD and lava theme');
   await page.screenshot({
-    path: 'E:/Documents/AI/codex/tmp/vue-racing-20261018/racer-mobile-night.png',
+    path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/mobile-lava.png',
   });
   await page.keyboard.press('Escape');
   assert((await page.locator('.play-full').count()) === 0, 'window fallback exit');
   await page.reload();
   await page.getByRole('button', { name: '开始疾驰 ↗' }).waitFor();
-  const restored = await page.locator('#racer-canvas').evaluate((c) => ({ ...c.dataset }));
-  assert(Number(restored.level) === 30, 'racer storage');
+  const restored = await state();
+  assert(+restored.level === 6, 'racer storage');
+  assert(!errors.length, 'page errors: ' + errors.join('; '));
   await page.evaluate((result) => (window.__qaResult = result), {
     result: 'PASS',
     bounds,
+    held,
+    boosting,
     air,
     landed,
     modal,
+    lava,
     restored,
     errors,
   });
-  assert(errors.length === 0, 'page errors');
 };

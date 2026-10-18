@@ -3,8 +3,7 @@ import { ref, shallowReactive, computed, onMounted, onBeforeUnmount } from 'vue'
 import * as E from '../../../games/racer/public/engine.mjs';
 import { createAudio } from '../../../games/racer/public/audio.mjs';
 import { useLandscapeFullscreen } from '../composables/useLandscapeFullscreen.mjs';
-import TouchStick from '../components/TouchStick.vue';
-import TouchAction from '../components/TouchAction.vue';
+import RacerControls from '../components/RacerControls.vue';
 import GameModal from '../components/GameModal.vue';
 const props = defineProps({ platform: String }),
   mobile = props.platform === 'mobile',
@@ -26,6 +25,7 @@ let game = E.restore(stored.game) || E.newGame(),
   hudAt = 0,
   toastTimer,
   disposed = false;
+const pendingFx = [];
 const records = ref(
     Object.fromEntries(
       Object.entries(
@@ -49,23 +49,32 @@ const state = shallowReactive({
   cooldown: 0,
   combo: 0,
   coins: 0,
+  nitro: false,
+  boost: 0,
+  effects: { reverse: 0, fullSpeed: 0, ghost: 0 },
+  section: '',
   color: ['#5bb9c8', '#ef764f', '#d9e2e4'].includes(stored.color) ? stored.color : '#5bb9c8',
   sound: stored.sound !== false,
+  music: stored.music !== false,
 });
-const input = { left: false, right: false, jet: false, boost: false },
-  sources = new Map();
 const info = computed(() => E.levelInfo(state.level)),
   progress = computed(() => Math.min(100, (state.distance / info.value.distance) * 100));
+const activeEffects = computed(() =>
+  ['reverse', 'fullSpeed', 'ghost'].filter((k) => state.effects[k] > 0),
+);
 const style = computed(() => ({
   '--play-width': full.viewport.value.width + 'px',
   '--play-height': full.viewport.value.height + 'px',
 }));
 const badge = computed(() =>
-  state.jet ? 'AIR ROLL' : state.cooldown > 0 ? 'RECHARGING' : 'COLD GAS READY',
+  state.cooldown > 0
+    ? '喷气 CD ' + state.cooldown.toFixed(1) + 's'
+    : state.energy < 35
+      ? '喷气能量不足'
+      : '喷气已就绪 · Space',
 );
 function clear() {
-  sources.clear();
-  for (const k in input) input[k] = false;
+  pendingFx.length = 0;
 }
 function save() {
   try {
@@ -77,6 +86,7 @@ function save() {
         best: best.value,
         color: state.color,
         sound: state.sound,
+        music: state.music,
       }),
     );
   } catch {}
@@ -86,7 +96,7 @@ function sync() {
     status: game.status,
     level: game.level,
     mode: game.mode,
-    speed: Math.round(game.speed * 3.6),
+    speed: game.status === 'ready' ? 0 : Math.round(game.speed * 3.6),
     score: E.totalScore(game),
     distance: Math.floor(game.distance),
     energy: game.energy,
@@ -95,6 +105,10 @@ function sync() {
     cooldown: game.cooldown,
     combo: game.combo,
     coins: game.coins,
+    nitro: game.nitroEnabled,
+    boost: game.boost,
+    effects: { ...game.effects },
+    section: game.segments.find((s) => s.end >= game.distance)?.name || info.value.routeName,
   });
   if (canvas.value)
     Object.assign(canvas.value.dataset, {
@@ -107,6 +121,15 @@ function sync() {
       distance: game.distance,
       hp: game.hp,
       cooldown: game.cooldown,
+      energy: game.energy,
+      nitro: String(game.nitroEnabled),
+      boost: game.boost,
+      reverse: game.effects.reverse,
+      fullSpeed: game.effects.fullSpeed,
+      ghost: game.effects.ghost,
+      music: String(state.music),
+      musicPlaying: String(audio?.getState().musicPlaying || false),
+      musicTime: audio?.getState().musicTime || 0,
     });
 }
 function toast(text) {
@@ -115,12 +138,27 @@ function toast(text) {
   toastTimer = setTimeout(() => (notice.value = ''), 1500);
 }
 function events() {
-  for (const e of game.events) {
+  const received = game.events;
+  game.events = [];
+  pendingFx.push(...received);
+  for (const e of received) {
     audio?.play(e.type);
     if (e.type === 'jet') toast('冷气喷流 · 腾空侧滚');
-    if (e.type === 'clear') toast('空中翻越 +' + (150 + game.combo * 15));
+    if (e.type === 'clear')
+      toast((e.ghost ? '隐身穿越 +' : '空中翻越 +') + (150 + game.combo * 15));
     if (e.type === 'near') toast('惊险擦过 +80');
     if (e.type === 'hit') toast('车身受损 · 小心变道');
+    if (e.type === 'pickup')
+      toast(
+        E.ITEMS[e.item].name +
+          ' · ' +
+          (E.ITEMS[e.item].duration
+            ? E.ITEMS[e.item].duration + '秒'
+            : E.ITEMS[e.item].description),
+      );
+    if (e.type === 'effectEnd') toast(E.ITEMS[e.item].name + '结束');
+    if (e.type === 'nitro') toast(e.enabled ? '氮气已开启 · 再点关闭' : '氮气已关闭');
+    if (e.type === 'empty') toast('能量耗尽，氮气已自动关闭');
     if (['won', 'lost'].includes(e.type)) {
       best.value = Math.max(best.value, E.totalScore(game));
       if (e.type === 'won') records.value = { ...records.value, [game.level]: true };
@@ -138,11 +176,12 @@ function loop(now) {
   if (game.status === 'running') {
     accumulator += dt;
     while (accumulator >= 1 / 60 && game.status === 'running') {
-      E.step(game, 1 / 60, input);
+      E.step(game, 1 / 60);
       events();
       accumulator -= 1 / 60;
     }
   }
+  game.events = pendingFx.splice(0);
   scene?.update(game, now);
   audio?.update(game.speed);
   if (now - hudAt > 60) {
@@ -189,14 +228,36 @@ function chooseLevel(n) {
   fresh(n, 'campaign');
   dialog.value = '';
 }
-function touch(action, pressed, source = 'touch') {
+function lane(delta) {
   if (game.status !== 'running') return;
-  sources.set(source + action, pressed);
-  input[action] = [...sources].some(([k, v]) => k.endsWith(action) && v);
+  E.changeLane(game, delta);
+  sync();
 }
-function stick(d) {
-  touch('left', d.left);
-  touch('right', d.right);
+function jet() {
+  if (game.status !== 'running') return;
+  const reason = E.jetBlockReason(game);
+  if (reason) {
+    toast(
+      reason === 'energy'
+        ? '喷气需要 35% 能量'
+        : reason === 'airborne'
+          ? '腾空中 · 落地后再起跳'
+          : '喷气冷却还剩 ' + game.cooldown.toFixed(1) + ' 秒',
+    );
+    return;
+  }
+  E.activateJet(game);
+  events();
+  sync();
+}
+function boost() {
+  if (game.status !== 'running') return;
+  const result = E.toggleBoost(game);
+  if (result === 'locked')
+    toast('全速道具锁定 ' + game.effects.fullSpeed.toFixed(1) + ' 秒 · 免费加速');
+  else if (result === 'energy') toast('能量不足，稍后再开启氮气');
+  events();
+  sync();
 }
 function color(c) {
   state.color = c;
@@ -208,6 +269,14 @@ function sound() {
   audio?.setEnabled(state.sound);
   if (state.sound) audio?.unlock();
   save();
+}
+function music() {
+  state.music = !state.music;
+  audio?.unlock();
+  audio?.setMusicEnabled(state.music);
+  toast(state.music ? '♫ Fever Stadium · EUROBEAT / 165 BPM' : '背景音乐已关闭');
+  save();
+  sync();
 }
 const keys = {
   ArrowLeft: 'left',
@@ -227,11 +296,15 @@ function keydown(e) {
     /INPUT|SELECT|TEXTAREA/.test(e.target.tagName)
   )
     return;
+  if (e.repeat) return;
+  if (e.target.tagName === 'BUTTON' && ['Space', 'Enter'].includes(e.code)) return;
   if (keys[e.code]) {
     e.preventDefault();
-    touch(keys[e.code], true, e.code);
+    const action = keys[e.code];
+    if (action === 'left' || action === 'right') lane(action === 'left' ? -1 : 1);
+    else if (action === 'jet') jet();
+    else boost();
   }
-  if (e.repeat) return;
   if (e.code === 'Enter') start();
   if (e.code === 'KeyP') togglePause();
   if (e.code === 'KeyF') {
@@ -243,9 +316,7 @@ function keydown(e) {
     else pause();
   }
 }
-function keyup(e) {
-  if (keys[e.code]) touch(keys[e.code], false, e.code);
-}
+function keyup() {}
 function visibility() {
   if (document.hidden) pause();
 }
@@ -267,6 +338,7 @@ onMounted(async () => {
     scene.setColor(state.color);
     audio = createAudio();
     audio.setEnabled(state.sound);
+    audio.setMusicEnabled(state.music);
     state.loaded = true;
     sync();
     last = performance.now();
@@ -297,6 +369,7 @@ onBeforeUnmount(() => {
       'play-full': full.active.value,
       'virtual-landscape': full.rotated.value,
       'is-mobile': mobile,
+      compact: mobile && full.viewport.value.width < 700,
     }"
     :style="style"
   >
@@ -308,7 +381,9 @@ onBeforeUnmount(() => {
         <span class="edition">SINGLE PLAYER / VOL. 01</span
         ><a :href="mobile ? './pc.html' : './mobile.html'">{{ mobile ? '电脑版' : '手机版' }} ↗</a
         ><button aria-label="音效开关" @click="sound">
-          {{ state.sound ? '声音开' : '声音关' }}</button
+          {{ state.sound ? '音效开' : '音效关' }}</button
+        ><button aria-label="背景音乐开关" :aria-pressed="state.music" @click="music">
+          {{ state.music ? '音乐开' : '音乐关' }}</button
         ><button @click="open('help')">操作指南</button>
       </nav>
     </header>
@@ -317,7 +392,7 @@ onBeforeUnmount(() => {
         <span class="racer-kicker">THE ROAD IS ONLY THE BEGINNING</span>
         <h1>地面之上，<em>还有自由。</em></h1>
       </div>
-      <p>穿越车流，掠过海岸线。<br />用一次喷气侧滚，越过眼前的极限。</p>
+      <p>穿越车流，掠过六种天际。<br />用一次喷气侧滚，越过眼前的极限。</p>
     </section>
     <div class="racer-workspace">
       <section class="race-viewport" aria-label="3D 赛车游戏">
@@ -326,7 +401,8 @@ onBeforeUnmount(() => {
         <div class="race-top-hud">
           <div class="track-info">
             <span>ROUTE {{ String(state.level).padStart(2, '0') }} / 30</span
-            ><strong>{{ info.name }}</strong>
+            ><strong>{{ info.name }}</strong
+            ><small class="track-section">{{ state.section || info.routeName }}</small>
             <div class="track-progress"><i :style="{ width: progress + '%' }"></i></div>
           </div>
           <div class="race-score">
@@ -334,6 +410,14 @@ onBeforeUnmount(() => {
             ><span v-if="state.combo > 1">COMBO × {{ state.combo }}</span>
           </div>
           <div class="race-tools">
+            <button
+              data-action="music"
+              aria-label="赛道背景音乐开关"
+              :aria-pressed="state.music"
+              @click="music"
+            >
+              ♫{{ state.music ? '开' : '关' }}
+            </button>
             <button data-action="levels" aria-label="选择关卡" @click="open('levels')">关卡</button
             ><button id="fullscreen-button" :aria-pressed="full.active.value" @click="full.toggle">
               {{ full.active.value ? '退出' : mobile ? '横屏全屏' : '⛶ 全屏' }}</button
@@ -341,6 +425,17 @@ onBeforeUnmount(() => {
               {{ state.status === 'paused' ? '继续' : '暂停' }}
             </button>
           </div>
+        </div>
+        <div class="race-effects" aria-label="当前道具效果">
+          <span
+            v-for="effect in activeEffects"
+            :key="effect"
+            :data-effect="effect"
+            :style="{ '--effect-color': E.ITEMS[effect].color }"
+            ><b>{{ E.ITEMS[effect].icon }}</b
+            >{{ E.ITEMS[effect].name }}
+            <strong>{{ state.effects[effect].toFixed(1) }}s</strong></span
+          >
         </div>
         <div class="race-bottom-hud">
           <div class="speedometer">
@@ -353,7 +448,7 @@ onBeforeUnmount(() => {
             >
           </div>
           <div class="jet-meter">
-            <span :class="{ ready: state.cooldown <= 0 }"
+            <span :class="{ ready: state.cooldown <= 0 && state.energy >= 35 }"
               >{{ badge }}
               <b>{{
                 state.cooldown > 0
@@ -405,8 +500,8 @@ onBeforeUnmount(() => {
                   : state.status === 'lost'
                     ? '得分 ' + state.score + ' · 行驶 ' + state.distance + ' m'
                     : mobile
-                      ? '左手悬浮摇杆变道，右手喷气腾跃。'
-                      : 'A / D 变道 · Space 喷气侧滚 · Shift 氮气加速'
+                      ? '左 / 右点一次换一格 · 氮气点按开关 · 喷气按钮显示冷却'
+                      : 'A / D 点按变道 · Space 喷气侧滚 · Shift 切换氮气'
               }}
             </p>
             <div class="race-menu-actions">
@@ -436,14 +531,14 @@ onBeforeUnmount(() => {
                 再来一局 ↗</button
               ><button class="race-secondary" @click="open('levels')">选择路线</button>
             </div>
-            <small>30 关单人挑战 · 自动驾驶前进 · 三次碰撞机会</small>
+            <small>六种地图 · 紧凑组合车阵 · 长挂车请绕行 · 三格车身</small>
           </div>
         </div>
       </section>
       <aside class="racer-garage">
         <div class="garage-number">01 <span>/ YOUR MACHINE</span></div>
-        <h2>JET-R <small>CONCEPT ROADSTER</small></h2>
-        <p class="car-spec">冷气推进系统<br />四点垂直喷流 / 360° 空中侧滚</p>
+        <h2>GT / R <small>PARKING COLLECTION</small></h2>
+        <p class="car-spec">停车项目同款车型 · 双端 LOD<br />冷气推进 / 360° 空中侧滚</p>
         <div class="color-options" aria-label="车身颜色">
           <button
             v-for="c in ['#5bb9c8', '#ef764f', '#d9e2e4']"
@@ -471,30 +566,39 @@ onBeforeUnmount(() => {
           {{ state.mode === 'endless' ? '切回关卡模式' : '无尽公路模式' }} <span>∞</span>
         </button>
         <p class="garage-note">
-          喷气消耗 35% 能量，冷却 5.5 秒。腾空可越过车辆与路障，注意避开高架横梁。
+          普通小车、矮路障可跳；长挂车请换道，限高门从地面穿过。喷气冷却 5.5 秒，氮气点按开关。
         </p>
+        <p class="garage-note">
+          ♫ FEVER STADIUM · 165 BPM EUROBEAT<br />音乐与音效可分别开关，全屏内也可切换音乐。
+        </p>
+        <div class="item-legend">
+          <span v-for="(item, type) in E.ITEMS" :key="type" :style="{ '--item-color': item.color }"
+            ><b>{{ item.icon }}</b
+            >{{ item.name
+            }}<small>{{
+              item.duration ? item.duration + 's' : type === 'energy' ? '+32%' : '+1 HP'
+            }}</small></span
+          >
+        </div>
       </aside>
     </div>
     <footer class="racer-footer">
       <span>INSPIRED BY THE ARCADE. BUILT FOR THE OPEN ROAD.</span
       ><a href="./assets/credits.html">设计与素材来源 ↗</a><a href="/games/">返回游乐场</a>
     </footer>
-    <template v-if="mobile"
-      ><TouchStick
-        :rotated="full.rotated.value"
-        four-way
-        :disabled="state.status !== 'running'"
-        @change="stick" /><TouchAction
-        action="jet"
-        label="喷气腾跃"
-        :disabled="state.status !== 'running'"
-        @change="touch('jet', $event)" /><TouchAction
-        action="boost"
-        label="氮气"
-        small
-        :disabled="state.status !== 'running'"
-        @change="touch('boost', $event)"
-    /></template>
+    <RacerControls
+      v-if="mobile"
+      :disabled="state.status !== 'running'"
+      :cooldown="state.cooldown"
+      :energy="state.energy"
+      :airborne="state.jet > 0"
+      :nitro="state.nitro"
+      :forced="state.effects.fullSpeed"
+      :reverse="state.effects.reverse"
+      @lane="lane"
+      @jet="jet"
+      @boost="boost"
+    />
     <GameModal
       v-if="dialog"
       :id="dialog + '-dialog'"
@@ -502,7 +606,7 @@ onBeforeUnmount(() => {
       @close="dialog = ''"
     >
       <template v-if="dialog === 'levels'"
-        ><p>海岸、都会、天际，30 段逐渐加速的公路。</p>
+        ><p>草原、雪山、森林、城市、郊区、熔岩，30 段难度接近、车阵组合不同的公路。</p>
         <div class="racer-levels">
           <button
             v-for="n in 30"
@@ -519,20 +623,30 @@ onBeforeUnmount(() => {
       <template v-else
         ><p>赛车自动向前加速；每局有 3 格车身，碰撞后短暂无敌。</p>
         <p>
-          <strong>变道：</strong>键盘 A / D 或 ← /
-          →，手机左侧拖动悬浮摇杆。每次拨动切一条车道，松开可再次拨动。
+          <strong>变道：</strong>键盘 A / D 或 ← / →，手机点击左 /
+          右按钮。每次点按只换一条车道，不再拖动摇杆。
         </p>
         <p>
           <strong>喷气侧滚：</strong>Space / 右下大按钮。消耗 35% 能量，先上升、完成 360°
-          侧滚、自动扶正落地；车辆与矮障碍可以翻越，高横梁请从地面通过。
+          侧滚、自动扶正落地；小车与矮障碍可翻越，限高门从地面穿过，长挂车请左右绕行。按钮显示 5.5
+          秒冷却，冷却 / 缺能量时点击会说明原因。
         </p>
         <p>
-          <strong>氮气：</strong>按住 Shift /
-          小按钮，消耗能量提速。金币加分，青色能量块补充能量，贴近车流擦过有额外分数。
+          <strong>氮气：</strong>点按 Shift /
+          小按钮开启，再点关闭，开启后持续耗能。全速道具生效期间免耗能并锁定加速，结束后自动恢复普通速度。
         </p>
+        <div class="help-items">
+          <p v-for="(item, type) in E.ITEMS" :key="type">
+            <strong>{{ item.icon }} {{ item.name }}：</strong>{{ item.description }}
+          </p>
+        </div>
         <p>
           F 全屏，P
           暂停。手机开始后自动横屏；浏览器方向锁未开放时，页面会直接旋转布局。切到后台自动暂停。
+        </p>
+        <p>
+          <strong>背景乐：</strong>Fever Stadium · MintoDog，165 BPM Eurobeat；点击开始后播放，暂停
+          / 后台静音。音乐与音效独立保存开关。
         </p></template
       >
     </GameModal>

@@ -1,0 +1,355 @@
+{
+  "version": 1,
+  "method": "Preserve geometry, hierarchy, indices, normals and UVs; normalized 5-unit length; PBR material finish; mobile image-only downsampling.",
+  "sourceProject": "E:\\codes\\3dSmartParking",
+  "sourceProvenance": "Existing user-specified project asset; no independent upstream author/license/official model designation recorded in that project. Not relabeled CC0 or Xiaomi-official.",
+  "modelIdentity": "Blender visual verification shows a two-door GT with a wing-shaped hood badge. The parking project contains no Xiaomi/SU7 identity record; the requested xiaomi filenames are integration aliases, not a certified make/model attribution.",
+  "forwardAxis": "+Z",
+  "upAxis": "+Y",
+  "outputLength": 5,
+  "colorMaterial": "xiaomi-paint",
+  "glassMaterial": "xiaomi-glass",
+  "wheelNodes": [
+    "vehicle-wheel-0",
+    "vehicle-wheel-1",
+    "vehicle-wheel-2",
+    "vehicle-wheel-3"
+  ],
+  "sourceAppearanceReference": "src/app/core/parking-scene.ts styleMaterials: car-body RGB(.24,.62,.75), metallic .85, roughness .85; car-glass alpha .35.",
+  "assets": [
+    {
+      "id": "desktop",
+      "sourceFile": "E:\\codes\\3dSmartParking\\public\\models\\vehicle-desktop-v3.glb",
+      "sourceSha256": "b2999fc50266ed789fdc1a5f8c86e5f764e936a6fa8d1475692dc7c14c8bfe4c",
+      "sourceBytes": 1420956,
+      "file": "public/assets/xiaomi-desktop.glb",
+      "bytes": 1421016,
+      "sha256": "50cddbc3a63e541f0c45011d4dd7e054b0e2f80c19b2a50f727178d4659e0bf7",
+      "triangles": 24221,
+      "primitives": 14,
+      "geometryAttributesAndIndicesUnchanged": true,
+      "drawCallEstimate": "14 single color pass submissions; shadow/depth/post passes are renderer-dependent.",
+      "meshes": [
+        {
+          "name": "vehicle-body",
+          "primitives": 6,
+          "triangles": 19121
+        },
+        {
+          "name": "vehicle-wheel-0",
+          "primitives": 2,
+          "triangles": 1281
+        },
+        {
+          "name": "vehicle-wheel-1",
+          "primitives": 2,
+          "triangles": 1281
+        },
+        {
+          "name": "vehicle-wheel-2",
+          "primitives": 2,
+          "triangles": 1269
+        },
+        {
+          "name": "vehicle-wheel-3",
+          "primitives": 2,
+          "triangles": 1269
+        }
+      ],
+      "materials": [
+        {
+          "name": "xiaomi-rims",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-1",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-paint",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-3",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-4",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-glass",
+          "alphaMode": "BLEND"
+        },
+        {
+          "name": "xiaomi-tyres",
+          "alphaMode": "OPAQUE"
+        }
+      ],
+      "textures": [
+        {
+          "name": "vehicle-texture-0",
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 188519,
+          "sha256": "8675314be816f41d3bc5e9e55adf5b228baa5835a2d895950e65d17fddb4d859"
+        },
+        {
+          "name": "vehicle-texture-1",
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 140347,
+          "sha256": "100288a02476327a10e3389814cfd4dbfd4ff1c3ac53dd9cc507dfb7e5ed7e69"
+        },
+        {
+          "name": "vehicle-texture-2",
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 112919,
+          "sha256": "ee3ccf27b135dc918466069fffa842117c9d853c9c22271b5a6272e562917728"
+        },
+        {
+          "name": "vehicle-texture-3",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 34411,
+          "sha256": "40523a7ee7b3044b1bd1e0c01f1586a4bcc69d66a736ce86447bb15c64768673"
+        },
+        {
+          "name": "vehicle-texture-4",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 24644,
+          "sha256": "eb70c311ec897a35982093a6fafe918cd89bd115a45787dc1985a882691b8a70"
+        },
+        {
+          "name": "vehicle-texture-5",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 26257,
+          "sha256": "54efb04ccb1acd04472c97c36f8d8ee00e1f3ad0c112a4616c6cb923842d5616"
+        },
+        {
+          "name": "vehicle-texture-6",
+          "width": 1024,
+          "height": 1024,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 72911,
+          "sha256": "2b8542a69b94e5389e170d52fcc1c8aa1db9211827f25af3726756d977be5f25"
+        }
+      ],
+      "sourceBounds": {
+        "min": [
+          -7.041947364807129,
+          0,
+          -16.14468002319336
+        ],
+        "max": [
+          7.012920379638672,
+          8.740507125854492,
+          16.032426834106445
+        ]
+      },
+      "bounds": {
+        "min": [
+          -1.0919928108186385,
+          0,
+          -2.5
+        ],
+        "max": [
+          1.0919928108186385,
+          1.3581872299174083,
+          2.5
+        ]
+      },
+      "scale": 0.15538998027927683,
+      "dimensions": [
+        2.183985621637277,
+        1.3581872299174083,
+        5
+      ],
+      "textureBaseRgbaBytes": 19922944,
+      "externalResources": []
+    },
+    {
+      "id": "mobile",
+      "sourceFile": "E:\\codes\\3dSmartParking\\public\\models\\vehicle-mobile-v3.glb",
+      "sourceSha256": "470b1c0e6213cc225c457b341dae52bf727155867523559f254075f28d027a31",
+      "sourceBytes": 1350928,
+      "file": "public/assets/xiaomi-mobile.glb",
+      "bytes": 1007452,
+      "sha256": "e14fd2e61d80bbde5c031df61023d41b1943cb37e67b49fe0869ff473613547f",
+      "triangles": 21249,
+      "primitives": 14,
+      "geometryAttributesAndIndicesUnchanged": true,
+      "drawCallEstimate": "14 single color pass submissions; shadow/depth/post passes are renderer-dependent.",
+      "meshes": [
+        {
+          "name": "vehicle-body",
+          "primitives": 6,
+          "triangles": 16149
+        },
+        {
+          "name": "vehicle-wheel-0",
+          "primitives": 2,
+          "triangles": 1281
+        },
+        {
+          "name": "vehicle-wheel-1",
+          "primitives": 2,
+          "triangles": 1281
+        },
+        {
+          "name": "vehicle-wheel-2",
+          "primitives": 2,
+          "triangles": 1269
+        },
+        {
+          "name": "vehicle-wheel-3",
+          "primitives": 2,
+          "triangles": 1269
+        }
+      ],
+      "materials": [
+        {
+          "name": "xiaomi-rims",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-1",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-paint",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-3",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-vehicle-detail-4",
+          "alphaMode": "OPAQUE"
+        },
+        {
+          "name": "xiaomi-glass",
+          "alphaMode": "BLEND"
+        },
+        {
+          "name": "xiaomi-tyres",
+          "alphaMode": "OPAQUE"
+        }
+      ],
+      "textures": [
+        {
+          "name": "vehicle-texture-0",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 74314,
+          "sha256": "73eae4065524543c85be266bed840f850cfd46680bf194049c128d8d1ef0c540"
+        },
+        {
+          "name": "vehicle-texture-1",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 61109,
+          "sha256": "c6dd894eb69bf379c88a671c1f3ca520995bfe90a79585642bfaec10e4a975fa"
+        },
+        {
+          "name": "vehicle-texture-2",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 51463,
+          "sha256": "977a520360ef667a4ffa4add2acf335fd9237c20896a31eaa7ce3774572abfad"
+        },
+        {
+          "name": "vehicle-texture-3",
+          "width": 256,
+          "height": 256,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 14000,
+          "sha256": "a8cddaac45d23c11254e4e549627031c42207b2f172020748cc5e36cec06294e"
+        },
+        {
+          "name": "vehicle-texture-4",
+          "width": 256,
+          "height": 256,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 10547,
+          "sha256": "3ec6a10b4cde5c201d64d655f8072ad3e15c1a2b3465f59cee0ce3ff8aafce84"
+        },
+        {
+          "name": "vehicle-texture-5",
+          "width": 256,
+          "height": 256,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 10875,
+          "sha256": "c49b88d5371617dd14fbd526b154a0f8e0274e8696a093ebd314df0b4cafeab1"
+        },
+        {
+          "name": "vehicle-texture-6",
+          "width": 512,
+          "height": 512,
+          "mimeType": "image/jpeg",
+          "embedded": true,
+          "bytes": 34181,
+          "sha256": "7797327b04418c77657e8f611025419b26a00ebacf556cd2ecdc85afa7dc0a42"
+        }
+      ],
+      "sourceBounds": {
+        "min": [
+          -7.041947364807129,
+          0,
+          -16.14468002319336
+        ],
+        "max": [
+          7.012920379638672,
+          8.740507125854492,
+          16.032426834106445
+        ]
+      },
+      "bounds": {
+        "min": [
+          -1.0919928108186385,
+          0,
+          -2.5
+        ],
+        "max": [
+          1.0919928108186385,
+          1.3581872299174083,
+          2.5
+        ]
+      },
+      "scale": 0.15538998027927683,
+      "dimensions": [
+        2.183985621637277,
+        1.3581872299174083,
+        5
+      ],
+      "textureBaseRgbaBytes": 4980736,
+      "externalResources": []
+    }
+  ]
+}

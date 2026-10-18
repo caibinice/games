@@ -26,6 +26,16 @@
       "license": "CC0-1.0",
       "sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
       "bytes": 800850
+    },
+    {
+      "pack": "Fever Stadium (165 BPM)",
+      "author": "MintoDog",
+      "page": "https://opengameart.org/content/fever-stadium",
+      "url": "https://opengameart.org/sites/default/files/fever_stadium_bpm165.mp3",
+      "license": "CC0-1.0",
+      "bytes": 3435743,
+      "sha256": "e6b302ceb367970589f78bd6acf20d900c97eb4a2c0232bee7a4818498c9e73d",
+      "retrieved": "2026-10-18"
     }
   ],
   "runtime": [
@@ -87,6 +97,24 @@
       "file": "assets/truck.glb",
       "bytes": 176360,
       "sha256": "5e1bc66c343501dd7d5734b57e672dd949bf95d7abdce680c6508cef99d374f8",
+      "license": "CC0-1.0"
+    },
+    {
+      "file": "assets/xiaomi-desktop.glb",
+      "bytes": 1421016,
+      "sha256": "50cddbc3a63e541f0c45011d4dd7e054b0e2f80c19b2a50f727178d4659e0bf7",
+      "license": "User-provided parking project model; see art/xiaomi-notes.md"
+    },
+    {
+      "file": "assets/xiaomi-mobile.glb",
+      "bytes": 1007452,
+      "sha256": "e14fd2e61d80bbde5c031df61023d41b1943cb37e67b49fe0869ff473613547f",
+      "license": "User-provided parking project model; see art/xiaomi-notes.md"
+    },
+    {
+      "file": "assets/audio/fever-stadium.mp3",
+      "bytes": 3435743,
+      "sha256": "e6b302ceb367970589f78bd6acf20d900c97eb4a2c0232bee7a4818498c9e73d",
       "license": "CC0-1.0"
     }
   ]

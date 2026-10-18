@@ -11,16 +11,18 @@ function running() {
   return g;
 }
 describe('JET-R deterministic simulation', () => {
-  it('has 30 bounded stages, three chapters and increasing distance/speed', () => {
+  it('has 30 routes across six maps with closely matched arcade difficulty', () => {
+    const maps = new Set(),
+      speeds = [];
     for (let n = 1; n <= 30; n++) {
-      const a = E.levelInfo(n);
-      expect(a.level).toBe(n);
-      expect(a.chapter).toBe(Math.floor((n - 1) / 10));
-      if (n > 1) {
-        expect(a.distance).toBeGreaterThan(E.levelInfo(n - 1).distance);
-        expect(a.speed).toBeGreaterThan(E.levelInfo(n - 1).speed);
-      }
+      const info = E.levelInfo(n);
+      maps.add(info.theme.id);
+      speeds.push(info.speed);
+      expect(info.distance).toBeGreaterThan(1300);
+      expect(info.distance).toBeLessThan(1700);
     }
+    expect(maps.size).toBe(6);
+    expect(Math.max(...speeds) / Math.min(...speeds)).toBeLessThan(1.04);
     expect(E.levelInfo(-2).level).toBe(1);
     expect(E.levelInfo(99).level).toBe(30);
   });
@@ -47,7 +49,7 @@ describe('JET-R deterministic simulation', () => {
     }
     expect(a).toEqual(b);
   });
-  it('one stick deflection moves one lane, release re-arms and edges clamp', () => {
+  it('one direction press moves one lane, release re-arms and edges clamp', () => {
     const g = running();
     tick(g, 0.5, { left: true });
     expect(g.lane).toBe(0);
@@ -91,7 +93,7 @@ describe('JET-R deterministic simulation', () => {
     E.activateJet(g);
     tick(g, 0.8);
     g.objects = [{ id: 1, type, x: 0, z: g.distance + 0.1, passed: false }];
-    tick(g, 0.12);
+    tick(g, 0.35);
     expect(g.hp).toBe(3);
     expect(g.cleared).toBe(1);
     expect(g.combo).toBe(1);
@@ -122,7 +124,7 @@ describe('JET-R deterministic simulation', () => {
   });
   it('old obstacles never damage a car after passing', () => {
     const g = running();
-    g.objects = [{ id: 1, type: 'traffic', x: 0, z: -4, passed: false }];
+    g.objects = [{ id: 1, type: 'traffic', x: 0, z: -6, passed: false }];
     tick(g, 0.2);
     expect(g.hp).toBe(3);
   });

@@ -832,3 +832,194 @@ body.immersive {
     transition: none;
   }
 }
+
+/* Arcade v2: readable skill feedback, discrete controls and effect timers. */
+.track-info .track-section {
+  display: block;
+  margin: -6px 0 9px;
+  color: #d5e5d7;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+.race-effects {
+  position: absolute;
+  top: 109px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+.race-effects > span {
+  border: 1px solid color-mix(in srgb, var(--effect-color) 55%, transparent);
+  border-radius: 5px;
+  background: #10222bc9;
+  padding: 6px 9px;
+  color: var(--effect-color);
+  font-size: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  text-shadow: 0 1px 3px #0008;
+}
+.race-effects b {
+  font: 15px monospace;
+}
+.race-effects strong {
+  font: 12px monospace;
+}
+.jet-meter {
+  width: 215px;
+}
+.jet-meter > span {
+  font-size: 9px;
+}
+.jet-meter > span > b {
+  font-size: 14px;
+  min-width: 38px;
+  text-align: right;
+}
+.item-legend {
+  display: grid;
+  gap: 7px;
+  margin-top: 17px;
+  border-top: 1px solid #a7ceb126;
+  padding-top: 15px;
+}
+.item-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  color: #aebfb1;
+}
+.item-legend b {
+  color: var(--item-color);
+  font: 14px monospace;
+  width: 27px;
+  text-align: center;
+}
+.item-legend small {
+  margin-left: auto;
+  font: 9px monospace;
+  color: var(--item-color);
+}
+.racer-shell.play-full .race-effects {
+  top: 82px;
+}
+.racer-shell.is-mobile.play-full .track-info .track-section {
+  font-size: 7px;
+  margin: -3px 0 7px;
+}
+.racer-shell.is-mobile.play-full .race-effects {
+  top: 78px;
+  left: 22px;
+  gap: 6px;
+}
+.racer-shell.is-mobile.play-full .race-effects > span {
+  font-size: 9px;
+  padding: 4px 7px;
+}
+.racer-shell.is-mobile.play-full .jet-meter {
+  width: 168px;
+}
+.racer-shell.is-mobile.play-full .race-bottom-hud {
+  left: 185px;
+  right: 226px;
+}
+.racer-shell.compact.play-full .speedometer {
+  display: none;
+}
+.racer-shell.compact.play-full .race-bottom-hud {
+  justify-content: center;
+  left: 164px;
+  right: 214px;
+}
+.racer-shell.compact.play-full .jet-meter {
+  width: 145px;
+}
+.racer-shell.compact.play-full .jet-meter > span {
+  font-size: 8px;
+}
+.racer-shell.compact.play-full .race-effects {
+  top: 72px;
+}
+.racer-shell .race-top-hud {
+  z-index: 5;
+}
+.racer-shell .race-overlay {
+  z-index: 4;
+}
+.racer-shell .race-effects,
+.racer-shell .race-bottom-hud {
+  z-index: 3;
+}
+.racer-shell .race-notice {
+  z-index: 6;
+}
+@media (max-width: 760px) {
+  .item-legend {
+    grid-column: 1/-1;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 9px;
+  }
+  .item-legend > span {
+    font-size: 8px;
+  }
+  .jet-meter {
+    width: 153px;
+  }
+  .jet-meter > span {
+    font-size: 8px;
+  }
+  .jet-meter > span > b {
+    font-size: 11px;
+  }
+  .race-effects {
+    left: 16px;
+    top: 105px;
+  }
+  .race-effects > span {
+    font-size: 9px;
+  }
+  .race-menu > small {
+    display: block;
+    max-width: 340px;
+    line-height: 1.8;
+  }
+}
+@media (max-height: 370px) {
+  .racer-shell.play-full .race-effects {
+    top: 71px;
+  }
+  .racer-shell.play-full .race-effects > span {
+    font-size: 8px;
+    padding: 3px 7px;
+  }
+  .racer-shell.play-full .race-top-hud {
+    top: 10px;
+  }
+  .racer-shell.play-full .race-bottom-hud {
+    bottom: 14px;
+  }
+  .racer-shell.play-full .race-notice {
+    top: 38%;
+  }
+}
+.racer-shell.play-full:not(.is-mobile) .jet-meter {
+  width: 275px;
+}
+.racer-shell.play-full:not(.is-mobile) .jet-meter > span {
+  font-size: 13px;
+}
+.racer-shell.play-full:not(.is-mobile) .jet-meter > span > b {
+  font-size: 18px;
+}
+.racer-shell.play-full:not(.is-mobile) .track-info > span {
+  font-size: 11px;
+}
+.racer-shell.play-full:not(.is-mobile) .track-section {
+  font-size: 10px;
+}

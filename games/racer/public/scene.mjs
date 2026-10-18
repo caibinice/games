@@ -1,33 +1,35 @@
-import * as THREE from 'three';
+import * as T from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { LANES, levelInfo, JET_DURATION } from './engine.mjs';
+import { LANES, ITEMS, OBSTACLES, levelInfo } from './engine.mjs';
+import { createEnvironment } from './environment.mjs';
 
 const ASSETS = '/games/racer/assets/';
 export async function createScene(canvas, { mobile = false } = {}) {
-  const renderer = new THREE.WebGLRenderer({
+  const renderer = new T.WebGLRenderer({
     canvas,
-    antialias: true,
+    antialias: !mobile,
     powerPreference: 'high-performance',
   });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFShadowMap;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.25 : 1.75));
+  renderer.shadowMap.enabled = !mobile;
+  renderer.shadowMap.type = T.PCFShadowMap;
+  renderer.toneMapping = T.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
-  const scene = new THREE.Scene(),
-    camera = new THREE.PerspectiveCamera(58, 1, 0.1, 470);
-  const sky = new THREE.Color('#b8d5dd');
+  const scene = new T.Scene(),
+    camera = new T.PerspectiveCamera(60, 1, 0.1, 470),
+    sky = new T.Color();
   scene.background = sky;
-  scene.fog = new THREE.Fog(sky, 90, 320);
-  scene.add(new THREE.HemisphereLight(0xe0f7ff, 0x38454b, 2.4));
-  const sun = new THREE.DirectionalLight(0xffdfb8, 3.7);
+  scene.fog = new T.Fog(sky, 100, 340);
+  const ambient = new T.HemisphereLight(0xe0f7ff, 0x34433e, 2.1);
+  scene.add(ambient);
+  const sun = new T.DirectionalLight(0xffdfb8, 3.4);
   sun.position.set(-25, 35, -28);
-  sun.castShadow = true;
+  sun.castShadow = !mobile;
   sun.shadow.mapSize.set(1024, 1024);
   Object.assign(sun.shadow.camera, {
     left: -18,
     right: 18,
-    top: 30,
+    top: 32,
     bottom: -18,
     near: 1,
     far: 100,
@@ -37,8 +39,8 @@ export async function createScene(canvas, { mobile = false } = {}) {
   const materials = new Set(),
     geometries = new Set(),
     textures = new Set();
-  function mat(color, metalness = 0, roughness = 0.8, emissive = 0) {
-    const m = new THREE.MeshStandardMaterial({
+  const material = (color, metalness = 0, roughness = 0.8, emissive = 0) => {
+    const m = new T.MeshStandardMaterial({
       color,
       metalness,
       roughness,
@@ -47,255 +49,417 @@ export async function createScene(canvas, { mobile = false } = {}) {
     });
     materials.add(m);
     return m;
-  }
-  const asphalt = mat(0x283740),
-    concrete = mat(0x8d9c9e),
-    line = mat(0xe6e1c8),
-    glass = mat(0x9ec7cd, 0.65, 0.2),
-    steel = mat(0x455a62, 0.6, 0.32),
-    amber = mat(0xffa35e, 0.2, 0.4),
-    cyan = mat(0x8effed, 0.2, 0.35, 1.5);
-  const box = new THREE.BoxGeometry(1, 1, 1);
+  };
+  const asphalt = material(0x384849),
+    rail = material(0xa8b5b1),
+    line = material(0xe6e1c8),
+    steel = material(0x455a62, 0.6, 0.32),
+    amber = material(0xffa35e, 0.2, 0.4),
+    cyan = material(0x8effed, 0.2, 0.35, 1.4),
+    groundMat = material(0x739c52),
+    rubber = material(0x17212a),
+    truckMat = [material(0x58768a, 0.35, 0.45), material(0xb58b66, 0.3, 0.5)];
+  const box = new T.BoxGeometry(1, 1, 1),
+    wheelGeo = new T.CylinderGeometry(0.55, 0.55, 0.3, 10).rotateZ(Math.PI / 2);
   geometries.add(box);
+  geometries.add(wheelGeo);
   function cube(w, h, d, m, x = 0, y = 0, z = 0, parent = scene) {
-    const o = new THREE.Mesh(box, m);
+    const o = new T.Mesh(box, m);
     o.scale.set(w, h, d);
     o.position.set(x, y, z);
-    o.receiveShadow = true;
+    o.receiveShadow = !mobile;
     parent.add(o);
     return o;
   }
-  cube(900, 0.2, 600, mat(0x5a9aa8, 0.4, 0.25), 0, -5, -210);
+  cube(900, 0.3, 700, groundMat, 0, -0.72, -240);
   cube(12, 0.6, 480, asphalt, 0, -0.35, -200);
   for (const side of [-1, 1]) {
-    cube(0.35, 0.7, 480, concrete, side * 5.9, 0.15, -200);
-    cube(0.07, 0.08, 480, cyan, side * 5.7, 0.52, -200);
-    cube(0.08, 0.12, 480, line, side * 5.1, 0.015, -200);
+    cube(0.3, 0.6, 480, rail, side * 5.9, 0.08, -200);
+    cube(0.06, 0.06, 480, cyan, side * 5.7, 0.41, -200);
+    cube(0.08, 0.035, 480, line, side * 5.1, 0.015, -200);
   }
-  const marks = new THREE.InstancedMesh(box, line, 100);
-  marks.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  const matrix = new T.Matrix4(),
+    q = new T.Quaternion(),
+    position = new T.Vector3(),
+    scale = new T.Vector3(),
+    upAxis = new T.Vector3(0, 1, 0);
+  const marks = new T.InstancedMesh(box, line, 100);
   marks.frustumCulled = false;
+  marks.instanceMatrix.setUsage(T.DynamicDrawUsage);
   scene.add(marks);
-  const matrix = new THREE.Matrix4();
-  const posts = [];
-  for (let i = 0; i < 24; i++) {
-    const side = i % 2 ? -1 : 1,
-      z = -i * 20;
-    const group = new THREE.Group();
-    scene.add(group);
-    group.position.set(side * 7, 0, z);
-    cube(0.13, 7, 0.13, steel, 0, 3.3, 0, group);
-    cube(2.2, 0.12, 0.15, steel, -side * 0.9, 6.8, 0, group);
-    cube(1.6, 0.04, 0.22, cyan, -side * 0.9, 6.72, 0, group);
-    posts.push(group);
-  }
-  // Shared geometry/materials keep the roadside skyline inexpensive on phones.
-  const buildings = [];
-  for (let i = 0; i < 76; i++) {
-    const side = i % 2 ? -1 : 1,
-      h = 5 + ((i * 13) % 28),
-      w = 4 + ((i * 7) % 8),
-      x = side * (14 + ((i * 11) % 42)),
-      z = -i * 6;
-    const group = new THREE.Group();
-    group.position.set(x, 0, z);
-    scene.add(group);
-    cube(w, h, 7, i % 3 === 0 ? glass : concrete, 0, h / 2 - 3, 0, group);
-    cube(w + 0.2, 0.18, 7.2, steel, 0, h - 3, 0, group);
-    for (let row = 2; row < h - 2; row += 3)
-      cube(w + 0.03, 0.18, 7.04, i % 4 === 0 ? cyan : glass, 0, row - 3, 0, group);
-    buildings.push(group);
-  }
-  const cityByMaterial = new Map();
-  for (const [index, group] of buildings.entries()) {
-    for (const child of group.children) {
-      const instances = cityByMaterial.get(child.material) || [];
-      instances.push({
-        index,
-        x: group.position.x + child.position.x,
-        y: child.position.y,
-        scale: child.scale.clone(),
-      });
-      cityByMaterial.set(child.material, instances);
-    }
-    scene.remove(group);
-  }
-  const cityBatches = [...cityByMaterial].map(([material, instances]) => {
-    const mesh = new THREE.InstancedMesh(box, material, instances.length);
-    mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-    mesh.frustumCulled = false;
-    mesh.receiveShadow = true;
-    scene.add(mesh);
-    return { mesh, instances };
-  });
-  const sunDisc = new THREE.Mesh(
-    new THREE.SphereGeometry(15, 20, 12),
-    new THREE.MeshBasicMaterial({ color: 0xffebc5 }),
+  // One instanced batch per road furniture material, not a draw call per lamp.
+  const posts = new T.InstancedMesh(box, steel, 48),
+    lights = new T.InstancedMesh(box, cyan, 24);
+  posts.frustumCulled = lights.frustumCulled = false;
+  scene.add(posts, lights);
+  const environment = createEnvironment(scene, { mobile });
+  const sunDisc = new T.Mesh(
+    new T.SphereGeometry(15, 16, 10),
+    new T.MeshBasicMaterial({ color: 0xffebc5 }),
   );
   sunDisc.position.set(-100, 45, -310);
   scene.add(sunDisc);
   const loader = new GLTFLoader();
-  const [playerGLTF, ...trafficGLTF] = await Promise.all(
-    ['jet-r.glb', 'sedan.glb', 'suv.glb', 'truck.glb'].map((f) => loader.loadAsync(ASSETS + f)),
-  );
-  const player = new THREE.Group();
+  let gltfs;
+  try {
+    gltfs = await Promise.all(
+      [mobile ? 'xiaomi-mobile.glb' : 'xiaomi-desktop.glb', 'sedan.glb', 'suv.glb'].map((f) =>
+        loader.loadAsync(ASSETS + f),
+      ),
+    );
+  } catch (error) {
+    renderer.dispose();
+    renderer.forceContextLoss();
+    throw error;
+  }
+  const player = new T.Group(),
+    vehicle = gltfs[0].scene;
   scene.add(player);
-  player.add(playerGLTF.scene);
-  const paint = [];
-  player.traverse((o) => {
-    if (o.isMesh) {
-      o.castShadow = true;
-      o.receiveShadow = true;
-      if (o.material.name === 'JET_R_Paint') {
-        o.material = o.material.clone();
-        paint.push(o.material);
-      }
+  vehicle.rotation.y = Math.PI;
+  vehicle.position.y = -0.65;
+  player.add(vehicle);
+  const paint = [],
+    wheels = [],
+    originalMaterials = new Map(),
+    clones = new Map();
+  vehicle.traverse((o) => {
+    if (o.name.startsWith('vehicle-wheel-')) wheels.push(o);
+    if (!o.isMesh) return;
+    o.castShadow = !mobile;
+    o.receiveShadow = !mobile;
+    function clone(m) {
+      if (clones.has(m)) return clones.get(m);
+      const c = m.clone();
+      clones.set(m, c);
+      materials.add(c);
+      originalMaterials.set(c, {
+        opacity: c.opacity,
+        transparent: c.transparent,
+        depthWrite: c.depthWrite,
+        emissive: c.emissive?.clone(),
+        emissiveIntensity: c.emissiveIntensity,
+      });
+      if (c.name === 'xiaomi-paint') paint.push(c);
+      return c;
     }
+    o.material = Array.isArray(o.material) ? o.material.map(clone) : clone(o.material);
   });
-  const traffic = trafficGLTF.map((g) => {
+  const nozzle = new T.InstancedMesh(new T.CylinderGeometry(0.12, 0.15, 0.12, 10), steel, 4);
+  for (let i = 0; i < 4; i++) {
+    matrix.makeTranslation(i % 2 ? -0.73 : 0.73, -0.52, i < 2 ? -1.4 : 1.4);
+    nozzle.setMatrixAt(i, matrix);
+  }
+  player.add(nozzle);
+  const plumeMat = new T.MeshBasicMaterial({
+    color: 0x9ef7ff,
+    transparent: true,
+    opacity: 0.72,
+    depthWrite: false,
+  });
+  const flameGeo = new T.ConeGeometry(0.24, 1.8, 10).rotateX(Math.PI / 2),
+    flames = new T.InstancedMesh(flameGeo, plumeMat, 2);
+  flames.frustumCulled = false;
+  player.add(flames);
+  const traffic = gltfs.slice(1).map((g) => {
     const root = g.scene,
-      bounds = new THREE.Box3().setFromObject(root),
-      size = bounds.getSize(new THREE.Vector3());
-    root.scale.setScalar(1.8 / size.x);
-    root.position.y = -bounds.min.y * root.scale.x;
+      bounds = new T.Box3().setFromObject(root),
+      size = bounds.getSize(new T.Vector3()),
+      center = bounds.getCenter(new T.Vector3()),
+      s = 1.8 / size.x;
+    root.scale.setScalar(s);
+    root.position.set(-center.x * s, -bounds.min.y * s, -center.z * s);
+    const group = new T.Group();
+    group.add(root);
+    group.rotation.y = Math.PI;
     root.traverse((o) => {
-      if (o.isMesh) o.castShadow = true;
+      if (o.isMesh) o.castShadow = false;
     });
-    return root;
+    return group;
   });
-  const shadowTexCanvas = document.createElement('canvas');
-  shadowTexCanvas.width = 64;
-  shadowTexCanvas.height = 64;
-  const ctx = shadowTexCanvas.getContext('2d'),
+  const shadowCanvas = document.createElement('canvas');
+  shadowCanvas.width = shadowCanvas.height = 64;
+  const ctx = shadowCanvas.getContext('2d'),
     gradient = ctx.createRadialGradient(32, 32, 1, 32, 32, 32);
   gradient.addColorStop(0, '#000a');
   gradient.addColorStop(1, '#0000');
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 64, 64);
-  const tex = new THREE.CanvasTexture(shadowTexCanvas);
-  textures.add(tex);
-  const shadow = new THREE.Mesh(
-    new THREE.PlaneGeometry(4, 6),
-    new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false }),
+  const shadowTexture = new T.CanvasTexture(shadowCanvas);
+  textures.add(shadowTexture);
+  const shadow = new T.Mesh(
+    new T.PlaneGeometry(4.3, 6.4),
+    new T.MeshBasicMaterial({ map: shadowTexture, transparent: true, depthWrite: false }),
   );
   shadow.rotation.x = -Math.PI / 2;
   shadow.position.y = 0.035;
   scene.add(shadow);
   const models = new Map(),
-    pool = new Map();
-  const coinGeo = new THREE.TorusGeometry(0.34, 0.09, 6, 12);
-  geometries.add(coinGeo);
+    pool = new Map(),
+    coinGeo = new T.TorusGeometry(0.34, 0.09, 5, 12),
+    coinMaterial = material(0xffcd65, 0.7, 0.24, 0.3),
+    coins = new T.InstancedMesh(coinGeo, coinMaterial, 160);
+  coins.frustumCulled = false;
+  coins.instanceMatrix.setUsage(T.DynamicDrawUsage);
+  scene.add(coins);
+  const pickupGeo = new T.IcosahedronGeometry(0.62, 1),
+    ringGeo = new T.TorusGeometry(0.85, 0.035, 5, 20),
+    labels = new Map();
+  for (const [type, item] of Object.entries(ITEMS)) {
+    const c = document.createElement('canvas');
+    c.width = c.height = mobile ? 128 : 256;
+    const x = c.getContext('2d'),
+      s = c.width;
+    x.clearRect(0, 0, s, s);
+    x.fillStyle = type === 'reverse' ? '#251b35' : '#142d36';
+    x.beginPath();
+    x.arc(s / 2, s / 2, s * 0.44, 0, Math.PI * 2);
+    x.fill();
+    x.strokeStyle = item.color;
+    x.lineWidth = s * 0.045;
+    x.stroke();
+    x.fillStyle = item.color;
+    x.textAlign = 'center';
+    x.textBaseline = 'middle';
+    x.font = `bold ${s * (type === 'fullSpeed' ? 0.25 : 0.48)}px system-ui`;
+    x.fillText(item.icon, s / 2, s * 0.52);
+    const texture = new T.CanvasTexture(c);
+    textures.add(texture);
+    labels.set(type, new T.SpriteMaterial({ map: texture, transparent: true, depthWrite: false }));
+    materials.add(labels.get(type));
+  }
   function makeObject(o) {
-    const group = new THREE.Group();
+    const group = new T.Group();
     if (o.type === 'traffic') group.add(traffic[o.variant % traffic.length].clone(true));
+    if (o.type === 'truck') {
+      cube(2.3, 0.35, 22, steel, 0, 0.85, 0, group);
+      cube(2.28, 3.9, 17.8, truckMat[o.variant % 2], 0, 2.95, 1.6, group);
+      cube(2.2, 2.4, 3.3, rail, 0, 1.9, -9.3, group);
+      cube(1.9, 0.85, 0.07, steel, 0, 2.45, -10.98, group);
+      const wheels = new T.InstancedMesh(wheelGeo, rubber, 12);
+      for (let i = 0; i < 12; i++) {
+        matrix.makeTranslation(
+          i % 2 ? -1.14 : 1.14,
+          0.55,
+          [-9, -7, 4, 6.5, 8.5, 10][Math.floor(i / 2)],
+        );
+        wheels.setMatrixAt(i, matrix);
+      }
+      group.add(wheels);
+      cube(1.8, 0.12, 0.08, amber, 0, 1.25, 10.57, group);
+      // Tall cargo silhouette intentionally extends well above the jump apex.
+      cube(2.05, 0.14, 17.3, rail, 0, 4.96, 1.6, group);
+    }
     if (o.type === 'barrier') {
-      cube(2.6, 0.7, 0.7, amber, 0, 0.35, 0, group);
+      cube(2.65, 0.85, 1.2, amber, 0, 0.425, 0, group);
       for (const x of [-0.85, 0, 0.85]) {
-        const stripe = cube(0.22, 0.73, 0.72, line, x, 0.35, 0, group);
+        const stripe = cube(0.22, 0.87, 1.22, line, x, 0.425, 0, group);
         stripe.rotation.z = -0.45;
       }
     }
     if (o.type === 'gate') {
-      for (const side of [-1, 1]) cube(0.18, 4, 0.2, steel, side * 1.35, 2, 0, group);
-      cube(2.9, 0.5, 0.4, amber, 0, 3.5, 0, group);
-      cube(2.4, 0.07, 0.43, cyan, 0, 3.5, 0.01, group);
+      for (const side of [-1, 1]) cube(0.15, 3.1, 1.4, steel, side * 1.4, 1.55, 0, group);
+      cube(2.95, 0.58, 1.4, amber, 0, 2.9, 0, group);
+      cube(2.5, 0.09, 1.43, cyan, 0, 2.82, 0.01, group);
     }
-    if (o.type === 'coin') {
-      const coin = new THREE.Mesh(coinGeo, mat(0xffcd65, 0.75, 0.22, 0.3));
-      coin.position.y = 0.8;
-      group.add(coin);
-    }
-    if (o.type === 'energy') {
-      const e = cube(0.5, 0.9, 0.5, cyan, 0, 0.9, 0, group);
-      e.rotation.z = 0.4;
+    if (ITEMS[o.type]) {
+      const mat = material(o.type === 'reverse' ? 0x171121 : ITEMS[o.type].color, 0.35, 0.3, 0.25),
+        core = new T.Mesh(pickupGeo, mat);
+      core.position.y = 1.05;
+      group.add(core);
+      const ring = new T.Mesh(ringGeo, cyan);
+      ring.position.y = 1.05;
+      group.add(ring);
+      const label = new T.Sprite(labels.get(o.type));
+      label.position.set(0, 1.15, 0.6);
+      label.scale.set(1.2, 1.2, 1.2);
+      group.add(label);
+      if (o.type === 'reverse') {
+        for (const s of [-1, 1]) {
+          const horn = new T.Mesh(new T.ConeGeometry(0.15, 0.6, 6), mat);
+          horn.position.set(s * 0.4, 1.7, 0);
+          horn.rotation.z = -s * 0.4;
+          group.add(horn);
+        }
+      }
     }
     scene.add(group);
     return group;
   }
-  const puffGeo = new THREE.IcosahedronGeometry(1, 1);
-  geometries.add(puffGeo);
-  const puffMat = new THREE.MeshBasicMaterial({
-    color: 0xeefaff,
+  // Static traffic formations share one instanced batch per prototype primitive.
+  // A long truck's twelve wheels stay in one batch even across multiple trucks.
+  const obstacleBatches = new Map(),
+    instanceTransform = new T.Matrix4(),
+    wheelTransform = new T.Matrix4();
+  function obstacleBatch(o) {
+    const key = o.type + (['truck', 'traffic'].includes(o.type) ? o.variant % 2 : '');
+    if (obstacleBatches.has(key)) return obstacleBatches.get(key);
+    const prototype = makeObject(o),
+      parts = [];
+    prototype.updateMatrixWorld(true);
+    prototype.traverse((node) => {
+      if (!node.isMesh) return;
+      const transforms = [];
+      if (node.isInstancedMesh) {
+        for (let i = 0; i < node.count; i++) {
+          node.getMatrixAt(i, wheelTransform);
+          transforms.push(new T.Matrix4().multiplyMatrices(node.matrixWorld, wheelTransform));
+        }
+      } else transforms.push(node.matrixWorld.clone());
+      const mesh = new T.InstancedMesh(node.geometry, node.material, 64 * transforms.length);
+      mesh.frustumCulled = false;
+      mesh.instanceMatrix.setUsage(T.DynamicDrawUsage);
+      mesh.count = 0;
+      mesh.receiveShadow = !mobile;
+      mesh.castShadow = false;
+      scene.add(mesh);
+      parts.push({ mesh, transforms });
+      if (node.isInstancedMesh) node.dispose();
+    });
+    scene.remove(prototype);
+    obstacleBatches.set(key, parts);
+    return parts;
+  }
+  const particleCount = mobile ? 24 : 40,
+    particlePositions = new Float32Array(particleCount * 3),
+    particleSizes = new Float32Array(particleCount),
+    particleAlpha = new Float32Array(particleCount),
+    particleGeometry = new T.BufferGeometry();
+  particleGeometry.setAttribute('position', new T.BufferAttribute(particlePositions, 3));
+  particleGeometry.setAttribute('size', new T.BufferAttribute(particleSizes, 1));
+  particleGeometry.setAttribute('alpha', new T.BufferAttribute(particleAlpha, 1));
+  const particleMaterial = new T.ShaderMaterial({
     transparent: true,
-    opacity: 0.55,
     depthWrite: false,
+    vertexShader:
+      'attribute float size;attribute float alpha;varying float vAlpha;void main(){vAlpha=alpha;vec4 p=modelViewMatrix*vec4(position,1.0);gl_PointSize=size*210.0/max(1.0,-p.z);gl_Position=projectionMatrix*p;}',
+    fragmentShader:
+      'varying float vAlpha;void main(){float d=length(gl_PointCoord-vec2(.5))*2.0;float a=(1.0-smoothstep(.05,1.0,d))*vAlpha*.65;if(a<.01)discard;gl_FragColor=vec4(.91,.97,1.0,a);}',
   });
-  materials.add(puffMat);
-  const puffs = Array.from({ length: 36 }, () => {
-    const p = new THREE.Mesh(puffGeo, puffMat.clone());
-    p.visible = false;
-    scene.add(p);
-    return { p, life: 0 };
-  });
+  const particles = new T.Points(particleGeometry, particleMaterial);
+  particles.frustumCulled = false;
+  scene.add(particles);
+  const puffs = Array.from({ length: particleCount }, () => ({
+    life: 0,
+    p: new T.Vector3(),
+    v: new T.Vector3(),
+  }));
   let puffIndex = 0,
     puffClock = 0;
-  const speedGeo = new THREE.BufferGeometry(),
-    speedArray = new Float32Array(48 * 6);
-  for (let i = 0; i < 48; i++) {
-    const a = i * 6,
-      x = (i % 2 ? -1 : 1) * (6 + (i % 7)),
+  const speedGeo = new T.BufferGeometry(),
+    speedArray = new Float32Array(36 * 6);
+  for (let i = 0; i < 36; i++) {
+    const x = (i % 2 ? -1 : 1) * (6 + (i % 7)),
       y = 1 + ((i * 7) % 11),
       z = -((i * 13) % 140);
-    speedArray.set([x, y, z, x, y, z + 3], a);
+    speedArray.set([x, y, z, x, y, z + 4], i * 6);
   }
-  speedGeo.setAttribute('position', new THREE.BufferAttribute(speedArray, 3));
-  geometries.add(speedGeo);
-  const speedLines = new THREE.LineSegments(
+  speedGeo.setAttribute('position', new T.BufferAttribute(speedArray, 3));
+  const speedLines = new T.LineSegments(
     speedGeo,
-    new THREE.LineBasicMaterial({ color: 0xe4ffff, transparent: true, opacity: 0 }),
+    new T.LineBasicMaterial({ color: 0xe4ffff, transparent: true, opacity: 0 }),
   );
   scene.add(speedLines);
   let width = 0,
     height = 0,
     prev = 0,
-    hitShake = 0,
+    shake = 0,
     landing = 0,
-    lastDistance = 0,
-    chapter = -1;
+    themeId = '',
+    previousGame = null;
+  function recycle() {
+    for (const m of models.values()) {
+      m.visible = false;
+      const list = pool.get(m.userData.pool) || [];
+      list.push(m);
+      pool.set(m.userData.pool, list);
+    }
+    models.clear();
+    for (const puff of puffs) puff.life = 0;
+  }
   function resize() {
     const w = canvas.clientWidth || 1,
       h = canvas.clientHeight || 1;
-    if (w === width && h === height) return;
-    width = w;
-    height = h;
-    renderer.setSize(w, h, false);
-    camera.aspect = w / h;
-    camera.updateProjectionMatrix();
+    if (w !== width || h !== height) {
+      width = w;
+      height = h;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
   }
   function update(g, now) {
     resize();
     const dt = Math.min(0.05, Math.max(0, (now - prev) / 1000));
     prev = now;
-    const info = levelInfo(g.level),
-      moving = g.status === 'running';
-    if (info.chapter !== chapter) {
-      chapter = info.chapter;
-      const color = [0xb8d5dd, 0x9c848c, 0x172c46][chapter];
-      sky.setHex(color);
-      scene.fog.color.copy(sky);
-      sun.intensity = chapter === 2 ? 1.5 : 3.7;
-      renderer.toneMappingExposure = chapter === 2 ? 1.6 : 1.2;
+    if (previousGame !== g) {
+      recycle();
+      previousGame = g;
     }
-    const travel = g.distance;
+    const info = levelInfo(g.level),
+      moving = g.status === 'running',
+      ghost = g.effects.ghost > 0;
+    if (themeId !== info.theme.id) {
+      themeId = info.theme.id;
+      sky.setHex(info.theme.sky);
+      scene.fog.color.setHex(info.theme.fog);
+      groundMat.color.setHex(info.theme.ground);
+      asphalt.color.setHex(info.theme.road);
+      rail.color.setHex(info.theme.rail);
+      cyan.color.setHex(info.theme.accent);
+      cyan.emissive.setHex(info.theme.accent);
+      sun.color.setHex(info.theme.sun);
+      sun.intensity = info.theme.light;
+      sunDisc.material.color.setHex(info.theme.sun);
+      renderer.toneMappingExposure = themeId === 'city' ? 1.5 : 1.16;
+      canvas.dataset.theme = themeId;
+    }
+    environment.update(info, g.distance, now);
     for (let i = 0; i < 100; i++) {
       matrix.makeScale(0.1, 0.025, 4);
-      matrix.setPosition(i < 50 ? -1.6 : 1.6, 0.015, -(i % 50) * 10 + (travel % 10));
+      matrix.setPosition(i < 50 ? -1.6 : 1.6, 0.015, -(i % 50) * 10 + (g.distance % 10));
       marks.setMatrixAt(i, matrix);
     }
     marks.instanceMatrix.needsUpdate = true;
-    for (let i = 0; i < posts.length; i++) posts[i].position.z = -i * 20 + (travel % 40);
-    for (const { mesh, instances } of cityBatches) {
-      for (const [i, instance] of instances.entries()) {
-        const z = (-(((instance.index * 6 - travel * 0.85) % 456) + 456) % 456) + 35;
-        matrix.makeScale(instance.scale.x, instance.scale.y, instance.scale.z);
-        matrix.setPosition(instance.x, instance.y, z);
-        mesh.setMatrixAt(i, matrix);
-      }
-      mesh.instanceMatrix.needsUpdate = true;
+    for (let i = 0; i < 24; i++) {
+      const side = i % 2 ? -1 : 1,
+        z = -i * 20 + (g.distance % 40);
+      matrix.makeScale(0.13, 7, 0.13);
+      matrix.setPosition(side * 7, 3.3, z);
+      posts.setMatrixAt(i * 2, matrix);
+      matrix.makeScale(2.2, 0.12, 0.15);
+      matrix.setPosition(side * 6.1, 6.8, z);
+      posts.setMatrixAt(i * 2 + 1, matrix);
+      matrix.makeScale(1.6, 0.04, 0.22);
+      matrix.setPosition(side * 6.1, 6.72, z);
+      lights.setMatrixAt(i, matrix);
     }
+    posts.instanceMatrix.needsUpdate = lights.instanceMatrix.needsUpdate = true;
     const present = new Set();
+    for (const parts of obstacleBatches.values()) for (const p of parts) p.mesh.count = 0;
+    let coinCount = 0;
     for (const o of g.objects) {
-      if (o.passed || o.z - travel > 280) continue;
+      if (o.passed || o.z - g.distance > 300) continue;
+      if (o.type === 'coin') {
+        if (coinCount < 160) {
+          position.set(o.x, 0.85 + Math.sin(now * 0.003 + o.id) * 0.08, -(o.z - g.distance));
+          q.setFromAxisAngle(upAxis, now * 0.0018);
+          scale.setScalar(1);
+          matrix.compose(position, q, scale);
+          coins.setMatrixAt(coinCount++, matrix);
+        }
+        continue;
+      }
+      if (OBSTACLES[o.type]) {
+        const parts = obstacleBatch(o);
+        matrix.makeTranslation(o.x, 0, -(o.z - g.distance));
+        for (const { mesh, transforms } of parts) {
+          for (const transform of transforms) {
+            instanceTransform.multiplyMatrices(matrix, transform);
+            mesh.setMatrixAt(mesh.count++, instanceTransform);
+          }
+        }
+        continue;
+      }
       present.add(o.id);
       let m = models.get(o.id);
       if (!m) {
@@ -305,9 +469,20 @@ export async function createScene(canvas, { mobile = false } = {}) {
         models.set(o.id, m);
       }
       m.visible = true;
-      m.position.set(o.x, 0, -(o.z - travel));
-      if (['coin', 'energy'].includes(o.type)) m.rotation.y = now * 0.0018;
+      m.position.set(
+        o.x,
+        ITEMS[o.type] ? Math.sin(now * 0.003 + o.id) * 0.15 : 0,
+        -(o.z - g.distance),
+      );
+      if (ITEMS[o.type]) m.rotation.y = Math.sin(now * 0.001) * 0.28;
     }
+    coins.count = coinCount;
+    for (const parts of obstacleBatches.values())
+      for (const { mesh } of parts) {
+        mesh.visible = mesh.count > 0;
+        mesh.instanceMatrix.needsUpdate = true;
+      }
+    coins.instanceMatrix.needsUpdate = true;
     for (const [id, m] of models)
       if (!present.has(id)) {
         m.visible = false;
@@ -317,73 +492,103 @@ export async function createScene(canvas, { mobile = false } = {}) {
         models.delete(id);
       }
     for (const ev of g.events) {
-      if (ev.type === 'hit') hitShake = 0.6;
-      if (ev.type === 'land') landing = 0.32;
+      if (ev.type === 'hit') shake = 0.5;
+      if (ev.type === 'land') landing = 0.3;
     }
     g.events = [];
-    hitShake = Math.max(0, hitShake - dt);
+    shake = Math.max(0, shake - dt);
     landing = Math.max(0, landing - dt);
-    player.position.set(g.x, g.height + Math.sin(now * 0.008) * 0.015, 0);
-    player.rotation.set(
-      0,
-      (LANES[g.lane] - g.x) * -0.04,
-      g.jet > 0 ? g.roll : (LANES[g.lane] - g.x) * -0.025,
-    );
-    player.visible = g.invulnerable <= 0 || Math.floor(now / 85) % 2 === 0;
+    player.position.set(g.x, 0.65 + g.height + Math.sin(now * 0.008) * 0.01, 0);
+    const steer = LANES[g.lane] - g.x;
+    player.rotation.set(0, -steer * 0.035, g.jet > 0 ? g.roll : -steer * 0.03);
+    player.visible = ghost || g.invulnerable <= 0 || Math.floor(now / 85) % 2 === 0;
+    for (const [m, base] of originalMaterials) {
+      const transparent = ghost || base.transparent;
+      if (m.transparent !== transparent) {
+        m.transparent = transparent;
+        m.needsUpdate = true;
+      }
+      m.opacity = base.opacity * (ghost ? 0.3 + Math.sin(now * 0.014) * 0.1 : 1);
+      m.depthWrite = ghost ? false : base.depthWrite;
+      if (m.emissive) {
+        if (ghost) {
+          m.emissive.setHex(0x65b6ce);
+          m.emissiveIntensity = 0.2;
+        } else {
+          m.emissive.copy(base.emissive);
+          m.emissiveIntensity = base.emissiveIntensity;
+        }
+      }
+    }
+    if (moving)
+      for (const wheel of wheels)
+        wheel.rotation.x = (wheel.rotation.x - (g.speed * dt) / 0.36) % (Math.PI * 2);
+    flames.visible = !!g.boost && moving;
+    for (let i = 0; i < 2; i++) {
+      matrix.makeScale(1, 1, 0.8 + Math.sin(now * 0.04 + i) * 0.18);
+      matrix.setPosition(i ? -0.63 : 0.63, -0.22, 3.15);
+      flames.setMatrixAt(i, matrix);
+    }
+    flames.instanceMatrix.needsUpdate = true;
     shadow.position.x = g.x;
-    shadow.material.opacity = 1 - g.height * 0.13;
+    shadow.material.opacity = (1 - g.height * 0.13) * (ghost ? 0.35 : 1);
     shadow.scale.setScalar(1 + g.height * 0.15);
+    player.updateMatrixWorld(true);
     if (moving && g.jet > 0) {
       puffClock += dt;
       while (puffClock > 0.025) {
         puffClock -= 0.025;
-        const slot = puffs[puffIndex++ % puffs.length];
-        slot.life = 0.55;
-        slot.p.visible = true;
-        slot.p.position.set(
-          g.x + (puffIndex % 2 ? -0.68 : 0.68),
-          g.height - 0.2,
-          ((puffIndex % 3) - 1) * 1.05,
-        );
-        slot.p.scale.setScalar(0.15);
+        const i = puffIndex++ % particleCount,
+          p = puffs[i];
+        p.life = 0.55;
+        p.p
+          .set(i % 2 ? -0.73 : 0.73, -0.52, i % 4 < 2 ? -1.4 : 1.4)
+          .applyMatrix4(player.matrixWorld);
+        p.v.set(((i % 3) - 1) * 0.5, -7, 0).applyQuaternion(player.quaternion);
       }
     }
-    for (const slot of puffs)
-      if (slot.life > 0) {
-        slot.life -= dt;
-        slot.p.visible = slot.life > 0;
-        slot.p.position.y -= dt * 6;
-        slot.p.position.z += dt * (moving ? g.speed * 0.6 : 0);
-        slot.p.scale.setScalar(0.15 + (1 - slot.life / 0.55) * 0.65);
-        slot.p.material.opacity = Math.max(0, slot.life / 0.55) * 0.6;
-      }
-    const targetFov = 58 + g.boost * 8;
-    camera.fov += (targetFov - camera.fov) * 0.06;
+    for (let i = 0; i < puffs.length; i++) {
+      const p = puffs[i];
+      if (p.life > 0) {
+        p.life -= dt;
+        p.p.addScaledVector(p.v, dt);
+        p.p.z += dt * (moving ? g.speed * 0.65 : 0);
+        particlePositions.set(p.p.toArray(), i * 3);
+        particleSizes[i] = 0.2 + (1 - p.life / 0.55) * 1.3;
+        particleAlpha[i] = Math.max(0, p.life / 0.55);
+      } else particleAlpha[i] = 0;
+    }
+    for (const a of Object.values(particleGeometry.attributes)) a.needsUpdate = true;
+    camera.fov += (60 + g.boost * 9 - camera.fov) * 0.08;
     camera.updateProjectionMatrix();
     camera.position.set(
-      g.x * 0.2 + (hitShake ? Math.sin(now * 0.045) * hitShake * 0.18 : 0),
-      5.1 + g.height * 0.23 - landing * 0.8,
-      10.5 + g.boost * 0.8,
+      g.x * 0.18 + (shake ? Math.sin(now * 0.045) * shake * 0.2 : 0),
+      5.45 + g.height * 0.2 - landing * 0.7,
+      11.5 + g.boost * 0.8,
     );
-    camera.lookAt(g.x * 0.38, 1.2 + g.height * 0.28, -17);
-    speedLines.material.opacity = g.boost ? 0.36 : Math.max(0, (g.speed - 34) * 0.01);
+    camera.lookAt(g.x * 0.35, 1.1 + g.height * 0.25, -18);
+    speedLines.material.opacity = g.boost ? 0.38 : 0.06;
     if (moving) {
-      const arr = speedGeo.attributes.position;
-      for (let i = 0; i < 48; i++) {
-        const off = i * 6,
-          delta = g.speed * dt * 2;
-        speedArray[off + 2] += delta;
-        speedArray[off + 5] += delta;
+      for (let i = 0; i < 36; i++) {
+        const off = i * 6;
+        speedArray[off + 2] += g.speed * dt * 2;
+        speedArray[off + 5] += g.speed * dt * 2;
         if (speedArray[off + 2] > 10) {
           speedArray[off + 2] = -140;
-          speedArray[off + 5] = -137;
+          speedArray[off + 5] = -136;
         }
       }
-      arr.needsUpdate = true;
+      speedGeo.attributes.position.needsUpdate = true;
     }
     renderer.render(scene, camera);
-    canvas.dataset.drawCalls = renderer.info.render.calls;
-    lastDistance = g.distance;
+    Object.assign(canvas.dataset, {
+      drawCalls: renderer.info.render.calls,
+      triangles: renderer.info.render.triangles,
+      model: mobile ? 'parking-mobile' : 'parking-desktop',
+      pixelRatio: renderer.getPixelRatio(),
+      shadows: String(renderer.shadowMap.enabled),
+      ghostOpacity: ghost ? [...originalMaterials.keys()][0]?.opacity : 1,
+    });
   }
   return {
     update,
@@ -396,12 +601,12 @@ export async function createScene(canvas, { mobile = false } = {}) {
         if (o.geometry) geometries.add(o.geometry);
         for (const m of Array.isArray(o.material) ? o.material : o.material ? [o.material] : []) {
           materials.add(m);
-          for (const v of Object.values(m)) if (v?.isTexture) textures.add(v);
+          for (const value of Object.values(m)) if (value?.isTexture) textures.add(value);
         }
       });
-      for (const x of geometries) x.dispose();
-      for (const x of materials) x.dispose();
-      for (const x of textures) x.dispose();
+      for (const v of geometries) v.dispose();
+      for (const v of materials) v.dispose();
+      for (const v of textures) v.dispose();
       renderer.dispose();
       renderer.forceContextLoss();
     },
