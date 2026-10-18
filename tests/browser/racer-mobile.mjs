@@ -4,9 +4,22 @@ async (page) => {
     },
     errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
+  const cdp = await page.context().newCDPSession(page);
+  await cdp.send('Emulation.setDeviceMetricsOverride', {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 3,
+    mobile: true,
+    screenOrientation: { type: 'portraitPrimary', angle: 0 },
+  });
+  await page.reload();
+  await page.locator('[data-action=start]:enabled').waitFor();
+  await page.locator('[data-action=levels]').click();
+  await page.locator('button[data-level="1"]').click();
   await page.evaluate(() => {
     document.documentElement.requestFullscreen = () =>
       Promise.reject(new Error('QA: fullscreen unavailable'));
+    screen.orientation.lock = () => Promise.reject(new Error('QA: orientation lock unavailable'));
   });
   await page.getByRole('button', { name: '开始疾驰 ↗' }).click();
   await page.locator('.play-full.virtual-landscape').waitFor();
@@ -16,7 +29,6 @@ async (page) => {
     'fallback rotated crop',
   );
   assert(await page.evaluate(() => !document.fullscreenElement), 'window-only fallback');
-  const cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
   const point = async (selector) => {
     const b = await page.locator(selector).boundingBox();
@@ -74,7 +86,7 @@ async (page) => {
     modal.x >= 0 && modal.y >= 0 && modal.x + modal.width <= 392 && modal.y + modal.height <= 846,
     'rotated modal bounds',
   );
-  await page.locator('[data-level="6"]').click();
+  await page.locator('button[data-level="6"]').click();
   await page.waitForTimeout(200);
   const lava = await state();
   assert(lava.theme === 'lava' && lava.model === 'parking-mobile', 'mobile LOD and lava theme');

@@ -32,4 +32,16 @@
 
 本次只选择 `racer` 原子发布，继承其余六款游戏的原运行文件与旧共享哈希包。上线前已记录六款游戏全部 230 个文件（含 gzip）摘要、原 release 和共享 Nginx 路由摘要。发布后逐项比较，保持博客 / 停车业务路由和原有游戏不变。
 
-本次上线 release、完整校验和回滚路径在部署完成后记录。
+## 上线核验
+
+- 功能提交：`860bb26798870d794990a729d8ce8e812095b865`，已推送 GitHub main。
+- [GitHub CI Games checks](https://github.com/caibinice/games/actions/runs/39091922464)：completed / success。
+- 当前 release：`/opt/games/releases/20261018025746-860bb26798/www`，选中游戏仅 `racer`。
+- 公网逐个验证 **53 个本次运行文件**，长度 / SHA256、JS / MP3 MIME、MP3 Range 206、404 和规范斜杠均通过。
+- 其余六款游戏全部 **230 个文件（含 gzip）字节一致**；共享 Nginx 路由 SHA256 保持 `ebe1d28d0610e9d18e2d5eb1576ed350f783829aa7249e8a097f023760dbd45f`。
+- Nginx 检查与 reload 成功；博客 `/` 和停车 `/smartParking/` 健康检查通过。
+- 公网 PC 实测开始、点按换道、氮气开关、腾空侧滚、自动落地、1440×900 全屏和实际音乐时间前进通过，页面错误 0。
+- 公网手机 DPR=3、390×844 实测触控、氮气点按开关、喷气 CD 提示、选关与刷新存档通过；同时模拟原生全屏和方向锁均拒绝，虚拟横屏保持完整，页面错误 0。测试夹具显式设置方向，避免桌面模拟器的原生旋转改变预期视口。
+- 回滚记录：`E:/Documents/AI/codex/backups/games-20261018-105746-035188/rollback.json`。
+- 回滚 release：`/opt/games/releases/20261017222514-3993e26fc0/www`。
+- 线上入口：[电脑版](https://caibinice.com/games/racer/pc.html) / [手机版](https://caibinice.com/games/racer/mobile.html)。
