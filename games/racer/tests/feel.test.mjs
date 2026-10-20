@@ -33,10 +33,10 @@ describe('Responsive controls, durability and assists', () => {
     tick(g, 0.85);
     expect(E.activateJet(g)).toBe(true);
   });
-  it('five collected coins repair one point once, without overhealing', () => {
+  it('eight collected coins repair one point once, without overhealing', () => {
     const g = running();
     g.hp = 3;
-    g.objects = Array.from({ length: 5 }, (_, id) => ({
+    g.objects = Array.from({ length: 7 }, (_, id) => ({
       id,
       type: 'coin',
       x: 0,
@@ -44,17 +44,33 @@ describe('Responsive controls, durability and assists', () => {
       passed: false,
     }));
     E.step(g, 1 / 60);
+    expect(g.hp).toBe(3);
+    expect(g.coins).toBe(7);
+    expect(g.repairCoins).toBe(7);
+    g.objects.push({ id: 8, type: 'coin', x: 0, z: g.distance + 1, passed: false });
+    E.step(g, 1 / 60);
     expect(g.hp).toBe(4);
-    expect(g.coins).toBe(5);
+    expect(g.coins).toBe(8);
     expect(g.repairCoins).toBe(0);
     tick(g, 0.1);
     expect(g.hp).toBe(4);
-    expect(g.coins).toBe(5);
+    expect(g.coins).toBe(8);
     g.hp = 5;
     E.collectItem(g, 'repair');
     expect(g.hp).toBe(6);
     E.collectItem(g, 'repair');
     expect(g.hp).toBe(6);
+  });
+  it('jet consumes exactly 20 percent and accepts the exact energy threshold', () => {
+    const g = running();
+    g.energy = 19.99;
+    expect(E.activateJet(g)).toBe(false);
+    expect(g.energy).toBe(19.99);
+    g.energy = E.JET_COST;
+    expect(E.activateJet(g)).toBe(true);
+    expect(g.energy).toBe(0);
+    expect(g.cooldown).toBe(2.5);
+    expect(E.activateJet(g)).toBe(false);
   });
   it('infinite spray keeps energy full, still respects cooldown and no air restart', () => {
     const g = running({ infiniteEnergy: true });
@@ -85,7 +101,7 @@ describe('Responsive controls, durability and assists', () => {
     E.setCheats(g, {});
     expect(g.assisted).toBe(true);
     E.activateJet(g);
-    expect(g.energy).toBe(65);
+    expect(g.energy).toBe(80);
     g.objects = [{ id: 1, type: 'truck', x: 0, z: 1, passed: false }];
     E.step(g, 1 / 60);
     expect(g.hp).toBe(5);

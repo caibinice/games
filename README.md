@@ -76,6 +76,7 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 - [多游戏发布 / 回滚 / 新增游戏](docs/deployment.md)
 - [Vue 3 架构、入口迁移与日常运维](docs/vue3-architecture.md)
 - [横屏触控与喷气飞车实现、验收](docs/vue3-racer-20261018.md)
+- [赛车补给平衡与粒子视觉升级](docs/racer-vfx-20261020.md)
 - [赛车组合关卡、GT 车型、道具和音乐升级](docs/racer-upgrade-20261018.md)
 - [手机大按键、画面稳定、六格耐久和赛车辅助](docs/racer-feel-20261018.md)
 - [拼豆规则与历史](games/pindou/docs/README.md)

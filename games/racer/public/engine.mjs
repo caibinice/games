@@ -6,9 +6,10 @@ export const LEVEL_COUNT = 30;
 export const LANES = [-3.2, 0, 3.2];
 export const JET_DURATION = 1.65;
 export const JET_COOLDOWN = 2.5;
+export const JET_COST = 20;
 export const LANE_SPEED = 44;
 export const MAX_HP = 6;
-export const COINS_PER_REPAIR = 5;
+export const COINS_PER_REPAIR = 8;
 export function normalizeCheats(value) {
   return {
     infiniteEnergy: value?.infiniteEnergy === true,
@@ -25,38 +26,38 @@ export const MAX_DESIGN_SPEED = 56;
 export const ITEMS = {
   energy: {
     name: '氮气补给',
-    icon: 'N',
-    color: '#83eed6',
+    icon: 'N₂',
+    color: '#22e6ae',
     duration: 0,
-    description: '补充 32% 能量。',
+    description: '绿色油桶，补充 32% 能量。',
   },
   reverse: {
     name: '黑色魔鬼',
     icon: '↔',
     color: '#be95ff',
     duration: 7,
-    description: '7 秒内左右操作颠倒，按左向右，按右向左。',
+    description: '紫黑恶魔头，7 秒内左右操作颠倒，按左向右，按右向左。',
   },
   fullSpeed: {
     name: '全速冲刺',
-    icon: 'MAX',
-    color: '#ffce72',
+    icon: 'ϟ',
+    color: '#ffb524',
     duration: 8,
-    description: '8 秒强制加速，免氮气消耗，期间开关锁定。',
+    description: '金色闪电，8 秒强制加速，免氮气消耗，期间开关锁定。',
   },
   ghost: {
     name: '隐身穿越',
-    icon: '◌',
+    icon: '◇',
     color: '#9eeaff',
     duration: 7,
-    description: '7 秒透明闪光，无视所有障碍，包括长挂车。',
+    description: '冰蓝水晶，7 秒淡轮廓微光，无视所有障碍，包括长挂车。',
   },
   repair: {
     name: '车身修复',
     icon: '+',
-    color: '#f0a9ba',
+    color: '#ff5578',
     duration: 0,
-    description: '恢复 2 格耐久，最多 6 格。',
+    description: '红白维修箱，恢复 2 格耐久，最多 6 格。',
   },
 };
 export const OBSTACLES = {
@@ -152,11 +153,11 @@ export function jetBlockReason(g) {
   if (g.status !== 'running') return 'paused';
   if (g.jet > 0) return 'airborne';
   if (g.cooldown > 0) return 'cooldown';
-  return !g.cheats.infiniteEnergy && g.energy < 35 ? 'energy' : '';
+  return !g.cheats.infiniteEnergy && g.energy < JET_COST ? 'energy' : '';
 }
 export function activateJet(g) {
   if (jetBlockReason(g)) return false;
-  if (!g.cheats.infiniteEnergy) g.energy -= 35;
+  if (!g.cheats.infiniteEnergy) g.energy -= JET_COST;
   g.cooldown = JET_COOLDOWN;
   g.jet = JET_DURATION;
   g.jumps++;

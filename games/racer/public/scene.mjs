@@ -3,6 +3,8 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { LANES, ITEMS, OBSTACLES, levelInfo } from './engine.mjs';
 import { createEnvironment } from './environment.mjs';
 import { visualPose, frameSize } from './presentation.mjs';
+import { createPickupFactory } from './pickups.mjs';
+import { createGhostMaterial, createNitroExhaust, GHOST_BODY_ALPHA } from './effects.mjs';
 
 const ASSETS = '/games/racer/assets/';
 export async function createScene(canvas, { mobile = false } = {}) {
@@ -122,6 +124,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
   const paint = [],
     wheels = [],
     originalMaterials = new Map(),
+    vehicleMeshes = [],
     clones = new Map();
   vehicle.traverse((o) => {
     if (o.name.startsWith('vehicle-wheel-')) wheels.push(o);
@@ -144,6 +147,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
       return c;
     }
     o.material = Array.isArray(o.material) ? o.material.map(clone) : clone(o.material);
+    vehicleMeshes.push({ mesh: o, material: o.material });
   });
   const nozzle = new T.InstancedMesh(new T.CylinderGeometry(0.12, 0.15, 0.12, 10), steel, 4);
   for (let i = 0; i < 4; i++) {
@@ -151,16 +155,10 @@ export async function createScene(canvas, { mobile = false } = {}) {
     nozzle.setMatrixAt(i, matrix);
   }
   player.add(nozzle);
-  const plumeMat = new T.MeshBasicMaterial({
-    color: 0x9ef7ff,
-    transparent: true,
-    opacity: 0.72,
-    depthWrite: false,
-  });
-  const flameGeo = new T.ConeGeometry(0.24, 1.8, 10).rotateX(Math.PI / 2),
-    flames = new T.InstancedMesh(flameGeo, plumeMat, 2);
-  flames.frustumCulled = false;
-  player.add(flames);
+  const ghostMaterial = createGhostMaterial(),
+    exhaust = createNitroExhaust({ mobile });
+  materials.add(ghostMaterial);
+  scene.add(exhaust.points);
   const traffic = gltfs.slice(1).map((g) => {
     const root = g.scene,
       bounds = new T.Box3().setFromObject(root),
@@ -202,34 +200,9 @@ export async function createScene(canvas, { mobile = false } = {}) {
   coins.frustumCulled = false;
   coins.instanceMatrix.setUsage(T.DynamicDrawUsage);
   scene.add(coins);
-  const pickupGeo = new T.IcosahedronGeometry(0.62, 1),
-    ringGeo = new T.TorusGeometry(0.85, 0.035, 5, 20),
-    labels = new Map();
-  for (const [type, item] of Object.entries(ITEMS)) {
-    const c = document.createElement('canvas');
-    c.width = c.height = mobile ? 128 : 256;
-    const x = c.getContext('2d'),
-      s = c.width;
-    x.clearRect(0, 0, s, s);
-    x.fillStyle = type === 'reverse' ? '#251b35' : '#142d36';
-    x.beginPath();
-    x.arc(s / 2, s / 2, s * 0.44, 0, Math.PI * 2);
-    x.fill();
-    x.strokeStyle = item.color;
-    x.lineWidth = s * 0.045;
-    x.stroke();
-    x.fillStyle = item.color;
-    x.textAlign = 'center';
-    x.textBaseline = 'middle';
-    x.font = `bold ${s * (type === 'fullSpeed' ? 0.25 : 0.48)}px system-ui`;
-    x.fillText(item.icon, s / 2, s * 0.52);
-    const texture = new T.CanvasTexture(c);
-    textures.add(texture);
-    labels.set(type, new T.SpriteMaterial({ map: texture, transparent: true, depthWrite: false }));
-    materials.add(labels.get(type));
-  }
+  const makePickup = createPickupFactory();
   function makeObject(o) {
-    const group = new T.Group();
+    const group = ITEMS[o.type] ? makePickup(o.type) : new T.Group();
     if (o.type === 'traffic') group.add(traffic[o.variant % traffic.length].clone(true));
     if (o.type === 'truck') {
       cube(2.3, 0.35, 22, steel, 0, 0.85, 0, group);
@@ -261,27 +234,6 @@ export async function createScene(canvas, { mobile = false } = {}) {
       for (const side of [-1, 1]) cube(0.15, 3.1, 1.4, steel, side * 1.4, 1.55, 0, group);
       cube(2.95, 0.58, 1.4, amber, 0, 2.9, 0, group);
       cube(2.5, 0.09, 1.43, cyan, 0, 2.82, 0.01, group);
-    }
-    if (ITEMS[o.type]) {
-      const mat = material(o.type === 'reverse' ? 0x171121 : ITEMS[o.type].color, 0.35, 0.3, 0.25),
-        core = new T.Mesh(pickupGeo, mat);
-      core.position.y = 1.05;
-      group.add(core);
-      const ring = new T.Mesh(ringGeo, cyan);
-      ring.position.y = 1.05;
-      group.add(ring);
-      const label = new T.Sprite(labels.get(o.type));
-      label.position.set(0, 1.15, 0.6);
-      label.scale.set(1.2, 1.2, 1.2);
-      group.add(label);
-      if (o.type === 'reverse') {
-        for (const s of [-1, 1]) {
-          const horn = new T.Mesh(new T.ConeGeometry(0.15, 0.6, 6), mat);
-          horn.position.set(s * 0.4, 1.7, 0);
-          horn.rotation.z = -s * 0.4;
-          group.add(horn);
-        }
-      }
     }
     scene.add(group);
     return group;
@@ -388,6 +340,7 @@ export async function createScene(canvas, { mobile = false } = {}) {
     }
     models.clear();
     for (const puff of puffs) puff.life = 0;
+    exhaust.clear();
   }
   function resize() {
     const next = frameSize(canvas.clientWidth, canvas.clientHeight, { width, height });
@@ -517,38 +470,30 @@ export async function createScene(canvas, { mobile = false } = {}) {
     player.rotation.set(0, -steer * 0.025, g.jet > 0 ? pose.roll : -steer * 0.025);
     // Keep the whole vehicle visible: old invulnerability blink looked like missing frames.
     player.visible = true;
+    ghostMaterial.uniforms.time.value = now / 1000;
+    for (const { mesh, material: normal } of vehicleMeshes) {
+      mesh.material = ghost ? ghostMaterial : normal;
+      mesh.castShadow = !mobile && !ghost;
+    }
+    nozzle.visible = !ghost;
     for (const [m, base] of originalMaterials) {
-      const transparent = ghost || base.transparent;
-      if (m.transparent !== transparent) {
-        m.transparent = transparent;
-        m.needsUpdate = true;
-      }
-      m.opacity = base.opacity * (ghost ? 0.34 : 1);
-      m.depthWrite = ghost ? false : base.depthWrite;
-      if (m.emissive) {
-        if (ghost || g.invulnerable > 0) {
-          m.emissive.setHex(ghost ? 0x65b6ce : 0xbb653f);
-          m.emissiveIntensity = ghost ? 0.2 : 0.12;
-        } else {
-          m.emissive.copy(base.emissive);
-          m.emissiveIntensity = base.emissiveIntensity;
-        }
+      if (!m.emissive) continue;
+      if (g.invulnerable > 0 && !ghost) {
+        m.emissive.setHex(0xbb653f);
+        m.emissiveIntensity = 0.12;
+      } else {
+        m.emissive.copy(base.emissive);
+        m.emissiveIntensity = base.emissiveIntensity;
       }
     }
     if (moving)
       for (const wheel of wheels)
         wheel.rotation.x = (wheel.rotation.x - (g.speed * dt) / 0.36) % (Math.PI * 2);
-    flames.visible = !!g.boost && moving;
-    for (let i = 0; i < 2; i++) {
-      matrix.makeScale(1, 1, 0.88 + Math.sin(now * 0.006 + i) * 0.06);
-      matrix.setPosition(i ? -0.63 : 0.63, -0.22, 3.15);
-      flames.setMatrixAt(i, matrix);
-    }
-    flames.instanceMatrix.needsUpdate = true;
     shadow.position.x = pose.x;
-    shadow.material.opacity = (1 - pose.height * 0.13) * (ghost ? 0.35 : 1);
+    shadow.material.opacity = (1 - pose.height * 0.13) * (ghost ? 0.08 : 1);
     shadow.scale.setScalar(1 + pose.height * 0.15);
     player.updateMatrixWorld(true);
+    exhaust.update(dt, !!g.boost && moving, player.matrixWorld, player.quaternion, moving);
     if (moving && g.jet > 0) {
       puffClock += dt;
       while (puffClock > 0.025) {
@@ -568,7 +513,9 @@ export async function createScene(canvas, { mobile = false } = {}) {
         p.life -= dt;
         p.p.addScaledVector(p.v, dt);
         p.p.z += dt * (moving ? g.speed * 0.65 : 0);
-        particlePositions.set(p.p.toArray(), i * 3);
+        particlePositions[i * 3] = p.p.x;
+        particlePositions[i * 3 + 1] = p.p.y;
+        particlePositions[i * 3 + 2] = p.p.z;
         particleSizes[i] = 0.2 + (1 - p.life / 0.55) * 1.3;
         particleAlpha[i] = Math.max(0, p.life / 0.55);
       } else particleAlpha[i] = 0;
@@ -604,7 +551,10 @@ export async function createScene(canvas, { mobile = false } = {}) {
         model: mobile ? 'parking-mobile' : 'parking-desktop',
         pixelRatio: renderer.getPixelRatio(),
         shadows: String(renderer.shadowMap.enabled),
-        ghostOpacity: ghost ? [...originalMaterials.keys()][0]?.opacity : 1,
+        ghostOpacity: ghost ? GHOST_BODY_ALPHA : 1,
+        ghostStyle: ghost ? 'rim-shimmer' : 'normal',
+        exhaustParticles: exhaust.active,
+        exhaustBudget: exhaust.count,
         playerVisible: String(player.visible),
         renderX: pose.x,
         resizeCount,
@@ -616,15 +566,9 @@ export async function createScene(canvas, { mobile = false } = {}) {
   // Precompile every map, object and normal/ghost material variant before enabling Start.
   resize();
   await renderer.compileAsync(scene, camera);
-  for (const m of originalMaterials.keys()) {
-    m.transparent = true;
-    m.needsUpdate = true;
-  }
+  for (const { mesh } of vehicleMeshes) mesh.material = ghostMaterial;
   await renderer.compileAsync(scene, camera);
-  for (const [m, base] of originalMaterials) {
-    m.transparent = base.transparent;
-    m.needsUpdate = true;
-  }
+  for (const { mesh, material: normal } of vehicleMeshes) mesh.material = normal;
   // Upload every geometry/texture once in the loading screen, not during the first turn/pickup.
   const warmState = [];
   scene.traverse((o) => {

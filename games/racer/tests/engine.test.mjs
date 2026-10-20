@@ -85,7 +85,7 @@ describe('JET-R deterministic simulation', () => {
     expect(g.jumps).toBe(2);
     g.jet = 0;
     g.cooldown = 0;
-    g.energy = 20;
+    g.energy = E.JET_COST - 1;
     expect(E.activateJet(g)).toBe(false);
   });
   it.each(['traffic', 'barrier'])('airborne player clears a %s without damage', (type) => {

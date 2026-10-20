@@ -4,6 +4,7 @@ import * as E from '../../../games/racer/public/engine.mjs';
 import { createAudio } from '../../../games/racer/public/audio.mjs';
 import { useLandscapeFullscreen } from '../composables/useLandscapeFullscreen.mjs';
 import RacerControls from '../components/RacerControls.vue';
+import RacerPickupIcon from '../components/RacerPickupIcon.vue';
 import GameModal from '../components/GameModal.vue';
 const props = defineProps({ platform: String }),
   mobile = props.platform === 'mobile',
@@ -78,7 +79,7 @@ const style = computed(() => ({
 const badge = computed(() =>
   state.cooldown > 0
     ? '喷气 CD ' + state.cooldown.toFixed(1) + 's'
-    : state.energy < 35
+    : state.energy < E.JET_COST
       ? '喷气能量不足'
       : '喷气已就绪 · Space',
 );
@@ -292,7 +293,7 @@ function jet() {
   if (reason) {
     toast(
       reason === 'energy'
-        ? '喷气需要 35% 能量'
+        ? `喷气需要 ${E.JET_COST}% 能量`
         : reason === 'airborne'
           ? '腾空中 · 落地后再起跳'
           : '喷气冷却还剩 ' + game.cooldown.toFixed(1) + ' 秒',
@@ -536,7 +537,7 @@ onBeforeUnmount(() => {
             ><span>KM/H</span>
           </div>
           <div class="jet-meter">
-            <span :class="{ ready: state.cooldown <= 0 && state.energy >= 35 }"
+            <span :class="{ ready: state.cooldown <= 0 && state.energy >= E.JET_COST }"
               >{{ badge }}
               <b>{{
                 state.cooldown > 0
@@ -621,7 +622,7 @@ onBeforeUnmount(() => {
                 再来一局 ↗</button
               ><button class="race-secondary" @click="open('levels')">选择路线</button>
             </div>
-            <small>六格耐久 · 每 5 金币修复 1 格 · 喷气冷却 2.5 秒</small>
+            <small>六格耐久 · 每 8 金币修复 1 格 · 喷气冷却 2.5 秒</small>
           </div>
         </div>
       </section>
@@ -657,15 +658,14 @@ onBeforeUnmount(() => {
           {{ state.mode === 'endless' ? '切回关卡模式' : '无尽公路模式' }} <span>∞</span>
         </button>
         <p class="garage-note">
-          默认六格耐久，每 5 金币修复 1 格，维修道具修复 2 格。喷气冷却 2.5 秒，空中点击不会连跳。
+          默认六格耐久，每 8 金币修复 1 格，维修道具修复 2 格。喷气冷却 2.5 秒，空中点击不会连跳。
         </p>
         <p class="garage-note">
           ♫ FEVER STADIUM · 165 BPM EUROBEAT<br />音乐与音效可分别开关，全屏内也可切换音乐。
         </p>
         <div class="item-legend">
           <span v-for="(item, type) in E.ITEMS" :key="type" :style="{ '--item-color': item.color }"
-            ><b>{{ item.icon }}</b
-            >{{ item.name
+            ><RacerPickupIcon :type="type" :style="{ color: item.color }" />{{ item.name
             }}<small>{{
               item.duration ? item.duration + 's' : type === 'energy' ? '+32%' : '+2 HP'
             }}</small></span
@@ -748,15 +748,15 @@ onBeforeUnmount(() => {
         <div class="dialog-actions"><button @click="dialog = ''">返回游戏</button></div>
       </template>
       <template v-else
-        ><p>默认 6 格耐久；每 5 枚金币修复 1 格，维修道具修复 2 格，最多 6 格。</p>
+        ><p>默认 6 格耐久；每 8 枚金币修复 1 格，维修道具修复 2 格，最多 6 格。</p>
         <p>
           <strong>变道：</strong>键盘 A / D 或 ← / →，手机点击左 /
           右按钮。每次点按只换一条车道，不再拖动摇杆。
         </p>
         <p>
-          <strong>喷气侧滚：</strong>Space / 右下大按钮。消耗 35% 能量，先上升、完成 360°
-          侧滚、自动扶正落地；小车与矮障碍可翻越，限高门从地面穿过，长挂车请左右绕行。按钮显示 2.5
-          秒冷却，空中不连跳；冷却 / 缺能量时点击会说明原因。
+          <strong>喷气侧滚：</strong>Space / 右下大按钮。消耗 {{ E.JET_COST }}% 能量，先上升、完成
+          360° 侧滚、自动扶正落地；小车与矮障碍可翻越，限高门从地面穿过，长挂车请左右绕行。按钮显示
+          2.5 秒冷却，空中不连跳；冷却 / 缺能量时点击会说明原因。
         </p>
         <p>
           <strong>氮气：</strong>点按 Shift /
@@ -764,7 +764,9 @@ onBeforeUnmount(() => {
         </p>
         <div class="help-items">
           <p v-for="(item, type) in E.ITEMS" :key="type">
-            <strong>{{ item.icon }} {{ item.name }}：</strong>{{ item.description }}
+            <RacerPickupIcon :type="type" :style="{ color: item.color }" /><strong
+              >{{ item.name }}：</strong
+            >{{ item.description }}
           </p>
         </div>
         <p>

@@ -17,6 +17,11 @@ async (page) => {
       return { ...r, release: Math.max(r.z + extent + 0.5, pickup ? pickup.z + 3 : 0) };
     });
   });
+  await page.bringToFront();
+  await page.locator('[data-action=cheats]').click();
+  await page.locator('[data-cheat=infiniteEnergy]').uncheck();
+  await page.locator('[data-cheat=infiniteDurability]').uncheck();
+  await page.getByRole('button', { name: '返回游戏', exact: true }).click();
   await page.locator('[data-action=levels]').click();
   await page.locator('button[data-level="1"]').click();
   await page.locator('[data-action=start]').click();
@@ -35,7 +40,7 @@ async (page) => {
     if (+s.reverse > 0 && !seen.reverse) {
       seen.reverse = s;
       await page.screenshot({
-        path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/reverse.png',
+        path: 'E:/Documents/AI/codex/tmp/racer-vfx-20261020/qa/reverse.png',
       });
     }
     if (+s.fullSpeed > 0 && !seen.fullSpeed) {
@@ -54,9 +59,9 @@ async (page) => {
       if (+s.distance > ghostAt + 85) {
         seen.afterGhost = await state();
         assert(+seen.afterGhost.hp === +seen.ghost.hp, 'ghost ignored obstacles');
-        assert(+seen.afterGhost.ghostOpacity < 0.5, 'transparent model');
+        assert(+seen.afterGhost.ghostOpacity < 0.025, 'near-invisible shimmer model');
         await page.screenshot({
-          path: 'E:/Documents/AI/codex/tmp/racer-upgrade-20261018/qa/ghost.png',
+          path: 'E:/Documents/AI/codex/tmp/racer-vfx-20261020/qa/ghost.png',
         });
         break;
       }
@@ -91,6 +96,22 @@ async (page) => {
     'reverse input verified',
   );
   assert(+seen.fullSpeed.energy >= 99, 'free nitro');
+  await page.locator('[data-action=start]').click();
+  await page.waitForFunction(() => +document.querySelector('#racer-canvas').dataset.ghost === 0);
+  await page.waitForFunction(
+    () => document.querySelector('#racer-canvas').dataset.ghostStyle === 'normal',
+  );
+  seen.restored = await state();
+  assert(
+    +seen.restored.ghostOpacity === 1 && seen.restored.playerVisible === 'true',
+    'normal vehicle restored after ghost',
+  );
+  assert(
+    seen.restored.programs === seen.afterGhost.programs &&
+      seen.restored.geometries === seen.afterGhost.geometries,
+    'ghost transition reuses prewarmed resources',
+  );
+  await page.locator('[data-action=pause]').click();
   assert(!errors.length, 'page errors');
   await page.evaluate((r) => (window.__pickupQA = r), { result: 'PASS', seen, turns, errors });
 };

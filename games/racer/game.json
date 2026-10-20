@@ -5,7 +5,7 @@
   "description": "停车项目同款 GT，30 关六种地图与紧凑车阵。大按钮点按换道、2.5 秒喷气、六格耐久、金币修复与无限喷气 / 耐久辅助，165 BPM Eurobeat 疾驰。",
   "color": "#91e8e2",
   "symbol": "↗",
-  "version": "20261018-3",
+  "version": "20261020-1",
   "facts": {
     "levels": 30,
     "layouts": 2,
@@ -14,7 +14,9 @@
     "formations": 8,
     "items": 5,
     "hp": 6,
-    "jetCooldown": 2.5
+    "jetCooldown": 2.5,
+    "jetCost": 20,
+    "coinsPerRepair": 8
   },
   "vendors": []
 }

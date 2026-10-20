@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue';
-import { JET_COOLDOWN } from '../../../games/racer/public/engine.mjs';
+import { JET_COOLDOWN, JET_COST } from '../../../games/racer/public/engine.mjs';
 const props = defineProps({
   disabled: Boolean,
   cooldown: Number,
@@ -73,7 +73,7 @@ watch(
     data-input="jet"
     aria-label="喷气腾跃"
     :disabled="disabled"
-    :aria-disabled="airborne || cooldown > 0 || energy < 35"
+    :aria-disabled="airborne || cooldown > 0 || energy < JET_COST"
     :class="{ cooling: cooldown > 0, pressed: pressed === 'jet' }"
     :style="{ '--cooldown-angle': Math.max(0, Math.min(1, cooldown / JET_COOLDOWN)) * 360 + 'deg' }"
     @pointerdown="down($event, 'jet')"
@@ -83,10 +83,12 @@ watch(
     @click="click($event, 'jet')"
   >
     <strong data-jet-countdown>{{
-      cooldown > 0 ? cooldown.toFixed(1) + 's' : energy < 35 ? '缺能量' : '↑'
+      cooldown > 0 ? cooldown.toFixed(1) + 's' : energy < JET_COST ? '缺能量' : '↑'
     }}</strong
     ><span>{{ airborne ? '腾空中' : '喷气腾跃' }}</span
-    ><small>{{ cooldown > 0 ? '冷却中' : energy < 35 ? '需要 35%' : '点击起跳' }}</small>
+    ><small>{{
+      cooldown > 0 ? '冷却中' : energy < JET_COST ? '需要 ' + JET_COST + '%' : '点击起跳'
+    }}</small>
   </button>
   <button
     type="button"
