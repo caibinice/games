@@ -68,12 +68,12 @@ function physics(g,p,dt){
 }
 export function fire(g,command={}){
  const p=g.player,w=WEAPONS[p.weapon];
- if(g.status!=='running'||p.deadUntil>g.clock||g.clock-p.lastFire<w.interval*(p.rapid?.72:1)||g.bullets.length+(p.weapon==='S'?5:1)>w.limit)return false;
+ if(g.status!=='running'||p.deadUntil>g.clock||g.clock-p.lastFire<w.interval*(p.rapid?.72:1)||g.bullets.filter(b=>(b.owner||0)===(p.slot||0)).length+(p.weapon==='S'?5:1)>w.limit)return false;
  let dx=(command.right?1:0)-(command.left?1:0),dy=(command.down?1:0)-(command.up?1:0);
  if(g.kind==='base'){dx=0;dy=-1;}else{if(!dx&&!dy)dx=p.dir;if(p.onGround&&dy>0&&!dx){dx=p.dir;dy=0;}}
  const length=Math.hypot(dx,dy)||1;dx/=length;dy/=length;p.aimX=dx;p.aimY=dy;p.lastFire=g.clock;
  const angles=p.weapon==='S'?[-.24,-.12,0,.12,.24]:[0],base=Math.atan2(dy,dx);
- for(const offset of angles){const angle=base+offset;g.bullets.push({id:g.nextId++,x:p.x+dx*10,y:p.y-(p.prone?6:p.water?8:19)+dy*7,vx:Math.cos(angle)*w.speed,vy:Math.sin(angle)*w.speed,weapon:p.weapon,ttl:1800,damage:p.weapon==='L'?3:1,hitIds:[]});}
+ for(const offset of angles){const angle=base+offset;g.bullets.push({owner:p.slot||0,id:g.nextId++,x:p.x+dx*10,y:p.y-(p.prone?6:p.water?8:19)+dy*7,vx:Math.cos(angle)*w.speed,vy:Math.sin(angle)*w.speed,weapon:p.weapon,ttl:1800,damage:p.weapon==='L'?3:1,hitIds:[]});}
  sound(g,'shot');return true;
 }
 function hit(g,fall=false){
@@ -83,14 +83,14 @@ function hit(g,fall=false){
 export function damagePlayer(g){hit(g);}
 function respawn(g){
  const p=g.player;if(!p.deadUntil||p.deadUntil>g.clock)return;
- if(g.lives===0&&!g.cheats.infiniteLives){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
+ if(g.lives===0&&!g.cheats.infiniteLives){if(g.multiplayer){p.out=true;p.deadUntil=1e12;return;}g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
  Object.assign(p,{x:clamp(g.checkpoint.x,g.cameraX+10,g.stage.width-10),y:g.checkpoint.y,vy:0,vx:0,h:28,onGround:false,water:false,prone:false,weapon:'N',rapid:false,deadUntil:0,invulnerableUntil:g.clock+2300});
  g.enemyBullets=[];g.jumpHeld=false;
 }
 function pickup(g,type,x,y){g.pickups.push({id:g.nextId++,type,x,y,vx:0,vy:-85,ttl:15000});}
 function collect(g,item){const p=g.player;if(WEAPONS[item.type])p.weapon=item.type;if(item.type==='R')p.rapid=true;if(item.type==='B')p.invulnerableUntil=g.clock+15000;g.score+=500;item.ttl=0;sound(g,'pickup');}
 function shot(g,x,y,angle,speed=105,arc=0){if(g.enemyBullets.length>=100)return;g.enemyBullets.push({id:g.nextId++,x,y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,gravity:arc,ttl:4200});}
-function aim(g,x,y){return Math.atan2(g.player.y-17-y,g.player.x-x);}
+function aim(g,x,y){const targets=[g.player,g.p2?.player].filter(p=>p&&!p.out);const p=targets.sort((a,b)=>Math.hypot(a.x-x,a.y-y)-Math.hypot(b.x-x,b.y-y))[0]||g.player;return Math.atan2(p.y-17-y,p.x-x);}
 function activateBoss(g){
  if(g.bossActive)return;g.bossActive=true;const base=g.kind==='base',vertical=g.kind==='vertical';
  const hp=({1:40,2:48,3:60,4:70,5:80,6:85,7:95,8:110})[g.level];
@@ -108,7 +108,7 @@ function updateBoss(g,dt){
  if(g.level===8&&g.enemies.length<6)addEnemy(g,{type:'alien',x:g.stage.width-110,y:185});
 }
 function updateEnemies(g,dt){
- const p=g.player;
+ const p=g.player.out&&g.p2?.player?g.p2.player:g.player;
  for(const entry of g.spawned){if(!entry.active&&Math.abs(entry.x-(g.cameraX+128))<210&&Math.abs(entry.y-(g.cameraY+112))<200){entry.active=true;addEnemy(g,entry);}}
  if(g.kind!=='base'&&!g.bossActive&&g.clock>g.nextRunner){
   g.nextRunner=g.clock+3200+random(g)*1200;const x=Math.min(g.stage.width-24,g.cameraX+WIDTH+18),surface=supporting(g.stage,x,g.kind==='vertical'?g.cameraY+30:64);
@@ -223,3 +223,56 @@ export function restore(raw,platform){try{
 export function snapshot(g){return{level:g.level,status:g.status,clock:g.clock,player:{...g.player},bullets:g.bullets.map(b=>({...b})),cameraX:g.cameraX,cameraY:g.cameraY,boss:g.boss?{...g.boss}:null,room:g.room};}
 export function view(g){return{x:g.player.x,y:g.player.y,projectiles:g.bullets.length};}
 export function summary(g){return{weapon:g.player.weapon,enemies:g.enemies.length,objective:g.bossActive?`${g.stage.boss} · ${g.boss?.hp||0}/${g.boss?.maxHP||0}`:g.kind==='base'?`房间 ${g.room+1}/${g.stage.rooms} · ${g.roomOpen?'核心击破，按 ↑ 前进':'击破红色核心'}`:g.kind==='vertical'?'向上突破瀑布':'向右推进，消灭关底 Boss',phase:g.bossActive?'boss':g.kind};}
+
+// Online cooperative adapter. The shared world advances once, not once per player.
+export function newCoopGame(options={}) {
+ const g=newGame(options);g.multiplayer=true;g.player.slot=0;
+ g.p2={player:{...g.player,x:g.player.x+24,slot:1},lives:g.lives,checkpoint:{x:g.player.x+24,y:g.player.y},jumpHeld:false,jumpBufferUntil:0,dropUntil:0};
+ return g;
+}
+function secondPlayer(g,fn){
+ const keys=['player','lives','checkpoint','jumpHeld','jumpBufferUntil','dropUntil'];
+ const original=Object.fromEntries(keys.map(k=>[k,g[k]]));
+ for(const key of keys)g[key]=g.p2[key];
+ try{fn();}finally{for(const key of keys){g.p2[key]=g[key];g[key]=original[key];}}
+}
+export function stepCoop(g,milliseconds,commands={}) {
+ if(g.status!=='running')return;
+ const oldRoom=g.room;
+ step(g,milliseconds,g.kind==='base'?{...(commands.p1||{}),up:!!(commands.p1?.up||commands.p2?.up)}:commands.p1||{});
+ if(g.status!=='running')return;
+ if(g.room!==oldRoom){Object.assign(g.p2.player,{x:152,y:204,vy:0,onGround:true});g.p2.checkpoint={x:152,y:204};}
+ const command=commands.p2||{},dt=Math.min(100,Math.max(0,milliseconds))/1000;
+ secondPlayer(g,()=>{
+  const p=g.player;if(p.out)return;
+  for(const platform of g.movingPlatforms)if(p.onGround&&p.support===platform.id)p.x+=platform.x-platform.previousX;
+  if(p.deadUntil)respawn(g);if(p.out)return;
+  if(command.jump&&!g.jumpHeld)g.jumpBufferUntil=g.clock+100;g.jumpHeld=!!command.jump;
+  p.prone=!!command.down&&p.onGround&&!p.water;p.h=p.prone?11:p.water?14:28;
+  if(p.deadUntil>g.clock){p.vy+=350*dt;p.y=Math.min(g.stage.height+80,p.y+p.vy*dt);return;}
+  const direction=(command.right?1:0)-(command.left?1:0);if(direction)p.dir=direction;p.vx=p.prone?0:direction*(p.water?55:RUN_SPEED);
+  if(p.onGround)p.lastGround=g.clock;
+  if(g.jumpBufferUntil>=g.clock&&(g.clock-p.lastGround<=80||g.cheats.airJump)){
+   if(command.down&&g.kind!=='base'){g.dropUntil=g.clock+220;p.y+=3;p.onGround=false;}
+   else{p.vy=-JUMP_SPEED;p.onGround=false;p.water=false;p.jumpAt=g.clock;}
+   g.jumpBufferUntil=0;p.lastGround=g.clock-1000;
+  }
+  if(!command.jump&&p.vy<-180&&g.clock-p.jumpAt>120)p.vy=-180;
+  p.x=clamp(p.x+p.vx*dt,g.kind==='base'?24:g.cameraX+7,g.kind==='base'?232:g.stage.width-8);p.water=false;
+  if(g.kind==='base'){p.vy+=GRAVITY*dt;p.y=Math.min(204,p.y+p.vy*dt);p.onGround=p.y>=204;if(p.onGround)p.vy=0;}
+  else physics(g,p,dt);
+  if(command.fire)fire(g,command);
+  if((g.kind==='vertical'&&p.y>g.cameraY+HEIGHT+30)||p.y>g.stage.height+24)hit(g,true);
+  if(p.onGround)g.checkpoint={x:p.x,y:p.y};
+  for(const b of g.enemyBullets)if(overlaps({x:b.x-2,y:b.y-2,w:4,h:4},body(p))){hit(g);b.ttl=0;}
+  for(const e of g.enemies)if(e.hp>0&&overlaps(body(e),body(p)))hit(g);
+  for(const h of g.hazards){if(h.type==='flame'&&h.active&&overlaps(body(p),{x:h.x,y:h.y-30,w:48,h:30}))hit(g);if(h.type==='crusher'&&h.y>100&&overlaps(body(p),{x:h.x-15,y:h.y-38,w:30,h:38}))hit(g);}
+  for(const item of g.pickups)if(item.ttl>0&&overlaps(body(p),{x:item.x-12,y:item.y-15,w:24,h:15}))collect(g,item);
+ });
+ const active=[g.player,g.p2.player].filter(p=>!p.out);
+ if(!active.length){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
+ const lead=active.reduce((a,b)=>g.kind==='vertical'?(a.y<b.y?a:b):(a.x>b.x?a:b));
+ if(g.kind==='vertical'){g.cameraY=Math.min(g.cameraY,clamp(lead.y-145,0,g.stage.height-HEIGHT));if(g.cameraY<75)activateBoss(g);}
+ else if(g.kind!=='base'){g.cameraX=Math.max(g.cameraX,clamp(lead.x-100,0,g.stage.width-WIDTH));if(lead.x>g.stage.width-300)activateBoss(g);}
+ g.enemyBullets=g.enemyBullets.filter(b=>b.ttl>0);g.pickups=g.pickups.filter(p=>p.ttl>0);
+}

@@ -11,9 +11,9 @@ const files = (dir) =>
     .flatMap((e) => (e.isDirectory() ? files(join(dir, e.name)) : [join(dir, e.name)]));
 export function sourceHash() {
   const h = createHash('sha256');
-  const native = ['tank', 'contra', 'racer'].flatMap((id) =>
+  const native = ['tank', 'contra', 'racer', 'lianliankan', 'paopaotang'].flatMap((id) =>
     files(join(ROOT, 'games', id, 'public')).filter(
-      (p) => p.endsWith('.mjs') && !p.endsWith('app.mjs'),
+      (p) => p.endsWith('.mjs') && !p.endsWith('app.mjs') && !p.endsWith('runtime.mjs'),
     ),
   );
   for (const p of [

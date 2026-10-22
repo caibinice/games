@@ -2176,6 +2176,13 @@ var PLAYER1_CONTROL = {
   right: "KeyD",
   fire: "KeyJ"
 };
+var PLAYER2_CONTROL = {
+  up: "ArrowUp",
+  down: "ArrowDown",
+  left: "ArrowLeft",
+  right: "ArrowRight",
+  fire: "Slash"
+};
 var DIR_KEYS = ["up", "down", "left", "right"];
 function directionCodes(control) {
   return DIR_KEYS.map((k) => control[k]);
@@ -4595,18 +4602,18 @@ function spawnRandomPowerUp(g) {
   return name;
 }
 var levelInfo = (level) => ({ name: `STAGE ${String(level).padStart(2, "0")}`, kind: "base-defense", description: "\u5B88\u536B\u8001\u9E70 \xB7 \u51FB\u9000 20 \u8F86\u654C\u519B" });
-function newGame({ level = 1, seed = Date.now(), platform = "pc", mode = "classic", cheats = {}, assisted = false } = {}) {
-  if (!Number.isInteger(level) || level < 1 || level > LEVEL_COUNT || !["pc", "mobile"].includes(platform) || mode !== "classic") throw Error("Invalid tank options");
+function newGame({ level = 1, seed = Date.now(), platform = "pc", mode = "classic", cheats = {}, assisted = false, players = 1 } = {}) {
+  if (!Number.isInteger(level) || level < 1 || level > LEVEL_COUNT || !["pc", "mobile"].includes(platform) || mode !== "classic" || ![1, 2].includes(players)) throw Error("Invalid tank options");
   let g;
   const session = new GameSession(
     stages,
     level - 1,
-    [{ control: PLAYER1_CONTROL, color: "yellow", spawnPos: PLAYER_SPAWN_POS.player1 }],
+    [{ control: PLAYER1_CONTROL, color: "yellow", spawnPos: PLAYER_SPAWN_POS.player1 }, ...players === 2 ? [{ control: PLAYER2_CONTROL, color: "green", spawnPos: PLAYER_SPAWN_POS.player2 }] : []],
     { play: (name) => g?.events.push({ type: "sound", name }) },
     { autopilot: false, random: seededRandom(seed) }
   );
   const options = normalizeCheats(cheats);
-  g = { version: 1, level, seed, platform, mode, status: "ready", clock: 0, score: 0, lives: 3, events: [], session, input: new InputManager([PLAYER1_CONTROL]), accumulator: 0, lastVictory: 0, cheats: options, assisted: assisted === true || Object.values(options).some(Boolean), cheatRandom: seededRandom(Number(seed) >>> 0 ^ 1632582066), nextCheatDrop: 8e3 };
+  g = { version: 1, level, seed, platform, mode, status: "ready", clock: 0, score: 0, lives: 3, events: [], session, players, input: new InputManager(players === 2 ? [PLAYER1_CONTROL, PLAYER2_CONTROL] : [PLAYER1_CONTROL]), accumulator: 0, lastVictory: 0, cheats: options, assisted: assisted === true || Object.values(options).some(Boolean), cheatRandom: seededRandom(Number(seed) >>> 0 ^ 1632582066), nextCheatDrop: 8e3 };
   return g;
 }
 function start(g) {
@@ -4615,14 +4622,18 @@ function start(g) {
 function pause(g) {
   if (g.status === "running") {
     g.status = "paused";
-    for (const key of Object.values(PLAYER1_CONTROL)) g.input.keyUp(key);
+    for (const control of [PLAYER1_CONTROL, PLAYER2_CONTROL]) for (const key of Object.values(control)) g.input.keyUp(key);
   }
 }
 function step(g, milliseconds, command = {}) {
   g.events = [];
   if (g.status !== "running" || !Number.isFinite(milliseconds) || milliseconds <= 0) return;
-  for (const [action, code] of Object.entries(PLAYER1_CONTROL)) if (!command[action]) g.input.keyUp(code);
-  for (const action of command.order || Object.keys(PLAYER1_CONTROL)) if (command[action] && action in PLAYER1_CONTROL) g.input.keyDown(PLAYER1_CONTROL[action]);
+  const commands = g.players === 2 ? [command.p1 || {}, command.p2 || {}] : [command];
+  for (let i = 0; i < commands.length; i++) {
+    const control = i === 0 ? PLAYER1_CONTROL : PLAYER2_CONTROL, c = commands[i];
+    for (const [action, code] of Object.entries(control)) if (!c[action]) g.input.keyUp(code);
+    for (const action of c.order || Object.keys(control)) if (c[action] && action in control) g.input.keyDown(control[action]);
+  }
   g.accumulator += Math.min(100, milliseconds);
   while (g.accumulator + 1e-8 >= TICK_MS && g.status === "running") {
     const before = g.session.scene;
@@ -4688,6 +4699,7 @@ export {
   LEVEL_COUNT,
   MODES,
   PLAYER1_CONTROL,
+  PLAYER2_CONTROL,
   PowerUp,
   STORAGE,
   TICK_MS,

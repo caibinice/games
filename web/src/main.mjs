@@ -37,6 +37,13 @@ for (const [id, pages] of Object.entries(routePages)) {
       });
   }
 }
+for (const id of ['tank', 'contra', 'paopaotang', 'lianliankan'])
+  routes.push({
+    path: `/${id}/online.html`,
+    component: () => import('./pages/OnlinePage.vue'),
+    props: { id },
+    meta: { game: id, platform: 'online' },
+  });
 for (const id of ['tank', 'contra', 'racer']) {
   routes.push(
     { path: `/${id}/`, redirect: () => `/${id}/${mobile() ? 'mobile' : 'pc'}.html` },

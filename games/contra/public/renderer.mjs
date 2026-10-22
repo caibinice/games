@@ -56,7 +56,10 @@ export function draw(canvas,g,a){
   if(g.cheats?.slowBullets){c.fillStyle='#ffdf00';c.fillRect(Math.round(bullet.x)-3,Math.round(bullet.y)-3,6,6);c.fillStyle='#fff';c.fillRect(Math.round(bullet.x)-1,Math.round(bullet.y)-1,2,2);}
   else stamp(c,a,'1e',bullet.x,bullet.y+2);
  }
- const p=g.player,phase=Math.floor(g.clock/100),aiming=g.clock-p.lastFire<250;
+ for(const p of [g.player,g.p2?.player].filter(Boolean)){
+ if(p.out)continue;
+ c.save();if(p.slot===1)c.filter='hue-rotate(150deg)';
+ const phase=Math.floor(g.clock/100),aiming=g.clock-p.lastFire<250;
  let sprite;
  if(p.deadUntil>g.clock)sprite=['0a','0b','0c'][Math.min(2,Math.floor((g.clock-(p.deadUntil-900))/250))];
  else if(p.water)sprite=p.prone?'19':aiming&&p.aimY<-.5?'1c':'1b';
@@ -69,6 +72,8 @@ export function draw(canvas,g,a){
  else sprite=p.vx?['0d','0e','0f'][phase%3]:'0f';
  if(p.deadUntil>g.clock||p.invulnerableUntil<=g.clock||Math.floor(g.clock/70)%2===0)stamp(c,a,sprite,p.x,p.y,p.dir<0,1,!p.onGround&&!p.deadUntil&&phase%4>=2);
  if(g.cheats?.invincible&&!p.deadUntil){c.strokeStyle='#8cf4ff';c.strokeRect(Math.round(p.x)-9,Math.round(p.y)-p.h-2,18,p.h+4);}
+ c.filter='none';if(g.multiplayer){c.fillStyle=p.slot===1?'#76eaff':'#ffd977';c.font='6px monospace';c.fillText(p.slot===1?'2P':'1P',p.x-5,p.y-p.h-4);}c.restore();
+ }
  for(const e of g.explosions){const frame=Math.min(4,Math.floor((g.clock-e.bornAt)/90));stamp(c,a,['37','36','35','39','3a'][frame],e.x,e.y+12,false,e.big?1.4:1);}
  if(g.bossDefeatedAt){const ex=g.boss.x,ey=g.boss.y;for(let i=0;i<7;i++)stamp(c,a,['37','36','35'][Math.floor(g.clock/100+i)%3],ex+Math.sin(i*7+g.clock/100)*28,ey-30+Math.cos(i*5+g.clock/140)*25);}
  c.restore();

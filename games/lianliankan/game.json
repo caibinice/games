@@ -2,10 +2,16 @@
   "id": "lianliankan",
   "name": "果趣连连看",
   "subtitle": "Fruit Link · 把好心情连起来",
-  "description": "找一对相同的水果，两次转弯以内，就能把快乐连起来。PC、手机各有专属页面。",
+  "description": "找一对相同的水果，两次转弯以内，就能把快乐连起来。PC、手机各有专属页面；新增在线匹配 / 好友房间，同盘竞速与道具干扰。",
   "color": "#91b49a",
   "symbol": "🍒",
-  "version": "20261015-1",
-  "facts": { "levels": 30, "layouts": 2, "fruits": 16 },
+  "version": "20261023-1",
+  "facts": {
+    "levels": 30,
+    "layouts": 2,
+    "fruits": 16,
+    "onlinePlayers": 2,
+    "onlineModes": "match,room"
+  },
   "vendors": []
 }

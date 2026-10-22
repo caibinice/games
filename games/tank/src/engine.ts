@@ -1,12 +1,12 @@
 import GameSession from './vendor/engine/GameSession';
 import InputManager from './vendor/input/InputManager';
-import {PLAYER1_CONTROL} from './vendor/input/bindings';
+import {PLAYER1_CONTROL,PLAYER2_CONTROL} from './vendor/input/bindings';
 import {PLAYER_SPAWN_POS} from './vendor/engine/constants';
 import {seededRandom} from './vendor/engine/random';
 import {stages} from './vendor/stages';
 import PowerUp from './vendor/engine/entities/PowerUp';
 import {canTankMove} from './vendor/engine/physics/collision';
-export {stages,GameSession,InputManager,PLAYER1_CONTROL,seededRandom};
+export {stages,GameSession,InputManager,PLAYER1_CONTROL,PLAYER2_CONTROL,seededRandom};
 export {default as TerrainMap} from './vendor/engine/map/TerrainMap';
 export {parseStage,expandBots} from './vendor/engine/map/parseStage';
 export {default as Tank} from './vendor/engine/entities/Tank';
@@ -35,22 +35,26 @@ export function spawnRandomPowerUp(g:any){
  scene.powerUps.push(new PowerUp(name,pos.x,pos.y));g.assisted=true;g.events.push({type:'sound',name:'powerup_appear'});return name;
 }
 export const levelInfo=(level:number)=>({name:`STAGE ${String(level).padStart(2,'0')}`,kind:'base-defense',description:'守卫老鹰 · 击退 20 辆敌军'});
-export function newGame({level=1,seed=Date.now(),platform='pc',mode='classic',cheats={},assisted=false}={}){
-  if(!Number.isInteger(level)||level<1||level>LEVEL_COUNT||!['pc','mobile'].includes(platform)||mode!=='classic')throw Error('Invalid tank options');
+export function newGame({level=1,seed=Date.now(),platform='pc',mode='classic',cheats={},assisted=false,players=1}={}){
+  if(!Number.isInteger(level)||level<1||level>LEVEL_COUNT||!['pc','mobile'].includes(platform)||mode!=='classic'||![1,2].includes(players))throw Error('Invalid tank options');
   let g:any;
-  const session=new GameSession(stages,level-1,[{control:PLAYER1_CONTROL,color:'yellow',spawnPos:PLAYER_SPAWN_POS.player1}],
+  const session=new GameSession(stages,level-1,[{control:PLAYER1_CONTROL,color:'yellow',spawnPos:PLAYER_SPAWN_POS.player1},...(players===2?[{control:PLAYER2_CONTROL,color:'green' as const,spawnPos:PLAYER_SPAWN_POS.player2}]:[])],
     {play:name=>g?.events.push({type:'sound',name})},{autopilot:false,random:seededRandom(seed)});
   const options=normalizeCheats(cheats);
-  g={version:1,level,seed,platform,mode,status:'ready',clock:0,score:0,lives:3,events:[],session,input:new InputManager([PLAYER1_CONTROL]),accumulator:0,lastVictory:0,cheats:options,assisted:assisted===true||Object.values(options).some(Boolean),cheatRandom:seededRandom((Number(seed)>>>0)^0x614f39b2),nextCheatDrop:8000};
+  g={version:1,level,seed,platform,mode,status:'ready',clock:0,score:0,lives:3,events:[],session,players,input:new InputManager(players===2?[PLAYER1_CONTROL,PLAYER2_CONTROL]:[PLAYER1_CONTROL]),accumulator:0,lastVictory:0,cheats:options,assisted:assisted===true||Object.values(options).some(Boolean),cheatRandom:seededRandom((Number(seed)>>>0)^0x614f39b2),nextCheatDrop:8000};
   return g;
 }
 export function start(g:any){if(['ready','paused'].includes(g.status))g.status='running';}
-export function pause(g:any){if(g.status==='running'){g.status='paused';for(const key of Object.values(PLAYER1_CONTROL))g.input.keyUp(key);}}
+export function pause(g:any){if(g.status==='running'){g.status='paused';for(const control of [PLAYER1_CONTROL,PLAYER2_CONTROL])for(const key of Object.values(control))g.input.keyUp(key);}}
 export function step(g:any,milliseconds:number,command:any={}){
   g.events=[];
   if(g.status!=='running'||!Number.isFinite(milliseconds)||milliseconds<=0)return;
-  for(const [action,code]of Object.entries(PLAYER1_CONTROL))if(!command[action])g.input.keyUp(code);
-  for(const action of command.order||Object.keys(PLAYER1_CONTROL))if(command[action]&&action in PLAYER1_CONTROL)g.input.keyDown((PLAYER1_CONTROL as any)[action]);
+  const commands=g.players===2?[command.p1||{},command.p2||{}]:[command];
+  for(let i=0;i<commands.length;i++){
+    const control=i===0?PLAYER1_CONTROL:PLAYER2_CONTROL,c=commands[i];
+    for(const [action,code]of Object.entries(control))if(!c[action])g.input.keyUp(code);
+    for(const action of c.order||Object.keys(control))if(c[action]&&action in control)g.input.keyDown((control as any)[action]);
+  }
   g.accumulator+=Math.min(100,milliseconds);
   while(g.accumulator+1e-8>=TICK_MS&&g.status==='running'){
     const before=g.session.scene;

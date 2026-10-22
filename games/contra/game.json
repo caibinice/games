@@ -2,14 +2,16 @@
   "id": "contra",
   "name": "魂斗罗",
   "subtitle": "CONTRA · 8 OPERATIONS",
-  "description": "丛林、基地、瀑布、雪原到异形巢穴。八个经典主题，单人八向射击、跳跃、武器与 Boss 战。",
+  "description": "丛林、基地、瀑布、雪原到异形巢穴。八个经典主题，单人八向射击、跳跃、武器与 Boss 战；新增在线匹配 / 好友房间，跨设备 2P 合作。",
   "color": "#d0644f",
   "symbol": "★",
-  "version": "20261016-1",
+  "version": "20261023-1",
   "facts": {
     "levels": 8,
     "layouts": 2,
-    "players": 1
+    "players": 2,
+    "onlinePlayers": 2,
+    "onlineModes": "match,room"
   },
   "vendors": []
 }
