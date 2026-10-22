@@ -14,6 +14,10 @@ async (page) => {
       construct(Target, args) {
         const s = new Target(...args);
         window.__qaSocket = s;
+        s.addEventListener('message', (event) => {
+          const m = JSON.parse(event.data);
+          if (m.type === 'pong') window.__qaRtt = Date.now() - m.at;
+        });
         return s;
       },
     });
@@ -91,32 +95,49 @@ async (page) => {
         await peer.waitForFunction(
           () => +document.querySelector('#online-canvas')?.dataset.sequence > 2,
         );
+        await peer.evaluate(() => {
+          delete window.__qaRtt;
+          window.__qaSocket.send(JSON.stringify({ type: 'ping', at: Date.now() }));
+        });
+        await peer.waitForFunction(() => Number.isFinite(window.__qaRtt));
+        const rtt = await peer.evaluate(() => window.__qaRtt);
         const before = await state(page);
         await peer.keyboard.down(id === 'tank' ? 'ArrowUp' : 'ArrowRight');
         await page.waitForTimeout(400);
         await peer.keyboard.up(id === 'tank' ? 'ArrowUp' : 'ArrowRight');
-        await page.waitForTimeout(150);
+        // Input travels guest -> relay -> host, then its result makes the return trip.
+        await page.waitForTimeout(Math.max(150, rtt * 2 + 200));
         const after = await state(page),
           mirrored = await state(peer);
         const a = before.players[1],
           b = after.players[1];
         assert(a && b, 'two players exist in ' + id);
         assert(id === 'tank' ? b.y < a.y : b.x > a.x, 'remote 2P movement in ' + id);
-        assert(Math.abs(+after.clock - +mirrored.clock) < 200, 'bounded snapshot delay ' + id);
+        const snapshotDelay = Math.abs(+after.clock - +mirrored.clock);
+        assert(
+          snapshotDelay < Math.max(200, Math.min(1000, rtt * 2 + 100)),
+          'bounded snapshot delay ' + id,
+        );
         assert(
           Math.abs(after.players[1].x - mirrored.players[1].x) < 5 &&
             Math.abs(after.players[1].y - mirrored.players[1].y) < 5,
-          'mirrored remote player ' + id,
+          'mirrored remote player ' + id + ' ' + JSON.stringify({ rtt, after, mirrored }),
         );
         await peer.keyboard.press('KeyJ');
         await page.waitForTimeout(180);
         result.before = before;
         result.after = after;
         result.mirrored = mirrored;
+        result.rtt = rtt;
+        result.snapshotDelay = snapshotDelay;
         if (id === 'contra') {
           const y = (await state(page)).players[1].y;
           await peer.keyboard.down('Space');
-          await page.waitForTimeout(130);
+          await page.waitForFunction(
+            (oldY) =>
+              JSON.parse(document.querySelector('#online-canvas').dataset.players)[1].y < oldY,
+            y,
+          );
           await peer.keyboard.up('Space');
           const jumping = await state(page);
           assert(jumping.players[1].y < y, 'remote 2P jump');

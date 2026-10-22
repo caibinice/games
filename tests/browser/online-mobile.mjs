@@ -64,7 +64,13 @@ async (page) => {
         await phone.waitForTimeout(350);
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
         await phone.locator('[data-input=fire]').tap();
-        await page.waitForTimeout(150);
+        await page.waitForFunction(
+          ({ id, x, y }) => {
+            const p = JSON.parse(document.querySelector('#online-canvas').dataset.players)[1];
+            return id === 'tank' ? p.y < y : p.x > x;
+          },
+          { id, x: before.players[1].x, y: before.players[1].y },
+        );
         const after = await state(page);
         assert(
           id === 'tank'
@@ -75,7 +81,11 @@ async (page) => {
         if (id === 'contra') {
           const old = after.players[1].y;
           await phone.locator('[data-input=jump]').tap();
-          await page.waitForTimeout(130);
+          await page.waitForFunction(
+            (oldY) =>
+              JSON.parse(document.querySelector('#online-canvas').dataset.players)[1].y < oldY,
+            old,
+          );
           assert((await state(page)).players[1].y < old, 'phone jump');
         }
         result.before = before;
