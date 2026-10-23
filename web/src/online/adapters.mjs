@@ -39,7 +39,55 @@ export function advance(id, m, g, ms, inputs) {
   if (id === 'contra') return m.engine.stepCoop(g, ms, { p1: inputs[0], p2: inputs[1] });
   m.engine.step(g, ms, { p1: inputs[0], p2: inputs[1] });
 }
-const plain = (value) => JSON.parse(JSON.stringify(value));
+const terrainCache = new WeakMap();
+function terrainBits(map) {
+  const cached = terrainCache.get(map);
+  if (cached?.version === map.version) return cached.bits;
+  const bits = Object.fromEntries(
+    ['bricks', 'steels', 'rivers', 'snows', 'forests'].map((k) => [
+      k,
+      [map[k].length, ...map[k].flatMap((v, i) => (v ? [i] : []))],
+    ]),
+  );
+  terrainCache.set(map, { version: map.version, bits });
+  return bits;
+}
+const rounded = (object) =>
+  Object.fromEntries(
+    Object.entries(object).map(([k, v]) => [
+      k,
+      typeof v === 'number' && Number.isFinite(v) ? Math.round(v * 100) / 100 : v,
+    ]),
+  );
+const CONTRA_FIELDS = [
+  'level',
+  'kind',
+  'status',
+  'clock',
+  'score',
+  'lives',
+  'cheats',
+  'multiplayer',
+  'cameraX',
+  'cameraY',
+  'room',
+  'roomOpen',
+  'transitionUntil',
+  'bossActive',
+  'bossDefeatedAt',
+];
+const CONTRA_ARRAYS = [
+  'bridges',
+  'hazards',
+  'movingPlatforms',
+  'enemies',
+  'bullets',
+  'enemyBullets',
+  'pickups',
+  'capsules',
+  'explosions',
+  'cores',
+];
 export function capture(id, g) {
   if (id === 'tank') {
     const s = g.session,
@@ -55,39 +103,42 @@ export function capture(id, g) {
         phase: s.phase,
         curtain: s.curtain,
         gameoverProgress: s.gameoverProgress,
-        players: plain(s.players),
+        players: s.players,
         scene: scene
           ? {
               map: {
-                bits: Object.fromEntries(
-                  ['bricks', 'steels', 'rivers', 'snows', 'forests'].map((k) => [
-                    k,
-                    [scene.map[k].length, ...scene.map[k].flatMap((v, i) => (v ? [i] : []))],
-                  ]),
-                ),
+                bits: terrainBits(scene.map),
                 eagle: scene.map.eagle,
                 eagleBroken: scene.map.eagleBroken,
                 version: scene.map.version,
               },
               time: scene.time,
               remainingBotCount: scene.remainingBotCount,
-              tanks: plain(scene.tanks),
-              bullets: plain(scene.bullets),
-              powerUps: scene.powerUps.map((p) => ({ ...plain(p), visible: p.visible })),
+              tanks: scene.tanks,
+              bullets: scene.bullets,
+              powerUps: scene.powerUps.map((p) => ({ ...p, visible: p.visible })),
               flickers: scene.flickers.map((f) => ({ x: f.x, y: f.y, shapeValue: f.shape() })),
               explosions: scene.explosions.map((e) => ({
                 cx: e.cx,
                 cy: e.cy,
                 shapeValue: e.shape(),
               })),
-              scorePopups: scene.scorePopups.map((p) => ({ ...plain(p), visible: p.visible })),
-              killInfo: plain(scene.killInfo),
+              scorePopups: scene.scorePopups.map((p) => ({ ...p, visible: p.visible })),
+              killInfo: scene.killInfo,
             }
           : null,
       },
     };
   }
-  if (id === 'contra') return { ...g, stage: undefined, events: [] };
+  if (id === 'contra')
+    return {
+      ...Object.fromEntries(CONTRA_FIELDS.map((k) => [k, g[k]])),
+      player: rounded(g.player),
+      p2: { ...g.p2, player: rounded(g.p2.player) },
+      boss: g.boss && rounded(g.boss),
+      ...Object.fromEntries(CONTRA_ARRAYS.map((k) => [k, g[k].map(rounded)])),
+      events: [],
+    };
   return { ...g, events: [] };
 }
 export function hydrate(id, m, frame) {

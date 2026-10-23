@@ -74,7 +74,7 @@ export function fire(g,command={}){
  const length=Math.hypot(dx,dy)||1;dx/=length;dy/=length;p.aimX=dx;p.aimY=dy;p.lastFire=g.clock;
  const angles=p.weapon==='S'?[-.24,-.12,0,.12,.24]:[0],base=Math.atan2(dy,dx);
  for(const offset of angles){const angle=base+offset;g.bullets.push({owner:p.slot||0,id:g.nextId++,x:p.x+dx*10,y:p.y-(p.prone?6:p.water?8:19)+dy*7,vx:Math.cos(angle)*w.speed,vy:Math.sin(angle)*w.speed,weapon:p.weapon,ttl:1800,damage:p.weapon==='L'?3:1,hitIds:[]});}
- sound(g,'shot');return true;
+ g.events.push({type:'sound',name:'shot',slot:p.slot||0});return true;
 }
 function hit(g,fall=false){
  const p=g.player;if(g.status!=='running'||g.bossDefeatedAt||p.deadUntil>g.clock||!fall&&(p.invulnerableUntil>g.clock||g.cheats.invincible))return;
@@ -242,9 +242,19 @@ export function stepCoop(g,milliseconds,commands={}) {
  step(g,milliseconds,g.kind==='base'?{...(commands.p1||{}),up:!!(commands.p1?.up||commands.p2?.up)}:commands.p1||{});
  if(g.status!=='running')return;
  if(g.room!==oldRoom){Object.assign(g.p2.player,{x:152,y:204,vy:0,onGround:true});g.p2.checkpoint={x:152,y:204};}
- const command=commands.p2||{},dt=Math.min(100,Math.max(0,milliseconds))/1000;
+ stepSecondPlayer(g,milliseconds,commands.p2||{});
+ const active=[g.player,g.p2.player].filter(p=>!p.out);
+ if(!active.length){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
+ const lead=active.reduce((a,b)=>g.kind==='vertical'?(a.y<b.y?a:b):(a.x>b.x?a:b));
+ if(g.kind==='vertical'){g.cameraY=Math.min(g.cameraY,clamp(lead.y-145,0,g.stage.height-HEIGHT));if(g.cameraY<75)activateBoss(g);}
+ else if(g.kind!=='base'){g.cameraX=Math.max(g.cameraX,clamp(lead.x-100,0,g.stage.width-WIDTH));if(lead.x>g.stage.width-300)activateBoss(g);}
+ g.enemyBullets=g.enemyBullets.filter(b=>b.ttl>0);g.pickups=g.pickups.filter(p=>p.ttl>0);
+}
+function stepSecondPlayer(g,milliseconds,command,prediction=false){
+ const dt=Math.min(100,Math.max(0,milliseconds))/1000;
  secondPlayer(g,()=>{
   const p=g.player;if(p.out)return;
+  if(prediction&&p.deadUntil)return; // Death, damage, pickups and respawn stay authoritative.
   for(const platform of g.movingPlatforms)if(p.onGround&&p.support===platform.id)p.x+=platform.x-platform.previousX;
   if(p.deadUntil)respawn(g);if(p.out)return;
   if(command.jump&&!g.jumpHeld)g.jumpBufferUntil=g.clock+100;g.jumpHeld=!!command.jump;
@@ -262,6 +272,7 @@ export function stepCoop(g,milliseconds,commands={}) {
   if(g.kind==='base'){p.vy+=GRAVITY*dt;p.y=Math.min(204,p.y+p.vy*dt);p.onGround=p.y>=204;if(p.onGround)p.vy=0;}
   else physics(g,p,dt);
   if(command.fire)fire(g,command);
+  if(prediction)return;
   if((g.kind==='vertical'&&p.y>g.cameraY+HEIGHT+30)||p.y>g.stage.height+24)hit(g,true);
   if(p.onGround)g.checkpoint={x:p.x,y:p.y};
   for(const b of g.enemyBullets)if(overlaps({x:b.x-2,y:b.y-2,w:4,h:4},body(p))){hit(g);b.ttl=0;}
@@ -269,10 +280,17 @@ export function stepCoop(g,milliseconds,commands={}) {
   for(const h of g.hazards){if(h.type==='flame'&&h.active&&overlaps(body(p),{x:h.x,y:h.y-30,w:48,h:30}))hit(g);if(h.type==='crusher'&&h.y>100&&overlaps(body(p),{x:h.x-15,y:h.y-38,w:30,h:38}))hit(g);}
   for(const item of g.pickups)if(item.ttl>0&&overlaps(body(p),{x:item.x-12,y:item.y-15,w:24,h:15}))collect(g,item);
  });
- const active=[g.player,g.p2.player].filter(p=>!p.out);
- if(!active.length){g.status='lost';sound(g,'lose');g.events.push({type:'lost'});return;}
- const lead=active.reduce((a,b)=>g.kind==='vertical'?(a.y<b.y?a:b):(a.x>b.x?a:b));
- if(g.kind==='vertical'){g.cameraY=Math.min(g.cameraY,clamp(lead.y-145,0,g.stage.height-HEIGHT));if(g.cameraY<75)activateBoss(g);}
- else if(g.kind!=='base'){g.cameraX=Math.max(g.cameraX,clamp(lead.x-100,0,g.stage.width-WIDTH));if(lead.x>g.stage.width-300)activateBoss(g);}
- g.enemyBullets=g.enemyBullets.filter(b=>b.ttl>0);g.pickups=g.pickups.filter(p=>p.ttl>0);
+}
+// Presentation-only client prediction: reuse exactly the P2 platform/jump/fire logic,
+// never advance AI, award pickups, deal damage, clear rooms, or revive a player.
+export function predictCoopPlayer(g,milliseconds,command={}){
+ g.events=[];if(g.status!=='running'||!Number.isFinite(milliseconds)||milliseconds<=0)return;
+ let remaining=Math.min(100,milliseconds);
+ while(remaining>1e-7){
+  const ms=Math.min(TICK_MS,remaining),dt=ms/1000;remaining-=ms;g.clock+=ms;
+  for(const p of g.movingPlatforms){p.previousX=p.x;p.phase+=dt;p.x=p.baseX+Math.sin(p.phase*.8)*24;}
+  for(const b of g.bullets){b.x+=b.vx*dt;b.y+=b.vy*dt;b.ttl-=ms;}
+  g.bullets=g.bullets.filter(b=>b.ttl>0&&b.x>=g.cameraX-40&&b.x<=g.cameraX+WIDTH+40&&b.y>=g.cameraY-40&&b.y<=g.cameraY+HEIGHT+60);
+  stepSecondPlayer(g,ms,command,true);
+ }
 }

@@ -1,7 +1,7 @@
 import { build as viteBuild } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync } from 'node:fs';
-import { resolve, join, relative } from 'node:path';
+import { resolve, join, relative, dirname } from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -56,6 +56,7 @@ export async function buildFrontend() {
   mkdirSync(dir, { recursive: true });
   const generated = {};
   const put = (path, bytes) => {
+    mkdirSync(dirname(join(ROOT, path)), { recursive: true });
     writeFileSync(join(ROOT, path), bytes);
     generated[path] = createHash('sha256').update(bytes).digest('hex');
   };

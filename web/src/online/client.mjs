@@ -37,7 +37,8 @@ export class RoomClient {
         }
         if (m.type === 'pong') this.onStatus('connected', Math.max(0, Date.now() - m.at));
         this.onMessage(m);
-      } catch {
+      } catch (error) {
+        console.error('Online snapshot processing failed', error);
         this.onStatus('error');
       }
     };
@@ -55,8 +56,12 @@ export class RoomClient {
   send(m) {
     if (this.socket?.readyState !== WebSocket.OPEN || this.socket.bufferedAmount > 180000)
       return false;
+    if (m.type === 'frame' && !this.canSendFrame()) return false;
     this.socket.send(JSON.stringify(m));
     return true;
+  }
+  canSendFrame() {
+    return this.socket?.readyState === WebSocket.OPEN && this.socket.bufferedAmount < 24000;
   }
   close() {
     this.send({ type: 'leave' });

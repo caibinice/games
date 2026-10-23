@@ -1,9 +1,14 @@
 function image(url){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(Error('Asset load failed'));i.src=url;});}
 export async function loadAssets(){
  const [atlas,rects,...maps]=await Promise.all([image('./assets/sprites.png'),fetch('./assets/sprites.json').then(r=>r.json()),...Array.from({length:8},(_,i)=>image(`./assets/backgrounds/stage-${i+1}.png`)),image('./assets/backgrounds/stage-1-objects.png')]);
- return{atlas,rects,maps};
+ // Hue filtering every draw can force expensive canvas compositing on mobile GPUs.
+ // Tint the tiny sprite sheet once, then use a plain drawImage for P2.
+ const secondAtlas=document.createElement('canvas');secondAtlas.width=atlas.width;secondAtlas.height=atlas.height;
+ const context=secondAtlas.getContext('2d');context.filter='hue-rotate(150deg)';context.drawImage(atlas,0,0);context.filter='none';
+ return{atlas,rects,maps,second:{atlas:secondAtlas,rects}};
 }
 function stamp(c,a,key,x,bottom,flip=false,scale=1,flipY=false){
+ if(typeof key!=='string')return;
  const r=a.rects[key.startsWith('sprite_')?key:'sprite_'+key];if(!r)return;
  c.save();c.translate(Math.round(x),Math.round(bottom));c.scale(flip?-scale:scale,flipY?-scale:scale);
  c.drawImage(a.atlas,r.x,r.y,r.w,r.h,-Math.floor(r.w/2),flipY?0:-r.h,r.w,r.h);c.restore();
@@ -58,10 +63,10 @@ export function draw(canvas,g,a){
  }
  for(const p of [g.player,g.p2?.player].filter(Boolean)){
  if(p.out)continue;
- c.save();if(p.slot===1)c.filter='hue-rotate(150deg)';
+ c.save();const playerAssets=p.slot===1&&a.second?a.second:a;
  const phase=Math.floor(g.clock/100),aiming=g.clock-p.lastFire<250;
  let sprite;
- if(p.deadUntil>g.clock)sprite=['0a','0b','0c'][Math.min(2,Math.floor((g.clock-(p.deadUntil-900))/250))];
+ if(p.deadUntil>g.clock)sprite=['0a','0b','0c'][Math.max(0,Math.min(2,Math.floor((g.clock-(p.deadUntil-900))/250)))];
  else if(p.water)sprite=p.prone?'19':aiming&&p.aimY<-.5?'1c':'1b';
  else if(p.prone)sprite=g.kind==='base'?'06':'17';
  else if(g.kind==='base'&&p.onGround)sprite='02';
@@ -70,11 +75,11 @@ export function draw(canvas,g,a){
  else if(aiming&&p.aimY<-.2)sprite=['10','11','12'][p.vx?phase%3:0];
  else if(aiming&&p.aimY>.2)sprite=['13','14','15'][p.vx?phase%3:0];
  else sprite=p.vx?['0d','0e','0f'][phase%3]:'0f';
- if(p.deadUntil>g.clock||p.invulnerableUntil<=g.clock||Math.floor(g.clock/70)%2===0)stamp(c,a,sprite,p.x,p.y,p.dir<0,1,!p.onGround&&!p.deadUntil&&phase%4>=2);
+ if(p.deadUntil>g.clock||p.invulnerableUntil<=g.clock||Math.floor(g.clock/70)%2===0)stamp(c,playerAssets,sprite,p.x,p.y,p.dir<0,1,!p.onGround&&!p.deadUntil&&phase%4>=2);
  if(g.cheats?.invincible&&!p.deadUntil){c.strokeStyle='#8cf4ff';c.strokeRect(Math.round(p.x)-9,Math.round(p.y)-p.h-2,18,p.h+4);}
  c.filter='none';if(g.multiplayer){c.fillStyle=p.slot===1?'#76eaff':'#ffd977';c.font='6px monospace';c.fillText(p.slot===1?'2P':'1P',p.x-5,p.y-p.h-4);}c.restore();
  }
- for(const e of g.explosions){const frame=Math.min(4,Math.floor((g.clock-e.bornAt)/90));stamp(c,a,['37','36','35','39','3a'][frame],e.x,e.y+12,false,e.big?1.4:1);}
+ for(const e of g.explosions){const frame=Math.max(0,Math.min(4,Math.floor((g.clock-e.bornAt)/90)));stamp(c,a,['37','36','35','39','3a'][frame],e.x,e.y+12,false,e.big?1.4:1);}
  if(g.bossDefeatedAt){const ex=g.boss.x,ey=g.boss.y;for(let i=0;i<7;i++)stamp(c,a,['37','36','35'][Math.floor(g.clock/100+i)%3],ex+Math.sin(i*7+g.clock/100)*28,ey-30+Math.cos(i*5+g.clock/140)*25);}
  c.restore();
  c.fillStyle='#0009';c.fillRect(0,0,256,14);c.font='bold 8px monospace';c.fillStyle='#fff';c.fillText('1P '+String(g.score).padStart(6,'0'),7,10);c.fillText('REST '+(g.cheats?.infiniteLives?'INF':String(g.lives).padStart(2,'0')),184,10);

@@ -4,6 +4,8 @@ import { useRoute } from 'vue-router';
 import { createOnlineAudio } from '../online/audio.mjs';
 import { RoomClient } from '../online/client.mjs';
 import * as A from '../online/adapters.mjs';
+import { ContraPrediction } from '../online/prediction.mjs';
+import { SnapshotPresentation } from '../online/presentation.mjs';
 import { pair, POWERS, remaining } from '../online/duel.mjs';
 import { fruitSVG, FRUITS } from '../../../games/lianliankan/public/fruits.mjs';
 import TouchStick from '../components/TouchStick.vue';
@@ -40,6 +42,8 @@ let audio,
   client,
   raf,
   last = 0,
+  lastSim = 0,
+  ticker = null,
   accumulator = 0,
   sentAt = 0,
   receivedAt = 0,
@@ -48,8 +52,15 @@ let audio,
   seenEffect = 0,
   finished = false,
   lastInput = '',
+  world = null,
+  predictor = null,
+  inputSeq = 0,
+  hudAt = 0,
+  diagnosticsAt = 0,
+  inputAcks = [null, null],
   toastTimer,
   disposed = false;
+const presentation = new SnapshotPresentation(props.id);
 const held = new Set(),
   order = [],
   inputs = [{}, {}],
@@ -161,6 +172,14 @@ function network(m) {
     audio?.setRunning(m.room.phase === 'running');
     room.value = m.room;
     if (m.room.phase !== 'running') clearInput();
+    if (m.room.phase !== 'running') {
+      ticker?.postMessage(false);
+      predictor?.reset();
+      presentation.reset();
+      inputAcks = [null, null];
+      diagnosticsAt = 0;
+      diagnose(performance.now());
+    }
   }
   if (m.type === 'closed') {
     toast(m.message);
@@ -178,30 +197,46 @@ function network(m) {
     room.value = m.room;
     audio?.setScene?.(m.room.level, 'field');
     audio?.setRunning(true);
-    game.value = A.createGame(props.id, modules.value, m.room);
+    world = A.createGame(props.id, modules.value, m.room);
+    game.value = world;
     selected.value = -1;
     last = performance.now();
+    lastSim = last;
+    ticker?.postMessage(true);
     accumulator = 0;
     sentAt = 0;
+    receivedAt = performance.now();
     seq = 0;
     seenSeq = -1;
     seenEffect = 0;
     finished = false;
+    inputSeq = 0;
+    inputAcks = [null, null];
+    presentation.reset();
     clearInput();
+    predictor =
+      props.id === 'contra' && slot.value === 1 ? new ContraPrediction(modules.value.engine) : null;
+    predictor?.reconcile(world, null, performance.now());
     revision.value++;
   }
   if (m.type === 'resume') {
     audio?.setRunning(true);
     room.value = m.room;
     last = performance.now();
+    lastSim = last;
+    receivedAt = last;
+    ticker?.postMessage(true);
     accumulator = 0;
     clearInput();
+    predictor?.reconcile(world, null, performance.now());
   }
   if (m.type === 'input' && slot.value === 0 && [0, 1].includes(m.slot)) {
     for (const key of ['fire', 'jump', 'bomb', 'needle'])
       if (m.input[key] === true && !inputs[m.slot][key]) pulses[m.slot][key] = true;
     inputs[m.slot] = cleanCommand(m.input);
     inputAt[m.slot] = performance.now();
+    if (Number.isFinite(m.input.at) && Number.isSafeInteger(m.input.seq))
+      inputAcks[m.slot] = { seq: m.input.seq, at: m.input.at, clock: world?.clock || 0 };
   }
   if (
     m.type === 'action' &&
@@ -211,15 +246,22 @@ function network(m) {
   )
     playPair(m.slot, m.action.a, m.action.b);
   if (m.type === 'frame' && slot.value === 1 && m.round === room.value?.round && m.seq > seenSeq) {
-    for (const name of m.state.netSounds || []) audio?.play(name);
+    if (props.id === 'contra' && m.state.netVersion !== 2) predictor = null;
+    for (const [index, sound] of (m.state.netSounds || []).entries()) {
+      if (m.state.soundSlots?.[index] === 1 && predictor) continue;
+      audio?.play(sound);
+    }
     seenSeq = m.seq;
     const previous = own.value?.board;
-    game.value = A.hydrate(props.id, modules.value, m.state);
+    world = A.hydrate(props.id, modules.value, m.state);
     receivedAt = performance.now();
+    presentation.receive(world, receivedAt);
+    predictor?.reconcile(world, m.state.inputAcks?.[1], receivedAt);
+    if (props.id === 'lianliankan') game.value = world;
     showEffect();
     if (selected.value >= 0 && previous?.[selected.value] !== own.value?.board[selected.value])
       selected.value = -1;
-    revision.value++;
+    if (props.id === 'lianliankan') revision.value++;
   }
 }
 function cleanCommand(c = {}) {
@@ -251,14 +293,21 @@ function publishInput(force = false) {
     signature = JSON.stringify(c),
     now = performance.now();
   if (!force && signature === lastInput && now - (inputAt[slot.value] || 0) < 350) return;
-  lastInput = signature;
+  if (signature !== lastInput) predictor?.input(c, now);
   inputs[slot.value] = c;
+  if (
+    slot.value === 1 &&
+    !client?.send({ type: 'input', input: { ...c, seq: ++inputSeq, at: now } })
+  )
+    return;
+  lastInput = signature;
   inputAt[slot.value] = now;
-  if (slot.value === 1) client?.send({ type: 'input', input: c });
 }
 function control(action, down) {
   if (!running.value) return;
+  if (held.has(action) === down) return;
   if (down) {
+    predictor?.pulse(action);
     pulses[slot.value][action] = true;
     if (props.id === 'paopaotang')
       pulses[slot.value][action === 'fire' ? 'bomb' : action === 'jump' ? 'needle' : action] = true;
@@ -282,7 +331,9 @@ function clearInput() {
   pulses[0] = {};
   pulses[1] = {};
   lastInput = '';
-  if (slot.value === 1) client?.send({ type: 'input', input: {} });
+  predictor?.input({}, performance.now());
+  if (slot.value === 1)
+    client?.send({ type: 'input', input: { at: performance.now(), seq: ++inputSeq } });
 }
 function keyboard(e) {
   if (/INPUT|SELECT|TEXTAREA/.test(e.target.tagName) || e.ctrlKey || e.altKey || e.metaKey) return;
@@ -311,8 +362,8 @@ function keyboard(e) {
   }
 }
 function playPair(player, a, b) {
-  if (!running.value || !game.value || !Number.isInteger(a) || !Number.isInteger(b)) return;
-  const result = pair(game.value, player, a, b);
+  if (!running.value || !world || !Number.isInteger(a) || !Number.isInteger(b)) return;
+  const result = pair(world, player, a, b);
   revision.value++;
   if (result.ok) {
     audio?.play('match');
@@ -322,7 +373,7 @@ function playPair(player, a, b) {
   }
 }
 function showEffect() {
-  const effect = game.value?.effect;
+  const effect = world?.effect;
   if (!effect || effect.id === seenEffect) return;
   seenEffect = effect.id;
   if (effect.to === slot.value) selected.value = -1;
@@ -340,79 +391,109 @@ function choose(index) {
   if (slot.value === 0) playPair(0, a, index);
   else client.send({ type: 'action', action: { kind: 'pair', a, b: index } });
 }
-function frame(now) {
-  if (disposed) return;
-  const dt = Math.max(0, Math.min(100, now - (last || now)));
-  last = now;
-  if (running.value && game.value) {
+function simulate(now) {
+  const dt = Math.max(0, Math.min(250, now - (lastSim || now)));
+  lastSim = now;
+  if (running.value && world) {
     publishInput();
     if (slot.value === 0) {
       if (now - inputAt[1] > 1200) inputs[1] = {};
       accumulator += dt;
-      while (accumulator >= 1000 / 60 && game.value.status === 'running') {
+      while (accumulator >= 1000 / 60 && world.status === 'running') {
         A.advance(
           props.id,
           modules.value,
-          game.value,
+          world,
           1000 / 60,
           inputs.map((c, i) => ({ ...c, ...pulses[i] })),
         );
-        for (const ev of game.value.events || []) {
+        for (const ev of world.events || []) {
           const name = ev.type === 'sound' ? ev.name : ev.type;
           audio?.play(name);
-          if (netSounds.length < 16) netSounds.push(name);
+          if (netSounds.length < 16)
+            netSounds.push(ev.slot == null ? name : { name, slot: ev.slot });
         }
         pulses[0] = {};
         pulses[1] = {};
         accumulator -= 1000 / 60;
       }
-      if (now - sentAt >= 50) {
+      if (now - sentAt >= (props.id === 'lianliankan' ? 100 : 50) && client.canSendFrame()) {
         client.send({
           type: 'frame',
           round: room.value.round,
           seq: ++seq,
-          state: { ...A.capture(props.id, game.value), netSounds: netSounds.splice(0) },
+          state: {
+            ...A.capture(props.id, world),
+            netVersion: 2,
+            inputAcks,
+            soundSlots: netSounds.map((s) => (typeof s === 'object' ? s.slot : -1)),
+            netSounds: netSounds.splice(0).map((s) => (typeof s === 'object' ? s.name : s)),
+          },
         });
-        sentAt = now;
-        revision.value++;
-        if (['won', 'lost', 'finished'].includes(game.value.status) && !finished) {
+        const interval = props.id === 'lianliankan' ? 100 : 50;
+        sentAt = now - ((now - sentAt) % interval);
+        if (['won', 'lost', 'finished'].includes(world.status) && !finished) {
           finished = true;
           client.send({ type: 'finish' });
         }
       }
     }
   }
-  if (game.value && modules.value) {
+  diagnose(now);
+}
+function frame(now) {
+  if (disposed) return;
+  const dt = Math.max(0, Math.min(100, now - (last || now)));
+  last = now;
+  if (!ticker) simulate(now);
+  if (running.value && slot.value === 1 && predictor && now - receivedAt < 500) {
+    predictor.advance(dt);
+    for (const name of predictor.takeSounds()) audio?.play(name);
+  }
+  if (world && modules.value) {
+    if (now - hudAt >= 100 || game.value?.status !== world.status) {
+      game.value = world;
+      revision.value++;
+      hudAt = now;
+    }
+    let view = slot.value === 1 && running.value ? presentation.sample(now) || world : world;
+    if (slot.value === 1 && running.value && predictor) view = predictor.apply(view);
     A.draw(
       props.id,
       modules.value,
       canvas.value,
-      game.value,
+      view,
       slot.value === 1 && running.value ? Math.min(80, now - receivedAt) : 0,
     );
-    if (canvas.value) {
-      const g = game.value,
-        ps =
-          props.id === 'tank'
-            ? g.session.scene?.tanks.filter((t) => t.side === 'player')
-            : props.id === 'contra'
-              ? [g.player, g.p2.player]
-              : g.players;
-      Object.assign(canvas.value.dataset, {
-        game: props.id,
-        slot: slot.value,
-        status: g.status,
-        roomPhase: room.value?.phase,
-        clock: g.clock,
-        round: room.value?.round,
-        players: JSON.stringify(
-          ps?.map((p) => ({ x: p.x, y: p.y, status: p.status, out: p.out })) || [],
-        ),
-        sequence: slot.value === 0 ? seq : seenSeq,
-      });
-    }
+    // Lightweight diagnostic of the pose actually painted, without per-frame DOM writes.
+    if (canvas.value && props.id === 'contra') canvas.value.__arcadeMotion = view.p2.player;
   }
   raf = requestAnimationFrame(frame);
+}
+function diagnose(now) {
+  if (canvas.value && world && now - diagnosticsAt >= 33) {
+    diagnosticsAt = now;
+    const g = world,
+      ps =
+        props.id === 'tank'
+          ? g.session.scene?.tanks.filter((t) => t.side === 'player')
+          : props.id === 'contra'
+            ? [g.player, g.p2.player]
+            : g.players;
+    Object.assign(canvas.value.dataset, {
+      game: props.id,
+      slot: slot.value,
+      status: g.status,
+      roomPhase: room.value?.phase,
+      clock: g.clock,
+      round: room.value?.round,
+      players: JSON.stringify(
+        ps?.map((p) => ({ x: p.x, y: p.y, status: p.status, out: p.out })) || [],
+      ),
+      sequence: slot.value === 0 ? seq : seenSeq,
+      netcode: predictor ? 'prediction-replay' : 'interpolation',
+    });
+  }
 }
 function ready() {
   void audio?.unlock();
@@ -427,7 +508,18 @@ async function begin() {
 }
 function pause() {
   client?.send({ type: 'pause' });
+  if (room.value)
+    room.value = {
+      ...room.value,
+      phase: 'paused',
+      members: room.value.members.map((p) => ({ ...p, ready: false })),
+    };
+  ticker?.postMessage(false);
+  predictor?.reset();
+  presentation.reset();
   clearInput();
+  diagnosticsAt = 0;
+  diagnose(performance.now());
 }
 function leave(notify = true) {
   if (notify) client?.close();
@@ -441,6 +533,11 @@ function leave(notify = true) {
   audio?.setRunning(false);
   room.value = null;
   game.value = null;
+  world = null;
+  ticker?.postMessage(false);
+  predictor?.reset();
+  predictor = null;
+  presentation.reset();
   connection.value = 'offline';
   clearInput();
   void full.exit();
@@ -461,6 +558,19 @@ onMounted(async () => {
   document.addEventListener('keyup', keyboard);
   window.addEventListener('blur', clearInput);
   try {
+    ticker = new Worker(new URL('../online/clock-worker.mjs', import.meta.url), { type: 'module' });
+    ticker.onmessage = () => {
+      if (!disposed) simulate(performance.now());
+    };
+    ticker.onerror = () => {
+      ticker?.terminate();
+      ticker = null;
+      lastSim = performance.now();
+    };
+  } catch {
+    ticker = null;
+  }
+  try {
     modules.value = await A.loadGame(props.id);
     try {
       audio = await createOnlineAudio(props.id);
@@ -477,6 +587,7 @@ onBeforeUnmount(() => {
   audio?.dispose();
   client?.close();
   cancelAnimationFrame(raf);
+  ticker?.terminate();
   clearTimeout(toastTimer);
   document.removeEventListener('keydown', keyboard);
   document.removeEventListener('keyup', keyboard);
