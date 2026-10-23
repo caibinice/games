@@ -231,9 +231,12 @@ function network(m) {
     predictor?.reconcile(world, null, performance.now());
   }
   if (m.type === 'input' && slot.value === 0 && [0, 1].includes(m.slot)) {
+    const incoming = cleanCommand(m.input);
+    for (const d of ['left', 'right', 'up', 'down'])
+      if (incoming[d] && !inputs[m.slot][d]) pulses[m.slot].movement = incoming.direction || d;
     for (const key of ['fire', 'jump', 'bomb', 'needle'])
       if (m.input[key] === true && !inputs[m.slot][key]) pulses[m.slot][key] = true;
-    inputs[m.slot] = cleanCommand(m.input);
+    inputs[m.slot] = incoming;
     inputAt[m.slot] = performance.now();
     if (Number.isFinite(m.input.at) && Number.isSafeInteger(m.input.seq))
       inputAcks[m.slot] = { seq: m.input.seq, at: m.input.at, clock: world?.clock || 0 };
@@ -307,6 +310,7 @@ function control(action, down) {
   if (!running.value) return;
   if (held.has(action) === down) return;
   if (down) {
+    if (['left', 'right', 'up', 'down'].includes(action)) pulses[slot.value].movement = action;
     predictor?.pulse(action);
     pulses[slot.value][action] = true;
     if (props.id === 'paopaotang')
@@ -405,7 +409,7 @@ function simulate(now) {
           modules.value,
           world,
           1000 / 60,
-          inputs.map((c, i) => ({ ...c, ...pulses[i] })),
+          inputs.map((c, i) => A.tickCommand(c, pulses[i])),
         );
         for (const ev of world.events || []) {
           const name = ev.type === 'sound' ? ev.name : ev.type;

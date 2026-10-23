@@ -1,4 +1,17 @@
 import { newDuel, stepDuel } from './duel.mjs';
+// Preserve a tap when keydown+keyup arrive in the same network/timer batch.
+// Tank's input manager also needs the latched action in its ordered key list.
+export function tickCommand(current, pulse) {
+  const command = { ...current, order: [...(current.order || [])] };
+  for (const key of ['fire', 'jump', 'bomb', 'needle']) if (pulse[key]) command[key] = true;
+  if (!['left', 'right', 'up', 'down'].some((d) => current[d]) && pulse.movement) {
+    command[pulse.movement] = true;
+    command.direction = pulse.movement;
+    command.order.push(pulse.movement);
+  }
+  if (command.fire && !command.order.includes('fire')) command.order.push('fire');
+  return command;
+}
 export async function loadGame(id) {
   if (id === 'lianliankan') return {};
   if (id === 'tank') {

@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import * as Engine from '../games/contra/public/engine.mjs';
 import * as Tank from '../games/tank/public/engine.mjs';
-import { capture, hydrate } from '../web/src/online/adapters.mjs';
+import { capture, hydrate, tickCommand } from '../web/src/online/adapters.mjs';
 import { ContraPrediction } from '../web/src/online/prediction.mjs';
 import { SnapshotPresentation } from '../web/src/online/presentation.mjs';
 import { RoomClient } from '../web/src/online/client.mjs';
@@ -114,6 +114,19 @@ describe('Prediction and reconciliation without changing authoritative outcomes'
   });
 });
 describe('Smooth render snapshots and bounded transport', () => {
+  it('a coalesced movement/fire tap survives one host tick with Tank key ordering', () => {
+    expect(tickCommand({ order: [] }, { movement: 'up', fire: true })).toMatchObject({
+      up: true,
+      fire: true,
+      direction: 'up',
+      order: ['up', 'fire'],
+    });
+    expect(tickCommand({ right: true, order: ['right'] }, { movement: 'left' })).toMatchObject({
+      right: true,
+      order: ['right'],
+    });
+    expect(tickCommand({ order: [] }, {})).not.toHaveProperty('up');
+  });
   it('new explosions and deaths are renderable even before their interpolated birth time', () => {
     const g = world();
     g.clock = 0;
