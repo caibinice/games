@@ -30,6 +30,7 @@ async (page) => {
     for (const id of ['tank', 'contra', 'paopaotang', 'lianliankan']) {
       await page.goto(base + `/games/${id}/online.html`);
       await phone.goto(base + `/games/${id}/online.html`);
+      if (id === 'contra') await page.locator('select').selectOption('2');
       await page.locator('[data-online=create]:enabled').click();
       const code = await page.locator('[data-online=room-code]').innerText();
       await phone.locator('[data-online=code]').fill(code);

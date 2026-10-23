@@ -1,10 +1,11 @@
 async (page) => {
   const base = new URL(page.url()).origin;
+  const delay = Number(new URL(page.url()).searchParams.get('qaDelay') ?? 180);
   const context = await page
     .context()
     .browser()
     .newContext({ viewport: { width: 1280, height: 900 } });
-  await context.addInitScript(() => {
+  await context.addInitScript((delay) => {
     const Native = window.WebSocket;
     window.WebSocket = new Proxy(Native, {
       construct(Target, args) {
@@ -21,15 +22,15 @@ async (page) => {
             };
         });
         socket.send = (data) => {
-          if (JSON.parse(data).type === 'input' && 180 > 0)
-            setTimeout(() => socket.readyState === 1 && send(data), 180);
+          if (JSON.parse(data).type === 'input' && delay > 0)
+            setTimeout(() => socket.readyState === 1 && send(data), delay);
           else send(data);
         };
         Object.defineProperty(socket, 'onmessage', {
           set(handler) {
             socket.addEventListener('message', (event) => {
-              if (JSON.parse(event.data).type === 'frame' && 180 > 0)
-                setTimeout(() => handler(event), 180);
+              if (JSON.parse(event.data).type === 'frame' && delay > 0)
+                setTimeout(() => handler(event), delay);
               else handler(event);
             });
           },
@@ -37,7 +38,7 @@ async (page) => {
         return socket;
       },
     });
-  });
+  }, delay);
   const peer = await context.newPage();
   try {
     await page.goto(base + '/games/contra/online.html');
@@ -89,7 +90,6 @@ async (page) => {
       const changes = moving.slice(1).filter((s, i) => Math.abs(s.x - moving[i].x) > 0.05).length;
       const canvas = document.querySelector('#online-canvas');
       return {
-        injectedOneWayMs: 180,
         inputToVisibleMs: first?.t,
         visiblePositionChanges: changes,
         renderSamples: moving.length,
@@ -99,6 +99,7 @@ async (page) => {
         ),
       };
     });
+    result.injectedOneWayMs = delay;
     result.hostClockAdvanced =
       (await page.locator('#online-canvas').evaluate((c) => +c.dataset.clock)) - hostStart;
     result.diagnostic = await peer.evaluate(() => ({

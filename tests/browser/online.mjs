@@ -7,6 +7,28 @@ async (page) => {
     errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   const browser = page.context().browser();
+  await page.addInitScript(() => {
+    const send = WebSocket.prototype.send;
+    window.__qaFrames = {};
+    WebSocket.prototype.send = function (data) {
+      const m = JSON.parse(data);
+      if (m.type === 'frame') {
+        const s = m.state;
+        const players = s.session
+          ? s.session.scene?.tanks.filter((t) => t.side === 'player')
+          : s.p2
+            ? [s.player, s.p2.player]
+            : s.players;
+        window.__qaFrames[m.seq] = {
+          clock: s.clock,
+          players: players?.map((p) => ({ x: p.x, y: p.y })),
+        };
+        const keys = Object.keys(window.__qaFrames);
+        if (keys.length > 80) delete window.__qaFrames[keys[0]];
+      }
+      return send.call(this, data);
+    };
+  });
   const peerContext = await browser.newContext({ viewport: { width: 1280, height: 900 } });
   await peerContext.addInitScript(() => {
     const Native = window.WebSocket;
@@ -73,6 +95,7 @@ async (page) => {
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(`${base}/games/${id}/online.html`);
       await peer.goto(`${base}/games/${id}/online.html`);
+      if (id === 'contra') await page.locator('select').selectOption('2');
       await page.locator('[data-online=name]').fill('主机测试');
       await peer.locator('[data-online=name]').fill('远端2P');
       await page.locator('[data-online=create]:enabled').waitFor();
@@ -118,10 +141,13 @@ async (page) => {
           snapshotDelay < Math.max(200, Math.min(1000, rtt * 2 + 100)),
           'bounded snapshot delay ' + id,
         );
+        const sent = await page.evaluate((seq) => window.__qaFrames[seq], mirrored.sequence);
         assert(
-          Math.abs(after.players[1].x - mirrored.players[1].x) < 5 &&
-            Math.abs(after.players[1].y - mirrored.players[1].y) < 5,
-          'mirrored remote player ' + id + ' ' + JSON.stringify({ rtt, after, mirrored }),
+          sent &&
+            sent.clock === +mirrored.clock &&
+            Math.abs(sent.players[1].x - mirrored.players[1].x) < 0.02 &&
+            Math.abs(sent.players[1].y - mirrored.players[1].y) < 0.02,
+          'same-sequence remote player ' + id + ' ' + JSON.stringify({ sent, mirrored }),
         );
         await peer.keyboard.press('KeyJ');
         await page.waitForTimeout(180);
