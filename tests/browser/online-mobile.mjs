@@ -42,7 +42,9 @@ async (page) => {
       if (id !== 'lianliankan') {
         await phone.locator('.online-full.online-rotated').waitFor();
         await page.waitForFunction(
-          () => +document.querySelector('#online-canvas')?.dataset.clock > 3500,
+          () =>
+            +document.querySelector('#online-canvas')?.dataset.clock >
+            (document.title.includes('坦克') ? 3500 : 500),
         );
         const before = await state(page),
           pad = await phone.locator('.floating-stick').boundingBox(),
