@@ -31,6 +31,8 @@ async (page) => {
   try {
     await page.goto(base + '/games/contra/online.html');
     await peer.goto(base + '/games/contra/online.html');
+    // A flat base room isolates networking from combat/respawn during the sample.
+    await page.locator('select').selectOption('2');
     await page.locator('[data-online=create]:enabled').click();
     const code = await page.locator('[data-online=room-code]').innerText();
     await peer.locator('[data-online=code]').fill(code);

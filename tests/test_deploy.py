@@ -41,7 +41,7 @@ class DeploymentTests(unittest.TestCase):
                 continue
             content = file.read_bytes()
             self.manifest['files'].append({'path': file.relative_to(self.dist).as_posix(), 'bytes': len(content), 'sha256': hashlib.sha256(content).hexdigest()})
-            if file.suffix in {'.html', '.mjs', '.css', '.svg', '.json', '.webmanifest'}:
+            if file.suffix in deploy.TEXT:
                 Path(str(file) + '.gz').write_bytes(gzip.compress(content, mtime=0))
         self.save_manifest()
 
