@@ -66,10 +66,12 @@ import {
 import { mazeCarryOver } from './battle-report.mjs';
 import { battleReportTypes } from './battle-report-schema.mjs';
 import { normalGem, migrateHiddenGems } from './gem-policy.mjs';
+import { shopTypes, shopCommands, shopAction } from './shop-state.mjs';
 Object.assign(roleTypes, activityGrowthTypes);
 Object.assign(roleTypes, lotteryTypes);
 Object.assign(roleTypes, extensionTypes);
 Object.assign(roleTypes, battleReportTypes);
+Object.assign(roleTypes, shopTypes);
 roleTypes.CSTextConfig = [
   ['ID', 'uint'],
   ['ArgNum', 'short'],
@@ -519,6 +521,7 @@ function localBagData(role, seconds, profile) {
       ...GROWTH.SkinBaseConfig.map((r) => r.CostItemID),
       ...GROWTH.SkinLevelConfig.flatMap((r) => r.CostItem.map((i) => i.ItemID)),
       ...GROWTH.GunBaseConfig.map((r) => r.UnlockCondParam1),
+      ...GROWTH.GunSkillConfig.map((r) => r.CostItemID),
       ...GROWTH.GunUpConfig.flatMap((r) => [r.CostItemID, r.CommonCostItemID]),
       ...MECHA_BASE.map((r) => r.ActivateItemID),
       ...MECHA_GROWTH.BianShenLevelConfig.map((r) => r.NeedItemID),
@@ -1073,27 +1076,32 @@ function serviceReply(request, role, now, profile) {
   const seconds = Math.floor(now / 1000),
     out = mazeCommands.has(request.cmd)
       ? mazeAction(request, role, profile)
-      : serviceAction(request, role, seconds, profile);
+      : shopCommands.has(request.cmd)
+        ? shopAction(request, role, profile, randomInt)
+        : serviceAction(request, role, seconds, profile);
   if (!out) return null;
   let updated = out.role;
   if (out.awards?.length) {
     const bag = localBagData(updated, seconds, profile);
     let gold = localGold(updated, profile),
       xp = updated.localXp || 0;
-    for (const a of out.awards) {
+    for (const a of resolveAutoUseAwards(out.awards)) {
       if (a.AwardItemType === 2) {
         if (a.AwardItemID === 99002) gold = Math.min(1e9, gold + a.AwardItemCnt);
         if (a.AwardItemID === 99004) xp = Math.min(1e9, xp + a.AwardItemCnt);
       } else {
-        let item = bag.ItemData.find((i) => i.ItemType === 1 && i.ItemID === a.AwardItemID);
+        const gem = GEM_IDS.has(a.AwardItemID),
+          itemType = gem ? 3 : 1;
+        if (!gem && !GOOD_IDS.has(a.AwardItemID)) throw Error('Unknown service award item');
+        let item = bag.ItemData.find((i) => i.ItemType === itemType && i.ItemID === a.AwardItemID);
         if (!item) {
           item = {
             ItemGID: 95000 + bag.ItemData.length,
             ItemID: a.AwardItemID,
             StackCnt: 0,
-            ItemType: 1,
+            ItemType: itemType,
             CreateTime: seconds,
-            Detail: { GoodsDetail: { LastUseTime: 0 } },
+            Detail: gem ? { GemDetail: { IsLock: 0 } } : { GoodsDetail: { LastUseTime: 0 } },
           };
           bag.ItemData.push(item);
         }
@@ -1120,7 +1128,7 @@ function serviceReply(request, role, now, profile) {
     body.writeInt32BE(out.battleStartId);
     notifications.push(localBattleEntry(updated, { body }, now, profile));
   }
-  if (out.awards?.length || out.dirtyGuild) {
+  if (out.awards?.length || out.dirtyGuild || out.dirtyLevel) {
     const data = localRoleData(updated, now, profile);
     notifications.push({
       cmd: 2021,
@@ -1209,14 +1217,10 @@ function boxDrawReply(request, role, now, profile) {
       : [],
   };
 }
-function lotteryReply(request, role, now, profile) {
-  const seconds = Math.floor(now / 1000),
-    out = lotteryAction(request, role, randomInt),
-    bag = localBagData(role, seconds, profile);
-  let gold = localGold(role, profile);
+function resolveAutoUseAwards(awards) {
   // Random-gem goods 70001..70007 are AutoUse=1 / FuncValue=5 in the APK.
   // Advertise that native good in activity configs, grant its real gem to the bag.
-  const resolvedAwards = out.awards.flatMap((award) => {
+  return awards.flatMap((award) => {
     const goods = GROWTH.GoodsConfig.find((r) => r.ItemID === award.AwardItemID);
     if (award.AwardItemType !== 1 || goods?.AutoUse !== 1 || goods.Func?.FuncValue !== 5)
       return [award];
@@ -1229,6 +1233,13 @@ function lotteryReply(request, role, now, profile) {
       AwardItemCnt: 1,
     }));
   });
+}
+function lotteryReply(request, role, now, profile) {
+  const seconds = Math.floor(now / 1000),
+    out = lotteryAction(request, role, randomInt),
+    bag = localBagData(role, seconds, profile);
+  let gold = localGold(role, profile);
+  const resolvedAwards = resolveAutoUseAwards(out.awards);
   for (const award of resolvedAwards) {
     const { AwardItemType: kind, AwardItemID: id, AwardItemCnt: count } = award;
     if (
@@ -1511,7 +1522,11 @@ export function localBattleEntry(role, request, now = Date.now(), profile = {}) 
   };
 }
 export function roleSessionReply(request, role, now = Date.now(), profile = {}) {
-  if (serviceCommands.has(request.cmd) || mazeCommands.has(request.cmd)) {
+  if (
+    serviceCommands.has(request.cmd) ||
+    mazeCommands.has(request.cmd) ||
+    shopCommands.has(request.cmd)
+  ) {
     validateLocalRole(role);
     return serviceReply(request, role, now, validateFixtureProfile(profile));
   }

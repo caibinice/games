@@ -291,6 +291,22 @@ const tcp = directory
                 if (!accountName) throw Error('Invalid personal account session');
               }
               if (roles && accountName) localRole = roles.load(accountName);
+              // Only public game identifiers/counts are logged here, never
+              // SDK/account payloads. These fields help diagnose native UI errors.
+              if (
+                [29202, 29208, 29210, 7309, 7311, 7313, 4286, 4300].includes(packet.cmd) &&
+                packet.body.length <= 20 &&
+                packet.body.length % 4 === 0
+              )
+                record({
+                  layer: 'local-growth-service',
+                  event: 'request',
+                  id,
+                  cmd: packet.cmd,
+                  values: Array.from({ length: packet.body.length / 4 }, (_, i) =>
+                    packet.body.readUInt32BE(i * 4),
+                  ),
+                });
               if ([4200, 4204, 4206].includes(packet.cmd) && packet.body.length === 16)
                 record({
                   layer: 'local-gem-action',

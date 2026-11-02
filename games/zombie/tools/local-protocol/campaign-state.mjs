@@ -41,10 +41,14 @@ export function campaignData(role) {
           LevelID: r.LevelID,
           FinLevelCnt: d.wins || 0,
           LastMaxHpRate: d.bestHp || 0,
-          LevelAwardList: [1, 2, 3].map((StarLevel) => ({
-            StarLevel,
-            IsAward: (d.claims || []).includes(StarLevel) ? 1 : 0,
-          })),
+          // Native UpdateShow treats an unclaimed entry as immediately claimable;
+          // it does not re-check wins/HP. Never advertise unearned star chests.
+          LevelAwardList: [1, 2, 3]
+            .filter((star) => d.wins && star <= (d.bestHp >= 100 ? 3 : d.bestHp >= 50 ? 2 : 1))
+            .map((StarLevel) => ({
+              StarLevel,
+              IsAward: (d.claims || []).includes(StarLevel) ? 1 : 0,
+            })),
         };
       }),
   };

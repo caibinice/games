@@ -240,6 +240,7 @@ export function serviceAction(q, role, seconds, p) {
           cmd: 4287,
           type: 'CSGetLevelAwardRes',
           data: { Result: { Ret: 1 }, BootyAwardList: {} },
+          dirtyLevel: true,
         };
   }
   if ([4500, 4289, 12321, 12323].includes(c)) {

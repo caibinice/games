@@ -16,7 +16,28 @@ export function gunData(role) {
   };
 }
 export function mechaState(role) {
-  return structuredClone(role.localMechas || { owned: {}, slots: [] });
+  const s = structuredClone(role.localMechas || { owned: {}, slots: [] });
+  // The native skill button is disabled for level 0 even when the star gate is
+  // met. Star rewards must activate their skills in notifications, including
+  // legacy saves created before this rule was implemented.
+  for (const [id, own] of Object.entries(s.owned)) {
+    own.skills ||= {};
+    for (const cfg of M.BianShenSkillActivateConfig) {
+      if (
+        cfg.BianShenType === Number(id) &&
+        cfg.NeedBianShenStarLv <= own.star &&
+        M.BianShenSkillLvUpConfig.some(
+          (r) =>
+            r.BianShenType === Number(id) &&
+            r.SkillPos === cfg.SkillPos &&
+            r.SkillLv === 1 &&
+            r.NeedBianShenLv <= own.level,
+        )
+      )
+        own.skills[cfg.SkillPos] = Math.max(1, own.skills[cfg.SkillPos] || 0);
+    }
+  }
+  return s;
 }
 export function mechaBattleData(role) {
   const s = mechaState(role);
@@ -155,9 +176,15 @@ export function extensionAction(q, role, p) {
       },
       type = types[c];
     if ([29202, 29208].includes(c)) {
-      if (!T.GunSkillConfig.some((r) => r.GunSkillLevel === id) || !p.freeActions)
+      // The actual activation button sends a reserved GunSkillID=0.
+      const target = id || s.skillLevel + 1;
+      if (
+        !T.GunSkillConfig.some((r) => r.GunSkillLevel === target) ||
+        !p.freeActions ||
+        target > s.skillLevel + 1
+      )
         return fail(type);
-      s.skillLevel = Math.max(s.skillLevel, id);
+      s.skillLevel = Math.max(s.skillLevel, target);
     } else {
       const cfg = T.GunBaseConfig.find((r) => r.ID === id);
       if (!cfg) return fail(type);
@@ -171,13 +198,12 @@ export function extensionAction(q, role, p) {
       }
       if (c === 29210) {
         const level = s.guns[id];
-        if (
-          !level ||
-          !p.freeActions ||
-          !T.GunUpConfig.some((r) => r.GunID === id && r.Level === level + 1)
-        )
-          return fail(type);
-        s.guns[id]++;
+        const levels = T.GunUpConfig.filter((r) => r.GunID === id);
+        if (!level || !p.freeActions || !levels.length) return fail(type);
+        // At the source cap (5), a repeated tap is an acknowledged no-op, not
+        // a network failure. Never invent a level without client configuration.
+        if (levels.some((r) => r.Level === level + 1)) s.guns[id]++;
+        else if (level !== Math.max(...levels.map((r) => r.Level))) return fail(type);
       }
     }
     return {
@@ -246,30 +272,27 @@ export function extensionAction(q, role, p) {
         )
           return fail(type);
         own.star++;
-      } else if (c === 7309) {
+      } else if (c === 7309 || c === 7311) {
         const pos = uint(4);
+        own.skills ||= {};
+        const level = own.skills[pos] || 0;
         if (
-          own.skills[pos] ||
           !M.BianShenSkillActivateConfig.some(
             (r) => r.BianShenType === id && r.SkillPos === pos && r.NeedBianShenStarLv <= own.star,
           )
         )
           return fail(type);
-        own.skills[pos] = 1;
-      } else if (c === 7311) {
-        const pos = uint(4),
-          level = own.skills[pos];
-        if (
-          !level ||
-          !M.BianShenSkillLvUpConfig.some(
-            (r) => r.BianShenType === id && r.SkillPos === pos && r.SkillLv === level + 1,
-          )
-        )
-          return fail(type);
-        own.skills[pos]++;
+        // Also accept a legacy level-zero upgrade after validating its gates;
+        // normal native UI receives auto-activated level 1 from mechaState.
+        if (c === 7309 && level) return ok(type, role);
+        const next = M.BianShenSkillLvUpConfig.find(
+          (r) => r.BianShenType === id && r.SkillPos === pos && r.SkillLv === level + 1,
+        );
+        if (!next || next.NeedBianShenLv > own.level) return fail(type);
+        own.skills[pos] = level + 1;
       }
     }
-    const updated = { ...role, localMechas: s };
+    const updated = { ...role, localMechas: mechaState({ ...role, localMechas: s }) };
     return { ...ok(type, updated), notifications: mechaNotifications(updated) };
   }
   return null;
