@@ -1,0 +1,18 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "schemas": {
+    "ResDef.SkillEffectGroupConfig": {
+      "header_bytes": 20,
+      "ctor_rva": "0x181A0CC",
+      "unpack_rva": "0x181A204",
+      "fields": [
+        ["EffectGroupID", "uint"],
+        ["EffectGroupParamType", "uint"],
+        ["EffectGroupParam", "uint"],
+        ["Count", "uint"],
+        ["EffectPath", "string", 3],
+        ["KeepEffectSelfFoward", "byte"]
+      ]
+    }
+  }
+}

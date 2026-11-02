@@ -1,0 +1,11 @@
+/opt/zombie-native/state/requests.jsonl {
+    daily
+    maxsize 8M
+    rotate 7
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+    su zombie-native zombie-native
+}

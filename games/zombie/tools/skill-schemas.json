@@ -1,0 +1,521 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "schemas": {
+    "BattleCore.BuildConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CEB6C",
+      "fields": [
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "buildType",
+          "int"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "AddSubSkillID",
+          "uint",
+          3
+        ],
+        [
+          "RmvSubSkillID",
+          "uint",
+          2
+        ],
+        [
+          "BuffID1",
+          "int"
+        ],
+        [
+          "BuffID2",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "DontShow",
+          "int"
+        ],
+        [
+          "DontCheckCD",
+          "int"
+        ],
+        [
+          "MainSkillBuild",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.SkillAttrDamageData": {
+      "fields": [
+        [
+          "MagicType",
+          "int"
+        ],
+        [
+          "DamageType",
+          "int"
+        ],
+        [
+          "AttrType",
+          "int"
+        ],
+        [
+          "Param1",
+          "FP"
+        ],
+        [
+          "Param2",
+          "FP"
+        ],
+        [
+          "Param3",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.SkillBaseConfg": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D5C48",
+      "fields": [
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "SkillType",
+          "byte"
+        ],
+        [
+          "CloseAutoUse",
+          "byte"
+        ],
+        [
+          "SkillRangeType",
+          "byte"
+        ],
+        [
+          "DisableMove",
+          "byte"
+        ],
+        [
+          "NotAffectByAttr",
+          "byte"
+        ],
+        [
+          "GCDID",
+          "uint"
+        ],
+        [
+          "SkillDispID",
+          "uint"
+        ],
+        [
+          "CostMP",
+          "uint"
+        ],
+        [
+          "SkillCD",
+          "FP"
+        ],
+        [
+          "MinSkillCD",
+          "FP"
+        ],
+        [
+          "SkillCDMode",
+          "int"
+        ],
+        [
+          "SkillDurationTime",
+          "FP"
+        ],
+        [
+          "DynamicCD",
+          "int"
+        ],
+        [
+          "AttrDamageData",
+          "BattleCore.SkillAttrDamageData",
+          12
+        ],
+        [
+          "BuffID",
+          "int",
+          4
+        ],
+        [
+          "NoTargetCaster",
+          "int"
+        ],
+        [
+          "CanBeSilence",
+          "byte"
+        ],
+        [
+          "SkillCastType",
+          "byte"
+        ],
+        [
+          "FindTargetFailShowTip",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.MagicSkillLevelConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D2638",
+      "fields": [
+        [
+          "ID",
+          "int"
+        ],
+        [
+          "Level",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "BuildID",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffTriggleState": {
+      "fields": [
+        [
+          "StateID",
+          "ushort"
+        ],
+        [
+          "StateParam",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.BuffConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CD3E4",
+      "fields": [
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "TimeType",
+          "byte"
+        ],
+        [
+          "ReplaceType",
+          "byte"
+        ],
+        [
+          "State",
+          "BattleCore.BuffTriggleState"
+        ],
+        [
+          "AddBuffWayType",
+          "byte"
+        ],
+        [
+          "SummonExtend",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.ResAttrImpactData": {
+      "fields": [
+        [
+          "DataType",
+          "short"
+        ],
+        [
+          "AddType",
+          "byte"
+        ],
+        [
+          "Value",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.BuffDotTickConfig": {
+      "fields": [
+        [
+          "TickTime",
+          "FP"
+        ],
+        [
+          "TickWhenAdd",
+          "byte"
+        ],
+        [
+          "RemoveAfterDot",
+          "byte"
+        ],
+        [
+          "BindSkill",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffFuncData": {
+      "fields": [
+        [
+          "FuncId",
+          "int"
+        ],
+        [
+          "FuncParam",
+          "int",
+          8
+        ]
+      ]
+    },
+    "BattleCore.BuffAttrConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CD8D8",
+      "fields": [
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "StackNum",
+          "int"
+        ],
+        [
+          "DurTime",
+          "FP"
+        ],
+        [
+          "RemoveWhenDie",
+          "byte"
+        ],
+        [
+          "EffectID",
+          "int"
+        ],
+        [
+          "DeathStillEffect",
+          "byte"
+        ],
+        [
+          "DotBanIgnoreDamageCount",
+          "byte"
+        ],
+        [
+          "DotDamageData",
+          "BattleCore.SkillAttrDamageData"
+        ],
+        [
+          "DotTickConfig",
+          "BattleCore.BuffDotTickConfig"
+        ],
+        [
+          "AttrData",
+          "BattleCore.ResAttrImpactData",
+          6
+        ],
+        [
+          "FuncData",
+          "BattleCore.BuffFuncData"
+        ]
+      ]
+    },
+    "BattleCore.SubSkillConfg": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D5F30",
+      "fields": [
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "SkillDurationTime",
+          "FP"
+        ],
+        [
+          "SkillDurationMode",
+          "int"
+        ],
+        [
+          "SkillDispID",
+          "int"
+        ]
+      ]
+    },
+    "BattleCore.BuildConditionData": {
+      "fields": [
+        [
+          "Type",
+          "uint"
+        ],
+        [
+          "Param1",
+          "uint"
+        ],
+        [
+          "Param2",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuildGroupConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE510",
+      "fields": [
+        [
+          "GroupID",
+          "uint"
+        ],
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "Weight",
+          "uint"
+        ],
+        [
+          "MaxSelectCount",
+          "uint"
+        ],
+        [
+          "DependCondition",
+          "BattleCore.BuildConditionData",
+          5
+        ],
+        [
+          "ConflictCondition",
+          "BattleCore.BuildConditionData",
+          8
+        ],
+        [
+          "BanLuckWheel",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.BuildLibraryConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE210",
+      "fields": [
+        [
+          "LibraryID",
+          "uint"
+        ],
+        [
+          "GroupID",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffFuncSkillAttrConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE008",
+      "fields": [
+        [
+          "ID",
+          "uint"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "int",
+          5
+        ],
+        [
+          "AttrData",
+          "BattleCore.ResAttrImpactData",
+          3
+        ]
+      ]
+    },
+    "ResDef.BuildConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x177AEB0",
+      "fields": [
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "Name",
+          "int"
+        ],
+        [
+          "buildType",
+          "int"
+        ],
+        [
+          "Icon",
+          "string"
+        ],
+        [
+          "Desc",
+          "int"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "AddSubSkillID",
+          "uint",
+          3
+        ],
+        [
+          "RmvSubSkillID",
+          "uint",
+          2
+        ],
+        [
+          "BuffID1",
+          "int"
+        ],
+        [
+          "BuffID2",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "DontShow",
+          "int"
+        ],
+        [
+          "DontCheckCD",
+          "int"
+        ],
+        [
+          "MainSkillBuild",
+          "byte"
+        ]
+      ]
+    }
+  }
+}

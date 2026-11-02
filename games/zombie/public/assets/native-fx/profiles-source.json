@@ -1,0 +1,127 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "selection": {
+    "assets_resources_effect_skill_xuanfengjianong.ab": "3f8a34da556636946b4f4ea5ca087404f0c6443cd873cc75985d51024ff9e884",
+    "assets_effect_skill_xuanfengjianong.ab": "3b73190b32dd0d1e74d49aff12318ea853cd03141f14600a20c21c6df6759183",
+    "vortex-body": {
+      "bundle": "assets_resources_effect_skill_xuanfengjianong.ab",
+      "path_id": "6854354511984034027",
+      "hierarchy": "eff_xuanfengjianong_preapre1/zhuti",
+      "material_path_id": "-2759203858372938526",
+      "material": "xfjn_fx_zhuti",
+      "texture": {
+        "bundle": "assets_effect_textures_sequence_longjuanfeng.ab",
+        "path_id": "160587585866209646",
+        "name": "longjuanfeng_4\u00d73_01_mwh_Tex",
+        "sha256": "7d5983f849493e2f20ccfb40a8facab451de5d32b2b48189f5018ba640135cc2"
+      }
+    },
+    "vortex-light": {
+      "bundle": "assets_resources_effect_skill_xuanfengjianong.ab",
+      "path_id": "-9099952081629098397",
+      "hierarchy": "eff_xuanfengjianong_preapre3/ljf/qiliu_1",
+      "material_path_id": "955220016730029919",
+      "material": "xfjn_fx_qiliu",
+      "texture": {
+        "bundle": "assets_effect_textures_trail.ab",
+        "path_id": "6305172850086086005",
+        "name": "dai_049_4_qxb_Tex",
+        "sha256": "f3e57964de2709daf87a7d20f09c8b3511d49d3a05cc7db534877fdc178d238b"
+      }
+    },
+    "vortex-ring": {
+      "bundle": "assets_resources_effect_skill_xuanfengjianong.ab",
+      "path_id": "1034395144085013167",
+      "hierarchy": "eff_xuanfengjianong_ring/quan",
+      "material_path_id": "-257227722594563418",
+      "material": "fengquanxiyin_quan_001_ljm",
+      "texture": {
+        "bundle": "assets_effect_textures_light_ring.ab",
+        "path_id": "-2152300934417894773",
+        "name": "ring_001_ljm_Tex",
+        "sha256": "c640546521a49ee8b28b5bf261bdba1d2a9e278ae354e861e4d58c56a148773e"
+      }
+    },
+    "assets_resources_effect_skill_diancichuanci.ab": "47230743aa2f1d77f0b3302be71f649dcafccae464702970fee719dc25d26b1d",
+    "assets_effect_skill_diancichuanci.ab": "c2cbe7c25e9169c9f30aac8e2004641f47a4be9c184ccad0f48c537742caf844",
+    "lightning-bolt": {
+      "bundle": "assets_resources_effect_skill_diancichuanci.ab",
+      "path_id": "-1774917065596760657",
+      "hierarchy": "eff_diancichuanci_hit/scale/kqd (1)",
+      "material_path_id": "-3010891432826796480",
+      "material": "dianci_lighting6",
+      "texture": {
+        "bundle": "assets_effect_textures_lightning.ab",
+        "path_id": "-8878451405350651771",
+        "name": "shandian_026_4x4_Tex",
+        "sha256": "3100692df0318d5b47168c52dab867596ec14bab871ebffcc0338761a77ae715"
+      }
+    },
+    "assets_resources_effect_skill_chaodaojiguang.ab": "e3a4d66f72766a2aff768158f8d4eb61be9ca1c90197440b9c028f540a66422f",
+    "assets_effect_skill_chaodaojiguang.ab": "5bce960d60e57d1e2dc60df7ea43d380a3f983ca4c6e178928077087d29dd2ec",
+    "laser-line": {
+      "bundle": "assets_resources_effect_skill_chaodaojiguang.ab",
+      "path_id": "-4069053161144814036",
+      "hierarchy": "eff_chaodaojiguang_prepare2/guadian/xian_an",
+      "material_path_id": "-2194249701369739987",
+      "material": "jiguang_line",
+      "texture": {
+        "bundle": "assets_effect_textures_mask.ab",
+        "path_id": "-1065216305619587761",
+        "name": "Mask_003_zxr_Tex",
+        "sha256": "a1e7ec93d07b126ce9f5dbb6e8c8850b1a54464efbd9dc7806125ab0b3d5acbe"
+      }
+    },
+    "laser-glow": {
+      "bundle": "assets_resources_effect_skill_chaodaojiguang.ab",
+      "path_id": "6724884963281694130",
+      "hierarchy": "eff_chaodaojiguang_prepare/guadian/glow",
+      "material_path_id": "-3392926965155200250",
+      "material": "jiguang_glow",
+      "texture": {
+        "bundle": "assets_effect_textures_light.ab",
+        "path_id": "-1795312051754571656",
+        "name": "light_002_zxr_Tex",
+        "sha256": "d6bd9ca69ac7ade67263a9c4534bcb6d23adc8d4247358f1dde64d2c838e26a9"
+      }
+    },
+    "assets_resources_effect_skill_yuedaodianzi.ab": "1f6447140f6e7a24332523acb73eb578f188e5dabdecfdd8313e4f6e72b35e5d",
+    "assets_effect_skill_yuedaodianzi.ab": "538265f9b6400982e2b193e3bf1ef562740853d3ba4b16dc0395048208c133d4",
+    "electron-chain": {
+      "bundle": "assets_resources_effect_skill_yuedaodianzi.ab",
+      "path_id": "-6952102027477141786",
+      "hierarchy": "eff_yuedaodianzi_line/Line",
+      "material_path_id": "7562391131413002213",
+      "material": "yuedaodianzi_line",
+      "texture": {
+        "bundle": "assets_effect_textures_lightning.ab",
+        "path_id": "6437678136882817981",
+        "name": "shandian_013_1x6_zxr_Tex",
+        "sha256": "657a5236899a2d9fcd73de48052207b5084a82fd933abe1317eec199808390bd"
+      }
+    },
+    "assets_resources_effect_skill_zhidaojiguang.ab": "d23c27c8d0db053b755be01ff093592dd3461ea8943b91a8ea84287870e4170f",
+    "assets_effect_skill_zhidaojiguang.ab": "3877a0759f47599925f63176b3dead07d454c06dc7f72e702db86f2d3bf627ed",
+    "guided-beam": {
+      "bundle": "assets_resources_effect_skill_zhidaojiguang.ab",
+      "path_id": "5800752435779519614",
+      "hierarchy": "eff_zhidaojiguang_line/line/Line1",
+      "material_path_id": "8530002658273691149",
+      "material": "zhidaojiguang_line",
+      "texture": {
+        "bundle": "assets_effect_textures_trail.ab",
+        "path_id": "-7862683219026541427",
+        "name": "trail_1401_2_zj_Tex",
+        "sha256": "c51e1b2d57686edfa4da3feebfcb79ecff2cefdb5807663ac3180013c43c57ea"
+      }
+    }
+  },
+  "profiles_sha256": "843832ac1c58d0814476329842c07072fd0e792baea35037d559b500eaac1600",
+  "guided_beam_sha256": "6f4535a898075c89f647f3b6ebdb73780fc9140dc6e3b9caed3921f6470199da",
+  "notes": [
+    "Canvas adapts source tint/UV/alpha; HDR bloom and full Unity particle motion remain separate.",
+    "vortex-light uses source prepare3 air-flow layer; branch-specific prefab switching remains pending.",
+    "electron-chain sampling remains reviewed native LineRenderer 1x6 at 12fps, not shared particle UV."
+  ]
+}

@@ -1,0 +1,15 @@
+import {describe,it,expect,vi} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {resolveNativeLayout} from '../public/native-layout.mjs';
+import {seasonalPrizePoints} from '../public/seasonal-lottery.mjs';
+import {operationPool,operationState,drawOperation} from '../public/operations.mjs';
+import {createMeta,parseMeta} from '../public/progression.mjs';
+import {loadOperationLayouts,operationScreen} from '../public/operations-ui.mjs';
+const layouts=JSON.parse(readFileSync(new URL('../public/assets/native-operations/layouts-compact.json',import.meta.url),'utf8'));
+describe('APK seasonal lottery migration',()=>{
+ it.each(['armed','spring','newyear'])('%s uses ten slots and persisted independent pointer/round state',id=>{const p=createMeta(),s=operationState(p,id);expect(operationPool(id)).toHaveLength(10);s.pointers=3;s.taken=[8,9];s.round=7;expect(operationState(parseMeta(p),id)).toMatchObject({pointers:3,taken:[8,9],round:7});expect(operationState(p,'wheel').taken).toEqual([]);});
+ it('uses the eleven original boundaries to construct ten distinct prize centers at both heights',()=>{for(const height of [1334,1620]){const points=seasonalPrizePoints(resolveNativeLayout(layouts.turntabnewyearpage,{height}));expect(points).toHaveLength(10);expect(new Set(points.map(p=>p.x.toFixed(3)+':'+p.y.toFixed(3))).size).toBe(10);for(const p of points){expect(p.x).toBeGreaterThan(0);expect(p.x).toBeLessThan(750);expect(p.y).toBeGreaterThan(0);expect(p.y).toBeLessThan(height);}}});
+ it('does not draw a collected prize twice in the same round',()=>{const p=createMeta();const a=drawOperation(p,'newyear',1,()=>.999),b=drawOperation(p,'newyear',1,()=>.999);expect(a[0].slot).toBe(10);expect(b[0].slot).toBe(9);expect(operationState(p,'newyear').taken).toEqual([10,9]);expect(operationState(p,'newyear').draws).toBe(2);});
+ it('collecting the limited prize awards all remaining prizes exactly once and advances the round',()=>{const p=createMeta(),before=p.diamonds;drawOperation(p,'newyear',1,()=>.999);const all=drawOperation(p,'newyear',1,()=>0),s=operationState(p,'newyear');expect(all).toHaveLength(9);expect(new Set(all.map(r=>r.slot)).size).toBe(9);expect(all.some(r=>r.slot===10)).toBe(false);expect(s).toMatchObject({round:1,taken:[],draws:2});expect(p.diamonds).toBe(before);expect(Object.keys(p.native.goods).length).toBeGreaterThan(3);expect(Object.keys(p.inventory).length).toBeGreaterThan(0);});
+ it('renders ten prizes, a clamped pointer selector, collected markers and the current round',async()=>{vi.stubGlobal('fetch',async()=>({ok:true,json:async()=>layouts}));await loadOperationLayouts();const p=createMeta(),s=operationState(p,'newyear');s.pointers=3;s.round=2;s.taken=[8];const html=operationScreen(p,'newyear');expect((html.match(/data-op-preview=/g)||[])).toHaveLength(10);expect(html).toContain('data-op-draw="3"');expect(html).toContain('data-op-pointer="1" aria-label="增加指针" disabled');expect(html).toContain('第 3 轮');expect(html).toContain('collected');vi.unstubAllGlobals();});
+});

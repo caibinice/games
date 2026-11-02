@@ -1,0 +1,4620 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "inputs": [
+    {
+      "bundle": "assets_actormodel_wall_w_001_cq1001.ab",
+      "bundle_sha256": "6dc081921ac197688fa06b349fd5c5fed3a71be20a2347265e14558f486055b3",
+      "path_id": "4401389616916242326",
+      "name": "w_001_cq1001-hurt1_01",
+      "sha256": "1dab483f8156ca29c2c2aee4efd7e8068fa443939c091369448c9c993e6426a4"
+    },
+    {
+      "bundle": "assets_actormodel_wall_w_001_cq1001.ab",
+      "bundle_sha256": "6dc081921ac197688fa06b349fd5c5fed3a71be20a2347265e14558f486055b3",
+      "path_id": "5078840393751295333",
+      "name": "w_001_cq1001-hurt2_01",
+      "sha256": "a0c04cac28a489c3099d3af1b26a2c8c82ac3af5762b6c7c0f003b7b3de32423"
+    },
+    {
+      "bundle": "assets_actormodel_wall_w_001_cq1001.ab",
+      "bundle_sha256": "6dc081921ac197688fa06b349fd5c5fed3a71be20a2347265e14558f486055b3",
+      "path_id": "8414259910504384622",
+      "name": "w_001_cq1001-idle_01",
+      "sha256": "2987fad86f6139e089e060900d504c4e9d920c17ac4173705aa4eb572f99afe3"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-8042177049815709930",
+      "name": "CQYT_9001",
+      "sha256": "7b399dc020c062e1d0adf48ab166704381dedb9ba9a223b74386d1c8a829887a"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-7726421655086512578",
+      "name": "CQJN",
+      "sha256": "0cf150898cded6a8efcdc786e0c2e99a6e6c39f0fcdfa7085fe77662bca14d67"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-5277014195505813661",
+      "name": "CQYT_2001",
+      "sha256": "1f873894f3da8bd10f4e557a30c936906cdae53021b6fdecc7d340100a2ce51a"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-4277346984522357014",
+      "name": "CQYT_3001",
+      "sha256": "587a924c8ed2fcf7aa91c5c15c85ae43f36b3931e62df26988363b20f76e1bae"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-3648210424092950183",
+      "name": "CQYT_8001",
+      "sha256": "42795156dbf6a8532eace7fd1572393671a5bc451d96e14209abc1f905b187c3"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-2624984758871921388",
+      "name": "CQYT_11001",
+      "sha256": "2229463aea23f5cf195307d5fb8582797a7033fd3872688ac2b6b701a509f74c"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-2165561174192623816",
+      "name": "CQYT",
+      "sha256": "2056c41f82a9830ba373373addb5690b121adb9dfee54ce6bb02e999d250db4a"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-1303767042039392085",
+      "name": "CQYT_6001",
+      "sha256": "4e1e4c19117e6e7c6b9797afd1d38686394db37e1f76ed9af45ac9c130badd9b"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-709700191026519532",
+      "name": "CQYT_10001",
+      "sha256": "a1571b970f535eb649cee63fcde63d80c22476e86f00763edb15c7a007f3373a"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "-267162342655986014",
+      "name": "CQYT_6001_2",
+      "sha256": "0709eb752ab786e6ab47535ae0dfd1823726e4297759548eb3c9122048c655d0"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "1578337925138622157",
+      "name": "CQYT_16001",
+      "sha256": "25ce8386abff1597c5b3309e63b92525c87e530bc5eed012d44c95aeefb13cf8"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "3851051908820151108",
+      "name": "CQYT_4001",
+      "sha256": "52e15d00f80f79200e4d0e49777eecdd599babc147ffbeb4ca3ee9585bd63835"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "4205571131249324910",
+      "name": "CQYT2",
+      "sha256": "261b6d311f628de3bfdf010a40e0e2e3b1fb5a96e0db1deca9cbc9c2198f6b94"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "5577316853604828589",
+      "name": "CQYT1",
+      "sha256": "8e4f1ec2286e3f6b10f5a172522db69c472f0d2ee20730409d13f5c3ed83396a"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "6080548750624097532",
+      "name": "CQYT_5001",
+      "sha256": "6e1bcef53ade7a6d2fb4f4c5992b6ef9e2445cf42c29849636fa44842dda96fe"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "6650153242813059927",
+      "name": "CQYT_12001",
+      "sha256": "44b7cb4584c5624bfdbb4bf0d85b3a2a394fd35b0703ae7b66b7f582f98a0ef7"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "7594135486981491239",
+      "name": "CQYT_6001_1",
+      "sha256": "d4bdffad6c6120e246e205152db9f30aa46e4f957a572e2fe037e016e5f36489"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "8597982025558349093",
+      "name": "CQYT_7001",
+      "sha256": "e338c3876b4981d5af3957bbdb793e0d4b153534efba427035b3d73946459604"
+    },
+    {
+      "bundle": "assets_uiraw_battlewall.ab",
+      "bundle_sha256": "6302638743baef95fdc982e0c8f2b54d56515c8bca424d40b5ff5a3745fac19f",
+      "path_id": "8871410055032813656",
+      "name": "CQYT3",
+      "sha256": "e5da405600ad772b159b8caa3bf51157aeacf5a204088da4ec6a3dae52d605d4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-9136205966740251279",
+      "name": "zmzg_js_icon22",
+      "sha256": "47a77408779628a331251b8980e1bec095039bef80202b3201cae9b4531af86e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8953455372411345243",
+      "name": "zmzg_daoju_cwbx_6_feng",
+      "sha256": "1e70f76db19e2ca90b7673dda6415a48620f535e3266f10d5213a7f44f690e46"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8690208645348078297",
+      "name": "zmzg_daoju_cwbx_4_ty",
+      "sha256": "90ca740ef5371108855df8ed912449739c6d3510d6024807d52252a88e17c5f4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8499250491456767626",
+      "name": "zmzg_zjm_button_yj",
+      "sha256": "d56a235f5634b1fe23b913989982f008edcef1859c16945fec59d2a75fbcc842"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8497473267905321895",
+      "name": "zmzg_daoju_cwbx_4_nengliang",
+      "sha256": "7d58aca47c70dc10624e14b679a7c132bad4574c73301dc522f22137d01c57b9"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8194022934975551130",
+      "name": "zmzg_daoju_cwbx_6_bing",
+      "sha256": "ba18777d91730a6ae2a637e9684488e85f34afdbc46d6ad113db7892ac97c941"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-8082618885976577561",
+      "name": "zmzg_zjm_icon_zhanling",
+      "sha256": "89a25bda140b0a4619e9d437cd7e440a99fe99d1b7bcbde62392dba2f7580318"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7925067770029091497",
+      "name": "zmzg_js_icon1",
+      "sha256": "6680d03e12c972665935f606d676ef2aea48b1683a8693e12829aabcad0340ee"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7769469270850250772",
+      "name": "zmzg_daoju_cwbx_6_wuli",
+      "sha256": "2b0e6d37828e1a89cc722e905d6ad95b6e7ab1a4ad34c3aff72fcdf495e38885"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7693710967120175701",
+      "name": "zmzg_zjm_rk_button",
+      "sha256": "08d62482db8e6ea457af7b29a09d04151ef549c54cd5cb3a77b19da279b8b081"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7446210532106389162",
+      "name": "zmzg_zjm_rk_bg",
+      "sha256": "ecbe0c13ffa8abd23a1bcb1ad21e15088693dc5c0bc05e956491e00ce34f0d54"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7439934696838902151",
+      "name": "zmzg_daoju_chaowuqianghua",
+      "sha256": "671d9a3faa906c29d39271aa0264f0b1638226353c8e58044f00c031cf7fde2b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7310322868307614041",
+      "name": "zmzg_zjm_icon_manghe",
+      "sha256": "5dae0ce2de1485ac43da474d9fe27592e99a538ef8b104f8af6411dfe383e797"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7289816212197265786",
+      "name": "zmzg_js_icon4",
+      "sha256": "ead03d38be7be0fa221ed412023213c72ea5f67e140530e506832afd093e5842"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7252913780089831376",
+      "name": "zmzg_com_button_wh",
+      "sha256": "36bbbfdef912766d3bf99282dc6d7c914746195e7ef520092d1873750846073d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7133612581154484632",
+      "name": "zmzg_js_icon8",
+      "sha256": "b6f7c0ec8fa28a7962f02118355083ed96236768866935259c4d5da05234695f"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7119969815067906558",
+      "name": "zmzg_zjm_zdsc_bg",
+      "sha256": "6dd228eabb3f904dcc755fc88e307c3eab20fb9c36141472d4064b9f829c3e2c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7117688200599257261",
+      "name": "zmzg_daoju_cwbx_5_ty",
+      "sha256": "605e21ef45c775f28fbb6fa08d1364f7b25020ce2c4cd2e5fe03b90c421458eb"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-7006909783241976649",
+      "name": "zmzg_zjm_button_lt",
+      "sha256": "07e4608a9b4cc0495b64b2fc5b0b4056496f7f5a48866c5b5eed355c623aa849"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-6890771094090626496",
+      "name": "zmzg_zjm_box_4",
+      "sha256": "d9cae2e74d7dadb643403ab58498a98d0d6b13b55446544e43089fa1cb09ae40"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-6736289303927477276",
+      "name": "zmzg_tx_jyt_bg",
+      "sha256": "7b624698587b65d8a9adbb7d5fb40475b306aa89848edd5c08cbb98948c821f8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-6662480794338322805",
+      "name": "zmzg_zjm_icon_hx",
+      "sha256": "1bb73bc8d9a96c7c0c7484817111c3fb2fc5a66b555fa83699e4bdc0f748291b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-6418343140837197217",
+      "name": "zmzg_js_icon17",
+      "sha256": "1c06b43dc5df3f906aa81a07a785fc4e3531870c3514a46c87073886f89deb3f"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-6368257597960542221",
+      "name": "zmzg_zjm_icon_taojinzhilv",
+      "sha256": "d1631749b734c8609677d1bfda42e0f435f0f89b72f689787e407f7dada8cd11"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5956871663365596217",
+      "name": "zmzg_zjm_icon_longnianhuodong",
+      "sha256": "9fdfb1b494f9f7d97da9ef8ea87946d0cb4a799d82e50218f8a584bc5f31cc12"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5416033332790219896",
+      "name": "zmzg_zjm_button_pu1",
+      "sha256": "0f48b5cc994d42f3e310a9124f758e7ae2342684fc5e63d989781d4f177dc243"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5404288027822083434",
+      "name": "zmzg_js_icon20",
+      "sha256": "20368a8f0be828f4d88bf3351ba91a937b4c74536b698d2d0386a7609b089049"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5371796792718011656",
+      "name": "zmzg_com_button_th",
+      "sha256": "806ba6a911eaa3f9f7f568969382dfb99c61ec8994fe5c4a965637f2f94f88f7"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5355820725709214042",
+      "name": "zmzg_zjm_icon_douyinkefu",
+      "sha256": "6d48c9815edbbe9ef0746d0a8b57b36da32de80087f76b6d26915049c9b5620b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5155238280600429455",
+      "name": "zmzg_zjm_icon_yk",
+      "sha256": "7dbddc9614af095bbdc28a70ccd03b6662d20158f8a6e7619e99740c935b47d5"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5134422083565543368",
+      "name": "zmzg_tx_jyt_1",
+      "sha256": "945632a559bb110922f03f7bcc83a3ec0d537460d3f8a33237e56ec86c1c7d6a"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-5018568361348799958",
+      "name": "zmzg_zjm_icon_tehui",
+      "sha256": "3dc8976a6b2fcaeee948e53c262f26ba5c46ce7180863fcd1b0f1f29277056cb"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4740963924885942707",
+      "name": "zmzg_zjm_button_bj",
+      "sha256": "5cdda6cb05ec7a8f7ae7ed4f7124575be936b508aaa61e17a454b404a41ca733"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4699370197251396927",
+      "name": "zmzg_zjm_box_dr1",
+      "sha256": "3f22fc58660c123b2e32c8b7c7f9e40790a6d11e2dd0b0109dde874020c923fd"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4672689619204182740",
+      "name": "zmzg_tx_jyt",
+      "sha256": "eb42220b53c247658d36c04eeec81d6f7fc995808af87ce84d64b922413e44bf"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4652355264992329614",
+      "name": "zmzg_zjm_btn_dr",
+      "sha256": "2984c5a51cb18a11092a31e5eaee7ab1794c3f0cd7d241181cb6d11e2c5e76be"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4496392322234360250",
+      "name": "zmzg_zjm_button_jy1",
+      "sha256": "ca85a9c835867e7c51634767392f9d1f8eb84553aa3fb02c1d6a672177d6eacc"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4389689305548303008",
+      "name": "zmzg_zjm_icon_morihuodong",
+      "sha256": "e3884eaa9ca0d9c5ae31e21978324a7080ad42150b915388d573b8de154760e0"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4326554646072305168",
+      "name": "zmzg_zjm_button_yxquan",
+      "sha256": "de55b493f6e9b1dea2f383abfaf9ef56b3de7cd3a6309553f9b725621ad74f3b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4200160893897095871",
+      "name": "zmzg_zjm_button_ico_sd",
+      "sha256": "0c2a30b3bdef59ef2d2623f65af91271abe81243dbde54488ac9840b65c28ce8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4032486806237213292",
+      "name": "zmzg_zjm_icon_xingyunzhuanpan",
+      "sha256": "ee93c5b849cbd76e8c9bd65dd475c56a84213790f4b1da7dadf89917ec23a42c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-4029535445905703962",
+      "name": "zmzg_zjm_icon_zhoumolibao01",
+      "sha256": "a246d4e9bf277b8dc1427be9102b2396797f553fc355c8e35e5ccb36c7a503e9"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3992771436261864498",
+      "name": "zmzg_daoju_cwbx_5_dian",
+      "sha256": "b50bfe04bebcd1b6cba5cc80523eb83e5bcb1a474fa94b1b8e8b0ba792365423"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3908771356344805299",
+      "name": "zmzg_js_icon5",
+      "sha256": "8cdcdb3b515a1263d11bd069bf16f62aa932b46f78430ba93c69577d351a7c98"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3895942503097911235",
+      "name": "zmzg_tx_box_1",
+      "sha256": "5bc2db7b5202fb2f69c7ad3c85a0e58c9d23ab72c9468424efd0fce55c668311"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3553001577209978429",
+      "name": "zmzg_zjm_icon_sc",
+      "sha256": "0c9ce36751f1d9103fdc8b84033871ddc5594e7cc35752ef7088d975096e7f7e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3365935795611998062",
+      "name": "zmzg_wfyg_button_hy",
+      "sha256": "9123011aef062d58eb18daaadaf6ead5ecd6e702e4ea88290a0f342bfd4390ce"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-3084543274638190492",
+      "name": "zmzg_icon_dj_bx",
+      "sha256": "76891894e7c0cbcf0d52f922c6989257898d775f3f4456e37470e0001f9f862e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2974429948920653608",
+      "name": "zmzg_zjm_icon_duanyangzhixia",
+      "sha256": "98bfc36d947c00d4e1d2c79cefd4866833e2b3a8c85f8e54af5f3dc2ac9a173a"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2911317927776466334",
+      "name": "zjm_js_guangxiao",
+      "sha256": "c9c49665c2501614686ed018e85b868628447c35ef85934dfad8af5d143817d2"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2632697698166936714",
+      "name": "zmzg_js_icon3",
+      "sha256": "eba632e7c23f77de1750ad9da2a5ccbb47167bc79a3cdde7c1760825d5adb199"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2611801308359003266",
+      "name": "zmzg_js_icon7",
+      "sha256": "d2164a6945a0da506648c0abccfe22c62d0e4d87609f3753badac58e5daba3c5"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2465849797792645814",
+      "name": "zmzg_js_icon15",
+      "sha256": "ca16604b33b6a0caa690d7069474be84e9063dfa6fc3ee3d5e0f56298b3290ae"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2327522118174730388",
+      "name": "zmzg_js_icon9",
+      "sha256": "13327762796decdc001fff7d0c5ab5942db3396ca75feeb60bfdda530ff94dd4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2313894932298689294",
+      "name": "zmzg_zjm_icon_huodong",
+      "sha256": "a84059f42dd574443c805ea03dc57cffcf1bd6faab30cdb6ce3655ccaf6337eb"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2206089149351055053",
+      "name": "zmzg_daoju_cwbx_4_bing",
+      "sha256": "bd101767da96494f81553de2bac38f1eb93a85ecdb53aa13add4016434a4ac7b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2143206810955396944",
+      "name": "zmzg_zjm_button_ico_hx",
+      "sha256": "0137f88012ffae898d370f847f17f5e3107dd14506b4a52435d3b2c54b57c80d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-2058924559114801528",
+      "name": "zmzg_js_icon11",
+      "sha256": "fee3ad58553f95789b46fd98c488d3c17322e448995251cdef0375ac98667a30"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1852046339577574773",
+      "name": "zmzg_zjm_button_sjbg",
+      "sha256": "97aee3e4519470b10625cf43b0df6319012ac31c472bda4a0732d909987fc24d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1582171706954104026",
+      "name": "zmzg_zjm_icon_manghebaoxiang",
+      "sha256": "5e1c776da2e6f8b2513b84c95f54af930c497df27bc77214834ddd77da361db7"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1558049152445413072",
+      "name": "icon_daoju_baoxiang_3",
+      "sha256": "40af7fd7d6c927336ffc2adf03905d52c117b3cc3dbfc22af1c844da6f99cfe7"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1499920921759403333",
+      "name": "zmzg_zjm_icon_xianfengbaozang",
+      "sha256": "d080c3e8bc37b8e3cb34a416324b5d741929c782b5fefd6c0ec24f586714f40b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1403413859523476672",
+      "name": "zmzg_icon_dj_tili",
+      "sha256": "768a1462df36ba2d0926be86b8d95ee69f16c60ca2efe82777a338a46f06dfc4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1391951209866270060",
+      "name": "zmzg_zjm_icon_fenxiangshipin",
+      "sha256": "45e318c72fc8d4f7ac07b658b8fef8f6cb50d3d6b2bcf1271c5e2764690c9586"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-1269846465653252418",
+      "name": "zmzg_zjm_button_ico_bl2",
+      "sha256": "d389761d974c55ae2c0e97aa03374ba2e46d954fffaa7ea14ed93b5b1a9e48cd"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-860011386846302179",
+      "name": "zmzg_zjm_icon_yongpangaofeng",
+      "sha256": "770f5e5570f61f51adc6d2df705018c50db530fb98e8ba929ee8819a7b90ce67"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-815777393553903654",
+      "name": "zmzg_tx_box_2",
+      "sha256": "ada626eb7bd9dc7d01f00137d19d90ebddddd42ca908a3bef5b1f43807416323"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-754450038184637680",
+      "name": "icon_daoju_baoxiang_4",
+      "sha256": "1bc61563d3c75637fb33a495c526989dcb1dbde6dffb22b6e74e0a13f5abcfeb"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-727057428819819572",
+      "name": "zmzg_dryq_box",
+      "sha256": "eab8ff49d068e0f096c2c8b3d05d7ffd1fb1194bfdbc95afe8c94fb42cdc8ced"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-561078834888571152",
+      "name": "zmzg_zjm_zdsc_dj",
+      "sha256": "805c0edb35688fc44b8450f908bbe8db252b131051271fad5017ad6d6d9b5c96"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-524041399700133655",
+      "name": "zmzg_daoju_cwbx_6_nengliang",
+      "sha256": "13bd1e9a9b7b5ba5d9af4a79688ce86b9d1c8bcc46b7284b15d14289c939da9c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-429207391665066706",
+      "name": "zmzg_zjm_icon_youjiangrukou",
+      "sha256": "a2f71467b3f1a0c71e1c38a063a619cd0feb2cd6451785eabb91f5000914f05a"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "-374855211398164627",
+      "name": "zmzg_daoju_cwbx_5_nengliang",
+      "sha256": "7e703875b399eebf81911c2c9ec24f3dd4c69fac39e23dd139cafca0a1772045"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "19321837790649988",
+      "name": "zmzg_zjm_icon_zhu",
+      "sha256": "1b0cafb036d1b9bfbe5f73979bcab2f71e1a7047241e2f73c707f453a7f59922"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "60817092975390244",
+      "name": "zmzg_daoju_cwbx_4_dian",
+      "sha256": "6fb9819051b5fcdff0663303ed2a6f51b03d0417bb9e3fd0ab4f858f2fa52578"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "104068360048007749",
+      "name": "zmzg_zjm_button_ico_zb2",
+      "sha256": "3d6bdc9c1155e1ee56a58dcc6983f2ffe995e19dcede4f465c170ad7d0048ead"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "539856088022177020",
+      "name": "zmzg_js_icon10",
+      "sha256": "b074eb10602afca12b3a7739a5aebeda1dc3cd772f4079bf45c939cb2edf1b8d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "722268533916003699",
+      "name": "zmzg_zjm_dj",
+      "sha256": "769c0e6856bae8f19c25136645c81a60ac4ea4fb37d83cf428a04e6523bd5af8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1268949774072941166",
+      "name": "zmzg_zjm_button_ico_sd2",
+      "sha256": "44aae9e5d1f7f69c610ce0d004b8f66654b79c698ed28bb3854b4cee0acaea31"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1330851985697624849",
+      "name": "zmzg_zjm_jdt_1",
+      "sha256": "5076074e447155500f749079a3b256f568079fcaf7f9d2470a725365832660f8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1469052503153432167",
+      "name": "zmzg_js_icon16",
+      "sha256": "b0d615b16d3879e7b9304e191026b65a3cea8167660456b5c0c1562fc0807d53"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1479194070663994082",
+      "name": "zmzg_zjm_button_globalgroup",
+      "sha256": "692da0c39b2fbbd8b3ae9209261af0f5c42853f147a189b99768b14f1f63ac5e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1658616520107240328",
+      "name": "zmzg_tx_bg",
+      "sha256": "9df8f2647877957b6ced8834a3cac7d16f4b0109e6954b9c9b4d3a399ae3d5a8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1661830638158388187",
+      "name": "zmzg_daoju_cwbx_4_feng",
+      "sha256": "cadd984bfecf37e781bd8bd287174b792da40db09ee6970657140b796f1f35e8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1907674961005232165",
+      "name": "zmzg_zjm_button_xz",
+      "sha256": "7db0c8549e393875e9875f3b235f7cc5e51c95930edd4cda0bcaaa51deeebbd5"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "1940195144461710772",
+      "name": "zmzg_zjm_icon_xinhuo",
+      "sha256": "0e8f91654744d86c4e96c7bea70835a3dc7b2b8b56506607ec01679af62ed2ee"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2022580220048724984",
+      "name": "zmzg_icon_dj_qian",
+      "sha256": "aa0f1cc64d3f31f853f1a9878a95462be006017baf47201ee4a1e610fd9e9e6d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2043315913283432261",
+      "name": "zmzg_daoju_cwbx_6_dian",
+      "sha256": "b7e5f9bbfda97d82a67a53f91bdf1e47dd8d4354210c9ce0312b11204c551b54"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2107085035815640738",
+      "name": "zmzg_zjm_box_2",
+      "sha256": "471d6aebda130d160e967b9d5d4a20390e184f6bb317b7531586bf0a391f9dcd"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2175277063015906106",
+      "name": "zmzg_daoju_cwbx_4_huo",
+      "sha256": "2355a11dc42c5437009657c22fbccc37ef7781a647384a9b166ae7a8b22583dc"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2205911749691504385",
+      "name": "zmzg_zjm_button_jy2",
+      "sha256": "95fae697f9df08bfe6ed9a283f7cc1500647587b37737af7b3bdfb826edbcf59"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2257825238339157771",
+      "name": "zmzg_zjm_button_rk_bg",
+      "sha256": "d5202ca13e88441e414043ddc6645ad045df62fee0a74fc620103f01804c69ae"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2438096388375593520",
+      "name": "zmzg_zjm_icon_zhoumolibao",
+      "sha256": "8abc9d94a16bc0411e3271040eed2e8a50d0555f9ff1bffafcb64ac97e01f9b9"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2733324645440742089",
+      "name": "zmzg_zjm_zdsc_tiao",
+      "sha256": "7fcc9bc1552e21e1cc481cbfcdf5268196afaf1d39ca5b3a67603d1b140d5e1b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2757332521704128003",
+      "name": "zmzg_zjm_icon_qiri",
+      "sha256": "4fc7e781816eeccf70de773ac34d3e24c6fc0f2dae362bac77a4259f75aed505"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2845539329558328941",
+      "name": "zmzg_daoju_cwbx_6_huo",
+      "sha256": "0a7290e23b23d79f278d090c151fde266be8a5196c2b175abb27f25590ddd6a2"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2878416409267832900",
+      "name": "zmzg_zjm_icon_gonggao",
+      "sha256": "a86485d9a5b6ea15a86e97bab0e0b4c09699895590efab063b68a9d83f3fbdb1"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "2955392302721258877",
+      "name": "zmzg_zjm_icon_tianjiazhuomian",
+      "sha256": "13202aa3ce26d3ab62d631ca3c9d2d88219a8c512b4e4eb6b83749584bdea01c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3098318202167516267",
+      "name": "zmzg_js_icon21",
+      "sha256": "525f7358ac644a5f2d45b8d71c973a5449e8753b58fd1f6fd8e399b2e4707e68"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3222154077123998876",
+      "name": "zmzg_zjm_button_xlz01",
+      "sha256": "fe4fa5322758ddf417a5f5827632e86d336fa227f77d17109dde8d78ca71da8e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3315894717510199571",
+      "name": "zmzg_zjm_icon_xunxingfangyue",
+      "sha256": "e7f40d2b688669571dbbc5be3f810f3bcd3a0c85a4e531c60e256004fff1502b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3339619408539567826",
+      "name": "zmzg_zjm_button_sj",
+      "sha256": "af1c0976d9c4273e545e1213d443fa0e9962940691ee3055936b21d1510d6940"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3504310216756978654",
+      "name": "zmzg_zjm_button_pu2",
+      "sha256": "03bf6d4231836b873cd15692e1d1719046154b9423aee516c5d9e73308063c31"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3542164634302273316",
+      "name": "zmzg_zjm_button_ico_hx2",
+      "sha256": "f28f4d3cd84e602f5297689831aa89196013a313a1b7be205127f2c693222915"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3553584270276897207",
+      "name": "zmzg_zjm_button_ico_bl",
+      "sha256": "6543c06846f22c8d50e6e746418b03716246789b70236a4025fbacefa6643404"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "3910321210580117672",
+      "name": "zmzg_daoju_cwbx_5_huo",
+      "sha256": "91f8e13bb95b025b3456a7a207f77acd55e55836a878f84e5ca34d0a18d600c2"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4052488260457238868",
+      "name": "zmzg_daoju_cwbx_4_wuli",
+      "sha256": "49af9f25269651ed2dfa70df12c148fd616c4ba676bfa6c1831bc05f86dee021"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4140383506616284028",
+      "name": "zmzg_zjm_icon_haoyou",
+      "sha256": "2e9736ef979993fd1a3549a397eb2aec9843460a35430a394d23c66940739dd2"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4294883435000085538",
+      "name": "zmzg_zjm_button_rw",
+      "sha256": "db3f02a5feb1a375dbdebb5e0cfbcf10dd01c9fbcf2d0a8c59aa89bac7f832cb"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4323460276662012722",
+      "name": "zmzg_js_icon12",
+      "sha256": "9c6b32579a22fe40b7cb617da3cc6fdfc75e6d137a28c2bf35b66bcf302a9d6f"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4474570638828704780",
+      "name": "zmzg_daoju_cwbx_5_bing",
+      "sha256": "a0badd8f5545b1844a6090aa8be27a9bba9beadcfaeaaf1a5c41318568e7db2c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4530977821335438629",
+      "name": "icon_daoju_baoxiang_6",
+      "sha256": "95e066611daee51168c30e4c30d21c723d8dc05ec5755ff88a895d110f65ac01"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4570175274867354136",
+      "name": "zmzg_zjm_button_ico_js",
+      "sha256": "7f38193b0568b0ce1837406c338d508a8b87e2d226d37f4652cb15a006aaccb4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4614903710314210884",
+      "name": "zmzg_zjm_button_ico_zd",
+      "sha256": "de1dfa1f520dd2f4b36b89f5a1f2be264521e21099a9a526c3936f35c7ee4255"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "4920109636551046552",
+      "name": "zmzg_zjm_button_lfli",
+      "sha256": "4b3111e33b52a7c77e3ae681590102699c9a3002c3076f5574278a3909b9e277"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5209205318337690682",
+      "name": "icon_daoju_baoxiang_2",
+      "sha256": "52a3b5f86fa7432ecbb27aa3f2e27c243202ea04eb79e9f0fa4e32aaa694efd3"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5325335442417150122",
+      "name": "zmzg_zjm_icon_xianshizhigou",
+      "sha256": "814012fd1b0e6ff0c0166bad102574c0ffed7ed1f874d487d5cd1929e8c1e16c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5341750768706511059",
+      "name": "zmzg_js_icon13",
+      "sha256": "4deed58f6601fb98825ff2982913c7dddc36b0e8cac2dada30ff27a4e6961d8b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5354846123037953795",
+      "name": "zmzg_js_icon18",
+      "sha256": "556aeaa93768699877fc78d2d3b8a18d5f388440f4ef6429c45e7fc04e092f52"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5394498793614239111",
+      "name": "zmzg_zjm_icon_bihailiangxia",
+      "sha256": "c3d659be23620b8907fb5c9ab24f3cd2833a3636efb72657a8e64646c1dbd78b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5484897934138970595",
+      "name": "zmzg_zjm_icon_huaweiluntan",
+      "sha256": "7b8b2d5bb927c21bfd191c88227a5fdf429c9f37528b88c264e895e8b64d90a8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5812372213797601041",
+      "name": "zmzg_zjm_zdsc_xt",
+      "sha256": "bc50d96130f7a048d6c284cb617b0e57f170f28cc5cb9584c2dbab08071a9d4a"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5826561760164965249",
+      "name": "zmzg_js_icon6",
+      "sha256": "ebc3530eb7a38257c267f07e8954a03efa904f2f38a1ccf842dfa0953297dba2"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5845980482445811757",
+      "name": "zmzg_zjm_jdt_0",
+      "sha256": "9bc6c6bf9bdf902de065c2d777c58d35a73d577b4806111570208fee4dac9b75"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5885687193301318883",
+      "name": "zmzg_zjm_button_app",
+      "sha256": "cfa371cad5f6e33b29a1bef29d5e2948d8e911dbb3f207f545b34d0c17830a76"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5982357568250349079",
+      "name": "zmzg_zjm_box_dr2",
+      "sha256": "35fdb75b2b5e421ef1d2a62f76bd1bf5c6dd7f0a4b843268194e542b94bba8d7"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "5998034409587659331",
+      "name": "zmzg_zjm_icon_beibao",
+      "sha256": "a1044e66d917a4967ea1d77086d4745ee792445fe790d2dfef8873f0ce06d6a4"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6273433533687392904",
+      "name": "zmzg_zjm_icon_chaojivip",
+      "sha256": "1a45ba7da45fc7fedc53b19ca400b2738b8dd59cde024bf43a73edd340769050"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6369609143439623458",
+      "name": "zmzg_zjm_tiao",
+      "sha256": "2e8a972ae7567028cadd73f839edb3dfd5229eeff20ec5e401498a2e638715a3"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6556338853432303136",
+      "name": "zmzg_icon_dj_zuangshi",
+      "sha256": "3a2ea2e3a774e8cc094f49422d1b001f014f77ae7c3999a459c6974a3c1bb497"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6757642249983172252",
+      "name": "zmzg_zjm_button_ico_jt",
+      "sha256": "45715e263a217c502e675106cb33fbc57da722e9752d2c00d0ae142aaae74968"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6771195438846963611",
+      "name": "zmzg_zjm_button_xlz",
+      "sha256": "dc67484c2a1e9c87556d56ce4f6ebf21f9a658ba99020543f3a182a09d24c57d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6857667719383864506",
+      "name": "zmzg_zjm_box_6",
+      "sha256": "1b20f6df12945f1cda41dd18bf39bbbb42d5358bfba4c33dfc0b2e78a576a661"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "6971489858781338416",
+      "name": "zmzg_daoju_cwbx_6_ty",
+      "sha256": "ccdec968674981b807d9cc58a3db8a160c1293f97333812c17b10f44429bf58f"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7025811131220746336",
+      "name": "zmzg_zjm_button_ico_jd",
+      "sha256": "d437dd73d379763c720bee9f1882ed944b932eef0d031e2e589238567c8ae870"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7119954809198368741",
+      "name": "zmzg_zjm_icon_tachun",
+      "sha256": "049f6b9792e24a987d4043f368710ac5565b3ec1e7be6d0ee724e71ae7a26e88"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7174345308605924729",
+      "name": "icon_daoju_baoxiang_1",
+      "sha256": "3fc270adc7322334cca4e2e326b2c6819cb9df59135bc41ce105dbe5e6097f91"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7213123460859760946",
+      "name": "zmzg_daoju_cwbx_5_feng",
+      "sha256": "2476cd8de5bae6c25ab9dd92a92244b71e828715d18603d724970a712e22efc6"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7243296438132592602",
+      "name": "zmzg_zjm_icon_jijialaixi",
+      "sha256": "95619c309da407bbf740ea8b67f862ccb335fe6c448dc117218a7ab33bf7e1a1"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7246926584835862370",
+      "name": "zmzg_zjm_button_wenjuan",
+      "sha256": "90f96e60da61a91d43c6fa89dbe475c1a1b326f5769bddbe5000b60023a226cd"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7364398590726729685",
+      "name": "zmzg_zjm_icon_paihang",
+      "sha256": "e172656d1e50afc813e14b2d43c7f41f1a6d920d6ddf2b81361c8523a76e0b2a"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7517385532382641037",
+      "name": "icon_daoju_baoxiang_5",
+      "sha256": "81077c55c60496cd087fd155ed0158905d5ccb07925bda7f701bd2502abc1ddf"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7860373960121072825",
+      "name": "zmzg_zjm_button_hy",
+      "sha256": "47a58e34ab34d9e716ebcbc0246048e6c9353144e2502e8278549bc64259ea41"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7973764795002013334",
+      "name": "zmzg_js_icon14",
+      "sha256": "8cfee6e7723c59126201d990513fc1043e5633990fc600a5267b21d6390964bf"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "7993726442423742309",
+      "name": "zmzg_zjm_icon_tongxingzheng",
+      "sha256": "acc386a26dde6ec948426c01b2464ee840ff6acf3b03e131df232b1f13576254"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8064306104452931052",
+      "name": "zmzg_js_icon2",
+      "sha256": "739e88c7d970dbd6b3e3e2981ae25418fb4a6c49a113f7942099f42d80870ae6"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8137273494098864986",
+      "name": "zmzg_zjm_icon_she",
+      "sha256": "e629c3f0cda37a8787567cd841ff94e60fdaacca37e7773fd9d7001804c3c23b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8203378546908325556",
+      "name": "zmzg_zjm_button_ico_zd2",
+      "sha256": "0b35787d1023f12508a29a0bd7f8ceb69de32440919b52cd5a3d2be3d5fa7227"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8268265026195893172",
+      "name": "zmzg_zjm_box_qr",
+      "sha256": "4d50264299c9a54e4c6f9e5db8b803b4d5784e9bc63c94bd1c4c96a4cfb6245e"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8407376576756862237",
+      "name": "zmzg_zjm_icon_xsfl",
+      "sha256": "c13eb10dffd6beec015fdab60022ed33ca3ce4961882fb7f883dbe90a4705676"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8408125533608467165",
+      "name": "zmzg_zjm_box_5",
+      "sha256": "023d885566a087a6cae47fbdb323eed2c247911b66960b83e77ebf1c9c9ec9f8"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8439333702009420399",
+      "name": "zmzg_zjm_icon_hd",
+      "sha256": "887bf93d2628e54b503d462ac2fb649ba09502f289e1e82704d00dabc365750b"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8625159286767744906",
+      "name": "zmzg_js_icon19",
+      "sha256": "3e2cbcb20e27091c6d2c1a4a017fad2ba59e98748631833384437d059b475639"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8661612099780926762",
+      "name": "zmzg_zjm_icon_shouchong",
+      "sha256": "57e1f75da08e4dbca789d20167e49bda7477b4e549c497d2b3ea51f51a9fdc39"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8691731685442823944",
+      "name": "zmzg_zjm_button_ico_zb",
+      "sha256": "73f3b258a5b3de426e48d740ff9973a159d4a367035f31c871e6ba3751a7781d"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "8914453029192950352",
+      "name": "zmzg_zjm_icon_guanyingguanggao",
+      "sha256": "dee6a75784f297d4d007495e7e71c62297ee5def62cd1a6c6e95bba611bc13d9"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "9041034548791783886",
+      "name": "zmzg_daoju_cwbx_5_wuli",
+      "sha256": "08bcaf393f2e2ac55ce2ae756d6e1ecc35c9efc737b090ac51b865126ac1949c"
+    },
+    {
+      "bundle": "assets_uiraw_mainpage.ab",
+      "bundle_sha256": "f6f88d4cc696a98da596dc7b0ff296274fb9a8dda106ad7237459d94714372bb",
+      "path_id": "9126501391749865854",
+      "name": "zmzg_zjm_button_ksyx",
+      "sha256": "9df923e9fa06950085b4c748b34eef09a14aade05229ec224fecb0db8b0346bf"
+    },
+    {
+      "bundle": "assets_actormodel_player_p_001_chushi_nan.ab",
+      "bundle_sha256": "febd2ecefd7cb173ee90622df0e9596873801f384d3ece05e4010090f591a6ef",
+      "path_id": "9143821245171068640",
+      "name": "p_001_chushi_nan",
+      "sha256": "82704a99604eb6f6908e7abd664c46e301421ec808943b0aa03dee8e4149f07d"
+    },
+    {
+      "bundle": "assets_actormodel_player_p_001_chushi_nan.ab",
+      "bundle_sha256": "febd2ecefd7cb173ee90622df0e9596873801f384d3ece05e4010090f591a6ef",
+      "path_id": "-5523976840325838046",
+      "name": "p_001_chushi_nan.skel",
+      "sha256": "d70579047e516808f73e66ee570a069fd3169468271876dab30b6a083d93b689"
+    },
+    {
+      "bundle": "assets_actormodel_player_p_001_chushi_nan.ab",
+      "bundle_sha256": "febd2ecefd7cb173ee90622df0e9596873801f384d3ece05e4010090f591a6ef",
+      "path_id": "-2469128820419732803",
+      "name": "p_001_chushi_nan.atlas",
+      "sha256": "048cdda6709972df30bc99884cca7082344e872944692f72244945258778d430"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-9161706829895266391",
+      "name": "icon_zhuangbei_kuzi_1",
+      "sha256": "432f0f6e34b0bc0148ecbb871c95884aa8ecb1e174cdb44a520f6b5311575f05"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-8771949409847347402",
+      "name": "icon_zhuangbei_shoutao_6",
+      "sha256": "f82163878e0e8bfd077883e39b7374f57f58008106b64b50d5d1e1ba96455c79"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-8719621322572700020",
+      "name": "icon_zhuangbei_hubi_6",
+      "sha256": "0fba81b035038dcceefe09621ab15219693c67dc630e9a51ea79019c8eacee30"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7858779725940186891",
+      "name": "icon_zhuangbei_hubi_7",
+      "sha256": "4aad0097140a45177b518a633b7de3b6ba63829144519454bbf0373af29baa04"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7564897657033975846",
+      "name": "icon_zhuangbei_kuzi_5",
+      "sha256": "f890aa935ec2b1470c4d4b1ff28965eb9717353869f2928997d677f03edee260"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7554941037723397811",
+      "name": "show_zhuangbei_hubi",
+      "sha256": "1e471b66a1f7e3f0875ba7afc8b2ded41558bc3af247b8a0113e09ce14349ab6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7215682600693111360",
+      "name": "icon_zhuangbei_toukui_3",
+      "sha256": "6c333b1a5559f5459ca98d729fbacfb899839ec0fcdcc9011aa9d37fe081c1c9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7207539509276524782",
+      "name": "icon_zhuangbei_yifu_2",
+      "sha256": "df4b8cde6639ffc67919262566dca55b7454df3ca3dd75a3daa9fe3551fa4ed4"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6795431386476957637",
+      "name": "icon_sjzbtb_lv",
+      "sha256": "a3fbed5d02b18add2ae28a17fc828128e44125b9c7466183e1e2d6268b9969f7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6494352316159227961",
+      "name": "icon_sjzbtb_lan",
+      "sha256": "c257505d0b831a5d66092e0b7d71ec85277c480867053192385d815f4d72bb8e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6130779255749456487",
+      "name": "icon_zhuangbei_shoutao_8",
+      "sha256": "a7d397d872f7394335d6a17a4cff694af8835eda4156f0c373f82331df3907c1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6048847735873912423",
+      "name": "icon_zhuangbei_toukui_8",
+      "sha256": "f4d4c054b7515fc0feebb634b587106e82a24008e38c50d78bad58f449e007ec"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-5642341396000539731",
+      "name": "icon_zhuangbei_toukui_9",
+      "sha256": "ce6a4cf0be2ce276964912daa61cca8ee8da6d0f04319d015296a06e6c0ebdf0"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-5391862471776528200",
+      "name": "icon_zhuangbei_hubi_3",
+      "sha256": "6205c32c36d370a829eefd7fa807b00b2c75f2523b5c4873e222504215cedbf1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4852876116850419935",
+      "name": "icon_zhuangbei_kuzi_7",
+      "sha256": "e848d143689e2cce9ee57458c97d684bb1823565e48d8ca22eb4aa56dcd8bd43"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4631382245739153107",
+      "name": "icon_zhuangbei_xiezi_5",
+      "sha256": "3aeb1556006ad7507bb082f809846734658c844c48794620a801a3b8da7f7033"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4060049691725669049",
+      "name": "icon_zhuangbei_shoutao_9",
+      "sha256": "4bae933d64d89b9659788c60f62e33130cd290d525a1a3f1cb43dd61a97c82d8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4000224526048282360",
+      "name": "icon_zhuangbei_toukui_7",
+      "sha256": "d8c6b36e1f8c2273b129b923dfe490466833299bc34a439d125c7f2c2587adff"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3956779976951403891",
+      "name": "icon_zhuangbei_xiezi_3",
+      "sha256": "40e9bdc6217ded2c8ec39110e17b639aac18fbff4ac07cab670932ec989984e3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3846195336772965579",
+      "name": "icon_zhuangbei_xiezi_9",
+      "sha256": "b340811e3956b351788b38e4566bc40598bd8307310fa1f6121dc1a98e20caa2"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3571117455420134862",
+      "name": "icon_zhuangbei_xiezi_6",
+      "sha256": "6b788b804ae899ba091081800744c333b50b2e34a34ed644edb8ecf6167b506d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3377877330778546496",
+      "name": "icon_zhuangbei_toukui_10",
+      "sha256": "05dab115fd7fa13bc364b6a6acf60223c5ee29ebaecdfa6943024db32bc61d46"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3320457375574899026",
+      "name": "icon_zhuangbei_shoutao_1",
+      "sha256": "311ef4f4c1db17a13b65a7765d287f721d2862a9ecf64e4cc8f0d3af122a042f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3159539532257515675",
+      "name": "icon_zhuangbei_yifu_1",
+      "sha256": "57074bf468a8007e48ef98635fb91f47b76f4d9925468abd10fcd158636c9b54"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3145424447567425398",
+      "name": "icon_zhuangbei_yifu_9",
+      "sha256": "3ab441c5b1d811fc758d3bce1e7c8fcf9822dd926634a9717c5e7e315d185817"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-2350083936003596787",
+      "name": "icon_zhuangbei_xiezi_10",
+      "sha256": "cd6330815587487fb99bcc5714095222d4e6501233449339ede091ed63f909f7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1983806287452210595",
+      "name": "icon_sjzbtb_jin",
+      "sha256": "74d9a5a953ff22bedf702c041eb198e1ae0b3c9ba305ac3b5f66bf7b7522fc60"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1558044252327107358",
+      "name": "icon_zhuangbei_shoutao_5",
+      "sha256": "a1d2d1b21fa2a59abfae552dacf8c34ff296da64fdcbab917e648b890249d770"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1130805237664456660",
+      "name": "icon_zhuangbei_xiezi_7",
+      "sha256": "7a1191db6c0dd7d9f5c909706df37c8e2f45924263833fbb6a82c0da7cfd9097"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1103346585926447677",
+      "name": "icon_zhuangbei_xiezi_4",
+      "sha256": "e86a111da0ece92d22e7b88597b199fab4ad2fc768b419ab13665ca4df513cb8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1034165525988656798",
+      "name": "icon_zhuangbei_hubi_1",
+      "sha256": "018816443d55af23ae42739efe886a169e3c82b458eeb8002a92bbbd73002c53"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-917112989470828365",
+      "name": "icon_zhuangbei_shoutao_2",
+      "sha256": "6f7e5e988996f232fc8b2e5c8175ea7ba97a70792f099311eccb602f58e476ef"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-109340940889008017",
+      "name": "icon_zhuangbei_hubi_8",
+      "sha256": "505d69689680064d0880c36421e29a2517f7217ab6ee77ccc73bc11fafb5e6e8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "334160457846780723",
+      "name": "icon_zhuangbei_xiezi_8",
+      "sha256": "1cacf9a92e0648c4435e5b2f8fb87db259048f6f86d04eb798a2bd5ac1c94707"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "342602302261083565",
+      "name": "icon_sjzbtb_hong",
+      "sha256": "f25b0ef563ba2be1fec644c079a1851e96fdba19d0f7e984bcaeeb9611d9667a"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "388430590062807384",
+      "name": "icon_zhuangbei_shoutao_4",
+      "sha256": "5d5695954a105c8b4d4d1ad3ce0562091f5085784b051d086c03e0db0f5cc931"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "750025801067974211",
+      "name": "icon_zhuangbei_toukui_6",
+      "sha256": "198e8cf168aa800fed9c1b6154d00bd93166bd2469d5af9d7b592a2cd106f749"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "779360861661568256",
+      "name": "icon_zhuangbei_kuzi_3",
+      "sha256": "d07482899dc3b20e201684fe04928db2ba4886e4abdfbdfba60dd3b43a4c8857"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1133557950139570410",
+      "name": "icon_zhuangbei_kuzi_2",
+      "sha256": "d4d4242cb4c534095fc09cba2983f5112c6dfd42f711c641225849bac3cd6e0e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1248338139133062760",
+      "name": "icon_zhuangbei_yifu_4",
+      "sha256": "ac6aecf6609e66136ef1009ef39f7f29bccd7ea99a991891ad3d576a01bcac64"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1618262920532480235",
+      "name": "icon_zhuangbei_hubi_9",
+      "sha256": "701732b20d1bd150624a0d34c48deae01423c9197eeb348d38971af4e2f20ef1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1755075362940811858",
+      "name": "icon_zhuangbei_hubi_10",
+      "sha256": "f84ea2eeb7162d2429cf4198ea0a0260e89ca6771624e3a6c9fd5c1f1ded6375"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1790651023617228185",
+      "name": "icon_zhuangbei_kuzi_6",
+      "sha256": "a17dd076964d14123e220fb12942a72f977f044d9e588f33d042daf0ad62d9cf"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2042934985423813651",
+      "name": "icon_zhuangbei_yifu_6",
+      "sha256": "7adf40393d4c7f50ae186238d29c3d58e7aba4c78239c74680b6ebc3654eacd1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2518869784408093740",
+      "name": "icon_zhuangbei_yifu_5",
+      "sha256": "ef82f4a4fefa8c9859756b90d245c4d722a6a5b680b2705de12e69a4f43b1bc5"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2703070775052051589",
+      "name": "icon_zhuangbei_xiezi_2",
+      "sha256": "6c28f7684f874bdc8a1aedd49c75c5bffe7a2c093d51a65d05944d06f20dca0e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2924075525279385494",
+      "name": "icon_zhuangbei_kuzi_10",
+      "sha256": "8f816e304d0557d3750a114a27fd5da13d3a93c6b8461682fb3c5b8cf1b82421"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2945615400911563380",
+      "name": "icon_zhuangbei_toukui_2",
+      "sha256": "a6da2da869a746f34719f493724ffa9fd35c1eca7f456821c8e71d96dda903d9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2997969578661237235",
+      "name": "icon_zhuangbei_kuzi_4",
+      "sha256": "c413c7006f102d812c445e85e1cfdab931f2bdd027753823f53c690a27c4a743"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3022347336510295663",
+      "name": "icon_zhuangbei_hubi_4",
+      "sha256": "cb97cfc2c847dc28bbe8b3cd905713c12cd66075da8a735aaa890db3b9d35be3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3046786754560895194",
+      "name": "show_zhuangbei_toukui",
+      "sha256": "1e86373c864618755e4436bd3175d2585b30a33ebc0e21fbda0747cc1eae21e4"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3734884480359359595",
+      "name": "icon_zhuangbei_shoutao_7",
+      "sha256": "84904bdcc89edf50dccf45eda92746c009d00187f3d04738b17a180b71770204"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4313955208339858816",
+      "name": "icon_zhuangbei_yifu_3",
+      "sha256": "5193566a004479e153852faac0491b48c7bd8dbe7a471dd0c3d9e4a9be8a3cf6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4696415137039290244",
+      "name": "icon_zhuangbei_yifu_8",
+      "sha256": "03c6aaab7b35c562493c4598b826d3333892ad7ce46dc47d49159c8b8d84299f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4716748419015799549",
+      "name": "icon_zhuangbei_hubi_5",
+      "sha256": "75c3bdc551051f39a048895932d6ef09db7333e7fb08c43a55101340c56457ad"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5153885503120777913",
+      "name": "icon_zhuangbei_toukui_4",
+      "sha256": "539481b142e325c17f139e258de506a2a2a9572b93ad121ac8c0952f24fb28e7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5270049338483589625",
+      "name": "show_zhuangbei_kuzi",
+      "sha256": "9249f6eff0e232c49c3aabf9edb6154841020a2f5822fc432de7a72cd5e70edc"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5659524115592597915",
+      "name": "icon_zhuangbei_toukui_1",
+      "sha256": "6d21f3549b9f168122d9ef82a7c0eec5d3659ee8ac23d6aa510b8a721e8ee101"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5742226836639402127",
+      "name": "icon_zhuangbei_kuzi_9",
+      "sha256": "f1a4f6b5854fe5e9c94dd14ebf0bfa96f29465784bcd544c47f8a77f971f3f5d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5824193857308717067",
+      "name": "icon_zhuangbei_kuzi_8",
+      "sha256": "f7c2382ba7c389fb714e50e62d57fe604856cdd5d69bf077b7db9b4072b32f3f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6205183988615116887",
+      "name": "show_zhuangbei_yifu",
+      "sha256": "0d642e70db557e844d7d847289949e84e7885a6d1f676ce2ee04f4b99d507279"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6326540297343092367",
+      "name": "icon_zhuangbei_xiezi_1",
+      "sha256": "fea226f8c9cf7124a29ecb5bc4a16529450e1dd6ff4453c1199292d1635a3992"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6346445093415472816",
+      "name": "icon_zhuangbei_shoutao_3",
+      "sha256": "f4d2a19b7cb2549d363b291017931c35c41ee3bde827c8018329fdad8b87aa46"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6734689848863101317",
+      "name": "icon_zhuangbei_toukui_5",
+      "sha256": "5b2c571ca57667506b0bb3f4b57e90d5ac22189b37edf7d41e112be1a3f0e067"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "7024692378316339711",
+      "name": "show_zhuangbei_shoutao",
+      "sha256": "ec7220a0b9c780601501b0cc9dcf9af6f75a982a6a44ce8f195fd1338ac18c6d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "7919240698153908556",
+      "name": "icon_zhuangbei_hubi_2",
+      "sha256": "ebf2d4e8b45a4f827c8cc21a5617c2188d9353d2acf6f7a1c41d9da6fabc7b9b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8099076061386312585",
+      "name": "icon_zhuangbei_shoutao_10",
+      "sha256": "31db5502bb198dad36448684bb2f604c1cf3dfb02149e0c0c99f4dd8255d365b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8104219539668832127",
+      "name": "show_zhuangbei_zuju",
+      "sha256": "b4a156dcaec37a97ae0ed55cdeff763a6b61e028d51d9f443035a61ea0b412ab"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8327700777404771357",
+      "name": "icon_sjzbtb_cheng",
+      "sha256": "e7e3db57b46618dd08a3128bfe596f191e6a59272aab5fc55f937d7b76f7c917"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8374839541629902877",
+      "name": "icon_sjzbtb_zi",
+      "sha256": "c71a3f43df38c6fa13c895a04ab1dafdbb0268b3060b56b7997b930df4861302"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8448133716548096390",
+      "name": "icon_sjzbtb_bai",
+      "sha256": "77d04d446a415a7727dd0347fdae8b4406d13004b1bd795fa09faaeacac8a554"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8690212890946857209",
+      "name": "icon_zhuangbei_yifu_7",
+      "sha256": "19f10349fc7aba8bac392070e05c9bdb750dc66204bc539cc893645b21aef87a"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "9002867209993298822",
+      "name": "icon_zhuangbei_yifu_10",
+      "sha256": "abcd5150660aeca2d3df9f8e6e6157450fc321a0e3e4930ccc1e692d82b03266"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-9161706829895266391",
+      "name": "icon_zhuangbei_kuzi_1",
+      "sha256": "432f0f6e34b0bc0148ecbb871c95884aa8ecb1e174cdb44a520f6b5311575f05"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-8771949409847347402",
+      "name": "icon_zhuangbei_shoutao_6",
+      "sha256": "f82163878e0e8bfd077883e39b7374f57f58008106b64b50d5d1e1ba96455c79"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-8719621322572700020",
+      "name": "icon_zhuangbei_hubi_6",
+      "sha256": "0fba81b035038dcceefe09621ab15219693c67dc630e9a51ea79019c8eacee30"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7858779725940186891",
+      "name": "icon_zhuangbei_hubi_7",
+      "sha256": "4aad0097140a45177b518a633b7de3b6ba63829144519454bbf0373af29baa04"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7564897657033975846",
+      "name": "icon_zhuangbei_kuzi_5",
+      "sha256": "f890aa935ec2b1470c4d4b1ff28965eb9717353869f2928997d677f03edee260"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7554941037723397811",
+      "name": "show_zhuangbei_hubi",
+      "sha256": "1e471b66a1f7e3f0875ba7afc8b2ded41558bc3af247b8a0113e09ce14349ab6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7215682600693111360",
+      "name": "icon_zhuangbei_toukui_3",
+      "sha256": "6c333b1a5559f5459ca98d729fbacfb899839ec0fcdcc9011aa9d37fe081c1c9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-7207539509276524782",
+      "name": "icon_zhuangbei_yifu_2",
+      "sha256": "df4b8cde6639ffc67919262566dca55b7454df3ca3dd75a3daa9fe3551fa4ed4"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6795431386476957637",
+      "name": "icon_sjzbtb_lv",
+      "sha256": "a3fbed5d02b18add2ae28a17fc828128e44125b9c7466183e1e2d6268b9969f7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6494352316159227961",
+      "name": "icon_sjzbtb_lan",
+      "sha256": "c257505d0b831a5d66092e0b7d71ec85277c480867053192385d815f4d72bb8e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6130779255749456487",
+      "name": "icon_zhuangbei_shoutao_8",
+      "sha256": "a7d397d872f7394335d6a17a4cff694af8835eda4156f0c373f82331df3907c1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-6048847735873912423",
+      "name": "icon_zhuangbei_toukui_8",
+      "sha256": "f4d4c054b7515fc0feebb634b587106e82a24008e38c50d78bad58f449e007ec"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-5642341396000539731",
+      "name": "icon_zhuangbei_toukui_9",
+      "sha256": "ce6a4cf0be2ce276964912daa61cca8ee8da6d0f04319d015296a06e6c0ebdf0"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-5391862471776528200",
+      "name": "icon_zhuangbei_hubi_3",
+      "sha256": "6205c32c36d370a829eefd7fa807b00b2c75f2523b5c4873e222504215cedbf1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4852876116850419935",
+      "name": "icon_zhuangbei_kuzi_7",
+      "sha256": "e848d143689e2cce9ee57458c97d684bb1823565e48d8ca22eb4aa56dcd8bd43"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4631382245739153107",
+      "name": "icon_zhuangbei_xiezi_5",
+      "sha256": "3aeb1556006ad7507bb082f809846734658c844c48794620a801a3b8da7f7033"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4060049691725669049",
+      "name": "icon_zhuangbei_shoutao_9",
+      "sha256": "4bae933d64d89b9659788c60f62e33130cd290d525a1a3f1cb43dd61a97c82d8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-4000224526048282360",
+      "name": "icon_zhuangbei_toukui_7",
+      "sha256": "d8c6b36e1f8c2273b129b923dfe490466833299bc34a439d125c7f2c2587adff"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3956779976951403891",
+      "name": "icon_zhuangbei_xiezi_3",
+      "sha256": "40e9bdc6217ded2c8ec39110e17b639aac18fbff4ac07cab670932ec989984e3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3846195336772965579",
+      "name": "icon_zhuangbei_xiezi_9",
+      "sha256": "b340811e3956b351788b38e4566bc40598bd8307310fa1f6121dc1a98e20caa2"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3571117455420134862",
+      "name": "icon_zhuangbei_xiezi_6",
+      "sha256": "6b788b804ae899ba091081800744c333b50b2e34a34ed644edb8ecf6167b506d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3377877330778546496",
+      "name": "icon_zhuangbei_toukui_10",
+      "sha256": "05dab115fd7fa13bc364b6a6acf60223c5ee29ebaecdfa6943024db32bc61d46"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3320457375574899026",
+      "name": "icon_zhuangbei_shoutao_1",
+      "sha256": "311ef4f4c1db17a13b65a7765d287f721d2862a9ecf64e4cc8f0d3af122a042f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3159539532257515675",
+      "name": "icon_zhuangbei_yifu_1",
+      "sha256": "57074bf468a8007e48ef98635fb91f47b76f4d9925468abd10fcd158636c9b54"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-3145424447567425398",
+      "name": "icon_zhuangbei_yifu_9",
+      "sha256": "3ab441c5b1d811fc758d3bce1e7c8fcf9822dd926634a9717c5e7e315d185817"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-2350083936003596787",
+      "name": "icon_zhuangbei_xiezi_10",
+      "sha256": "cd6330815587487fb99bcc5714095222d4e6501233449339ede091ed63f909f7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1983806287452210595",
+      "name": "icon_sjzbtb_jin",
+      "sha256": "74d9a5a953ff22bedf702c041eb198e1ae0b3c9ba305ac3b5f66bf7b7522fc60"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1558044252327107358",
+      "name": "icon_zhuangbei_shoutao_5",
+      "sha256": "a1d2d1b21fa2a59abfae552dacf8c34ff296da64fdcbab917e648b890249d770"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1130805237664456660",
+      "name": "icon_zhuangbei_xiezi_7",
+      "sha256": "7a1191db6c0dd7d9f5c909706df37c8e2f45924263833fbb6a82c0da7cfd9097"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1103346585926447677",
+      "name": "icon_zhuangbei_xiezi_4",
+      "sha256": "e86a111da0ece92d22e7b88597b199fab4ad2fc768b419ab13665ca4df513cb8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-1034165525988656798",
+      "name": "icon_zhuangbei_hubi_1",
+      "sha256": "018816443d55af23ae42739efe886a169e3c82b458eeb8002a92bbbd73002c53"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-917112989470828365",
+      "name": "icon_zhuangbei_shoutao_2",
+      "sha256": "6f7e5e988996f232fc8b2e5c8175ea7ba97a70792f099311eccb602f58e476ef"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "-109340940889008017",
+      "name": "icon_zhuangbei_hubi_8",
+      "sha256": "505d69689680064d0880c36421e29a2517f7217ab6ee77ccc73bc11fafb5e6e8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "334160457846780723",
+      "name": "icon_zhuangbei_xiezi_8",
+      "sha256": "1cacf9a92e0648c4435e5b2f8fb87db259048f6f86d04eb798a2bd5ac1c94707"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "342602302261083565",
+      "name": "icon_sjzbtb_hong",
+      "sha256": "f25b0ef563ba2be1fec644c079a1851e96fdba19d0f7e984bcaeeb9611d9667a"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "388430590062807384",
+      "name": "icon_zhuangbei_shoutao_4",
+      "sha256": "5d5695954a105c8b4d4d1ad3ce0562091f5085784b051d086c03e0db0f5cc931"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "750025801067974211",
+      "name": "icon_zhuangbei_toukui_6",
+      "sha256": "198e8cf168aa800fed9c1b6154d00bd93166bd2469d5af9d7b592a2cd106f749"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "779360861661568256",
+      "name": "icon_zhuangbei_kuzi_3",
+      "sha256": "d07482899dc3b20e201684fe04928db2ba4886e4abdfbdfba60dd3b43a4c8857"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1133557950139570410",
+      "name": "icon_zhuangbei_kuzi_2",
+      "sha256": "d4d4242cb4c534095fc09cba2983f5112c6dfd42f711c641225849bac3cd6e0e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1248338139133062760",
+      "name": "icon_zhuangbei_yifu_4",
+      "sha256": "ac6aecf6609e66136ef1009ef39f7f29bccd7ea99a991891ad3d576a01bcac64"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1618262920532480235",
+      "name": "icon_zhuangbei_hubi_9",
+      "sha256": "701732b20d1bd150624a0d34c48deae01423c9197eeb348d38971af4e2f20ef1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1755075362940811858",
+      "name": "icon_zhuangbei_hubi_10",
+      "sha256": "f84ea2eeb7162d2429cf4198ea0a0260e89ca6771624e3a6c9fd5c1f1ded6375"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "1790651023617228185",
+      "name": "icon_zhuangbei_kuzi_6",
+      "sha256": "a17dd076964d14123e220fb12942a72f977f044d9e588f33d042daf0ad62d9cf"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2042934985423813651",
+      "name": "icon_zhuangbei_yifu_6",
+      "sha256": "7adf40393d4c7f50ae186238d29c3d58e7aba4c78239c74680b6ebc3654eacd1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2518869784408093740",
+      "name": "icon_zhuangbei_yifu_5",
+      "sha256": "ef82f4a4fefa8c9859756b90d245c4d722a6a5b680b2705de12e69a4f43b1bc5"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2703070775052051589",
+      "name": "icon_zhuangbei_xiezi_2",
+      "sha256": "6c28f7684f874bdc8a1aedd49c75c5bffe7a2c093d51a65d05944d06f20dca0e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2924075525279385494",
+      "name": "icon_zhuangbei_kuzi_10",
+      "sha256": "8f816e304d0557d3750a114a27fd5da13d3a93c6b8461682fb3c5b8cf1b82421"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2945615400911563380",
+      "name": "icon_zhuangbei_toukui_2",
+      "sha256": "a6da2da869a746f34719f493724ffa9fd35c1eca7f456821c8e71d96dda903d9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "2997969578661237235",
+      "name": "icon_zhuangbei_kuzi_4",
+      "sha256": "c413c7006f102d812c445e85e1cfdab931f2bdd027753823f53c690a27c4a743"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3022347336510295663",
+      "name": "icon_zhuangbei_hubi_4",
+      "sha256": "cb97cfc2c847dc28bbe8b3cd905713c12cd66075da8a735aaa890db3b9d35be3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3046786754560895194",
+      "name": "show_zhuangbei_toukui",
+      "sha256": "1e86373c864618755e4436bd3175d2585b30a33ebc0e21fbda0747cc1eae21e4"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "3734884480359359595",
+      "name": "icon_zhuangbei_shoutao_7",
+      "sha256": "84904bdcc89edf50dccf45eda92746c009d00187f3d04738b17a180b71770204"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4313955208339858816",
+      "name": "icon_zhuangbei_yifu_3",
+      "sha256": "5193566a004479e153852faac0491b48c7bd8dbe7a471dd0c3d9e4a9be8a3cf6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4696415137039290244",
+      "name": "icon_zhuangbei_yifu_8",
+      "sha256": "03c6aaab7b35c562493c4598b826d3333892ad7ce46dc47d49159c8b8d84299f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "4716748419015799549",
+      "name": "icon_zhuangbei_hubi_5",
+      "sha256": "75c3bdc551051f39a048895932d6ef09db7333e7fb08c43a55101340c56457ad"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5153885503120777913",
+      "name": "icon_zhuangbei_toukui_4",
+      "sha256": "539481b142e325c17f139e258de506a2a2a9572b93ad121ac8c0952f24fb28e7"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5270049338483589625",
+      "name": "show_zhuangbei_kuzi",
+      "sha256": "9249f6eff0e232c49c3aabf9edb6154841020a2f5822fc432de7a72cd5e70edc"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5659524115592597915",
+      "name": "icon_zhuangbei_toukui_1",
+      "sha256": "6d21f3549b9f168122d9ef82a7c0eec5d3659ee8ac23d6aa510b8a721e8ee101"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5742226836639402127",
+      "name": "icon_zhuangbei_kuzi_9",
+      "sha256": "f1a4f6b5854fe5e9c94dd14ebf0bfa96f29465784bcd544c47f8a77f971f3f5d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "5824193857308717067",
+      "name": "icon_zhuangbei_kuzi_8",
+      "sha256": "f7c2382ba7c389fb714e50e62d57fe604856cdd5d69bf077b7db9b4072b32f3f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6205183988615116887",
+      "name": "show_zhuangbei_yifu",
+      "sha256": "0d642e70db557e844d7d847289949e84e7885a6d1f676ce2ee04f4b99d507279"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6326540297343092367",
+      "name": "icon_zhuangbei_xiezi_1",
+      "sha256": "fea226f8c9cf7124a29ecb5bc4a16529450e1dd6ff4453c1199292d1635a3992"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6346445093415472816",
+      "name": "icon_zhuangbei_shoutao_3",
+      "sha256": "f4d2a19b7cb2549d363b291017931c35c41ee3bde827c8018329fdad8b87aa46"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "6734689848863101317",
+      "name": "icon_zhuangbei_toukui_5",
+      "sha256": "5b2c571ca57667506b0bb3f4b57e90d5ac22189b37edf7d41e112be1a3f0e067"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "7024692378316339711",
+      "name": "show_zhuangbei_shoutao",
+      "sha256": "ec7220a0b9c780601501b0cc9dcf9af6f75a982a6a44ce8f195fd1338ac18c6d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "7919240698153908556",
+      "name": "icon_zhuangbei_hubi_2",
+      "sha256": "ebf2d4e8b45a4f827c8cc21a5617c2188d9353d2acf6f7a1c41d9da6fabc7b9b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8099076061386312585",
+      "name": "icon_zhuangbei_shoutao_10",
+      "sha256": "31db5502bb198dad36448684bb2f604c1cf3dfb02149e0c0c99f4dd8255d365b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8104219539668832127",
+      "name": "show_zhuangbei_zuju",
+      "sha256": "b4a156dcaec37a97ae0ed55cdeff763a6b61e028d51d9f443035a61ea0b412ab"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8327700777404771357",
+      "name": "icon_sjzbtb_cheng",
+      "sha256": "e7e3db57b46618dd08a3128bfe596f191e6a59272aab5fc55f937d7b76f7c917"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8374839541629902877",
+      "name": "icon_sjzbtb_zi",
+      "sha256": "c71a3f43df38c6fa13c895a04ab1dafdbb0268b3060b56b7997b930df4861302"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8448133716548096390",
+      "name": "icon_sjzbtb_bai",
+      "sha256": "77d04d446a415a7727dd0347fdae8b4406d13004b1bd795fa09faaeacac8a554"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "8690212890946857209",
+      "name": "icon_zhuangbei_yifu_7",
+      "sha256": "19f10349fc7aba8bac392070e05c9bdb750dc66204bc539cc893645b21aef87a"
+    },
+    {
+      "bundle": "assets_uiraw_icon_equip.ab",
+      "bundle_sha256": "19795b3eec1051364766df083612ebb864ec6bd70e279b7f473092c9e65f390b",
+      "path_id": "9002867209993298822",
+      "name": "icon_zhuangbei_yifu_10",
+      "sha256": "abcd5150660aeca2d3df9f8e6e6157450fc321a0e3e4930ccc1e692d82b03266"
+    },
+    {
+      "bundle": "assets_actormodel_weapon_w1_001_chushi.ab",
+      "bundle_sha256": "c0c392c22f908c9c4d93510a6d84740bb98d8445719fb4447211b83533558dd4",
+      "path_id": "-6824297635019682602",
+      "name": "w1_001_chushi",
+      "sha256": "c4db037648bdbadf75a849380c9ecb15eb3c11fc82be3a6782ae2bad7ef6b005"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "w_001_cq1001-hurt1_01.webp",
+      "sha256": "0c912704e26d2238e8686c12da53b862d4531f4d78156358a5dfc4448f52ba34",
+      "bytes": 54926
+    },
+    {
+      "file": "w_001_cq1001-hurt2_01.webp",
+      "sha256": "f3df49bc9a557d91f3250738a62f7f964d8311d38ae4c88c619b64f2f352dd50",
+      "bytes": 42866
+    },
+    {
+      "file": "w_001_cq1001-idle_01.webp",
+      "sha256": "5399cb81e3892996a6451fb20de281fd3a8db32751aa62103e12e7a68ce0bb32",
+      "bytes": 62488
+    },
+    {
+      "file": "CQYT_9001.webp",
+      "sha256": "f6e052b4f5d84af52a7a445966fe119c8208af2f1ef2ebf666de9417dcea82a1",
+      "bytes": 77730
+    },
+    {
+      "file": "CQJN.webp",
+      "sha256": "7162f4505ccd3510c2f455bd387801ae384cc00306f6696d0133bbee2c5c5bb2",
+      "bytes": 69490
+    },
+    {
+      "file": "CQYT_2001.webp",
+      "sha256": "f0747a6fce65e7b3dc05f7e9793e84ef9293f1563c4669ce11e169bc312d25ae",
+      "bytes": 56810
+    },
+    {
+      "file": "CQYT_3001.webp",
+      "sha256": "d85965070b287e6ebb995e73202340fe12ec68fb57770680c260447fb8479795",
+      "bytes": 56804
+    },
+    {
+      "file": "CQYT_8001.webp",
+      "sha256": "daac5155aa4fb50f185661ad56e3d06059e7cd52ff251987052348f6b8926fbf",
+      "bytes": 54002
+    },
+    {
+      "file": "CQYT_11001.webp",
+      "sha256": "f0ba9445f3ddff144a34477a4c2c6e9f0cd7a6209bd57f55f2856f8d6fb8494f",
+      "bytes": 112086
+    },
+    {
+      "file": "CQYT.webp",
+      "sha256": "0b01d2c8bd41b67ccfcd0836a6c1234ce6b0accfbd9a1ac6b7c0a9fc68659b28",
+      "bytes": 74706
+    },
+    {
+      "file": "CQYT_6001.webp",
+      "sha256": "792524ec64b91d11804e9b48a90139948606533ae59fc321d8232c1f783dfdbc",
+      "bytes": 78892
+    },
+    {
+      "file": "CQYT_10001.webp",
+      "sha256": "29f2c50f398b4053891151dc0a61b2e193989206d259fc1e33dd78fb15fa54cd",
+      "bytes": 73812
+    },
+    {
+      "file": "CQYT_6001_2.webp",
+      "sha256": "1e51e0814fa2f3396b54ed36e9f3693d4b81bb8e12c47dfd08d8e39786150c49",
+      "bytes": 61100
+    },
+    {
+      "file": "CQYT_16001.webp",
+      "sha256": "855c5171d5b14b38f8d047d2f76e2aedfd3bdfc94c9ad490ac76578699fe2e90",
+      "bytes": 74200
+    },
+    {
+      "file": "CQYT_4001.webp",
+      "sha256": "b974d8a456b5763d15aa208b4de9ea6c0ef96a57a0cd32a2ea21864857a5b7a9",
+      "bytes": 56240
+    },
+    {
+      "file": "CQYT2.webp",
+      "sha256": "1e53cf261f4855ca8c41ac8eea049bf2a65a561321cd903e2f3e641d8688238f",
+      "bytes": 63300
+    },
+    {
+      "file": "CQYT1.webp",
+      "sha256": "2dbf5569140307201fa54762e651c83afc96aa4f36ff9864c4e925ae5314148c",
+      "bytes": 72352
+    },
+    {
+      "file": "CQYT_5001.webp",
+      "sha256": "a580ffcc530389f8d1150b53ec646ca29892284d1b9dc4578fa6c1d857cf0a1e",
+      "bytes": 90180
+    },
+    {
+      "file": "CQYT_12001.webp",
+      "sha256": "23a145d4b298028864f372761f59d23b4a6197a57961d6b8be4194a4f64b3b72",
+      "bytes": 75286
+    },
+    {
+      "file": "CQYT_6001_1.webp",
+      "sha256": "d5fc4c8f8ad17bb9f86644f6a61573254857ad9ad5856923c0f3b201d9ac7d11",
+      "bytes": 66300
+    },
+    {
+      "file": "CQYT_7001.webp",
+      "sha256": "65efab135e28ffc34449d9b4e364dda25a2a23dc3881ec88ec9376fe4e943ca4",
+      "bytes": 97668
+    },
+    {
+      "file": "CQYT3.webp",
+      "sha256": "eab695f1808f41f8aada5c88dc8a5a8c83b5855ffd0c7f32aa41f4eeab09bf03",
+      "bytes": 64302
+    },
+    {
+      "file": "zmzg_js_icon22.webp",
+      "sha256": "bab6e6f533c0b1871b4f21ab009d9bd4c600b74b21d13541fe8413121deb8a3b",
+      "bytes": 6574
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_feng.webp",
+      "sha256": "cad01fa46e7fef721b129978fd0829eb1c34e102b54903281a68a27bfaaa63b1",
+      "bytes": 8148
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_ty.webp",
+      "sha256": "31863b96d13713e3b194f8105f77063392520cab706353491c00894618181c30",
+      "bytes": 5144
+    },
+    {
+      "file": "zmzg_zjm_button_yj.webp",
+      "sha256": "18fc34c4cc9fe6cd5b2e9258f195b05769c66f5a1ddc70c9c3062bf5e4566ebd",
+      "bytes": 1842
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_nengliang.webp",
+      "sha256": "44e67edb6a091bad6c06060b255664d3381e3fe17bd30096a00d6d1254e62a60",
+      "bytes": 5224
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_bing.webp",
+      "sha256": "5592923cab03ade51819e78d20ca879ebccedc08b5e01cac0390fb4a01ad3c0d",
+      "bytes": 8294
+    },
+    {
+      "file": "zmzg_zjm_icon_zhanling.webp",
+      "sha256": "922a4d849fa176344f537c374065199c3d628def93c22390077483acac5cef33",
+      "bytes": 7266
+    },
+    {
+      "file": "zmzg_js_icon1.webp",
+      "sha256": "583d45f0106a87bc2e74434c098de9b77d61adf6a9b19ea09439fe4003d33efb",
+      "bytes": 5742
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_wuli.webp",
+      "sha256": "598e8ac176c95c60c7e23a33c0691728cbe610c3c2c15e5db983e99ee1f8cdad",
+      "bytes": 8572
+    },
+    {
+      "file": "zmzg_zjm_rk_button.webp",
+      "sha256": "74b304cb6d0a923faa99d23dcff2260e3ec9fd96f9eb6c9b8e75d2108714a56e",
+      "bytes": 7934
+    },
+    {
+      "file": "zmzg_zjm_rk_bg.webp",
+      "sha256": "7dd2ed42cc4989b5f79d389391f63e55cd64bab4186494bcee7c4b1721cc0671",
+      "bytes": 1006
+    },
+    {
+      "file": "zmzg_daoju_chaowuqianghua.webp",
+      "sha256": "60ed6ff0fbd7f33ceb5bc282fdb0b7f9d94afa7331c9f4aba5b68b945cdedcf0",
+      "bytes": 8370
+    },
+    {
+      "file": "zmzg_zjm_icon_manghe.webp",
+      "sha256": "2794284797f399b8eb5889abd1668281ce0928bfadfbde500f8cd4ff6d7bac4b",
+      "bytes": 5316
+    },
+    {
+      "file": "zmzg_js_icon4.webp",
+      "sha256": "f448941e33052eeaf4d031c6783ed7588747a5fe782b73a775002062f373a265",
+      "bytes": 6362
+    },
+    {
+      "file": "zmzg_com_button_wh.webp",
+      "sha256": "8492747ab9a34dede52cb4a8324c35f603ec2636e0f137fb3375c0c7f299257b",
+      "bytes": 2916
+    },
+    {
+      "file": "zmzg_js_icon8.webp",
+      "sha256": "c7c00bb5cfc389b19344976720f421ca4354d35e7ac84be7060bac91c9deb7d3",
+      "bytes": 7142
+    },
+    {
+      "file": "zmzg_zjm_zdsc_bg.webp",
+      "sha256": "026a5ef7f680e9c75c32a73818651aaeeec80b65fcfdf5a014b1cfbd73ee3436",
+      "bytes": 7520
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_ty.webp",
+      "sha256": "a26155bdd1dc080d27a0e19cddd59d3af212202f0e2e6c0be09a482cfdf22238",
+      "bytes": 6864
+    },
+    {
+      "file": "zmzg_zjm_button_lt.webp",
+      "sha256": "359187a9faae7d985f0dc777bd3bee04d570bf8f3885d9dfd09e5ad63c2b8f7f",
+      "bytes": 1934
+    },
+    {
+      "file": "zmzg_zjm_box_4.webp",
+      "sha256": "ce2db81ba3efca1cb1e04de656cc33d1bfa4141267029abedf22f66cd428a8d6",
+      "bytes": 9910
+    },
+    {
+      "file": "zmzg_tx_jyt_bg.webp",
+      "sha256": "cfa9efe08a6a4575f77cc00f08f5176361fb8b6c0fa18241fd21c2ff3f6e602e",
+      "bytes": 326
+    },
+    {
+      "file": "zmzg_zjm_icon_hx.webp",
+      "sha256": "e66d874137a353ac6d059ca2b6d4d2db91d59007b5231fb9b3f440f1936236d3",
+      "bytes": 4468
+    },
+    {
+      "file": "zmzg_js_icon17.webp",
+      "sha256": "bc82b6830e26cec659f78e307ba6576ca372d2f9ec5addeb88e0f7b1dc5ddb4e",
+      "bytes": 7728
+    },
+    {
+      "file": "zmzg_zjm_icon_taojinzhilv.webp",
+      "sha256": "a0683ca78bda3fd1b694330918e9f560bcca53455e815481b033a235203e6fd0",
+      "bytes": 6194
+    },
+    {
+      "file": "zmzg_zjm_icon_longnianhuodong.webp",
+      "sha256": "23a3a4a2b736e630ea15a83f188b3ca9c390426c65836a18cb4964401c14d1ec",
+      "bytes": 6336
+    },
+    {
+      "file": "zmzg_zjm_button_pu1.webp",
+      "sha256": "c954e5576796c40b16f45b0ff26c7ff88402b13111bb6e04a99ec21c0b65269a",
+      "bytes": 1420
+    },
+    {
+      "file": "zmzg_js_icon20.webp",
+      "sha256": "6a8efa6c193fef319ace371ec02ce846f034dfc08787d2429aa089f8b69a4116",
+      "bytes": 5894
+    },
+    {
+      "file": "zmzg_com_button_th.webp",
+      "sha256": "85e838ad219e29d3a1fed38ec6166c1c29185f8b737eff041d1ccd190d6b89e6",
+      "bytes": 1270
+    },
+    {
+      "file": "zmzg_zjm_icon_douyinkefu.webp",
+      "sha256": "f5c43d7d45f6fba150a5dc22731d49e69372a5d6f6aab12d603e66b22f022b40",
+      "bytes": 808
+    },
+    {
+      "file": "zmzg_zjm_icon_yk.webp",
+      "sha256": "4cb8eb36e25149a43dc1feeaf236fa4a0634dff3581424a28ab3fe6a86e8bb9f",
+      "bytes": 4794
+    },
+    {
+      "file": "zmzg_tx_jyt_1.webp",
+      "sha256": "3e4abd1a88872347b92f12115bb7eb64e7f4d00c4d4065fef9a7d533af89155f",
+      "bytes": 86
+    },
+    {
+      "file": "zmzg_zjm_icon_tehui.webp",
+      "sha256": "13726b49bda260788b88235dd2d743c647a7ee4880861e9cac34010ccb886663",
+      "bytes": 6940
+    },
+    {
+      "file": "zmzg_zjm_button_bj.webp",
+      "sha256": "d6d69f1dff4ca65a01e02f38ad4854cf72e608efc269ba13d3b8f0c7905ac737",
+      "bytes": 8104
+    },
+    {
+      "file": "zmzg_zjm_box_dr1.webp",
+      "sha256": "186c9d14e8d6aa00f6acd0ab48bcc5a02b93dc05a17ddb0a1040044d41d72a4e",
+      "bytes": 20980
+    },
+    {
+      "file": "zmzg_tx_jyt.webp",
+      "sha256": "204fa6eb0d9639a41e12e519c8a51343d412de9ea5801164156efea2bbfe0dd7",
+      "bytes": 1618
+    },
+    {
+      "file": "zmzg_zjm_btn_dr.webp",
+      "sha256": "8f4a851c26a916add8c050011f63d917189f1b8baa676d5fb7e0600f34107f34",
+      "bytes": 2638
+    },
+    {
+      "file": "zmzg_zjm_button_jy1.webp",
+      "sha256": "d8c8f2f3b2967243094f60f1c56f62587daafe9b6d5d0c8a9f9c7bb7610a6d21",
+      "bytes": 1752
+    },
+    {
+      "file": "zmzg_zjm_icon_morihuodong.webp",
+      "sha256": "432daa63f2efa835bce449a6edab6d53645b89adab7dac4d16e4f5346cbf9dbf",
+      "bytes": 5304
+    },
+    {
+      "file": "zmzg_zjm_button_yxquan.webp",
+      "sha256": "4d79a439db077e3ef1838dacc66dd004ff38e83f1f25ddddc30cf16df7a13a34",
+      "bytes": 2098
+    },
+    {
+      "file": "zmzg_zjm_button_ico_sd.webp",
+      "sha256": "e358f7a4ca8df6a93a949027b90ef9ac8668200da49852049c063a83af0db04b",
+      "bytes": 5100
+    },
+    {
+      "file": "zmzg_zjm_icon_xingyunzhuanpan.webp",
+      "sha256": "46571f2114df5355620e040a7d581318efab1633e21ef75ee1f826649868ebb2",
+      "bytes": 5844
+    },
+    {
+      "file": "zmzg_zjm_icon_zhoumolibao01.webp",
+      "sha256": "f39fdb9531843ba34ab7863faaf48fc04af4741bf12c8e9a7fa47af91df36758",
+      "bytes": 5910
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_dian.webp",
+      "sha256": "fe288addbcd967acb044ef37eb4a6c56cf3ce23e0fcb0e4c30a35b67f28927f4",
+      "bytes": 7024
+    },
+    {
+      "file": "zmzg_js_icon5.webp",
+      "sha256": "6f941bb58c476a73c95f80930d91633203614512937a0f40028919523d6fc602",
+      "bytes": 6426
+    },
+    {
+      "file": "zmzg_tx_box_1.webp",
+      "sha256": "165c7f954b20c23ebe33a231a7761de4ae06bdeb132a3f85f02bcdf2122408fd",
+      "bytes": 1068
+    },
+    {
+      "file": "zmzg_zjm_icon_sc.webp",
+      "sha256": "adb2472152ba4190c0e2ebd4e7d1d90bae43fe9f1f93697aad69e52ee92102e6",
+      "bytes": 4176
+    },
+    {
+      "file": "zmzg_wfyg_button_hy.webp",
+      "sha256": "3957b73287d91ca1b6838e30e04af22a85fad5eae1f196d261e44893d63178b3",
+      "bytes": 2552
+    },
+    {
+      "file": "zmzg_icon_dj_bx.webp",
+      "sha256": "bc83b423850727bf3fa71053efd1dbfca77846618bd71d06d209003df9d13db6",
+      "bytes": 4934
+    },
+    {
+      "file": "zmzg_zjm_icon_duanyangzhixia.webp",
+      "sha256": "105ebed909e1fbed2ea0f13b1c8811fcd12de2adf277cdee9b85a6510c8e3495",
+      "bytes": 5968
+    },
+    {
+      "file": "zjm_js_guangxiao.webp",
+      "sha256": "7d4f938a04838a3e3acc34c56dd6cc6761d8b124aa3b7a224b67f17da0a8d889",
+      "bytes": 22160
+    },
+    {
+      "file": "zmzg_js_icon3.webp",
+      "sha256": "e8ae05f61a7076b9ff91db0307eb5a843f6cd7d7b522263057438b26fa9b4263",
+      "bytes": 7118
+    },
+    {
+      "file": "zmzg_js_icon7.webp",
+      "sha256": "abf96ecf28c47580bb08d8297e272de531329be4f639fe48f73138cad460bfd4",
+      "bytes": 7088
+    },
+    {
+      "file": "zmzg_js_icon15.webp",
+      "sha256": "a0c0263cb9d1b23f0f96fb249f238eeacaa7d543b7989d7ec7095bb2c0ab774a",
+      "bytes": 8276
+    },
+    {
+      "file": "zmzg_js_icon9.webp",
+      "sha256": "466a17faa9d6e6594ac4a804c6932dbe5cdef3a80cf34703b8758521ce5c628b",
+      "bytes": 6782
+    },
+    {
+      "file": "zmzg_zjm_icon_huodong.webp",
+      "sha256": "19760e8e6b3f9c6e5db5f44c6e509432ff98a1b11f0671225efb9377d6e8b6eb",
+      "bytes": 5676
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_bing.webp",
+      "sha256": "31b2c4d2310c6b80f7aefa2f34b4951504b96bb0ca394a217b266a15b7341189",
+      "bytes": 5300
+    },
+    {
+      "file": "zmzg_zjm_button_ico_hx.webp",
+      "sha256": "a48a1ca0a69ae4c56aa7dcfe040771375a246872375bbf768c84c4da1ff5ba26",
+      "bytes": 4820
+    },
+    {
+      "file": "zmzg_js_icon11.webp",
+      "sha256": "1a2a16145fe85e625d1a22603b69a868427a796dbef083d9488f769d9aaa068e",
+      "bytes": 6876
+    },
+    {
+      "file": "zmzg_zjm_button_sjbg.webp",
+      "sha256": "5b698c9cac6d2360a0af3622db6000186aae5861099e9313f461342122585001",
+      "bytes": 1588
+    },
+    {
+      "file": "zmzg_zjm_icon_manghebaoxiang.webp",
+      "sha256": "04cfa718e5a54e68e30d6db9dbed2ce7e569983c279b1f4bf7a0cbb5b19fcd11",
+      "bytes": 5318
+    },
+    {
+      "file": "icon_daoju_baoxiang_3.webp",
+      "sha256": "6473d2f4da5ea3f92790d153a524c799d94b8efb623bc793297996657dbe4dac",
+      "bytes": 4402
+    },
+    {
+      "file": "zmzg_zjm_icon_xianfengbaozang.webp",
+      "sha256": "0b9a38abb8b3ed88602e169ed019bc9ee7a8bfac36d5114b5e2de60661bf4b2a",
+      "bytes": 7494
+    },
+    {
+      "file": "zmzg_icon_dj_tili.webp",
+      "sha256": "c202ebd13c757a2d6553073e8c7f362598ea17e5c577fc8098864ea274c797b7",
+      "bytes": 1920
+    },
+    {
+      "file": "zmzg_zjm_icon_fenxiangshipin.webp",
+      "sha256": "a506e1c56d8e043ed34b54b7de2c5637b816819459c1bc664664452efdbb37ef",
+      "bytes": 858
+    },
+    {
+      "file": "zmzg_zjm_button_ico_bl2.webp",
+      "sha256": "5b9fcc1b11029cee6813dc274edfc336ea554a703045e7bf648996ff76105a81",
+      "bytes": 11300
+    },
+    {
+      "file": "zmzg_zjm_icon_yongpangaofeng.webp",
+      "sha256": "fc25347d79b34ba16a8d1e6788544ab2b3e0ae2c215684a601fbfc7d7a59cf0a",
+      "bytes": 5804
+    },
+    {
+      "file": "zmzg_tx_box_2.webp",
+      "sha256": "437c14f9c7fb34344a32c419c9a804fb39b2874230ffb2ea66d83298cf6f7557",
+      "bytes": 2252
+    },
+    {
+      "file": "icon_daoju_baoxiang_4.webp",
+      "sha256": "c3156a4f448012b5c75fb20593b0c6e39e25b519316f6e440b87facadb0c75d9",
+      "bytes": 4798
+    },
+    {
+      "file": "zmzg_dryq_box.webp",
+      "sha256": "c0493ad2d031737c3263760ea55bddb3df6672e4cca3c7f2fc671e7b72fe25fc",
+      "bytes": 26054
+    },
+    {
+      "file": "zmzg_zjm_zdsc_dj.webp",
+      "sha256": "b33a234c584870fa4de27e7f38fe6e2160f79597094ad65cb2a7dca24c0771ec",
+      "bytes": 266
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_nengliang.webp",
+      "sha256": "28ef615e5857ffbfaf84734ca388d27fb503c3fed536c0bdce05e0b832327d45",
+      "bytes": 8396
+    },
+    {
+      "file": "zmzg_zjm_icon_youjiangrukou.webp",
+      "sha256": "01be19f93791c490fe7b2cea39afe70db78225e3dbdb6e0907dfa7dedae522ad",
+      "bytes": 686
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_nengliang.webp",
+      "sha256": "8c82d3eb13b7b08e9d355e236e1d7085ff1644667e4fb8e46dbb591357f3a9e6",
+      "bytes": 7130
+    },
+    {
+      "file": "zmzg_zjm_icon_zhu.webp",
+      "sha256": "5975460e12895b5403f8606d2f7798272c6a2878724265de487b14b350b6c519",
+      "bytes": 5664
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_dian.webp",
+      "sha256": "a241aebf770fdeb99a9377afbad6614007c6fa429d46dee36c3f8885d3abe819",
+      "bytes": 5364
+    },
+    {
+      "file": "zmzg_zjm_button_ico_zb2.webp",
+      "sha256": "b2b50fd8b145828b026c2b6b383a09833688e4aa148356fbc832dd7480aeeed8",
+      "bytes": 9480
+    },
+    {
+      "file": "zmzg_js_icon10.webp",
+      "sha256": "1c86f1d22b1c7ce58dde13223c8047543846e87103296e811e10ae91c5273b75",
+      "bytes": 6682
+    },
+    {
+      "file": "zmzg_zjm_dj.webp",
+      "sha256": "c10c20532af5be1c3bbe72d976c36749c9759fa58adfb000b15a9d25a69e73a5",
+      "bytes": 1286
+    },
+    {
+      "file": "zmzg_zjm_button_ico_sd2.webp",
+      "sha256": "ffbfcf7acb474e33ff2dea9ed16cb99856168bcfcde3829a9a37f1348f0e075a",
+      "bytes": 13776
+    },
+    {
+      "file": "zmzg_zjm_jdt_1.webp",
+      "sha256": "fb59c830d7d6d4353995a3b16253047c79c8ac956cd54df6feab9d1e4bf55a85",
+      "bytes": 2826
+    },
+    {
+      "file": "zmzg_js_icon16.webp",
+      "sha256": "0477472849a6d2ad7f89e36c12653ff44451905445a90342c2d2d48af5c9716e",
+      "bytes": 7782
+    },
+    {
+      "file": "zmzg_zjm_button_globalgroup.webp",
+      "sha256": "d39081aaa030356b7c6b2245a52c131c6a4cdfd360c8235047129a5f6db1b5cc",
+      "bytes": 826
+    },
+    {
+      "file": "zmzg_tx_bg.webp",
+      "sha256": "678539dd2312e94dc64e1a660a55c6be906d75a6c89fefcdc39e70e2f51674b3",
+      "bytes": 3338
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_feng.webp",
+      "sha256": "e5deeec9f2c6ca0620f5018fe5959df29d069729eb3fce43ba58abababac9683",
+      "bytes": 5442
+    },
+    {
+      "file": "zmzg_zjm_button_xz.webp",
+      "sha256": "e2ba0d4b77f1e037c3c6e642388571e914fa510ae6a5d95af72113fb9866fba4",
+      "bytes": 2408
+    },
+    {
+      "file": "zmzg_zjm_icon_xinhuo.webp",
+      "sha256": "e8fd224a60a9fd619d91ce6e1a04430fbfeca4878f6478532cfc1c19d96a48bf",
+      "bytes": 6730
+    },
+    {
+      "file": "zmzg_icon_dj_qian.webp",
+      "sha256": "e6c702ccc97534c7cc44a611e8fddd2a45e0b09c42f9f9bd90b86ee6e78affef",
+      "bytes": 2298
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_dian.webp",
+      "sha256": "69e7b51946794872c294c1f62717433925edb52ed8c5947355ae6c03c1711cac",
+      "bytes": 8304
+    },
+    {
+      "file": "zmzg_zjm_box_2.webp",
+      "sha256": "1e32a7d3a7364d0c9fad4e12c6beb3ca0bab9e9169fb77e49e4deb191d8ad6d5",
+      "bytes": 1280
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_huo.webp",
+      "sha256": "39921b911e698135ca7ed9c4e1c2b4ccd2494d51c400269cba30357f0759c556",
+      "bytes": 5156
+    },
+    {
+      "file": "zmzg_zjm_button_jy2.webp",
+      "sha256": "c929c147224b282900fbf7e4f39311e76d99a5c17381ef82765fe472eb995f37",
+      "bytes": 3854
+    },
+    {
+      "file": "zmzg_zjm_button_rk_bg.webp",
+      "sha256": "db9ed8454aa7374305a881d53539861814bae5cf4ea10b2c3110a85cfa5b4e93",
+      "bytes": 37646
+    },
+    {
+      "file": "zmzg_zjm_icon_zhoumolibao.webp",
+      "sha256": "97f838d59c3f02f1e10d65323a42956c8d43848c98f02a712b4a1ab17b8f6d00",
+      "bytes": 5386
+    },
+    {
+      "file": "zmzg_zjm_zdsc_tiao.webp",
+      "sha256": "b0d9fb957469087b6031ef93d796f617dad6f171efd3fc67c1f81baa05430b37",
+      "bytes": 114
+    },
+    {
+      "file": "zmzg_zjm_icon_qiri.webp",
+      "sha256": "10946ba8e4093a7bbe3b1f7fcd3e9a0ff56b32745b2ba59a3e7ca2081ef99088",
+      "bytes": 5028
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_huo.webp",
+      "sha256": "7b2c8f05bb016ee700a110ea5dc49c40062854ffd2f9e4a2ad0d62ed250b778b",
+      "bytes": 8020
+    },
+    {
+      "file": "zmzg_zjm_icon_gonggao.webp",
+      "sha256": "e5a32357db7da2de86dd6a9a86462a3803fa2549a347e0350ed0d75faab20247",
+      "bytes": 490
+    },
+    {
+      "file": "zmzg_zjm_icon_tianjiazhuomian.webp",
+      "sha256": "dace6e03635c547c538931af56955970fd457ae15187dad7b253a02c09c0c80e",
+      "bytes": 656
+    },
+    {
+      "file": "zmzg_js_icon21.webp",
+      "sha256": "a7e2b0d8861ad9e39377f22ee6d81e3b2f0ceed582db8f2802b8700f50c75b5b",
+      "bytes": 7798
+    },
+    {
+      "file": "zmzg_zjm_button_xlz01.webp",
+      "sha256": "fbbfa8405dc7e94929332560c64840b818e6347cd20f4a8f79461650bd424d38",
+      "bytes": 3834
+    },
+    {
+      "file": "zmzg_zjm_icon_xunxingfangyue.webp",
+      "sha256": "dbb2507810565b4070fca89e96ea021e283a3144982eb0e65b574df50afcdfd1",
+      "bytes": 7092
+    },
+    {
+      "file": "zmzg_zjm_button_sj.webp",
+      "sha256": "f2b7656a6c3594a518fdfcae571068b8e13d5d41b96954fb2269ca0bdc3c47eb",
+      "bytes": 106
+    },
+    {
+      "file": "zmzg_zjm_button_pu2.webp",
+      "sha256": "77f6225b41808cfc7d2c7bbb4dd047fc9c98975927a92289427e2d956f27a7a3",
+      "bytes": 3998
+    },
+    {
+      "file": "zmzg_zjm_button_ico_hx2.webp",
+      "sha256": "eaf23fda8bc052efd7afe3fbc228b0ba85dea0892c27b722eea7a4664cbc638a",
+      "bytes": 13868
+    },
+    {
+      "file": "zmzg_zjm_button_ico_bl.webp",
+      "sha256": "99bbc2bcbe83d0e8d9235a314619299efb1395614784af2f8479bc0c41871ee3",
+      "bytes": 4676
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_huo.webp",
+      "sha256": "f782895cd3df322c91a5b117dd7d6e1028b03d36b9e8760dcb9efad38fb63f03",
+      "bytes": 6898
+    },
+    {
+      "file": "zmzg_daoju_cwbx_4_wuli.webp",
+      "sha256": "a8451efe623b082261e47979dc28ad7be20dcaa46f61a53ea7670e70cb1f13d2",
+      "bytes": 5130
+    },
+    {
+      "file": "zmzg_zjm_icon_haoyou.webp",
+      "sha256": "19f54ff085d7df634a19d1c9ab5f039527e763118e851889934b3174c2b6218c",
+      "bytes": 610
+    },
+    {
+      "file": "zmzg_zjm_button_rw.webp",
+      "sha256": "bdd1b3ed6bd901d9d9d59d080de9918e5aa26bd203b15669b6c855e09658b4cb",
+      "bytes": 1642
+    },
+    {
+      "file": "zmzg_js_icon12.webp",
+      "sha256": "7c528db2d39a5bea035cf985b4582a867000f8a3c7bd8004bd70009bd786ac68",
+      "bytes": 7484
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_bing.webp",
+      "sha256": "7a359ba8db5608b54bc574a4d020ddf04fba967d29917473f412d544e5a0f08c",
+      "bytes": 7088
+    },
+    {
+      "file": "icon_daoju_baoxiang_6.webp",
+      "sha256": "2e997e6afed130da18081e9d7ab3d1e0e84f8ff34a4afcb90eedea6c712f3b15",
+      "bytes": 4770
+    },
+    {
+      "file": "zmzg_zjm_button_ico_js.webp",
+      "sha256": "b96757703eb856d082d63cd3c44d4f33d3f682e23c6c4180c8ad664ff49bb4bf",
+      "bytes": 6720
+    },
+    {
+      "file": "zmzg_zjm_button_ico_zd.webp",
+      "sha256": "76d002fd8fdb6eed084a2643afa9eb2cc86e826b256dce8d295215fb340e8937",
+      "bytes": 5248
+    },
+    {
+      "file": "zmzg_zjm_button_lfli.webp",
+      "sha256": "e062e65e16066e147d757c6770d49668e59ae7c48e389cfc071d519690f90f25",
+      "bytes": 2742
+    },
+    {
+      "file": "icon_daoju_baoxiang_2.webp",
+      "sha256": "88f6b02b118f18560eeb452663f9cef8e804dd3d1fb8dbdcf8e1be2db68a2e77",
+      "bytes": 4748
+    },
+    {
+      "file": "zmzg_zjm_icon_xianshizhigou.webp",
+      "sha256": "1d347674bc8d5f271db4f20b8e2036f10967bf887d5c33606c0da262ad8bdf1f",
+      "bytes": 5586
+    },
+    {
+      "file": "zmzg_js_icon13.webp",
+      "sha256": "6e7a922a8463a5ae4499fa6ad4384fe643ec5b38459498b31fe39bb27fbf45b4",
+      "bytes": 7660
+    },
+    {
+      "file": "zmzg_js_icon18.webp",
+      "sha256": "80cb8c0ea20f72da3143eb6407d382dc961cbe7134408db12e5dd6f693f009f6",
+      "bytes": 6902
+    },
+    {
+      "file": "zmzg_zjm_icon_bihailiangxia.webp",
+      "sha256": "d146d0619db108fc431e36a04395863966d8e58cf85cf0f3906c78039929fa05",
+      "bytes": 6528
+    },
+    {
+      "file": "zmzg_zjm_icon_huaweiluntan.webp",
+      "sha256": "b15e7d6283d32a1dfaa1b90f716d70b6f80fbb93326d428788ad8019d257d4f0",
+      "bytes": 598
+    },
+    {
+      "file": "zmzg_zjm_zdsc_xt.webp",
+      "sha256": "f75189e41d378b52c3a83ad2ad96c461df3dbba20eeb8b476e9b757acf82a722",
+      "bytes": 204
+    },
+    {
+      "file": "zmzg_js_icon6.webp",
+      "sha256": "ccf3cb705b1b9eb8906058c3816a88e219f816df4177146f776b1ffa7cd64ad8",
+      "bytes": 7954
+    },
+    {
+      "file": "zmzg_zjm_jdt_0.webp",
+      "sha256": "d6a0d2c6e56677aca3c1ada51d81a62e92a4d777806fed42ed5911756b18806f",
+      "bytes": 938
+    },
+    {
+      "file": "zmzg_zjm_button_app.webp",
+      "sha256": "e36f6a1b23d06085526adfca8112cfda42eda18db3b58d31e9882542af9d6906",
+      "bytes": 752
+    },
+    {
+      "file": "zmzg_zjm_box_dr2.webp",
+      "sha256": "5eb2aa9ba503cb72bf4b416efa01da0f929e1ea35b4e9146068ddcafb213ac4f",
+      "bytes": 21256
+    },
+    {
+      "file": "zmzg_zjm_icon_beibao.webp",
+      "sha256": "80f52fcd7d969d8c9cacc02e53edb43e48630eb4a1a563e8424e9ca612efdb85",
+      "bytes": 4306
+    },
+    {
+      "file": "zmzg_zjm_icon_chaojivip.webp",
+      "sha256": "caa23a3d0aeacdde0a8bb7df63cdf047ba49cf520714b3fbf6278e94930725c5",
+      "bytes": 960
+    },
+    {
+      "file": "zmzg_zjm_tiao.webp",
+      "sha256": "de33f0d45a9082370ae5a856b9629740d7504b365b916253504cf04ea0ca8811",
+      "bytes": 4336
+    },
+    {
+      "file": "zmzg_icon_dj_zuangshi.webp",
+      "sha256": "247636b18fa12c582663f5b7ab25d931872d039e0a3ce723db728737eb465e22",
+      "bytes": 2216
+    },
+    {
+      "file": "zmzg_zjm_button_ico_jt.webp",
+      "sha256": "800c7ad2c5e2f1f958ebf8654ca6e48b3dc037c2c16d0ea12020fb52ad012cfe",
+      "bytes": 5540
+    },
+    {
+      "file": "zmzg_zjm_button_xlz.webp",
+      "sha256": "c03ab13edd4c48a2e3f3409acee9e9ebaca51f93eea2bdd6958e23f49f925ec4",
+      "bytes": 4668
+    },
+    {
+      "file": "zmzg_zjm_box_6.webp",
+      "sha256": "2939772c95b1b01596a2ca2fa5b7a199cadcab376a916fb10ce5dcaf8a1bf476",
+      "bytes": 9174
+    },
+    {
+      "file": "zmzg_daoju_cwbx_6_ty.webp",
+      "sha256": "73588422a066b77d6504e7aa852df0cd36d2355475c30bb207e9414c3cf471e2",
+      "bytes": 8126
+    },
+    {
+      "file": "zmzg_zjm_button_ico_jd.webp",
+      "sha256": "d3fb6968ad6850cf3060d4e636d48be4c7454d184b2357ce4ad5874dd243882f",
+      "bytes": 6722
+    },
+    {
+      "file": "zmzg_zjm_icon_tachun.webp",
+      "sha256": "641c719cf6dd89fb2400d4dc7bf49fe0c163b97e3471c56f027bf8cf7761c0ef",
+      "bytes": 5796
+    },
+    {
+      "file": "icon_daoju_baoxiang_1.webp",
+      "sha256": "e98da30152b51baf4a2f5ef64fa77cfb871186e8d7a911fee3de7e2234902b1f",
+      "bytes": 4212
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_feng.webp",
+      "sha256": "0315188a8a38479e82cf32d9eb7028b6443b96e4119339dc7e8dc03884509579",
+      "bytes": 7178
+    },
+    {
+      "file": "zmzg_zjm_icon_jijialaixi.webp",
+      "sha256": "0f1cfde4c24152d236def30cbf31baa81f72c6a854b767f848edce2e240c7c1b",
+      "bytes": 5272
+    },
+    {
+      "file": "zmzg_zjm_button_wenjuan.webp",
+      "sha256": "04cf2724d83ef795edb299d28902177a56fdd3978319344624819f0411f23aff",
+      "bytes": 2064
+    },
+    {
+      "file": "zmzg_zjm_icon_paihang.webp",
+      "sha256": "c68f038c96aa1b90328d40a562c7fad77c30bbeeb0da89a2ff5d7037efad4198",
+      "bytes": 358
+    },
+    {
+      "file": "icon_daoju_baoxiang_5.webp",
+      "sha256": "80bca0c1fe784d5519ed7ed524f297b3eb8e04f40dbd4a704ac8ca0e71f99a98",
+      "bytes": 4068
+    },
+    {
+      "file": "zmzg_zjm_button_hy.webp",
+      "sha256": "8af68fbaec48b2f333f4e066af70e3a2a69b637f79324b2e552a5c4b39cc205c",
+      "bytes": 2422
+    },
+    {
+      "file": "zmzg_js_icon14.webp",
+      "sha256": "2ebe0db65f0bb3ec3eff9b6c09fb917b883e927191acff6f0771588566319285",
+      "bytes": 7416
+    },
+    {
+      "file": "zmzg_zjm_icon_tongxingzheng.webp",
+      "sha256": "6e922eb24378222f820328bcffd150fe74c8741cbb000cfcc140c480652aa660",
+      "bytes": 4836
+    },
+    {
+      "file": "zmzg_js_icon2.webp",
+      "sha256": "1b204f6de82fe72880b23779d8056e968766266227c71907702099fcbc41daa1",
+      "bytes": 7444
+    },
+    {
+      "file": "zmzg_zjm_icon_she.webp",
+      "sha256": "c3ab25996ad7bc7cc115e2e4d82f78d6a0dfabdebbac41574bffb7e24ef1c104",
+      "bytes": 5900
+    },
+    {
+      "file": "zmzg_zjm_button_ico_zd2.webp",
+      "sha256": "d41d3fe26aba323ce66973f6b15146cac20f507c6a0419922cca0114253ec366",
+      "bytes": 13934
+    },
+    {
+      "file": "zmzg_zjm_box_qr.webp",
+      "sha256": "5d88074ee62b4929c0ac9e4a85e8f400bee5758e1bb3594b2a3aef86e6fc390c",
+      "bytes": 4380
+    },
+    {
+      "file": "zmzg_zjm_icon_xsfl.webp",
+      "sha256": "e6e7deb741c9dc14179a29690a9961c9a2c88f192ea2e70eee35b340f80ab478",
+      "bytes": 8696
+    },
+    {
+      "file": "zmzg_zjm_box_5.webp",
+      "sha256": "845f259aab5c1cbdb652ef40da68ef6def8e63a9fa2c38d0ea904c167e8fe9ec",
+      "bytes": 2946
+    },
+    {
+      "file": "zmzg_zjm_icon_hd.webp",
+      "sha256": "e097346adf445cacd17c2cdb3c64fc24d8f4c819fbb79234777f590225430dc0",
+      "bytes": 4086
+    },
+    {
+      "file": "zmzg_js_icon19.webp",
+      "sha256": "9247af3777673aec9420075490d9d893630b51664eeb0dc90314268f40eba0a7",
+      "bytes": 5888
+    },
+    {
+      "file": "zmzg_zjm_icon_shouchong.webp",
+      "sha256": "48f7415dea21f6640123f9555c27e540dd7bbcd4929edc495f253cc6cfd5ed11",
+      "bytes": 7000
+    },
+    {
+      "file": "zmzg_zjm_button_ico_zb.webp",
+      "sha256": "a25c1ceb49aa7a1b9b9f015c95c8c9c99e532a5645aa3bfa1c109bb9865d3d3e",
+      "bytes": 4872
+    },
+    {
+      "file": "zmzg_zjm_icon_guanyingguanggao.webp",
+      "sha256": "63410be5c9b346985e60bbb79129a8446348caa833d06433987d48015414a36f",
+      "bytes": 5352
+    },
+    {
+      "file": "zmzg_daoju_cwbx_5_wuli.webp",
+      "sha256": "912e7d20a2bc9cc5e0a2efdf89a33623938aa848d9238b74de7579d870361a4b",
+      "bytes": 6774
+    },
+    {
+      "file": "zmzg_zjm_button_ksyx.webp",
+      "sha256": "736d26dbb1d7ed4790fedfee1c2a6f4029217a8fa79ce9e73ceaf9ab7c07ae06",
+      "bytes": 19350
+    },
+    {
+      "file": "player-texture.webp",
+      "sha256": "142bd8a3fda897764db6577fa61eb992c32ae43bb1c893371328b00135fc8c58",
+      "bytes": 41552
+    },
+    {
+      "file": "player-skeleton.json",
+      "sha256": "e7bf1051b3e8bc0a96652257973ca81096b94fe28608549dfd43ee6fabc90ddd",
+      "bytes": 50166
+    },
+    {
+      "file": "player-atlas.json",
+      "sha256": "f484ab96e623c2b2e1fb6f3f1d27dc57141fe3171f013d7b0c7c9df22231bbfe",
+      "bytes": 2922
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_1.webp",
+      "sha256": "ce2e7dcb188fa20822b922e79f0f643a46debb3a628df83c619922e576229205",
+      "bytes": 5552,
+      "dimensions": [
+        68,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_6.webp",
+      "sha256": "c5d6c3c665fe87c13a28580a54f1947c20a341c07856bcad6ba83e97ef9ba6c5",
+      "bytes": 5852,
+      "dimensions": [
+        85,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_6.webp",
+      "sha256": "5fa0c917a94a6fd206efc7aec3e880a00eb5aa6169e867715f6f7c822e05cdcf",
+      "bytes": 5924,
+      "dimensions": [
+        91,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_7.webp",
+      "sha256": "6bc02227dc3cc387d96467210d42f45f0587e4346a7673b8770940d31d6013c2",
+      "bytes": 5652,
+      "dimensions": [
+        91,
+        81
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_5.webp",
+      "sha256": "81197f923b18a182ebb1c5e2d2eb49c2d1459aee801c0799d8d1966f3a326c6b",
+      "bytes": 5784,
+      "dimensions": [
+        77,
+        90
+      ]
+    },
+    {
+      "file": "show_zhuangbei_hubi.webp",
+      "sha256": "06aa87bb6ca6ddd5bfb32cb40236d2034977182295b1b9b1bd319fa10f2973fc",
+      "bytes": 4770,
+      "dimensions": [
+        96,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_3.webp",
+      "sha256": "827a0b0de89de0fc9675cf8b15cc1fdfa74d3f6fa7a960ab65d9668e939d23b4",
+      "bytes": 5618,
+      "dimensions": [
+        76,
+        83
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_2.webp",
+      "sha256": "e7bcc898c48c54e026b0c415d5ee25358e6838b09738476ad9fb05d80074220d",
+      "bytes": 5028,
+      "dimensions": [
+        86,
+        83
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_lv.webp",
+      "sha256": "25c42ac8c540cc0e36dbda509095b69068f0ff991808dddc5050d9371c4036fc",
+      "bytes": 4782,
+      "dimensions": [
+        83,
+        82
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_lan.webp",
+      "sha256": "c4a3ac0f9ba2a81c39d0bb65747f6515097c5eeed3d383fd89bd57fa417c20ed",
+      "bytes": 4988,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_8.webp",
+      "sha256": "8a16381b24d4421c2c4b9119a9879d8c16f813d228c4929c74c50ecdce8274dc",
+      "bytes": 6142,
+      "dimensions": [
+        85,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_8.webp",
+      "sha256": "db9a74166c13385bad90031187dcf7941706a7c79915df0967ce1167dc947199",
+      "bytes": 6078,
+      "dimensions": [
+        81,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_9.webp",
+      "sha256": "7dd916cde69610ba8b5381e59c717f2f8a8745ea050f4b50fbaed4c42eed151d",
+      "bytes": 6568,
+      "dimensions": [
+        84,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_3.webp",
+      "sha256": "7ad5ca524564d44ba9bfba69308a772d49ec97441a2d5875e83bf2a63cc67ac3",
+      "bytes": 5776,
+      "dimensions": [
+        94,
+        81
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_7.webp",
+      "sha256": "c509d70bda55e8280191af5e8004114c3ac72c5e557ce8c70cbad3208c5d5f8b",
+      "bytes": 6354,
+      "dimensions": [
+        75,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_5.webp",
+      "sha256": "240949dfd3ce12b95408fddd6dd364ab19be43fd5b61114030898d8ed2881dad",
+      "bytes": 5976,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_9.webp",
+      "sha256": "089008351660ebbfe7c70fa467a47416031e1dc8b78c4d908d8e1fa8c87fc446",
+      "bytes": 6508,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_7.webp",
+      "sha256": "af02e72520f900664973effdd5b3a5faa9f976dea76d638e48ccfc6385e6dad6",
+      "bytes": 5880,
+      "dimensions": [
+        80,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_3.webp",
+      "sha256": "01e044021432bf0f8b9530615b87556f47f826810318dafec7c053e9f55ee728",
+      "bytes": 5750,
+      "dimensions": [
+        87,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_9.webp",
+      "sha256": "00e1960956df5f3f86cb95928c1435503604ce0e3008e8d7d7b036fbcbdafbca",
+      "bytes": 6834,
+      "dimensions": [
+        87,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_6.webp",
+      "sha256": "301bf841231c9e757a5a72f73da22f79c076e3ad08ff7deaaf0e4bbc04615e3d",
+      "bytes": 6134,
+      "dimensions": [
+        91,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_10.webp",
+      "sha256": "abbe298006363ac8020d34aae45b27570294ba5321c81376333a87a88ff4727f",
+      "bytes": 6540,
+      "dimensions": [
+        81,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_1.webp",
+      "sha256": "438eb072d5a14831bd24f008b6c2ec2388fdfb2a91cdc3f92e24b7656ece5a47",
+      "bytes": 6672,
+      "dimensions": [
+        95,
+        93
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_1.webp",
+      "sha256": "c968812a9d988902ae9e165f5334afe52fe9d7989a73e6c5d059c19fd362fe6a",
+      "bytes": 6150,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_9.webp",
+      "sha256": "bc82928721904ad55a4a2f70a9032db794750c0f82bed6dec9b7e2be49835073",
+      "bytes": 6382,
+      "dimensions": [
+        83,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_10.webp",
+      "sha256": "33eeaf5bc336f6a099daed3078c1a8e53bae0c5e58efc356d176e50220effbff",
+      "bytes": 6598,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_jin.webp",
+      "sha256": "9c1150e51fa0af6f0908bd2b314970340eb3ce7257c7431acec37bbb17d1878d",
+      "bytes": 5978,
+      "dimensions": [
+        82,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_5.webp",
+      "sha256": "cde24454af64aa9364f4d10c11be58452d7759896b2ec966e0ed88541b5bbb4e",
+      "bytes": 6558,
+      "dimensions": [
+        85,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_7.webp",
+      "sha256": "2309b41b740abf88d9c65a7f57fc5d6cc21a723082c1fd6d62895999fed0caf5",
+      "bytes": 6762,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_4.webp",
+      "sha256": "cff16e7f00b74f78722a3c079c42bbe1017c4c90ff58766356b3d9edba0abc7d",
+      "bytes": 6142,
+      "dimensions": [
+        88,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_1.webp",
+      "sha256": "b1a4648a7ecc06fbfcc290eeac089a87b181920837dba6c3141fe7ae1bd071f8",
+      "bytes": 6146,
+      "dimensions": [
+        96,
+        78
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_2.webp",
+      "sha256": "cb2751d3ce6d0840e64082d2f01b9f035b4d458c48546c791577a7f75d84aeff",
+      "bytes": 5886,
+      "dimensions": [
+        94,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_8.webp",
+      "sha256": "4ba27b75aff280f52230e16fe73c6a5b05bf6224941a359cc906b59f1f060df3",
+      "bytes": 5686,
+      "dimensions": [
+        90,
+        80
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_8.webp",
+      "sha256": "eb74bce5fbc678a81a39ede838bf6ca2c22243d7c718ce89637a929a22d54da7",
+      "bytes": 6956,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_hong.webp",
+      "sha256": "4f8a7132073936a7c9871adb346f1440027ab08fa7e93a8f5fff32183ba89d6d",
+      "bytes": 5432,
+      "dimensions": [
+        88,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_4.webp",
+      "sha256": "e835acfa99f2cb88f4a2110fbafab242be69221db41282efcfd020f07bcfcd25",
+      "bytes": 6080,
+      "dimensions": [
+        91,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_6.webp",
+      "sha256": "1704e05ccdd1592f7050326c7bcb98c762eef0231f643ec711f59f4fed54d965",
+      "bytes": 5516,
+      "dimensions": [
+        80,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_3.webp",
+      "sha256": "646cab9b57b78ed3273231e550a392760c947f18d5328137f5c54334f58eb67b",
+      "bytes": 5304,
+      "dimensions": [
+        72,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_2.webp",
+      "sha256": "a434f334447cd6b7ce3a9a87cc17c374e2f5e8e6e295327cb0fa545cf1cc1cc8",
+      "bytes": 4920,
+      "dimensions": [
+        69,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_4.webp",
+      "sha256": "4e41a57e19bd5f35c97cd6678360ac518a2a4a70f2fbc7bc3bd6b24f99467084",
+      "bytes": 5368,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_9.webp",
+      "sha256": "8f961b5f8405f1be7d2aec180d6a589f68cfe10cdb1914279f1490885b1330ca",
+      "bytes": 5794,
+      "dimensions": [
+        89,
+        80
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_10.webp",
+      "sha256": "7b9375104113a119e4b0c9c27b4702cc6d95e4417ea36f198043c9c9682701a0",
+      "bytes": 5776,
+      "dimensions": [
+        90,
+        84
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_6.webp",
+      "sha256": "bff46df5735054024613384f5d132edd0410eb459988c9fb4a2de74f429599cb",
+      "bytes": 6076,
+      "dimensions": [
+        77,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_6.webp",
+      "sha256": "1cd66be4beb610aaffd12a67e822da71d267096483477b817fc77f8781e3a4ea",
+      "bytes": 6256,
+      "dimensions": [
+        90,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_5.webp",
+      "sha256": "c956e50c20f007e722c91a2c7e59f5cced0af8c5b4070ec91506aff4bfa41a1b",
+      "bytes": 5862,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_2.webp",
+      "sha256": "f19069915eb6a11fd52e5ea49849076ad94de886c8d1eb761dbdc40dcbe33483",
+      "bytes": 5706,
+      "dimensions": [
+        87,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_10.webp",
+      "sha256": "50d045f0ab8ee28420bee17fa1c6c2e327dcf3af284e4fc210ca967f6052ee1c",
+      "bytes": 6068,
+      "dimensions": [
+        72,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_2.webp",
+      "sha256": "9518b5dee417ea9b85d1ce44a491983f972666c2e3dc320ff63b671e382c7e17",
+      "bytes": 5616,
+      "dimensions": [
+        79,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_4.webp",
+      "sha256": "67ce0f3c523d499571441f6b68cacce0b9e8120a33ecc3577e8fde2ec83b0452",
+      "bytes": 5486,
+      "dimensions": [
+        75,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_4.webp",
+      "sha256": "8c92ca3097c2e7bd64843f8517f834510ca2ce22347428a292fb1b1486c42ba1",
+      "bytes": 5998,
+      "dimensions": [
+        93,
+        80
+      ]
+    },
+    {
+      "file": "show_zhuangbei_toukui.webp",
+      "sha256": "455f74fd2b5be4aa4d01893668b008f77b4d0daf724bf5e5439efa5af8a9e073",
+      "bytes": 4494,
+      "dimensions": [
+        83,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_7.webp",
+      "sha256": "f1273e721a20e2315bdc7d95173c82ff69ff0168a05499d8dc4e1cd08d5e717a",
+      "bytes": 6904,
+      "dimensions": [
+        90,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_3.webp",
+      "sha256": "47dc916f082c028922193d04547932824e0f6e512618faaa1f7dec180a576565",
+      "bytes": 6070,
+      "dimensions": [
+        86,
+        84
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_8.webp",
+      "sha256": "851a4289e69b971f6a47087cf9ba39a7671eb2a690edd62fbbf10168a49b5a46",
+      "bytes": 5996,
+      "dimensions": [
+        84,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_5.webp",
+      "sha256": "4c28a9646c60043c3cfff64661e5982cce9558ce437bc0620e2dfdc9f52c5bc8",
+      "bytes": 5180,
+      "dimensions": [
+        91,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_4.webp",
+      "sha256": "a8419de3ff4186b374926d506f6f94e2607031f58ab9ed2e6f0ac4d423b7d3d4",
+      "bytes": 5908,
+      "dimensions": [
+        79,
+        87
+      ]
+    },
+    {
+      "file": "show_zhuangbei_kuzi.webp",
+      "sha256": "46b9096ef5db3ee44c1b661c695a27d294ff24953fc041fe9544c9107ee059c3",
+      "bytes": 4440,
+      "dimensions": [
+        72,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_1.webp",
+      "sha256": "1ee16de98b5f4898cbef09892e63068925a0ce7c1743d6a6d519d9e65283263b",
+      "bytes": 6540,
+      "dimensions": [
+        81,
+        94
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_9.webp",
+      "sha256": "95ab575bff4ff23acdbfe1fb5e1e7837711681e829ff45fa275a7f00da3f654e",
+      "bytes": 6242,
+      "dimensions": [
+        73,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_8.webp",
+      "sha256": "b37f24031080eba4737064743683e880aeca9b4cf5697ef0788ac502a686443b",
+      "bytes": 6018,
+      "dimensions": [
+        69,
+        89
+      ]
+    },
+    {
+      "file": "show_zhuangbei_yifu.webp",
+      "sha256": "8add4361877b32976538b348a8567d12aa33acb1fda663dacf707c65933b31d0",
+      "bytes": 4780,
+      "dimensions": [
+        80,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_1.webp",
+      "sha256": "78ec6f4ae7573cddbd52a7af84c7f1ed9f91f498ea7e65716ce7133c0e656981",
+      "bytes": 6170,
+      "dimensions": [
+        91,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_3.webp",
+      "sha256": "08954cbecd969b117df71563d67afa256791fd36aaec8404686199052e7cc203",
+      "bytes": 6434,
+      "dimensions": [
+        94,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_5.webp",
+      "sha256": "dc01ab911361c5d625a1503bf7180bb3a85b6564e3d95a25ba57c5db9b46e4ec",
+      "bytes": 5080,
+      "dimensions": [
+        80,
+        87
+      ]
+    },
+    {
+      "file": "show_zhuangbei_shoutao.webp",
+      "sha256": "fd640b3c123889941b7bbc7bf9b7f07ab09b7a466cc0c61e481de1938370e267",
+      "bytes": 5382,
+      "dimensions": [
+        94,
+        93
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_2.webp",
+      "sha256": "330c60f1d4d21778c6341fb7cb4c11f5937cf74a0d71911c4960feb862336ad3",
+      "bytes": 5220,
+      "dimensions": [
+        94,
+        79
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_10.webp",
+      "sha256": "f11b8c8775d46a57ebfd631c1c53f885c0f55858a9c367a54d23cf0cf98c8bc0",
+      "bytes": 6484,
+      "dimensions": [
+        91,
+        88
+      ]
+    },
+    {
+      "file": "show_zhuangbei_zuju.webp",
+      "sha256": "7b1a84e36daf002cbd23a0801dcde498eda780b1ac0c42ea9b130e23c6354ae4",
+      "bytes": 5796,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_cheng.webp",
+      "sha256": "3ea3f65baf414589219638958c111d79dadc3fa4a8e2fc92f910990fe81e82d4",
+      "bytes": 5598,
+      "dimensions": [
+        88,
+        85
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_zi.webp",
+      "sha256": "1d1d55969450b65f28a7e52554558fd0b63b2229842633690291acec73046b1a",
+      "bytes": 5560,
+      "dimensions": [
+        86,
+        85
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_bai.webp",
+      "sha256": "42cd5212995cd0b49ec227a03d32d0a408b3f5325b338d5b85d82677e380a12b",
+      "bytes": 4192,
+      "dimensions": [
+        83,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_7.webp",
+      "sha256": "1a5dbed58dacd3a3bfba8fd5247d5d9f5a8f65021ad43bb8162f85172680c4c2",
+      "bytes": 6666,
+      "dimensions": [
+        90,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_10.webp",
+      "sha256": "040587ded46be9c70493b2de0d87b0cf1b4a8176ab0e2fc328115f7e88a48e5d",
+      "bytes": 6546,
+      "dimensions": [
+        82,
+        90
+      ]
+    },
+    {
+      "file": "player-idle_1.webp",
+      "sha256": "2c5cbea088e2fb49d94c5e84b2806eebe19ade8df7d3f7f3779cb7c4af4cb74e",
+      "bytes": 26996,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "player-idle_2.webp",
+      "sha256": "ef2b9f3ca34d82578422cf7c7f6ab664eccc2f085f9910623b54f66242c35d52",
+      "bytes": 26626,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "player-idle_3.webp",
+      "sha256": "867040905c054a4f807c5e6b7cb87425e8bdafc2abcce5f1e160f4f51c3860a5",
+      "bytes": 27052,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "player-idle_4.webp",
+      "sha256": "d578b239423b61b0e1ad1cd4409e7c5c982c09cab1b0ca2ac9ae2fddf818cfb2",
+      "bytes": 28728,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "player-reload_1.webp",
+      "sha256": "b29837a726ff0897aedc2b2ec1cbd88f3fa6c98411891f0479ea4e6afc9cb62f",
+      "bytes": 28636,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "player-skill1_1.webp",
+      "sha256": "3305eae08b3b4719c60b1af8bc5e451bf294cf763651c43013e343b2b413e2ad",
+      "bytes": 27266,
+      "rendered_from_native_spine": true
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_1.webp",
+      "sha256": "ce2e7dcb188fa20822b922e79f0f643a46debb3a628df83c619922e576229205",
+      "bytes": 5552,
+      "dimensions": [
+        68,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_6.webp",
+      "sha256": "c5d6c3c665fe87c13a28580a54f1947c20a341c07856bcad6ba83e97ef9ba6c5",
+      "bytes": 5852,
+      "dimensions": [
+        85,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_6.webp",
+      "sha256": "5fa0c917a94a6fd206efc7aec3e880a00eb5aa6169e867715f6f7c822e05cdcf",
+      "bytes": 5924,
+      "dimensions": [
+        91,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_7.webp",
+      "sha256": "6bc02227dc3cc387d96467210d42f45f0587e4346a7673b8770940d31d6013c2",
+      "bytes": 5652,
+      "dimensions": [
+        91,
+        81
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_5.webp",
+      "sha256": "81197f923b18a182ebb1c5e2d2eb49c2d1459aee801c0799d8d1966f3a326c6b",
+      "bytes": 5784,
+      "dimensions": [
+        77,
+        90
+      ]
+    },
+    {
+      "file": "show_zhuangbei_hubi.webp",
+      "sha256": "06aa87bb6ca6ddd5bfb32cb40236d2034977182295b1b9b1bd319fa10f2973fc",
+      "bytes": 4770,
+      "dimensions": [
+        96,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_3.webp",
+      "sha256": "827a0b0de89de0fc9675cf8b15cc1fdfa74d3f6fa7a960ab65d9668e939d23b4",
+      "bytes": 5618,
+      "dimensions": [
+        76,
+        83
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_2.webp",
+      "sha256": "e7bcc898c48c54e026b0c415d5ee25358e6838b09738476ad9fb05d80074220d",
+      "bytes": 5028,
+      "dimensions": [
+        86,
+        83
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_lv.webp",
+      "sha256": "25c42ac8c540cc0e36dbda509095b69068f0ff991808dddc5050d9371c4036fc",
+      "bytes": 4782,
+      "dimensions": [
+        83,
+        82
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_lan.webp",
+      "sha256": "c4a3ac0f9ba2a81c39d0bb65747f6515097c5eeed3d383fd89bd57fa417c20ed",
+      "bytes": 4988,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_8.webp",
+      "sha256": "8a16381b24d4421c2c4b9119a9879d8c16f813d228c4929c74c50ecdce8274dc",
+      "bytes": 6142,
+      "dimensions": [
+        85,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_8.webp",
+      "sha256": "db9a74166c13385bad90031187dcf7941706a7c79915df0967ce1167dc947199",
+      "bytes": 6078,
+      "dimensions": [
+        81,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_9.webp",
+      "sha256": "7dd916cde69610ba8b5381e59c717f2f8a8745ea050f4b50fbaed4c42eed151d",
+      "bytes": 6568,
+      "dimensions": [
+        84,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_3.webp",
+      "sha256": "7ad5ca524564d44ba9bfba69308a772d49ec97441a2d5875e83bf2a63cc67ac3",
+      "bytes": 5776,
+      "dimensions": [
+        94,
+        81
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_7.webp",
+      "sha256": "c509d70bda55e8280191af5e8004114c3ac72c5e557ce8c70cbad3208c5d5f8b",
+      "bytes": 6354,
+      "dimensions": [
+        75,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_5.webp",
+      "sha256": "240949dfd3ce12b95408fddd6dd364ab19be43fd5b61114030898d8ed2881dad",
+      "bytes": 5976,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_9.webp",
+      "sha256": "089008351660ebbfe7c70fa467a47416031e1dc8b78c4d908d8e1fa8c87fc446",
+      "bytes": 6508,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_7.webp",
+      "sha256": "af02e72520f900664973effdd5b3a5faa9f976dea76d638e48ccfc6385e6dad6",
+      "bytes": 5880,
+      "dimensions": [
+        80,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_3.webp",
+      "sha256": "01e044021432bf0f8b9530615b87556f47f826810318dafec7c053e9f55ee728",
+      "bytes": 5750,
+      "dimensions": [
+        87,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_9.webp",
+      "sha256": "00e1960956df5f3f86cb95928c1435503604ce0e3008e8d7d7b036fbcbdafbca",
+      "bytes": 6834,
+      "dimensions": [
+        87,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_6.webp",
+      "sha256": "301bf841231c9e757a5a72f73da22f79c076e3ad08ff7deaaf0e4bbc04615e3d",
+      "bytes": 6134,
+      "dimensions": [
+        91,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_10.webp",
+      "sha256": "abbe298006363ac8020d34aae45b27570294ba5321c81376333a87a88ff4727f",
+      "bytes": 6540,
+      "dimensions": [
+        81,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_1.webp",
+      "sha256": "438eb072d5a14831bd24f008b6c2ec2388fdfb2a91cdc3f92e24b7656ece5a47",
+      "bytes": 6672,
+      "dimensions": [
+        95,
+        93
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_1.webp",
+      "sha256": "c968812a9d988902ae9e165f5334afe52fe9d7989a73e6c5d059c19fd362fe6a",
+      "bytes": 6150,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_9.webp",
+      "sha256": "bc82928721904ad55a4a2f70a9032db794750c0f82bed6dec9b7e2be49835073",
+      "bytes": 6382,
+      "dimensions": [
+        83,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_10.webp",
+      "sha256": "33eeaf5bc336f6a099daed3078c1a8e53bae0c5e58efc356d176e50220effbff",
+      "bytes": 6598,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_jin.webp",
+      "sha256": "9c1150e51fa0af6f0908bd2b314970340eb3ce7257c7431acec37bbb17d1878d",
+      "bytes": 5978,
+      "dimensions": [
+        82,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_5.webp",
+      "sha256": "cde24454af64aa9364f4d10c11be58452d7759896b2ec966e0ed88541b5bbb4e",
+      "bytes": 6558,
+      "dimensions": [
+        85,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_7.webp",
+      "sha256": "2309b41b740abf88d9c65a7f57fc5d6cc21a723082c1fd6d62895999fed0caf5",
+      "bytes": 6762,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_4.webp",
+      "sha256": "cff16e7f00b74f78722a3c079c42bbe1017c4c90ff58766356b3d9edba0abc7d",
+      "bytes": 6142,
+      "dimensions": [
+        88,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_1.webp",
+      "sha256": "b1a4648a7ecc06fbfcc290eeac089a87b181920837dba6c3141fe7ae1bd071f8",
+      "bytes": 6146,
+      "dimensions": [
+        96,
+        78
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_2.webp",
+      "sha256": "cb2751d3ce6d0840e64082d2f01b9f035b4d458c48546c791577a7f75d84aeff",
+      "bytes": 5886,
+      "dimensions": [
+        94,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_8.webp",
+      "sha256": "4ba27b75aff280f52230e16fe73c6a5b05bf6224941a359cc906b59f1f060df3",
+      "bytes": 5686,
+      "dimensions": [
+        90,
+        80
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_8.webp",
+      "sha256": "eb74bce5fbc678a81a39ede838bf6ca2c22243d7c718ce89637a929a22d54da7",
+      "bytes": 6956,
+      "dimensions": [
+        90,
+        90
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_hong.webp",
+      "sha256": "4f8a7132073936a7c9871adb346f1440027ab08fa7e93a8f5fff32183ba89d6d",
+      "bytes": 5432,
+      "dimensions": [
+        88,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_4.webp",
+      "sha256": "e835acfa99f2cb88f4a2110fbafab242be69221db41282efcfd020f07bcfcd25",
+      "bytes": 6080,
+      "dimensions": [
+        91,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_6.webp",
+      "sha256": "1704e05ccdd1592f7050326c7bcb98c762eef0231f643ec711f59f4fed54d965",
+      "bytes": 5516,
+      "dimensions": [
+        80,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_3.webp",
+      "sha256": "646cab9b57b78ed3273231e550a392760c947f18d5328137f5c54334f58eb67b",
+      "bytes": 5304,
+      "dimensions": [
+        72,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_2.webp",
+      "sha256": "a434f334447cd6b7ce3a9a87cc17c374e2f5e8e6e295327cb0fa545cf1cc1cc8",
+      "bytes": 4920,
+      "dimensions": [
+        69,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_4.webp",
+      "sha256": "4e41a57e19bd5f35c97cd6678360ac518a2a4a70f2fbc7bc3bd6b24f99467084",
+      "bytes": 5368,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_9.webp",
+      "sha256": "8f961b5f8405f1be7d2aec180d6a589f68cfe10cdb1914279f1490885b1330ca",
+      "bytes": 5794,
+      "dimensions": [
+        89,
+        80
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_10.webp",
+      "sha256": "7b9375104113a119e4b0c9c27b4702cc6d95e4417ea36f198043c9c9682701a0",
+      "bytes": 5776,
+      "dimensions": [
+        90,
+        84
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_6.webp",
+      "sha256": "bff46df5735054024613384f5d132edd0410eb459988c9fb4a2de74f429599cb",
+      "bytes": 6076,
+      "dimensions": [
+        77,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_6.webp",
+      "sha256": "1cd66be4beb610aaffd12a67e822da71d267096483477b817fc77f8781e3a4ea",
+      "bytes": 6256,
+      "dimensions": [
+        90,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_5.webp",
+      "sha256": "c956e50c20f007e722c91a2c7e59f5cced0af8c5b4070ec91506aff4bfa41a1b",
+      "bytes": 5862,
+      "dimensions": [
+        87,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_2.webp",
+      "sha256": "f19069915eb6a11fd52e5ea49849076ad94de886c8d1eb761dbdc40dcbe33483",
+      "bytes": 5706,
+      "dimensions": [
+        87,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_10.webp",
+      "sha256": "50d045f0ab8ee28420bee17fa1c6c2e327dcf3af284e4fc210ca967f6052ee1c",
+      "bytes": 6068,
+      "dimensions": [
+        72,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_2.webp",
+      "sha256": "9518b5dee417ea9b85d1ce44a491983f972666c2e3dc320ff63b671e382c7e17",
+      "bytes": 5616,
+      "dimensions": [
+        79,
+        86
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_4.webp",
+      "sha256": "67ce0f3c523d499571441f6b68cacce0b9e8120a33ecc3577e8fde2ec83b0452",
+      "bytes": 5486,
+      "dimensions": [
+        75,
+        89
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_4.webp",
+      "sha256": "8c92ca3097c2e7bd64843f8517f834510ca2ce22347428a292fb1b1486c42ba1",
+      "bytes": 5998,
+      "dimensions": [
+        93,
+        80
+      ]
+    },
+    {
+      "file": "show_zhuangbei_toukui.webp",
+      "sha256": "455f74fd2b5be4aa4d01893668b008f77b4d0daf724bf5e5439efa5af8a9e073",
+      "bytes": 4494,
+      "dimensions": [
+        83,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_7.webp",
+      "sha256": "f1273e721a20e2315bdc7d95173c82ff69ff0168a05499d8dc4e1cd08d5e717a",
+      "bytes": 6904,
+      "dimensions": [
+        90,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_3.webp",
+      "sha256": "47dc916f082c028922193d04547932824e0f6e512618faaa1f7dec180a576565",
+      "bytes": 6070,
+      "dimensions": [
+        86,
+        84
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_8.webp",
+      "sha256": "851a4289e69b971f6a47087cf9ba39a7671eb2a690edd62fbbf10168a49b5a46",
+      "bytes": 5996,
+      "dimensions": [
+        84,
+        85
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_5.webp",
+      "sha256": "4c28a9646c60043c3cfff64661e5982cce9558ce437bc0620e2dfdc9f52c5bc8",
+      "bytes": 5180,
+      "dimensions": [
+        91,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_4.webp",
+      "sha256": "a8419de3ff4186b374926d506f6f94e2607031f58ab9ed2e6f0ac4d423b7d3d4",
+      "bytes": 5908,
+      "dimensions": [
+        79,
+        87
+      ]
+    },
+    {
+      "file": "show_zhuangbei_kuzi.webp",
+      "sha256": "46b9096ef5db3ee44c1b661c695a27d294ff24953fc041fe9544c9107ee059c3",
+      "bytes": 4440,
+      "dimensions": [
+        72,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_1.webp",
+      "sha256": "1ee16de98b5f4898cbef09892e63068925a0ce7c1743d6a6d519d9e65283263b",
+      "bytes": 6540,
+      "dimensions": [
+        81,
+        94
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_9.webp",
+      "sha256": "95ab575bff4ff23acdbfe1fb5e1e7837711681e829ff45fa275a7f00da3f654e",
+      "bytes": 6242,
+      "dimensions": [
+        73,
+        90
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_kuzi_8.webp",
+      "sha256": "b37f24031080eba4737064743683e880aeca9b4cf5697ef0788ac502a686443b",
+      "bytes": 6018,
+      "dimensions": [
+        69,
+        89
+      ]
+    },
+    {
+      "file": "show_zhuangbei_yifu.webp",
+      "sha256": "8add4361877b32976538b348a8567d12aa33acb1fda663dacf707c65933b31d0",
+      "bytes": 4780,
+      "dimensions": [
+        80,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_xiezi_1.webp",
+      "sha256": "78ec6f4ae7573cddbd52a7af84c7f1ed9f91f498ea7e65716ce7133c0e656981",
+      "bytes": 6170,
+      "dimensions": [
+        91,
+        91
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_3.webp",
+      "sha256": "08954cbecd969b117df71563d67afa256791fd36aaec8404686199052e7cc203",
+      "bytes": 6434,
+      "dimensions": [
+        94,
+        88
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_toukui_5.webp",
+      "sha256": "dc01ab911361c5d625a1503bf7180bb3a85b6564e3d95a25ba57c5db9b46e4ec",
+      "bytes": 5080,
+      "dimensions": [
+        80,
+        87
+      ]
+    },
+    {
+      "file": "show_zhuangbei_shoutao.webp",
+      "sha256": "fd640b3c123889941b7bbc7bf9b7f07ab09b7a466cc0c61e481de1938370e267",
+      "bytes": 5382,
+      "dimensions": [
+        94,
+        93
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_hubi_2.webp",
+      "sha256": "330c60f1d4d21778c6341fb7cb4c11f5937cf74a0d71911c4960feb862336ad3",
+      "bytes": 5220,
+      "dimensions": [
+        94,
+        79
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_shoutao_10.webp",
+      "sha256": "f11b8c8775d46a57ebfd631c1c53f885c0f55858a9c367a54d23cf0cf98c8bc0",
+      "bytes": 6484,
+      "dimensions": [
+        91,
+        88
+      ]
+    },
+    {
+      "file": "show_zhuangbei_zuju.webp",
+      "sha256": "7b1a84e36daf002cbd23a0801dcde498eda780b1ac0c42ea9b130e23c6354ae4",
+      "bytes": 5796,
+      "dimensions": [
+        90,
+        89
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_cheng.webp",
+      "sha256": "3ea3f65baf414589219638958c111d79dadc3fa4a8e2fc92f910990fe81e82d4",
+      "bytes": 5598,
+      "dimensions": [
+        88,
+        85
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_zi.webp",
+      "sha256": "1d1d55969450b65f28a7e52554558fd0b63b2229842633690291acec73046b1a",
+      "bytes": 5560,
+      "dimensions": [
+        86,
+        85
+      ]
+    },
+    {
+      "file": "icon_sjzbtb_bai.webp",
+      "sha256": "42cd5212995cd0b49ec227a03d32d0a408b3f5325b338d5b85d82677e380a12b",
+      "bytes": 4192,
+      "dimensions": [
+        83,
+        82
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_7.webp",
+      "sha256": "1a5dbed58dacd3a3bfba8fd5247d5d9f5a8f65021ad43bb8162f85172680c4c2",
+      "bytes": 6666,
+      "dimensions": [
+        90,
+        87
+      ]
+    },
+    {
+      "file": "icon_zhuangbei_yifu_10.webp",
+      "sha256": "040587ded46be9c70493b2de0d87b0cf1b4a8176ab0e2fc328115f7e88a48e5d",
+      "bytes": 6546,
+      "dimensions": [
+        82,
+        90
+      ]
+    },
+    {
+      "file": "weapon-default.webp",
+      "sha256": "5ef3fce80432f4ddb75d998893bc7d632b8b9ccaea2248407a7599c4326afcde",
+      "bytes": 9502,
+      "dimensions": [
+        51,
+        185
+      ]
+    },
+    {
+      "file": "player-runtime.mjs",
+      "sha256": "951ec789a72b7c896e84e4d13dcba655f97210c8dd5d9aa4a86a1d93ba7b82e9",
+      "bytes": 597132,
+      "generated_runtime": "pixi.js 7.4.3, @pixi-spine/runtime-3.8 4.0.6, esbuild 0.25.11"
+    }
+  ],
+  "rendered_player_frames": {
+    "source": "native Spine binary/atlas/texture",
+    "animations": [
+      "idle_1",
+      "idle_2",
+      "idle_3",
+      "idle_4",
+      "reload_1",
+      "skill1_1"
+    ],
+    "frame_time_seconds": 0.12,
+    "canvas": [
+      160,
+      290
+    ],
+    "actor_position": [
+      72,
+      210
+    ],
+    "scale": 1,
+    "gameplay_screenshots_used": false
+  }
+}

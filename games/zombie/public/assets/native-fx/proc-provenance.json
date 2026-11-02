@@ -1,0 +1,45 @@
+{
+  "screenshots_used": false,
+  "sources": [
+    {
+      "bundle": "assets_effect_skill_wurenjichongji.ab",
+      "bundle_sha256": "3281e85e4bfb350f92d79b4bbec39031e2435cc73a3595ffe0b814419cc26dbc",
+      "path_id": "3261236613101697857",
+      "texture": "wrjcj_seq_4x4_zj_Tex",
+      "input_sha256": "0697c09f1b7fa8c6b9e5bf6094dddaeec55193cea2da6b0ccc545334ce1933a9",
+      "output": "drone-hit.webp",
+      "sha256": "ad4859a26e9352f85f8b04cad1401c75b076d90b1245d0d77922aa6325c0e6d2",
+      "grid": [
+        4,
+        4
+      ]
+    },
+    {
+      "bundle": "assets_effect_skill_kongtouhongzha.ab",
+      "bundle_sha256": "a72ee1a595a9816f1c22f96406fef4f6f1b6cc6380f4f52a53aecf66dcbb74ec",
+      "path_id": "-5423311417831832603",
+      "texture": "kthz_seq_4x4_zj_Tex",
+      "input_sha256": "9ec601f4e822d969af035697f072124d533b38fbc3603975115e52a787863492",
+      "output": "airdrop-explosion.webp",
+      "sha256": "9544b85b683778563b1a34d503bd7fe336622931525fb1a7c3256322911457f4",
+      "grid": [
+        4,
+        4
+      ]
+    },
+    {
+      "bundle": "assets_effect_skill_ranyoudan.ab",
+      "bundle_sha256": "68d22527983090313ce71a0fdcaea76ad2c60f827286abe1730783a838551eeb",
+      "path_id": "6762112342282749408",
+      "texture": "seq_4x4_Tex",
+      "input_sha256": "389fa67ad554e0df2495ea0034828ba40532e075f9159059b6b3413e970a727e",
+      "output": "fuel-burn.webp",
+      "sha256": "c795409741df25a6def2c889d43ade436166af65b9f575f766d7c43ca67c2561",
+      "grid": [
+        4,
+        4
+      ]
+    }
+  ],
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6"
+}

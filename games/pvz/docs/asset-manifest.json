@@ -1,0 +1,114 @@
+[
+  {
+    "file": "audio/garden.ogg",
+    "bytes": 1724097,
+    "sha256": "99607b996cc43c1891afcbf7c2c8d8aad1009266cea358d4753e3c50b1332d36"
+  },
+  {
+    "file": "effects/boom.gif",
+    "bytes": 53890,
+    "sha256": "196fb8e8cc0d3bf51ee1511466e02b26b8c30a13520f2b18ec4360cd3f61cb0f"
+  },
+  {
+    "file": "effects/potato-boom.gif",
+    "bytes": 9267,
+    "sha256": "49649fbbf6deaf9fdf1c075a4a5cc9bcb5d2e09607f7e286e7f1372d75a78f5e"
+  },
+  {
+    "file": "effects/sun.gif",
+    "bytes": 38803,
+    "sha256": "1aa61a3cec24a2ed05043eb0067bf20271da151b99a9ddea4c68169cff0c0388"
+  },
+  {
+    "file": "interface/lawnmower.png",
+    "bytes": 4756,
+    "sha256": "c981eb7f732aa7d8604fd9b29fdadb5433abdb90e476015fabafa687fb8295ec"
+  },
+  {
+    "file": "plants/cherrybomb.gif",
+    "bytes": 15888,
+    "sha256": "dd7af1d96ac6e19e0f8f6cabf4b1f03f62e2702f45b0595ddb250f17897455e9"
+  },
+  {
+    "file": "plants/peashooter.gif",
+    "bytes": 21890,
+    "sha256": "995201134e74963048653f6f329615f1bb55bcff6be792e71944cae3b03235de"
+  },
+  {
+    "file": "plants/potatomine.gif",
+    "bytes": 12240,
+    "sha256": "307657bfb07e810bd045dac839e8928b66b9a09df065a88589813a8b83553119"
+  },
+  {
+    "file": "plants/repeater.gif",
+    "bytes": 28318,
+    "sha256": "48bf4722b2a98b4ed41fba92ad3f61b9072936ac1fd7ccfd0aee07d7796657ea"
+  },
+  {
+    "file": "plants/snowpea.gif",
+    "bytes": 25893,
+    "sha256": "e10d22e528a9f0559333b23c16f6c43fe97682dee4efaf967fc6344ccdc9ce91"
+  },
+  {
+    "file": "plants/sunflower.gif",
+    "bytes": 40613,
+    "sha256": "58bc70796856ff17330ae64dc2e4eb6ffe6ac78baaa104e235163c5be480c332"
+  },
+  {
+    "file": "plants/wallnut.gif",
+    "bytes": 20845,
+    "sha256": "18af5c1363371c86b0cfd2f433be1895b86ceb43543f33ab28448b21bc1ba57b"
+  },
+  {
+    "file": "zombies/bucket-attack.gif",
+    "bytes": 45861,
+    "sha256": "e4c74b2c050856c118e036b901c6ef9dd5393cce5fb1c2c9fc4c5d60d2617cfe"
+  },
+  {
+    "file": "zombies/bucket.gif",
+    "bytes": 50832,
+    "sha256": "427fe38d28be91f943cc786f8ab1853e06f677df6ed29592783baa9ac6c10401"
+  },
+  {
+    "file": "zombies/cone-attack.gif",
+    "bytes": 40977,
+    "sha256": "c30ea27b0069956e3816a5b04c99a853bffccd46ef8fdd2ab2e4f8349e584936"
+  },
+  {
+    "file": "zombies/cone.gif",
+    "bytes": 73538,
+    "sha256": "d26c6a550637dbac76c2d1b9c5ec6cf0183e6e5a0e50e8defa5e19843c37c17d"
+  },
+  {
+    "file": "zombies/football-attack.gif",
+    "bytes": 47214,
+    "sha256": "35a0f9f5a5bc72f090ce80021bc207d2c26f04c14802e50e5236edfb9571642b"
+  },
+  {
+    "file": "zombies/football.gif",
+    "bytes": 52016,
+    "sha256": "c07078327b3219a287efa3894b92976835fe07b67e138bc105e5d2456e70907f"
+  },
+  {
+    "file": "zombies/zombie-attack.gif",
+    "bytes": 59124,
+    "sha256": "c03b6bcca8dce215280ffc836d13a9d6eecb772fcc6375dc9e9b76188062411c"
+  },
+  {
+    "file": "zombies/zombie-die.gif",
+    "bytes": 21531,
+    "sha256": "7cfadca015f4f40661034bdc3b468524baa191cb270b3947128274ea1cb9920d"
+  },
+  {
+    "file": "zombies/zombie.gif",
+    "bytes": 67046,
+    "sha256": "61c3c96e6e5766bce082d9388fb9f7f27a9d8f2785ef5e97253d1cd48d5f99d9"
+  },
+  {
+    "derivedFrom": "audio/garden.ogg",
+    "file": "audio/garden.mp3",
+    "sha256": "c0ab79794d35d4f6b9d167a85745c6191d29f508d29ef5b0f040a789ad44f4a4",
+    "bytes": 1657688,
+    "encoding": "libmp3lame VBR q4"
+  }
+]

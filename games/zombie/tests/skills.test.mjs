@@ -1,0 +1,45 @@
+import {describe,it,expect} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {CLIENT_SKILL_RULES as S,CLIENT_BUILD_CATALOG as C,CLIENT_COMBAT_PROFILES as P,CLIENT_SKILL_STATUS as B} from '../public/client-skill-data.mjs';
+import {createGame,start,step,chooseUpgrade,upgradeOptions,togglePause} from '../public/engine.mjs';
+import {applyNativeBuild,buildEligible,nativeBuildOptions,branchModifiers,nativeCooldown} from '../public/client-builds.mjs';
+import {skillCodex} from '../public/skill-codex.mjs';
+
+function fixture(skill='frost',level=1){const g=start(createGame({client:true,extended:true,loadout:skill,seed:8,coreLevels:{frost:level,lightning:level}}));
+ g.plan=[];g.info.count=100000;g.nextXp=1e8;g.damage=1;
+ for(const id of Object.keys(g.weapons)){g.weapons[id]=id===skill?1:0;g.cooldowns[id]=id===skill?0:1e6;}
+ return g;}
+function enemy(id,x,y){return {id,type:'walker',x,y,r:8,hp:10000,maxHp:10000,speed:0,damage:1,color:'#aaa',slow:0,freeze:0,burn:0,flash:0,attack:99,phase:0,dead:false};}
+function run(g,seconds){for(let i=0;i<Math.round(seconds*60);i++)step(g,1/60);}
+
+describe('native skill source evidence',()=>{
+ it('keeps 14 timings and 172 distinct source branches',()=>{expect(Object.keys(S)).toHaveLength(14);expect(Object.keys(C)).toHaveLength(172);expect(S.frost.cooldown).toBeCloseTo(4.1);expect(S.lightning.cooldown).toBeCloseTo(3.8);expect(P.frost.through).toBe(3);expect(P.frost.speed).toBe(8);expect(B[30111].DurTime).toBe(1);expect(B[20611].DurTime).toBe(2);});
+ it('preserves exact published hashes and the supplied reference',()=>{const base=new URL('../public/',import.meta.url),proof=JSON.parse(readFileSync(new URL('assets/client-skills/provenance.json',base),'utf8'));expect(proof.reference.dimensions).toEqual([1078,4156]);for(const p of proof.outputs)expect(createHash('sha256').update(readFileSync(new URL(p.file,base))).digest('hex')).toBe(p.sha256);expect(proof.apk_sha256).toBe('7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6');});
+ it('requires every prerequisite for the giant ice evolution',()=>{const g=fixture('frost',31);expect(buildEligible(g,C[211])).toBe(false);for(const id of [205,206])expect(applyNativeBuild(g,id)).toBe(true);expect(buildEligible(g,C[211])).toBe(false);expect(applyNativeBuild(g,203)).toBe(true);expect(buildEligible(g,C[211])).toBe(true);expect(applyNativeBuild(g,211)).toBe(true);expect(applyNativeBuild(g,211)).toBe(false);});
+ it('uses persistent core levels, not local weapon ranks, for native type 4',()=>{const g=fixture();expect(buildEligible(g,C[207])).toBe(true);expect(buildEligible(g,C[210])).toBe(false);g.coreLevels.frost=6;expect(buildEligible(g,C[207])).toBe(false);expect(buildEligible(g,C[210])).toBe(true);});
+ it('enforces repeat caps and applies native percentage/through parameters',()=>{const g=fixture();for(let i=0;i<3;i++)expect(applyNativeBuild(g,203)).toBe(true);expect(applyNativeBuild(g,203)).toBe(false);const m=branchModifiers(g,'frost',2011);expect(m.through).toBe(6);expect(m.damage).toBeCloseTo(1.9);});
+ it('keeps disabled families out of the actual choice pool',()=>{const g=fixture();g.availableWeapons=g.availableWeapons.filter(w=>w.id!=='frost');expect(nativeBuildOptions(g).some(o=>o.skill==='frost')).toBe(false);});
+ it('rejects unoffered/stale native choices through the real upgrade entry',()=>{const g=fixture();g.status='upgrade';g.choices=[{id:'build:211',nativeBuildId:211}];expect(chooseUpgrade(g,'build:211')).toBe(false);g.choices=[{id:'build:203',nativeBuildId:203}];expect(chooseUpgrade(g,'build:999')).toBe(false);expect(chooseUpgrade(g,'build:203')).toBe(true);expect(g.status).toBe('running');expect(g.nativeBuilds[203]).toBe(1);});
+ it('retains minimum native cooldown under large global reduction',()=>{const g=fixture();g.stats.cooldown=.99;expect(nativeCooldown(g,'frost')).toBe(S.frost.minCooldown);});
+ it('draws three distinct valid weighted options without the old frost rank entry',()=>{const g=fixture();for(let i=0;i<50;i++){const options=upgradeOptions(g);expect(options).toHaveLength(3);expect(new Set(options.map(o=>o.id)).size).toBe(3);expect(options.some(o=>o.id==='frost')).toBe(false);for(const o of options)if(o.nativeBuildId)expect(buildEligible(g,C[o.nativeBuildId])).toBe(true);}});
+});
+
+describe('native projectile and impact policies on the web battle',()=>{
+ it('dry ice has real travel time, no instant area hit, and no base freeze/slow',()=>{const g=fixture();g.enemies=[enemy(901,270,500)];step(g,.05);expect(g.enemies[0].hp).toBe(10000);expect(g.bullets.some(b=>b.kind==='frost')).toBe(true);run(g,.6);expect(g.enemies[0].hp).toBeLessThan(10000);expect(g.enemies[0].freeze).toBe(0);expect(g.enemies[0].slow).toBe(0);expect(g.enemies[0].y).toBeLessThan(500);});
+ it('hits four collinear targets in physical order, not insertion order',()=>{const g=fixture();const es=[580,520,460,400,340].map((y,i)=>enemy(901+i,270,y));g.enemies=[...es].reverse();run(g,1);expect(es.slice(0,4).every(e=>e.hp<10000)).toBe(true);expect(es[4].hp).toBe(10000);});
+ it('piercing upgrades reach additional enemies and freeze requires its branch',()=>{const g=fixture();applyNativeBuild(g,203);applyNativeBuild(g,206);g.enemies=Array.from({length:6},(_,i)=>enemy(901+i,270,580-i*50));run(g,.8);expect(g.enemies.every(e=>e.hp<10000)).toBe(true);expect(g.enemies.some(e=>e.freeze>1)).toBe(true);});
+ it('scatter seeks up to three actual targets on the first hit',()=>{const g=fixture();applyNativeBuild(g,202);g.enemies=[enemy(901,270,500),enemy(902,60,100),enemy(903,270,100),enemy(904,480,100)];run(g,.33);expect(g.bullets.filter(b=>b.variant==='shard')).toHaveLength(3);run(g,.05);expect(g.bullets.filter(b=>b.variant==='shard')).toHaveLength(3);});
+ it('does not invent random-direction shards when no new targets remain',()=>{const g=fixture();applyNativeBuild(g,202);g.enemies=[enemy(901,270,500)];run(g,.33);expect(g.bullets.filter(b=>b.variant==='shard')).toHaveLength(0);});
+ it('giant evolution emits aimed projectiles which inherit selected modifiers',()=>{const g=fixture('frost',31);for(const id of [205,206,203,211])applyNativeBuild(g,id);g.enemies=[enemy(901,270,500),enemy(902,60,100),enemy(903,270,100),enemy(904,480,100)];run(g,.33);const children=g.bullets.filter(b=>b.parent);expect(children).toHaveLength(3);expect(children.every(b=>b.pierce===5&&b.nativeSub===2011)).toBe(true);});
+ it('repeat casts are scheduled in game time and freeze completely during pause',()=>{const g=fixture('frost',6);expect(applyNativeBuild(g,210)).toBe(true);g.enemies=[enemy(901,270,250)];step(g,.01);expect(g.nativeCasts.filter(c=>c.type==='frost')).toHaveLength(1);togglePause(g);const before=JSON.stringify(g);run(g,2);expect(JSON.stringify(g)).toBe(before);togglePause(g);run(g,.35);expect(g.nativeCasts.filter(c=>c.type==='frost')).toHaveLength(0);expect(g.bullets.filter(b=>b.kind==='frost')).toHaveLength(2);});
+ it('magnetic piercing strikes one point then splashes nearby, not across a chain',()=>{const g=fixture('lightning');const target=enemy(901,270,500),near=enemy(902,285,500),far=enemy(903,400,500);g.enemies=[target,near,far];step(g,.01);expect(target.hp).toBeLessThan(10000);expect(near.hp).toBe(10000);run(g,.15);expect(near.hp).toBeLessThan(10000);expect(far.hp).toBe(10000);expect(near.paralysis).toBeGreaterThan(.7);expect(g.effects.some(f=>f.type==='lightning')).toBe(false);});
+ it('magnetic blast branch expands its source radius after dependency unlock',()=>{const g=fixture('lightning',31);applyNativeBuild(g,311);applyNativeBuild(g,303);g.enemies=[enemy(901,270,500),enemy(902,315,500)];run(g,.2);expect(g.enemies[1].hp).toBeLessThan(10000);});
+ it('matrix ticks periodically, slows only inside, and expires',()=>{const g=fixture('lightning',31);for(const id of [311,304])expect(applyNativeBuild(g,id)).toBe(true);g.enemies=[enemy(901,270,500),enemy(902,400,500)];run(g,.65);expect(g.nativeZones).toHaveLength(1);expect(g.enemies[0].nativeSlowRatio).toBeCloseTo(.7);expect(g.enemies[1].nativeSlowRatio).toBeUndefined();run(g,1.2);expect(g.nativeZones).toHaveLength(0);});
+ it('native family changes do not add state to legacy battles',()=>{const g=createGame({extended:true,loadout:'frost'});expect(g.nativeBuilds).toBeUndefined();expect(upgradeOptions(g).every(o=>!o.nativeBuildId)).toBe(true);});
+});
+
+describe('native dependency viewer and community diagram',()=>{
+ it('exposes native prerequisites and distinguishes pending families',()=>{const live=skillCodex({skill:'frost'},fixture());expect(live).toContain('极寒大冰弹');expect(live).toContain('干冰弹核心 ≥10级');expect(live).toContain('已接入局内升级池');const pending=skillCodex({skill:'vehicle'});expect(pending).toContain('已接入局内升级池');expect(pending).toContain('局内分支');});
+ it('retains the supplied attribution and a scrollable zoomable full diagram',()=>{const html=skillCodex({source:'community',zoom:150});expect(html).toContain('community-prerequisites.jpg');expect(html).toContain('width:1500px');expect(html).toContain('原作者水印');});
+});

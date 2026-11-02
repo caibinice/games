@@ -1,0 +1,1177 @@
+{
+  "coordinateSystem": "all crop boxes use original 1080x2400 screenshot pixels; x0,y0,x1,y1, right/bottom exclusive",
+  "sourceRoot": "C:\\Users\\caibin\\AppData\\Local\\UUYC\\GameViewer\\Download",
+  "outputRoot": "E:\\codes\\games\\games\\zombie\\public\\assets\\original-ui",
+  "assets": [
+    {
+      "file": "splash.webp",
+      "source": "1000070149.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 2400,
+      "note": "全屏参考底图；带截图原HUD、文字、按钮和右上角微信胶囊，动态区域需由真实DOM覆盖。",
+      "method": "crop / webp compress",
+      "bytes": 184302,
+      "sha256": "5aee56bffb32288175b2687a6b0d9ef8a9edfcd33376310790613b8b23e2719b"
+    },
+    {
+      "file": "screen-shop.webp",
+      "source": "1000070150.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 2400,
+      "note": "全屏参考底图；带截图原HUD、文字、按钮和右上角微信胶囊，动态区域需由真实DOM覆盖。",
+      "method": "crop / webp compress",
+      "bytes": 222380,
+      "sha256": "1055af34173f33cc59ad8213d5caa084f19e8928be7d6044af7602524df2bdc1"
+    },
+    {
+      "file": "screen-character.webp",
+      "source": "1000070153.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 2400,
+      "note": "全屏参考底图；带截图原HUD、文字、按钮和右上角微信胶囊，动态区域需由真实DOM覆盖。",
+      "method": "crop / webp compress",
+      "bytes": 360838,
+      "sha256": "b13005231ece61c6df0c0fe26e1e7c2731db194506aacab1eec8a87b842d005a"
+    },
+    {
+      "file": "screen-core.webp",
+      "source": "1000070152.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 2400,
+      "note": "全屏参考底图；带截图原HUD、文字、按钮和右上角微信胶囊，动态区域需由真实DOM覆盖。",
+      "method": "crop / webp compress",
+      "bytes": 285522,
+      "sha256": "08f677d5e0368bfc11e1e080d80b7876d9cc506ec8677e0058ed46959d29f379"
+    },
+    {
+      "file": "screen-campaign.webp",
+      "source": "1000070151.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 2400,
+      "note": "全屏参考底图；带截图原HUD、文字、按钮和右上角微信胶囊，动态区域需由真实DOM覆盖。",
+      "method": "crop / webp compress",
+      "bytes": 280844,
+      "sha256": "c7e1091a98e77b2ec6eaec6075bf81c56e69945e96dde92569d77585c4181a92"
+    },
+    {
+      "file": "skill-0.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        72,
+        1342,
+        244,
+        1514
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 51699,
+      "sha256": "fdad84a8438e4249ecf78702f461f595cdf91226664645cbc50fb2266409bdd7"
+    },
+    {
+      "file": "skill-1.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        324,
+        1342,
+        496,
+        1514
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 54053,
+      "sha256": "057da4c5b7d45902cf9d6f4ba952a1b435aaf73b0fcfaf6a1c73f7aa80574b83"
+    },
+    {
+      "file": "skill-2.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        576,
+        1342,
+        748,
+        1514
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 44334,
+      "sha256": "7291d85ccd3f2aff84f2c40c354963715064ca795f2df2ad1cce4ddf42a8bc6e"
+    },
+    {
+      "file": "skill-3.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        828,
+        1342,
+        1000,
+        1514
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 56454,
+      "sha256": "f3859a789629425dc63d34d597876ff17782f4c7e0fba828a3a64f0338af45e2"
+    },
+    {
+      "file": "skill-4.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        72,
+        1656,
+        244,
+        1828
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 48857,
+      "sha256": "bc2463e08b04a613b2346ee14514975adbdeb45bd68e9fa753ab5aff05b240b6"
+    },
+    {
+      "file": "skill-5.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        324,
+        1656,
+        496,
+        1828
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 46781,
+      "sha256": "86a9f1404f636920d2e7e5cea252a557efd0d7fa45135940eb75a0a8f4e3e8c9"
+    },
+    {
+      "file": "skill-6.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        576,
+        1656,
+        748,
+        1828
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 53761,
+      "sha256": "b3be2d088a798f41346185cc6bd795294bab765aed4b4b8e00de1e36c3bad8b3"
+    },
+    {
+      "file": "skill-7.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        828,
+        1656,
+        1000,
+        1828
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 50413,
+      "sha256": "d5c30462ad8f3048323c27783578101e7ae04f688b9b5298a96f5a3cc79d177c"
+    },
+    {
+      "file": "skill-8.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        72,
+        1970,
+        244,
+        2142
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 54841,
+      "sha256": "fb679d22f190a9345566e821aef0b815daaeeddb65e6da3b8672b13ee65c1275"
+    },
+    {
+      "file": "skill-9.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        324,
+        1970,
+        496,
+        2142
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 54885,
+      "sha256": "3b22f1c1a40c9150fc2ddffa55ae61a82002757aa0a9699ed8be83d1ec9b30ce"
+    },
+    {
+      "file": "skill-10.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        576,
+        1970,
+        748,
+        2142
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 48840,
+      "sha256": "45d1588dbb6aae83087012e0fbc8480ef6af546ef69232dc2b030b8e231c49ff"
+    },
+    {
+      "file": "skill-11.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        828,
+        1970,
+        1000,
+        2142
+      ],
+      "width": 172,
+      "height": 172,
+      "note": "圆形技能图标，含原绿色圆环；不含等级/红点。",
+      "method": "ellipse alpha crop",
+      "bytes": 56358,
+      "sha256": "6b884eb5c582e3b5a46a4b21f1ede5f1c1c8278e5818849933a11d4bdd4f4653"
+    },
+    {
+      "file": "skill-12.png",
+      "source": "1000070154.jpg",
+      "crop": [
+        16,
+        2152,
+        94,
+        2230
+      ],
+      "width": 78,
+      "height": 78,
+      "note": "战斗底部左侧无人机圆图，Pillow圆形alpha裁切，带原暗色圆环。",
+      "method": "ellipse alpha crop",
+      "bytes": 14923,
+      "sha256": "ad657aace4ff40a059ba378a6cd3121876fa18cbe5cf189bcf36ad1f1e60920c"
+    },
+    {
+      "file": "nav-shop.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        12,
+        2219,
+        162,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 31911,
+      "sha256": "3748820335d67e59a56d896e977fb0d56cf9378d6f7bc3bc0020e8f406eb2c5d"
+    },
+    {
+      "file": "nav-tile-shop.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        0,
+        2194,
+        154,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 47625,
+      "sha256": "3d1a53d5447a0a578c705f83eaaa2555b75eba85df15d3855da6ca6eb328c421"
+    },
+    {
+      "file": "nav-character.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        164,
+        2219,
+        314,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 30904,
+      "sha256": "c2f0314e4140bd8080c317117874a72911bd5f933d8a32bc059187da2faf9c7e"
+    },
+    {
+      "file": "nav-tile-character.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        154,
+        2194,
+        309,
+        2400
+      ],
+      "width": 155,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 45291,
+      "sha256": "736ab4d1d89458a943a1bde908159e5b05fad3d0e630f5d699fd85c5b1e47198"
+    },
+    {
+      "file": "nav-core.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        315,
+        2219,
+        465,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 35099,
+      "sha256": "9d9e4747beb2968f35540a2e944647dcc11e9d0cb665111a82002a1c6eb7369c"
+    },
+    {
+      "file": "nav-tile-core.png",
+      "source": "1000070152.jpg",
+      "crop": [
+        309,
+        2194,
+        463,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 51415,
+      "sha256": "c1707cd5a3faf60903fc0d543a3e343f5981a1cbdce57f19c76168c3f3c542c0"
+    },
+    {
+      "file": "nav-battle.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        463,
+        2219,
+        613,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 33338,
+      "sha256": "bf7327ec7a46391f342ad33606e73ae79fbc979fdd5a05fa22e2ca25a2493764"
+    },
+    {
+      "file": "nav-tile-battle.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        463,
+        2194,
+        617,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 46855,
+      "sha256": "b256aebca3d9b65d627d89ddff663c13d0cd41f70d5ed383e540558bb1f30adb"
+    },
+    {
+      "file": "nav-base.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        618,
+        2219,
+        768,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 22256,
+      "sha256": "d4bb64d50115ca5e5bdbe4fb58be2e53095dfe4baff6669234e4009c8a182456"
+    },
+    {
+      "file": "nav-tile-base.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        617,
+        2194,
+        771,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 32702,
+      "sha256": "d498602073e818ac64157b0da28c90e8ec26d11ef5bd1fd4c745924ecfa000d4"
+    },
+    {
+      "file": "nav-guild.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        769,
+        2219,
+        919,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 25183,
+      "sha256": "eaefd33c77e39f08c2a972fd3db8366c4f38a90f5d4e72ebcbae08957df88172"
+    },
+    {
+      "file": "nav-tile-guild.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        771,
+        2194,
+        926,
+        2400
+      ],
+      "width": 155,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 34164,
+      "sha256": "588bea49b5914222eaa648b4ba6d054f084c493ff3897432d19c43b9538e717b"
+    },
+    {
+      "file": "nav-journey.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        918,
+        2219,
+        1068,
+        2338
+      ],
+      "width": 150,
+      "height": 119,
+      "note": "矩形截图图标；带原棕色或选中黄橙底，个别图标下缘含少量旧文字；适合放在同底色导航内。",
+      "method": "crop / webp compress",
+      "bytes": 31964,
+      "sha256": "18488f4f5d04c2c9291338c521cc13f8af1384f46bd2e3f95c0490f501b1d709"
+    },
+    {
+      "file": "nav-tile-journey.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        926,
+        2194,
+        1080,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "导航整格参考，含中文标签、选中高亮/原红点；不是假交互按钮，点击区域由DOM实现。",
+      "method": "crop / webp compress",
+      "bytes": 45404,
+      "sha256": "e7cb59509a21a7a80f9432f060348f11027b8fd98147d8a02bb2e1303cdac09a"
+    },
+    {
+      "file": "shop-tactical-banner.webp",
+      "source": "1000070150.jpg",
+      "crop": [
+        43,
+        760,
+        1035,
+        1177
+      ],
+      "width": 992,
+      "height": 417,
+      "note": "战术卡包主美术，已去底部抽奖按钮条；含战术卡包标题与旧保底9/199文字。旧数据区域建议DOM覆盖。",
+      "method": "crop",
+      "bytes": 54472,
+      "sha256": "ab89dc9c46a6eb20a13bade365f6b06afb8f375be6418c9f20de226f3cff7de0"
+    },
+    {
+      "file": "shop-chest-banner.webp",
+      "source": "1000070150.jpg",
+      "crop": [
+        45,
+        1490,
+        1035,
+        1897
+      ],
+      "width": 990,
+      "height": 407,
+      "note": "普通宝箱主美术，已去底部抽奖按钮条；含普通宝箱标题与旧保底9文字。",
+      "method": "crop",
+      "bytes": 48086,
+      "sha256": "8b0ec568d3f33d444d5840eb091815a7fb8637116a1f5fcbfb4a812c9379966d"
+    },
+    {
+      "file": "shop-header.webp",
+      "source": "1000070150.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        630
+      ],
+      "width": 1080,
+      "height": 630,
+      "note": "军械物资背景；含原资源数、资源标题、跑马灯与右上微信胶囊。",
+      "method": "crop",
+      "bytes": 58766,
+      "sha256": "1639cec809a3f674dbefd27de17865345516a5a1acabca62915306cc1d3fd42a"
+    },
+    {
+      "file": "campaign-scene.webp",
+      "source": "1000070151.jpg",
+      "crop": [
+        0,
+        300,
+        1080,
+        2190
+      ],
+      "width": 1080,
+      "height": 1890,
+      "note": "战斗营地参考背景；含原活动入口、201关标题、奖励和开始按钮，主实现需由真实DOM覆盖动态区域。",
+      "method": "crop",
+      "bytes": 250426,
+      "sha256": "7ad2b8b2a1eaf1a2ad28ebfb62fffb70def18738820ba93ca85243224594573b"
+    },
+    {
+      "file": "core-upper.webp",
+      "source": "1000070152.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        1167
+      ],
+      "width": 1080,
+      "height": 1167,
+      "note": "核心页上半原图；含头像资源HUD、侧栏、跑马灯、旧方案。",
+      "method": "crop",
+      "bytes": 154490,
+      "sha256": "e064b6b0045d14e7827aea919c296bf7077ca7db9dd070df91641b4f5f569560"
+    },
+    {
+      "file": "character-upper.webp",
+      "source": "1000070153.jpg",
+      "crop": [
+        0,
+        0,
+        1080,
+        1170
+      ],
+      "width": 1080,
+      "height": 1170,
+      "note": "角色页上半原图；含角色、旧装备等级/战力、资源HUD及装备锻造按钮。",
+      "method": "crop",
+      "bytes": 222478,
+      "sha256": "c9a59bfe6984e8e0b22a516b061bc0ad624e54cafe2689591b38832ff77053df"
+    },
+    {
+      "file": "equipment-helmet.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        421,
+        860,
+        565
+      ],
+      "width": 143,
+      "height": 144,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 38785,
+      "sha256": "8470ef7223bcc1a454b3d01b23b87e55dafb21a24cafacb3f1b30ef3d7539c5b"
+    },
+    {
+      "file": "equipment-0.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        421,
+        860,
+        565
+      ],
+      "width": 143,
+      "height": 144,
+      "note": "数字别名，等同equipment-helmet.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 38785,
+      "sha256": "8470ef7223bcc1a454b3d01b23b87e55dafb21a24cafacb3f1b30ef3d7539c5b"
+    },
+    {
+      "file": "equipment-weapon.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        421,
+        1048,
+        565
+      ],
+      "width": 143,
+      "height": 144,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 39893,
+      "sha256": "5a599d19be08f87631fc0ec617c8658768d6a7a380530a0d82eaa8b7deb055f6"
+    },
+    {
+      "file": "equipment-1.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        421,
+        1048,
+        565
+      ],
+      "width": 143,
+      "height": 144,
+      "note": "数字别名，等同equipment-weapon.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 39893,
+      "sha256": "5a599d19be08f87631fc0ec617c8658768d6a7a380530a0d82eaa8b7deb055f6"
+    },
+    {
+      "file": "equipment-armor.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        618,
+        860,
+        761
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 38909,
+      "sha256": "059f13ba4ba392a94146c6d42c26c7a80dd1307e5a94adcdd88396041b35c42f"
+    },
+    {
+      "file": "equipment-2.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        618,
+        860,
+        761
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "数字别名，等同equipment-armor.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 38909,
+      "sha256": "059f13ba4ba392a94146c6d42c26c7a80dd1307e5a94adcdd88396041b35c42f"
+    },
+    {
+      "file": "equipment-pants.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        618,
+        1048,
+        761
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 38424,
+      "sha256": "6cc60bd656312c9865919e985e4399d9e733eaba1aac54b9502a31e679103ea3"
+    },
+    {
+      "file": "equipment-3.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        618,
+        1048,
+        761
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "数字别名，等同equipment-pants.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 38424,
+      "sha256": "6cc60bd656312c9865919e985e4399d9e733eaba1aac54b9502a31e679103ea3"
+    },
+    {
+      "file": "equipment-boots.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        815,
+        860,
+        958
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 39764,
+      "sha256": "98d7427d7ed4a7990812c5e0c2362ab0bca53e346a52cc7ef4d12e01bc4207b9"
+    },
+    {
+      "file": "equipment-4.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        717,
+        815,
+        860,
+        958
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "数字别名，等同equipment-boots.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 39764,
+      "sha256": "98d7427d7ed4a7990812c5e0c2362ab0bca53e346a52cc7ef4d12e01bc4207b9"
+    },
+    {
+      "file": "equipment-gloves.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        815,
+        1048,
+        958
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "装备卡片图标；含原21阶与127/128级文字，主实现可遮挡或覆盖。",
+      "method": "crop",
+      "bytes": 41170,
+      "sha256": "442ee142fd951d0c7302ed6d4746372277ed3e9e9a46315c21bef7b89152896b"
+    },
+    {
+      "file": "equipment-5.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        905,
+        815,
+        1048,
+        958
+      ],
+      "width": 143,
+      "height": 143,
+      "note": "数字别名，等同equipment-gloves.png；含原阶级/等级。",
+      "method": "crop",
+      "bytes": 41170,
+      "sha256": "442ee142fd951d0c7302ed6d4746372277ed3e9e9a46315c21bef7b89152896b"
+    },
+    {
+      "file": "gem-rainbow.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        219,
+        1323,
+        361,
+        1465
+      ],
+      "width": 142,
+      "height": 142,
+      "note": "彩色宝石卡，无锁，含左下部位和右下数量1",
+      "method": "crop",
+      "bytes": 35608,
+      "sha256": "6fa398d11f33d678b63d5561dd0fd3aab3a58b3136fa791c8059f9610ac1752d"
+    },
+    {
+      "file": "gem-red.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        730,
+        1491,
+        871,
+        1633
+      ],
+      "width": 141,
+      "height": 142,
+      "note": "红色宝石卡，含左下部位和右下数量1",
+      "method": "crop",
+      "bytes": 32141,
+      "sha256": "ad15f2f30653ed0763d33f53ef8df457f77b69961d93442c3f48bfa2831d9098"
+    },
+    {
+      "file": "gem-rainbow-locked.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        49,
+        1323,
+        191,
+        1465
+      ],
+      "width": 142,
+      "height": 142,
+      "note": "彩色宝石卡，含锁、部位和旧数量1",
+      "method": "crop",
+      "bytes": 35447,
+      "sha256": "65112ca1b350716c6b3ac23b0b4ce706e5de1ccd59fce243353fae6bc8e90430"
+    },
+    {
+      "file": "gem-red-dark.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        219,
+        1658,
+        361,
+        1800
+      ],
+      "width": 142,
+      "height": 142,
+      "note": "暗色红宝石，含部位和旧数量1",
+      "method": "crop",
+      "bytes": 24206,
+      "sha256": "7385b321c3352d675439e3e76cc99f1f513fd16c7f6713df739cf0437bda2d0e"
+    },
+    {
+      "file": "gem-rainbow-art.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        231,
+        1332,
+        350,
+        1446
+      ],
+      "width": 119,
+      "height": 114,
+      "note": "宝石中心图案椭圆扣图；边缘保留少量原卡片底色。",
+      "method": "ellipse alpha crop",
+      "bytes": 29620,
+      "sha256": "119ec378608e496bffa23668f27bc83401b2942e4b7a6d576541530eba70b79b"
+    },
+    {
+      "file": "gem-red-art.png",
+      "source": "1000070153.jpg",
+      "crop": [
+        740,
+        1498,
+        862,
+        1618
+      ],
+      "width": 122,
+      "height": 120,
+      "note": "宝石中心图案椭圆扣图；边缘保留少量原卡片底色。",
+      "method": "ellipse alpha crop",
+      "bytes": 29046,
+      "sha256": "7039cc578be3b5ea5a225419a3b54a537a5a2f318642459ed8aadd0d252ee50c"
+    },
+    {
+      "file": "nav-highlight.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        8,
+        2194,
+        172,
+        2400
+      ],
+      "width": 172,
+      "height": 206,
+      "note": "独立高亮底纹：按原选中导航干净像素采色重建渐变，加入青色顶边，不含图标文字红点。",
+      "method": "screenshot swatch gradient reconstruction",
+      "bytes": 1284,
+      "sha256": "08443b8b604e61f2bc988b2e68b24bf3a9a7d7ac487e9abf68a1383de04ca5d5"
+    },
+    {
+      "file": "battle-road-tile.webp",
+      "source": "1000070154.jpg",
+      "crop": [
+        0,
+        1160,
+        1080,
+        1400
+      ],
+      "width": 1080,
+      "height": 240,
+      "note": "240px高干净道路种子；无僵尸/HUD，含道路、两侧原生碎石/仙人掌。",
+      "method": "crop",
+      "bytes": 9440,
+      "sha256": "cb71094e04dc344be0e235eb5757511a08cb97e6a767f6a63f54b7fff80090f3"
+    },
+    {
+      "file": "battle-road.webp",
+      "source": "1000070154.jpg",
+      "crop": [
+        0,
+        1160,
+        1080,
+        1400
+      ],
+      "width": 1080,
+      "height": 2000,
+      "note": "由干净道路种子交替纵向镜像重复接合为1080×2000；无静态僵尸/HUD。",
+      "method": "vertical mirrored repeat; identical edge rows at seams",
+      "bytes": 75310,
+      "sha256": "a03eb32d39fbef738e360ca6cd73d84af8947b71fce6f05dec28aee7ad67bb4d"
+    },
+    {
+      "file": "turret.webp",
+      "source": "1000070154.jpg",
+      "crop": [
+        0,
+        1750,
+        1080,
+        2400
+      ],
+      "width": 1080,
+      "height": 650,
+      "note": "原炮台底部完整区域；含截图旧能量数、生命条、角色名和角色，主实现覆盖其动态数值。",
+      "method": "crop",
+      "bytes": 104408,
+      "sha256": "fdabbfdd327b46f98a35c655bae1091edb554406b00881b955dd37f8e3122eee"
+    },
+    {
+      "file": "turret-front.webp",
+      "source": "1000070154.jpg",
+      "crop": [
+        0,
+        1780,
+        1080,
+        2140
+      ],
+      "width": 1080,
+      "height": 360,
+      "note": "炮台前部区域；仍含左右旧能量数260/160、技能小圆图和右侧旧属性。",
+      "method": "crop",
+      "bytes": 65632,
+      "sha256": "c5d2decbd3dac56527e41d0749152fd32cebe5cdcd42d70f63f136e9b12ccf6c"
+    },
+    {
+      "file": "zombie-chainsaw.png",
+      "source": "1000070154.jpg",
+      "crop": [
+        425,
+        405,
+        640,
+        590
+      ],
+      "width": 215,
+      "height": 185,
+      "note": "Pillow手工多边形透明抠图；非逐像素精细分割，黑色轮廓边缘可能带少量路面色。",
+      "method": "manual polygon alpha matte",
+      "bytes": 59395,
+      "sha256": "a6c633cd584332563adfde511deff292991e6b9f4672deacf5f955ee118ae489"
+    },
+    {
+      "file": "zombie-chainsaw-crop.png",
+      "source": "1000070154.jpg",
+      "crop": [
+        425,
+        405,
+        640,
+        590
+      ],
+      "width": 215,
+      "height": 185,
+      "note": "同只僵尸原始矩形crop，保留道路底色供后续精细抠图。",
+      "method": "crop",
+      "bytes": 51135,
+      "sha256": "42fba956698f2634d31349f54226a8b0ece8708926515ea0ef0b95d28d7044fe"
+    },
+    {
+      "file": "resource-diamond.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        182,
+        218,
+        258,
+        284
+      ],
+      "width": 76,
+      "height": 66,
+      "note": "钻石图标，含右下加号；矩形裁切带原HUD深色底。",
+      "method": "crop",
+      "bytes": 10111,
+      "sha256": "668782c609dbc471d2d3fd85ac820027a51326dc6ac69a0ef6c6a95b9d267745"
+    },
+    {
+      "file": "resource-gold.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        401,
+        216,
+        477,
+        286
+      ],
+      "width": 76,
+      "height": 70,
+      "note": "金币图标，含右下加号；矩形裁切带原HUD深色底。",
+      "method": "crop",
+      "bytes": 10374,
+      "sha256": "c8e590b9ab6974b70b075b3b53f95ca0cf991412580c33a415ae0fcbeb81a02c"
+    },
+    {
+      "file": "resource-meat.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        610,
+        216,
+        687,
+        286
+      ],
+      "width": 77,
+      "height": 70,
+      "note": "肉/体力图标，含右下加号；矩形裁切带原HUD深色底。",
+      "method": "crop",
+      "bytes": 10734,
+      "sha256": "1d7b7754dc85f5d4d22a28c689c13c72bd90edcd9a0139ebfde0120635acc614"
+    },
+    {
+      "file": "nav-shop-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        0,
+        2194,
+        154,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 41910,
+      "sha256": "23f80744f2875be29879208d2a245d5530e65b2d8276db43f5ed030e1344828d"
+    },
+    {
+      "file": "nav-character-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        154,
+        2194,
+        309,
+        2400
+      ],
+      "width": 155,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 34418,
+      "sha256": "f18364ce03f6bf79ba3d740059ba52f58c45b8b8a2e650e4a6ca33c4f8b89237"
+    },
+    {
+      "file": "nav-core-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        309,
+        2194,
+        463,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 39754,
+      "sha256": "21a06f3c0c704e72b85eed9d30c097b5304a4e1ecc34e3fb0616f281d5cffa10"
+    },
+    {
+      "file": "nav-battle-off.png",
+      "source": "1000070150.jpg",
+      "crop": [
+        463,
+        2194,
+        617,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 33708,
+      "sha256": "a9e9ee9a74de084a42017c92e0a7cf151e2d91535838df13f8226fa5170e45ad"
+    },
+    {
+      "file": "nav-base-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        617,
+        2194,
+        771,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 35137,
+      "sha256": "46bc2eac4e5d402815886c93b68d58281d35eaf927e60bd1ad397c2d40b21ad8"
+    },
+    {
+      "file": "nav-guild-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        771,
+        2194,
+        926,
+        2400
+      ],
+      "width": 155,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 34164,
+      "sha256": "588bea49b5914222eaa648b4ba6d054f084c493ff3897432d19c43b9538e717b"
+    },
+    {
+      "file": "nav-journey-off.png",
+      "source": "1000070151.jpg",
+      "crop": [
+        926,
+        2194,
+        1080,
+        2400
+      ],
+      "width": 154,
+      "height": 206,
+      "note": "未选中整格导航，206px高，含原中文标签；可能含截图原红点。",
+      "method": "crop",
+      "bytes": 45426,
+      "sha256": "b61e775e950b0f8503b6bc2233333a8911ce7f4079e376f2af6a1040eb9a8f34"
+    }
+  ],
+  "assetCount": 73,
+  "totalBytes": 4595212
+}

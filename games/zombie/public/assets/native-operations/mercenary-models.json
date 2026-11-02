@@ -1,0 +1,464 @@
+[
+  {
+    "name": "gs_001_xueli",
+    "bundle": "assets_actormodel_mercenaryshow_gs_001_xueli.ab",
+    "base": "mercenary-models/gs_001_xueli/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_001_xueli/player-texture.webp",
+        "sha256": "7f413fe6e37d8828eea87d318ce8c57c0df4ff3f47994271fbb2df77e1f9222e",
+        "bytes": 81590
+      },
+      {
+        "file": "mercenary-models/gs_001_xueli/player-atlas.json",
+        "sha256": "63d8faa1c01b0f9474ededa2231d3970a054199b3690a6a35d3c82af0a2110fd",
+        "bytes": 5210
+      },
+      {
+        "file": "mercenary-models/gs_001_xueli/player-skeleton.json",
+        "sha256": "a022e9fe2c72eb0fda42c60eefc67e7e6e29f1ec23f1114a39141306cf077ec1",
+        "bytes": 141926
+      }
+    ]
+  },
+  {
+    "name": "gs_003_xiandanqiangshi",
+    "bundle": "assets_actormodel_mercenaryshow_gs_003_xiandanqiangshi.ab",
+    "base": "mercenary-models/gs_003_xiandanqiangshi/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_003_xiandanqiangshi/player-texture.webp",
+        "sha256": "b065ed0327a9a089c688053f2e6ab3468e2b93d2c9b3e630910e62dbc77bc01d",
+        "bytes": 80860
+      },
+      {
+        "file": "mercenary-models/gs_003_xiandanqiangshi/player-atlas.json",
+        "sha256": "cb71142ac0438064a736f08fd7eb2b6abdc6ae6e9c3619b38d08c1f222b82e10",
+        "bytes": 3683
+      },
+      {
+        "file": "mercenary-models/gs_003_xiandanqiangshi/player-skeleton.json",
+        "sha256": "0f45cc8ed3f65a6f936895da6d49578b7fc2fc051670e0bf99ccebd0bf1126c1",
+        "bytes": 121262
+      }
+    ]
+  },
+  {
+    "name": "gs_004_wushishunying",
+    "bundle": "assets_actormodel_mercenaryshow_gs_004_wushishunying.ab",
+    "base": "mercenary-models/gs_004_wushishunying/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_004_wushishunying/player-texture.webp",
+        "sha256": "5b546a138d7394ee973bef1d13b5a0423a521deb6be828007d132c7f53630845",
+        "bytes": 77574
+      },
+      {
+        "file": "mercenary-models/gs_004_wushishunying/player-atlas.json",
+        "sha256": "efda49811a3660fc0eb7042bc62aff82f358561a79371a893b09e42468c1ee14",
+        "bytes": 3505
+      },
+      {
+        "file": "mercenary-models/gs_004_wushishunying/player-skeleton.json",
+        "sha256": "23d9ebb97be445be27487fe90dcab482a428719276960d5b0a20c79bb2abfb4e",
+        "bytes": 92642
+      }
+    ]
+  },
+  {
+    "name": "gs_005_jujishou",
+    "bundle": "assets_actormodel_mercenaryshow_gs_005_jujishou.ab",
+    "base": "mercenary-models/gs_005_jujishou/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_005_jujishou/player-texture.webp",
+        "sha256": "42d7e44043898ca7643fa4fa3c59d2c8634579cbb5a566355aea00b5b25c18c3",
+        "bytes": 104320
+      },
+      {
+        "file": "mercenary-models/gs_005_jujishou/player-atlas.json",
+        "sha256": "12f6ff578f0fce5035dde07ad6089e5bbb098444625f8641b87cbf5b0dc89169",
+        "bytes": 3576
+      },
+      {
+        "file": "mercenary-models/gs_005_jujishou/player-skeleton.json",
+        "sha256": "7601da9d27d7e4801e806dec2b91a4ce4fe3e4c89fd44abebd14e329e278e6ff",
+        "bytes": 87530
+      }
+    ]
+  },
+  {
+    "name": "gs_006_jiqiangdabing",
+    "bundle": "assets_actormodel_mercenaryshow_gs_006_jiqiangdabing.ab",
+    "base": "mercenary-models/gs_006_jiqiangdabing/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_006_jiqiangdabing/player-texture.webp",
+        "sha256": "bf7d0e39bafd5917ab9b9596d28504c9b4e93208989d0c62ebfd486a58b985c8",
+        "bytes": 79134
+      },
+      {
+        "file": "mercenary-models/gs_006_jiqiangdabing/player-atlas.json",
+        "sha256": "52082b31927d34f3e43a24b9479aaa563c2c9324cbe98ab7c3a6ad574ad296a9",
+        "bytes": 3637
+      },
+      {
+        "file": "mercenary-models/gs_006_jiqiangdabing/player-skeleton.json",
+        "sha256": "e45384cd7730fc73dab0922b5e0c066f91634acd8c48faff41da3cb0459208c3",
+        "bytes": 59310
+      }
+    ]
+  },
+  {
+    "name": "gs_007_youerdashi",
+    "bundle": "assets_actormodel_mercenaryshow_gs_007_youerdashi.ab",
+    "base": "mercenary-models/gs_007_youerdashi/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_007_youerdashi/player-texture.webp",
+        "sha256": "a8e43613d60137561a99240e8fe5b3d0c9dc9033c45d00818155ceedda9f3dc3",
+        "bytes": 91586
+      },
+      {
+        "file": "mercenary-models/gs_007_youerdashi/player-atlas.json",
+        "sha256": "1750f455ad518a5ea5a9dbcaeebaa8453c05407399eb3a94baf3fe91cdc70a1f",
+        "bytes": 4840
+      },
+      {
+        "file": "mercenary-models/gs_007_youerdashi/player-skeleton.json",
+        "sha256": "d8bfac2aa629ba7ea97b36e3e5470ca120a4cad54b4159c12633c6394771f76b",
+        "bytes": 109526
+      }
+    ]
+  },
+  {
+    "name": "gs_008_liboshi",
+    "bundle": "assets_actormodel_mercenaryshow_gs_008_liboshi.ab",
+    "base": "mercenary-models/gs_008_liboshi/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_008_liboshi/player-texture.webp",
+        "sha256": "95ee29af0bfa7a5d439be321779aa5debdca6ec252074f724d1b37ddc1dd0ed5",
+        "bytes": 82766
+      },
+      {
+        "file": "mercenary-models/gs_008_liboshi/player-atlas.json",
+        "sha256": "df1a52cd116cf112bef2d4465997b587fdbb0d98cc9216f371395caa13482379",
+        "bytes": 3600
+      },
+      {
+        "file": "mercenary-models/gs_008_liboshi/player-skeleton.json",
+        "sha256": "ac548f77f165cc5fccc6e087d4e40f7d7f23fd05965873588aae3366833976cd",
+        "bytes": 154934
+      }
+    ]
+  },
+  {
+    "name": "gs_009_chaoshikongjuntuanbing",
+    "bundle": "assets_actormodel_mercenaryshow_gs_009_chaoshikongjuntuanbing.ab",
+    "base": "mercenary-models/gs_009_chaoshikongjuntuanbing/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_009_chaoshikongjuntuanbing/player-texture.webp",
+        "sha256": "d1aed969b8096a2faf6e0d18c550b0f96fbfe4deb2bbd8b31fd57e29416fa4a2",
+        "bytes": 70148
+      },
+      {
+        "file": "mercenary-models/gs_009_chaoshikongjuntuanbing/player-atlas.json",
+        "sha256": "5ba43dec1b8d20e61ef95b13b631acba65fe0adfc22d1096f954dc168cf80102",
+        "bytes": 4208
+      },
+      {
+        "file": "mercenary-models/gs_009_chaoshikongjuntuanbing/player-skeleton.json",
+        "sha256": "0e402a94bf51050b1210db99fc7c90fae9a7889f494a3f0b3d2fb98f92f4ca6b",
+        "bytes": 4078
+      }
+    ]
+  },
+  {
+    "name": "gs_010_shaojiandaren",
+    "bundle": "assets_actormodel_mercenaryshow_gs_010_shaojiandaren.ab",
+    "base": "mercenary-models/gs_010_shaojiandaren/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_010_shaojiandaren/player-texture.webp",
+        "sha256": "8ee4fce1a84177bb150782980a6917ee9637d4c5da2470ec9173136b21338a85",
+        "bytes": 90078
+      },
+      {
+        "file": "mercenary-models/gs_010_shaojiandaren/player-atlas.json",
+        "sha256": "85635315a007cfbdd83c7db0b5973ae0c3490903d6066b64a332247d30ef3e5b",
+        "bytes": 4200
+      },
+      {
+        "file": "mercenary-models/gs_010_shaojiandaren/player-skeleton.json",
+        "sha256": "c3c3134551b9a0c6099d11542719db1bcd2b38f54b08b54c5db7fd52b4c09d52",
+        "bytes": 160206
+      }
+    ]
+  },
+  {
+    "name": "gs_011_zhanditianshi",
+    "bundle": "assets_actormodel_mercenaryshow_gs_011_zhanditianshi.ab",
+    "base": "mercenary-models/gs_011_zhanditianshi/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_011_zhanditianshi/player-texture.webp",
+        "sha256": "217a963cfe91182604600317152b5e9ef59057f2ef93fbdf89908c4fd75b5f4f",
+        "bytes": 65044
+      },
+      {
+        "file": "mercenary-models/gs_011_zhanditianshi/player-atlas.json",
+        "sha256": "a0a108261a9fdd39abbd55d2d63ac64c0617f108a435ff9610a1f3dcf4b8e6ad",
+        "bytes": 4789
+      },
+      {
+        "file": "mercenary-models/gs_011_zhanditianshi/player-skeleton.json",
+        "sha256": "7fbc07b13970651ae6d373cd71b09526fc288b7145ff6ff50bf2d12dc2d3ce70",
+        "bytes": 121042
+      }
+    ]
+  },
+  {
+    "name": "gs_012_huoyanjianbinghanna",
+    "bundle": "assets_actormodel_mercenaryshow_gs_012_huoyanjianbinghanna.ab",
+    "base": "mercenary-models/gs_012_huoyanjianbinghanna/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_012_huoyanjianbinghanna/player-texture.webp",
+        "sha256": "50586885b95d02f30b61149a3b9c8079bb1a70cd1ad8ba8303b28794bc8130fb",
+        "bytes": 93942
+      },
+      {
+        "file": "mercenary-models/gs_012_huoyanjianbinghanna/player-atlas.json",
+        "sha256": "18d18a3fc0dde011221713042b3b22be20cd4b04455d8cfb4bfa5c240857eaf3",
+        "bytes": 5031
+      },
+      {
+        "file": "mercenary-models/gs_012_huoyanjianbinghanna/player-skeleton.json",
+        "sha256": "1af883f95205d010fcbe2261ef1abda7e4b0045a1d3e4336a9c69c7e1f0dbb7e",
+        "bytes": 154594
+      }
+    ]
+  },
+  {
+    "name": "gs_013_kongjutiancai",
+    "bundle": "assets_actormodel_mercenaryshow_gs_013_kongjutiancai.ab",
+    "base": "mercenary-models/gs_013_kongjutiancai/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_013_kongjutiancai/player-texture.webp",
+        "sha256": "fc9d008dde74f50ca3da0be6ef46496d153cda84af78f825ef7cdf8af2baa962",
+        "bytes": 94576
+      },
+      {
+        "file": "mercenary-models/gs_013_kongjutiancai/player-atlas.json",
+        "sha256": "00efbdff1cb035c0159faf27a1a6ca61c2800a9a3f0fae6846abddf962d8a51e",
+        "bytes": 3999
+      },
+      {
+        "file": "mercenary-models/gs_013_kongjutiancai/player-skeleton.json",
+        "sha256": "d7b2b9aaddf91294252cfcc5bae09dd065e3f37a9ead8571164302ca44af9117",
+        "bytes": 104746
+      }
+    ]
+  },
+  {
+    "name": "gs_014_baopozhuanjia",
+    "bundle": "assets_actormodel_mercenaryshow_gs_014_baopozhuanjia.atlas.ab",
+    "base": "mercenary-models/gs_014_baopozhuanjia/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_014_baopozhuanjia/player-texture.webp",
+        "sha256": "23566365626838773bf6e5a25d13fa0fbadabc11a5d04490e7efce7dd5d88d25",
+        "bytes": 93886
+      },
+      {
+        "file": "mercenary-models/gs_014_baopozhuanjia/player-atlas.json",
+        "sha256": "13cb3ffb7531e430845808357201a03c54a73d3bd9362656bcf6326d01594c21",
+        "bytes": 6669
+      },
+      {
+        "file": "mercenary-models/gs_014_baopozhuanjia/player-skeleton.json",
+        "sha256": "964b12a967c5748c565ebb9ff6aceed929d2dd1761b15155d2cb261b47a0cd78",
+        "bytes": 293034
+      }
+    ]
+  },
+  {
+    "name": "gs_015_guangmingzhimao",
+    "bundle": "assets_actormodel_mercenaryshow_gs_015_guangmingzhimao.ab",
+    "base": "mercenary-models/gs_015_guangmingzhimao/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_015_guangmingzhimao/player-texture.webp",
+        "sha256": "ff4fcf144a35133e901895fb655ea8e2f0ffe6bf70d47490182d81f19c5a79f9",
+        "bytes": 130818
+      },
+      {
+        "file": "mercenary-models/gs_015_guangmingzhimao/player-atlas.json",
+        "sha256": "52bf110a705e4a2bbc18842ca5f7c31b5ecf840f3298dd0a7e91baf418e56c7f",
+        "bytes": 6582
+      },
+      {
+        "file": "mercenary-models/gs_015_guangmingzhimao/player-skeleton.json",
+        "sha256": "05baee6399fd9904e986cecdcb476bc8d4dbe71465ce3305277f43cdf4c0d898",
+        "bytes": 120458
+      }
+    ]
+  },
+  {
+    "name": "gs_016_bangqiushou",
+    "bundle": "assets_actormodel_mercenaryshow_gs_016_bangqiushou.ab",
+    "base": "mercenary-models/gs_016_bangqiushou/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_016_bangqiushou/player-texture.webp",
+        "sha256": "c60cc959c47108bd183fd1de9bc7970657411ae8a4fa66ca2a656dfb84af9afd",
+        "bytes": 80788
+      },
+      {
+        "file": "mercenary-models/gs_016_bangqiushou/player-atlas.json",
+        "sha256": "f3fcccc0c869a593d4d0c373f152bec18f098f57134f26d6b71bb398999766ca",
+        "bytes": 4072
+      },
+      {
+        "file": "mercenary-models/gs_016_bangqiushou/player-skeleton.json",
+        "sha256": "7fdc6748664118a40137f58a44b1fa53981c98ba2594bee2c372aed7bcf48244",
+        "bytes": 51978
+      }
+    ]
+  },
+  {
+    "name": "gs_017_waigugeguyongbing",
+    "bundle": "assets_actormodel_mercenaryshow_gs_017_waigugeguyongbing.ab",
+    "base": "mercenary-models/gs_017_waigugeguyongbing/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_017_waigugeguyongbing/player-texture.webp",
+        "sha256": "a749d57979ee9749ab0bcc241f40a21d8eb116769789517b88ea72f365bbcfe2",
+        "bytes": 123006
+      },
+      {
+        "file": "mercenary-models/gs_017_waigugeguyongbing/player-atlas.json",
+        "sha256": "2f90fae8edfeb0cdb7301beacb243572ddc567a75bc493f6d5d7b56fea69536c",
+        "bytes": 6269
+      },
+      {
+        "file": "mercenary-models/gs_017_waigugeguyongbing/player-skeleton.json",
+        "sha256": "c4095a72e15f647dcc362569b164fe38da20845c5d0d45f68885fc8e29c6e3c2",
+        "bytes": 127298
+      }
+    ]
+  },
+  {
+    "name": "gs_017_waigugezhanshi02",
+    "bundle": "assets_actormodel_mercenaryshow_gs_017_waigugezhanshi02.ab",
+    "base": "mercenary-models/gs_017_waigugezhanshi02/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_017_waigugezhanshi02/player-texture.webp",
+        "sha256": "653709eb3d142235ac5bb084706d3af4ff0b1623c028a2ce57bd9f5e973c6962",
+        "bytes": 92348
+      },
+      {
+        "file": "mercenary-models/gs_017_waigugezhanshi02/player-atlas.json",
+        "sha256": "23583bba500fd15b53e6fe3337d6f817ca6efecd6645b6233831a9ce7ed2e4f0",
+        "bytes": 2279
+      },
+      {
+        "file": "mercenary-models/gs_017_waigugezhanshi02/player-skeleton.json",
+        "sha256": "3f74585f4edac28b112bb84a09001e589e5a1ab971b176aedf10ae9b3a99bb33",
+        "bytes": 69638
+      }
+    ]
+  },
+  {
+    "name": "gs_024_atmzf",
+    "bundle": "assets_actormodel_mercenaryshow_gs_024_atmzf.ab",
+    "base": "mercenary-models/gs_024_atmzf/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_024_atmzf/player-texture.webp",
+        "sha256": "b49d535515db1e74cda836f1f9a2036a557220fb628bd804be20fe34429e2016",
+        "bytes": 100870
+      },
+      {
+        "file": "mercenary-models/gs_024_atmzf/player-atlas.json",
+        "sha256": "89d7188bb5fb3885f8ce5c3d96db6b38e403f7355f9c506a16de6f7ff038d93c",
+        "bytes": 4077
+      },
+      {
+        "file": "mercenary-models/gs_024_atmzf/player-skeleton.json",
+        "sha256": "493abd88af91387a0653f7af93ff47172f9be43a221dfb378fe41821690f95bd",
+        "bytes": 257910
+      }
+    ]
+  },
+  {
+    "name": "gs_025_atmzm",
+    "bundle": "assets_actormodel_mercenaryshow_gs_025_atmzm.ab",
+    "base": "mercenary-models/gs_025_atmzm/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_025_atmzm/player-texture.webp",
+        "sha256": "00378c474485f03f01a011ed43100340dd26ed4f1057c0663e07ba5d2badfe42",
+        "bytes": 93340
+      },
+      {
+        "file": "mercenary-models/gs_025_atmzm/player-atlas.json",
+        "sha256": "a3cab59c06f8cb02f9ebdbf7dd3560026fbbf1ebda58eb7b2977f1067b278956",
+        "bytes": 3594
+      },
+      {
+        "file": "mercenary-models/gs_025_atmzm/player-skeleton.json",
+        "sha256": "88450f599f02ca0ece55a8c67c80dadf85841e11c943a02f9cb04d320c69c1b4",
+        "bytes": 154434
+      }
+    ]
+  },
+  {
+    "name": "gs_027_bduck",
+    "bundle": "assets_actormodel_mercenaryshow_gs_027_bduck.ab",
+    "base": "mercenary-models/gs_027_bduck/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_027_bduck/player-texture.webp",
+        "sha256": "611e0e95e2212c30dc127bbe88514f0a0da6e8a342d47337d989ddd44f6e2072",
+        "bytes": 163938
+      },
+      {
+        "file": "mercenary-models/gs_027_bduck/player-atlas.json",
+        "sha256": "139f700c08b08530fa3a9eb90d235f6df3c1671ffd1aa8d0aef4a9b06c38ddf9",
+        "bytes": 2642
+      },
+      {
+        "file": "mercenary-models/gs_027_bduck/player-skeleton.json",
+        "sha256": "8c87c5c1da10b92ae608d11f419fa34aabe664af9bbc41cc6b802fd8740761ca",
+        "bytes": 197106
+      }
+    ]
+  },
+  {
+    "name": "gs_028_xssn",
+    "bundle": "assets_actormodel_mercenaryshow_gs_028_xssn.ab",
+    "base": "mercenary-models/gs_028_xssn/",
+    "files": [
+      {
+        "file": "mercenary-models/gs_028_xssn/player-texture.webp",
+        "sha256": "b927247a0b802ee12bb7950bc80fda203f21ec6cbd0085bcc395256769ead1e4",
+        "bytes": 241020
+      },
+      {
+        "file": "mercenary-models/gs_028_xssn/player-atlas.json",
+        "sha256": "498046233c54d5f4dacececc305581a0b98a840f4c5d473a6faffb41ab91dd00",
+        "bytes": 7309
+      },
+      {
+        "file": "mercenary-models/gs_028_xssn/player-skeleton.json",
+        "sha256": "8b658fd101c20e6303e6015614b7bc0de831a48035bed2a0d07046289db386b5",
+        "bytes": 760390
+      }
+    ]
+  }
+]

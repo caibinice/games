@@ -1,0 +1,21 @@
+{
+  "bundle": "assets_actormodel_ui_ui_009_zhadanxiaoren.ab",
+  "bundleSHA256": "30931901367ab266b51aa73d1c0768e017a498f64c746f1da6933441d0956011",
+  "skeletonDataPathID": "-2291954376038960331",
+  "treasurePrefab": "m_goPlayer",
+  "initialAnimation": "idle2",
+  "sources": [
+    {
+      "file": "ui_009_zhadanxiaoren.atlas-3093190136--1668999369484632526.bytes",
+      "sha256": "676e0af6b0f64e0d9bdfc38757d55fddf259eda6ad75c51cfb017ecec804d31c"
+    },
+    {
+      "file": "ui_009_zhadanxiaoren.skel-3093190136--2360346581673777492.bytes",
+      "sha256": "0a7ffb51667ccddb74b534fb4a39e6485943745a2b725b27abce57501732d229"
+    },
+    {
+      "file": "ui_009_zhadanxiaoren-3093190136--6802874300283247709.png",
+      "sha256": "e94e86aaa1ba476242449ee71d60ed4c3625d343fda91868c314e39fa98ad052"
+    }
+  ]
+}

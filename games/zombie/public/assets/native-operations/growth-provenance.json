@@ -1,0 +1,252 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "inputs": [
+    {
+      "table": "ResDef.TextConfig",
+      "bundle": "assets_resources_config_resbin_textconfig.bytes.ab",
+      "bundle_sha256": "b4554ddc619ee8bea9e7a899b827e389d27c66b8bd8dc6af2e02ddca1f18ae0d",
+      "path_id": "3593229075507944612",
+      "sha256": "f9f53f5e66f201e2e8eb9f9ec8e36797083d661a3ac5a9cb16bbcd22cd31737b",
+      "rows": 54419,
+      "bytes": 2607600
+    },
+    {
+      "table": "ResDef.MercenaryBaseConfig",
+      "bundle": "assets_resources_config_resbin_mercenarybaseconfig.bytes.ab",
+      "bundle_sha256": "4fcae0b2b60b4127078277838b56ff002044ef30c4e6838df66899cf90bf4d9e",
+      "path_id": "6721409885462690610",
+      "sha256": "5ee1704ca6361c32cf0f76938c4328f229e56b8bc066bd4f414d0d8e6e3273c1",
+      "rows": 19,
+      "bytes": 940
+    },
+    {
+      "table": "ResDef.MercenaryLevelConfig",
+      "bundle": "assets_resources_config_resbin_mercenarylevelconfig.bytes.ab",
+      "bundle_sha256": "618be79c4932c1ad350065922e492b34baade5c985c9f97d725127f9276985fd",
+      "path_id": "-8792600587007317677",
+      "sha256": "4d8559df04bd3e664cd417f5d585f3754b41da13500b6c7458a4007d18b84bba",
+      "rows": 1900,
+      "bytes": 87420
+    },
+    {
+      "table": "ResDef.MercenaryQualityConfig",
+      "bundle": "assets_resources_config_resbin_mercenaryqualityconfig.bytes.ab",
+      "bundle_sha256": "d82ec8fb531bea78384f4bfe483d5e9a8faba1de35636978108811f200609dfc",
+      "path_id": "-9150689615597291903",
+      "sha256": "a9f0c0a14649adf37aaa1f0471a487ccf6d036c10cacf617bf9d92cbe7024dd3",
+      "rows": 399,
+      "bytes": 25556
+    },
+    {
+      "table": "ResDef.MercenarySkillConfig",
+      "bundle": "assets_resources_config_resbin_mercenaryskillconfig.bytes.ab",
+      "bundle_sha256": "0c83216be6a29d3b3388c3410ecc438ed1cfad85ab44a388dbb7cdf48d4693db",
+      "path_id": "3524752941538623940",
+      "sha256": "afa46320e30b2fed979d8d8d0d5b9aeada414e7cb3dd2537ad4d00903d0a77af",
+      "rows": 114,
+      "bytes": 3212
+    },
+    {
+      "table": "ResDef.GunBaseConfig",
+      "bundle": "assets_resources_config_resbin_gunbaseconfig.bytes.ab",
+      "bundle_sha256": "202fd4976e32d6deb778c9da877ae8135b213fe2c3ba6f06fdbb8f01c0227f07",
+      "path_id": "-3736856396616290014",
+      "sha256": "28257ade8a6b254ca21c1749d6ccd62d2fef246b84f014ec424ca4ae5ff5ae05",
+      "rows": 50,
+      "bytes": 6503
+    },
+    {
+      "table": "ResDef.GunUpConfig",
+      "bundle": "assets_resources_config_resbin_gunupconfig.bytes.ab",
+      "bundle_sha256": "7d60734bcd43c793056e1f13389c0e5e27bbcb03aac3c0ac60f7feb42bc337b2",
+      "path_id": "-6961401308453698074",
+      "sha256": "5b6770515540c36d07b216a387e45002105557dc4f80ff158404a032eda82767",
+      "rows": 245,
+      "bytes": 12760
+    },
+    {
+      "table": "ResDef.GunSkillConfig",
+      "bundle": "assets_resources_config_resbin_gunskillconfig.bytes.ab",
+      "bundle_sha256": "eae3aee1a294ce15284bc0ea72bbdb367972bcc6f3fcae48ec8e1f859aa0d146",
+      "path_id": "-1893355986471759217",
+      "sha256": "5c6320866459d09a1ce808b717f465da0eee8cc8fbe7fcac606f4a8790de0728",
+      "rows": 270,
+      "bytes": 19762
+    },
+    {
+      "table": "ResDef.MagicSkillConfig",
+      "bundle": "assets_resources_config_resbin_magicskillconfig.bytes.ab",
+      "bundle_sha256": "ffd0b08a56459df892c712cfd3c56bd2370186fe20aba4269bb61b3df0b7f160",
+      "path_id": "353809329400132987",
+      "sha256": "87d551f88957c1d081fc239799fd9d897c964c767faf21e722aacd8fbdedb88d",
+      "rows": 14,
+      "bytes": 781
+    },
+    {
+      "table": "ResDef.MagicSkillLevelConfig",
+      "bundle": "assets_resources_config_resbin_magicskilllevelconfig.bytes.ab",
+      "bundle_sha256": "199598225783dc68619a70d4b57bd75e663cfcc51cfe5f63c3410e07f27c0b3c",
+      "path_id": "4752283190786978475",
+      "sha256": "64b154fa8655c9fa1b2791b7cb639c07f58620978ba1d5d6d09fda4beafb33c1",
+      "rows": 644,
+      "bytes": 113364
+    },
+    {
+      "table": "ResDef.MagicSkillSpecialUpConfig",
+      "bundle": "assets_resources_config_resbin_magicskillspecialupconfig.bytes.ab",
+      "bundle_sha256": "838309034e78c986cc8f8b746d198ddcd45ea66f5fc987824032dcc072c5308c",
+      "path_id": "465982249391617482",
+      "sha256": "d29d227e755238b958af00df4d08f1135adea25426a86470fd5beab3baf5bf65",
+      "rows": 35,
+      "bytes": 440
+    },
+    {
+      "table": "ResDef.EquipUpLevelConfig",
+      "bundle": "assets_resources_config_resbin_equipuplevelconfig.bytes.ab",
+      "bundle_sha256": "7a7233370a660d89f3da79469aab288b41d6c621a5314c0da7a9bbed0715e439",
+      "path_id": "1166889302219040697",
+      "sha256": "0e7a6f8ce22dfe70a653a986888d8d7f0046a542c99634701b9275983776479d",
+      "rows": 906,
+      "bytes": 44414
+    },
+    {
+      "table": "ResDef.EquipMaxUpLevelConfig",
+      "bundle": "assets_resources_config_resbin_equipmaxuplevelconfig.bytes.ab",
+      "bundle_sha256": "feef4a125ce803b25c21dab0a18f7826b37930dce4e0c23681bcd49f2c7641bd",
+      "path_id": "7090540708848983576",
+      "sha256": "dd8d7812cbb5d21295299dd38577fb54f3f41c5bb1a679ed3b1c4511834e6ee5",
+      "rows": 210,
+      "bytes": 2540
+    },
+    {
+      "table": "ResDef.EquipConfig",
+      "bundle": "assets_resources_config_resbin_equipconfig.bytes.ab",
+      "bundle_sha256": "e17dc4c7b4eea1b41bfbfe590c84f069cbc9c6cfef41457819ff2b2be8d42d13",
+      "path_id": "-2283491082314920450",
+      "sha256": "ba3199b753bd8b9caa594926d0aa7647ba09b053b7512c572a87c0f5a3880020",
+      "rows": 1261,
+      "bytes": 206454
+    },
+    {
+      "table": "ResDef.EquipPrefixParamConfig",
+      "bundle": "assets_resources_config_resbin_equipprefixparamconfig.bytes.ab",
+      "bundle_sha256": "ec750a6e1aed3645be2a28ee62fd52658bf9e1d3acc1361ffa970f8228dc8831",
+      "path_id": "-5015205308210107609",
+      "sha256": "8510032efe9f7ed9ffa1401e70291a4c20abfb8ad30538782e3ce343a0968416",
+      "rows": 510,
+      "bytes": 17870
+    },
+    {
+      "table": "ResDef.EquipReforgeConfig",
+      "bundle": "assets_resources_config_resbin_equipreforgeconfig.bytes.ab",
+      "bundle_sha256": "b29d7670516a4230e579dd0544ce40868d9d8ea8ae053b43950545652bbd64f8",
+      "path_id": "-7227998091031738996",
+      "sha256": "f7b6947d025192525c49c4eb8b6203461d2050df441d97003f980011b5b1ec1f",
+      "rows": 510,
+      "bytes": 19400
+    },
+    {
+      "table": "ResDef.SkinBaseConfig",
+      "bundle": "assets_resources_config_resbin_skinbaseconfig.bytes.ab",
+      "bundle_sha256": "c2ca19dff37b80197e3280a661303fd505b1e3d22519e29cf79d91b8ef54d845",
+      "path_id": "-584222043376649262",
+      "sha256": "c3ea90e097624a3bd62e9fcec52e834ddb9ccabc7ca5c27d40a64da18012d354",
+      "rows": 109,
+      "bytes": 14855
+    },
+    {
+      "table": "ResDef.SkinLevelConfig",
+      "bundle": "assets_resources_config_resbin_skinlevelconfig.bytes.ab",
+      "bundle_sha256": "a8cbd926debb23d18c0199ab7bb1ad867d20a6f3973e7a7784effe34ccf0a635",
+      "path_id": "8056681241974550084",
+      "sha256": "c3fd9b74e3d84b6036d504a48ac49d4dd2e908a1de2b8df87fbd396ca10c8145",
+      "rows": 487,
+      "bytes": 58771
+    },
+    {
+      "table": "ResDef.SkinExtraConfig",
+      "bundle": "assets_resources_config_resbin_skinextraconfig.bytes.ab",
+      "bundle_sha256": "db6e38965b2c9e8fcee02acd455a09dee476debcfdbcb8e66746d8e67887c4a5",
+      "path_id": "-457145225292324625",
+      "sha256": "8da3f238539b0d6b1d297ccc7d6867e40c92f1349941715ffe1129ecaf397c0d",
+      "rows": 23,
+      "bytes": 572
+    },
+    {
+      "table": "ResDef.FashionRangeConfig",
+      "bundle": "assets_resources_config_resbin_fashionrangeconfig.bytes.ab",
+      "bundle_sha256": "e634c55b498e1f7145337c2ed80b2ce4357fc9710a0ef276e5b0cccbace625ea",
+      "path_id": "30441085374772552",
+      "sha256": "c7b80dcb41ff4334cdb6e4e0e406c389acaf4d88c5ec12e3d5a8c7da383a9c17",
+      "rows": 1,
+      "bytes": 34
+    },
+    {
+      "table": "ResDef.GoodsConfig",
+      "bundle": "assets_resources_config_resbin_goodsconfig.bytes.ab",
+      "bundle_sha256": "07b14595d5d8f69ebe5c9920f80012020b8a2f97ff5a50f62531038e983fd524",
+      "path_id": "1048239175570022897",
+      "sha256": "6aa35e1606059a9482b4dacf7f975f0421b5fb89002ea03d4e660d1620ddabff",
+      "rows": 3470,
+      "bytes": 582698
+    },
+    {
+      "table": "BattleCore.BuffFuncSkillAttrConfig",
+      "bundle": "assets_resources_config_resbin_fp_bufffuncskillattrconfig.bytes.ab",
+      "bundle_sha256": "8accb08ee5c8bd0a14b5c5426efd0421ddf208740189e2f1dfd72fa8d9063c55",
+      "path_id": "-5872477655809453663",
+      "sha256": "7704be5f764a29cb75b06755efbe6741c287255922bdad9d3c38d4920d6812dc",
+      "rows": 2318,
+      "bytes": 134464
+    }
+  ],
+  "outputs": [
+    {
+      "file": "native-growth-data.mjs",
+      "bytes": 5545449,
+      "sha256": "2f9b9fd502259d984a7e34ed89c7dbddff8454526affe507b05fa7a656d5f77b"
+    }
+  ],
+  "array_evidence": {
+    "ResDef.MercenaryLevelConfig": {
+      "ImpactData": 3
+    },
+    "ResDef.MercenaryQualityConfig": {
+      "ImpactData": 4
+    },
+    "ResDef.MercenarySkillConfig": {
+      "SkillId": 3
+    },
+    "ResDef.GunBaseConfig": {
+      "ImpactData": 4
+    },
+    "ResDef.GunUpConfig": {
+      "ImpactData": 4
+    },
+    "ResDef.MagicSkillLevelConfig": {
+      "GlobalAttrList": 2,
+      "AttrList": 6
+    },
+    "ResDef.EquipUpLevelConfig": {
+      "ImpactData": 3
+    },
+    "ResDef.EquipConfig": {
+      "ImpactData": 4
+    },
+    "ResDef.SkinBaseConfig": {
+      "ModelId": 2,
+      "PreActiveSkinID": 5
+    },
+    "ResDef.SkinLevelConfig": {
+      "CostItem": 2,
+      "ImpactData": 3,
+      "RandBuild": 3
+    },
+    "ResDef.GoodsConfig": {
+      "GetWayList": 4
+    },
+    "ResDef.ItemFuncData": {
+      "ArrFuncParam": 3
+    }
+  }
+}

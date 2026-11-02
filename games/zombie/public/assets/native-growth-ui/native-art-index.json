@@ -1,0 +1,770 @@
+[
+  {
+    "file": "images/icon_baoshi_1.webp",
+    "name": "icon_baoshi_1",
+    "bundle": "assets_uiraw_icon_baoshi.ab",
+    "path_id": "-8658183856631291321",
+    "dimensions": [
+      80,
+      71
+    ],
+    "sha256": "63fbc0684bfc09a66815c624a06078a7e9226ff123b5619c88385fb6c078f7cb",
+    "bytes": 3698
+  },
+  {
+    "file": "images/com_jiantou02.webp",
+    "name": "com_jiantou02",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-133199916889796710",
+    "dimensions": [
+      36,
+      42
+    ],
+    "sha256": "e4b7ee15d3cf946d1f20b30e7ad619185a7f93912041ab2987c6637abbcd54d5",
+    "bytes": 972
+  },
+  {
+    "file": "images/com_zb_jieji02.webp",
+    "name": "com_zb_jieji02",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "2844762127005624254",
+    "dimensions": [
+      38,
+      19
+    ],
+    "sha256": "dd054ccca7291d3e4454dd5c2b3c1eb5d5e124587b482e7910e4747a246b0b5e",
+    "bytes": 182
+  },
+  {
+    "file": "images/zmzg_mzzx_jinji01.webp",
+    "name": "zmzg_mzzx_jinji01",
+    "bundle": "assets_uiraw_activity_yongpan.ab",
+    "path_id": "2709566732797163083",
+    "dimensions": [
+      64,
+      24
+    ],
+    "sha256": "99c09820dd52a874e865c4df3424ba6f403cb2da881bad99b68aa9fb8d19e30b",
+    "bytes": 524
+  },
+  {
+    "file": "images/com_zb_icon_04.webp",
+    "name": "com_zb_icon_04",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "8306709822551079681",
+    "dimensions": [
+      29,
+      33
+    ],
+    "sha256": "aa44b8f11ad3811f76c1d7919982ca1840ade1fde9d7971d2744a2d7530487b2",
+    "bytes": 396
+  },
+  {
+    "file": "images/com_figure01.webp",
+    "name": "com_figure01",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-8073776845046814416",
+    "dimensions": [
+      212,
+      210
+    ],
+    "sha256": "b8fb0d439d2f1695a4355fa7ff555603f10d01e7196263a2d2e034018e874580",
+    "bytes": 5276
+  },
+  {
+    "file": "images/com_icon_number_bg.webp",
+    "name": "com_icon_number_bg",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-5402777804449232840",
+    "dimensions": [
+      19,
+      19
+    ],
+    "sha256": "fb3e041aedc2b86d459192702ae9236dc35780be064e845506f091b461e9c539",
+    "bytes": 122
+  },
+  {
+    "file": "images/zmzg_com_hongdian.webp",
+    "name": "zmzg_com_hongdian",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "5114010992914239353",
+    "dimensions": [
+      30,
+      30
+    ],
+    "sha256": "19c7cb3e7260ffc976d69394d6185de14e6351be26055045708d15c12f063971",
+    "bytes": 1000
+  },
+  {
+    "file": "images/zmzg_mzzx_jinji.webp",
+    "name": "zmzg_mzzx_jinji",
+    "bundle": "assets_uiraw_activity_yongpan.ab",
+    "path_id": "-3637661716943657326",
+    "dimensions": [
+      30,
+      30
+    ],
+    "sha256": "845cdc0369896c44acc9a2ec36aad2d152b55b25d3dc33192e77d147a1025ef6",
+    "bytes": 720
+  },
+  {
+    "file": "images/com_btn_close.webp",
+    "name": "com_btn_close",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-3734965351099267059",
+    "dimensions": [
+      84,
+      86
+    ],
+    "sha256": "833cd07231884e4ccc4357a56c088432b5d7feb6cec914712ae4a8c2d3e64262",
+    "bytes": 4450
+  },
+  {
+    "file": "images/com_icon_s_09.webp",
+    "name": "com_icon_s_09",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-1573143879874187933",
+    "dimensions": [
+      28,
+      28
+    ],
+    "sha256": "60b349ded289c576fc60feba7c89eba7ce18b594ebb6483869b1bafd0cbd111d",
+    "bytes": 84
+  },
+  {
+    "file": "images/com_icon_select.webp",
+    "name": "com_icon_select",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-6200755754393355754",
+    "dimensions": [
+      50,
+      50
+    ],
+    "sha256": "40d63f611497bb08887691b6487603d0c45578130e32077bc7e691de9c5068ff",
+    "bytes": 206
+  },
+  {
+    "file": "images/zmzg_zb_xilian_bg.webp",
+    "name": "zmzg_zb_xilian_bg",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "-1251849310535440135",
+    "dimensions": [
+      542,
+      120
+    ],
+    "sha256": "259ffaeed6e740286539a8a3b7a06932056c526808a4521065c7e6a356088faf",
+    "bytes": 1310
+  },
+  {
+    "file": "images/com_tc_gou.webp",
+    "name": "com_tc_gou",
+    "bundle": "assets_uiraw_t5setting.ab",
+    "path_id": "5129113884716137342",
+    "dimensions": [
+      53,
+      46
+    ],
+    "sha256": "9985547490acc08002d9b890c787969e1a8ad40df2a2b21a23feeaa1d3e2a6f1",
+    "bytes": 2190
+  },
+  {
+    "file": "images/com_daoju_xuanzhong.webp",
+    "name": "com_daoju_xuanzhong",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "4573305578120997303",
+    "dimensions": [
+      108,
+      108
+    ],
+    "sha256": "b367ddae385d479ed667bfb8fb82558f5fe5bbc47292a220e3a4e43f8867115c",
+    "bytes": 1476
+  },
+  {
+    "file": "images/com_lock.webp",
+    "name": "com_lock",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "8743042469702193464",
+    "dimensions": [
+      26,
+      28
+    ],
+    "sha256": "bcc5bad1f154b07e37aa25926b075c0599270a47dcdec126e0fdaec223ad8724",
+    "bytes": 506
+  },
+  {
+    "file": "images/com_zb_jieji01.webp",
+    "name": "com_zb_jieji01",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-8858043535711635253",
+    "dimensions": [
+      39,
+      22
+    ],
+    "sha256": "085842f942a1cf0b07c6e0e9438ce84bf0f056aee61ba52a3a6bf61221312e44",
+    "bytes": 236
+  },
+  {
+    "file": "images/com_new.webp",
+    "name": "com_new",
+    "bundle": "assets_uiraw_chapter.ab",
+    "path_id": "-3531399085582735935",
+    "dimensions": [
+      65,
+      54
+    ],
+    "sha256": "6c3a4e374f9e8a90fd34f2df8906649be6a8c8b77872ed416af60359eb49fff8",
+    "bytes": 2348
+  },
+  {
+    "file": "images/com_lock_bg.webp",
+    "name": "com_lock_bg",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-6881226992909101124",
+    "dimensions": [
+      31,
+      32
+    ],
+    "sha256": "32567988152b390e46c30a505cc71502174d90355dc06282d61a0293ba9c97ed",
+    "bytes": 90
+  },
+  {
+    "file": "images/com_icon_02.webp",
+    "name": "com_icon_02",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-3036161200300615235",
+    "dimensions": [
+      100,
+      100
+    ],
+    "sha256": "b9b547726b9a676759eec11ddbcdf47599e12db7427acaf3f6e9fc78956deeaf",
+    "bytes": 3508
+  },
+  {
+    "file": "images/zmzg_yj_ico_mask.webp",
+    "name": "zmzg_yj_ico_mask",
+    "bundle": "assets_uiraw_t5email.ab",
+    "path_id": "-2207941671744389445",
+    "dimensions": [
+      124,
+      124
+    ],
+    "sha256": "8577ea6a32c049e0a5e6aa1dfe30f2362975dd04bd1185bc0a0ad830841debd0",
+    "bytes": 768
+  },
+  {
+    "file": "images/zmzg_com_btn_b1.webp",
+    "name": "zmzg_com_btn_b1",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "853442902162350277",
+    "dimensions": [
+      184,
+      68
+    ],
+    "sha256": "58064c7704454fb733a56d1573ea2d0ce105f39e0a195ae89e0ffa64b6067210",
+    "bytes": 6032
+  },
+  {
+    "file": "images/com_tc_gou_bg.webp",
+    "name": "com_tc_gou_bg",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-432770463304665361",
+    "dimensions": [
+      28,
+      28
+    ],
+    "sha256": "f28ffc6184fa7929adb58e0e0d926f4f1297cc72bf6f4e87f03c57298bcacd3c",
+    "bytes": 286
+  },
+  {
+    "file": "images/com_tc_small.webp",
+    "name": "com_tc_small",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "4180324618222379630",
+    "dimensions": [
+      582,
+      156
+    ],
+    "sha256": "c997148182d52b5ca61a0668854568c00481309639a5330ad6e46b6f1fd908f3",
+    "bytes": 21320
+  },
+  {
+    "file": "images/zmzg_hx_dk6.webp",
+    "name": "zmzg_hx_dk6",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "2105073212490750891",
+    "dimensions": [
+      118,
+      118
+    ],
+    "sha256": "98dbb73c14ef348cad3c3ec85cc60b6cc7ca1a4bf391734820a22368a610c71f",
+    "bytes": 1440
+  },
+  {
+    "file": "images/com_zhuangshi.webp",
+    "name": "com_zhuangshi",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "2862392577379805294",
+    "dimensions": [
+      15,
+      15
+    ],
+    "sha256": "7e78b4f66cdb667856792ef84ef96450969707ec11fe1523c63f86b899892f2c",
+    "bytes": 182
+  },
+  {
+    "file": "images/zmzg_com_btn_b3.webp",
+    "name": "zmzg_com_btn_b3",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-2931607242906700706",
+    "dimensions": [
+      184,
+      68
+    ],
+    "sha256": "99c7147298dde59c9f6fa3b08a060582e14cfad1b2351df2a020bc69cdac75b9",
+    "bytes": 4818
+  },
+  {
+    "file": "images/zmzg_zb_liebiao_icon4.webp",
+    "name": "zmzg_zb_liebiao_icon4",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "652808681211282777",
+    "dimensions": [
+      23,
+      21
+    ],
+    "sha256": "121fe550c7e81b67d1110819d2cf857c20b5d23b7fff81a4965f3c9e8721676b",
+    "bytes": 318
+  },
+  {
+    "file": "images/com_btn_big.webp",
+    "name": "com_btn_big",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "6099804238212665041",
+    "dimensions": [
+      348,
+      120
+    ],
+    "sha256": "114b575cab4efe35b8265ef249dc728550b73063e5b484b2bff8a8019250bdbd",
+    "bytes": 22070
+  },
+  {
+    "file": "images/com_tips_bg.webp",
+    "name": "com_tips_bg",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "6108025461859511978",
+    "dimensions": [
+      40,
+      40
+    ],
+    "sha256": "7a9968654ea87126ff6dc9191fd05bcec9dc4f0183b123a01499d762c96d473f",
+    "bytes": 128
+  },
+  {
+    "file": "images/zmzg_zb_biaoti_bg02.webp",
+    "name": "zmzg_zb_biaoti_bg02",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "-1098805825521539997",
+    "dimensions": [
+      360,
+      26
+    ],
+    "sha256": "e11951a8e54c4cc2a58732e8aeaede6ee0c1366632dda8de4689cf5362453b27",
+    "bytes": 2706
+  },
+  {
+    "file": "images/com_tips_big_01.webp",
+    "name": "com_tips_big_01",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "7464192478584134445",
+    "dimensions": [
+      538,
+      71
+    ],
+    "sha256": "8de6a454a89b26ef58e51756dfb1fc6a96b2da7c9aa061625ab24baf1f42a138",
+    "bytes": 1202
+  },
+  {
+    "file": "images/zmzg_zb_liebiao_xian02.webp",
+    "name": "zmzg_zb_liebiao_xian02",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "3781798382803617580",
+    "dimensions": [
+      295,
+      2
+    ],
+    "sha256": "e5b6e788a3f6e134807d0dca15847970e2159d6cd3d51326e1bca5ab26eba1c1",
+    "bytes": 274
+  },
+  {
+    "file": "images/zmzg_zb_tipsicon.webp",
+    "name": "zmzg_zb_tipsicon",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "8334032950192209208",
+    "dimensions": [
+      50,
+      50
+    ],
+    "sha256": "294c3071aabf028b0427e23e3d72149b2d08f4a57b8495e820f1b712266b1825",
+    "bytes": 1152
+  },
+  {
+    "file": "images/com_tips_big_05.webp",
+    "name": "com_tips_big_05",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "4594700584034113019",
+    "dimensions": [
+      524,
+      185
+    ],
+    "sha256": "f8739b8d62322bbb2b247b9a0ee199b6dd70b969368e5cffdd3c76b5d672af5d",
+    "bytes": 33722
+  },
+  {
+    "file": "images/com_tips_shuxing_05.webp",
+    "name": "com_tips_shuxing_05",
+    "bundle": "assets_uiraw_commonnew2.ab",
+    "path_id": "-7000675383883135482",
+    "dimensions": [
+      363,
+      98
+    ],
+    "sha256": "9420349cfa2108ddfb0dca587ba9a1f93695f0c0b60f2a5d44952f0e4c31adaa",
+    "bytes": 14524
+  },
+  {
+    "file": "images/com_biaoti_bg.webp",
+    "name": "com_biaoti_bg",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "7038795259484818894",
+    "dimensions": [
+      561,
+      189
+    ],
+    "sha256": "895cf4a0dc96f60d2c1b3f326e5253b7a75926da8d2e87c4cd9fb2e63ae50f93",
+    "bytes": 24602
+  },
+  {
+    "file": "images/icon_keji_bingbao.webp",
+    "name": "icon_keji_bingbao",
+    "bundle": "assets_uiraw_icon_skill.ab",
+    "path_id": "5673784946387029560",
+    "dimensions": [
+      116,
+      116
+    ],
+    "sha256": "850905fba8a28992cbb257b86c849adf3650ba63dfed329ff8d9e8b019aeab65",
+    "bytes": 12928
+  },
+  {
+    "file": "images/com_unlock.webp",
+    "name": "com_unlock",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-2088795971060399267",
+    "dimensions": [
+      26,
+      28
+    ],
+    "sha256": "57a9e18d9bb7398080961fb0b86f60cef06b53d316bcccaa579d90ca33ace1e6",
+    "bytes": 664
+  },
+  {
+    "file": "images/icon_baoshi_4.webp",
+    "name": "icon_baoshi_4",
+    "bundle": "assets_uiraw_icon_baoshi.ab",
+    "path_id": "6052031826669109546",
+    "dimensions": [
+      78,
+      76
+    ],
+    "sha256": "caa0901cb82d48493a31bd10bd523a7eed4d6569841b2bb861c9fc13bde1a05e",
+    "bytes": 5408
+  },
+  {
+    "file": "images/zmzg_zb_liebiao_xian03.webp",
+    "name": "zmzg_zb_liebiao_xian03",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "5492945268100954789",
+    "dimensions": [
+      480,
+      2
+    ],
+    "sha256": "5d1e63adb832a7d47880bc012905b094ee4fc22f1ae08cdcf32bb7e556051886",
+    "bytes": 614
+  },
+  {
+    "file": "images/com_tips_big_07.webp",
+    "name": "com_tips_big_07",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-7950071157120794382",
+    "dimensions": [
+      524,
+      185
+    ],
+    "sha256": "282d54e22de6c69d0336ed41fe3aa8f655aada1c4c95716d15fe6dd0f6c2ce9c",
+    "bytes": 36748
+  },
+  {
+    "file": "images/zmzg_tips_qianwang.webp",
+    "name": "zmzg_tips_qianwang",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-7460730980693288243",
+    "dimensions": [
+      46,
+      46
+    ],
+    "sha256": "854175a55fa2b8e5ba03c61ec840f8eb31b00dcb51a8f274e51bc009020c4032",
+    "bytes": 994
+  },
+  {
+    "file": "images/zmzg_hx_bg.webp",
+    "name": "zmzg_hx_bg",
+    "bundle": "assets_resources_textures_backgroud_zmzg_hx_bg.png.ab",
+    "path_id": "-5126133798580246102",
+    "dimensions": [
+      512,
+      1024
+    ],
+    "sha256": "a96dd042e094d172c1b6c40bb7553e6d176c4ec525740ddf732c6036bb36dc5e",
+    "bytes": 279490
+  },
+  {
+    "file": "images/zmzg_sz_shizhuang_bg.webp",
+    "name": "zmzg_sz_shizhuang_bg",
+    "bundle": "assets_resources_textures_backgroud_zmzg_sz_shizhuang_bg.jpg.ab",
+    "path_id": "-6683681232228474678",
+    "dimensions": [
+      512,
+      1024
+    ],
+    "sha256": "b04df522714b2a092a674798c69d97cb21cd1913d1e48f916e5faba4a8b68299",
+    "bytes": 296142
+  },
+  {
+    "file": "images/zmzg_com_btn_a1.webp",
+    "name": "zmzg_com_btn_a1",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-801688341849909278",
+    "dimensions": [
+      232,
+      76
+    ],
+    "sha256": "54bb1295aade28df319198af2c819a083bfc6459d447857eee837c720ef4c36e",
+    "bytes": 7792
+  },
+  {
+    "file": "images/zmzg_com_icon_star1.webp",
+    "name": "zmzg_com_icon_star1",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-4949887165038779355",
+    "dimensions": [
+      45,
+      45
+    ],
+    "sha256": "5de1400fff06cfbce6561c54d6bfd8038c117c5f2c810d131a9f6aaf77a1d05e",
+    "bytes": 1700
+  },
+  {
+    "file": "images/zmzg_zb_diban.webp",
+    "name": "zmzg_zb_diban",
+    "bundle": "assets_uiraw_equip.ab",
+    "path_id": "1086150434135505087",
+    "dimensions": [
+      750,
+      166
+    ],
+    "sha256": "e50e5a1fb4e67a81a3a42e0a421dbfa909c09565d625e12d2abddb9cc5f5fde4",
+    "bytes": 3604
+  },
+  {
+    "file": "images/zmzg_com_icon_star2.webp",
+    "name": "zmzg_com_icon_star2",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "5043679328540630310",
+    "dimensions": [
+      45,
+      45
+    ],
+    "sha256": "b711b8ebffce22f434daa979307c3d665c1b43362ffe32aa21efe1da67800550",
+    "bytes": 1416
+  },
+  {
+    "file": "images/zmzg_hx_dk12.webp",
+    "name": "zmzg_hx_dk12",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "8578123461586031015",
+    "dimensions": [
+      369,
+      68
+    ],
+    "sha256": "674c1e70758a76a4b6f3be9816b3dd8bc90f9c50d7e18f02eff2bc49ea2dd66f",
+    "bytes": 13034
+  },
+  {
+    "file": "images/zmzg_com_icon_bg_4.webp",
+    "name": "zmzg_com_icon_bg_4",
+    "bundle": "assets_uiraw_commonnew2.ab",
+    "path_id": "-3976850813492095153",
+    "dimensions": [
+      160,
+      228
+    ],
+    "sha256": "042ad2f208a7d25b298947aadb80309be30c5a93cf8ce3bff1749cedf797a7ba",
+    "bytes": 17884
+  },
+  {
+    "file": "images/zmzg_com_btn_a2.webp",
+    "name": "zmzg_com_btn_a2",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "-9193437653442512857",
+    "dimensions": [
+      232,
+      76
+    ],
+    "sha256": "c976ec090386c3c99c5a457bb33829fc2a338b66e889e6545c1b2e49b1844b7e",
+    "bytes": 8396
+  },
+  {
+    "file": "images/zmzg_hx_jineng_bg02.webp",
+    "name": "zmzg_hx_jineng_bg02",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "5168605237067935477",
+    "dimensions": [
+      470,
+      78
+    ],
+    "sha256": "b3e7fadcc9b8451538b043298de6424a915bb4c0b4ef35ded67dc92fd1a154db",
+    "bytes": 9314
+  },
+  {
+    "file": "images/zmzg_hx_zs3.webp",
+    "name": "zmzg_hx_zs3",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "-4158055347773256724",
+    "dimensions": [
+      16,
+      16
+    ],
+    "sha256": "81d2620e45762cdeafb8376d1eee3be73ed40f6942826eff46b36ca83e1befdd",
+    "bytes": 168
+  },
+  {
+    "file": "images/zmzg_hx_dk10.webp",
+    "name": "zmzg_hx_dk10",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "-4685399962721929349",
+    "dimensions": [
+      79,
+      46
+    ],
+    "sha256": "39eb0ffc4e76b06469343d7de0cdc052cfe4d2e4cf1962511ba5db05f7461e3b",
+    "bytes": 116
+  },
+  {
+    "file": "images/zmzg_hx_dk18.webp",
+    "name": "zmzg_hx_dk18",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "448056164072678385",
+    "dimensions": [
+      134,
+      34
+    ],
+    "sha256": "a656b8c6abe6f3164b194cffbfd1ac71c4d6ca12d40ee8ed468a9a3a3e07d905",
+    "bytes": 404
+  },
+  {
+    "file": "images/zmzg_zjm_button_xz.webp",
+    "name": "zmzg_zjm_button_xz",
+    "bundle": "assets_uiraw_mainpage.ab",
+    "path_id": "1907674961005232165",
+    "dimensions": [
+      58,
+      80
+    ],
+    "sha256": "e2ba0d4b77f1e037c3c6e642388571e914fa510ae6a5d95af72113fb9866fba4",
+    "bytes": 2408
+  },
+  {
+    "file": "images/zmzg_com_tips_sj.webp",
+    "name": "zmzg_com_tips_sj",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "458161455965713622",
+    "dimensions": [
+      18,
+      16
+    ],
+    "sha256": "c4eb5050b26383cf6057605dec5f4ed71addc3a979309857b239428175167bb3",
+    "bytes": 284
+  },
+  {
+    "file": "images/zmzg_hx_dk19.webp",
+    "name": "zmzg_hx_dk19",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "-1559538924194026675",
+    "dimensions": [
+      52,
+      52
+    ],
+    "sha256": "b0b203d6b4dfb81d1c5f9962677778bb0b477abf5e85f4a4c7b975c3f599debe",
+    "bytes": 394
+  },
+  {
+    "file": "images/zmzg_com_tips.webp",
+    "name": "zmzg_com_tips",
+    "bundle": "assets_uiraw_commonnew.ab",
+    "path_id": "4771997665525085135",
+    "dimensions": [
+      30,
+      30
+    ],
+    "sha256": "6e3309164431bbbf2d6d9533fe6ecb29b62e0422931a5deb6b007b23c695c6a9",
+    "bytes": 486
+  },
+  {
+    "file": "images/zmzg_hx_line5.webp",
+    "name": "zmzg_hx_line5",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "-1821264206305400531",
+    "dimensions": [
+      237,
+      2
+    ],
+    "sha256": "033c4b06214729931ce37449e9b231dbc1ff32aae3cc2963cfa701a7230e0e63",
+    "bytes": 82
+  },
+  {
+    "file": "images/zmzg_hx_jn_icon2.webp",
+    "name": "zmzg_hx_jn_icon2",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "4459245827941225399",
+    "dimensions": [
+      105,
+      105
+    ],
+    "sha256": "7141589f770bd2c94e70d2aa9ea3bdd165bbf5266e67d9f0319c6d40d98b38e2",
+    "bytes": 9798
+  },
+  {
+    "file": "images/zmzg_hx_dk1.webp",
+    "name": "zmzg_hx_dk1",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "-7143742820023792940",
+    "dimensions": [
+      51,
+      24
+    ],
+    "sha256": "729b26cfb34ab942443413f318467b8077d1f21afbca801895c9e4bbcb5b3e07",
+    "bytes": 316
+  },
+  {
+    "file": "images/zmzg_hx_dk11.webp",
+    "name": "zmzg_hx_dk11",
+    "bundle": "assets_uiraw_core.ab",
+    "path_id": "7737534274743443776",
+    "dimensions": [
+      164,
+      36
+    ],
+    "sha256": "73765e54508b9c0e20fa81a71d748a94fc3811303ded8c7a5bf79e74ca594c84",
+    "bytes": 262
+  }
+]

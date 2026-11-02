@@ -1,0 +1,290 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "gem_count": 2023,
+  "login_spine_version": "3.8.99",
+  "inputs": [
+    {
+      "bundle": "assets_uiraw_login.ab",
+      "bundle_sha256": "b79a2997b77aa1929f308e4c902c1641d58d6f9e03d79fd1814ebf37addfbfb7",
+      "path_id": "-462699298012678732",
+      "name": "BG",
+      "sha256": "a803f5970354fddf6fdc898790b228d14f666b60100e34fb4b2fa15cfb177ea9"
+    },
+    {
+      "bundle": "assets_uiraw_login.ab",
+      "bundle_sha256": "b79a2997b77aa1929f308e4c902c1641d58d6f9e03d79fd1814ebf37addfbfb7",
+      "path_id": "-5806444202781724668",
+      "name": "logo",
+      "sha256": "d128b43cc5818b8696a7f43d95f76a2421ba10b1e04a8b65256a3aeaea87d8cc"
+    },
+    {
+      "bundle": "assets_uiraw_login.ab",
+      "bundle_sha256": "b79a2997b77aa1929f308e4c902c1641d58d6f9e03d79fd1814ebf37addfbfb7",
+      "path_id": "5113641115446272739",
+      "name": "zmzg_dl_Loading_bg",
+      "sha256": "7f65000e816dabb4a77615da934ff56e7093ea35047d1d3e7b36f068e65443c1"
+    },
+    {
+      "bundle": "assets_uiraw_login.ab",
+      "bundle_sha256": "b79a2997b77aa1929f308e4c902c1641d58d6f9e03d79fd1814ebf37addfbfb7",
+      "path_id": "4044019865458838243",
+      "name": "zmzg_dl_Loading",
+      "sha256": "759cac9d432f263f93c6272091c02352be5a97da673d84e858b06cff499ec7db"
+    },
+    {
+      "bundle": "assets_uiraw_login.ab",
+      "bundle_sha256": "b79a2997b77aa1929f308e4c902c1641d58d6f9e03d79fd1814ebf37addfbfb7",
+      "path_id": "8509658975197103520",
+      "name": "zmzg_dl_ksyx_btn",
+      "sha256": "630db5eeb7e6cd746da1ae19516af53a13ca5e90e55ae5bc65feeccd1d8a8902"
+    },
+    {
+      "bundle": "assets_actormodel_ui_login.ab",
+      "bundle_sha256": "e3a0441f64209df2a9d006f99c5aefc271e818444d6f6cdd8b6d55b272ff95b7",
+      "path_id": "-7590240507063394987",
+      "name": "ui_005_denglutu",
+      "sha256": "bad0b9fabe22a2f262524a801a9633eee2c90153589824e535940aba2dc4d4ac"
+    },
+    {
+      "bundle": "assets_actormodel_ui_login.ab",
+      "bundle_sha256": "e3a0441f64209df2a9d006f99c5aefc271e818444d6f6cdd8b6d55b272ff95b7",
+      "path_id": "-7899126675138696683",
+      "name": "ui_005_denglutu.atlas",
+      "sha256": "7fc052ccb291a52b0e5f36d80004bd48b24e329b2a5acd434d2394ec3d975bdc"
+    },
+    {
+      "bundle": "assets_actormodel_ui_login.ab",
+      "bundle_sha256": "e3a0441f64209df2a9d006f99c5aefc271e818444d6f6cdd8b6d55b272ff95b7",
+      "path_id": "7716911369518349354",
+      "name": "ui_005_denglutu.skel",
+      "sha256": "be810499fba2b3ceeb30177bea50b259f23c1b1a0a81f328b334f72356194687"
+    },
+    {
+      "bundle": "assets_resources_media_ui_ui_dianji.ogg.ab",
+      "bundle_sha256": "55194c46e2ff2ad907121a8b425b434a02553534abb8eff9d627ba1820cc76c4",
+      "path_id": "3085543292557354479",
+      "name": "UI_dianji",
+      "sha256": "4718910307134396264044b32d2bf40b7b96059b56b52b1041bfa2c8f0f15d9e"
+    },
+    {
+      "bundle": "assets_resources_media_ui_ui_fanhui_gaunbi.ogg.ab",
+      "bundle_sha256": "a8d482488f49a2d4360de41fcf32861d9d7bfbc4d984880576a9868ad800b473",
+      "path_id": "-5544771685409434018",
+      "name": "UI_fanhui_gaunbi",
+      "sha256": "555b56ba0d0ec26f97e6651b2e01d3adfb404b38aadc8493ceca102795c82fb3"
+    },
+    {
+      "bundle": "assets_resources_media_ui_ui_tanchuang_fanye.ogg.ab",
+      "bundle_sha256": "30a1eca5f68198f04f85c0c8052ef542cf61586a3ae238bf5cb7c9a89112be04",
+      "path_id": "1083576590901864696",
+      "name": "UI_tanchuang_fanye",
+      "sha256": "c219555e2efe26304f012d6e2486b23c5f02658dc74d95cf158cea3b3267289e"
+    },
+    {
+      "bundle": "assets_resources_media_ui_ui_gongxihuode.ogg.ab",
+      "bundle_sha256": "6bf5e79e5925c40b6258e1f1fb80a457b25fa44c1461cbaae99ec6be9316d7f7",
+      "path_id": "-8565046596340364733",
+      "name": "UI_gongxihuode",
+      "sha256": "207d865efe80bda955efb2575e315c2868742b632dadb1ef755b6434a0ce90e1"
+    },
+    {
+      "bundle": "assets_resources_media_ui_ui_xilian.ogg.ab",
+      "bundle_sha256": "84c6336be08496506fa5e4f3c53bed45dcf2b6312c5c1d0032088e23b123efe1",
+      "path_id": "8428793896599302635",
+      "name": "UI_xilian",
+      "sha256": "192f4d354012ebaf5189ab646a2b2bf0198faf14acf6206d2b98f93b2f29226c"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_gembaseconfig.bytes.ab",
+      "bundle_sha256": "cd5b22555d8c4d298e695f3bc327b3447b21aa1025d1799ba5e7f12e7ff6fb06",
+      "path_id": "8574981018279344934",
+      "name": "GemBaseConfig",
+      "sha256": "5b5c12b7324b05a3695f2462195126ddd3191cf243c3983bee3547146e3ce255"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_gembaseconfig.bytes.ab",
+      "bundle_sha256": "0449ef0cb185a26284c8b83ef4a9a83f4140de3ec0a1950bbcf97541df30fbf5",
+      "path_id": "-3909432353981882905",
+      "name": "GemBaseConfig",
+      "sha256": "1ff75816ea41c9253e8d5bf1c2a4228cdc23f1ecac904dc48161afa0d50ccc14"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_gemcomposeconfig.bytes.ab",
+      "bundle_sha256": "9cb726f688bc46ef83860aa15d964abff93f558fb0e8587d82fd3f0345a63d95",
+      "path_id": "6021816807662229488",
+      "name": "GemComposeConfig",
+      "sha256": "5531d8a45c68412de91483772b6c47daac6f83e4cbb1fa48362b57d08de26829"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_gemrollconfig.bytes.ab",
+      "bundle_sha256": "ea18c4047ea5d502d2bc5edff4f3b8231379065bbf06a9786d6b03741d82dcb3",
+      "path_id": "7905570886092102875",
+      "name": "GemRollConfig",
+      "sha256": "024410ec643dd428958cef68609dd14cfe13ea24b14d01367b446bee1da78e61"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_textconfig.bytes.ab",
+      "bundle_sha256": "b4554ddc619ee8bea9e7a899b827e389d27c66b8bd8dc6af2e02ddca1f18ae0d",
+      "path_id": "3593229075507944612",
+      "name": "TextConfig",
+      "sha256": "f9f53f5e66f201e2e8eb9f9ec8e36797083d661a3ac5a9cb16bbcd22cd31737b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "-8658183856631291321",
+      "name": "icon_baoshi_1",
+      "sha256": "0ff423a40123003b401e25dac0fdc9771f477452e8faff1443cb67ea422abe21"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "8279418483103577546",
+      "name": "icon_baoshi_2",
+      "sha256": "a543963c81d7725c7f74aa62edc88737f45921dccfd79a6629d72a0a9c19c635"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "884266493635658515",
+      "name": "icon_baoshi_3",
+      "sha256": "373e0da5aca7ebb544cc1efa7e662fb34393c9656d3169ba1a3521bd20d113c3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "6052031826669109546",
+      "name": "icon_baoshi_4",
+      "sha256": "8af7203da6f00ba17917a08e7df8b086708f57e017f60770f4e5edeccc7a8878"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "7496499554336077479",
+      "name": "icon_baoshi_5",
+      "sha256": "93b1b6523a3587bebc3f7f26f4115ee611ac2b84dcdb88fc444cccd77eb6e43c"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "1058223320473354628",
+      "name": "icon_baoshi_6",
+      "sha256": "1a2ddcf2f059d293e3a9a9d6c8c256cf091f436f85ad6067d750f6a87a7c5f61"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "-2607269241527220811",
+      "name": "icon_baoshi_7",
+      "sha256": "eb19a3511368ace7b83f36bf841d3ddd589bb6187b075ca4b0b51b4c64d46de2"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "assets/client-interface/click.mp3",
+      "sha256": "3b05f6c2c4f014066a96fe01ab15409ef048e6cf84ae249439b8740b7f549bd6",
+      "bytes": 2860
+    },
+    {
+      "file": "assets/client-interface/close.mp3",
+      "sha256": "5248133274bd48cc3976be48623668165ece8824e0a97d251aa857b410150674",
+      "bytes": 3590
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_1.webp",
+      "sha256": "63fbc0684bfc09a66815c624a06078a7e9226ff123b5619c88385fb6c078f7cb",
+      "bytes": 3698
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_2.webp",
+      "sha256": "7a8c5566b99af6dca3fc2d0c392cce8f93013936a7edf0b8d75a5225e27cf048",
+      "bytes": 4480
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_3.webp",
+      "sha256": "2da95b7fc19fff66063a669375e9caf32550878d30195c8194fddde0e3f93cd3",
+      "bytes": 4814
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_4.webp",
+      "sha256": "caa0901cb82d48493a31bd10bd523a7eed4d6569841b2bb861c9fc13bde1a05e",
+      "bytes": 5408
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_5.webp",
+      "sha256": "f980b03952f12a21e538c6ea50ed36bef328d9fb08cf8b3ec6203e4ee98aeaa3",
+      "bytes": 5770
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_6.webp",
+      "sha256": "d79b2671835ec10637d8f64fd26d6f2f295f4d38ec299a4d649e68e8ef350b77",
+      "bytes": 6624
+    },
+    {
+      "file": "assets/client-interface/icon_baoshi_7.webp",
+      "sha256": "9f298d0ace0b87e4f4ab8beb1f9de9b8a7d088ecc476a4df39c7f4177ec9ac12",
+      "bytes": 7076
+    },
+    {
+      "file": "assets/client-interface/login-actors.webp",
+      "sha256": "8a24f838713382a061997fb16c34ffacb51bbf38aa7fc2712f137204125d8d57",
+      "bytes": 454558
+    },
+    {
+      "file": "assets/client-interface/login-atlas.json",
+      "sha256": "0c51d42175dedc891b3c72fe8ea77c4521323b241779bcab58f3a03256f74775",
+      "bytes": 7812
+    },
+    {
+      "file": "assets/client-interface/login-background.webp",
+      "sha256": "08525e72bd2e096c1bf620cc611c09356e0fd087657cd9a73893f23d777b6911",
+      "bytes": 286574
+    },
+    {
+      "file": "assets/client-interface/login-logo.webp",
+      "sha256": "98b0a5210eef393ddd387c4ac8b1a0f2ed8e365746ce4d8141801ecd349beebb",
+      "bytes": 43622
+    },
+    {
+      "file": "assets/client-interface/login-skeleton.json",
+      "sha256": "336c86b26cf3afd1371c7145cc6913f1c0a10fc1a2438831412a6d719960eb03",
+      "bytes": 303602
+    },
+    {
+      "file": "assets/client-interface/page.mp3",
+      "sha256": "1f07e9d33c85fbf87642f57fb2e5a31789bb6522b5c8c5fd5612965698cdef33",
+      "bytes": 7242
+    },
+    {
+      "file": "assets/client-interface/progress-fill.webp",
+      "sha256": "cc5c6a9589022cc075c675bb58224a909efee589d5247fa502164412990b4806",
+      "bytes": 3554
+    },
+    {
+      "file": "assets/client-interface/progress-track.webp",
+      "sha256": "113122496471516674f087217ef32dce6c070fcb3f7b703136404a698d8e1882",
+      "bytes": 208
+    },
+    {
+      "file": "assets/client-interface/refine.mp3",
+      "sha256": "4961dac7729f51c17ca5508680e925a35a91280977c4d67746158d2aa666ea97",
+      "bytes": 17579
+    },
+    {
+      "file": "assets/client-interface/reward.mp3",
+      "sha256": "cf2788711fbbd6f45d90a884b41b0b3b9a3c1c6c1cc509c5885c40fa10814fc1",
+      "bytes": 24089
+    },
+    {
+      "file": "assets/client-interface/start-button.webp",
+      "sha256": "5e154e7a619870a59cc42bc3dd9f003b44bc9005d1b2abff2f4957f9ce115be0",
+      "bytes": 21640
+    },
+    {
+      "file": "client-gem-data.mjs",
+      "sha256": "55d4248679c68f6b0e3acc54489db7080bed1bc7444689ea5b802f3d045665f7",
+      "bytes": 694815
+    }
+  ]
+}

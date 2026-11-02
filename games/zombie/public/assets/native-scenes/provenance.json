@@ -1,0 +1,571 @@
+{
+  "screenshots_used": false,
+  "inputs": [
+    {
+      "bundle": "assets_actormodel_coreshow_cs_001_chushi_01.ab",
+      "bundle_sha256": "54e61727dd3d453ea2d5dffaca89fa497f2aae9fb51b8f0959ecbe1181ddfe1b",
+      "path_id": "-7687785691064014027",
+      "name": "cs_001_chushi_01",
+      "sha256": "88c29735b8523a97103f6d4132e02aea95721c582ecabe6da488dbeb196f1c49"
+    },
+    {
+      "bundle": "assets_actormodel_coreshow_cs_001_chushi_01.ab",
+      "bundle_sha256": "54e61727dd3d453ea2d5dffaca89fa497f2aae9fb51b8f0959ecbe1181ddfe1b",
+      "path_id": "-4947456056000384941",
+      "name": "cs_001_chushi_01.atlas",
+      "sha256": "a1e0305ea768ddc85911c904953d136abf810a59fa450de3372fd366babb4763"
+    },
+    {
+      "bundle": "assets_actormodel_coreshow_cs_001_chushi_01.ab",
+      "bundle_sha256": "54e61727dd3d453ea2d5dffaca89fa497f2aae9fb51b8f0959ecbe1181ddfe1b",
+      "path_id": "2011591522184861621",
+      "name": "cs_001_chushi_01.skel",
+      "sha256": "ad4e0fe6b94d5f98b6ac8af61204aeb1acbdee8028d17bc90b97e298c1ef1147"
+    },
+    {
+      "bundle": "assets_actormodel_playershow_ps_001_chushi_nan.ab",
+      "bundle_sha256": "4ccf782137cfeca67a234d24a37f31e5ca50279ff54e92dc0bc8a71718ee1279",
+      "path_id": "-7262162320489586488",
+      "name": "ps_001_chushi_nan.skel",
+      "sha256": "8a8830100a7600bfab09e5c3dfc52ae470e687922f2e10ae140ec6703ac5afca"
+    },
+    {
+      "bundle": "assets_actormodel_playershow_ps_001_chushi_nan.ab",
+      "bundle_sha256": "4ccf782137cfeca67a234d24a37f31e5ca50279ff54e92dc0bc8a71718ee1279",
+      "path_id": "-1265109960964417964",
+      "name": "ps_001_chushi_nan",
+      "sha256": "fdae8c8c0fe428dd2fe15a7154eea87bcadd8d6a664feadccd2dcf6a7443c8b1"
+    },
+    {
+      "bundle": "assets_actormodel_playershow_ps_001_chushi_nan.ab",
+      "bundle_sha256": "4ccf782137cfeca67a234d24a37f31e5ca50279ff54e92dc0bc8a71718ee1279",
+      "path_id": "4397164665958956007",
+      "name": "ps_001_chushi_nan.atlas",
+      "sha256": "389d71df06962dfbf4cfb37a108f3027c73a034d954211d17d3d8181044ec424"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_hx_bg.jpg.ab",
+      "bundle_sha256": "4835ba14ccbb9f88fa5209a88a2efd2d2a93606155eda09c53f711526f5f0989",
+      "path_id": "3878481624876534638",
+      "name": "zmzg_hx_bg",
+      "sha256": "7c97e8232088789ace25f1fb96d64dff0cba2c42d681bab5dae8d4c704699aba"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_hx_bg1.jpg.ab",
+      "bundle_sha256": "657b360cdde610de899c4b18243f671ae75a9262155021819de4f1712837ef03",
+      "path_id": "-5196904515320063781",
+      "name": "zmzg_hx_bg1",
+      "sha256": "fa47a0d1093eef3bb2011973229b7f4469660fe89a77ce31ea095d12263f9a2c"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_jd_bg.png.ab",
+      "bundle_sha256": "4e31c93fec8c15ae1b780a3b10d885da9af3d721aa49f78436dd95021f4a57aa",
+      "path_id": "615478669502926554",
+      "name": "zmzg_jd_bg",
+      "sha256": "dafa87c814b057e6ea64a73aa9f64cb23744debb8ab5a4a3ff419cc351b9c034"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_zb_bg.jpg.ab",
+      "bundle_sha256": "93b0f5b56367e43344e37ba8abe9cfb544836cae69e75d94603b279f8a6d3d8c",
+      "path_id": "-6671105062037553656",
+      "name": "zmzg_zb_bg",
+      "sha256": "89f876c4d8eb1907013c4337b7086fcb95bd065dfe636a46afaf5728c26fe9e9"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_zjm_bg.png.ab",
+      "bundle_sha256": "c4d5481dd360b746d902703ff989baf9b205bf9a04cd78466469f73632c2a36f",
+      "path_id": "6178113933902575366",
+      "name": "zmzg_zjm_bg",
+      "sha256": "ad65828ff5af202db6b68002f5841f4a058ee30ef60f8b655e7b0d93e2ddbe65"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10011.png.ab",
+      "bundle_sha256": "6fbd9ba75a76135140569b48b10ab2b070a2d9881c54dc6f705ff850a63b0ad4",
+      "path_id": "-7744402680262615981",
+      "name": "CJTB_10011",
+      "sha256": "663a85596e541267b1a16afd1d5d75de60273a1149d48461af8db39387eb4816"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10021.png.ab",
+      "bundle_sha256": "905984ec7ae6204065cbd41d39937cd9d14253a0fdf9d14b652334e30a2d9525",
+      "path_id": "-2595816498117069617",
+      "name": "CJTB_10021",
+      "sha256": "ddf61802c63d2f3cff4d1b9d90cab294a1f145db04c7ea1e79cf1da245742f4b"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10031.png.ab",
+      "bundle_sha256": "afa5d97116ea9e2d7750be9e253841169d71344dc280d3720fc9189dbf0a9d61",
+      "path_id": "-6283518329972382567",
+      "name": "CJTB_10031",
+      "sha256": "a384728f0dd273a1e1841727c84e95c5423ce36f71379e9dbca9b9568d8ff59c"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10041.png.ab",
+      "bundle_sha256": "71bf2f388be9a1aaedc7c046ac890d7f1c53321f0802e6a1fe768c242f6a04b2",
+      "path_id": "-477659706741421224",
+      "name": "CJTB_10041",
+      "sha256": "293f85e776b8c70a4a4dbe66652a2cf4fc9d29b180dc2740b7d12094dee7cb2c"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10051.png.ab",
+      "bundle_sha256": "2a6394ea23bfe0841a63db923f6d88f6000b3394ae1273816058cd164f183f79",
+      "path_id": "-2501770641663528402",
+      "name": "CJTB_10051",
+      "sha256": "44038b0db1dc51622f24222c97ee4cfa8cd39f637c5515964cc33a4182744b5a"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10061.png.ab",
+      "bundle_sha256": "086bffe7883e551cfdc28f920d7d573e9889675e7584684203ecd2809e8eb4f3",
+      "path_id": "-2115753440408003324",
+      "name": "CJTB_10061",
+      "sha256": "ce79949b51ab186a84361b4eead9cadb7a0b879f95c9fa4e3cb4278a5c3b4a6f"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10062.png.ab",
+      "bundle_sha256": "bd65403f011561a26660441d07627c0fd941cc9d507a5c8c9d93ae66ee5164da",
+      "path_id": "-3451674880210865323",
+      "name": "CJTB_10062",
+      "sha256": "d2506f58da562538df02f78ad98b41c8033f787e74045378bc93071c7d7f37fb"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10063.png.ab",
+      "bundle_sha256": "443859db20ea4fc894cd36d62a3f886ba89cb8ffe702d801d5b8c5b1b6e6bfff",
+      "path_id": "5782454427903005262",
+      "name": "CJTB_10063",
+      "sha256": "b4ad78bf3f0fb38544a1ca31bc1a527d082d0293cf0ebbcdf105bcdb816fc38c"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10071.png.ab",
+      "bundle_sha256": "834d69c4c02c8fb6aed31864ccfa812b76829bc9cdb1afe532dfd9fa1dda802f",
+      "path_id": "-6293911795321289158",
+      "name": "CJTB_10071",
+      "sha256": "91aaa224789dba05c8ca7ba61472b06244523d5cb71d55d70036de3a12158f0a"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10072.png.ab",
+      "bundle_sha256": "b19485565a9a1b780bafd7ba3d80a65a23026064aee8f0236f36d2dc9e0801ee",
+      "path_id": "-6091744484164070367",
+      "name": "CJTB_10072",
+      "sha256": "10bbce8dfe1eb1de5f6ae68dcde489ddf1d70490c5e306ee48a9b037822f1939"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10073.png.ab",
+      "bundle_sha256": "b0354d988d35e26b90c970e38dfd34dd370483ef59e68f53d2947afba77bc060",
+      "path_id": "-8170098614502357645",
+      "name": "CJTB_10073",
+      "sha256": "685510e344fdacc968dc9a542c2b5a6c91ca7981d8a8b741a202ef2dfad229b5"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10081.png.ab",
+      "bundle_sha256": "9dc36fbedf082b5c0656c3b2d5e59b10baec1e1d8965417be2a9c0348c8c7f93",
+      "path_id": "5001462318775009428",
+      "name": "CJTB_10081",
+      "sha256": "d809f920a9770d8f95a702e06a36d3a6e0fed7d0d941cffc9169c01fdd57edd1"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10082.png.ab",
+      "bundle_sha256": "134b549f6fa890b749f689c25706fd3efcd9d11d1f5f4379a19078acab6a256a",
+      "path_id": "4305860335868169693",
+      "name": "CJTB_10082",
+      "sha256": "06ec60a4b83a04369bafb2af50488c05498cf757e8b2c3a8e8c636e880d12db5"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10083.png.ab",
+      "bundle_sha256": "8447be8eab64971bc0d6e4e254738093702dc94809b47446abd4c2bfc50be7f9",
+      "path_id": "-7907338848625593724",
+      "name": "CJTB_10083",
+      "sha256": "58a0c676d4d5df84b64f5a6994c8f6ca11e473e67fb6af29c58afb67352fcabe"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10091.png.ab",
+      "bundle_sha256": "5d1811c42649c9cf2a5db5a4f96d9f0aa49d11fd261d4d19e8fad926a7c2030f",
+      "path_id": "-6339386521178729551",
+      "name": "CJTB_10091",
+      "sha256": "7086eccbf9d8460d03febce0d5b0a838f372ceb3afa6cf84c2e4d509a8ad09dc"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10092.png.ab",
+      "bundle_sha256": "73927dab59d4e2dcb9db773ff87b8ddf461151d9d2fc717c7d47130275f922b5",
+      "path_id": "3847336582008745213",
+      "name": "CJTB_10092",
+      "sha256": "8b3bae770d84cc793802d2750a65b065d490b0fc9aa79516eeaaec45cc896ac8"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10093.png.ab",
+      "bundle_sha256": "77dbf2f0bb2115ea4ab8e54afa70279ec257f645001ddff48a3d01f7dd2cb1d7",
+      "path_id": "1587930667019708764",
+      "name": "CJTB_10093",
+      "sha256": "fd8571995d8a4c1b90197df5ba071f19c68c5a57201da67723c8982d7c6ebd58"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10101.png.ab",
+      "bundle_sha256": "2338c44d5065c302c7d6ed7fa1fff08bdaeb3196fa66201ccdc572f4a97a8b65",
+      "path_id": "-7495952027379375010",
+      "name": "CJTB_10101",
+      "sha256": "beadb6d710e3bef1151dd03532e1e37bb5c2e27d3489af0e3f311e82dd09b2be"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10102.png.ab",
+      "bundle_sha256": "76c7a391e922bc305e53c90a7549689af051ef9c0fc8b3af70a1ce16093b806e",
+      "path_id": "2373988179830490272",
+      "name": "CJTB_10102",
+      "sha256": "a3b952fc738e8310b24950c3117013d413f073315c305999fe7ab0dbc7e2801b"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10103.png.ab",
+      "bundle_sha256": "378869a88c1f6ff4a320222212e3f2655f6fae5b0e3a1ee2f61e37017f8e2bd6",
+      "path_id": "-1165391971724698653",
+      "name": "CJTB_10103",
+      "sha256": "29afc0f9abcff24131c8c7b5d34c139dfbbd766141bf1f9b7ba72f74df1f8091"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10111.png.ab",
+      "bundle_sha256": "2b219d81b7c45f44fb0e203114d676d03302baf53da6c4f3213779ac356143da",
+      "path_id": "248122760492584486",
+      "name": "CJTB_10111",
+      "sha256": "77eddd2f6e2ef8c3970b460f3cb9a8386411bd969000c3fc6091ccb3921d7f55"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10112.png.ab",
+      "bundle_sha256": "af8e83e54fa9ed2ce43304af726261040931f03291891209faeeb50bf8213692",
+      "path_id": "7419004789939644360",
+      "name": "CJTB_10112",
+      "sha256": "7ac148cd697585b30656c68e7813cf82332f4591b9bfcd110638475742918d5f"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10113.png.ab",
+      "bundle_sha256": "cafd2bf3cc655a69f83fc27ab67dc95ec2d80f4398f9388193703f346d903f45",
+      "path_id": "-8942526885499902270",
+      "name": "CJTB_10113",
+      "sha256": "849a322489db43bb27abd94b03a7a668787209d41f8f3004347a3a3e6df4610c"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10121.png.ab",
+      "bundle_sha256": "c95463d5ec1619a0d295cbaabe385802d24e1129eca8f33ca805f6e782905b48",
+      "path_id": "-5253108401281129066",
+      "name": "CJTB_10121",
+      "sha256": "c1caf82cc8bb01547c7645033009023079c9fe1ec1da4b992733a2b8128f94c9"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10122.png.ab",
+      "bundle_sha256": "9c3e21e1defb84c880905f6c3c104d20ab8a7da2322dbd269d907bff5be7d522",
+      "path_id": "-7037743378222896765",
+      "name": "CJTB_10122",
+      "sha256": "f7ff6ae35ee82920e42cde166622e973dbfa1abbaf8a60cda84befa3d2036b2b"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10123.png.ab",
+      "bundle_sha256": "b3abc81ac517cc4d4618c558f9d5f4abab75319c8a0a6bd4d99adcceee5c28c3",
+      "path_id": "-6598281270942891741",
+      "name": "CJTB_10123",
+      "sha256": "235b920f26be97ee3d1ca68aac64f212e87bc5a9e58a7249f91c710d30201c22"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10131.png.ab",
+      "bundle_sha256": "b99debdda88cd2fa2ea2ba4c54e816129400442ff2d24b4a1fdfd3b294af6d38",
+      "path_id": "6127664288249730760",
+      "name": "CJTB_10131",
+      "sha256": "65e0a9531c74459501793a857c03c2268a050bd139d3ce420147f2008deebbd2"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10132.png.ab",
+      "bundle_sha256": "1fd76f9caef6670bd5680374066b70dcfb0742820e78c27dcd42b4decb14782a",
+      "path_id": "-7727303141456754430",
+      "name": "CJTB_10132",
+      "sha256": "836124d722bb1f14af000e86f91480b543cd86668a58425010dcc851bc4e6c95"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10133.png.ab",
+      "bundle_sha256": "15abab49893223db39595c457aef3c4c7308a08d59cfcdb437205f7a4275d3ec",
+      "path_id": "-6964184688464220682",
+      "name": "CJTB_10133",
+      "sha256": "288b32f02f1a432a7fad9e83a3deb60cb7a8b811dd48587745e4c5e44ef26d0f"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10141.png.ab",
+      "bundle_sha256": "e2065d966a4051475648c2c3bedbf4804b4c60fdc0a5f5a1dacf37a5818da638",
+      "path_id": "4446820606985385748",
+      "name": "CJTB_10141",
+      "sha256": "2dc7b872ea7b000edd90ca09a7399f2961b6e7b254993de79e86a0556ea7487a"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10142.png.ab",
+      "bundle_sha256": "a5f8dff655d9574c2d02123b0578a7bbbafb67631d4c6d2a33213b3b316a672c",
+      "path_id": "-7355162033103365098",
+      "name": "CJTB_10142",
+      "sha256": "51895f3c4de8411538a1806564d2f9617ba8b209ed1130e517ccbbc298e0a751"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10143.png.ab",
+      "bundle_sha256": "14ddd3ecfdd10cf96424c198a4ea41d02a59da886f8da10f737e1f5c066325b0",
+      "path_id": "-1755112260586529489",
+      "name": "CJTB_10143",
+      "sha256": "e41846ad44628b1de8fac983260ea01c2061f310aab627dbbec5da27bad820cc"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10151.png.ab",
+      "bundle_sha256": "1e126981bdd58eefb0d24ec1baf3dfa9ac3bc4310550c0ca44e1b88e332ce79b",
+      "path_id": "1862051316849348751",
+      "name": "CJTB_10151",
+      "sha256": "012fc29e50de42585c6deac86b7a260d7c0148ed7fc4c7d1034ae8af3fa3401a"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10152.png.ab",
+      "bundle_sha256": "dbc1dd90af36cf2b09bff44c222fa37f1866290a5374f98493a815013db4d701",
+      "path_id": "5228472614134728097",
+      "name": "CJTB_10152",
+      "sha256": "2486f097fe8ad7812942344867acdda33a7364a55c08ecc084b01d7399660894"
+    },
+    {
+      "bundle": "assets_resources_textures_chapter_mainicon_cjtb_10153.png.ab",
+      "bundle_sha256": "5d60294b77d97cf75c60950db4a5b55c74fa5ad665190c4bcc790be5dac5f1f7",
+      "path_id": "-2550795387502136402",
+      "name": "CJTB_10153",
+      "sha256": "fe1b20e7de017d68ce97b95e32291aafd73c347a0498453625e2ea9a95677588"
+    },
+    {
+      "bundle": "assets_resources_textures_backgroud_zmzg_hx_bg.png.ab",
+      "bundle_sha256": "0565dd8f040044b0d69cd4ef49d6ef23f50b24276b4009d9b9dcf0ae34d272c1",
+      "path_id": "-5126133798580246102",
+      "name": "zmzg_hx_bg",
+      "sha256": "f2fc16d9ec38f77d46562fc12ddfb531fd62906343453277d51b4d72ec4a5a3e"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "core/player-texture.webp",
+      "bytes": 31056,
+      "sha256": "80de910643bbc83c867cec53c8cfdd900ae2729337bb453608f5001db86596c8"
+    },
+    {
+      "file": "core/player-atlas.json",
+      "bytes": 1610,
+      "sha256": "0f3444763aa721a885185e05a6fbe296eec45ad4a1a7fc90a4a0535c37e32767"
+    },
+    {
+      "file": "core/player-skeleton.json",
+      "bytes": 13834,
+      "sha256": "5cea85f605a0f203d9dd51af36ad93c6d0484c381cdbfe18495ac0675dd25d16"
+    },
+    {
+      "file": "player-skeleton.json",
+      "bytes": 132634,
+      "sha256": "5d7fcad7278c6963f504f280db882fe9b0b199c4d3d10575eb259382fa081fd8"
+    },
+    {
+      "file": "player-texture.webp",
+      "bytes": 81102,
+      "sha256": "62a140d8c69cedaf5fccb9983b52dbd59fa499ba42607e53a75a49e72f17b84c"
+    },
+    {
+      "file": "player-atlas.json",
+      "bytes": 3958,
+      "sha256": "32d071db6e8246d22a828e021b07a385ecda6f79afa01490f4373cbb60d2f99b"
+    },
+    {
+      "file": "zmzg_hx_bg.webp",
+      "bytes": 196872,
+      "sha256": "f0439957de3ede247197781f2ed2be57fa9a37ee76fc5ca72c7b6bf228fa8e2d"
+    },
+    {
+      "file": "zmzg_hx_bg1.webp",
+      "bytes": 208046,
+      "sha256": "b23272f1def465fb6ef341906d18c9221e41cbb035a3b7a0ea80dd357e4a742a"
+    },
+    {
+      "file": "zmzg_jd_bg.webp",
+      "bytes": 389130,
+      "sha256": "90fafa97f5af664ee851cd10794ad7fd31be9118725ad34cc5373e18bc547546"
+    },
+    {
+      "file": "zmzg_zb_bg.webp",
+      "bytes": 214394,
+      "sha256": "f48d9901cdf6787779e9c5aab06ab9186c9d93fba87d8c8079b9d67719e16900"
+    },
+    {
+      "file": "zmzg_zjm_bg.webp",
+      "bytes": 180024,
+      "sha256": "19363554c2bb0fe4a8bb177c4247c17678acf8aeb61f14af665a8a4d68da5e9a"
+    },
+    {
+      "file": "CJTB_10011.webp",
+      "bytes": 86656,
+      "sha256": "198a88a4fa6c75d2f8a1d051eb5cadee0cf776571ae74433cf8b4b1210f79bfa"
+    },
+    {
+      "file": "CJTB_10021.webp",
+      "bytes": 108098,
+      "sha256": "b93dd4037d43c77774a95f5809005a3998b649e01407979c00966414d6f2a98a"
+    },
+    {
+      "file": "CJTB_10031.webp",
+      "bytes": 96816,
+      "sha256": "61142c4a9cb23dd2bb5e5a722ff85bbf8c0c5a939e788018304121460ead5c4f"
+    },
+    {
+      "file": "CJTB_10041.webp",
+      "bytes": 81408,
+      "sha256": "78d0338a0928759ba6b9d0951c7b8b9904d1fe23d30b38d95df2eacd183574e0"
+    },
+    {
+      "file": "CJTB_10051.webp",
+      "bytes": 84232,
+      "sha256": "a811c9b1a9f01d6927f30bdf104f7429a111f053b96d2ae498aae23209b0fbba"
+    },
+    {
+      "file": "CJTB_10061.webp",
+      "bytes": 92424,
+      "sha256": "a965711a4f6d4e20cc5ef0f50e820021d4a0f1ae89d61bb12f67f1806657acff"
+    },
+    {
+      "file": "CJTB_10062.webp",
+      "bytes": 94570,
+      "sha256": "ab9c8356dbf4268dfc1c8ccaa7f9a706ea38f5158c70dacdbff52ab9df011b50"
+    },
+    {
+      "file": "CJTB_10063.webp",
+      "bytes": 93118,
+      "sha256": "b28f4717bea499ad91262d159f02bb4186af46e5b68e21e45ca77c7e1e95cde9"
+    },
+    {
+      "file": "CJTB_10071.webp",
+      "bytes": 103942,
+      "sha256": "076c18237cd6b02f6d3574643b02f4f8c34924be871bd0c26ccf8e8c77b5e66b"
+    },
+    {
+      "file": "CJTB_10072.webp",
+      "bytes": 98896,
+      "sha256": "42bc0f8c8bb26215ad997cedcc457af9cb4e16fc2d117af6e7ff06fac669dd1f"
+    },
+    {
+      "file": "CJTB_10073.webp",
+      "bytes": 103942,
+      "sha256": "de09b88755e9edcf7455d699f349629689c5d636707da7772464cd34462363dc"
+    },
+    {
+      "file": "CJTB_10081.webp",
+      "bytes": 101562,
+      "sha256": "2501fc263cb9230a6818bfb8068436d72a1b90b0ed32cdadd8598795a8447ca1"
+    },
+    {
+      "file": "CJTB_10082.webp",
+      "bytes": 105790,
+      "sha256": "f8a0115a84c3d9107edcb0559f389ef6e6b1d477fd2ad80cab1f94fc58d30b9e"
+    },
+    {
+      "file": "CJTB_10083.webp",
+      "bytes": 100356,
+      "sha256": "3c1c4c554b8437ca713c11de5b240f8639ed80d6bc5b43606f796efd116890a6"
+    },
+    {
+      "file": "CJTB_10091.webp",
+      "bytes": 121808,
+      "sha256": "808b44e0db26beb91adc471adfa4ecb8106e3dc3eccafc0462aedff663200fa8"
+    },
+    {
+      "file": "CJTB_10092.webp",
+      "bytes": 119232,
+      "sha256": "6b3c8b9edf7d1fdab16e928e537f4f66ead429b8f90bccf6e44349a881817e44"
+    },
+    {
+      "file": "CJTB_10093.webp",
+      "bytes": 119946,
+      "sha256": "6a8dcf93461f7e36fcecab0d22f5d27b4a03161e7aa4616dc98ff46598588ffa"
+    },
+    {
+      "file": "CJTB_10101.webp",
+      "bytes": 123174,
+      "sha256": "77662dce744718ee2f8dec77c3aeacb619fe8396f5ab3db6246b9142cfd5241e"
+    },
+    {
+      "file": "CJTB_10102.webp",
+      "bytes": 125488,
+      "sha256": "da60f8800fdd4f716a9237f130bb24b73627ce98acca5f1cc651ac48ae1c3fbe"
+    },
+    {
+      "file": "CJTB_10103.webp",
+      "bytes": 125102,
+      "sha256": "04177797fcda0371116afe05eb3c946277d36c0b2e325d34fcb1c39840a82a62"
+    },
+    {
+      "file": "CJTB_10111.webp",
+      "bytes": 131306,
+      "sha256": "578cc479037fc7ba4caf4009c01daff9e31b9c6f2f8af129046189ddadf9c430"
+    },
+    {
+      "file": "CJTB_10112.webp",
+      "bytes": 134244,
+      "sha256": "554987a46b1fce85427c8a17d6aed0bdf27becb9293fed34056f6c0b4f319f37"
+    },
+    {
+      "file": "CJTB_10113.webp",
+      "bytes": 135604,
+      "sha256": "b27b8cd0ff479c2ef50396bde2ed52b436d046dbe344d69f7c804c7abd6eefa7"
+    },
+    {
+      "file": "CJTB_10121.webp",
+      "bytes": 104304,
+      "sha256": "9d7cd3600c53607d89049784ab0c34e161d7141811edcd926d52d37125f0ffa6"
+    },
+    {
+      "file": "CJTB_10122.webp",
+      "bytes": 94670,
+      "sha256": "9b8891879e5c44cbdc153fa084f8a0e53dc3cb99dba057a33af550ba29d3865f"
+    },
+    {
+      "file": "CJTB_10123.webp",
+      "bytes": 102128,
+      "sha256": "3581c52001b1c548931f4c0a4963b4f20da22090737db93d00a2552ad7971349"
+    },
+    {
+      "file": "CJTB_10131.webp",
+      "bytes": 116204,
+      "sha256": "bb367f42461fd8bbac2d319cdf436d6276a7079e4cbcb2a5c7b7f350516b1c7e"
+    },
+    {
+      "file": "CJTB_10132.webp",
+      "bytes": 117056,
+      "sha256": "712141ea12867b43dc97ce870768de4c0708efa1aeb7b30bebc9c82f8f575e27"
+    },
+    {
+      "file": "CJTB_10133.webp",
+      "bytes": 111622,
+      "sha256": "98745747701a9d5a4abacbf074e65f71fb850fd7c036ebfd0f40697660b6e529"
+    },
+    {
+      "file": "CJTB_10141.webp",
+      "bytes": 95120,
+      "sha256": "cdc57c70ee58ce6a71434c6ebd2ebe1b4e9ce345a64a02c1e42f7313503c4731"
+    },
+    {
+      "file": "CJTB_10142.webp",
+      "bytes": 95806,
+      "sha256": "f1679d4793b861e6ea6532e91bdfccbc045bbc316948637568a2a83a9acb7abe"
+    },
+    {
+      "file": "CJTB_10143.webp",
+      "bytes": 95036,
+      "sha256": "b3e34736d8f06d31b11f6e8ee170a8bb6f8f0adb2de8fdff92ad0a9280dd30e7"
+    },
+    {
+      "file": "CJTB_10151.webp",
+      "bytes": 82558,
+      "sha256": "4be5bd40d3b96aad1e96bd5852a5438029c7a4756181d8324bedacd9ff3e39b5"
+    },
+    {
+      "file": "CJTB_10152.webp",
+      "bytes": 84776,
+      "sha256": "65cbb61c3723a718a772b784fe747a7bcd087db7383653712df2e17c5d5876d4"
+    },
+    {
+      "file": "CJTB_10153.webp",
+      "bytes": 84428,
+      "sha256": "1aee5713618fa0797a60bad09aa9a0087e30cebcdca772753d66e16138d3c881"
+    },
+    {
+      "file": "core-background.webp",
+      "bytes": 279490,
+      "sha256": "a96dd042e094d172c1b6c40bb7553e6d176c4ec525740ddf732c6036bb36dc5e"
+    }
+  ]
+}

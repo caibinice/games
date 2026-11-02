@@ -79,15 +79,33 @@ def package_dist(dist,archive):
    if path.is_file():tar.add(path,arcname=(Path('www')/path.relative_to(dist)).as_posix())
  return manifest
 
+def resume_package(path,dist,ids):
+ path=path.resolve();package=json.loads(path.read_text(encoding='utf-8'));manifest=validate_dist(dist)
+ release=package.get('release','');archive=Path(package.get('archive','')).resolve()
+ if not re.fullmatch(r'\d{14}-[a-z0-9]+',release) or package.get('commit')!=release.split('-')[-1] or archive.parent!=path.parent or archive.name!=f'games-{release}.tar.gz':raise RuntimeError('Invalid resume package location/release')
+ if package.get('games')!=ids or package.get('runtime_files')!=len(manifest['files']):raise RuntimeError('Resume game selection differs')
+ if hashlib.sha256(archive.read_bytes()).hexdigest()!=package.get('sha256'):raise RuntimeError('Resume archive hash mismatch')
+ expected={'www/'+p.relative_to(dist).as_posix():p for p in dist.rglob('*') if p.is_file()}
+ with tarfile.open(archive,'r:gz') as tar:
+  members=tar.getmembers()
+  if len(members)!=len(expected) or {m.name for m in members}!=set(expected):raise RuntimeError('Resume archive has unexpected/missing files')
+  for member in members:
+   if not member.isfile() or tar.extractfile(member).read()!=expected[member.name].read_bytes():raise RuntimeError('Resume archive differs from current build')
+ return package,archive,manifest
+
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--games','--game',default='all');parser.add_argument('--dry-run',action='store_true');parser.add_argument('--blog-root',type=Path,default=ROOT.parent/'ai-blog');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--games','--game',default='all');parser.add_argument('--dry-run',action='store_true');parser.add_argument('--resume-package',type=Path);parser.add_argument('--blog-root',type=Path,default=ROOT.parent/'ai-blog');args=parser.parse_args()
  all_ids=[g['id'] for g in catalogue()];ids=all_ids if args.games=='all' else list(dict.fromkeys(args.games.split(',')))
  if not ids or any(i not in all_ids for i in ids):raise RuntimeError('Unknown game selection')
  commit=subprocess.run(['git','-C',str(ROOT),'rev-parse','--short=10','HEAD'],capture_output=True,text=True).stdout.strip() or 'working'
  if not re.fullmatch('[a-z0-9]+',commit):raise RuntimeError('Invalid commit identifier')
  stamp=datetime.now(timezone(timedelta(hours=8))).strftime('%Y%m%d-%H%M%S-%f');release=datetime.now(UTC).strftime('%Y%m%d%H%M%S')+'-'+commit
- backup=work_root()/'backups'/f'games-{stamp}';staging=work_root()/'tmp'/f'games-release-{stamp}';staging.mkdir(parents=True,exist_ok=False)
- archive=staging/f'games-{release}.tar.gz';manifest=package_dist(ROOT/'dist',archive)
+ backup=work_root()/'backups'/f'games-{stamp}';staging=work_root()/'tmp'/f'games-release-{stamp}'
+ if args.resume_package:
+  package,archive,manifest=resume_package(args.resume_package,ROOT/'dist',ids);release=package['release'];commit=package['commit'];staging=args.resume_package.resolve().parent
+ else:
+  staging.mkdir(parents=True,exist_ok=False)
+  archive=staging/f'games-{release}.tar.gz';manifest=package_dist(ROOT/'dist',archive)
  if [g['id'] for g in manifest['games']]!=ids:raise RuntimeError('Built game selection differs; rebuild requested games')
  package={'release':release,'repository':'https://github.com/caibinice/games','commit':commit,'games':ids,'url':URL+'games/','archive':str(archive),'sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'runtime_files':len(manifest['files'])}
  (staging/'package.json').write_text(json.dumps(package,indent=2),encoding='utf-8')
@@ -101,8 +119,11 @@ def main():
   previous=remote.run('test -L /opt/games/www && readlink -f /opt/games/www || true',timeout=30).strip()
   rollback={**package,'previous':previous,'legacy_pindou':'/opt/pindou/www','local_backup':str(backup),'remote_backup':f'/opt/games/backups/{release}','routes_sha256_before':digest}
   (backup/'rollback.json').write_text(json.dumps(rollback,indent=2),encoding='utf-8')
-  upload=f'/tmp/games-{release}.tar.gz';next_conf=f'/tmp/games-routes-{release}.conf';remote.upload_file(archive,upload,0o600);remote.upload_bytes(merged.encode(),next_conf,0o600)
-  paths=' '.join(i['path'] for i in manifest['files']);selection=' '.join(ids)
+  upload=f'/tmp/games-{release}.tar.gz';next_conf=f'/tmp/games-routes-{release}.conf'
+  uploaded=remote.run(f'sha256sum {upload} 2>/dev/null || true',timeout=15).split() if args.resume_package else []
+  if not uploaded or uploaded[0]!=package['sha256']:remote.upload_file(archive,upload,0o600)
+  remote.upload_bytes(merged.encode(),next_conf,0o600)
+  urls=' '.join(URL+i['path'] for i in manifest['files']);selection=' '.join(ids)
   remote.run(f'''
 set -euo pipefail
 root=/opt/games
@@ -142,7 +163,7 @@ install -m 644 {next_conf} {ROUTES}
 nginx -t
 systemctl reload nginx
 systemctl is-active --quiet nginx
-for path in {paths}; do curl -fsS --resolve caibinice.com:443:127.0.0.1 "{URL}$path" >/dev/null; done
+printf '%s\n' {urls} | xargs -r -P 8 -n 1 curl -fsS --connect-timeout 5 --max-time 15 --resolve caibinice.com:443:127.0.0.1 -o /dev/null
 for game in {selection}; do
  curl -fsSI --resolve caibinice.com:443:127.0.0.1 "{URL}games/$game/app.mjs" | grep -qi 'content-type: application/javascript'
  [[ "$(curl -sS -o /dev/null -w '%{{http_code}}' --resolve caibinice.com:443:127.0.0.1 "{URL}games/$game/not-found.mjs")" = 404 ]]

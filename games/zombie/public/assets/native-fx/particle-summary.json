@@ -1,0 +1,142 @@
+{
+  "grenade-explosion": {
+    "uses": 1,
+    "tiles": [
+      [
+        4,
+        4
+      ]
+    ],
+    "example": "boom"
+  },
+  "grenade-ring": {
+    "uses": 1,
+    "tiles": [
+      [
+        2,
+        2
+      ]
+    ],
+    "example": "dm_quan_1"
+  },
+  "grenade-projectile": {
+    "uses": 2,
+    "tiles": [
+      [
+        4,
+        4
+      ]
+    ],
+    "example": "seq (1)"
+  },
+  "laser-line": {
+    "uses": 19,
+    "tiles": [],
+    "example": "andi (1)"
+  },
+  "laser-wave": {
+    "uses": 19,
+    "tiles": [],
+    "example": "andi (1)"
+  },
+  "laser-glow": {
+    "uses": 53,
+    "tiles": [],
+    "example": "gy"
+  },
+  "electron-chain": {
+    "uses": 1,
+    "tiles": [
+      [
+        6,
+        1
+      ]
+    ],
+    "example": "lighting"
+  },
+  "wind-wave": {
+    "uses": 2,
+    "tiles": [
+      [
+        4,
+        4
+      ]
+    ],
+    "example": "zidan"
+  },
+  "wind-blade": {
+    "uses": 1,
+    "tiles": [],
+    "example": "ring5 (1)"
+  },
+  "vortex-light": {
+    "uses": 5,
+    "tiles": [],
+    "example": "qiliu_1"
+  },
+  "vortex-ring": {
+    "uses": 1,
+    "tiles": [],
+    "example": "quan"
+  },
+  "vortex-body": {
+    "uses": 1,
+    "tiles": [
+      [
+        4,
+        3
+      ]
+    ],
+    "example": "zhuti"
+  },
+  "iceblast-crystal": {
+    "uses": 1,
+    "tiles": [],
+    "example": "jiebing (4)"
+  },
+  "iceblast-ring": {
+    "uses": 1,
+    "tiles": [],
+    "example": "fazhen02"
+  },
+  "iceblast-hit": {
+    "uses": 1,
+    "tiles": [],
+    "example": "zx"
+  },
+  "lightning-bolt": {
+    "uses": 11,
+    "tiles": [
+      [
+        4,
+        4
+      ]
+    ],
+    "example": "kqd (1)"
+  },
+  "lightning-ring": {
+    "uses": 7,
+    "tiles": [],
+    "example": "ring"
+  },
+  "guided-line": {
+    "uses": 2,
+    "tiles": [],
+    "example": "xishou (1)"
+  },
+  "electric-light": {
+    "uses": 16,
+    "tiles": [],
+    "example": "andi01"
+  },
+  "electric-ring": {
+    "uses": 4,
+    "tiles": [],
+    "example": "ring"
+  },
+  "electric-line": {
+    "uses": 0,
+    "tiles": [],
+    "example": null
+  }
+}

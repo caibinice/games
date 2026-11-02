@@ -68,6 +68,16 @@ class DeploymentTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'hash mismatch'):
             deploy.validate_dist(self.dist)
 
+    def test_resume_package_verifies_archive_against_current_selected_build(self):
+        archive=self.root/'games-20261030120000-fixture.tar.gz'
+        manifest=deploy.package_dist(self.dist,archive)
+        package={'release':'20261030120000-fixture','commit':'fixture','archive':str(archive),'games':['pindou'],'runtime_files':len(manifest['files']),'sha256':hashlib.sha256(archive.read_bytes()).hexdigest()}
+        path=self.root/'package.json';path.write_text(json.dumps(package),encoding='utf8')
+        self.assertEqual(deploy.resume_package(path,self.dist,['pindou'])[1],archive)
+        with self.assertRaisesRegex(RuntimeError,'selection'):deploy.resume_package(path,self.dist,['zombie'])
+        package['sha256']='0'*64;path.write_text(json.dumps(package),encoding='utf8')
+        with self.assertRaisesRegex(RuntimeError,'hash'):deploy.resume_package(path,self.dist,['pindou'])
+
     def test_rejects_stale_build_after_source_changes(self):
         (self.root / 'games/pindou/public/engine.mjs').write_text('new source', encoding='utf-8')
         with self.assertRaisesRegex(RuntimeError, 'stale'):

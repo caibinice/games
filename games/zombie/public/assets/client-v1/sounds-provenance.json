@@ -1,0 +1,38 @@
+[
+  {
+    "alias": "shot",
+    "name": "GUN_heibaitegong-001",
+    "bundle": "assets_resources_media_weapons_gun_heibaitegong-001.ogg.ab",
+    "bundle_sha256": "16deb3f749a439a23eeaf37209befbe98d6133a47cb5f2d74ae030ad8f371c51",
+    "source_sha256": "fe012187a9fcf1632418caad4c0ff78e53e113cf105de23dd9ef2240a5907feb",
+    "file": "shot.mp3",
+    "sha256": "dbc3d5b4b090ae3cf65943ed0181ee821e0fea412980f4449fc0c1f50a304acf"
+  },
+  {
+    "alias": "boom",
+    "name": "Wenyadan_hit-001",
+    "bundle": "assets_resources_media_skill_wenyadan_hit-001.ogg.ab",
+    "bundle_sha256": "ddebc37a35e5d65f3ed032106fa82187b706008bf08b6691c9b61744a9066871",
+    "source_sha256": "9f16127f2dcef6ea48dce8b8b0b8467df3020d39822bd135dd5b676edb3a98cb",
+    "file": "boom.mp3",
+    "sha256": "d84943fb966759f5d2b8cec418802000c3d1fa0df4c399d3f978bc46e634ae99"
+  },
+  {
+    "alias": "upgrade",
+    "name": "UI_shengjichenggong",
+    "bundle": "assets_resources_media_ui_ui_shengjichenggong.ogg.ab",
+    "bundle_sha256": "750e66a78cf65a8abcaa57a9e4d481dcb1f66f2ab149c635b1e4a99d5f90a007",
+    "source_sha256": "df49acdd5a2fd2495152e77372bca7e9105f2f81e9fffd577090936b3d9ce372",
+    "file": "upgrade.mp3",
+    "sha256": "3f79adaa234a6751b98cf4570365e17fbf9a79c8df301554fe4bce72cd35e3e0"
+  },
+  {
+    "alias": "wallhit",
+    "name": "GUN_Hitmarkers_iron-001",
+    "bundle": "assets_resources_media_weapons_gun_hitmarkers_iron-001.ogg.ab",
+    "bundle_sha256": "58d1839cb40f2f41fd3f6a63a824d2ad1337bcd8ff241cbf2b2afefa6ad649a8",
+    "source_sha256": "8b04313a91ae2bbcbb900f852e075ba0ef11ba009db645ac81bf3ae6c68eeaa1",
+    "file": "wallhit.mp3",
+    "sha256": "3ed8f0023aeab95943ee0b59976ebfce7e26156ed2d9377d483e48e370d5e107"
+  }
+]

@@ -1,0 +1,2923 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "schemas": {
+    "ResDef.MapConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x1788C10",
+      "fields": [
+        [
+          "MapID",
+          "uint"
+        ],
+        [
+          "BackgroundPaths",
+          "string",
+          3
+        ],
+        [
+          "MapBorderParam",
+          "float",
+          4
+        ]
+      ]
+    },
+    "BattleCore.MapConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D15C8",
+      "fields": [
+        [
+          "MapID",
+          "uint"
+        ],
+        [
+          "MapBorderParam",
+          "FP",
+          4
+        ]
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "bundle": "assets_resources_config_resbin_mapconfig.bytes.ab",
+      "bundle_sha256": "162cc2d13489c1f1ad0ffe79dbd276eb21b90eba4671c6e6c580ec1613da1086",
+      "path_id": "-4154842132803541605",
+      "name": "MapConfig",
+      "file_sha256": "7fcc80a8adc2c0dd7ec11f297d227f01506cb842f3686519fff4b42031af604d"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_mapconfig.bytes.ab",
+      "bundle_sha256": "e560d479555b191ca7f635edb0d0056d22323b95370088989c0dc63176a46094",
+      "path_id": "8926659431901526880",
+      "name": "MapConfig",
+      "file_sha256": "f84bc0bd925c1556759d4de2ad580679a3e382e82115a136662c41964ae1aeee"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1001.ab",
+      "bundle_sha256": "63cd91802f95b755682a10ad9bf844707f0aa110929488809ce0eea71e9efc1f",
+      "path_id": "2339833959473000494",
+      "name": "ZDCJ_1001",
+      "file_sha256": "3c82861f2b5abfcba19e875e7025ebf128267054209eda2ad49f6540369d625e"
+    },
+    {
+      "bundle": "assets_textures_mapitem.ab",
+      "bundle_sha256": "172fa2d0d825e5e420cbfba62cf45801f963a7f96da3eff5e4bfbd5f208aca70",
+      "path_id": "6195565313827635624",
+      "name": "ZDCJ_1001_right",
+      "file_sha256": "9ddc5f91ebab8618118c036d5ceca1fdbf9cc1e79c31915cba87737892b104f3"
+    },
+    {
+      "bundle": "assets_textures_mapitem.ab",
+      "bundle_sha256": "172fa2d0d825e5e420cbfba62cf45801f963a7f96da3eff5e4bfbd5f208aca70",
+      "path_id": "1237634247813661539",
+      "name": "ZDCJ_1001_left",
+      "file_sha256": "1c073519ba18bef3068b2778bb430ae8a648881f1b0af4be1204ac8ce87a2f17"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1002.ab",
+      "bundle_sha256": "21f3facaf336e332430a0c70fcde563b5c636700f5a36e404184752e3a6d2435",
+      "path_id": "650981211494248112",
+      "name": "ZDCJ_1002",
+      "file_sha256": "b817587070c805ece513d042ac00c49b43a349f1278865076cf09c4343266a47"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1003.ab",
+      "bundle_sha256": "9f1936071940d21a47a60297f6889521a27141df04620c9b75bb866b8555fb57",
+      "path_id": "5872054009868703912",
+      "name": "ZDCJ_1003",
+      "file_sha256": "1de3bc6463722cdef2ce935b2ba1732e7a8c1289d1f59091c326ef6bf882d32e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1004.ab",
+      "bundle_sha256": "b184e37f2d3e572702cdbcbc47924f4a539086e5de188155bb5defb9f053a24d",
+      "path_id": "645394072628374040",
+      "name": "ZDCJ_1004",
+      "file_sha256": "c6c0f815bd368710900e31fd38a65340168bfe0283d4e4af889437f9a60ed356"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1005.ab",
+      "bundle_sha256": "3c35b236de5978a07e1007082b4066013ef09ff1deb1db7d97b5abbb134b0787",
+      "path_id": "4623228650580234425",
+      "name": "ZDCJ_1005",
+      "file_sha256": "0f6204d479d0a6ae2033359b68ab811700995f457a733aee545079ab1c268c58"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10061.ab",
+      "bundle_sha256": "5c411fd95a38f450f2972622ef88182694a7351ff4914b8ea5a6cfe567fd5e21",
+      "path_id": "-8654614584233335206",
+      "name": "ZDCJ_10061",
+      "file_sha256": "4150aae34f0707f1551e9c4344f623f313c187bd161d12683db6b46ac683db95"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10062.ab",
+      "bundle_sha256": "4bcaaa865ca2266b6d14f29f93522f079da993faaa1f34f4e97b7d8c657fd2fe",
+      "path_id": "-1307158774965453566",
+      "name": "ZDCJ_10062",
+      "file_sha256": "b4a245d11c0eb7464c27562600ba0e2117249e1bdd2c838b559e76be1974c6ab"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10063.ab",
+      "bundle_sha256": "5a280fa93ecee05bb2cd38c6ef384d465e8e0f0f5cd6d096bfd0f12fc8c4357a",
+      "path_id": "4288967139199071654",
+      "name": "ZDCJ_10063",
+      "file_sha256": "c89eb7e5eaa6c7a11f809e3bf6f85575393a0a664793f8c57b745300690ce740"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10071.ab",
+      "bundle_sha256": "32885fafe493afd17b268c4295552d971f01babd1f431ce33194751b2b29569c",
+      "path_id": "9016151867303291769",
+      "name": "ZDCJ_10071",
+      "file_sha256": "5d0c7b48c38c4d0b30c76c093b0ce2a53993a14563c800c7c3df1cca5033acfc"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10072.ab",
+      "bundle_sha256": "e733c1e80c6fb54aee410a9fcbd8a741f90e757966c4c1d19a46e63e72b707d2",
+      "path_id": "8651279821518469804",
+      "name": "ZDCJ_10072",
+      "file_sha256": "013dbf1b9190fe2bfc97492a5ff1d237fd4031155e4f5ae623d29ea9fa716c56"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10073.ab",
+      "bundle_sha256": "744c6dcdb04ec6a37cd44eeda373abca931cbda0bbd1c3810ef359cf3443976f",
+      "path_id": "-3301436156545453873",
+      "name": "ZDCJ_10073",
+      "file_sha256": "197de9c7837ca7fc35b663bc0988406c6f0fb7b5263f8044f9b7403987f03827"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10081.ab",
+      "bundle_sha256": "ba42ebf8caa84d799109d513ac2b303c86a569a841d38d3ad422cecbb1b78074",
+      "path_id": "2691317109253019484",
+      "name": "ZDCJ_10081",
+      "file_sha256": "3f3f524f07f308067352ff96de83382e28e2858528a97a76e58e6945fc978323"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10082.ab",
+      "bundle_sha256": "24aaee2d492971fcf3e6b08fc2dec668abada794deeed120b07c080e293ddd36",
+      "path_id": "2341332213799874108",
+      "name": "ZDCJ_10082",
+      "file_sha256": "55c8acf00b8e8e1de4a589dd47463631778439a00748180e6590b72550635512"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10083.ab",
+      "bundle_sha256": "2e4097106d40affb6e368c1a5df4dc5b02d12139c138451c0c538cc661149f72",
+      "path_id": "2651697111627138680",
+      "name": "ZDCJ_10083",
+      "file_sha256": "9103e865d38eaba5a3cc6ee46eb324975f782404a4506ce85e846dea8d9ba556"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10091.ab",
+      "bundle_sha256": "d1f9ea843fa6dbbfdaf741e7d937a50730957b7a7267d1231513ba977c44d675",
+      "path_id": "4853093681833991113",
+      "name": "ZDCJ_10091",
+      "file_sha256": "076052a6e897bb44c0f664efaf261cfb41558f2702499385532a24d96a555036"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10092.ab",
+      "bundle_sha256": "8f2f5cc8bee4cc6cd013d2915769f8eceefa8f44721f27d6318e91549415b550",
+      "path_id": "5438738714373877379",
+      "name": "ZDCJ_10092",
+      "file_sha256": "21cd3c3d48ba1e4b3244d4627ca88f6e84c3c25c7da60da497d2bad8fe00c396"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10093.ab",
+      "bundle_sha256": "d8654846486bee9a495854428aceb1b465543a144fcb542ca614398875ab729c",
+      "path_id": "1496332785818567952",
+      "name": "ZDCJ_10093",
+      "file_sha256": "bc44b8b2a2e715056be8a8e795046f784019dfddb0a223f11619cc7ea7a71340"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10101.ab",
+      "bundle_sha256": "9994615e19f931e667ea7b33e725031d4eb784d875b79e40bb430cc278bfeaa2",
+      "path_id": "-2013092702736253383",
+      "name": "ZDCJ_10101",
+      "file_sha256": "bcb4b6c1ccab26b81e74c5e00a542b5828833c43f3da34bc0809d5213dcef982"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10102.ab",
+      "bundle_sha256": "7f6ccdb09f94ac304a0a0eb57632d47b042037776e96dcaad8c872c2379f4c8f",
+      "path_id": "-688783362899936734",
+      "name": "ZDCJ_10102",
+      "file_sha256": "0ae77ed4bccac0ceb592b99adcbd2a18da5d3db425cb3d0b53d5793f45af1a8e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10103.ab",
+      "bundle_sha256": "a4cbed549aba2a0798a5200af67a53014fd77d734bdab2b3884cdebed422d98f",
+      "path_id": "8965296995047094132",
+      "name": "ZDCJ_10103",
+      "file_sha256": "8bc5e714f8f2bdf4af9823b812a067b3723b4bc93ca8ec4fdfec1fbe63e991a6"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10111.ab",
+      "bundle_sha256": "2cded02b4cb9469d3bf1928beba5b022178b1d502943f9968d51f38f2c414adb",
+      "path_id": "819982988335763980",
+      "name": "ZDCJ_10111",
+      "file_sha256": "0aa1a29f6c5292e667a58218f25ae36b65d96726bda137bdc083eb490c99f16e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10112.ab",
+      "bundle_sha256": "0be695b6751ffad83b231ffdbd24968276e3b3bb476b5a327cb7a370b0402e74",
+      "path_id": "-6723111004063074600",
+      "name": "ZDCJ_10112",
+      "file_sha256": "064c0c1081d65f031dd49c3c714576f87139220be3f51433e616f98e27f31906"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10113.ab",
+      "bundle_sha256": "da2830a447c0c7b5bb15906521a3376693def6848e1b0873a05ba96668481302",
+      "path_id": "-5991822622358436246",
+      "name": "ZDCJ_10113",
+      "file_sha256": "48a1d91151d51a54990d2082989745fd1555751d1119f01fecbfad3d09d8a2a7"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10121.ab",
+      "bundle_sha256": "3d9b5315f5a18dcf58a3a2de698f2013a717d1093a44b27c8119b1286501e5cc",
+      "path_id": "8189197270083312947",
+      "name": "ZDCJ_10121",
+      "file_sha256": "78eca3804008f7ad54df61934ebad37389b120d116399c14df529719a1631e88"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10122.ab",
+      "bundle_sha256": "52801ee5ad211efd7babb6af79cb319c153f665c99cb0f8c0b901051f2e32be7",
+      "path_id": "7662529919375893423",
+      "name": "ZDCJ_10122",
+      "file_sha256": "e7be3c71194039a2050c7a168a638e54ebbe6474a3dba6669e793232cc331a74"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10123.ab",
+      "bundle_sha256": "98c6dd7f5f8ee5b4faa928208f3900388141d1af6ef6db0b6265a4263a2fe885",
+      "path_id": "6441669050241499255",
+      "name": "ZDCJ_10123",
+      "file_sha256": "3ed219525629490631e13934c47af60f1337fdf7b6076301321ede085705d6c7"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10131.ab",
+      "bundle_sha256": "c087575ed61ecefca04a396fa780e6e567e947f0d7078679f348db8b6e931c93",
+      "path_id": "-5781540302142131672",
+      "name": "ZDCJ_10131",
+      "file_sha256": "de1648f45b6faa621e5cef024abc88c55b9e09bf9f2d8226f7b410ef6da346ac"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10132.ab",
+      "bundle_sha256": "54ba07f9c54cba4d4ea516401c4dee1e1a2775fe4764f689169483fb1c41d1e9",
+      "path_id": "3059401468676104592",
+      "name": "ZDCJ_10132",
+      "file_sha256": "298544403de8db2f747ff3d610895f3edc614a9a32ec1eb117525f483fa8fb59"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10133.ab",
+      "bundle_sha256": "c3b61befed846327f811c6ad9cb1b474022159da06568540d915274b019c34cd",
+      "path_id": "-311991219266717011",
+      "name": "ZDCJ_10133",
+      "file_sha256": "8a1231d2a2557457289558730f3b1a51a6845f22239271b14295540e5150337d"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10141.ab",
+      "bundle_sha256": "205abfd732dace326d4df3cd322de37c6b09ef974f317d7d57d2b32f14d7e1dc",
+      "path_id": "8314515286691819389",
+      "name": "ZDCJ_10141",
+      "file_sha256": "85070501391c090bcf645ba3d0967d66e2d907fc6b3c5cd0d6799624c75c9e20"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10142.ab",
+      "bundle_sha256": "bf4c98d63ad408700e0493cf1118a3af38a41a03a4768dca0bdac945f441828d",
+      "path_id": "-3466335868312355874",
+      "name": "ZDCJ_10142",
+      "file_sha256": "f45789f9a68b0bb4b9b0f21a78ce126b0c0ecccb26ef21732e897afa3eaf4fc8"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10143.ab",
+      "bundle_sha256": "b16cdde07ca4b746213f3a286085e2304d2378cc069c4b37ab7bd00850a9250a",
+      "path_id": "6431001049290272015",
+      "name": "ZDCJ_10143",
+      "file_sha256": "114f2ad92663497db98aef61b22a2407881f272f536bb603dbaa29d2df00a023"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10151.ab",
+      "bundle_sha256": "c1178dcd59447efb71c59e5b325dee9b935dada746e24384fb99e932565fda43",
+      "path_id": "2144810049080516650",
+      "name": "ZDCJ_10151",
+      "file_sha256": "2964a489d18b237675cf48654091d611d0e017eb0c502987c8ded09879165fa9"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10152.ab",
+      "bundle_sha256": "3e5b4e40627a94b49195f973f2fd07645be0fd7dbaef35fce74ec71e9deafee9",
+      "path_id": "329835652876075399",
+      "name": "ZDCJ_10152",
+      "file_sha256": "6c19cc60777189e42e15c519135708922ceffec04fb102ee355de3c8f587517d"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10153.ab",
+      "bundle_sha256": "c8b38acf9f5a87aee7b3cacdc5c9dddb192a6524ac73ae45f795c0d4644196fc",
+      "path_id": "6986858401216148247",
+      "name": "ZDCJ_10153",
+      "file_sha256": "bd2a416d747c1c0a648640be214c8698250b3f943de41b213b7cb35207a0c99e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10161.ab",
+      "bundle_sha256": "4c626d5b637cdd1bf5c41ee87ee6b1c5e80f96dd234c173e2f59708766941f60",
+      "path_id": "2009876852087252015",
+      "name": "ZDCJ_10161",
+      "file_sha256": "8bce5420bf6e5d6815983cdb76ead510b8b62b5bf27f3b460f467e12b4415810"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10162.ab",
+      "bundle_sha256": "c55712c0397d59c15d0e580728df0b85f6890e48fa6706660c11817253423756",
+      "path_id": "7042532251654847335",
+      "name": "ZDCJ_10162",
+      "file_sha256": "522c73a9a7ac846330fa90a4e0c36308aa4bdc44c00a1de00497249ffdabe9ae"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10163.ab",
+      "bundle_sha256": "cee7e9f10a65abd72b8838209828a4cd54ef1481aa8536f3c231c20f70030acd",
+      "path_id": "8959333040412989017",
+      "name": "ZDCJ_10163",
+      "file_sha256": "51f507e375af6737a9cda52bb39bda164d3506c1fe3490f34021021c8055e646"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10171.ab",
+      "bundle_sha256": "5b374beb8fbce78d05bc8bdff9d1659862589320d64d14111215b32fcc23f7e3",
+      "path_id": "-3480667201411946355",
+      "name": "ZDCJ_10171",
+      "file_sha256": "f394fc77010b9e6391584973f2241bce2ad7aecb0de76761873086627191ee6e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10172.ab",
+      "bundle_sha256": "34bd2110e3e7b9590d5d48d21acacc6d06b4a4a660454144e98843bdb7ecb78d",
+      "path_id": "1570965613932753931",
+      "name": "ZDCJ_10172",
+      "file_sha256": "4dfc0814a70eaee91df906bdbcd0087454c046f46b19d64f2dd35f4877339dc5"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10173.ab",
+      "bundle_sha256": "ef905ddc304f441df4ba99f108c19f02b036cc5c2e875903f6e83cae03bf6722",
+      "path_id": "1788517301942158978",
+      "name": "ZDCJ_10173",
+      "file_sha256": "47bbb9efb2abaa95aaffdbe5090227e39c965f5b84af032010c5c61cb882df13"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10181.ab",
+      "bundle_sha256": "f3c277b71e2ecff1ab0d1bb102f6eedcd33f69190a842f37855a03a2ea8f726c",
+      "path_id": "4451330345444763046",
+      "name": "ZDCJ_10181",
+      "file_sha256": "94e123778103be84a3bc1e9e6da80ccb57628ac7decb420a8a3adc49195187b5"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10182.ab",
+      "bundle_sha256": "3464292548991ae2c5c0d650141896fb793ee64ab95ab74b2d25463a5efc69c5",
+      "path_id": "6518331704681679851",
+      "name": "ZDCJ_10182",
+      "file_sha256": "3b0bf3a60d342601dc31ad14e4f050212dd2f1577372464d5d58e98eaeabbc88"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10183.ab",
+      "bundle_sha256": "0edcaa9419ced1a5029af29cb9c2e972a7a4965208037aa1321335b3b424e8e1",
+      "path_id": "3299136348856966588",
+      "name": "ZDCJ_10183",
+      "file_sha256": "ccb80ccd9f8baf8fe46e86b8f987e83bc5fa17f5b52c79461313a2334b91d3d1"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10191.ab",
+      "bundle_sha256": "dd0a2d5f25b3435d63f29857175dc160e38201510fcbc9ffac10fcfc12673b57",
+      "path_id": "2888227530688983051",
+      "name": "ZDCJ_10191",
+      "file_sha256": "325fe13b3c423cebc2dc029c93473048b52e8e8681e973b6cca30f416c7dca02"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10192.ab",
+      "bundle_sha256": "b17eef933898962521e1d622e7678fcb1d7747203439fb4b01b76408cf62b44a",
+      "path_id": "6824397566428420186",
+      "name": "ZDCJ_10192",
+      "file_sha256": "91e4b1c416ac5ce174ccee5db256f43b83911338193ce6d56be6c3889facf1fb"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10193.ab",
+      "bundle_sha256": "291e7b39c78d11f98add3c639236d70a8bae62051b3ac174bb74c4f529109780",
+      "path_id": "-4772718736062694172",
+      "name": "ZDCJ_10193",
+      "file_sha256": "2760bbe270161c9efec7e79fc79097cbb209853de0605a9ce35397af9f61c438"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10201.ab",
+      "bundle_sha256": "cd3537756e954075718502b69d12c8fd3154338484bf8cfe68d56de126483886",
+      "path_id": "-811459253954183087",
+      "name": "ZDCJ_10201",
+      "file_sha256": "489978a83ff2c1bfd9bd9c98de4ba5fc9e42e46726e91a35530fb02feac4bb2b"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10202.ab",
+      "bundle_sha256": "4eddcd655375eb5a70f202ae66ff94fa1f55d89d7cf86d17b53ccd2b6e2bf001",
+      "path_id": "-2222112840780175767",
+      "name": "ZDCJ_10202",
+      "file_sha256": "dac623e60859cf3876611a6b7ef2da585092e1d6a86aba9bee745c9463a13406"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10203.ab",
+      "bundle_sha256": "dddc14b55ce634c0e413cdfd05c4b7e1712a2d081d6c1f31caa0250cb3bd6569",
+      "path_id": "9000613931324176224",
+      "name": "ZDCJ_10203",
+      "file_sha256": "a3ac28023c1359acbf0402ef9d435ee75a88ad5e55588e4706dcf98abb408315"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10211.ab",
+      "bundle_sha256": "fea2d8fec94c9d30bab1aabe876afcaae00dbc19bb8aea8f83a558b1e9fef229",
+      "path_id": "2146001804236593661",
+      "name": "ZDCJ_10211",
+      "file_sha256": "dd39a2ae6e9566fb5e03fb5e295d16c02483ac9577ed036fb633e95e4af24aad"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10212.ab",
+      "bundle_sha256": "972367180928173fd017b086b3f6d6871d604651d333d9c097ba97b500df20c5",
+      "path_id": "-5925038857190155931",
+      "name": "ZDCJ_10212",
+      "file_sha256": "d6084d5e917835919fc85ec1719fd6e87f3ad98394704e2bd409eee8ec5afa56"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10213.ab",
+      "bundle_sha256": "db4ef54cb210d05ca0bdb235d22f6d0dd9fdbbf4b879a3750b9382dbc609ea89",
+      "path_id": "2666418960016292633",
+      "name": "ZDCJ_10213",
+      "file_sha256": "595e8da6734dbcf5f219e3e6fa3bcfcfa3cbe7c5ee4ec43a62af81fed850fc9c"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10231.ab",
+      "bundle_sha256": "0035b0e0982c142f92a04925d76740c929f7561643ae1d59d4f1653538b42160",
+      "path_id": "2856708158580148750",
+      "name": "ZDCJ_10231",
+      "file_sha256": "b25f0a9f2d0fd27b0720653e2ff5e224fc339e3f65ddce78f77ab45f11730bbe"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10232.ab",
+      "bundle_sha256": "cd80bdb07246257f15f0afe134a2a497f984fae5a9327079dd6c604ce98f8415",
+      "path_id": "-3321032567733180380",
+      "name": "ZDCJ_10232",
+      "file_sha256": "97c2a7a509e6cbeb4b1dfdc3481404f66199d9d84a8e928daa7750a8cb6bec9b"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10233.ab",
+      "bundle_sha256": "d7fdc7a1245400e13e64abe69c31349fd274614e39ca5aa4d76f19b630c177ac",
+      "path_id": "-1761604152562616563",
+      "name": "ZDCJ_10233",
+      "file_sha256": "f57a1b1e0b3c6423eccc4c88c42e9fba15788bac1ec2f055f045624f675ee964"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10251.ab",
+      "bundle_sha256": "7abd6a6450301913e368a04eef978f08b0125c7b3f4273bf7e319d5ecfc41774",
+      "path_id": "-3518750738453700176",
+      "name": "ZDCJ_10251",
+      "file_sha256": "5ac3e03f6f21a7814080062d5c17241bc42da5cd9185cbf7c2db4b338fd17700"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10252.ab",
+      "bundle_sha256": "104e3d6811ae06350ea5a300307f1063c6d9b3df03f40eed3c26db00e6eb2cf5",
+      "path_id": "-5243702631641192275",
+      "name": "ZDCJ_10252",
+      "file_sha256": "9b93e10ccd65d1358d7b5cfc1fe6bd442fff1f3e137ccbe55fb395dae1f80223"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10253.ab",
+      "bundle_sha256": "d122600222b94dfccde7f6ab70fd50263c5c1ad6da9c10ba74b3c80aeded6d05",
+      "path_id": "-5885517091826919273",
+      "name": "ZDCJ_10253",
+      "file_sha256": "53db579f424a11e28e2b713cb73a8bf8007c239e43a44d954df914252f706a28"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10281.ab",
+      "bundle_sha256": "611ebd1efc90e218e67822036a008fe0d9ef3071cc1d5b702c7a00660b13a392",
+      "path_id": "-8967144864436025326",
+      "name": "ZDCJ_10281",
+      "file_sha256": "5c547e45b58d5c66e249b8bc3bbef055620ca5449173e4c8c9b4f492d8de08a9"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10282.ab",
+      "bundle_sha256": "f6e94e31aa9ae0f92c091fcd466df48ad2eb6429c19b69af12e80b0b4399403d",
+      "path_id": "-8735466596501779163",
+      "name": "ZDCJ_10282",
+      "file_sha256": "a162ac254672eeff6f24fc55259a388071e1a81b2fbbf7d01c2cf0771d3b0838"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_10283.ab",
+      "bundle_sha256": "345cf590f8467db9ff131f3ecc42175878dc60baa2de3c3c2db9dcb09776bb37",
+      "path_id": "-3054886453764095379",
+      "name": "ZDCJ_10283",
+      "file_sha256": "94ee848db549fb7bcb380e7a42ecc47e1a7496ed7f37342e4265dbe60e0835b8"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1006.ab",
+      "bundle_sha256": "729917cb6c9b84a6b85ddc9e84b40a6c987836832183b918b9c5d8f83da322f6",
+      "path_id": "-7701562386855754251",
+      "name": "ZDCJ_1006",
+      "file_sha256": "138f72774b8c08e48aa6d3e1d2246dbd2234b76f753ba5b78fdb7241b91f7c11"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1007.ab",
+      "bundle_sha256": "8590e733bad69e89b6ace3b12973fff884c50b1566c382d6583873bbbbdc57f9",
+      "path_id": "6832742876892359717",
+      "name": "ZDCJ_1007",
+      "file_sha256": "685f76d4d4cf49e90f2408523ca1c703a9097deefa23c93c00636d7c290d244b"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1008.ab",
+      "bundle_sha256": "8ea9d40da2f8037e5c7b0507152df4b8bfa5e9a0452af6ceb76d48fbc9630615",
+      "path_id": "-8211504309796952031",
+      "name": "ZDCJ_1008",
+      "file_sha256": "39f3da27f15dbf8d1aa392410c4ed30d04463cb131002e5a5e99abccf2687c5e"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1009.ab",
+      "bundle_sha256": "8943f6f78c43ffcf22d7976416594cad03cbfebd73e7de65d9b06730e62b5a62",
+      "path_id": "-207113176788331444",
+      "name": "ZDCJ_1009",
+      "file_sha256": "be132e4fd4848fd14c24723dfe5903184034197f12da4767ee92d7f9d28c16c4"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1010.ab",
+      "bundle_sha256": "2196ac047c962b7734cda71757fe01b1a4cbcf1c5941401c5e86b0f6cbefafa5",
+      "path_id": "6710176938612092687",
+      "name": "ZDCJ_1010",
+      "file_sha256": "cd62ff6254e9622311390edd28a56006e73c61f7ce9b389da3f14324b48dda85"
+    },
+    {
+      "bundle": "assets_textures_map_zdcj_1011.ab",
+      "bundle_sha256": "120bc803034cbfef30b7828a814ed0516e2b68eb73230e8d3ec542e7e554107a",
+      "path_id": "1468975372743350766",
+      "name": "ZDCJ_1011",
+      "file_sha256": "0bced361c1f7c5cf6478a9d21a9c07de8fb5088177b57a5f24e129cea233b8c5"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_levelbaseconfig.bytes.ab",
+      "bundle_sha256": "f66ff441544cb8d3ccc4098db909bd4621c151a9575850abd4e8af26e0638765",
+      "path_id": "76330381113403480",
+      "name": "LevelBaseConfig",
+      "file_sha256": "96bcbac56e1dfd8f8c43e4971b20024d71adef8c0dc69a15efea13d81cfa410c"
+    }
+  ],
+  "prefabs": {
+    "101001": {
+      "bundle": "assets_resources_level_map_level_zdcj_1001.ab",
+      "bundle_sha256": "ca3c0345704f629f3ae71a6c5015840179802ea66a410d775175edea4b4f29ce",
+      "sprite_path_id": "2339833959473000494",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2339833959473000494",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        },
+        {
+          "sprite_path_id": "6195565313827635624",
+          "sprite_file_id": 3,
+          "position": {
+            "x": 3.0907421112060547,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -1,
+          "sorting_order": 0
+        },
+        {
+          "sprite_path_id": "1237634247813661539",
+          "sprite_file_id": 3,
+          "position": {
+            "x": -3.075742244720459,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -1,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101002": {
+      "bundle": "assets_resources_level_map_level_zdcj_1002.ab",
+      "bundle_sha256": "8091084ad8abbc4cfe238e5857398e79ab00dd68616b9d4a924744769f50b872",
+      "sprite_path_id": "650981211494248112",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "650981211494248112",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101003": {
+      "bundle": "assets_resources_level_map_level_zdcj_1003.ab",
+      "bundle_sha256": "43025388ec60c00f902664a3b056d4cef943ebbd86e36d1b7b4412ba43477bae",
+      "sprite_path_id": "5872054009868703912",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "5872054009868703912",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101004": {
+      "bundle": "assets_resources_level_map_level_zdcj_1004.ab",
+      "bundle_sha256": "62a156c86d895ae6f6ae8d1614faab8b41123df1bfbf15864af3aacea5d31d21",
+      "sprite_path_id": "645394072628374040",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "645394072628374040",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101005": {
+      "bundle": "assets_resources_level_map_level_zdcj_1005.ab",
+      "bundle_sha256": "95552c007e0f0228d38df7f17b914bafdae49fb3a31347fc2eab47dc4885d4be",
+      "sprite_path_id": "4623228650580234425",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "4623228650580234425",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101006": {
+      "bundle": "assets_resources_level_map_level_zdcj_10061.ab",
+      "bundle_sha256": "1a741c6ae03e1e4dc252bf447474b8ab1ff12bdb50e5eea72418ccae9caf3701",
+      "sprite_path_id": "-8654614584233335206",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-8654614584233335206",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101007": {
+      "bundle": "assets_resources_level_map_level_zdcj_10062.ab",
+      "bundle_sha256": "cef016f364fd828a2723945e5be5b0aa4161818460fa9f94f8bb5dedbb8245cb",
+      "sprite_path_id": "-1307158774965453566",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-1307158774965453566",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101008": {
+      "bundle": "assets_resources_level_map_level_zdcj_10063.ab",
+      "bundle_sha256": "1b1b525416697e93d0565e7ace1fb43e74a07cbbf5bd297c194ecbff0e429c0a",
+      "sprite_path_id": "4288967139199071654",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "4288967139199071654",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101009": {
+      "bundle": "assets_resources_level_map_level_zdcj_10071.ab",
+      "bundle_sha256": "bfee17d19cf555cd8fbf98ac2899399591f9527cfab26bead46be6e988d2e018",
+      "sprite_path_id": "9016151867303291769",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "9016151867303291769",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101010": {
+      "bundle": "assets_resources_level_map_level_zdcj_10072.ab",
+      "bundle_sha256": "d5e08ecffe7c47defbb445e292d98c961d08856cf94ba23145c6fc90c4855486",
+      "sprite_path_id": "8651279821518469804",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "8651279821518469804",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101011": {
+      "bundle": "assets_resources_level_map_level_zdcj_10073.ab",
+      "bundle_sha256": "8140230e21caf26f3cf1148db1cf0d3865bc9c53aa1617737a166a044c520d34",
+      "sprite_path_id": "-3301436156545453873",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3301436156545453873",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101012": {
+      "bundle": "assets_resources_level_map_level_zdcj_10081.ab",
+      "bundle_sha256": "8aa50fddb8916fc7fd0e3a45170d9a2c28b863077d069121eccb79b4708d5f98",
+      "sprite_path_id": "2691317109253019484",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2691317109253019484",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101013": {
+      "bundle": "assets_resources_level_map_level_zdcj_10082.ab",
+      "bundle_sha256": "8567f4ef193c5c701e42bfe1263f423ee8b2eaeb79fae752a12fb7ab0357ae54",
+      "sprite_path_id": "2341332213799874108",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2341332213799874108",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101014": {
+      "bundle": "assets_resources_level_map_level_zdcj_10083.ab",
+      "bundle_sha256": "0bec5f3ff1867614cc6c6dc09780f3590c1b66158a0d1b91d603cf32d37ab680",
+      "sprite_path_id": "2651697111627138680",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2651697111627138680",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101015": {
+      "bundle": "assets_resources_level_map_level_zdcj_10091.ab",
+      "bundle_sha256": "eaf6b9f12e374b78e4242e48f980f4c0a8b21b178c28aa39cbaa1ea59934141b",
+      "sprite_path_id": "4853093681833991113",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "4853093681833991113",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101016": {
+      "bundle": "assets_resources_level_map_level_zdcj_10092.ab",
+      "bundle_sha256": "f9974c30ed63d5b75afc95cf97f88e49ef5fcc7123828fb407ceb96d195ebeef",
+      "sprite_path_id": "5438738714373877379",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "5438738714373877379",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101017": {
+      "bundle": "assets_resources_level_map_level_zdcj_10093.ab",
+      "bundle_sha256": "73d1e07eff9c22e101d7ef256b1d91935d19ef36e8c13baf7046be7d4749004d",
+      "sprite_path_id": "1496332785818567952",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "1496332785818567952",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101018": {
+      "bundle": "assets_resources_level_map_level_zdcj_10101.ab",
+      "bundle_sha256": "37f2681a8cfe2df86e74c5856407dbc9eaf27685217c3c2fb81d21996bd0acaf",
+      "sprite_path_id": "-2013092702736253383",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-2013092702736253383",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101019": {
+      "bundle": "assets_resources_level_map_level_zdcj_10102.ab",
+      "bundle_sha256": "e11aa3bce87bba6887644c120c3bda48b24f0a2018beb64a798c876e10444ba6",
+      "sprite_path_id": "-688783362899936734",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-688783362899936734",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101020": {
+      "bundle": "assets_resources_level_map_level_zdcj_10103.ab",
+      "bundle_sha256": "9ed4fb9bb5d2ca2a871adebb1a1c9f9893a354c67fc296084157267acb6a5488",
+      "sprite_path_id": "8965296995047094132",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "8965296995047094132",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101021": {
+      "bundle": "assets_resources_level_map_level_zdcj_10111.ab",
+      "bundle_sha256": "cc522d3a315125e57593a3f158b0d66200e2583e34d06dc38bc2568bc5e6a9ba",
+      "sprite_path_id": "819982988335763980",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "819982988335763980",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101022": {
+      "bundle": "assets_resources_level_map_level_zdcj_10112.ab",
+      "bundle_sha256": "7bac35c62a87aa2aafc07d8cee30f307e0d6531a28766befbd47c6750cfb2885",
+      "sprite_path_id": "-6723111004063074600",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-6723111004063074600",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101023": {
+      "bundle": "assets_resources_level_map_level_zdcj_10113.ab",
+      "bundle_sha256": "08e00ce20212c3f6044409e637a632dd636a4794e119af662f7b659ecc9b4a9d",
+      "sprite_path_id": "-5991822622358436246",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-5991822622358436246",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101024": {
+      "bundle": "assets_resources_level_map_level_zdcj_10121.ab",
+      "bundle_sha256": "4c774a1d026bd43a46cb6579681c647a6d304dcbe1a4071d2191a221df120436",
+      "sprite_path_id": "8189197270083312947",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "8189197270083312947",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101025": {
+      "bundle": "assets_resources_level_map_level_zdcj_10122.ab",
+      "bundle_sha256": "16c0fe0ebe69ad559b4887e5b7af3454861b15e8466fd46ce5d9e2d8d8e1b912",
+      "sprite_path_id": "7662529919375893423",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "7662529919375893423",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101026": {
+      "bundle": "assets_resources_level_map_level_zdcj_10123.ab",
+      "bundle_sha256": "6d2c470cc6f1c47ca97b89e21e97d24c4d0472cdb83a36235c632b7fb6caaf12",
+      "sprite_path_id": "6441669050241499255",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6441669050241499255",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101027": {
+      "bundle": "assets_resources_level_map_level_zdcj_10131.ab",
+      "bundle_sha256": "54f3ba85c13f87545971088f90656bba9883d5e21cf5a8b53df08c4aa5c7de33",
+      "sprite_path_id": "-5781540302142131672",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-5781540302142131672",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101028": {
+      "bundle": "assets_resources_level_map_level_zdcj_10132.ab",
+      "bundle_sha256": "9d33e11c9a635d4ebb8bcd2933c7e27aca288ab0fc0fb279494a406ad14cd787",
+      "sprite_path_id": "3059401468676104592",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "3059401468676104592",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101029": {
+      "bundle": "assets_resources_level_map_level_zdcj_10133.ab",
+      "bundle_sha256": "89cc78e6458dbc9b326f98a5e97d82f8e95930640897b8fafa1e6022565dbce7",
+      "sprite_path_id": "-311991219266717011",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-311991219266717011",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101030": {
+      "bundle": "assets_resources_level_map_level_zdcj_10141.ab",
+      "bundle_sha256": "c1118f6dc903695324fad6a305126d1dd5b9656500890c9b7a8a041837ecd7e7",
+      "sprite_path_id": "8314515286691819389",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "8314515286691819389",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101031": {
+      "bundle": "assets_resources_level_map_level_zdcj_10142.ab",
+      "bundle_sha256": "c5e6401f4fb943aa22a9eb0842c6f4b27184788b0f026a55fde72db7052370ee",
+      "sprite_path_id": "-3466335868312355874",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3466335868312355874",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101032": {
+      "bundle": "assets_resources_level_map_level_zdcj_10143.ab",
+      "bundle_sha256": "64e5324604e5a502a8e5b72f29757408e1a843de55e67454cadb9c04c025f84d",
+      "sprite_path_id": "6431001049290272015",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6431001049290272015",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101033": {
+      "bundle": "assets_resources_level_map_level_zdcj_10151.ab",
+      "bundle_sha256": "4541a93ed7513445f6ab804ae1c719b8bd2b78513871f294aa7aa42512237d1b",
+      "sprite_path_id": "2144810049080516650",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2144810049080516650",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101034": {
+      "bundle": "assets_resources_level_map_level_zdcj_10152.ab",
+      "bundle_sha256": "bd2dc98f70105c3e08590816c37bab03f382491e7ab5caf223d770550f29a1ac",
+      "sprite_path_id": "329835652876075399",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "329835652876075399",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101035": {
+      "bundle": "assets_resources_level_map_level_zdcj_10153.ab",
+      "bundle_sha256": "9fa8219a965944d06e18e7307825b374134d8eb6e5ca37c84a27c2cb87396ccf",
+      "sprite_path_id": "6986858401216148247",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6986858401216148247",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101036": {
+      "bundle": "assets_resources_level_map_level_zdcj_10161.ab",
+      "bundle_sha256": "9032b9db72591accbdff729253f6f0c3b9bb504e46922a9fdfaf934fffe84ad1",
+      "sprite_path_id": "2009876852087252015",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2009876852087252015",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101037": {
+      "bundle": "assets_resources_level_map_level_zdcj_10162.ab",
+      "bundle_sha256": "caed440418cefece205fe35c5aaadfe2fadb8e20cc7cecda36b70b1465960c24",
+      "sprite_path_id": "7042532251654847335",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "7042532251654847335",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101038": {
+      "bundle": "assets_resources_level_map_level_zdcj_10163.ab",
+      "bundle_sha256": "63bf0cdfd8e4f52f27aba437ebd54d0e108f4f76b62b262f5530701593105ed2",
+      "sprite_path_id": "8959333040412989017",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "8959333040412989017",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101039": {
+      "bundle": "assets_resources_level_map_level_zdcj_10171.ab",
+      "bundle_sha256": "e9b3faec7f65a5849580b0aa81a550435a378c2da188774c798e3fd30ff4a657",
+      "sprite_path_id": "-3480667201411946355",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3480667201411946355",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101040": {
+      "bundle": "assets_resources_level_map_level_zdcj_10172.ab",
+      "bundle_sha256": "0ce26d4b87474d7beecb74187ff3d945810b983115a7eb093c1862333a14d219",
+      "sprite_path_id": "1570965613932753931",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "1570965613932753931",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101041": {
+      "bundle": "assets_resources_level_map_level_zdcj_10173.ab",
+      "bundle_sha256": "70ba7d1c96875ea16230d33e45e31b6ca423979df316a38637022535fac1c6bf",
+      "sprite_path_id": "1788517301942158978",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "1788517301942158978",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101042": {
+      "bundle": "assets_resources_level_map_level_zdcj_10181.ab",
+      "bundle_sha256": "a20f24ab35d15a570fef1c21856d5c4bb56c0125efbdba92f6e22174d5a85537",
+      "sprite_path_id": "4451330345444763046",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "4451330345444763046",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101043": {
+      "bundle": "assets_resources_level_map_level_zdcj_10182.ab",
+      "bundle_sha256": "b84811fb95a005c5b7893ce9aeffb9aaa56e50d30e856ffb9b6eeec37a75dc97",
+      "sprite_path_id": "6518331704681679851",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6518331704681679851",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101044": {
+      "bundle": "assets_resources_level_map_level_zdcj_10183.ab",
+      "bundle_sha256": "e0de1ab505258438bf06f0301819115d4bed3aca39ba26af4727419b57513b19",
+      "sprite_path_id": "3299136348856966588",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "3299136348856966588",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101045": {
+      "bundle": "assets_resources_level_map_level_zdcj_10191.ab",
+      "bundle_sha256": "f842df7be552e4a4e015ab9ddf1e200daf24dd479bdfb024cfcfb61ba25fd7e7",
+      "sprite_path_id": "2888227530688983051",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2888227530688983051",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101046": {
+      "bundle": "assets_resources_level_map_level_zdcj_10192.ab",
+      "bundle_sha256": "09fbf7f26ca1e68fb18a26e73e0e7c70715c8a9e80dc5a03b6de5ff8da7df60d",
+      "sprite_path_id": "6824397566428420186",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6824397566428420186",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101047": {
+      "bundle": "assets_resources_level_map_level_zdcj_10193.ab",
+      "bundle_sha256": "d50821ead65f855db496f1aebc00ccc8ea9c06308f39d8f5f79e232bfc12ae49",
+      "sprite_path_id": "-4772718736062694172",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-4772718736062694172",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101048": {
+      "bundle": "assets_resources_level_map_level_zdcj_10201.ab",
+      "bundle_sha256": "2bf74fd7fed1156a3c30baaacc1adaab87729147fb04dbef4c26607cdc21ee0c",
+      "sprite_path_id": "-811459253954183087",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-811459253954183087",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101049": {
+      "bundle": "assets_resources_level_map_level_zdcj_10202.ab",
+      "bundle_sha256": "2c8743561c62ac1c1daeb0faa5955f3fda5de580cdb1e8532c5b57f2b4b7a04d",
+      "sprite_path_id": "-2222112840780175767",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-2222112840780175767",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101050": {
+      "bundle": "assets_resources_level_map_level_zdcj_10203.ab",
+      "bundle_sha256": "c87d34bddef7c0535f27954d5c36121961ed37b2231206e542aa67c185e7c2c6",
+      "sprite_path_id": "9000613931324176224",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "9000613931324176224",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101051": {
+      "bundle": "assets_resources_level_map_level_zdcj_10211.ab",
+      "bundle_sha256": "c8518c42260efdc82c7ea7f87b07cafc38b34332e0c619dd32216b7764f4e551",
+      "sprite_path_id": "2146001804236593661",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2146001804236593661",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101052": {
+      "bundle": "assets_resources_level_map_level_zdcj_10212.ab",
+      "bundle_sha256": "781c1a8ecf54ab5be9e2a2b27ba26f2c242d36fc439f56a786246cf0591ec0dd",
+      "sprite_path_id": "-5925038857190155931",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-5925038857190155931",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101053": {
+      "bundle": "assets_resources_level_map_level_zdcj_10213.ab",
+      "bundle_sha256": "07aef1f0510a2fe8faaab72619aa81ffedfd26b661fe84221a41445be96d270c",
+      "sprite_path_id": "2666418960016292633",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2666418960016292633",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101054": {
+      "bundle": "assets_resources_level_map_level_zdcj_10231.ab",
+      "bundle_sha256": "6d67d18f19a8908d565120c2e19d8a87b9379c58198aab3bc3b779021890a928",
+      "sprite_path_id": "2856708158580148750",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "2856708158580148750",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101055": {
+      "bundle": "assets_resources_level_map_level_zdcj_10232.ab",
+      "bundle_sha256": "5349194173e256ce9cea21ae9974871cfd9910df77ee4373f5efa2688498fa57",
+      "sprite_path_id": "-3321032567733180380",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3321032567733180380",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101056": {
+      "bundle": "assets_resources_level_map_level_zdcj_10233.ab",
+      "bundle_sha256": "d89499aa6a39485af9b75c25dd63589b5b3e9735b4a53d2efcbd4361558362f8",
+      "sprite_path_id": "-1761604152562616563",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-1761604152562616563",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101057": {
+      "bundle": "assets_resources_level_map_level_zdcj_10251.ab",
+      "bundle_sha256": "a1eb61f700803653a8663c51291c040355ed3c0fb37cf6382c268572e789ad2b",
+      "sprite_path_id": "-3518750738453700176",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3518750738453700176",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101058": {
+      "bundle": "assets_resources_level_map_level_zdcj_10252.ab",
+      "bundle_sha256": "e76a46ba20c28e8f4adb2e8f8b519b76c7b8b8b28fd6548c978d791209d75db2",
+      "sprite_path_id": "-5243702631641192275",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-5243702631641192275",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101059": {
+      "bundle": "assets_resources_level_map_level_zdcj_10253.ab",
+      "bundle_sha256": "5f46bfe2ae47d14e095e7fda83c0497b52505c4cbc369ee7611260c9a8dc3b85",
+      "sprite_path_id": "-5885517091826919273",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-5885517091826919273",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101060": {
+      "bundle": "assets_resources_level_map_level_zdcj_10281.ab",
+      "bundle_sha256": "a52924a9314478629d44f2efd6da42bd1ff47f68ce7a5df8f2ff1fdcb6b97916",
+      "sprite_path_id": "-8967144864436025326",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-8967144864436025326",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101061": {
+      "bundle": "assets_resources_level_map_level_zdcj_10282.ab",
+      "bundle_sha256": "54d89cbb98cfa5fd17622025e950d61fb37b3ee371143ba985abfe6194860741",
+      "sprite_path_id": "-8735466596501779163",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-8735466596501779163",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "101062": {
+      "bundle": "assets_resources_level_map_level_zdcj_10283.ab",
+      "bundle_sha256": "584d44ecdabe7a512479cc8e2528067e4bf070318ad571dbffe12f72e1ebb8e6",
+      "sprite_path_id": "-3054886453764095379",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.501484394073486,
+        "y": 16.239999771118164
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-3054886453764095379",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200001": {
+      "bundle": "assets_resources_level_map_level_zdcj_1006.ab",
+      "bundle_sha256": "44ccbb8499d540fe02772950436ac105139ad3406dde02666b43b0048c7cfb28",
+      "sprite_path_id": "-7701562386855754251",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.519999980926514,
+        "y": 16.245737075805664
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-7701562386855754251",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200002": {
+      "bundle": "assets_resources_level_map_level_zdcj_1007.ab",
+      "bundle_sha256": "3098de0c0513cc16a9f0d4749722afd38cfd3121a21616723a0c0be06a243c43",
+      "sprite_path_id": "6832742876892359717",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.440000057220459,
+        "y": 16.244264602661133
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6832742876892359717",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200003": {
+      "bundle": "assets_resources_level_map_level_zdcj_1008.ab",
+      "bundle_sha256": "e399261b90073a3240b5bb53d6f2a581f0f7505a27daa5a0f5c1f6a257f79a57",
+      "sprite_path_id": "-8211504309796952031",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.519999980926514,
+        "y": 16.245737075805664
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-8211504309796952031",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200004": {
+      "bundle": "assets_resources_level_map_level_zdcj_1009.ab",
+      "bundle_sha256": "28af241063b8cdc8319ad767790bf220e06aaa6f0d974c07b20bbd34b36efa7c",
+      "sprite_path_id": "-207113176788331444",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.519999980926514,
+        "y": 16.245737075805664
+      },
+      "layers": [
+        {
+          "sprite_path_id": "-207113176788331444",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200005": {
+      "bundle": "assets_resources_level_map_level_zdcj_1010.ab",
+      "bundle_sha256": "eb15bd02c453e02dfdb9d16be4c8430fbc0b6e4277d9b97a812b5d8c2e229c0d",
+      "sprite_path_id": "6710176938612092687",
+      "sprite_file_id": 1,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.519999980926514,
+        "y": 16.245737075805664
+      },
+      "layers": [
+        {
+          "sprite_path_id": "6710176938612092687",
+          "sprite_file_id": 1,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    },
+    "200006": {
+      "bundle": "assets_resources_level_map_level_zdcj_1011.ab",
+      "bundle_sha256": "27da3106e8cf26dd53240576090759ab0119e877f10f496ab92acec7d0e99847",
+      "sprite_path_id": "1468975372743350766",
+      "sprite_file_id": 2,
+      "draw_mode": 0,
+      "size": {
+        "x": 7.440000057220459,
+        "y": 16.244264602661133
+      },
+      "layers": [
+        {
+          "sprite_path_id": "1468975372743350766",
+          "sprite_file_id": 2,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "scale": {
+            "x": 1.0,
+            "y": 0.9999997615814209,
+            "z": 0.9999997615814209
+          },
+          "sorting_layer": -16,
+          "sorting_order": 0
+        }
+      ]
+    }
+  },
+  "configured_maps": 79,
+  "available_maps": 68,
+  "missing_maps": [
+    101063,
+    101064,
+    101065,
+    300001,
+    300002,
+    300003,
+    300004,
+    300201,
+    300202,
+    300203,
+    300204
+  ],
+  "level_mappings": 6257,
+  "outputs": [
+    {
+      "file": "client-map-data.mjs",
+      "bytes": 116854,
+      "sha256": "02dde496dcbbe3e0d2ee82951b515115a418c070d55da647c216e8bd01129787"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1001.webp",
+      "bytes": 46384,
+      "sha256": "4ae49cdbe39c098391ba217e03be5f5d2d9d4cf2d2d58b40b8a0aa0992c56c27"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1002.webp",
+      "bytes": 86934,
+      "sha256": "03cca41f48d0cae1752b14318da0058757d848b9a309d97a05b18cc4e58882fc"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1003.webp",
+      "bytes": 109716,
+      "sha256": "49ec5d196bb43db4794f21c4705b520ef5f2ad4f12c479062145284cfc95e08e"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1004.webp",
+      "bytes": 34610,
+      "sha256": "a1b9d60b52238024ba16be8238a70e2fde9a384619bd4a6e6fafa4184fe62d6d"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1005.webp",
+      "bytes": 74894,
+      "sha256": "778fe5f0a23db01a5905665a374cd8288e1890dd1329e47e5194c726d7d6a435"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1006.webp",
+      "bytes": 68500,
+      "sha256": "3b5804d3e71eda962dbc70c9909dcacc072e3cb2bf20f8b8b2226087e4c61169"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10061.webp",
+      "bytes": 76904,
+      "sha256": "f5101c72b631106b27a9c8e56819fd7883c6bdf63325992d716f6ea884440b45"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10062.webp",
+      "bytes": 90096,
+      "sha256": "aa1c03c8397af545e83ddd52199c2d9bdf819149a744b5e0d57dd901d3dc1a19"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10063.webp",
+      "bytes": 67342,
+      "sha256": "2f5d8cfb2e611d976e09b136632fb0d73a29e8293efefcf48dda8db07eb806a4"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1007.webp",
+      "bytes": 73246,
+      "sha256": "dba3f6ee57b980272c174c533b1cd5e9193e0e61e4512f1cf8a74f011ffcc600"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10071.webp",
+      "bytes": 62052,
+      "sha256": "9dc3b35303f14994cff6d2d38ad68a2b3355335eb94433a03d0ca50d5727e6fc"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10072.webp",
+      "bytes": 70178,
+      "sha256": "ff90c4b7cf844b87325bd2c37eb4823cff97355a4bee27c4a7028bef43b29ae0"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10073.webp",
+      "bytes": 66526,
+      "sha256": "b7ecc53b40cef0734bfa4aac26452eff05eda183a5ebcd31f833097909c8d5fc"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1008.webp",
+      "bytes": 67434,
+      "sha256": "13e876962887884062c80d549d857871f8296c3eef2a838dd497ae2c4cba6543"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10081.webp",
+      "bytes": 47028,
+      "sha256": "1e33947b722d797da13f95baa4bd88528c99ea25e8158d28339d5c43236e0b7b"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10082.webp",
+      "bytes": 52684,
+      "sha256": "a1222ccc18b2113b5e2839fd0d8ca9a1e030193989c88b835578f86a33ab6892"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10083.webp",
+      "bytes": 47520,
+      "sha256": "c2cb385997ccbc7b70361a0989adc80fceb7b62c07c6e79defeff37d50e03a4c"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1009.webp",
+      "bytes": 97926,
+      "sha256": "b42587ecbb7e5a4d6628007ad107c52e9f154e6a102ddffaaba28f013dc3465c"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10091.webp",
+      "bytes": 88126,
+      "sha256": "f020fc7a3d4b32e2bc2e7a2c37f240765d9df1c300121cf51f07558c30e911ba"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10092.webp",
+      "bytes": 70912,
+      "sha256": "f1d76cd53bc4900a97a07612cf6138815a090a2c214848ba984af9d956df0ec1"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10093.webp",
+      "bytes": 65040,
+      "sha256": "e4eba7a8aafe85ecdc24b7ba4e2f96e23d741c69e2ebaf780ba191bfe38a8a9c"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1010.webp",
+      "bytes": 91266,
+      "sha256": "81f4f323248b8283445383f5c24d981d601688214727cd202092f8ff29562cd3"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10101.webp",
+      "bytes": 56172,
+      "sha256": "7239047012aa0d380e4c1bcdbb76135a7825ce498e98fb6dc466f7ad19ff6001"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10102.webp",
+      "bytes": 54936,
+      "sha256": "67104242a1257caddde9a9f5f3ab56206ab87b4b31a67ba9df57ad0d534f3a29"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10103.webp",
+      "bytes": 77904,
+      "sha256": "373d4d4ea50d3b3f8ef8d151f9b93f5de9f891099764df6688a13b7692dbaa05"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_1011.webp",
+      "bytes": 106814,
+      "sha256": "cdf16e6d6e45abde8671eaefdd7c72ab13c813507c77b33253e3cec951fa4a97"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10111.webp",
+      "bytes": 70982,
+      "sha256": "05694bd538e4e5a0db9564207cd3af82651a721c62026c346be84b6bea5e4613"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10112.webp",
+      "bytes": 94488,
+      "sha256": "997add54807092f054829d062cf5689e9903abc2ff1873d93c66b797deda2b1d"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10113.webp",
+      "bytes": 98626,
+      "sha256": "557a90e0c0ac27d6c92edec20774546d30cbfe396643e0e9f15bbdeec38894ee"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10121.webp",
+      "bytes": 74144,
+      "sha256": "e6ecb498954c66d447ccf0cc3899102b5e8f08a457bf8c0ab1a2bf0fac88a363"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10122.webp",
+      "bytes": 86738,
+      "sha256": "8b2af82326fd73cfdabcbe9f82b6e4608fa5b2cb5e597d967313fc3c7d81f796"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10123.webp",
+      "bytes": 92582,
+      "sha256": "52ce61527b3c0b8b130b15cf21413aa5bab3d1ff66e07e5bb7ad90f65db80090"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10131.webp",
+      "bytes": 64736,
+      "sha256": "a829a78ea0e87540038b312ee0e65bccd018d3849bcedc1b594682f301139252"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10132.webp",
+      "bytes": 60260,
+      "sha256": "49b8541b3f556edb54209e99b82a4fc3bef4587bf73503325ece294a6683a1e6"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10133.webp",
+      "bytes": 74748,
+      "sha256": "27fd0848352bc9ec69bb923332e6386c41f422607151f9811c9d71d69e6b1235"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10141.webp",
+      "bytes": 54936,
+      "sha256": "9f85be8a3bec39b64525d68b4ad6ecc4acc03f164a307cf3b0495904eb8526a2"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10142.webp",
+      "bytes": 44664,
+      "sha256": "c1b7d4bad662579cdbc107dfad88956b5097cac423e87f41e4c1d0b872dabea1"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10143.webp",
+      "bytes": 42272,
+      "sha256": "f49cdcdc51eb41edc2bb5c77cacdadae3eb2968666e9d827d7a36c881cd0db5f"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10151.webp",
+      "bytes": 33392,
+      "sha256": "5732fb627300a2041c9ed8848fe3f0e970104b92fb0fbace7dcc535c43032350"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10152.webp",
+      "bytes": 37360,
+      "sha256": "388f3a03d621c842f384c5b17373ceb750221a975518e18e90cabfac18bdeff4"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10153.webp",
+      "bytes": 49506,
+      "sha256": "006e0f838ffa51789d65da037d3ed422cbd452face05a2abd6af73faba6b88aa"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10161.webp",
+      "bytes": 45882,
+      "sha256": "e71231b2b81df6917adec0c543ec6eb01fcaf65809bf2f2c45cc57142a05c550"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10162.webp",
+      "bytes": 42086,
+      "sha256": "1a7616a9c13df705c2d6ff146aaf7b7e0619b09fe0a76503328244c7dd67d1c2"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10163.webp",
+      "bytes": 49808,
+      "sha256": "e7df39a95aa48c670161d4dd1bad2fe8f021ab275dc1c817334c1f10c09db5e3"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10171.webp",
+      "bytes": 51586,
+      "sha256": "fcfad384b2c34db1f714e6faac478ef49c7bc75343376bd2966c1c2fdfae91b3"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10172.webp",
+      "bytes": 52786,
+      "sha256": "2a28ef48fa8a41a81db049c1a529691da4002e2d8ae1f57e1a89dbcf182da49d"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10173.webp",
+      "bytes": 48672,
+      "sha256": "13ccb05a9733b8d68cd612229d4dd2ed64b4c9eb0c088ee60f4d2ad2b43b85b9"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10181.webp",
+      "bytes": 71708,
+      "sha256": "28b72fcfea222d2381b11059e2956822332baecb57d5483d7fc95b8632f3536c"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10182.webp",
+      "bytes": 75650,
+      "sha256": "4eb8c5e15a3e013b262cd5e8d8707f4b16e31ffa06ae111ed710f5481d8415d0"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10183.webp",
+      "bytes": 79814,
+      "sha256": "0f742359aa7a2e67150dd86ab458031b614555826e92f1891279ddfe91ed43de"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10191.webp",
+      "bytes": 37338,
+      "sha256": "88a65bc930c63bacc740ccab065cf18fccb2925dc8e759bf77697c0286c25a61"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10192.webp",
+      "bytes": 30024,
+      "sha256": "21641683cf10b4c1d8b76ea4bb0f9ba1af63267c2433f784bdb4cb7de212ed8c"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10193.webp",
+      "bytes": 43432,
+      "sha256": "c1c1dcf1ddc892bc0b976ef32d8b517d58191b5fb6be6bd3f83d58df36ba2456"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10201.webp",
+      "bytes": 45808,
+      "sha256": "37c0daad38f2826e8df6dd5d4b1190c69c24491b6a0230f2e54d9a590597b223"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10202.webp",
+      "bytes": 56136,
+      "sha256": "36053cd3ba2320c14be45cadc22240c20350e4f486415db32caf83ca2f725d89"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10203.webp",
+      "bytes": 43132,
+      "sha256": "c59a2a77f08a88428e9892bad13e4884de2df632b2ba9af777bc31e0e89bf0e2"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10211.webp",
+      "bytes": 101854,
+      "sha256": "f78431384db83eea755b11d88c978cce397f01db40f68423464e0977d8748fb4"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10212.webp",
+      "bytes": 101018,
+      "sha256": "551029754cbbead7e5ac47958bc90307a2d4bcd88034d76a8e88cefad04872f7"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10213.webp",
+      "bytes": 115896,
+      "sha256": "fd05b1f882ac68b67549e9754fd8e874d962a145e2e672566eafa79037519584"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10231.webp",
+      "bytes": 96562,
+      "sha256": "0295abe1cd6151ee4ed0d471b1f70e5a5aaae0abc7a3fe984796ab56de25543a"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10232.webp",
+      "bytes": 98028,
+      "sha256": "e72e2c840c9f301e91b6731f3835042d3844df9b758d9983f43d5aef89023b06"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10233.webp",
+      "bytes": 89310,
+      "sha256": "1d0206b58181112aa9629ba1dbacc123aa6f138de91dc0d06d6e4417d08bb5cf"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10251.webp",
+      "bytes": 62186,
+      "sha256": "8badf235eab461b7d06089a535033d7dd8c076bbc4a3b65f2a4cb98d3b062b5f"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10252.webp",
+      "bytes": 60340,
+      "sha256": "4a6f12f1a690d9b7c0d9706f6db730a88b776b47e55ab546529b0309b198fba5"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10253.webp",
+      "bytes": 53740,
+      "sha256": "4c9757b36ab3cabdbb1f9020b62b27e434a641363293fdccd74061781983be21"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10281.webp",
+      "bytes": 56570,
+      "sha256": "899259a98e1d3b11d0386802c83fee75fc3e21892059ac5f6c38de5063a6a3b6"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10282.webp",
+      "bytes": 63432,
+      "sha256": "f4dd784f43c99e62fcf0b92079f4d99133208aa0db4e4a4f7cc39a5580606647"
+    },
+    {
+      "file": "assets/client-maps/ZDCJ_10283.webp",
+      "bytes": 57440,
+      "sha256": "c9d4c77b464fa17973bd844d8302d7444c0a5fc1b7620250c224d1d5f5176050"
+    }
+  ],
+  "adapter": "Native ground artwork and prefab edge layers, aspect preserved; independent web camera/wall remain."
+}

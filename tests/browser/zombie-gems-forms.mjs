@@ -1,0 +1,22 @@
+async(page)=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));const check=(v,m)=>{if(!v)throw Error(m)};
+ await page.setViewportSize({width:390,height:844});await page.evaluate(()=>{localStorage.removeItem('fish-zombie-meta-v1');localStorage.removeItem('fish-zombie-v1');});await page.reload();await page.getByRole('button',{name:'开始游戏',exact:true}).click();
+ const read=()=>page.evaluate(()=>JSON.parse(localStorage.getItem('fish-zombie-meta-v1')));
+ const close=async()=>{const back=page.getByRole('button',{name:'返回核心',exact:true});if(await back.count()){await back.click();return;}const x=page.getByRole('button',{name:'关闭',exact:true});if(await x.count())await x.click();};
+ await page.getByRole('button',{name:'畅玩控制台',exact:true}).click();await page.getByRole('button',{name:'领取全套补给'}).click();await page.getByRole('button',{name:'确定',exact:true}).click();
+ await page.getByRole('button',{name:'核心',exact:true}).click();await page.getByRole('button',{name:'幻形',exact:true}).click();
+ check(await page.locator('[data-growth-skin-view]').count()===48,'48 form catalogue');
+ await page.locator('[data-growth-skin-view="82002"]').click();await page.locator('[data-growth-skin-up="82002"]').click();await page.locator('[data-growth-skin="82002"]').click();check((await read()).presets[0].support==='lightning','phantom does not select lightning');
+ await page.screenshot({path:'E:/Documents/AI/codex/tmp/zombie-gems-forms-20261027/phantom-form.png'});
+ await page.locator('[data-growth-skin-view="82031"]').click();await page.locator('[data-growth-skin-up="82031"]').click();await page.locator('[data-growth-skin="82031"]').click();await page.screenshot({path:'E:/Documents/AI/codex/tmp/zombie-gems-forms-20261027/pet-form.png'});await close();
+ await page.locator('[data-skill="grenade"]').click();await page.getByRole('button',{name:'连升5级',exact:true}).click();check((await read()).skills.grenade.level===6,'batch core upgrade');await page.screenshot({path:'E:/Documents/AI/codex/tmp/zombie-gems-forms-20261027/core-upgrade.png'});await close();
+ await page.getByRole('button',{name:'菜单',exact:true}).click();await page.getByRole('button',{name:'宝石属性图鉴',exact:true}).click();
+ const grants=[['最大生命值',901020107],['防线免疫',902010107],['冻伤',900410207],['燃烧区域',902510307]];
+ for(const [tag,id]of grants){await page.locator('[data-gem-tag="'+tag+'"]').click();await page.locator('[data-native-gem-grant="'+id+'"]').click();}
+ await page.screenshot({path:'E:/Documents/AI/codex/tmp/zombie-gems-forms-20261027/gem-codex.png'});await close();await page.getByRole('button',{name:'角色',exact:true}).click();
+ for(const [id,slot,index]of [[901020107,'helmet',0],[902010107,'helmet',1],[900410207,'armor',0],[902510307,'boots',0]]){await page.locator('[data-gem="gem-native:'+id+'"]').click();await page.locator('[data-equip-gem="gem-native:'+id+'"][data-slot="'+slot+'"][data-index="'+index+'"]').click();await close();}
+ const stats=await page.evaluate(async()=>{const {combatStats}=await import('./progression.mjs');const s=combatStats(JSON.parse(localStorage.getItem('fish-zombie-meta-v1')));return {form:s.nativeFormStart,gemCount:s.nativeGemCount,buffs:s.nativeGemBuffs.map(b=>b.FuncData.FuncId),critical:s.critical};});check(stats.gemCount===4,'equipped gems not counted');check(stats.form.id===82031,'pet form not equipped');check([2,9,34,67].every(f=>stats.buffs.includes(f)),'complex gem buffs missing');
+ await page.getByRole('button',{name:'战斗',exact:true}).click();await page.locator('[data-action="start"]').click();await page.locator('#battlefield').waitFor();const initial=await page.locator('#battlefield').evaluate(e=>({...e.dataset}));check(initial.nativeForm==='82031','battle form metadata');const builds=JSON.parse(initial.nativeBuilds);check(stats.form.randomBuilds.some(pair=>pair.every(id=>builds[id])),'initial random form package absent');
+ for(let i=0;i<8;i++){const choice=page.locator('[data-choice]').first();if(await choice.count())await choice.click();await page.waitForTimeout(200);}
+ const x=page.locator('[data-choice]').first();if(await x.count())await x.click();await page.waitForFunction(()=>document.querySelector('#battlefield')?.dataset.mapSource==='client',null,{timeout:30000});await page.screenshot({path:'E:/Documents/AI/codex/tmp/zombie-gems-forms-20261027/battle-gems.png'});check(errors.length===0,JSON.stringify(errors));return {ok:true,forms:48,coreLevel:6,stats,initial,errors};
+}

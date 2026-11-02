@@ -1,0 +1,2076 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "inputs": [
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-9118536306338823451",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "3a3d7d3f546bb9c4b81fe1d29d82df40c2a49e69f39168478a5ca95996e74626"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-9107392161905431113",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e369a77323ec28514134b25f3318dcf9804607ea92e9fd7966fadd195d405da7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8809628742231241191",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4a59099cc5ad43c8f618b573b12ed067fc45b59a93115aded19619681f7278da"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8739075958682521447",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "2dcfff5538bee3fb8b125320496fd03a69be963f3b072878c39ad90b52b85519"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8590450859857527529",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0cf43abe48c86beb132225f18b0c66335f6e62b5ee993d9e0599ab4623b2a32e"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8444187108458742992",
+      "type": "GameObject",
+      "name": "BG",
+      "sha256": "d8536fc6d7d2c06eeedf7c3c0acb79e362b3e0fdb8f78601e77c2b4650af2d55"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8351650533045948702",
+      "type": "GameObject",
+      "name": "m_textItemCtn",
+      "sha256": "d3a0345bde54f4f2bd99704d3447e1bc094a8c0c9daee699e44090a05499dded"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8295932134025201709",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "98681f56f8d54d93fc48531ec9c40fba33f45c1789e08558d0f60e6cabb87b59"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "5114010992914239353",
+      "type": "Sprite",
+      "name": "zmzg_com_hongdian",
+      "sha256": "82e89fe7ca3a8edc6d072b9cd72a568f394860597f782734a3d2543aad87fc02"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8177732066677005130",
+      "type": "GameObject",
+      "name": "m_tfEffBg",
+      "sha256": "3ed9695054b73eb792dc578304e897e2f73e9837bfccdb443080ea8b33fa8345"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-8089975297190359716",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7bc80af4d0667124c2fa567d24f012b488c61a18b8b80104e67737b94df719d9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7959869057135562667",
+      "type": "GameObject",
+      "name": "m_goLock",
+      "sha256": "5609243442b5e19d0e061b22216a9c2bc97da037b0717363c82a2805104d0652"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7759108028265960819",
+      "type": "GameObject",
+      "name": "m_goNew",
+      "sha256": "38be46ed4d8f9b1e8ec18744798d8a9866a6cf5d6c2bfc6a68279fc451295498"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7709711505840291118",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "76e72284230e33f447c1d0d5fa271f80f06278e7738b901e5584b72ee1525cf7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7709279318749643002",
+      "type": "GameObject",
+      "name": "m_imgCostItem",
+      "sha256": "e99d680e321dfa7e1878ef954817947c4938d9c794617149956c399a840ab417"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7648803871521284526",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "1bb57956576a51451e3c42918f532f6490097a296ca533546416368bdbbf3f81"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7629358758715204398",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "91e3c3ac6286de64fa038cb5bfeacb8b3c9e1c1f2f4bd82fb90ef78f347d5032"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7528968289441920403",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "59e24b7fdce224390890f8c7c71b5ec252c6126e04777e3d483adfc23d29677a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7503805452759629254",
+      "type": "GameObject",
+      "name": "Title",
+      "sha256": "a8500faead5f1df5153e68459f6b6420707691f5357f1620c20340fcd1e56609"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7446814502469016258",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "92baaa7cdd35d57f11e9936dfef309d375495eaec9927e7aaa76a05f99a61bd0"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6200755754393355754",
+      "type": "Sprite",
+      "name": "com_icon_select",
+      "sha256": "78b3f7c0b8e12858f7fff9cc43ce8a64aa07c0d60ebc787aa4f2f94c45d73eed"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7348839729893143946",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0a2681bfed1e1e0a37ccd3a079181ce53a126fd20f891fba98c437ef0da72b2f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7281055536806666388",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c5685e9d24ff9351eb9d12990026f654fd7d9e145598ef434e79ddcad9e0f5ef"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7258277948643698238",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "127acdd6c2b4995d8a7bd91c3c093bb4bb27fde41b60e67da59016282acd6348"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7221826091841992380",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0c95a88f3cd430c8fd4ee9a7665f2721c56534ccadc131c528e5b96969eaf17a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7190878166016086641",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "239f8e71dc417b52a77740d1403f1484bea4b763aa88f4a553255ffc9415669d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7138821818320218414",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7376bc638db25960ea79be01b52b03284f7768a58073d11b18f1de24af7c11de"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-7136530401140432210",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ac13b994e53c15f81665643fdec0c84fa377ea6a699a3ebff952019de163bff0"
+    },
+    {
+      "bundle": "assets_uiraw_t5setting.ab",
+      "bundle_sha256": "653d71e8faad5201fcdd3db0628e66effd9d533b07808f6ff72e56653dce9fce",
+      "path_id": "5129113884716137342",
+      "type": "Sprite",
+      "name": "com_tc_gou",
+      "sha256": "fbcfb5d3fae152e1b1c73ec7027c4461f73aeb1cef8590fccd7cdd5e81c4088f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6950419549048969480",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "da0e031a7af9d6803e890e0057887b906808a184f0b6082dee99f0da4ced1bab"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6928099574004879772",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "3073b0a42ea8a40bcec1ffa588181a9a8421c871dabc2a36c8ea4743f0664e99"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6794752029760480138",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "92612ff9bcf05aa7090228e8e6606da839af10ea163450a3eb407fdbd47da021"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6907829577625997748",
+      "type": "Sprite",
+      "name": "com_tc_medium_top",
+      "sha256": "0dea7f91cabf2d79d48035a518b4dca0f3656e635416113ba43efb77edd26d22"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6601495489813691385",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1ee601bd7ca88a18e633332386a85a7f9f3f4416084dbae523b6378213936fe5"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "3896301447641360381",
+      "type": "Sprite",
+      "name": "com_tc_medium",
+      "sha256": "eb8e74bce511eb765e41837ce8bf2b29877d2a303b1332b957af6e53f630b71c"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6374150916089647026",
+      "type": "GameObject",
+      "name": "Image (4)",
+      "sha256": "10d9b44675a494a5c3170697135b3d26f5f26559044a0b882a6b1ed0e219504d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6371709152939073502",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "1f416f92f54d8befb0ed557dc8314419a0ed6927968dd3fabc093ee47ea16c6d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6300463922253858013",
+      "type": "GameObject",
+      "name": "Main",
+      "sha256": "30255abe4d702ce52cc83552ed7ac4ae8247a1ae49ae0e9ab5d6e182c45389aa"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6122267131710579978",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "4a8eaa4e495965d215385e7ee2590d2797749f84a7ee17cbb9d8cf65630422d2"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6044718739156461105",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a7cc2fd52c89bb7de4434ed2b0e8ad30304b213f7243f1d3290955a54232eea4"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6042042556911351415",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d05255e61301751b15434dde2db54054baed0dbd36c6bdd08d22579b4481c1c9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-6009493250564867086",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e41d8bd2d7a1fdf3662ac98777b2653d1c54a23ad52318a108ddfc98e18e0cf7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5976059434087932905",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1f0662d07a5be82e403cb229f769b9b672053ab6e59e44481c24faefeae00acc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5933160302715908749",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6349d6bccfa6ee326cf69d9bf891ec4df550d66f105233c91e65f7b8703cd2ef"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5806460552837073913",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ae1480c720a4080296c12cd74eb07a490be4d6613df36665c25dedcc4c47bbac"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5797798213863307337",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "226ebcf38ded63e435f2e9ba582bf47d318be3d52969f4ec2de21d9257bd6e40"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5774754075679582097",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "34d73de302736c9b98c2ea207f3c45cd49318f75b71039ea3996283f508d0ebe"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5671851454808802230",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c555d57efbcbd0efd03e3328edf99ce1bfe0e2202d11c8a71fd8680ebfc4fd09"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-3734965351099267059",
+      "type": "Sprite",
+      "name": "com_btn_close",
+      "sha256": "1b87fe0743857b3bee1d9d9e7a3171420ca235cfda60ab82201ddab12fb5f9f7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5602795821159312769",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e737505b2ac7c05116630ee75363476ef8ae993aa87da82258cde778dc0b3044"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5599036772214455657",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "3aee98955bd8554fc1015d02b937549ef83a2edca637f87203d9385a57085e33"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5469758767329112148",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6bdd2e56ea873637572802dba086ee449bc3ee07d2960d8fb2886c78a04aa574"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "8743042469702193464",
+      "type": "Sprite",
+      "name": "com_lock",
+      "sha256": "2aa9eb561ee2829df40677b461dc566b6bc72f9d83237008932ac9d234d65d9f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5339847463639191657",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "db20f8018d835845bbdd6a1362b2598027666717adda503f313c52ef0d7aa2a4"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5324878244043630128",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f4a703cf7ae1722cbe94e0543cbcea303b5138155b9a015050e92ef75f6e9475"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5315475784086713874",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "8b6e86b7b7fa9e255c7b68a5354389a393b0222aeeb8dfe21f174c5be3698b9f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5282352332945001840",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "646f85d28766ce63585522eea0b4c281c983cd0bc6bd824573b204456492be0b"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5261203203882373275",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "1f3ed3fdb2ea7ebd348984e7e18eb1de2cee06706c68ebca007d9d013587d44d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5240013848375987285",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "b1ecf4c9dd72ea239f7791548d4ed335261139a58539a6f6c4669652a3c3cc6a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5153020802959055342",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5db09612bec70a7632cc3a2a6b7128c39668f683e8447338da9088f8e4e46441"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5145137471205798558",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "1ba906f5f379881f13c0376dd44ddba214ef967507596d96c07c88e874af9390"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5110904518604699780",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "e617045b9ba9226d2585f1a8c262cc3995f742af93c0780c6b0fc4175d00086f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-5066744065432414971",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a577dff915728e4da2e430da28675274e02cd777fca163c8c1680383f3c6cb6c"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4865194695132537652",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ee156cd76b076bb0175c0bb12b271ddbf31a61121bb9205159bc164e224ce293"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4705569473813063862",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "897a46de0b37cbeea7e73f5533c09f84e273af0446104aff43c03f4a2233ff16"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "8306709822551079681",
+      "type": "Sprite",
+      "name": "com_zb_icon_04",
+      "sha256": "5847abef40e338126a5b8a460dd63c94d6d796dbdd749659324bbfa1b9fa31aa"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4700410350080615723",
+      "type": "GameObject",
+      "name": "Image (3)",
+      "sha256": "dab8941acd0e4feb7c7e7a7193ef9eab24027d3a60af3b1c746ec0e47969d81a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4700263850988237756",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5937a8c456d25767535e815886178e5f04cb684f0e5dc7b47eca6d5616983d8e"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4691545279459777735",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ad44de5bcbc125b090ac5ce8ec38209bcddc3ba9e186285e6ebffea34b5bff56"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4670070052179319171",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d1403dad37e329038e176aabd4197f464439c294e89843ca06f388a8fdb3736d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4278225167539087528",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9556fd181bde1e77b0363b280ee47eb6e84d73e72c48072014d128669180ec18"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "2844762127005624254",
+      "type": "Sprite",
+      "name": "com_zb_jieji02",
+      "sha256": "99246ddcb2fc4284f9992108b80cf92cf69c9d70e5f7c8290dbd898ffcfaeba3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-4006288929016151958",
+      "type": "GameObject",
+      "name": "m_goEquipUp",
+      "sha256": "cd39f9d37a644b80af96be917b2f8806961b2f6b3a707e013dc90a269eaa1c89"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3992015813616634249",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e1cda74d0600163e48cf9a98bea0f7d21f2134771acdeb096625ac4bea743fdc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3983099640016396502",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "16873e9d117ac977b9c1d93705a68882d1a0af338724d34598932efb07caee8d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3911207911691031011",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "ff1f69ecd8059589ca21ed8f5fe1b6e839c3ea2980729ae8b59be5f0fd603ad9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3803171771903838203",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d2f3de442a133899c2e6173c4622afc3dd6103115bfd8a688b8cda3d3338a49b"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3547232877084469259",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "3270d596de0c74579278bc4bf1c4cc2376f1a73c8bca838e454f9a08a2c6360f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "164444965032558085",
+      "type": "Sprite",
+      "name": "icon_baoshi_suijibaoshi",
+      "sha256": "240693314c10217003baa78660d0b6b910b774db024a0e72573b106feb060eea"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3360134522641654735",
+      "type": "GameObject",
+      "name": "Button",
+      "sha256": "990497cdc06121bdff8457145228ed4ffa4b10649b36601d3149dd36115a4793"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3311123898801785112",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ba0d30d987d7e2f90b12b897523fc19b0b545992e0a1aea87f87c510d6b44629"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3231505047809137687",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "83ae55bb6ed7e799c702769b6b1d7ea294d4a95bbd871d21dbe12b14ff6aab75"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3203094204745850275",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "75f7f6d6c9cfad81f29885c8e1003f9d94cf50cbe18ce3f1f9bc147db08660b7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3198113818501281300",
+      "type": "GameObject",
+      "name": "Image (2)",
+      "sha256": "3fd2690caa28c7e33d52e4ca0f1e114ee08f1d3fadfd95346550522e80e6f1ef"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3054040525948814551",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "28030ca893f708649d4953631df0989b5467edda30829c144a2e979b2baeede2"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-4797353417626907336",
+      "type": "Sprite",
+      "name": "com_tc_medium_left",
+      "sha256": "364189275d4bb7619138ceedd4079e55606b0c86747cb42a704a317cc0d46092"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3051750475450163619",
+      "type": "GameObject",
+      "name": "animeNode",
+      "sha256": "9cb8e383e361134c633be1548d6aae09c17e94772ba10dbb8dc1262e228a9d8f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-3022691581033291837",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ca7bf2bbe3faa3bb673ada1cb8f9dd20925b038baa19c32f181737360b990838"
+    },
+    {
+      "bundle": "assets_uiraw_t5email.ab",
+      "bundle_sha256": "b23020873c86580b993cb831034e9da717ae5f964598bd3ddc16ae4b29b4caa8",
+      "path_id": "-2207941671744389445",
+      "type": "Sprite",
+      "name": "zmzg_yj_ico_mask",
+      "sha256": "660c0b63d2c34bf766b7dcdd192112254b00985bee4ff198eea3b80f445337d3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2990547330988234578",
+      "type": "GameObject",
+      "name": "m_imgItemIcon",
+      "sha256": "f0b0a8ee21ea22b6fa915d1782cc352150721eb39e32c3f700f65e52ecb19840"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2957454382347624747",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a4914044a7b2bf6f1e92b91f054f4765d58ab7bda1d03f40468436dadcbf566d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2945474993071366251",
+      "type": "GameObject",
+      "name": "m_btnGetAward",
+      "sha256": "e219c739063d1a412d7eb44a0d3632ef7cadc057b564d6ea66fb267d42a86dd7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2813042912681744334",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "def2e534449e1fa890c73aa8b5fa6fbae600f92f46b19e4060b4f86a17e1e03c"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "1691403723831419048",
+      "type": "Sprite",
+      "name": "com_tc_medium_ding",
+      "sha256": "841d1eaf7d8550e199888305a7502bdf827ddbae80086a2e6081b30b68e65835"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2796524518233380006",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "86e0fb5a44d241859368b0031e6513af4315d1941b6e4439106953e3cdfa7c00"
+    },
+    {
+      "bundle": "assets_uiraw_chapter.ab",
+      "bundle_sha256": "4080ca0fe97dce5f59945bffe51480408c792a3aff424007d6d68fcdff5ca7e2",
+      "path_id": "-3531399085582735935",
+      "type": "Sprite",
+      "name": "com_new",
+      "sha256": "b5d59d8597db6e1261c522fc378584f502ad226b388defdec81fd50de5440047"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2625992004594764129",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "87eace42cb31dde9ecef8bfc99cb90993efb41f53a1a937f6bb08bce565837d2"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2593917516888466495",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "afc8397512b5e8d945895f183f2b1c1c5522243243299b21bdc3720fe3c23d06"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2580270359203226424",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "08113c3f1b46bd0c49d4749d37365f392f079b1563f688d9bfac747d10079002"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2555876537301667252",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "291768902ac75c9441e99f91cc8fc5fe32b350ad778f2094cffe2f1eeed113b5"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2530807905201674198",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "8f9f11e93d5ccc0662818fcf960bb857119764fb6ff5c7af3344a03c70e403f0"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2464180288669647149",
+      "type": "GameObject",
+      "name": "m_imgIcon",
+      "sha256": "7aca265bbfa9e3904287346f29de6a453a9959aa140571da6377d3353e5d02eb"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2446323181390062502",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "81bc5769fabb83f14c3dfc49a47f3c4ae3d02a23d8a57be0b62878006f4df0c6"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "4573305578120997303",
+      "type": "Sprite",
+      "name": "com_daoju_xuanzhong",
+      "sha256": "8544a67b8908cc498a9f0a39cda3a565d4acda9c62402e29468e2ca78ad61026"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2317372635568357950",
+      "type": "GameObject",
+      "name": "m_textLevel",
+      "sha256": "158369c2536c58bc8670cf8b86eaf2a5ee3536edaed41385dff11a35d5ed1a6c"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2236205172210415886",
+      "type": "GameObject",
+      "name": "Viewport",
+      "sha256": "b893a2ae0cd60f223ccd7f0c5875453815ff38e2906fa87e57387919724fbf5d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2227734444328634701",
+      "type": "GameObject",
+      "name": "m_textLevelUp",
+      "sha256": "8cb8493bbc3912715d7ba2bcf0e34cfc7b52a10c199d4df8d7dd50b0094ca7ac"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2083216810780584377",
+      "type": "GameObject",
+      "name": "m_imgLevelBg",
+      "sha256": "e02280dcf7b682652ce93e8fb7495fe57d3b0bf915ce839e2e230e72cc681d68"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-2033961143559669592",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c5520a5bcb844f49592ae9639d37247b2d9d965fad51d4216898d0c2cf98c2c2"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1935741078808656537",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a562218ba130499feae248b3643c6aa346098945cf1004b7fc8d73e839e6f49f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1872661552860992553",
+      "type": "GameObject",
+      "name": "m_btnEsc",
+      "sha256": "5b9faf6df950812fd1ceb4d0a6a2aeaad297dd7bc809dd1224efa0a6a8f1b759"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1851414545945897165",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "5bc6de9f2f55c28f60247f05379fbcd11ca547d0c89db6b702de041768487fd3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1850469758790092889",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f8e40d4e37b03f17f06cc5314a5c1ddabd7d0ac86b5772d9f246254dcd7d2577"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-53355728852197856",
+      "type": "Sprite",
+      "name": "com_tc_medium_right",
+      "sha256": "16279629896c46885f16107dfd49d2f81179c36340d58cf41802b653706fabce"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1817166881527751207",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e98f24ca21698f30dc7988226204b0441314e6e0bf53b77b01fc255ff99dd295"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1770185790523282885",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c29ce01b2f79e4c1bacfc44c8a786f67e7cc7e7a11058c5891e944b5597a9137"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1740198743069464821",
+      "type": "GameObject",
+      "name": "m_goRedNote",
+      "sha256": "00bd8d11e541c733336ec3b04d7665976ea04e64d2fc350dc84accb80c9bc95f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1589838447099412140",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a57a9327ca80f6b99a8b30a24067483a8b281c474dbb7d1bca0ba1f30b746f51"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1490143051919550560",
+      "type": "GameObject",
+      "name": "m_imgPrefixBg",
+      "sha256": "e8ac23490606eeb1bc91050609430a5701e5771a98013f014cc11d0db7d5642d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1465545866293518584",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0814919cf40e7d7bda7cdfcff9393c9da1e33da15dd3d7b503c27f1e82232d7d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1347631617550964612",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "60235c068037dd9d2f08b9afe3074489bbda56a72564aa739daf8372dac2e7bc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1291488574273116285",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e85434f51f05dc11686104f54cbcd26cdd34c9c96dd01f8b60c6ca5732d77073"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "2862392577379805294",
+      "type": "Sprite",
+      "name": "com_zhuangshi",
+      "sha256": "250a0077c77f060c5470ac83a3510e10afc89b9985e714a08f6c410431460325"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1209807136033322545",
+      "type": "GameObject",
+      "name": "m_imgSelect",
+      "sha256": "f082fb9d99270346a3c2d857bb7faecfc0c72a62432818a88a117bd7a60fdc39"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1185636582768886136",
+      "type": "GameObject",
+      "name": "m_goItemType",
+      "sha256": "5bae11f9c06a38535875517406de8a2d028913206707eac9e709612768a29062"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1071486635730197249",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f6419076794877f140c6e9f123a6a0713c92917e45d6a50398f31d9204537fba"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-1002583046950347410",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "bec91a351043d6b17bc311edc0c24962b01d536ea5a919390a1f575bf74902c7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-974528809449937012",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6da9767db8ec456026d064bc3fa1f20f146b02357d9fdf1a74359699b26b06b3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-925716505741938582",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7a39c00e29510cd7bd2c46a1560e28230ec8a0cb205cbae421cf4650da51a9b0"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-772953220564554843",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "92550458f4d14966a537659a79afb92a846ca9b7e806418d2f2ed0c2472effc8"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-674374104565965492",
+      "type": "GameObject",
+      "name": "m_textCostCtn",
+      "sha256": "c323cf88f3781d8bdd62ea2fd56cb0b4e64dbbce92240898fdf0fc146c4d7826"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-523263602385380947",
+      "type": "GameObject",
+      "name": "TurnTabActivityShop",
+      "sha256": "bfc2e268a2dc446ec831dc52f6de809c1102f6b330a13d3840c8a59f310fb768"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-452722602278117186",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f042925c80fc69a31998663ccec5ed55773836944e2a4277989dca2dbe725ae1"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-432770463304665361",
+      "type": "Sprite",
+      "name": "com_tc_gou_bg",
+      "sha256": "baa5384db55efd7079982f3d31d4cf96e5d25c1d2256ccc5cd36de1f214926f3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-390897710405669412",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7b114c907254a93af83252ccf94b1a63e2a2483104ab89bdae909e51a2b4c3ba"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-270524985548197672",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "aadde76a0c81cd7d051583e763d99e68f3b2ed3f986d86272a3285cecd594a6d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-182816640516294586",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "c95efa7b85d8f1f642eecbc76f06481319208b7d71e7b0bb0d6a131b86e5fabd"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "-91580406155916479",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "af8bb3d2933ef5951108f39fed1642fa20f9fddb08ccc4f6479a85baa2d0cbe9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "199887894827022965",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0708bf71409c1365360170e0ce5540eb433c5e3b2b9d529e300737a0ded000d3"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-133199916889796710",
+      "type": "Sprite",
+      "name": "com_jiantou02",
+      "sha256": "89aa67e9bb071a3ed328c11cb3e63bfe05b94214be926e940c67562a6a5cd451"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "343543006351897360",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "feb64e8f0c45951ea9b6842be6c970b5cf0d47472daffb0b04adacdf36f54129"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "461922783610834774",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c597523b7633dd82a9bee3404276db05bd389b66143856bc63f31bab44f95c2f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "512013600340509175",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ba990c578dcc2cf1a1891ca9228ae52ad6e04ce2388427146af860f564915d9f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "567523499738253605",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d9289ad06a32060e38c4108046505de1dbcf9e9fecbffb5104209c67c0b3dfc9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "655246676637671548",
+      "type": "GameObject",
+      "name": "m_imgNumBg",
+      "sha256": "b67b32dd04f7d890063adfe9d69696f83acb8a4539e257f85334e25c43d228a7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "670650763233123448",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e110ea0e34b1569eaaeebdf9f3e1ff8638aedc3befce19f337ecbd7316c91f17"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "676275420910905740",
+      "type": "GameObject",
+      "name": "m_textNum",
+      "sha256": "1b8a09dcc294ee101d0f9057b4e13a398f7b9c1b6725473c9db01e4559cd1a49"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "814157645216568714",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "b4334664860c82eb5a6e727d1c1707c91571e650e993830a19790bca88ed1ba1"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "943606955645613601",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e40b4af898f2e40d9b3f267a284aa95f1eae6ad27516525296b740fa20c3d423"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "955513125593170761",
+      "type": "GameObject",
+      "name": "m_textCtn",
+      "sha256": "e054108d125b35fa0809acd531e9424d9b62f81784b80dd28c1fb01ec2b51478"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "963261247867787705",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "56033f70f473e5172491b93dac68f3711c71162c8ca0a59daa1d5e75f5c5bf2d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "988985911301823757",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e03929b1c0e24706e381745ca2f5768709bc9459dc65a57f4451f016c6d5c7e0"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1098018926829510560",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "eac6d21d19fbc0530590870230e3814a734d230c443c6b87aca54f91a244928a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1217080349461166121",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "085a0547e8fe48c789f983e0d0bbc7480b97fc1d2268def85f52322f27dfd3fa"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1261452980424234601",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ba13097420dae1a816016d8f316ec8ac14e749b6d19932873385b866d67b2794"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1279879708714797320",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d87239cdb01385715ea58b88544d9e3425af70c738491885fe69ac5f609a0dc8"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1538066692106116296",
+      "type": "GameObject",
+      "name": "m_goHaveDone",
+      "sha256": "6947016bf1746327be92db8b1c56080b1ca140094464185cd16af491e1bc2edc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1647336921609283160",
+      "type": "GameObject",
+      "name": "m_imgTypeQuality",
+      "sha256": "c0e6df2c2c471f399fe70452c38f6258dddbaccf8c8a51c36a3c8952be07abac"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1661289363355652509",
+      "type": "GameObject",
+      "name": "m_imgType",
+      "sha256": "3e6d9eb1fbd29fae01a3911e388c4aac118066fb0eaaa9782320da8b65aca604"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1681053492529399593",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e0b4f8e4e078b45783d91467bbe46d93191e17995a601539ce46b436c16157c7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1698954170239764856",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "714fe899370cb16909e71193d99b1caad135385ec5a31833e874f39cdfed4949"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1699847618929847970",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7d2a3326b189af32a3687ee3f2396eb8ee58318cf4fd547f4083eec57c747fbd"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-8858043535711635253",
+      "type": "Sprite",
+      "name": "com_zb_jieji01",
+      "sha256": "ad1e9f98bedce04cce4192bd62b8d4c6d295b5cefa09006fda5bb295639d6808"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1739601008968178063",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a9919b2adc276e149f6ecee6a0835a99c75e2f014f81ea9e81253b70a255a10e"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1804164957601158582",
+      "type": "GameObject",
+      "name": "m_imgSelectII",
+      "sha256": "96a06fc94d2065fad341a8a912b8849ad7537c66d55ef05f6d36ea693a1ba759"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1984981635195196763",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e1063bd232c48477be76ccfbac725a3656469b4115db6ccd16479c3e79ffba21"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "1999355329508531006",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cd9226e8e26306ac8b7456851cceb26d4858ffb26fd2e86605bec61f665763f4"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2185183583907613931",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2d1502317e55ad3b6ae3f90a93e4229f8c4a97e5095d9275c2483757c1b35a45"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "2709566732797163083",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_jinji01",
+      "sha256": "c2c192bb5ac60f2729d004866d755c30b33fc1cf8e269814f03a692a9e3f8b48"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2243775710245806617",
+      "type": "GameObject",
+      "name": "m_itemTask",
+      "sha256": "b830996c6c81517755f9b547ebd5a9085d6e614911bc0a93c7598f17d59bd033"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2292347915289623072",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6be8d66c1938cbbd79170c75525b4297792431f9b9e893c4a9555d89871dbbe0"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2304440836835731803",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cbb2bf08bd12420a68c0808ad7d0e2ea242a873d59d9360fdcd5f8baa536187a"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-3036161200300615235",
+      "type": "Sprite",
+      "name": "com_icon_02",
+      "sha256": "a59c4d506d302761d9255e759bee8840927e36a933187995a0943a60f84424b4"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2622221503302163968",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d25db39d0a8bb78cb506ea7e243af712c020b2952d19cce7d4fb2b395acf80f2"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6881226992909101124",
+      "type": "Sprite",
+      "name": "com_lock_bg",
+      "sha256": "b970857189f1d0bb5d710ff844267e4be5d204a40f3a24d76a4f6c6b10924536"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2651649402381210519",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5ebcf12dea06a03e852fa0efd5f971cbbd972bc0002fea04a930ed40767c96c7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2746883560037872043",
+      "type": "GameObject",
+      "name": "ItemRoot",
+      "sha256": "4cece8b2566dfd362a75cfddd8ba89cfaf1cfbaa68ed363c7b31e592a4754824"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2792020605301003351",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e5cdab521ef425addc79f8b953a1e34291d2fcf30939d634319ace71a75808ac"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2815700479420976253",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f47d0268dc6e871920ec2663ab20f0c6dc9af14195db56d07ca1067402dc4391"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2818831171316215526",
+      "type": "GameObject",
+      "name": "m_itemRewardItem",
+      "sha256": "abab9b978d05057d2dd4f3eb11d31daa35e646c769c0bb3b2080e912c60ae7fa"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "2964645301529533787",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d57e7a3aab887ccbd57ea9c8090c7f5cc80a5c1d2ba8ef43edb6502bbd98f7fd"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "3199297707980317647",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4a272ab51b00b80be9186c87b08d5b813eea9377614ec27bbe38fe0e214c363d"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "3251657103331963089",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "941bde969d7e037397baff55bc0a6957974215fb04b43512244274a90eb9227f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "3408774055677564013",
+      "type": "GameObject",
+      "name": "m_tfContent",
+      "sha256": "aa9d14937cfa03b34858660b8ba1680433c17002cf351d7feeadb2ba237c1e9a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "3424388590801466298",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "315d016ce20d3b0b620f7f737ba8762f2ddae2c92c59501432bf13376843e08f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "3541448065547134679",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "649a2d9dfacb0b72cf4e3f777b677d5c9dbd018dd0ab366fd44fe388d32728d7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4038558391832952048",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "09797ecf7dda82bbd81d5e7ee05886b7879ff82caf00ccb9d322a15648854473"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4101312077914007990",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6e81210f3429716d293c7113f610061eef8980b25b9cc493ea84ce7f178b26d5"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4238303420121834645",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "1d3feb8e17c015e1cf326e2045ed50ae39b39e0936b2fd8fb5ee3541ca5a09ba"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4428241783688772733",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "224e876cb7e077e3f6f1fae32b36bb690f013db33e4d6a3a06054f58a34687c3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "-8658183856631291321",
+      "type": "Sprite",
+      "name": "icon_baoshi_1",
+      "sha256": "0ff423a40123003b401e25dac0fdc9771f477452e8faff1443cb67ea422abe21"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4433249921503811056",
+      "type": "GameObject",
+      "name": "m_imgRecieved",
+      "sha256": "9fd909ccb4c15325b74229fc7cc33644988f916d5a6667aff8b83872413b6f43"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4515979416124597175",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "84439314bb5615087a039b103ec3e5c91a248617f483b51ce2661ab491c274fe"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4569462528020687807",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "399e5ef3dbf450c293d7a556956e0121f221264a5b5560275950877094adf77c"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "-3637661716943657326",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_jinji",
+      "sha256": "03def99a3061809c3b552c0e3f436847426269bae8143502f833fc3c3d16cefe"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4586334980266245845",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "da0fc90114f161c6ee7ea64232242659a022dd4f4d69021d7fe50a990f1b92b1"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4658899544362253532",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "4fc2ea6f910ebbef6b54020a3d54354cb5df869bb2f7182e4fe7c3a824df3486"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-3876438153747631045",
+      "type": "Sprite",
+      "name": "com_line1",
+      "sha256": "2b1ddd7587b019e07abbdd1aac940ef8f544d9aa5717c159bac4fc8376072c83"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4817056036252260019",
+      "type": "GameObject",
+      "name": "TitleInfo",
+      "sha256": "504646cb9528b4529ab57f16db5fb3133a3d857e58cad53a692c92b229e46845"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "4968484541472718804",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "bede59e0257960a8daee1c95be5f1e3208a75bc437a45d75a6b2d2c40f89eb86"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5026077085884390525",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "f0f008bc4d304cefef568b3562faa207cf214cb3ac88ede5617907238061cb91"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5111527876832824568",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "b57cdab218f75d3f759deaf588497855292bc3a193e63786aff54334aa75ee65"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5144277429093024564",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7d71619a3a532a99d0b53c60908022915837845915b6be6abaaec73d8cced812"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5209848749312361822",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "aef917147009555d72888afde68d01e3d283b93a4d310096dc4a30dbf15c950a"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-1573143879874187933",
+      "type": "Sprite",
+      "name": "com_icon_s_09",
+      "sha256": "9305806e0c05b73e5328078f37a72fd00f752757d348b2af82541dcfc099dd99"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5273599197536853901",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "37389379804b1c4d37f20c46d27084df8e9f923507a5eb9e721c6b3494a695dc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5299500718074831234",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "487d5aab2b6b86b02ac81d8213804b594aa7a48e38bdc348ccee0f8e41748698"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5316585291546391208",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6aebec2edf70ba5d0b5085069ad6901a8f5c5100d4ceb05a6bc26cf385096e8f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5469820042293146900",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f5dba8f13d3dd9c382a85ea65dad7343618a59825b151ac9a78fc9f19e97f2e5"
+    },
+    {
+      "bundle": "assets_uiraw_t5funcbase.ab",
+      "bundle_sha256": "cd1c15e97ad8707cf3d6ae7f91f5ce1312f07a005f8edd52d7cc62a0ea681aa8",
+      "path_id": "-8284824140646968265",
+      "type": "Sprite",
+      "name": "zmzg_cq_bj_bg01",
+      "sha256": "a08a37d90afbf6a96066223cf664cd4a774001ca1ec924094fd7598c08eaa88f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5547838376882610621",
+      "type": "GameObject",
+      "name": "m_goMask",
+      "sha256": "8a679a429347ec657708d917f85e21d61a1883851082534bdcdc1171c097baf3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5578781424430432619",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "32bb1eb4ba740e825ff4ae474302e045401fa92a7046b6c71745d9919d9e9a4a"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5655708365017823839",
+      "type": "GameObject",
+      "name": "m_imgLevelUp",
+      "sha256": "10e0a37346e5363fe37bcf0301a1cb7e736a2d118fc7915262b749bb2fda7705"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5753119526328631345",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7ea4d94e15b8666a066bfdc2a0a60fe3421538a42cc6865816db22166a11f5b0"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "853442902162350277",
+      "type": "Sprite",
+      "name": "zmzg_com_btn_b1",
+      "sha256": "79a6402266ad30571926a8349825480c85b0c67cc5568eaf7c3ad72762cafb58"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "5860473781059945556",
+      "type": "GameObject",
+      "name": "m_textPrefix",
+      "sha256": "9f2b942442c090e502e8e7b2fe34ca1edee0e48b989943d34ccb0fa019a83824"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6041414136502037838",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2113858b721d81a47d6ec87606a1007f3d75b4aed6d0a3856fe77aebd82b473e"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6395169143265531860",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "88e23884c123c5b2b7973517aa476243feac7f8d81b3205d2ba9d71c1a266fa9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6424487200970331089",
+      "type": "GameObject",
+      "name": "m_tfEffectRoot",
+      "sha256": "0c5e22e4e53dd9cabd3316c4568e9314f7ff209ef3112303d1a561621d47b0e2"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6431974478490746649",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1b66a85d3bddb2569f8121c543eb6ad49164360b2c48a3014bfd1570a35a4f6e"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6461143506594958808",
+      "type": "GameObject",
+      "name": "bg",
+      "sha256": "aa67efcecdc6b5a3c4824155bd852a529937d2242b6246007966b1317da081a3"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6467990810101341763",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "664e8bc55f27c0b33c58ab06048808f1e0485073229ad5472e81c426eb4d4ba0"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6556749883486836718",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c0f813292b5d5c5f1070d24db83283d86fd5fcf5c7ef132e864887fbdb94cb1c"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6734029135866548251",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "3522e5d4ed79bf71f3628ca60f256be8468f2833f5f61416a4e183b089274581"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "6937096899408525953",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c146749851c3fca4f7c86e7383cbe695a420d73b71bcd37d72b3cd9681d55740"
+    },
+    {
+      "bundle": "assets_uiraw_t5friend.ab",
+      "bundle_sha256": "b16c54d746f83ed76c79e39c0a454392b61b66ead15735f4eb25e7317eb6cf4d",
+      "path_id": "7088864264009208900",
+      "type": "Sprite",
+      "name": "zmzg_hy_tilibg",
+      "sha256": "5509cdd9067ea2e4e7a05272c0f5ef2f5aa585dfe136cb5a653eeb304be4323c"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7125765726648456362",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cabb9ba6a9322f316b270659908fd7ea786edcbeb81dc909acc3e1f9f93bcae6"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7358944282571536226",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a0d5f972b7e155e7fe7aca84d5968337e7f3a262731a501af04ccb6639c818d5"
+    },
+    {
+      "bundle": "assets_uiraw_t5friend.ab",
+      "bundle_sha256": "b16c54d746f83ed76c79e39c0a454392b61b66ead15735f4eb25e7317eb6cf4d",
+      "path_id": "-5717815832746022385",
+      "type": "Sprite",
+      "name": "zmzg_haoyou_liebiao_bg",
+      "sha256": "577ee58ac19d311da12a41abc1f95b1d741e39ab13328d068756fa74e276e044"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7442684522401113583",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "eccb307c71e47e2d067ec9ab4c70f4172299eb815a9ad1b9428ed495cb6b33dc"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7575147715268130214",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a49b0853a489638f5119680b253b7402377f75b26a588198535974a3f6f16443"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7855061352464852305",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "c5b6f7d2cc74cc057a83808082ebb87851da541c26d84854884edf1dd77ba43f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7944254966253161547",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "2010d0419f6f4aa2c088640db66442febd4f8e62da492929dcb219437b6cdc8f"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7963811407009367411",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9da416edba6584d6ef213ae5c0df5afad104bc7d651b19308cec2174011eb2e7"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "7997445061523387197",
+      "type": "GameObject",
+      "name": "m_textName",
+      "sha256": "abf5fd0c703779db49b29e539e3e4be063a002583d754fa98c0f9525e6861f26"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8010586661147454625",
+      "type": "GameObject",
+      "name": "bg",
+      "sha256": "4791b2d457304930d860385327dfe165eb8242bbc09d3a3221338c2277f99c54"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8015397465208094152",
+      "type": "GameObject",
+      "name": "m_imgQuality",
+      "sha256": "29b862e3f8e14b5fbf2e58bb3298355525cf42206328cf4036c32b596a947017"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8122377350705871205",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "811176232e5db8e746166d188d9849fd0164de8d30db1baa38a8bcdbc24ea066"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8358500706165320231",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6bc3f36d4417dbb04d311a540054a4f88dece9edf53a8fdce299f0edafac55c1"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8426940924016377619",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6662b0ce219e2bf3c67c46468d6c90162e2ce487dfaed01aea2ae825a60f34de"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-5402777804449232840",
+      "type": "Sprite",
+      "name": "com_icon_number_bg",
+      "sha256": "6df459f9a17e332c73758a28ef84914e203b80c4868d523639dbcb8344eba207"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8624855860381399004",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "419daa7db9c174b514ae22be0659ee6980379e8dc38dd87de128863669d5f742"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8645934613667252282",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "798a838a5d7efb0d51656f5be9ccc798cec26e7d3ffc63141a7eb76b39faad07"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8676012771120694722",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "980ae2dcc85f6fe3d9b6aafead2e528ac3bb83e4cd61f4ec336c1b97f8f71cc9"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8691928513873446853",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "03b2761fe603d4be7619595ba204edcab82692dbf55242df7e16c08d44fd1d09"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8720903240161475744",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9f43f2b67209574452dc465f5305dc51082ddfb66a8b060cfbf4e67b85702227"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8729030006576407544",
+      "type": "GameObject",
+      "name": "m_scrollItems",
+      "sha256": "533128e55824caa2a83e5ec8e80367e889446ff43cea670ee036395ec4d1f826"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8842002232880640528",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "8daccb3bdc6370ceb437e5583f66fe7b1d4142295a0c861cd87de5d6edf963a4"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "8848291465915683269",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e48261c69ac281f5ebdefc7e34187d9f6766a6cfe215e79497c3ca33a92f6be5"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "9056901858190393273",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ab9d7b128451a2e707375f1cc5c19fddfce4614ba08dd1b13708324458459122"
+    },
+    {
+      "bundle": "assets_resources_ui_turntabactivityshop.prefab.ab",
+      "bundle_sha256": "a4645200a5bdcdc116cecbea9d5b279d6282906b07d518d3c29003a402410268",
+      "path_id": "9175419481607987610",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b605e825b3ee6b2b92647da6c0eaa85564957222327bcf876695ca7181ccdb10"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "images/com_tc_medium.webp",
+      "name": "com_tc_medium",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "3896301447641360381",
+      "dimensions": [
+        641,
+        172
+      ],
+      "sha256": "0acb8c44dbb90039a6d25372fab44288aaba2c53f9dfeb1fcd4237820e46fccc",
+      "bytes": 35114
+    },
+    {
+      "file": "images/com_btn_close.webp",
+      "name": "com_btn_close",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "-3734965351099267059",
+      "dimensions": [
+        84,
+        86
+      ],
+      "sha256": "833cd07231884e4ccc4357a56c088432b5d7feb6cec914712ae4a8c2d3e64262",
+      "bytes": 4450
+    },
+    {
+      "file": "images/zmzg_cq_bj_bg01.webp",
+      "name": "zmzg_cq_bj_bg01",
+      "bundle": "assets_uiraw_t5funcbase.ab",
+      "path_id": "-8284824140646968265",
+      "dimensions": [
+        30,
+        30
+      ],
+      "sha256": "ba914ea1a334985773347efb2540c0f18caa2c09e782810eb464d5d53a458d9a",
+      "bytes": 88
+    },
+    {
+      "file": "images/zmzg_com_btn_b1.webp",
+      "name": "zmzg_com_btn_b1",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "853442902162350277",
+      "dimensions": [
+        184,
+        68
+      ],
+      "sha256": "58064c7704454fb733a56d1573ea2d0ce105f39e0a195ae89e0ffa64b6067210",
+      "bytes": 6032
+    },
+    {
+      "file": "images/zmzg_haoyou_liebiao_bg.webp",
+      "name": "zmzg_haoyou_liebiao_bg",
+      "bundle": "assets_uiraw_t5friend.ab",
+      "path_id": "-5717815832746022385",
+      "dimensions": [
+        546,
+        121
+      ],
+      "sha256": "cc7e4928d2923c57d0d0e664cca4c78c310ad2a3f81b574ae5e75f1b2b61d12f",
+      "bytes": 21744
+    }
+  ]
+}

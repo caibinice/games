@@ -1,0 +1,53 @@
+{
+  "bundle": "assets_resources_effect_skill_yuedaodianzi.ab",
+  "bundle_sha256": "1f6447140f6e7a24332523acb73eb578f188e5dabdecfdd8313e4f6e72b35e5d",
+  "uv_animation_components": [
+    {
+      "path_id": "-2532473906859022668",
+      "tree": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 1220271489073719421
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 0,
+          "m_PathID": 4344049418212031682
+        },
+        "m_Name": "",
+        "uvAnimationTileX": 1,
+        "uvAnimationTileY": 6,
+        "frameMax": 6,
+        "framesPerSecond": 12.0
+      }
+    },
+    {
+      "path_id": "6367921593816815841",
+      "tree": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 3066286528428152616
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 0,
+          "m_PathID": 4344049418212031682
+        },
+        "m_Name": "",
+        "uvAnimationTileX": 1,
+        "uvAnimationTileY": 6,
+        "frameMax": 6,
+        "framesPerSecond": 12.0
+      }
+    }
+  ],
+  "texture_dimensions": [
+    512,
+    512
+  ],
+  "columns": 1,
+  "rows": 6,
+  "frames": 6,
+  "fps": 12,
+  "note": "Prefer this LineRenderer-specific UV component over shared ParticleSystem uses. Native UV origin bottom-left; browser uses top-left so reverse row order if exact first frame is desired."
+}

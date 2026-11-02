@@ -1,0 +1,27 @@
+{
+  "id": "zombie",
+  "name": "向僵尸开炮 · 客户端素材版",
+  "subtitle": "CLIENT ASSETS / FREE PLAY",
+  "description": "参考APK的259普通关和259精英关、14种核心、无限免费抽奖；金币/钻石畅玩开关、常驻活动、可创建军团和添加机器人，支持真人加入、聊天、首领共享与无限签到。电脑与手机H5全屏。",
+  "color": "#ffae50",
+  "symbol": "✹",
+  "version": "20261030-native-box13",
+  "facts": {
+    "levels": 259,
+    "chapters": 26,
+    "weapons": 15,
+    "menus": 7,
+    "players": 1,
+    "layouts": 2,
+    "eliteLevels": 259,
+    "guildMembers": 128,
+    "activityConfigs": 5736,
+    "nativeMaps": 68,
+    "skillBranches": 172,
+    "playableNativeBranches": 32,
+    "nativeGemDefinitions": 2023,
+    "playableNativeGems": 2023,
+    "compatNativeGems": 2
+  },
+  "vendors": []
+}

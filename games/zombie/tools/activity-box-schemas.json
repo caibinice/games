@@ -1,0 +1,11 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "evidence": "ResDef.BootyConfig::unpack RVA 0x1779108; ItemParam loop compares x21 to 3 at 0x17791e0. Strict decode consumes all 2650148 bytes / 50964 rows.",
+  "schemas": {
+    "ResDef.BootyConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x1779108",
+      "fields": [["BootyID","uint"],["BootyType","int"],["AwardCnt","int"],["RandParam","int"],["ItemType","int"],["ItemID","int"],["ItemCnt","int"],["ItemParam","int",3],["IsBroadCast","int"],["MinLevel","int"],["MaxLevel","int"]]
+    }
+  }
+}

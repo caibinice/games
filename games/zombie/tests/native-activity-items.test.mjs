@@ -1,0 +1,11 @@
+import {describe,it,expect} from 'vitest';
+import {createMeta,parseMeta} from '../public/progression.mjs';
+import {ensureNative,nativeSupply} from '../public/native-progression.mjs';
+import {activityItems,useActivityItem} from '../public/native-activity-items.mjs';
+import {DROP_GEMS} from '../public/native-gems.mjs';
+describe('APK activity item effects',()=>{
+ it.each([5,6,7])('opens source quality %i gem goods and preserves their exact native effects',quality=>{const p=createMeta(12),a=ensureNative(p);a.goods[70000+quality]=10;const out=useActivityItem(p,70000+quality,10);expect(out.ok).toBe(true);expect(out.rewards).toHaveLength(10);expect(a.goods[70000+quality]).toBe(0);for(const r of out.rewards){const g=DROP_GEMS.find(g=>'gem-native:'+g.id===r.gemId);expect(g.quality).toBe(quality);expect(g.description).toBe(r.description);}expect(parseMeta(p).inventory).toEqual(p.inventory);});
+ it('rejects insufficient quantities and malformed batches, and opens choice without consuming it',()=>{const p=createMeta(),a=ensureNative(p);a.goods[70007]=1;a.goods[200201]=1;const before=JSON.stringify(p);for(const [id,n]of [[70007,2],[70007,0],[70007,101],[70007,1.2]])expect(useActivityItem(p,id,n).ok).toBe(false);expect(useActivityItem(p,200201)).toMatchObject({ok:true,chooseBox:200201,rewards:[]});expect(JSON.stringify(p)).toBe(before);});
+ it('uses skin activation and star-up alternatives without consuming universal materials twice',()=>{const p=createMeta(),a=ensureNative(p);a.goods={81001:2,81902:2};expect(useActivityItem(p,81001).ok).toBe(true);expect(useActivityItem(p,81001).ok).toBe(true);expect(a.skins[81001]).toBe(2);expect(a.goods[81001]).toBe(0);expect(a.goods[81902]).toBe(2);});
+ it('activates the source gun and mercenary rather than awarding invented generic currency',()=>{const p=createMeta();nativeSupply(p);const a=ensureNative(p);expect(useActivityItem(p,91003).ok).toBe(true);expect(a.gun).toBe(4);expect(useActivityItem(p,101101).ok).toBe(true);expect(a.mercenaries[101]).toMatchObject({level:1,quality:2});const n=a.goods[101101];expect(useActivityItem(p,101101).ok).toBe(true);expect(a.goods[101101]).toBe(n-10);expect(a.mercenaries[101].quality).toBe(3);expect(activityItems(p).some(x=>x.row.ItemID===70007)).toBe(true);});
+});

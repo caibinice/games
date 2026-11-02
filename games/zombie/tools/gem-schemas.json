@@ -1,0 +1,194 @@
+{
+  "schemas": {
+    "ResDef.ResAttrImpactData": {
+      "header_bytes": 20,
+      "unpack_rva": "0x1777578",
+      "fields": [
+        [
+          "DataType",
+          "short"
+        ],
+        [
+          "AddType",
+          "byte"
+        ],
+        [
+          "Value",
+          "float"
+        ]
+      ]
+    },
+    "BattleCore.ResAttrImpactData": {
+      "fields": [
+        [
+          "DataType",
+          "short"
+        ],
+        [
+          "AddType",
+          "byte"
+        ],
+        [
+          "Value",
+          "FP"
+        ]
+      ]
+    },
+    "ResDef.GemBaseConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x17852CC",
+      "fields": [
+        [
+          "ItemID",
+          "int"
+        ],
+        [
+          "Name",
+          "int"
+        ],
+        [
+          "Desc",
+          "int"
+        ],
+        [
+          "DescParam1",
+          "float"
+        ],
+        [
+          "DescParam2",
+          "float"
+        ],
+        [
+          "DescParam3",
+          "float"
+        ],
+        [
+          "Quality",
+          "int"
+        ],
+        [
+          "BindPart",
+          "int"
+        ],
+        [
+          "GemType",
+          "int"
+        ],
+        [
+          "BuildID",
+          "int"
+        ],
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "UnlockType",
+          "int"
+        ],
+        [
+          "UnlockParam",
+          "int"
+        ],
+        [
+          "Attr",
+          "ResDef.ResAttrImpactData"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "MaxStack",
+          "uint"
+        ],
+        [
+          "Icon",
+          "string"
+        ],
+        [
+          "FightVal",
+          "uint"
+        ],
+        [
+          "LinkSkill",
+          "uint",
+          4
+        ],
+        [
+          "isExShow",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.GemBaseConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D07D0",
+      "fields": [
+        [
+          "ItemID",
+          "int"
+        ],
+        [
+          "BuildID",
+          "int"
+        ],
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "Attr",
+          "BattleCore.ResAttrImpactData"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ]
+      ]
+    },
+    "ResDef.GemComposeConfig": {
+      "header_bytes": 20,
+      "fields": [
+        [
+          "Quality",
+          "int"
+        ],
+        [
+          "NeedQuality",
+          "int"
+        ],
+        [
+          "NeedNum",
+          "int"
+        ]
+      ]
+    },
+    "ResDef.GemRollConfig": {
+      "header_bytes": 20,
+      "fields": [
+        [
+          "Quality",
+          "int"
+        ],
+        [
+          "CanRoll",
+          "byte"
+        ],
+        [
+          "CostItemID",
+          "int"
+        ],
+        [
+          "CostItemNum",
+          "int"
+        ],
+        [
+          "Score",
+          "int"
+        ]
+      ]
+    }
+  },
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6"
+}

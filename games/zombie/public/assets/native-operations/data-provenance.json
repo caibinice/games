@@ -1,0 +1,74 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "inputs": [
+    {
+      "name": "LimitBoxBootyConfig",
+      "bundle": "assets_resources_config_resbin_limitboxbootyconfig.bytes.ab",
+      "bundleSha256": "2330e6902ab5df5b60f538bed1b64c29501365cf83ed5df430218be5ecd30abe",
+      "pathId": "4948194243709070601",
+      "sha256": "6e8a39219019e8e51f928cff6bc0ae3730842c37ea9cb7af90d9b2ce8b0d3e6c",
+      "count": 24,
+      "rowBytes": 28
+    },
+    {
+      "name": "LimitBoxLuckBootyConfig",
+      "bundle": "assets_resources_config_resbin_limitboxluckbootyconfig.bytes.ab",
+      "bundleSha256": "2219bd52c203e228e17ea5fbb3ac896b0d7f72b3a96df866bdef818422b1d633",
+      "pathId": "-1929246411178205092",
+      "sha256": "011e660ec8ec45a990c3b0e29994a45ce033bc08f3504249bf4062864e8967a4",
+      "count": 6,
+      "rowBytes": 16
+    },
+    {
+      "name": "FindTreasureCircleConfig",
+      "bundle": "assets_resources_config_resbin_findtreasurecircleconfig.bytes.ab",
+      "bundleSha256": "9f95f2f41935e4edc0905551d4943aeea5f8c81f5da2b88ba58497087b8a125a",
+      "pathId": "6500567568363072475",
+      "sha256": "48e41efc25b1db323f57ce289908fe62679fe18627270dc29f5e21ca46352893",
+      "count": 56,
+      "rowBytes": 28
+    },
+    {
+      "name": "FindTreasureLayerConfig",
+      "bundle": "assets_resources_config_resbin_findtreasurelayerconfig.bytes.ab",
+      "bundleSha256": "999b8d4a5ccbe08c96cff36f2180d62b2aa561e3b15eea944c9dffb7a567e619",
+      "pathId": "819306780501294457",
+      "sha256": "e50dd5161a5e53b21f3fca6d3144b4b3d54eaaa99db6764e7d8e8669052a88e5",
+      "count": 40,
+      "rowBytes": 36
+    },
+    {
+      "name": "XunXingSmallCellConfig",
+      "bundle": "assets_resources_config_resbin_xunxingsmallcellconfig.bytes.ab",
+      "bundleSha256": "cb40f517d2ae406712cf55cf38733ffd5ad52ebd1a2aca0638966dd7f7d2ef36",
+      "pathId": "5143329952308403091",
+      "sha256": "13246651bce41885c1bd7b457214dfcd507e3f5e54c3e22f395e0de4404124a6",
+      "count": 7,
+      "rowBytes": 24
+    },
+    {
+      "name": "XunXingBigCellConfig",
+      "bundle": "assets_resources_config_resbin_xunxingbigcellconfig.bytes.ab",
+      "bundleSha256": "2cc68d4928aa2ef5f7e3fb0dee9695e3d1824818e6dfd8a13e8e911bf54eb9ae",
+      "pathId": "3017142049938690794",
+      "sha256": "ba68521f67ebb368f558248f8fe7c1d6a9b9f5c8c378ff6d737a7331bd201d48",
+      "count": 7,
+      "rowBytes": 64
+    },
+    {
+      "name": "XunXingDrawPrizeConfig",
+      "bundle": "assets_resources_config_resbin_xunxingdrawprizeconfig.bytes.ab",
+      "bundleSha256": "7a83fb96b6191e6890b44522de262af8927f53fe141e0de0972d793dddb9b803",
+      "pathId": "-8574216257445204646",
+      "sha256": "d42b14d7e278b864dab4482881b80419399e76a012484565d1a17d37a8fea200",
+      "count": 7,
+      "rowBytes": 16
+    }
+  ],
+  "missing_legacy_booty_count": 69,
+  "output": {
+    "file": "native-operations-data.mjs",
+    "sha256": "77752bd5c2f3acdbb2862e5f75d5716d7c3791143136d740577ddee341de400a",
+    "bytes": 41775
+  }
+}

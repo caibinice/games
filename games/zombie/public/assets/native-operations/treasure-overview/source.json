@@ -1,0 +1,3588 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "inputs": [
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9198776763691018672",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7b292de69916b2f6b732525bbe79676bd9a37d90d0b7f0aba8b7071f74f3ef8d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9187288415284906648",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "858b9e5d404df7beff035073cc86983648c93ad1e385254e300f901bf7c4cb8c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9181801931033205096",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "06d5fd99a7117a0f8681d30e2e675eb424c18d48f6f46e3a6dbdf90972e341c8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9157291169918056114",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7a516a642403e12d240e52cdc9778b14cf096d51e0616a30cd78da8cca2d26ff"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9022445370303238290",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "40bef1773e757b55e5d20f64b06b2611516de192499a25d21cd24aea61fbe08a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-9002559477110028317",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "96578fcc5bb7fe4398b2b2c8893f286081c9836dcde14bf779f00b5df638436e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8992860642551895380",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0db0320183dcd189210d725dc7e5e1eadf5ed11a6cb36362477e1aa2793afbfb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8891638720888512447",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "94c7a6d9a5e865437b28616c8ccddddf14b0ae0d8e75ce67e31dcdaee5747a4c"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "-8112764837080268449",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_shuaxin",
+      "sha256": "3448f3c42db58010a8db99b93d8ed6a7fad0f705d607a84894b478c3471d8092"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8875783004321755997",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e5f664e2c3f41f410a9de7fbcda61dff257f0f3de7b5514066457bf96fbfdeee"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8853850325504590264",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "421537b0a7303496016f110eeaaac44353ded988aa875b05dfb30e72d7b17ad7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8838114071699914695",
+      "type": "GameObject",
+      "name": "m_textPrefix",
+      "sha256": "0aa1cb07f01c734b5636c7a725c58012b7f50d4f6a4a665bb72be6d35307c0a8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8811174651937818312",
+      "type": "GameObject",
+      "name": "m_tfEffBg",
+      "sha256": "b6eb039833157907d37bd48c9486f29bf6b6b9b591e747f92df0e200b683a26c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8790529761666099162",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "2ea4d40e6752419f970034db0d0845e9a429d88f12a88ae60b40c5c406b5dfd8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8763816142387581693",
+      "type": "GameObject",
+      "name": "Title",
+      "sha256": "9c0713be219fbc98e4fa28e8f930186003d412602b3e9681bbaacd1fb94b22b9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8662881421498163497",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cbba0af61e8fab73e73c6dd4077cac07cd918a5c57fe4cedfaaa827ce8701375"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8575345888414507799",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "84e1781666c56a770fa84debb1ffdd944ce74b550e026ee673eed8a0db0dea9e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8245826614348731290",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "95f90d9dce5320aefd25ebb6303ce17b869de8806416c048e96adb6d37260004"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8216251240891998561",
+      "type": "GameObject",
+      "name": "m_itemTreasureAwardView",
+      "sha256": "7423fb46958b4ba3c3b12dcbbab79532bae627c16da0274220a1b761d032a21f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8208703560584264528",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "50a13ac9c40d5583250c912e17504ef26fa0ab628e2cdca58f06bcb3a17c1b66"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8118452746420797475",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "83b288c017e992fec93b412c010ded385fba588e6b95194fdb15d01ce1ad2143"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-8047456001888503694",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0f4a1a0408f97682813d6b4c6994c5525a71c68c4888181a971fe4ba4908d58b"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-70050694750654435",
+      "type": "Sprite",
+      "name": "com_tc_gou",
+      "sha256": "296cd8672434135ff42f71d2bd84d8b0a6b7a002f9f6319d49125f3c6876e749"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7998239710778591841",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0ec9bed5e3045d89784420e5dc96485ab3657b13a534ccfd5d8e877d64b61ca0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7886267632871800876",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "1b0cacc81575eada3116cc85866d0845bde10adc03bded3e696701514861f9bf"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7727646236983964119",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "603973f46b31284216e407808fc2b34ed6cbf4a48aad479f7b065636cac64b75"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7716286605436424760",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "757233a4e065585174d7ff6d3200d2c847667c524c7a0d2dc119f2e6a119d01f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7627205421311279842",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "bdb5e59fc5bb310d85ff79eea516168c23dfc7693fbdba85e1e8a8648c4a3089"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-4797353417626907336",
+      "type": "Sprite",
+      "name": "com_tc_medium_left",
+      "sha256": "364189275d4bb7619138ceedd4079e55606b0c86747cb42a704a317cc0d46092"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7468298926569569738",
+      "type": "GameObject",
+      "name": "m_btnChangeAwardBg",
+      "sha256": "fbfc88977b92bd7180e8410610440f982c7ca5bcd937b884ecf6f4f9d376c24f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7424251214434252426",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0854c3c9d3feee8893af3f6b2d23806743ad44ccde4c7205086be662fbdc992a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7401717342209678782",
+      "type": "GameObject",
+      "name": "m_tfEffectRoot",
+      "sha256": "8ff0aaa0da899a0eb860d8a6f47add62f10cf2a9bab90dca4f07e628837d1faa"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7354404905278612078",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "750deec7305e61d0072cebc5313b2aeafbd241ee2525e04a098ec72c1e7c637b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7177792788661544933",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "cd564d3820768d4bc86d1ab953285ba6aec96b03e54a4d1b867531724d95dcfb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7086705672900236747",
+      "type": "GameObject",
+      "name": "m_goNew",
+      "sha256": "577109dcfa41de89083605a8773f866bb22c617e26a892146c442b5e80f074cd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7033537109821632284",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b564abec6f80e965741cd95e3c0edd96ece18ccef455be591e0d8efcd02548f0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6825448242624784306",
+      "type": "GameObject",
+      "name": "m_btnChangeAward",
+      "sha256": "22841d2f870b4ad09ca7e82fefcccede66de985a0076084fb320fbabc0e206f1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6785123143756670639",
+      "type": "GameObject",
+      "name": "m_goHaveGet",
+      "sha256": "a849190d43dbfdc96b14252a6d2caf9b405e6cd7aa06ad8a0a742ee147485b9e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6774839650039075721",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "8da7ae479dcbbf8fd120992d9b11c20942c76814a2823b7f10a3c4dc17769d68"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6769166867126702073",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c7c4f48e7df3f54e6c22bda23f30aac2dcea950b849834a151cd389725cb9f8d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6573823767131738664",
+      "type": "GameObject",
+      "name": "m_goRedNote",
+      "sha256": "b0f43d84229bf4c2f766d78ab980d7a75786e1fc50e1eaba23e6b2099c77664a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6553835813816905352",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "65a8c301a87704f3bcb30394839ca9837ecd61252e2799a54cfee4ee739f1379"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6543256784561019088",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e95cefbe7e50965f2755b0eaf9729591d29b66370e33862396ca02bdec2c6346"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6449486165244249702",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cb93bd18fe9f39f3f71dcf031b3f1fdcb4092f0ab9ed74a74bb63ca47ded7b5e"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "8306709822551079681",
+      "type": "Sprite",
+      "name": "com_zb_icon_04",
+      "sha256": "5847abef40e338126a5b8a460dd63c94d6d796dbdd749659324bbfa1b9fa31aa"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6246509434747204760",
+      "type": "GameObject",
+      "name": "m_tfActorModel",
+      "sha256": "2210f1f606a5837fae45cd028dd74a5a1847e6b2f6a7d570a8245760cc99e879"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6214325258548855091",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9bd753f9f0b850fe7815971fc06d72e7cd306aeff028f0ad68fdc243303fac79"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6170119265623612892",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "83872e2dd0ad3307e2ca8b518b116daae7a692f70b2b034c5e3bff451aac4b3e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6143448646308453183",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ca13b049a52e7428cac9b8220a2390ff145bc841f007f230b4bd25eea4d59f5c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6111150345266582294",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "53931692bdef6fe62c1068ede72bf3cfc8a01ff826f8d0d1d1f912157e35c657"
+    },
+    {
+      "bundle": "assets_uiraw_t5taojin.ab",
+      "bundle_sha256": "82bfc355604cf628e866dafcbb4f271a793ae4b9d8ce03767d67f47c1bf9110c",
+      "path_id": "-4664145027060476125",
+      "type": "Sprite",
+      "name": "zmzg_tjzl_box03",
+      "sha256": "08e36288ba2dd23b6aedc70cfc41b9a5860a245dbdd2fa10799eb130b8554152"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-6027842745720781372",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "cbfe670d3191c128f9abbcee4acdc282a8ed5c0d08fa62f224543154b235f747"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5985866752275095529",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0188bc774cf857e5995d0eb83ac76498a3a7ae9ce4d0b81dd9142ce373d89030"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5980557033150530548",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c5a6474cff96dda8b6f1fef8f4096f63e34096c382290c81af51726cb47558b0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5954101285775847967",
+      "type": "GameObject",
+      "name": "m_imgRecieved",
+      "sha256": "040c0ed71fcff463a4bd82507927913d874fcaf8c02cc2ee97f4765fb17a0194"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5773175691910408845",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0df1e3307bfcfc376838b68f5fe231b72e83d97874f156bb9d74507403cf8541"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5681198993696322792",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c60086fd816cd69686bcfaa9c331484e0bd9a0120f4653d1b40b5b97771799b2"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "5114010992914239353",
+      "type": "Sprite",
+      "name": "zmzg_com_hongdian",
+      "sha256": "82e89fe7ca3a8edc6d072b9cd72a568f394860597f782734a3d2543aad87fc02"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5648995677709882074",
+      "type": "GameObject",
+      "name": "m_scrollItems",
+      "sha256": "424c9846a13012bb1b1cf40f431dc372ac69c147e96081eb68f670b97914d716"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5536340185490409350",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "bd234bfc68d40685d92f1ac24afcf193cbca8e0bdcbdae9098d9f4517842da76"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5473066082810860091",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "95b705d1ff65af5ff9e240ab6cff1ba102e964783c45e559ec6911a5302ab03b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5467907924657424371",
+      "type": "GameObject",
+      "name": "m_textNum",
+      "sha256": "7009db39e52ea75bdee7b1a9c7c24954abd9f5e744a9fa02fba439be15264304"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5457617159841853698",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "50d1cc3799332f8fcb6d99f9308da342d8f571aad1087a63c78ab1aff07cb06d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5412951779821337204",
+      "type": "GameObject",
+      "name": "m_imgChose",
+      "sha256": "6ef62ffc187122bd45d323cadcbb09749aacf1d3b74ad06f97f2c030168dd750"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5408454639357483830",
+      "type": "GameObject",
+      "name": "m_imgSelectII",
+      "sha256": "45520c64f9d0602e893bb6fb4dd06af5adcfa4e002b4699ae50917c241ff6b3a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5046179284882040494",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a525b437bdf918658e82091673e4e7efb02659feb90caf5998ea1478a79c9fac"
+    },
+    {
+      "bundle": "assets_uiraw_icon_baoshi.ab",
+      "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+      "path_id": "-8658183856631291321",
+      "type": "Sprite",
+      "name": "icon_baoshi_1",
+      "sha256": "0ff423a40123003b401e25dac0fdc9771f477452e8faff1443cb67ea422abe21"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5035859380225184786",
+      "type": "GameObject",
+      "name": "m_goMask",
+      "sha256": "672a397ae736298976858fde005e4015333ddda5b1bbf6a6e1c071daec30ed77"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-5008156229915546248",
+      "type": "GameObject",
+      "name": "animeNode",
+      "sha256": "ba9a2fe43f896a72b68d137319be48067908474b065606e41578bb5c0c81876d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4964047967099394826",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ea26fc156dedf6b5292876f6ac3d8a46e9feaebededc37cd503fa46b573c4933"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4932281152567065785",
+      "type": "GameObject",
+      "name": "m_itemRewardItem",
+      "sha256": "05ff1505c4dce9502b7aa414aef08b03ab21e7e6e4d0c0436dbd43455e20d995"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4808786014518088757",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "df20764e1ceef92feedfffc2ec7780741a506ad6711586de742dc69297ee75d1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4765167787234612827",
+      "type": "GameObject",
+      "name": "Viewport",
+      "sha256": "472393ba83fb9a673d3fdb37390563634f7032e84ffdb2528fbaed9cb394ce8f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4749819876853851555",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9464e0abc485e68847fecf6cc3b7117c25b4e76cd6695c02dbb39ef0eca28e1a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4549149888616430733",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "75c896db2148b346629469267229b01b564e860a2a3dc214a49b2619fd881495"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4540912292707109789",
+      "type": "GameObject",
+      "name": "m_goEquipUp",
+      "sha256": "6c8d4320e558e9df2ee8f44c26860e47a40e71604198d9d3c4184d2813871957"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4527761417169236531",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "09ced802dcca679d7c31c3b34c99e15552e32cb64229d473e0f44cbf3d7f419a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4408422076816310205",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ffc7e98ad221297a32bac60e9f89efaecf83818767580185f5303a41005fe97d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4396112251750993508",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0e6ad297bff8107a81c4d1aa652a3dc9dac326b4c593a24cd1efe1295b803cf3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4284809215044153018",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "4f5204a7de3f188e6b9df9234eaec27ebdf86681df683cfe10b67848ae0f7add"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4215814777719866051",
+      "type": "GameObject",
+      "name": "m_goLock",
+      "sha256": "b682d89ed9207b18990c637b8a28e4026bf1818c57a606d71c97131e45909c3f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4126178888767791555",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c0ed66f2046686f763e6ac301ac415a84421c278f4d28685549ab9baa774d48c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4109163541861023460",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "85ee26b3605619c5116547021c9cde2d510695d9ba0a1d8f8cd6eb99a463675d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-4056769198395630013",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "06eb8a0d626b3c96978316b146a1d9408616cc5984cbc8ffab048b1d6a19e0b1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3927103681954894786",
+      "type": "GameObject",
+      "name": "m_imgPrefixBg",
+      "sha256": "eb5aa85d5eb448f055a57c3846886cb4cf153e3237b65bee44903b8ab65c1093"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3669995446284201731",
+      "type": "GameObject",
+      "name": "m_imgNumBg",
+      "sha256": "19d8e1602e22848b95735df9e1eccb6be8e9f990a96f4a112a9d085a6179ec43"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3652200128540674467",
+      "type": "GameObject",
+      "name": "m_btnRecieve",
+      "sha256": "659e01799658cdbf5feee5db353596db9f7fbb230147621f13cadabdad84ceb6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3571974719622125404",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f3efd8ecc85cd61cdbc645750e3720f3cf8ab4a57e0c9842045de1ee1bf41b64"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-432770463304665361",
+      "type": "Sprite",
+      "name": "com_tc_gou_bg",
+      "sha256": "baa5384db55efd7079982f3d31d4cf96e5d25c1d2256ccc5cd36de1f214926f3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3499630677676318232",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "099bd2c76f29e107ac6b45e31b7c632721249d7552c70b37cbb29c2a3dc31236"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-3036161200300615235",
+      "type": "Sprite",
+      "name": "com_icon_02",
+      "sha256": "a59c4d506d302761d9255e759bee8840927e36a933187995a0943a60f84424b4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3474206676411682213",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "964dff73398c306960111c743cd6adfa49cc2f916d02930a504b41ead11981cc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3414817286249849414",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "68e8e3d1ed240c9790b92fa384bfbf9c83901e42ec70493a0897b115d887f9b3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3384542009402119529",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "0136ac4feb8e404a8da69a6c809e4b1b05cddacfc3cc38284db2fe56e607283c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3323247418152129237",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ff1babf13b00a432af569a86f4b766a7f234c9d1a85dac747512edddda150e3b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3256439413906891771",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "594f061ad0f55524bf0d7a09bbf39395fb2ff347cc5d736f66ad4bf44bbd692b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3186024000541064012",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5c05a1194065e65afc058ab851cdd996549ccbf2b0da2dbf569a5576fbf481ba"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3131865401577196444",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "02fb3200eac55af5204b96c3d3ded8769a91b92dc184a94590fca4b204010853"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-3078239456707046105",
+      "type": "GameObject",
+      "name": "Main",
+      "sha256": "5087ed6114b37c17b6a9109657c678bcb5159860a22535016a9e2a64fe1cf2e1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2685282798054804818",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "747826a16013d4d98a23d5a53fc7d90838f54a7bf803ac3e108832eecdfddc0a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2562517474749684828",
+      "type": "GameObject",
+      "name": "m_tfAward",
+      "sha256": "c63e220ccb9481aa65fbce1b767e7a67342cd188511005c948d8afb9d4c7bfd8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2537793237000451441",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "fc2e31596510957cfb2ececb4b6af5145d49b4d9c9eebd918791c6eb4f5cd31d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2386411867528213527",
+      "type": "GameObject",
+      "name": "Image (4)",
+      "sha256": "8e5fba2439f011d01996692d2ef51063d3a454e6c394a3809236cb2b0fa92a67"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2307166087917276241",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1b6555e493070339c4d73164106f7bdbc8a9a1d78b000553bf90f4ad6003f530"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2228053592609132678",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f2c0126be4d88ce8b607aafc7f800b2c259bde58b3b549b82d7cf1a84492fe88"
+    },
+    {
+      "bundle": "assets_uiraw_t5activeskill.ab",
+      "bundle_sha256": "5092a6e1830a86fa8396b8f8c2feaab5f557a3c20fb78c549e1c7dca47e74f00",
+      "path_id": "4972288544762908872",
+      "type": "Sprite",
+      "name": "zmzg_jn_add",
+      "sha256": "2eb616fcebce8be8f1a6868eac5a3aa805cbb5d468ce8eb6e204a1aa260cb93c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2212327962068983529",
+      "type": "GameObject",
+      "name": "m_goSelectBooty",
+      "sha256": "00f80011bd94a176e308a78583a5e1d9d6ba3f1f6b91b5b9605187889142563c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2105023527910247816",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "3fcaa8a729080da7554902b80c9d29ec5f5815eb5b73b4c4273cb48ac5befaf7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2097877048384775072",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ff6fb48e703ed4dbc36b9a0ba5faba6f1e34130d223c59ec8f7969573b0f160b"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6907829577625997748",
+      "type": "Sprite",
+      "name": "com_tc_medium_top",
+      "sha256": "0dea7f91cabf2d79d48035a518b4dca0f3656e635416113ba43efb77edd26d22"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-2015400411863961589",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7db89ae5684c7abec446a0d131c42345d61566af14df81f4a7a13ee57d07b52a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1729224282748596505",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "157a254b72b9e2185683a85364b55c6f0b5ca272675e0e5f30530dc5567fb162"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1709015667767476498",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "05762aa21a4602d6ec089e541f388a3e249b4132cbb1fd8c8175369bfef66e63"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "8743042469702193464",
+      "type": "Sprite",
+      "name": "com_lock",
+      "sha256": "2aa9eb561ee2829df40677b461dc566b6bc72f9d83237008932ac9d234d65d9f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1642679053549723752",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e5f8fbfdbdd1d52daeffbbd8770da521b8cde3b31632e5e478d74f8d5d4c6712"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1594160621377151089",
+      "type": "GameObject",
+      "name": "m_tfContent",
+      "sha256": "ec65118b597540139f2dd27447b4837fa4e424c38d2e6d523a57a0f04d1b6fe3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1502453348879703801",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f287f5a3f4a8140e14899624d12ad4b48823cb9d2f2e9437dde3768f633b472e"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "4573305578120997303",
+      "type": "Sprite",
+      "name": "com_daoju_xuanzhong",
+      "sha256": "8544a67b8908cc498a9f0a39cda3a565d4acda9c62402e29468e2ca78ad61026"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1448559721276215874",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6c66e0e2b5ea5b15846b5ae93e830e234037bcebb59a6f714736d4ff329090bc"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "1691403723831419048",
+      "type": "Sprite",
+      "name": "com_tc_medium_ding",
+      "sha256": "841d1eaf7d8550e199888305a7502bdf827ddbae80086a2e6081b30b68e65835"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1439364752712370537",
+      "type": "GameObject",
+      "name": "ScrollView",
+      "sha256": "98b9fcea7e6d20304cfe6617e3913b7afbabfd8ac090be94118ae8f11b87b341"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1328325765422947265",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e52ce77e865d61d78783dfe8bbc40fde45286803664f0b2c22d187d2d342dfaa"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1253102465028992831",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "39b21f49a26e77effbd21880226354adca31be2e5ce6cf64ad66a88185315a45"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1232594071136278267",
+      "type": "GameObject",
+      "name": "m_imgType",
+      "sha256": "a0bdf562227d1c39c6929a775b8832678b3afe3860680aa20881a4a32027655f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1222147293916333682",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "8f0d62bedfe69845854368c5eb6db4ae3324038a0167583cde12995d618840f8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1171043297397591801",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9b021b5259cc6ae720d8de121c9ccb653c9e36505ec1907c5996df2637a08f09"
+    },
+    {
+      "bundle": "assets_uiraw_t5setting.ab",
+      "bundle_sha256": "653d71e8faad5201fcdd3db0628e66effd9d533b07808f6ff72e56653dce9fce",
+      "path_id": "5129113884716137342",
+      "type": "Sprite",
+      "name": "com_tc_gou",
+      "sha256": "fbcfb5d3fae152e1b1c73ec7027c4461f73aeb1cef8590fccd7cdd5e81c4088f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1165415741183117797",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "f392e04e4e4c0e52e0494e7bee472d6267b6cd26d3f080cb8ee886f3f03f4ed6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1137996680074450610",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "42e25bd8318c3f686fbf3ac45ebaf458030a26ee64ddfecaf58f4c61a0236b4d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-1045407753600663716",
+      "type": "GameObject",
+      "name": "m_textLevelUp",
+      "sha256": "7101244c0e6486481b93bf90421d699f3bca14ef2367ef52f741faa8f4a00d06"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-979378464766687876",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "98b4ea323c876b4a402c2f70a763115ecb3b475702bcd4dddc198c611f889bb0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-957871368283674273",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "633b6d13e07bb98bc80ed51da7047d4975f31a05e043fad9c5a71e0f3de0d2ad"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-869223182193913285",
+      "type": "GameObject",
+      "name": "m_textName",
+      "sha256": "5dc39d327948145829a6419da1931e3a10d438714cb330a7f7a7a1ba6339a500"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-865461436441679896",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d8b3ed3d8d676c0733e35ea1ad4d5201f6b4e9d0d5ce85f5e9c40f2d12c6dd3d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-792136653892566513",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2571443b01c3f854f4ac6a6389fa02c12e5a68e9c4f9a38daea1b66f4f60ac23"
+    },
+    {
+      "bundle": "assets_uiraw_t5email.ab",
+      "bundle_sha256": "b23020873c86580b993cb831034e9da717ae5f964598bd3ddc16ae4b29b4caa8",
+      "path_id": "-2207941671744389445",
+      "type": "Sprite",
+      "name": "zmzg_yj_ico_mask",
+      "sha256": "660c0b63d2c34bf766b7dcdd192112254b00985bee4ff198eea3b80f445337d3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-681965950079178322",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c1da8a60f09bf10fed3c0a64ecbf810f2135982b8e9137c1ee0ad454abec75de"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-616202246068414471",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "af389182d2184c143856bdd78e978b093de50df6528e164b6a593aa9e37006b4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-614048097246300018",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c140a1475c46acc23e902238671710ab2e10ecc94e829182820f0040a9e658b8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-427413923279611727",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "44e0c2377367acb69454697f9a8cc1100b8b3c9b3630cd53ba2f178a9bbaf6a1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-405471336904484921",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "24ad984b7a77c6ba1cd7e3b417fd77444c63c460b2cacb0cc6cdc494c8bd791c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-245346911264014040",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5f6f263314ac7ef888df8036fd45a2d371e8a484f3e1028313775da15c260ce8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-147822948319692545",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "40ec39368fc378c6c16e1bfd31c321084c17f75d63af0b600c17e6b141fcee43"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-133199916889796710",
+      "type": "Sprite",
+      "name": "com_jiantou02",
+      "sha256": "89aa67e9bb071a3ed328c11cb3e63bfe05b94214be926e940c67562a6a5cd451"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-124092826744803756",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "ca0b8aa7259a3dfbd49e217ff4734cc1b2a368e13272f88f5e88a4c2dd7520ca"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-45585247710618139",
+      "type": "GameObject",
+      "name": "m_imgIcon",
+      "sha256": "f46fdb423a752e683407f7907a3795ef5dd913d3543b794797b17b269d22c81d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-11080410674279608",
+      "type": "GameObject",
+      "name": "TreasureAwardViewUI",
+      "sha256": "6efb10a26aa171a83cb8cd13aea011830cac4fce4c57ca8ba7230017ae194e13"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "-7349366343495482",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "49e94ca5485e5e8fb27bac71525b3cb1b90c9b337bb1c952d9139345f43a6e85"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "51386491713008452",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "529736ff9d363ebe4a882aaf6b157936a7849a427c5cf290cb77ef67f97430e2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "136378417736763023",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "34e7d03b9e5c05229d454de77b7b943f9872a5bd36a4df1e2e1fec274b5b50ae"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "206778573377903867",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ef66615d8dd0916d0b8a12b94b7341275971112053c76ea2bc2a88fd678f2057"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "224467099996102887",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "31c2bcfce1b59515690f5073c41e73f66b7b84d1de90b96e3435e3146ec162b0"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-1573143879874187933",
+      "type": "Sprite",
+      "name": "com_icon_s_09",
+      "sha256": "9305806e0c05b73e5328078f37a72fd00f752757d348b2af82541dcfc099dd99"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "227757515950277031",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4da6c280bc6e58bde627f53a47111df93d801220c40fabc9c9619be5b7dfbf93"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "335114614436830754",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f356c05da56d6824a0e69738b6a6beadd259488ea9e380f1fdd71f3b0dde96ef"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "350033574758161498",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "93ab0048d1607db48756a6b02c164a3de16bed9e28c9b05fb0542ceb763532ea"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "445726352409822538",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9c438a1e20d981356f6a63adee6cbefc62096a695a59d13b21405cc722237b7c"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-8858043535711635253",
+      "type": "Sprite",
+      "name": "com_zb_jieji01",
+      "sha256": "ad1e9f98bedce04cce4192bd62b8d4c6d295b5cefa09006fda5bb295639d6808"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "533229072384013902",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b4fad71acd1168a2c1f4a5f8183c88bc592749a4d06be926ae63046b47c3c8b0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "628886055092804177",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "09790108fefc7f722b024a85dec216cb544246ad7f422754663a046b5e5ae92f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "730077631527575477",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c461fed3e5504a1cd538dc82f3ad62c7d3709d14b090f998d9fe1614a6713a3a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "785498478584808075",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b8d24368e73432e7e48d64b89ffbf5245e1399a0f94163d4817d51005bd7f2bc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "828442718923735888",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "0fafa730e5e91d576f69dada36e023155a7c8dd8fce4a50275b666fa56baad2d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "830025201981497394",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "506a2d821071290aeb00e85063b9b6d389226111efbc03db20ee4ff9ba89d786"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "922650971060742121",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "070dff736a10486da420080bd3b0e6ee1911b8451aa0e57fb815976c395e653c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "943059078725183210",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "f43c2750efce124f733fc5892639af35b99f0bfd8dc3c6c31a1a495d2e231a81"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1040257747476730807",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2b7e74b4e3e3c84f7e30472b727148436b771fad16082f7e9accada7a22c1bd6"
+    },
+    {
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "bundle_sha256": "19f71a341da21b8e1bf552c6216c9e5f4ba6aaf1c2f6dc096c5c0dc58a127d99",
+      "path_id": "-2493988399889614294",
+      "type": "Sprite",
+      "name": "zmzg_mori_jianglidb",
+      "sha256": "72a45b2c0af0f7379fe508cac8329d47064c0ed34f048efdd529a1e6d4f8e9d0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1152637964889975992",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "be821d1dff5e9881b36968362cae51fe04a9d093577b09237274e05312961e53"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1208823789487339246",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "12147c8a61ef5c375f9c10605462a57b988c54b4d0f7375472b1b0120365aeaa"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "-3637661716943657326",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_jinji",
+      "sha256": "03def99a3061809c3b552c0e3f436847426269bae8143502f833fc3c3d16cefe"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1288360138603528478",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5f1f3632bbc862ae0674de2f24e7e9596f0b20790ff43112c4752789ffdee065"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1419619581725754565",
+      "type": "GameObject",
+      "name": "Image (3)",
+      "sha256": "23c24c1c1b9bd5d0346ea9920247ad9f36e73f8af9ccd0054ef717b81eb3aad3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1444314860954277529",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "1f8d6755d7382e5112d8202843c44581b46c8ab74838862db6606becc8c684f3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1464390439864918408",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "234eb6e4b0435f67de36ddc2ff092a91bc348f4229fbb0b8b9fbb2c9e1d0cf55"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1505193118848191502",
+      "type": "GameObject",
+      "name": "UIModelRoot",
+      "sha256": "ac8fc02a038d42b0b4bf0219ad7a788bf35b47836406d843c95ea3934ef2d99d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1574225253821507249",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d5d6e1082f2e20d357ab497329ca60d9c51094eea5b06e103982b4dd4dc23c36"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1586013973302261986",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "79efc163b5ff55bdcc07be357235b13b6a921f38290f947ff1a9d08cda07d1d6"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "2844762127005624254",
+      "type": "Sprite",
+      "name": "com_zb_jieji02",
+      "sha256": "99246ddcb2fc4284f9992108b80cf92cf69c9d70e5f7c8290dbd898ffcfaeba3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1656392114979093278",
+      "type": "GameObject",
+      "name": "m_btnClose",
+      "sha256": "c3ba2ab850b89feeacb70ca18d62ebfd7418b4364506d8e10d2308a164036fbf"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "1771866103505171933",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0efb4479da972ff024014e81c21c1be86b00326549beb197c070211cc44c2ca7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2073440852662963527",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f764c186b89ed13f06445b7a27fc9434ff3e7f1bcb4f3c5078b0acc05ddae358"
+    },
+    {
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "bundle_sha256": "19f71a341da21b8e1bf552c6216c9e5f4ba6aaf1c2f6dc096c5c0dc58a127d99",
+      "path_id": "-2566208254432356282",
+      "type": "Sprite",
+      "name": "zmzg_mori_jiangli_baoxiang",
+      "sha256": "361605cec181ff0c35972e1f0451c6d1a98f71d65d5487b8ad216c681c2443c9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2101503816846342616",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "41698715e446ceb433330c19407978cbab04c6f9bc42b00e698b7d294be9f3b0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2223883113211554109",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ef6866c41c2a5fd9aa178c1a90c1b02f9efdbe28c8be37442f193d5f21bcfd84"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2337876527648431853",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "8de329f0defdabdf9273cf0c275ae0f5858ddde9cd90207160fc183ff0e4952a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2352898889332872487",
+      "type": "GameObject",
+      "name": "m_goItemType",
+      "sha256": "9be3a7015376dd39819a7e2e1fb4f207c13e104ec10845f39650ad3716c5391d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2354809311119128209",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6a04d62fe56143b00ab38d2a3d4ca8f79044c21f465878b131122b8fb0e84006"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2560737319472702994",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "78d91656832d3b8dd4a49c1e92003f605848d21f727e8a23f3b7f40254b895c8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2588465996532507020",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "82c654d9be599c50bf21a46ca82e365366b24555ad42a7f2b5c515a0b24e2c1b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2637162187733584016",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d6c71faa67e365212382c20be2fbbc6c1d6d2f3878d7f67a011da2cddb0d8d71"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2669822948535381941",
+      "type": "GameObject",
+      "name": "Name (1)",
+      "sha256": "baeb1a9feefdbab39755cb81422a53658ffe65e0d441a154d546848637fccd34"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "2687571284294485882",
+      "type": "GameObject",
+      "name": "Name",
+      "sha256": "3a0e0899f847928383b746043acc9f8e9a9637b330a963b94a98b933b3bdfeff"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3061652857829602558",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b3866ee257d2c4c35a178450342293846e0ba4308634585ecc0f9e43154b6720"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3210359716868842865",
+      "type": "GameObject",
+      "name": "Image (2)",
+      "sha256": "82ede114badbfd616010edc762795ff99e2d1212c0b4f955079e429851b8a9db"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3236751781725332481",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4ad2a8c4fbefa8b68fa5664704c50db7175a264506fd4f27f8dc91e1016ba4ab"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3339634839425442076",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "93a4c71dbfe8b75bbf4828bdd79f9d9335a1bb3204269de8022f6a7ce3fc1712"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3424016827702263602",
+      "type": "GameObject",
+      "name": "Viewport",
+      "sha256": "e3e5f22924b3ed359af9188325e387a52eae82e5eb2072cc8a1e88a331b582b1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3439316047476545064",
+      "type": "GameObject",
+      "name": "m_imgLevelUp",
+      "sha256": "9a190b101cbcaee0517b09706775f5b0a8566f5c6af9322bd42c2f2fc5cb0e99"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3447155384691596572",
+      "type": "GameObject",
+      "name": "BigAward",
+      "sha256": "4b0ea18f9bddc1fb5c5804c340a3a1dd20e8fedcc5dbcdf8919b539548a4b33c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3666482604308648187",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "500093307b365bacb67671a12c96e0aeccba34bd504beb99b69bd09c42279e73"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "3896301447641360381",
+      "type": "Sprite",
+      "name": "com_tc_medium",
+      "sha256": "eb8e74bce511eb765e41837ce8bf2b29877d2a303b1332b957af6e53f630b71c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3876520427164471715",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ccc8a3bb043e65b5942ec5d2b839189e41bb9144586f01089e01c3487e9bcef6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3899205415294417724",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c3547bb00033ecde0f670ff302934e3c74de0ae66fa22f7b5562278b72c0f456"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3909053391629880133",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9f8eba9d523c8a1e3870e7ae6c1125ebb54947e4732006faccb392ec983201fa"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "3969323828942059880",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "168ed413579ffda18ba59b560eef0a7b21b58fa13b7f219668dc6b526c9258ea"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4020174793388183142",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5c693cb29235b2decef28458b9e8129a80391fd1992854742aca98a17c99186b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4104985286540852098",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5d12e77d171118908af7e61f002b9d6bf0acc925b8f3b0cdc02df72f42721dcd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4289277782487937115",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e4db502c0ce4845b059147cd58601378e6bfb9e579fb5e94de3cc031f4d134d1"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "84961283627750419",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_kong",
+      "sha256": "0533f4bc1418e30ea974555b9de1d7570429e1135388e02dfdc15d087d05d29d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4449589942130310841",
+      "type": "GameObject",
+      "name": "m_goSelectEff",
+      "sha256": "c20a4dd6149575ebd66d8ec28b1195d4322717e99cf1dca498bbfa621ca9eb5a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4482963329909885268",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f4d3fb17828c34ba39bae62d27db61e1ea4b19a535fbae890f57bbb727c876d0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4488706924175181876",
+      "type": "GameObject",
+      "name": "m_imgBigAward",
+      "sha256": "e1eb702aa831b19425989cfda0839381ad99c01d583d11e72a89bee5d67dce48"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4631117253270536761",
+      "type": "GameObject",
+      "name": "bg",
+      "sha256": "79c4252d6a413babe065b2ebd7af7b55378da28b53a6c41b96a37e8c5ace22fc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4767129877656933810",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "8517aaf58a348bea166c724ea209e5cb8d128d1ef821325edd9f83898c42e76e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4898523870586744952",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "9780dea17fa98d43ae5a1080c1e6f38028941d5c55121ffeb9cdb3a0cdd9587a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "4994932558800532718",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e466d827b22c2d4198a56d8ae9479170ec69cfd2a424cd4225929e676c0cec76"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5143215815897892823",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d5001e81baf5ae77d04e061a4693db37af0f09bbf209fd2280de36f5e86dca13"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5176327564083496572",
+      "type": "GameObject",
+      "name": "BG",
+      "sha256": "113e92fa153222a34f5b17fe0e18b1d7c22b85dec99537a54098246513372e61"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5349440104235830367",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b39732606bd5637278af8c8910a1786ed838e1991290bd34b0f35666da6c0cfc"
+    },
+    {
+      "bundle": "assets_uiraw_chapter.ab",
+      "bundle_sha256": "4080ca0fe97dce5f59945bffe51480408c792a3aff424007d6d68fcdff5ca7e2",
+      "path_id": "-3531399085582735935",
+      "type": "Sprite",
+      "name": "com_new",
+      "sha256": "b5d59d8597db6e1261c522fc378584f502ad226b388defdec81fd50de5440047"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5485140983529732152",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "ba3f809005f98c4e8329588334068b095fa1eb6118e2a70d947a1b78f0c452ad"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6200755754393355754",
+      "type": "Sprite",
+      "name": "com_icon_select",
+      "sha256": "78b3f7c0b8e12858f7fff9cc43ce8a64aa07c0d60ebc787aa4f2f94c45d73eed"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5563624275774601399",
+      "type": "GameObject",
+      "name": "m_textLevel",
+      "sha256": "8b644c2a75676b01f9c416a213fc33857344ffde1b6d018f2eac95e988a7aed3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5596243773109073108",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f5e1b63bbb249bc8d4e72d81b711ca78320cbc8fdd510a757e6462242f8715f1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5657429947845417698",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "9549604724f57f58911cbc786515708cc4cf1d4afc8d10b1601480835ed5de24"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "5782570158737181958",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "898faa07699623f77bb59cd899fe4e8dbca3982542dcf54f758fa2f4db48a4d9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6040791199855996275",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "09b4de32953ef123c2b8761c0a4993c4914fea0bec20d74822c7b216de73bad9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6055041500755510660",
+      "type": "GameObject",
+      "name": "m_imgQuality",
+      "sha256": "f695f0ecb81e3ec61400ad07193c7d06f0433e93b7901fe3c033803d3fc51c15"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6086320193792669909",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5adefa5f75999fb5210d3af3fe42c98ca657600a89652d5695b38529d58aa05e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6408740399597899359",
+      "type": "GameObject",
+      "name": "Name",
+      "sha256": "95e40b37cc3fa16e379eb732ee3c96a768a72bd19ab3eaf7b3034ff2b1da6f51"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6415085663606738020",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "34c5a511ab84b01f65d605da353221f10cdb059ca47a4159d2caa5920a1e0409"
+    },
+    {
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "bundle_sha256": "19f71a341da21b8e1bf552c6216c9e5f4ba6aaf1c2f6dc096c5c0dc58a127d99",
+      "path_id": "8368361859738327078",
+      "type": "Sprite",
+      "name": "zmzg_mori_jianglibg",
+      "sha256": "121335e5744484ce03f619bc95c4c5904ebcb0ec37174d10269f62b8a641195c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6417810356612049350",
+      "type": "GameObject",
+      "name": "m_imgChoseText",
+      "sha256": "3ffc2c81a831ffe452e3fa1587a438fdac323156fed8d666921002e6be3cf94d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6674314775943453131",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f2c7a5aece9ce55e06f0de66383cdf116c20ba29a1d98dab84635401310d673d"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-5402777804449232840",
+      "type": "Sprite",
+      "name": "com_icon_number_bg",
+      "sha256": "6df459f9a17e332c73758a28ef84914e203b80c4868d523639dbcb8344eba207"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6826791829495335235",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "96c3c87091d3644e7b268106d13c24cb985042b13ced0af45a5e817ea5f17173"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-6881226992909101124",
+      "type": "Sprite",
+      "name": "com_lock_bg",
+      "sha256": "b970857189f1d0bb5d710ff844267e4be5d204a40f3a24d76a4f6c6b10924536"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "6919775739620085402",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d3555c519d8d0c2d6806ef9a7685013f55e460c15f52a112b07cb471c12165c9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7076835932547496208",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "bcf8ab37248f8581dd8c71e4586da4726da7a119a304449018ad8f2c962f6576"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-3734965351099267059",
+      "type": "Sprite",
+      "name": "com_btn_close",
+      "sha256": "1b87fe0743857b3bee1d9d9e7a3171420ca235cfda60ab82201ddab12fb5f9f7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7210883223562376251",
+      "type": "GameObject",
+      "name": "m_imgLevelBg",
+      "sha256": "654f036543968511307c7f2c09afa7b46ebe7052ab5a7639220e885c6e8ce4ee"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7295601812372374650",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e5577685cb44d353d0b6a08a7b6274344b7a6c4956fde6f9c8a0907a3fecc6ed"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7311235365933842114",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "23890a1a4f6448c116b83bf73743b6783d259e78281d8dcf97519fbcb17d25e4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7316684687476174762",
+      "type": "GameObject",
+      "name": "m_imgTypeQuality",
+      "sha256": "c80280ce83ef45714e959c36be18cc1047055b41bb1dc6eddc3d10bc2d4d6149"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7394565266112804798",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "efb8cd67257007a7cd65d268eba3b83a8fb9f8e143774980771d9f875a0769d8"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7432455148079973171",
+      "type": "GameObject",
+      "name": "m_imgSelect",
+      "sha256": "5dab4e2589ed7f8ee616ae715909443ed40446b37c9f02449ef08166fbb8452d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7699301351659038947",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "a4eea2cf1b0242319d03116740d0381274b6325649701d5fce1ae93b35aa4cc9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7762790346344651794",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1a295e269c05dcb179cea7783ba0c26af2d4489c1bd7b384cdaa517b66c2100d"
+    },
+    {
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+      "path_id": "2709566732797163083",
+      "type": "Sprite",
+      "name": "zmzg_mzzx_jinji01",
+      "sha256": "c2c192bb5ac60f2729d004866d755c30b33fc1cf8e269814f03a692a9e3f8b48"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7887914340382848733",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "9038e40fc033f8a0a25cea7562c2307cf1348bb6d2a6f28d02b22617894a0214"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "7895934278545251571",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "19df0daa5776c1aafe75d309c115b344acbaa3666589cd5c7b6c9dc30bd605c2"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "-53355728852197856",
+      "type": "Sprite",
+      "name": "com_tc_medium_right",
+      "sha256": "16279629896c46885f16107dfd49d2f81179c36340d58cf41802b653706fabce"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8325302161061083111",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "56b6ca7465bdb2366faa419eeb5b34259065fc63f79a8a84da55b2bcb5293274"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8349567804299239572",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "91e7c509d674a0e8c85acd2b0fec3ca33461bd200ce72dfe922c32e93e8db778"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8441649186495677916",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "77c8eb46714530c08d3d909a38be3601d19fb3e86a0d98b0ab2bade8ea277381"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8477783360229467291",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "44f8d2032e68c3a35a5fa9916bc7ad7c4967847bac815faed761d344422c5b3b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8493715849131123763",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "8765e25d1ddfb773e91a525a1cb385475fba8e1957529113aa0436331005f16f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8531869614331452882",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c726dc7c191203b6f8d06cf90afcdd24edd8ac6751497e5f055cecf2a0cc71bd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8544585945514051882",
+      "type": "GameObject",
+      "name": "bg",
+      "sha256": "5b6481dc5151acb82749286965d722f8fe002821b6a83e6040d86ff5e24317f7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8599267856469411080",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "938fd4c3610a9d975ff00d093bb937e4d694581c16c72c7dd44d6b59fef77059"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8840833480543033839",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e757108b685c5fcdf277bd58d8687d84a20d57a758bd6cda7976b63ccf11e604"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8853447869918189173",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "4a11b4a2538a7e3003cdf14a5128436318c98690309901d2a2fb708ec4668b7e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8974983556728985968",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5d5c066dd2e28a77ec5ff8d6a2717781916e585857b0e50d75f595a480ae4280"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "8995411285823421815",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "686f383e886b9d019ab8990c1ecd89535e4360726a7f675ef9ca0203ed3375dd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "9100122966964889100",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2ba713d8af98f81dce717a8f8719ae4678c1080b2e3842faccdb3cb542df91c5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "9160866605675123955",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d25e14e1f22e6ef179677d576d61db20ab158f2b51642f1ca39c7b2800c49d5b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasureawardviewui.prefab.ab",
+      "bundle_sha256": "9ed3b8c35c527fbb0f87ba30a410357e6d32c988a5381afa1b6a5a8f24c17692",
+      "path_id": "9167717802781546705",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "845ad3a15644b4f5c1a717bf15ab7bb680f6e399777e0e61e04419f8f51c2fc7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-9223110629021973973",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "20d280f3181fd97b3f3304a226995c3a657e2e61dbeed203bdc5873d45be80cb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-9074338919092588901",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "84220c3f638b7eb036d0c5a748bbe89855107dea07094042679347064ca1571d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-9053125614084845113",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "84ec0f3e1ec7453b4c57a37dca476922a05be279e05db7394608442e068889c1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8889722540591569252",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "800d46258e7ff5d90200ada0a619baf77fd3f34f829fb611fb97f5a49882ed87"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8806466081192916089",
+      "type": "GameObject",
+      "name": "m_imgIcon",
+      "sha256": "9fdab45cbb832e3ec3c0686af68e83478fd9df7b3009e0f1d777635e55af839f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8795856909895726106",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "a6e7c4897032cfdd87a9f259e27d59d5ffe674adc6ca48b88fae0487d8687d62"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8640379106673184529",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "b76726ffb9bfdaa1a522f517bc1c596a89eb95333224ffba0c990eedc3b17dd3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8320324843812679537",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0b55f459ed6ccd733b2875dcaf3ef7b263b3c8fb5ca16b39b66a4f85ec17ea5a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8258120672542442005",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e5448e1aca2e997ae75d9e9266551fa55c2f07b8e3a5911764c3031f140beb7f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8190396974387686907",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7e260b14c46125f962415fc8dab9beb1d615442155a9acd34dec94f035b7dccc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-8094143110779754119",
+      "type": "GameObject",
+      "name": "m_textNum",
+      "sha256": "9f55d7ef47d6df7a6d3d3e96d03f61d5bb876e4e0962140568296b0a60ad0f55"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7966129517655721648",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6384c437552f0abd6cab267167b9463b639db610ca880bc2a54a7132f9c8496e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7790818848000823017",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "da371244b7765e205eb7112fb07ea9235f281d11ce408b6264a89f614b88785a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7752551709216226644",
+      "type": "GameObject",
+      "name": "m_goLock",
+      "sha256": "6f6b45dc4852e94e4e91efd9fe7759d1a912562bb0abe2228f6b245efe066774"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7727654422834187694",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "820284ac44c79dbba0ec1f6fdd2fe2309de177accd612f1033c366d3d695c626"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7646536072644224558",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "91267a3a4b843cfcd614e1d9dd930755a1d34b53d2dedf5d6d65d1d7e183f55d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7450873178419899965",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0d2ab61d1b2dc612ae80f79c1b9c7af0d3c891260dbfba3bb63966b0aa180ccb"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "4180324618222379630",
+      "type": "Sprite",
+      "name": "com_tc_small",
+      "sha256": "ebd82e13bd7e9368cf3622928f699c3ec25d89936e4af2b395a0ca5b10826c55"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7198424366920877966",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f37d4d28570a3a7403894de552621c6f1d2710e5c7ef779e2db2d491733c07ad"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7111995273752470036",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "1792fe4021db2b80e20c5c3d0fe8b0c24118e0c71dd53bc4bc8b2b3f7923b747"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7086994883023699102",
+      "type": "GameObject",
+      "name": "m_imgLevelBg",
+      "sha256": "6d120b7d9b1c9573ca845076be92445ff21d28d7b3a544df598c24dde1e6d962"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-7056915300280627172",
+      "type": "GameObject",
+      "name": "m_goMask",
+      "sha256": "b3968188e8a9b216f1d8176d4ab014eed86b4d8a6be5baa6fb99c54b8a3bbaca"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6717625853663773662",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c46f724d5dc8460c631cd6b1ec1359fb07b08216a38fe62603e0ceb8bb3160e4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6544399686619971084",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1e2aab443be7c6a341b7699ef10f134cd458d1421447b5efd71377ec15bf184d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6496643282489612980",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a7adf95e1349445d265ece4ad99fc9b62a69267ede22831ed245be16e26efdf5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6491055370721275982",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4efdd125b9450d78c5fbc5227e047daa3a618ec7adeba7eaa2352bec32c43991"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6385332444410068204",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d149c3d280b81e2ea8a3ed625999261ec183d92a7d22f9a33f5c5b7bbca8a313"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6329315559342875888",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "c7243e145e109d2ede059c1dfb91cae47720bb6b546f1d3e2c133b9f47178e9b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-6018771466560021911",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "bfc68dc96b991645d3832cdab884f20b4fccfcfab85f309cf85aa61284836fb1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5950830355305442535",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "205e2a5f2be0dba348a80442db40d778771ba14a5869556d5b8922c444b8bf99"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5924641818968859463",
+      "type": "GameObject",
+      "name": "Image (2)",
+      "sha256": "9ae4583fa2792c8c822903e8863e6e2af45d4935f5a1620bb119ef59d45e53b9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5883877373005007752",
+      "type": "GameObject",
+      "name": "m_dtextTaskName",
+      "sha256": "ffa4c1d17d05fa8e4f23679d4a61da050e20cac6d6ef79cff6af61e05fec3c39"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5798696481042471628",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "6043cdc09f4b035eacf0e8c7792bdcd6934a0269c0c32ee1c8c608b010758f97"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5604949070071299379",
+      "type": "GameObject",
+      "name": "m_imgType",
+      "sha256": "d74e4cf2a156994f0835b5c8f7dbbca362571ba01f7443e5a8d48beb9b8c61a4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5585765584987676907",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5f75df4c5d236575d3adc16d3686fc6d11e7a52ffa4dbae88424e923ec6dc140"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5532337292653784740",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ef36cccb9565484765e2614f08ec63d94c6691d56c3b97165cea077bd1747056"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-5299358631213167197",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "106a9f89b043c5e2827dbd24c38a430b3636026c15e575a7163467de14b25e88"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4831954662806840855",
+      "type": "GameObject",
+      "name": "m_goItemType",
+      "sha256": "3bc26b6ff73f045ccd543892e9231f5ef3b03e309bc20d0baebdd32c32d1cc83"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4729786723326269637",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "a19b63bea3e0871f41194adfc70c9cfb210f43d246c829489543287d1ddbf464"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4711456782653984346",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "43f9b4b3736fe5537343b57964aed18117b29c80846f902a1b328a2e4ac5671b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4592121112610387991",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "540ae8da25d6870fc39def49c8d176ba19745cf7dac93fbd7307a3c5e978dc2f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4514281732497748834",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9ca473b0d619cb5776d9dee5f992d392ec14f1e218c2b5dd3b331c55d54b3a31"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4431304246837016570",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "3d016edf8883550939c40888d2fd2fbb118a297c89053a9e35097ffc07cfddd7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4406634308001953072",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5dcab92f1923b4a0b914ba471743becf13d67dd6ba03e2766716bb65c541c9fb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4384351935320949520",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b6df2d027274388e5b76f51ceecae1435335ff66484fc0baf5872e51725d21af"
+    },
+    {
+      "bundle": "assets_uiraw_commonnew.ab",
+      "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+      "path_id": "2862392577379805294",
+      "type": "Sprite",
+      "name": "com_zhuangshi",
+      "sha256": "250a0077c77f060c5470ac83a3510e10afc89b9985e714a08f6c410431460325"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4349947722737596837",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "42f4c1109281a15369d703c29589faa785a8c830332a248cfff4ab37e0b10009"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-4128936576659961468",
+      "type": "GameObject",
+      "name": "m_scrollReward",
+      "sha256": "6a0e904bbc72f6a9dedf11e6f2405f9bafe79bdb77120956d3895031d5492f20"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3632598844052658567",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "aeda87ce6e49b327db613aacdb6a853b56a53268d4743f6ab27b53e8093e7602"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3473322270788010686",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "95cf03c0bb3e9fb3d28f88ff2181a79e58dc2910c4ad90417b014e10a460acf0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3295068809180650067",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e4440ae5ae694ef34c94719f57f215f588e51c51fbc5f6a3c90b98391b57e467"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3270144996212865302",
+      "type": "GameObject",
+      "name": "m_tfEffectRoot",
+      "sha256": "06b77e9a7d50f356800cbe58963ef8e6651c0c554ed913eee5c3f90d22331686"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3123993596607817734",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "6daa2f81f2f288ecd96f4c01d7367654cabbb6ae5e60da3a80f3cfc5ed5b0d96"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-3037415409200999434",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "deaf9a6e9fd3140dc9a2d7306a5ce413735abd7d978ccaa973be89a2cc921332"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2957561395738093929",
+      "type": "GameObject",
+      "name": "m_imgbkg",
+      "sha256": "7fd7b102126e84586f3d83a4ce30dfb0cdbe2fdf1be5d3c786f48afb670c7054"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2936233991474383826",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "74b03778d43cfe4fb5328abd69089a183fc92a32566f6af915aa6e004a27b115"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2869043750682692059",
+      "type": "GameObject",
+      "name": "Image (2)",
+      "sha256": "f8103aae54a2319b568d0b974583f938f6aeac22d12978961f0b2621509720ea"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2715843218328510730",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "fb61517fa4c63e9e3f76a94b827e8c71ca2d53b2c21fac6297a47503ee2fb071"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2713221877608741107",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c5096066b7829442ffe95ac56b7d1f5bf0140774f9104485588c0b4765c0ca02"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2709699506828555870",
+      "type": "GameObject",
+      "name": "m_itemRewardItem",
+      "sha256": "8d3cb59b47230563e8949155b68c4b760fd7d826c14105707ebf9ac678836648"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2685179098624292723",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "35ae7d24943e4cd34f1b92e50e01244d5127cc92fd7f7a6a7c45e30772d09f1d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2589985769499835923",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "aa60cd5ab57bea1a7a983f1669e95a7b7e6df6c6bc9b1e795dd455a41a8dea08"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2478499790778918287",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9fa525a512d9e9b98c1a6d267d84dd86e1376611422a8f172687270d30646574"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2438939580681436350",
+      "type": "GameObject",
+      "name": "m_goNew",
+      "sha256": "dcfc4af77718341be84be4f83c243b2c7c73481865aaf936396cc73720f9ac2d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2306738574782662359",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "286784ca94cfe420ccdb162dbd99c02969357c3670e32e1dfac2cc3185033943"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2169973955901941965",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a427ce59ac6d16a119b2fd0b8aff2d5a6718967371c8332ab83cf56c25d32bcb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-2149022177761283381",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ba2e3442566f145ba686ac6128801ed730c6db66582f36d013b4e5d7bf2ba0e4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1970996155765171401",
+      "type": "GameObject",
+      "name": "m_imgPrefixBg",
+      "sha256": "b5a1c3ee6fbb1c3f74ced32e1f614ee37569667ae7f006a2a907b253129bcfdd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1909664519186048740",
+      "type": "GameObject",
+      "name": "m_dtextTaskDesc",
+      "sha256": "6719c03e37c5d160ee4d813afaa29d280628d95abb60b0a41e3b606c853a1be2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1812293875800677627",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f375e8fc17fd406e103876a4ef477ea39c369d428442e603b34ba75b8c6fe349"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1762588306449076563",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "a37a5d9a39c8bfe4a24b0e327938d195c36d5ec4b39f80a5a93bc05f07adda32"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1646660134946759568",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "584c979e1bf71d74390a2f34c484ef7ce9029afbda3ca922789923b42d955509"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1531528568083343027",
+      "type": "GameObject",
+      "name": "Text",
+      "sha256": "5c276fb8eb1b947248eadd88ae40c0338f0a0c4c4af75a88c635c56d3fe10522"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1330498863048697715",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "26d30f79437f81768e2a1b65af806cc0753c26745acb649790bc2a54d914e4c8"
+    },
+    {
+      "bundle": "assets_uiraw_equip.ab",
+      "bundle_sha256": "a730606192a04f1cdef521771c2ea63881c4f0e9bfd021ec72b8d52b83bd3a14",
+      "path_id": "3873875598571758666",
+      "type": "Sprite",
+      "name": "zmzg_zb_shengji_bg",
+      "sha256": "7082d33eea2ff1e2c9c46166ded4b0984d3f879da660bbe9a1a509aa5b7b66a6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-1032689472588476587",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "1c71920235ca37e375b94be0171168dce87dbf0c9285a72ff20ddb36ddd3e071"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-940756339385051212",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5ccf97b5b0b5b6accb46ac1233ace7ccb4d09c76910e9d25d5f57221985d9f9e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-857738519860035932",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "c3e829a10a138553263bee5f97a1e8b581a2d9a980811cade44aa14b9c5fb3ac"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-677155228423029454",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "40ae2d8f51fa9080a6ab5b38bccc7d97ddf83e23afcbd368041300dfa6c3cb7e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-560027288031895937",
+      "type": "GameObject",
+      "name": "m_imgNumBg",
+      "sha256": "8d6da8778f9c8f4423ef8b670daee95d4d3e6695deb4bd486a029adafb92e5df"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-296025795003934039",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "090c68093a27a24a45df9e45d2e562a929ec3d8c272427f0d463b96d9f22d050"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "-43101169637207498",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "59fa8596da0c561d34ac5215dfcc28dc3ea0201801e58cd66449425c767e2718"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "234024537209402318",
+      "type": "GameObject",
+      "name": "TreasureHuntTaskUI",
+      "sha256": "a2ce95c122c306c5be68e51ea5991fecc14a437d71ab603f24124f338d1e3eae"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "261708935970631858",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "1b64269d9beb669178d104e5070532a370b291a218e9786d8f0d9f9e569bf8b2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "328545908627888160",
+      "type": "GameObject",
+      "name": "Viewport",
+      "sha256": "4d347fc9995843e71c542908e9c24a5671ba7e8255082413d1c765763a02d1b3"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "393438969578378460",
+      "type": "GameObject",
+      "name": "bg",
+      "sha256": "543b4ad9e1cdefe3a8cc7436df9b3bead6c6cf334ec74ecf1b5f2b025ff49221"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "470569909320873604",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "855f3b8dc0006dfc54dfcaa099e453f77385aeb532dcd6a931a62ebfd4f3f2bc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "502595255655788304",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d2e305fd94a1e0a80910516babcfe50ca69486c3c02995259848541f81c0ee15"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "599293974852235809",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "f2f6df30e01059ad4fb5bf1b50ad2aa39b044c4cd47d767500603a39fca82356"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "667372555353990309",
+      "type": "GameObject",
+      "name": "m_textTitle",
+      "sha256": "6496d7834e0130bd4dd15b3a08c1346e52391695a679ee2749b30b39cf7df031"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "747453686633573640",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "ec5fbf3375bceaffa89e27e15cb51807b0593326a4290679dd23c10097e94c1f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "807666701969165511",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e2966679ec94fa461087e80fcb80f5c00462fb2fd4dd483e2fd60245e8be61c1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "993094800872128024",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "222dd36ac38d0f31c3fcbfdf7287992df99855f1bbfbc22379eb13d6784460e5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1048174532018333709",
+      "type": "GameObject",
+      "name": "m_textLevelUp",
+      "sha256": "946d1a1ae27d868a325766100692e1e42b91c847dc32f49dd2419bcae0395cab"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1167187320313986851",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e17c8e3fb1c41fcb054ed464c54243c859e612e86b495550cfd0828d5538ac3b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1371825993316024332",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "080b33f69182211175bf5790f0d9122fc3b4f3502309670eb1bdf8a20e7e65a6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1411342708386824388",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "200d4bd2ff458def9796ae45452c7b26e01a7f3ee71940ac58abbefafe7cdc57"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1815409135451138163",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d36493f6af77e4d70b50b83d66a8e6d320f7214e155ff3a0db57247a500745cf"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "1884173168313332297",
+      "type": "GameObject",
+      "name": "m_textPrefix",
+      "sha256": "1ead30710c415a4a9b6cae867128ed5be794c1b325b8d31b2793423f15363217"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2111653861018830624",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "9a8b161973d35cc738cfa06e42ef5cb19e212e461b8c944df598d581ed9f4ea0"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2391497314511598464",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "7431a9360950a6a2803604ec94c6295d220ce6c7d0ce00c6cfcaaedaea9b803e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2433037185296966139",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "26f47749d9521fbccae180468905a68969e6d1b39f5df7daac5388ce4efbaca5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2488991521312654854",
+      "type": "GameObject",
+      "name": "Image (2)",
+      "sha256": "e35214de29dd17aa31c1ee6695a83462629fd09ecc8416e24587f44c6633cf95"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2515511730380857051",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c17d1666ab1af90d0aa13ea9ab98d7ea38f7f25fdeea6d82d8a60ffb65602d11"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2527138245225786643",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "92b58df93144e7d3a4949bd6d7ba2d7f0e41c71c0ce63254c3259ba6837059ea"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2651031901573487931",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "3bf7cdaf15c2f7b3752b28c53386e1326f1bbd0042905fdf352907660b9ab1b1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "2945607306311654512",
+      "type": "GameObject",
+      "name": "animeNode",
+      "sha256": "92f31dfed03a6572f184adce23e870008933ed1d50c396f714937e1479cf92fb"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3115375613753612742",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "002bdd82bf19c54463bbf0c00365207f0cb4476ea5fbc4220e9d96bc2ae12e77"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3132556950696047698",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "49c372ee080036a2eb48fd33461cf01d29b9c79d365be2263768a6e3408283a6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3164206787137955803",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "3b5e06ef1ef9c9f25cc55c680c7dd764c235d641327d1257e778a791d5c7c600"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3179971689094764525",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "29090b65e677588d98c367f64e71ee95c13b9ec7fb43afc26918c66acc91017a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3196408992578202458",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "bb689c545b6df87c80ce45ef7cfe74be61918a5f94a674c7b80bcf611097be12"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3205892179100674791",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "d86dd4034a839fe53b868a997e5fb0207840e5b06a31ea6135d9d14188cc6b96"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3255633381367650653",
+      "type": "GameObject",
+      "name": "m_tfReward",
+      "sha256": "c196e6bb4449115980c25d62dc317c83855fe0600d74a96e923a01d94cb2a0e7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3453066120592260890",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "277beeeb2d488aff5ffa62ad6a2e0336d1a6538ca78e9d2c6ec5a28a7f59760d"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3472617492039584182",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "38edfcf73edee534815e81c594a963915683d35de255efcc69fc490ff6358aa6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3613746099786682111",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "e22a33901eca484443a4209c56baa75560daa25272c6f4328e6a21a1f51a77c9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3666436697255811255",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5798c1c9682ba4cac40ffca31245ad7cd9a39e87e94952d4333047b914e4a5bc"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3759735541061872095",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "e699052fbdbed2e9db2538ce63993d340995d10cf8cd61be0e2d8b4adcd89d1f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3790274960300812843",
+      "type": "GameObject",
+      "name": "Image (1)",
+      "sha256": "3e1aaee907089f6bca7e957b39621da3fee547072eaa7790836293a0bbf02cf9"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "3875188767122811171",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "27d77becf2f680faa2bd4da486c218f901b20861d1c008825598b3b41bf6e458"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "4255103108006035081",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c8c9679999b776eb44fbcc294ad7eaf383296728008856b29daa6d0449194bc1"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "4419456169298916091",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "69dbe3f2c05535f4350d963e4235fc6e7fd5dc06c3d7944a50444b4c5ca545d2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "4615605483425360778",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "1bf6b08e37878b09c7433c8f0df9bf726c6c2bec1dbde2209d75b6896194caa6"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5026883725524963229",
+      "type": "GameObject",
+      "name": "m_imgQuality",
+      "sha256": "21aad6c3cc346076c76e0f308c7e0ff8e8655c15e4f6750f4a0322e20578bc98"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5053766807454863603",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "32f02c467a73903406e83f2f5013aa7597b8efae8b76c43f0e20af4a1dab53a2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5220141228619136416",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "7757e5448e98579de68ce80d3c8810f965cb44e907055ccdc674826013fdd292"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5299543497822308767",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "44d6b75382853f2af4904fad0cbc26b05c44f4636f7fe5b1e34a035ad703bc7b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5549840313371449561",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b39b71159ccdc6593975615f9188902a67d967f9f35682533ef61aa950f9bc6f"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5692069208376614251",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "3e3c59c3712e0d0c2a19aeb324b2d46164f3b64a063f2003c57dcc535086099b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5717000206155999545",
+      "type": "GameObject",
+      "name": "m_textLevel",
+      "sha256": "d168be28e62651a2707a133d4b2c1ce5d2add3d9de0174b8397dae071e7d5094"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5732448411260135921",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "57dc6ff364ab55a77bc2a9f87facb3450a241d805e63e5f968d1d20df969b04c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5737754071037313417",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "523c32993578353adf5d171f2b3cfdc84831aad165d96404efed00dad778a047"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5753486501326551573",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "757179e1aa98b1257568e4c67cfc7e6db93c358a9cfa320e5c3d9047365ad6b7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5788066158179083613",
+      "type": "GameObject",
+      "name": "m_imgSelect",
+      "sha256": "56e6ffc673a27b398bc607dba6991dbf61520ccac45c0c4780b1075609e09d0e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5865443792076814441",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5a095c32912d3f952ec50941b5ec4e37aef783aca9d71f6df9ae50ce16a5dd25"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5896276950017124953",
+      "type": "GameObject",
+      "name": "m_imgSelectII",
+      "sha256": "6d4ef6bcda179728c354ebba2bdca2232aae6296413862535596da344c8f400e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5937909223558010989",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "4f0e48bdac24f5250e23cbad926888a92192d3867c5b9c27b2aeb99cc37f822e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5954297242334814671",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "c167c2452bbc51e3ccda06fb7dbdd7a943bfc32d9b15338a674dcef3a0b8c5d5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "5957620108999826708",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "5797b234a6dc4174b7b6c558c1c943646194894b7548ff0634e3c27ad9309046"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6071818735901983615",
+      "type": "GameObject",
+      "name": "m_tfEffBg",
+      "sha256": "c2b85e563af003cd8c17e74a7f7b51ff37c47131b22a714fcb4a90d26daabee5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6201739812582253390",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "0344c0bc3335a440b95450a27a9f3dd1679a543270d1147d4bfdf3e0e2794c60"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6436158867091563762",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d45aa3ddc471d8a5e915eb731c53c55a7f72390a7acf05386f5c78ee4bc544be"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6492724642938760697",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "b5d650f9d914ea438adf2dde2fe77fc1263260e56cbe9b6e7febe38d11c93e81"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6504372714385387822",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "8da2fb7ca8f007274bb0a4d198488a6dbdd7b8bc94bb90c9bd693e541a095d00"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6662036630434961984",
+      "type": "GameObject",
+      "name": "m_imgTypeQuality",
+      "sha256": "a6b5bf8082448584c95d4dd8f8d58c905fd9fb7306b19c5cdf7fea15d56b3fc2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6813211733638236498",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "09ed9609c193982ecce48ddc31d4a1ae2b03d2e04028a9a498870e2c201dc6d4"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6884425060788772839",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "4e20964aa34884ca2817147229c955dac043835e7eb3d8a70a7c96f5c35b7cfa"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "6959115026637626779",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "eec0cbf2c3ee4deab9a4d480ecedbc4c24205ee99bf74af5f2a2cffbbf36f5ea"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7020779564762451806",
+      "type": "GameObject",
+      "name": "m_imgLevelUp",
+      "sha256": "1e986213b72c8ca924f1aa48afc9b883c7fc7544b4ee93ce107bbc9988bfe190"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7276199505711292014",
+      "type": "GameObject",
+      "name": "m_goEquipUp",
+      "sha256": "d4f83d2b9ce44b30877219be40b08ef9a3e958c993b685f12731430080813530"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7454250380620210486",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "92ed94ab4df8fd6a8b587105abcd5e34bd00959c54f9fee44e835435cec2b26b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7562265362877582083",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "2095a473ecdc610ee073af2f15aa5ee8ab3cf01a767d4caa445256a1f26524e2"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7651004242241428062",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "5dd63209ca7dd1c383e072bee49b6c660ee42e3af132eff2bd77ebbb5ed10a6a"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7736741523578228508",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "23c1b3adc3a396a68dba3cd542967f0f9d25f3e451392612447374de3deefad7"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "7876809789769249341",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "bac7b4a4f3ff8b71aa9745a6e3cf7fffaf16c560eb41d8d941b4078c36b122d5"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8036941658347368143",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "96408db7ba64e37bc5353b046765375b4a686e5abcba2f7638214d73d0aea452"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8048934794120048660",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "d5ebdb9ef8b62d38df69b5321e4c68b761274b86920ff8198b467356a01bbc67"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8144264737859167627",
+      "type": "GameObject",
+      "name": "m_goRedNote",
+      "sha256": "8ba5309cb8b05eb3a97f47cdf360f87b7656edf4a55c25e00ab032ce5acc2198"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8290637311877088624",
+      "type": "GameObject",
+      "name": "m_btnClose",
+      "sha256": "1f1b28448cc1ba45e392e2f4ebfda40f2e64547145c639ed01645d650acc4fbd"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8532564003103977004",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "55c8074038b08841b41bbb74405a5d78fa8ad82d376183ace34e4d486be34f6e"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8755560340535610000",
+      "type": "GameObject",
+      "name": "Image",
+      "sha256": "27ef3702c5480eb73981bff6cd853ca646e76a2826d0ba6e6ffba81b99132a7c"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8840676890278442007",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "02c2668019cd1f810dc7f1c9f33a970ae0ca69b6810ac484557cc9241cb76d32"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "8923145565846192335",
+      "type": "GameObject",
+      "name": "m_imgRecieved",
+      "sha256": "0036df9a545cfe67e4a6b575bf50fc6092ce7cc004fa104ccf00378112c63d56"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "9076332642977474124",
+      "type": "RectTransform",
+      "name": null,
+      "sha256": "b53aca484e48083102fd201860d65e18ed8d35e047a7c476e5041530d8431f5b"
+    },
+    {
+      "bundle": "assets_resources_ui_treasurehunttaskui.prefab.ab",
+      "bundle_sha256": "58e8aa83a29314e8df28af7635927c0b7bfd708161429d6a56829cf721636907",
+      "path_id": "9196557132883556406",
+      "type": "MonoBehaviour",
+      "name": "",
+      "sha256": "35ba8b5d86c03c3ebefb8b099ff2399f96e18d06d4c51fc7eb1b71b8badad601"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "images/zmzg_mzzx_shuaxin.webp",
+      "name": "zmzg_mzzx_shuaxin",
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "path_id": "-8112764837080268449",
+      "dimensions": [
+        34,
+        24
+      ],
+      "sha256": "361a7d6f86ee1cc9b22006a9012b7438e332fa5c769690b280696dc7c285fbae",
+      "bytes": 890
+    },
+    {
+      "file": "images/com_tc_gou.webp",
+      "name": "com_tc_gou",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "-70050694750654435",
+      "dimensions": [
+        53,
+        46
+      ],
+      "sha256": "59085602602b278ca7e4dc316fc44c13ddc32db1d2667ff3028a0d9a73559e92",
+      "bytes": 2132
+    },
+    {
+      "file": "images/zmzg_jn_add.webp",
+      "name": "zmzg_jn_add",
+      "bundle": "assets_uiraw_t5activeskill.ab",
+      "path_id": "4972288544762908872",
+      "dimensions": [
+        52,
+        52
+      ],
+      "sha256": "e37475ef42a9b6f5110cb0b44f5b4af02dccb8367b7427016120fb1bb2ebd40f",
+      "bytes": 610
+    },
+    {
+      "file": "images/zmzg_mori_jianglidb.webp",
+      "name": "zmzg_mori_jianglidb",
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "path_id": "-2493988399889614294",
+      "dimensions": [
+        590,
+        132
+      ],
+      "sha256": "0f616fbdd45f269410e29c60aebe45fb08897ca21e88f5535343194036570391",
+      "bytes": 9460
+    },
+    {
+      "file": "images/zmzg_mori_jiangli_baoxiang.webp",
+      "name": "zmzg_mori_jiangli_baoxiang",
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "path_id": "-2566208254432356282",
+      "dimensions": [
+        334,
+        229
+      ],
+      "sha256": "359ff4cf2b0005aead4a278d4d1b56c2c7944dc542d4fa7a743ec5a45339bd56",
+      "bytes": 42896
+    },
+    {
+      "file": "images/com_tc_medium.webp",
+      "name": "com_tc_medium",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "3896301447641360381",
+      "dimensions": [
+        641,
+        172
+      ],
+      "sha256": "0acb8c44dbb90039a6d25372fab44288aaba2c53f9dfeb1fcd4237820e46fccc",
+      "bytes": 35114
+    },
+    {
+      "file": "images/zmzg_mzzx_kong.webp",
+      "name": "zmzg_mzzx_kong",
+      "bundle": "assets_uiraw_activity_yongpan.ab",
+      "path_id": "84961283627750419",
+      "dimensions": [
+        100,
+        100
+      ],
+      "sha256": "9eaa56a0e42e97de9412ba48d8f0f21d16463cde3155fa3f461e6605db00c1ea",
+      "bytes": 4054
+    },
+    {
+      "file": "images/zmzg_mori_jianglibg.webp",
+      "name": "zmzg_mori_jianglibg",
+      "bundle": "assets_uiraw_activity_mineclear.ab",
+      "path_id": "8368361859738327078",
+      "dimensions": [
+        646,
+        242
+      ],
+      "sha256": "ffda97b229930fa707ed0df98104550e09cfb1dff4d45abb58596002301e4285",
+      "bytes": 71640
+    },
+    {
+      "file": "images/com_btn_close.webp",
+      "name": "com_btn_close",
+      "bundle": "assets_uiraw_commonnew.ab",
+      "path_id": "-3734965351099267059",
+      "dimensions": [
+        84,
+        86
+      ],
+      "sha256": "833cd07231884e4ccc4357a56c088432b5d7feb6cec914712ae4a8c2d3e64262",
+      "bytes": 4450
+    }
+  ]
+}

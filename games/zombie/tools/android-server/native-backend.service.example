@@ -1,0 +1,25 @@
+[Unit]
+Description=Personal native zombie backend
+After=network.target
+
+[Service]
+Type=simple
+User=zombie-native
+Group=zombie-native
+WorkingDirectory=/opt/zombie-native/current
+ExecStart=/usr/bin/node game/tools/local-protocol/server.mjs --port 53175 --tcp-port 55074 --tcp-bind 127.0.0.1 --world-name 个人自建服 --version /opt/zombie-native/private/version.json --sdk-path /login/login_verify_passwd.php --sdk-path /login/login_verify_mobile_passwd.php --sdk-path /login/check_login.php --game-auth --directory --native-account --platform-info /opt/zombie-native/private/platform.json --role-state /opt/zombie-native/state/role.json --profile-file /opt/zombie-native/private/profile.json --session-secret-file /opt/zombie-native/private/session.secret --api-prefix-file /opt/zombie-native/private/api-prefix --websocket-url-file /opt/zombie-native/private/websocket-url --log /opt/zombie-native/state/requests.jsonl
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/zombie-native/state
+MemoryMax=384M
+TasksMax=32
+LimitNOFILE=256
+
+[Install]
+WantedBy=multi-user.target

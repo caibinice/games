@@ -18,6 +18,8 @@ games/
   tank/            坦克大战，35 关经典单人守城 / PC 全屏 / 手机触控
   contra/          魂斗罗，8 关单人战役 / 三种推进模式 / 原版像素与音乐
   racer/           喷气飞车 3D，30 关 / 无尽公路 / 冷气腾空侧滚 / Blender 源模型
+  zombie/          向僵尸开炮 · APK素材版，六栏导航 / 常驻免费抽奖 / 259普通+259精英 / 手机竖屏
+  pvz/             植物大战僵尸 · 花园保卫战，50 关 / 13 种植物 / 昼夜泳池屋顶 / 手机横屏
   <new-game>/       相同结构，平级扩展
 web/src/            Vue SFC 页面、公共组件、会话与生命周期；日常 UI 开发入口
 web/entries.json    保留旧 PC / 手机入口和各游戏主题样式
@@ -99,10 +101,25 @@ pwsh -File scripts/deploy.ps1 -Games paopaotang -SkipInstall  # 只发布泡泡�
 
 GitHub CI 离线运行检查、各游戏测试及发布测试，使用本仓库独立配置，不依赖博客或其他项目。
 
+## 新增：两款僵尸主题单机游戏
+
+- [向僵尸开炮 · APK素材版](https://caibinice.com/games/zombie/)：六栏导航、常驻免费抽奖、装备宝石养成、14系核心与枪械构筑、259普通及259精英关；[电脑版](https://caibinice.com/games/zombie/pc.html) / [手机版](https://caibinice.com/games/zombie/mobile.html)。
+- [植物大战僵尸 · 花园保卫战](https://caibinice.com/games/pvz/)：50 关、13 种植物，阳光 / 费用 / 冷却、逐行射击啃食、割草机，昼夜 / 泳池睡莲 / 屋顶花盆；[电脑版](https://caibinice.com/games/pvz/pc.html) / [手机版](https://caibinice.com/games/pvz/mobile.html)。
+
+两款均为独立静态模块，不改共享 Vue 包和其他游戏源码；大厅自动读取 game.json。玩法、素材及维护见 [最后防线说明](games/zombie/docs/README.md)、[花园保卫战说明](games/pvz/docs/README.md)。[上线验收与回滚](docs/zombie-pvz-20261023.md)。
+
 ## 双人在线游戏
+
+《向僵尸开炮》后续原图四菜单改版、无限免费抽奖与单游戏发布验证见[最新记录](docs/zombie-original-ui-20261023.md)。
 
 坦克大战、魂斗罗、泡泡堂新增跨设备双人合作；连连看新增同盘竞速与冻结 / 补牌 / 迷雾干扰。进入原游戏后点击「双人联机」，或在大厅选择合作 / 对战入口。支持快速匹配、6 位好友房间、暂停 / 继续、短线重连与手机横屏悬浮控制。
 
 接口复用智能座舱现有 Java 服务，见 [联机架构与操作说明](docs/online-multiplayer.md)。
 
 联机流畅度：魂斗罗本地预测 / 输入重放校正、远端快照平滑、独立逻辑时钟、预调色与精简传输，见 [性能优化与延迟验证](docs/online-performance-20261023.md)。
+
+### 向僵尸开炮当前进度
+
+[网页与客户端差距清单](games/zombie/docs/REPLICATION_CHECKLIST.md)记录已接入和待接入项目。当前安卓自建服使用 [Node 协议后台](games/zombie/tools/local-protocol/README.md)，与静态网页独立发布；[最新安卓发布记录](games/zombie/docs/ANDROID_HIGHSTAR_RELEASE_20261102.md)包含安装包位置、验证范围和回滚说明。旧 Python 代理保留作历史本机对照工具，不进入网页或正式后台包。
+
+手写游戏逻辑可分别运行 `npm run format:zombie`、`npm run format:pvz` 整理格式；大型生成数据表、素材与第三方库保持原样。关键回归测试保留在 `games/*/tests` 和 `tests`；APK、签名材料、本机造数脚本和诊断目录不纳入 Git。

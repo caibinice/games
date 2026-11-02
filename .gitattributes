@@ -9,3 +9,7 @@ games/pindou/public/index.html whitespace=cr-at-eol,-blank-at-eof
 *.mp3 -text
 *.ogg -text
 *.wav -text
+# Frozen extracted renderer/shader bytes; do not rewrite upstream whitespace.
+games/zombie/public/assets/client-interface/login-runtime.mjs linguist-generated=true whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+games/zombie/public/assets/native-ui/player-runtime.mjs linguist-generated=true whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof,-space-before-tab
+games/zombie/public/assets/native-ui/index.html linguist-generated=true whitespace=cr-at-eol,-blank-at-eof

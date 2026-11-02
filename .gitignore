@@ -21,3 +21,17 @@ credentials/*
 .cursor/
 .DS_Store
 Thumbs.db
+
+# APKs, signing material and native playtest state stay on the local machine.
+*.apk
+*.aab
+*.idsig
+*.p12
+*.pfx
+*.jks
+*.keystore
+/games/zombie/.local/
+/games/zombie/tools/local-playtest.mjs
+/games/zombie/tools/android-server/private/
+/games/zombie/tools/local-protocol/state/
+/games/zombie/tools/local-protocol/captures/

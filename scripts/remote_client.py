@@ -54,7 +54,21 @@ class RemoteClient:
 
     def run(self, command: str, *, root: bool = False, timeout: int = 1800) -> str:
         if root:
-            text, code = self._run_as_root(command, timeout)
+            # PTY input has line/window limits; never send a release manifest as
+            # one interactive command. Keep the authentication exchange short.
+            script = None
+            if len(command.encode('utf-8')) > 8192:
+                script = f'/tmp/games-root-{secrets.token_hex(12)}.sh'
+                self.upload_bytes((command + '\n').encode('utf-8'), script, 0o600)
+            try:
+                text, code = self._run_as_root(f'bash {shlex.quote(script)}' if script else command, timeout)
+            finally:
+                if script:
+                    try:
+                        with self.client.open_sftp() as sftp:
+                            sftp.remove(script)
+                    except (OSError, EOFError):
+                        pass
         else:
             stdin, stdout, stderr = self.client.exec_command(command, timeout=timeout)
             output = stdout.read().decode("utf-8", "replace")
@@ -85,7 +99,7 @@ class RemoteClient:
             f"su - root -c {shlex.quote(command)}; "
             f"printf '\\n{marker}%s\\n' \"$?\"\n"
         )
-        channel.send(wrapped)
+        channel.sendall(wrapped)
         output = ""
         password_sent = False
         deadline = time.monotonic() + timeout

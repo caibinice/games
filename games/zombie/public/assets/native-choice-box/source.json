@@ -1,0 +1,3962 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "screenshots_used": false,
+  "booty": {
+    "bundle": "assets_resources_config_resbin_bootyconfig.bytes.ab",
+    "bundle_sha256": "90618f09de805c1c5ea4781ac00b0a112597fe43d94d9d9dc1e94503ce91a15e",
+    "path_id": "-8691378418035951908",
+    "sha256": "d8dbc858f9ea3097f09d4cb3e14a5d69ffbf55272d5f15bd48512f169e32ead9",
+    "decoded_rows": 50964,
+    "bytes": 2650148,
+    "item_param_count": 3
+  },
+  "growth_module_sha256": "2f9b9fd502259d984a7e34ed89c7dbddff8454526affe507b05fa7a656d5f77b",
+  "choice_count": 19,
+  "random_count": 162,
+  "module_sha256": "bbaf68f0033d15371f3ba7a9f5df1c8ebbf428ab4a57dbfbdb871bfe5041a552",
+  "inputs": [
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-1188281062738809112",
+      "name": "gyb_cskjtb_txsp",
+      "sha256": "447f9aaf295a2b5328fea73659029f978960b48a4109c61786711f97ed2187d8"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6296332386991570118",
+      "name": "gyb_gczhs_txsp",
+      "sha256": "997cefde4f461e63bf1d6c39603a2192ba560b06dbdbfc017caf71507b0ec73b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-7088585790332050153",
+      "name": "gyb_skzy_txsp",
+      "sha256": "6f83d24061898b96a8a4b039e179b2addbde6de632597e1335121cf35b54240f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-3345504102976869657",
+      "name": "gyb_wszh_txsp",
+      "sha256": "99d30dc2450c86c4dab0c64d9c9a58838e9fcef831eb3028bfa147a8d4974e32"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "5111318256238687185",
+      "name": "gyb_yeds_txsp",
+      "sha256": "ed7d2d034eefb799f69697461aa3b7ffef05af334800b538045bc67453540b57"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-1477152474134527764",
+      "name": "icon_sjbx_bhlhx",
+      "sha256": "fa012a59bcb27660312198845d5a0ab925195e16df917de69d1c410a3759f83f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "2600681381212036266",
+      "name": "icon_sjbx_bhlqx",
+      "sha256": "f804ef94bbcc6648d79ca2c5e3a0d5ea275291083b63b9dac1f1312385a6ac21"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "5937413254763995004",
+      "name": "icon_sjbx_bhlsz",
+      "sha256": "714849d9b3f25caad478ad865834b6f3ed6b1a400c17c314bae170934ca88fc0"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-4456213413756146340",
+      "name": "icon_sjbx_csbhhx",
+      "sha256": "7e99f34fbbf5f4502ce28b1e4764589e814c64bc45bd23c71b45e9f419e0cb49"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-1953794970477534169",
+      "name": "icon_sjbx_csbhqx",
+      "sha256": "7f5575522aaaac3b9ef121d03f2622f0d32dcf1301444e4def7f561067fff1d0"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6550757775364227703",
+      "name": "icon_sjbx_csbhsz",
+      "sha256": "9840465ed51219743f9913247cf650ac293367d07fd90430d5d57a28e753216b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6329254698869009436",
+      "name": "icon_sjbx_csyhx",
+      "sha256": "6311d70e376d4480255f54c47f242abb3f0553a9268c1445186a7a27a20cf510"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-7897164609786768379",
+      "name": "icon_sjbx_csyqx",
+      "sha256": "5e6e994bba555cf154df66f8fca1535db4af2722dbd226da54df87b91586f268"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2323520618570328424",
+      "name": "icon_sjbx_csysz",
+      "sha256": "a37c91f8efe8e417a0984075dc4e72f807471e405d139581671bea3fe637e24a"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-7511445256498608225",
+      "name": "icon_sjbx_jjzlhx",
+      "sha256": "3340e4d2317e24af1d1ab6d13eedbf6c36bca328cb08707d157794a01795e958"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6739030307161955354",
+      "name": "icon_sjbx_jjzlqx",
+      "sha256": "ea60da0b2f398f7c2fe01d0a36ae6fbd442e6b70bc95566bbb877abbf97b29d2"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2927097797432928666",
+      "name": "icon_sjbx_jjzlsz",
+      "sha256": "e203fd14ad6a561b4b0be919a596b7245ba08855dab936d86897792549d142cd"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6602845974957773985",
+      "name": "icon_sjbx_klzdhx",
+      "sha256": "8cd5105a3a3462e87a2d29628a5fb6b4d1fb26cddbc49bc225d16d4efebf7c7d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "5718848136617895598",
+      "name": "icon_sjbx_klzdqx",
+      "sha256": "27bff58b2f8ade479db5f29064c960232e1302d825eb1e35e83aaaab947cdc51"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "7402608927261200346",
+      "name": "icon_sjbx_klzdsz",
+      "sha256": "90b16d74ca58e7ee31b6d7ef89712d25976fae1338428997cec8b090b7d2bde4"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6556131840202662245",
+      "name": "icon_sjbx_pifu2",
+      "sha256": "127a8ebf6e9dbcfe8a275e8f472c6a2fa910ffd70b0812ecde10aabd1780fb17"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "1142999924797588712",
+      "name": "icon_sjbx_xqyyhx",
+      "sha256": "e55266d2bfb723a991099a3b629a277f24818cd8c97ad9905b49edc2dc8668c1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2236004479890611715",
+      "name": "icon_sjbx_xqyyqx",
+      "sha256": "ba9c09333a422215e160fae180fa3be4f6297a06f034a7745a60d36d67a018d5"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-1126370477019814521",
+      "name": "icon_sjbx_xqyysz",
+      "sha256": "bbacd85575a9de70fd150fecd81ddaaf0648f846d2e8fd16f94fcf7dcbc9265c"
+    },
+    {
+      "bundle": "assets_uiraw_icon_gun.ab",
+      "bundle_sha256": "86c814a482f45d87d86b4175306aebabaaeaab9fd2790feb85bd39d8eea09b48",
+      "path_id": "2890618593429417258",
+      "name": "icon_wuqi_qiang_54",
+      "sha256": "822c5ef6089aff72245f6c24fcd94df55b47096d837cb559c7e1ee5571ecd5d2"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2639986406463016877",
+      "name": "icon_zxbx_hexinpifu2",
+      "sha256": "e9497e78615a5c77096de80614a6296787754716955abb7628a7e29dc8bf5744"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2604712641681220581",
+      "name": "icon_zxbx_pifu2",
+      "sha256": "c64724beb6b6b1b8262db201ee1c37a45a42d35f89b8a8a5b228ce5a0f30b1cc"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-7258648350242944915",
+      "name": "icon_zxbx_xqjjhx",
+      "sha256": "3e850637b0e76163e4c806286fe3e6d9bffb10a9ab256cce45568e7d1bf2d542"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-6083183294417527832",
+      "name": "icon_zxbx_xqjjqx",
+      "sha256": "15bfa675ce4797c8e20633ac3b43469f9ba84cce49ed1c6f5c55e81d897fc1e0"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "1437666724812372272",
+      "name": "icon_zxbx_xqjjsz",
+      "sha256": "95f7a64e0dd9ab0b8994dd354df44f18cb7d0573323b61e65ca509e8a352387d"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "-8523425878866078681",
+      "name": "pifu_hexing_aisi",
+      "sha256": "64ed32dba0b6696acf5236be1d2b282eaa970d9130c786f4d12c19f0d7a9381b"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "8295224932965934303",
+      "name": "pifu_hexing_bing",
+      "sha256": "917ae01ed5d7fae0817e2fb673d8b4e4a19ab897d86b2b9121e1dbe2acdc1cfe"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "-4949176614719405875",
+      "name": "pifu_hexing_dian",
+      "sha256": "184b392c91198f8acfe13bc65e1b91d59d8c0092b7a58696f0fd2cd1f4bca062"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "-7330065419933996988",
+      "name": "pifu_hexing_huo",
+      "sha256": "1a4e23df5d5309e12aeca43645c68aff097c2bb2b9db283e3599781c967f09fd"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "8507284229778500680",
+      "name": "pifu_hexing_long",
+      "sha256": "1e0fe2ed9ead7268bba800613832bc805eea6eb92091e1193bc4ef0afbdfcbdd"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "8091994459990837710",
+      "name": "pifu_hexing_mofa",
+      "sha256": "c6267d31a4f398df432d00a687a01cfaab08ade8a567cebca934b97e47b6db49"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "8356768939287567643",
+      "name": "pifu_hexing_saiwen",
+      "sha256": "3011380fffbd27c157c31a41fb0886017f97876fce8f29ff69f7c33ca49e1de6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "-5502360706100814679",
+      "name": "pifu_hexing_star",
+      "sha256": "c9c32828866a1bebc9423b9dfbc17b76cf512c705b696c4da71a280516c5ce40"
+    },
+    {
+      "bundle": "assets_uiraw_icon_hexin.ab",
+      "bundle_sha256": "faa7d0ca8b08c2636330c16df5002332c058b5ae473ed254a2655b8430aef42d",
+      "path_id": "1554670363449152350",
+      "name": "pifu_hexing_tailuo",
+      "sha256": "4865cf2dc67174522630f9b4ed66be229a1fce5f5c4fbda522aa9356988dc674"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "-1521223561458214478",
+      "name": "pifu_renwu_bingnan",
+      "sha256": "51ff01938a9566dc5b1b6c90944037bab28d4c72508e9088fbfdf4b5fc5089d9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "-1670096003780436150",
+      "name": "pifu_renwu_diannan",
+      "sha256": "de783412ec4a88b37d64ad398fb0e62c756a01d74f90bc71323c15e120309cca"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "-7374607080992525360",
+      "name": "pifu_renwu_huonan",
+      "sha256": "9aca6d7eff8f55261d493915f84b5843b959ad93fd7b6d186298bc10def39aad"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "3146017902242769452",
+      "name": "pifu_renwu_longnan",
+      "sha256": "af073ea8e410254808502a4cae38493cda5a4c99da6f62505c3bb54c665a4a36"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "7922717898768700146",
+      "name": "pifu_renwu_mofanan",
+      "sha256": "b0ba51bcc3c04d1d928a670cec9e436a8134df848726775a1994a3c05276a7b3"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "106923298971834954",
+      "name": "pifu_renwu_starnan",
+      "sha256": "f89653d503bff87fed93c5876de3aa234b6aace3a67c5c67b323ef3f010eb7c6"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "-6298637870525865326",
+      "name": "pifu_renwunan_aisi",
+      "sha256": "bd0642f98183ca38069b022ab6a1c6b260f0e82e16d83c002afadfaa8e9017b1"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "2113071528768407572",
+      "name": "pifu_renwunan_saiwen",
+      "sha256": "d434b249d2cf9cd9ad4b79253c9d8ca2843c0b34fac57286f77f0ef3c1922b4f"
+    },
+    {
+      "bundle": "assets_uiraw_icon_skin.ab",
+      "bundle_sha256": "2dc62e6af16f42d84d34a45b5690b0a85e6ab24f35dcb2afdccd69ce937c3b3c",
+      "path_id": "-4707123901594123958",
+      "name": "pifu_renwunan_tailuo",
+      "sha256": "fdae1baa19f16c3083f9340cd9a53b7ff5dbce4fa5bc471efb47333f5dbe9a40"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-8082721751763673473",
+      "name": "zmzg_baoxiang_tongyong_4",
+      "sha256": "c77ced46342acd10a3eb83681c1988338eb562bc3f29dcffa298fbe0aa58fa5e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-4449291721122431946",
+      "name": "zmzg_baoxiang_tongyong_5",
+      "sha256": "9d476e9669907ed593506c3dd90a992c76c24153aea9630ffcc3072658da2c3e"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-5967852738801849058",
+      "name": "zmzg_baoxiang_tongyong_6",
+      "sha256": "8d3b80a2a9b5fcdc98ef6e9268aedd2e4b0b61efbfd588a5ca2b9483a89ed7dc"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-510944068974943664",
+      "name": "zmzg_daoju_sjxpbx5_1",
+      "sha256": "387883e1ac86ea2426b9fe847dbdd901808ff9ae919af238d9059d9510e96a45"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-9085948060514094774",
+      "name": "zmzg_daoju_sjxpbx5_2",
+      "sha256": "b457ebf91a983b78fbad82f739265aab7091dc445ff0c46d9df5f936bcae5bf9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-8403202953969477491",
+      "name": "zmzg_daoju_sjxpbx5_3",
+      "sha256": "d1cfae8a80d8fd9470f9c60e5a4665e00e4e864c592a3b8517ed64c9c4004ae5"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "168694133167411942",
+      "name": "zmzg_daoju_sjxpbx6_1",
+      "sha256": "09dd7c84f279560e95219164be37b0eb934bae1e4de48002621bb1d13e54b731"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-7059256838669389418",
+      "name": "zmzg_daoju_sjxpbx6_2",
+      "sha256": "996ca9ad2f89d4e1f526b7338e6b5b025524ad16a6172d1d59852bbbe0445fc9"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "8259043670139823976",
+      "name": "zmzg_daoju_sjxpbx6_3",
+      "sha256": "e0d593c85f3e70c9ed9c47625e1bd09329e473d8ba42a502b6e9e5920588d1a2"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "-2578554623801578426",
+      "name": "zmzg_daoju_zxxpbx5",
+      "sha256": "7515715aec6daff9e13c91fb396379eedbeab7000d580d1eb082b5a3e766389c"
+    },
+    {
+      "bundle": "assets_uiraw_icon_item.ab",
+      "bundle_sha256": "1ccd3e0ccec2e97c24da225efeaf812898c2f30c6b2bd6d0efa952ba12b35ca5",
+      "path_id": "6533800455341154346",
+      "name": "zmzg_daoju_zxxpbx6",
+      "sha256": "5e7514850760b2aa18aeb17b4bf2bf347adc3874018029aec08abb1706cef328"
+    }
+  ],
+  "missing_icons": [
+    "icon_wuqi_qiang_60",
+    "icon_wuqi_qiang_61"
+  ],
+  "ui": {
+    "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+    "screenshots_used": false,
+    "inputs": [
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-9043936764587794196",
+        "type": "GameObject",
+        "name": "m_textTip",
+        "sha256": "b200b89ec382b13e20595e4a80536ead100a52749af015384cc732a0e9136b66"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8944087440469986223",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "aa8202fb7f3219d565ca2e2d30ef3ba82c4f1a4988e96305068626cc3b159608"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8837616041896861685",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "ca95c82d7c4148db9f1bebd70e7394317882116da927b0b6de11ce5afcdeda3c"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8725340820953810017",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "68168df40e0dfecc6ebb096838ed6def2d42587b5b23c1c5bbc2d7ee5ec0fe19"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8431220177860528725",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "3043a5ba5170c7f03cad4c87df0e12952f9281ba4a38492f09be1fc9270f5a28"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8381423574619700636",
+        "type": "GameObject",
+        "name": "ImgBtm",
+        "sha256": "339ff82985afe47712c0883b618a129dcc7f9bbd28053daddaa219ff61377f54"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8291903657708636055",
+        "type": "GameObject",
+        "name": "m_btnClose",
+        "sha256": "bf5ea2a6ede3f26650687fdda85bf06ffb705e3166710beac9a289caccecc9e2"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8289473710723802459",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "da5395caad651c5680077d1b69d1a9616f445dc1debbd6262fefc83dcc450f46"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8060742653085422407",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "b349f8eb26d3d312c70a19916a26ba031525ec3a8f151608ec2af916352e083a"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-8057001875955207311",
+        "type": "GameObject",
+        "name": "m_goUse",
+        "sha256": "40b87c0647e306201f15f7a680bc792e8b9c0fc83c6f6ff4761374aa9c0fd31f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-7668512850224605412",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e00eb82333d8cca8561cdc27b378886557dbc658483d1d3ffa3b79ead0ff324c"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-7129440545875750476",
+        "type": "GameObject",
+        "name": "imgBg",
+        "sha256": "bb7d7f7a076f58e0e93eaf2cd0f8f1d40d5cbfed54be3e1e083993d0394ffc00"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-7072095105214255350",
+        "type": "GameObject",
+        "name": "m_scrollViewChoose",
+        "sha256": "c30e11a8d17f1b8266dcc9f88454d5461a25510c707576c12b17cb1e1a972e29"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6937583265700402739",
+        "type": "GameObject",
+        "name": "ImgAddIcon",
+        "sha256": "da40197475d900ffeecda576cece739c5eda69123c9135aa87b3598c61555814"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6931953568573957118",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "47c03e1db9f5f47d7f8a1a6a00c16544258321fbbd7d47c096c66ca98b87d25e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6888804560828542703",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "39e352db670404bd41ce2fb8d2970883cd988d0c1b7e01a212c91831f8e3ca69"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6744756506627050261",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "55979bd7aa60bcfbc93586c6ff0940874de6ca89dac9a7a1be1667350873d7f1"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6701579515118950535",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "43ebaf780b9d4dc3ae4191224d6ded57ffd9fef98450a6f86811502b2ecdc003"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6697136047908923553",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4dd4bd170c1260b5190f06229568c05ff272477d22fea76386ac61b38a2adec5"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6692411237812788227",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e5a0e84d59ff7500a1b18ec2a700bace2565aaba4b3b908d5ee9af8fd11c86ff"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6552061635564007293",
+        "type": "GameObject",
+        "name": "ChooseMultiBoxUI",
+        "sha256": "b166806822ab249cf2cb553945215274c1d08ffd83975ad62e69ba3fb895a11f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6528020903641099668",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "8ef1da05ba6b06f18551b26edaafe2f59c8f510b8ab059360df9a662c612a01e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6511329419212038627",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "3218795cbb27edfbda84729a826dbb37ed31fee021ab3ada97022a946d3b6cc4"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6507920078204173998",
+        "type": "GameObject",
+        "name": "TxtAdd",
+        "sha256": "b377a412ec73345654b25ee746be37757ce7dc20de59a3b99459402ccf425f0e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-6352596090697108622",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "671be7b4d87b200d639777bec027c66da1e39da8ffb5c8e8e438b567e25cc9ee"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5290312715069566759",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "9fde81a70855bb89ddf5ce6054cabe82940c45e4b327105b3f6b9fd5f2737955"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5267563387826118436",
+        "type": "GameObject",
+        "name": "Line",
+        "sha256": "b6d349824c08b60e1e0abb031f2b792d8ed8fb29753157d61faad8794edcd644"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5219612999199779433",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "174e838aaaac6e50d15c1a4915cc2233e24f8f914a5c7ce905987f53eafb3a52"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-3734965351099267059",
+        "type": "Sprite",
+        "name": "com_btn_close",
+        "sha256": "1b87fe0743857b3bee1d9d9e7a3171420ca235cfda60ab82201ddab12fb5f9f7"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5212017056887916773",
+        "type": "GameObject",
+        "name": "m_textName",
+        "sha256": "12734add40bf0d868501091944cd38e891dc9842cfd7250fb29d56eace373878"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5135560182011538003",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "1ea9f05a3f679a2552cdad1a7119dde2ed1f8281328ebab0099c1f1c9d196867"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-5023668232032810013",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "1866b9ec36b7a48d5c9049c30049038138dcf66399c47b65159e2e1a7a0a9411"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-4271019882198520195",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "773f02d1010c7041eefce6a80f8884000c312741067d240111cc4a4a75a8224e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-4252621966753548943",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "2bd1b1ae9a41d79e5084db0e1215e13acd75c7741d7379d004052d351cc7e133"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-4038912829614826786",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "61822da2a8aa36aaca93826fddb7f818317f505e4267a733ef53296d336c895d"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-4035102737901144574",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "827b81dba46b93945f39ec4175450596262c65337513f45ccee2e7d562c63c72"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-3490106604388256223",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b19691cf495afd835cb60e0acf3d9775db9b72244d305b3dce4a2b40270a2306"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-3234950537955013929",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0ea99e2369ca86f51aea3a24f59522efc78b3c33a4fd652700f24c99001c3b8b"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-3217407884886372988",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "59d08221d734440e189bf7ee2688b3e2ad01c6c7e2ca6fdbc8001ae617800254"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-3188419308497905201",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "df969fde0e2fb4822d22addc2cdd941971ef18a48d180e1d76caec3bd2e7addd"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-3062211597025822545",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "1c36f6d90b4e3409b9945cfa76b7084ae5bd9324ca188a5acd6dcb09a9709f80"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2972156436764024871",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "9c493b3d6dec1a0d34700c51a2da8c71e8bb999e60dc0a91ff63947ee3395fa8"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2604408985290811779",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "cfd3234f96fb97e338d0263c1f22d531cd6ba117b45951d2dd9bc8b3a28bc846"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2555395695207911354",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "2d5915e4c9a0ebb292968f68716986b49ca9b1c65f456b00088d17c5c5e0e9b4"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2425930159739185531",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "99ca0ac1820d3de116c53ac36ac462fba01a4805ed27fc15f957f69514b180b7"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2363408858754146473",
+        "type": "GameObject",
+        "name": "Text",
+        "sha256": "bcc7610f3c33061ee89d0863d07a5e9437964e7e51a9482b7bff133896cd4a10"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2218828336747675688",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "2beea723837e06f8c5758161fcec130b91a1917f8b992e087e3f5d25ae199852"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2214190007451138859",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "8dafc83f682d9817edc1953d80ad86f170b19f7c9b7dfb03c2e9845b2e51573b"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2127015599040939611",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "a0c2c7df461c74ca50b1a5dd857bce2861f04db2bf36fecd96bf5d3d68569778"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-2088683829533675789",
+        "type": "GameObject",
+        "name": "m_btnOK",
+        "sha256": "f2514617902ef2394001f730043521658622d3105ecfdc95e1bde4ff8081c0c5"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-1684383740336829048",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "5ea26d5fcf753d17010bfea796ee10f0a3077392bfde05bcf57556c3fc11706a"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-1611205802756253928",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "12d5d72c0dc443609a5828738d2e2f278fa5a99c56ae61ba760c286d95ae2010"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-1561437858538350471",
+        "type": "GameObject",
+        "name": "m_dbtnAdd",
+        "sha256": "0a02d462c06442bb68dc15e6cfd1492c407523c0d8126ad27d75fe04758cff7f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-1209304683969349266",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "9fe75183e8d0490bc8ab32000969f2f3c55a711b4ffe90442a51c4f96a15d5f1"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-749751625448886143",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "ab86b872843730055f37668dcee2dd3a7cbc1ce0aa8f286b12ca8bd62facbca0"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-432062097313734464",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "5a8add34ae14ece21346e7226ea93a3730489c0778144cd1bc0f6fc106caa62e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-381048924204581767",
+        "type": "GameObject",
+        "name": "m_textTip",
+        "sha256": "1ebaf6389c081f38910916d4c8adc9952e24c2f9d8b8dd9e0e3abb7b9b60880f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-244140550200880025",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b49f083fa977a99f704f0ffc3e2094ef17fe50b3b0e9c4fc758813f416875e3f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "-52282610705834109",
+        "type": "GameObject",
+        "name": "ImgMinusIcon",
+        "sha256": "cd1c03e42ae3b19d3ad59661bf1fba5a36282ce5a81ff9d52323f0d21b47e94c"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "16084770445266987",
+        "type": "GameObject",
+        "name": "textOK",
+        "sha256": "ebb51929d7fb495cf2b56f2ec47d6fba771a063c37d60259afaa2856f0a9c055"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "107938572255577527",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d8c068c26bb62224ac4955168c08397737ef9a06939bbc485d113f37fe56a985"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "213543047567570177",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "29eea5f88a04d8d35332dbe6bc26adab63a14a39c8f05107206755569f81585e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "262728624371694155",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "7e94db9c04f5ed396e64100c01d97fe2c3045d2035295991622317a5c26f32a8"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "4180324618222379630",
+        "type": "Sprite",
+        "name": "com_tc_small",
+        "sha256": "ebd82e13bd7e9368cf3622928f699c3ec25d89936e4af2b395a0ca5b10826c55"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "502753348238141276",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "16e23ac00fed74d881e3b4e812062ee9441da660db48667b223efa78c21841c6"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "3267973208391049751",
+        "type": "Sprite",
+        "name": "com_jianhao1",
+        "sha256": "81454f81971fbccd3267da4194ecc41334bf7190f25f590857cca744ff2b37d9"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "506588141508637067",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "f5a170288f0fb859634680ccfb143ea0361fb8c0f5cc25d6556bf9f3bf946699"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "683003803743586761",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "529fa7fbd6a3c3e7bcace12f0b09ed045a514b08f33e4982df1aafcecded12b8"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "709460561228901002",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "00aa39e0daabd2e1b8330d8419cb98fa5370eb0284bf78a7a3fdca7dd2b8fdff"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "913637611383031219",
+        "type": "GameObject",
+        "name": "Placeholder",
+        "sha256": "1e4d890767ed293905c03142a7672f0dab29918eb6340bf5e246bf21f9aeef95"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1028741056596893029",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "a5b7e62939f519ed0ebca4d4c98492c5fac38d0932be3bfac5f5d15175f13d06"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1189347338104539326",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "77602769082be9ad213f0535b027dd6651ff81d82d051ec661b3a4b3962ae36d"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1343378218318866731",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "4e01bd8c5924035d62b6c315cbc2818a6c6ae0daffd8d87e23ec7b9e8da35646"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1375256388500579613",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "e99a398df4f6eb997ba55aa4cf7c19cbc3eba2c4217d798acffe0ab62adada7c"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1530812859954940171",
+        "type": "GameObject",
+        "name": "m_inputBuyNum",
+        "sha256": "6addb424bb6972d4fe1fe293ee596eb9348a4070c5c5951c2228040e8cd67c04"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1599427170625774333",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "9efb8b77737f3b9efd50a76509f76e631222bb2d7fc640585980c24746e1dec9"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "1735204616586778864",
+        "type": "GameObject",
+        "name": "m_dbtnSubtract",
+        "sha256": "c6079e7090891373965bde810b3bacbcbb55475beeb38ebe9053a2f880f420cc"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2015593830531538186",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fca3df469e668afa86bbfa39c6fe259a2e55a4de117fc0a649a5e2e873bb6858"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "853442902162350277",
+        "type": "Sprite",
+        "name": "zmzg_com_btn_b1",
+        "sha256": "79a6402266ad30571926a8349825480c85b0c67cc5568eaf7c3ad72762cafb58"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2105479694652947871",
+        "type": "GameObject",
+        "name": "m_textNum",
+        "sha256": "2fa2dda05eb7893f91135c305dcf66287d857fa45eaefa5aeee8180d63ba1dfd"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2279832523306465087",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "a6a299048190926189299ea11ad972513fa4cc236448eee6abc4fe5ce4daed89"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2332857229318861461",
+        "type": "GameObject",
+        "name": "m_goNode",
+        "sha256": "5e51e32cd828896d265b8537673477a199352ad335a07916bd0d1e383b335b11"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2451534263832362474",
+        "type": "GameObject",
+        "name": "X",
+        "sha256": "269573f8123e2cd992ecd4148ebdb7e7db6ec88810e0c71cc3dd7574f731416d"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "2703527342494012518",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "0c944f821180077b0facf73d24f2608adbe49715ee6ecff5cb6a1fcce0cba34f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3112820070207173277",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "def066beae0fb12d23abb74f48abcca543c22479f019ed6d0e82c800899d1741"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3211224512847462181",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "12f220cef9a53e6579dad7f4d0e405e84678d7d453e8e23e8674c3f31f359ec6"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-2855406306775412611",
+        "type": "Sprite",
+        "name": "com_shuliang_bg",
+        "sha256": "6c84d6522f07808573ece42f7e5f360885f2b298c4410a519543b9795d93779f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3231825490622670250",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "740a9fea6277603f074cd138a22ebeb5206177f509b9c4550e910a85bd363d8d"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3483726614759400387",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "1da9bbb9a527198a005676936d1ab7055be3eca93feeb396ed7ccd295b760935"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3516666081161166292",
+        "type": "GameObject",
+        "name": "topNode",
+        "sha256": "ca585435e5d189d69dc622b87c9aded80cedf72df82eb94aac45e3a73fb45065"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "3937090477697857165",
+        "type": "GameObject",
+        "name": "m_textBoxName",
+        "sha256": "a3121b78934682c186c7ee86163333dfc3587ef50750d0545da10ce4cea6d014"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "4144825213244791215",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "bc27f9db71dadf506507f64fa25dbd2336f0750a510cb40562b12bdf4719d0e2"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "4341688314105778076",
+        "type": "GameObject",
+        "name": "ImgTxtNumBg",
+        "sha256": "0463b28776de6a44ced9917fd44863541af1c93958c3261ae0c70c8af096a75e"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "4676960398686923467",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "8315a886151854fa4d5f57dfe9ab3686df30592242a881c43c531e196752f394"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "4903961869639829652",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "c3c4949d4dc4aac97c8297ac915f916b9487b8d8668a13260df96c5f60ce96b1"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5145518204167966784",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b96f22bc90e3b59d134d96553fd85c88636c9f65dac42bd5007eb5532bc9775c"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "6497021262915768800",
+        "type": "Sprite",
+        "name": "com_chen",
+        "sha256": "6ac25a6a8f01999cccc4d603687467f5589c8601b3760dc3fc369d3e55857bc9"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5172970475952370117",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4ee3f8d98a7ec4167cca699db23c6e035ea02abc9bcbcb98d02da52f35912c43"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5408997169177442183",
+        "type": "GameObject",
+        "name": "Viewport",
+        "sha256": "128360162bc5f881c9d714d768947deb68c5666dbd6e23c1415ea1158e066315"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5442442394628002931",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4257f86b8d5daab0c7e35ab76bd870dca45e8646a1096ed86cd953e77caed249"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5465748306060450864",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "d883e9b65d3298bd3f6f3e5134f8422ff822233e290814e700703b6a6cb93549"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5487365430245644987",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "65e2377512c1c9207028e401f33231b4eebcb61375343434a8843fb76f7366ff"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "5742931440017401966",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "282bd4769c5a5bc0c27cdb668f53764271a38a90c2bd9e112afbdfb2d251d4d8"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6081304595044241037",
+        "type": "GameObject",
+        "name": "m_vlayInfo",
+        "sha256": "e318f7288499405be3d06e80e5f71930bd2778a9ea8debc36abafb7fc896a70f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6118811209120848458",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "fc58d2ade39065efba078e6cd10e676a6fe8441ce33a484beb676a73afe4656f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6238849364641532492",
+        "type": "GameObject",
+        "name": "m_goBtnNode",
+        "sha256": "6f1a22404332bb395c4c8e8d5cb41bfbc5e10717f2f68937e48f3719b1483dd0"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6300279787022882393",
+        "type": "GameObject",
+        "name": "Bg",
+        "sha256": "f707f5c37e6f6d09d8fdcee5a6400941bc9f3637a17dd83ca5a16c1a2f94a629"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6437012828484323687",
+        "type": "GameObject",
+        "name": "m_itemChooseMultiBox",
+        "sha256": "81e20d9a6169c6076e910378cc5bc6d16e326796d4c769c4b974f46ef540ba2b"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6613852450256385207",
+        "type": "GameObject",
+        "name": "TxtMinus",
+        "sha256": "60f7c6cd57eaf2bd53ada8caab2b07addef6055b4ad3cdd5804a638883812a0c"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6739599299939744577",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "3fa0f9e96ac5de99b8d7da38851ebf6916e95a589d354da958d145a1e0e11d2b"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6739975371958351843",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "947128f8e42520ccc7f1b6a7bbadd69c6bd8a912de51b59a53f66fcee3d49540"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6912600614639281544",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "05c35a2ddf8739542264c2763b6ef2739386895d12f15e120543f2de8ab5fc38"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6943505528713433392",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "319dde6565210abc8f072096c1446de7daab299d800028574b719f228d8e9a27"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6951440245373273350",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "259a29891ff9610dcae73cd8a0bc3c2ef8c47c23f7d2e48447856205e673b449"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "6990356842422609362",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fcb293d5a9e0bc6c47fc9be24ea49165845f41602d74d7b5c8646dae2bc40839"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7018289357421471779",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b7c2df8e36ab5e31517c830e7c3ece823b98480f3becc34ff3c91ae9b89e2ea9"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7127780888982777789",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "5a3322199027a0dfa0aa727eb2baa185364a6cb023984ae25c17d7b0f752ecc8"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7312824206730676371",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0aa28295970f210f571526d5bbc4b98d6130122778f0369eb92355ecac452f0d"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7477814658119674823",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "25d64eba46b5aa034efce10850e8bcc9dd07beb18f7cfb027517c38ac7217837"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7559035571742477504",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "f260616b68daf8835192a7eab41772213dd68bcaa85c08572318af4cb998ee9a"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "7928867328149991789",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "327f3dc31df0a3db183d171570490bfcf9a72f97db29efebe20d7ac2b729489f"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "8418045633014121742",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fe3bf477ee16024bfcc49082ea769705ecac36c511e68d91d35e75d92bf584ac"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "890625961955254949",
+        "type": "Sprite",
+        "name": "com_jiahao1",
+        "sha256": "702805452e9fc45ccb912b3b02dbfebe8353acadd7aa0acc17cf9bcf4c897970"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "8513000059172283836",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "77d04eeeae840a108158f6bde8ab0a9de204b30ec3f82c8a8462c0bde185e153"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "8801373636278897934",
+        "type": "GameObject",
+        "name": "m_rectContent",
+        "sha256": "c74ac22896f4ec05de6852cfff92527ce12102c98e12a060f7ba26970bbf9ccf"
+      },
+      {
+        "bundle": "assets_resources_ui_choosemultiboxui.prefab.ab",
+        "bundle_sha256": "95716773f86849dd497a2fe3c040b0b6a79f94413e72da8b0b0dcd0a0030ee86",
+        "path_id": "9035122408013508793",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "1c64d449777dc88bf5b9dbc2d9dc2296e2391d6d86b6dd9532dbc2a2627c1c5f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-9221157594390454685",
+        "type": "GameObject",
+        "name": "m_goMask",
+        "sha256": "3915f3810d370c9dd4facd6ac46a3b7a52ebfc31c2f2b74f521c3de4aa9a36ea"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-9161370940789701695",
+        "type": "GameObject",
+        "name": "Text",
+        "sha256": "79028baec002e35d4730e80bc3ffeeca66f1909833904e08c3ad0c6b2c1ac447"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-9056743232791981823",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "ad7883dbfc1dfe2625c77c19f67668061b2005daed673989c9ca3927bc0eef67"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-9021859706068410021",
+        "type": "GameObject",
+        "name": "Image",
+        "sha256": "7876355ed1db9391c9716f44f5e1896e820b6c8a42e7879cadb5ba0db9b64700"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8854001680480726915",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "355fe4a7d0fc017a015b2d55983d357f0877b406fb2299567595933530b5ccf3"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8728320363964222604",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "a1e86ff2824bab0ca6e5b293fa6a0a2fb553fd91500e9b751f15ab03bc68b959"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8679409882479519541",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fa6b17de0a447d0bf9254e90db20d458eac80bbcb88729df3fdd4a2097de3b64"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8580861763229676296",
+        "type": "GameObject",
+        "name": "m_imgSelect",
+        "sha256": "d36295b6abc4c542830b70ce60cebbdbe3162a1af771f52dbb1b36224211e3c2"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8522944873213178396",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "d965eed620de2b81ea05197668714bc9a7834f87a1f87c8df412f89e8ec7f650"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8521239002982298852",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "dbcebf94738e4c2c564b6a92f7657df828d0983864f939071d1a856807ab39be"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8427873179053974999",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "83b93be4d65953d7d544d1911917ac4c33d4e76d21cff796db2fd5f722d2d422"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8310536848785641287",
+        "type": "GameObject",
+        "name": "BtnNode",
+        "sha256": "850bbbd7e53f5526053254765077770d89667cb8bbbbc5147ecadc75b17c6f86"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8086549800244638105",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "2b50169853f1671b8795f9ca23b15ae0c5bbdfed97b0fd2b995ed74ae13f26b6"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8072175810914870110",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d7d76a2a96e412ea910a5a633391f5c4c63afb3d9ad707cf9eb33d07168b6721"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-8011898366577926181",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "2fb7e80561db80adb49968fec640c4f4c73854f7fac1934bb8c6f26e15c55046"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7995469747467222596",
+        "type": "GameObject",
+        "name": "m_rectContainer",
+        "sha256": "ca72d2757ca1d95ea42e805f5dc2ddec9fb30b6fc172358eed6b9bbc47b9f863"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7961301025889748995",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "12d394924a657a23f4d8bfcf6c7d1e7087c3c7756b1469e6f51f1cff89825489"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7800017358942122763",
+        "type": "GameObject",
+        "name": "m_tfChoose",
+        "sha256": "c0cc34fb4864444f3ce0791c6e2c5558692c35a5662c8de995a7fa6c17a46605"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7630654944182041918",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "d96c4d727ac423e7d1941dbb3effc876e9898f2fef8d6f5cc906c54554b8ba0f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7616408655793023479",
+        "type": "GameObject",
+        "name": "Bg",
+        "sha256": "85506c7693c23c006d66663dca34149d04f929fb1aa0df59a80a62c69d2ca486"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7596833437459211730",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "150e0bf8b45b612b4dde9ee7fe0ec867dcbcbd0ea9f92080b38e7fb04ed2cabe"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7549065377447259941",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "bebb9821d77bcb2523711169011d7cc020f779863ae707fed4f9af06ebe6a4c9"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7543996462421842490",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "55876243af699c50104735006526aa94aeb680ac0568f3a5a3a88440265d88ad"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7467789357942934026",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0a753623b0a77b190036fc6b5998538bd7233b4577951f74337ed906058f5207"
+      },
+      {
+        "bundle": "assets_uiraw_t5email.ab",
+        "bundle_sha256": "b23020873c86580b993cb831034e9da717ae5f964598bd3ddc16ae4b29b4caa8",
+        "path_id": "-2207941671744389445",
+        "type": "Sprite",
+        "name": "zmzg_yj_ico_mask",
+        "sha256": "660c0b63d2c34bf766b7dcdd192112254b00985bee4ff198eea3b80f445337d3"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7359341602606215819",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "4cc7990dd138e6f1d4b1642b6e79767dc194ed9d16bac2d4a7f676b20d884bb8"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7308199963891117318",
+        "type": "GameObject",
+        "name": "m_textItemCount",
+        "sha256": "25d1c205d236c426451a5634a3ff0b77de272f1a97dc0c643efa32be04c2a0e5"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-7093728785373420002",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "85c14c82f9588ad23bbad27b4ad92fdefbf0a594d310cf49b99db901ba27bc8c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6774587233040024302",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "d0f805feb659e494ffeaf61c586a076bad14b824275b711a4736c9f8de896c21"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6544671994785606011",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "6a14f01ba289cb60ee95f114984d772e491af12aac41267f93ae7456e0ddde35"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6507975202001006146",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "9df32f471a73790f1a33557f5a78df3fe96eb364d555e5ddc6c68c0c5422ccb8"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6464303252716840817",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "a8e885e6b5fda1ab0d0031053b89cd2761ed25fc60601873d1041eceadb221cd"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6462357995111392542",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "ea101ad329d617172b0c33ddabfc53ac3c2a1a47755849a3146f62dbb148b3e1"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "8306709822551079681",
+        "type": "Sprite",
+        "name": "com_zb_icon_04",
+        "sha256": "5847abef40e338126a5b8a460dd63c94d6d796dbdd749659324bbfa1b9fa31aa"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6216205250054394275",
+        "type": "GameObject",
+        "name": "m_goAwarded",
+        "sha256": "ceb86ca52a5453b3bdff0c9f903a2e3a7e63747927f1ded29c0e2d572fae3cc0"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6178468130501798571",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "40d2252382cf7f8979ba01486e5352bc2e60daa63e94aca511cfc994497c00a0"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-6053628368952712054",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "c61a55c1decb71c74c99aafc3f9e925c7d76b851057248a17384e7aaeb4fa14d"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-8858043535711635253",
+        "type": "Sprite",
+        "name": "com_zb_jieji01",
+        "sha256": "ad1e9f98bedce04cce4192bd62b8d4c6d295b5cefa09006fda5bb295639d6808"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5962879152041046582",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "25cac62f0b7697ffcfe73fd7cf2c75bccca3f8e6e111fc9a68759715370a4122"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5815198628497570960",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "e7dce4d9add5188ef42e1c71413993aaac82c903e6e896e39775c602ab3cbef1"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5681809207743798592",
+        "type": "GameObject",
+        "name": "m_textCanSelectCnt",
+        "sha256": "a190fdbfdee08bfd13dc4eb5ff747a5bb225f40b014b31442f58051b752eded7"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5519159149316800709",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "83420da1b2765db4bdfee10197d0be03d9c9b5a664e39766e431ca6282f54f4a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5465098046097156378",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "7964ad0dcbe3f9f268f09d083e1ee1262fd150fad8ca3459490debd53823218a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5455498698213462801",
+        "type": "GameObject",
+        "name": "m_itemReward",
+        "sha256": "c4b3c074a22a1ad3d57abbbf21eaff22895c3eddc2ed09e33faf095c22c0bbe1"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5401768727055601374",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0f110d85586bc9cedb9349ce80479b0b239e21262d9916e3827256180ee3086b"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-432770463304665361",
+        "type": "Sprite",
+        "name": "com_tc_gou_bg",
+        "sha256": "baa5384db55efd7079982f3d31d4cf96e5d25c1d2256ccc5cd36de1f214926f3"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5207537850355829194",
+        "type": "GameObject",
+        "name": "m_goEquipUp",
+        "sha256": "7b2f7ed0abf57e19731a9ed028a44acc69ba35b63602a931b51ec034f29fb61e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5178403257282247881",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "3ced25c4cc169379edcf1578ec9e85236cafbc4e37f6d8fad03ed276aa9cd57d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-5177333126072605287",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "f06263b28d86af830d90f845b597ecaccd352560930c7059e470e67af61c2383"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4765677534649169667",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "3c897a4902a694aa5f38ee7fbfcdfde21581805f1f88c8c21117493ac2c6af9c"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-2314609503732339467",
+        "type": "Sprite",
+        "name": "zmzg_zb_tips_bg",
+        "sha256": "7f95ffaf50f6ae4673378597af2152d097747918642581df40c493f625f7d615"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4762297984253496329",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "f83b6e49e381f68c5d2eee62a9e9f66f24ebdee194668968b6f01241ff5a700f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4582948219890296986",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "95eeecc8cf9b2bcc6b87e08c514f589ada690b86c11ddddd96bb7203e929e278"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4563042394200058306",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "977cf1409b7683e19457310d3dac1cc0bf3f8e4d94335bc784343205bdb88fb1"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "4573305578120997303",
+        "type": "Sprite",
+        "name": "com_daoju_xuanzhong",
+        "sha256": "8544a67b8908cc498a9f0a39cda3a565d4acda9c62402e29468e2ca78ad61026"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4407668823496301680",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "bafd02f774309906f51eceb5b73677dc9431e13cc78a415fc0067bdef1d3d73a"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "2844762127005624254",
+        "type": "Sprite",
+        "name": "com_zb_jieji02",
+        "sha256": "99246ddcb2fc4284f9992108b80cf92cf69c9d70e5f7c8290dbd898ffcfaeba3"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4292561702920511931",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "9ac9c6f2cda286385bbeb378fbeb84583e4fc47fc9ab38bd0d2f66abd17bd129"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4105293403988739625",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "3f747be971d7025a0c7dd96735c62338c5ded21c923ba02f9ca3fad13db57fa7"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4102314102008252245",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "17b546b58cec7b536a17f25610385d9aa1f8cb4b7f5d9606cf170ccb9d971e0f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3951064644296322278",
+        "type": "GameObject",
+        "name": "m_tfEffectRoot",
+        "sha256": "7ee9edd00634c6dd77ed98d37796459d3ae7ca0c29c3835735b863b8bd06d95a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3836115012723096512",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "c01226402c8f2d6f30a8e07ec740f61a549c84293e197c41570d6fa3f59c72e1"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3825075969795118020",
+        "type": "GameObject",
+        "name": "m_goSelect",
+        "sha256": "8ef5c99e9d7225a3c45208d1d8df2feb9440b2275e8441fc83a1e338f8a60521"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3819339234320837078",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4562ced036a8980946efd3e4bd0af6d4a46a7ad8c18d971456d79c9fee747ad2"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3808448575501998110",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4b112fdd00acc3029dc5f4f2e73fcf31b9bff44e3c23c66a2030191de8dd5df4"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3786626358298383145",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b32b26d0c89327a793deee1c0c49130a2b83619065f7bf520956c3bb0bf4c43a"
+      },
+      {
+        "bundle": "assets_uiraw_t5setting.ab",
+        "bundle_sha256": "653d71e8faad5201fcdd3db0628e66effd9d533b07808f6ff72e56653dce9fce",
+        "path_id": "-7706178605306080753",
+        "type": "Sprite",
+        "name": "zmzg_grxx_dk3",
+        "sha256": "c5930646711f8ca63c6a07067ebe276fa12821897bf24c11d867c41cf2ef3130"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3784177890837739155",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "224bc5ee235a2bef5164f89233987d7cdaff3827008471d13df37051a8fdc772"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3719319127801890776",
+        "type": "GameObject",
+        "name": "m_imgSelectII",
+        "sha256": "27bf090a5327ac34d8b444c9a3cbc5818cb8a8e0e2aebf1b044e66d6a2771c35"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3635453486833187695",
+        "type": "GameObject",
+        "name": "Viewport",
+        "sha256": "7d2dcce088c316e76e43072846d4cafa399e4279a401f34628f760dd6fc1acc5"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3616613916995350360",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "db85f1877618ab05e40a6eccf20b27e337097d93f20a4e3d35d46637d56f0240"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3441423799052577709",
+        "type": "GameObject",
+        "name": "CommonSelectAwardUI",
+        "sha256": "0e6932079ac6abd1850f3c6bd671f30f82c8b615ecf4169ca5f1e9708d2a7377"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3328811178045655975",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "c9a4abaa1a9463a5bc60e4807565c1d0aa7193c0034dce31697330a57006e17f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3207419998359031796",
+        "type": "GameObject",
+        "name": "Text",
+        "sha256": "e9989b884deeabb16f91519b927cef713150bea3233b9b9a336f705df315f42d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3152335195349732035",
+        "type": "GameObject",
+        "name": "m_imgRecieved",
+        "sha256": "af2466a6e4e5c941e596f3a657f83b0b77f9d2c157310af7eca332e435223a0a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3078362972861021610",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "8d3867920d95b8853404690a22255ae35f041077fd018f13deba7e712ff3523e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3063564056584741212",
+        "type": "GameObject",
+        "name": "m_tfContent",
+        "sha256": "a814062a3a8111ed749ab9cc808790966273d085cba688d1c6769ff0cbea8ed0"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-3028702448104501710",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "3790ea2bba3be3ee2b91b04226925e468815285ae519fdda8edc14f0a3dde348"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2776756072839420534",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "560229992602fdcb643f6ba2c0991afb0b8f8f192590a31070b8d79a97d7423e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2745769748639684632",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "40e6c929b8c0466bdc43034281f5535301a6f3a13de20ce0de3ec356d20c1d4c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2691952583322969120",
+        "type": "GameObject",
+        "name": "m_textPrefix",
+        "sha256": "a6f3967a1a7953a88cc2c21591fa24c911bcefe9ce3f4c1868f0a652bd24e14f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2687110212305408321",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "8352146f16a55e3621754e812492bc47fb81d4409e0f974a541bf6d15df9f531"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2589964865490752917",
+        "type": "GameObject",
+        "name": "m_imgType",
+        "sha256": "9c202705f7b22c9bc5b7f4d14b7ccefb5dd015d336dc3852f9903a479ffe3306"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2481712256456948651",
+        "type": "GameObject",
+        "name": "m_imgNumBg",
+        "sha256": "a2fbb15939fc96ee0911b7927854d623e630ed1dc8551e6ba6e3c73e224c3f61"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2480883534148045581",
+        "type": "GameObject",
+        "name": "Image",
+        "sha256": "2e99af8a3a5997ddf83bf25e1868cd3c7fbe7213aeb652ee0f96c0256d9fe6a5"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2413136694733425330",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "35d44dc531bc1aa67bdd9ed82d1eb78842903dfa4a5244b537e4c837b09b0904"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-2164586964262715773",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e2675c8649b4e6ea5403f09888b9a5cfc1b6481852909dea6f23c2acb56be16d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1939804246488441447",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "bb1c24e0a0ad8e5e04eb5e2dcbd39aa120596cb6f4f7777a59dbfd8ae45abf7a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1911401513467338946",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fe19bb23a8c6f506d8cae289e37a175d86fc1490012a3c88bedba32061615eeb"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1836156509766624115",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "57b2989d1ec81998f999cd22df222dc2a433b354fdbf73ee8300cbac2b6875a5"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1778702961092413128",
+        "type": "GameObject",
+        "name": "awardText",
+        "sha256": "457152fda869d7e050b5e6c53575f78efa1c00cbc6b30e96bac96aa3380bdcbb"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1752567974365253813",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "6e6c0751e38e1e378a6cd7083d45a856c4a02abd6424c21c8f237289acf4ea85"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-2003079272481951252",
+        "type": "Sprite",
+        "name": "com_lingqu",
+        "sha256": "5f9bf411ef379c197ebd7bb623458013b06d65162b964044f332b5ade886d3cc"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1728764234219926691",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "0dd7a6059d0ab4297e575778b5adced00f42f197c6f7c0f46c6d2108132ca87f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1715703311649805945",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "9d67262cb51dfaeb96133c56ced9a38078c64b71e2269300074527a6bf0adc2c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1700133441278795912",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "80056b165e5930d15b9501ffdb36d4f4bb2158b380905d7eb96d1f495a19f7e3"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-3876438153747631045",
+        "type": "Sprite",
+        "name": "com_line1",
+        "sha256": "2b1ddd7587b019e07abbdd1aac940ef8f544d9aa5717c159bac4fc8376072c83"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1631484471038766634",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "6af5b1eb9bbedefc5f8a071bad3dadf2d9ca3a854b65d276c2725ac27796b81c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1567501204703598564",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "7874204fc10071b72adbd55ea9877ff8a70810f1d2b39f29197ac91ebc13811e"
+      },
+      {
+        "bundle": "assets_uiraw_t5setting.ab",
+        "bundle_sha256": "653d71e8faad5201fcdd3db0628e66effd9d533b07808f6ff72e56653dce9fce",
+        "path_id": "5129113884716137342",
+        "type": "Sprite",
+        "name": "com_tc_gou",
+        "sha256": "fbcfb5d3fae152e1b1c73ec7027c4461f73aeb1cef8590fccd7cdd5e81c4088f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1543393130993218134",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "7a3842a741d3409638328f25fdd2a74840b023299956c325adcd33ce5f4146f6"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-1214609759037097999",
+        "type": "GameObject",
+        "name": "m_imgPrefixBg",
+        "sha256": "a6aefe39007dd671e8fde4dbd79e8aa2c43c86ba133f0fab8934774df4a1b02c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-977887536955989412",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d09622418cc756c05436f5d07281cb04ebdd91fefaf777b45deb504588e1edfe"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-750210181553176370",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b6c93ba5c22ffec7565d1afd30b6bc9594d006651cefbbb4314e2ff0e4bc9acb"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-726051916444016009",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "03b1636f0af86191b570d376313d6af26b3f1fcae30423e096b275be328f6acc"
+      },
+      {
+        "bundle": "assets_uiraw_icon_baoshi.ab",
+        "bundle_sha256": "174314065052631e58a649c5af48fad48eafa254e3ff98699b9905c6d9daf0fe",
+        "path_id": "-8658183856631291321",
+        "type": "Sprite",
+        "name": "icon_baoshi_1",
+        "sha256": "0ff423a40123003b401e25dac0fdc9771f477452e8faff1443cb67ea422abe21"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-714967292835589744",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b72fc369ccdb8c17f7a3c67c9554136ca11b38a3e705f4a22c8dcb6e9d920ae3"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-695364033516721365",
+        "type": "GameObject",
+        "name": "m_btnSelectAward",
+        "sha256": "70893f6fe55db337f2f9314662f6ee820e755a75bb354ff71654516a9061a694"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-631067173879985008",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0ffe70d38554277e5ebe4f4529e5f2714e982815c66eae694d06f3e2e0829e97"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-568293808794683894",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "a59bf1eb32552b66bd46bc639ebfe1c0cfab0bfc241d84cbaf5aec00aec0da4e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-324597493346227638",
+        "type": "GameObject",
+        "name": "m_textLevel",
+        "sha256": "1a53074206c83f030b875234459188ccc357a772b5839ef461fdc2cd12b6c3c7"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-177545871386730412",
+        "type": "GameObject",
+        "name": "m_textNum",
+        "sha256": "f7eebeb68c242f8ed669ddd746220cc265624961e2d2c12aceba39b23a3d2a6d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-89131369233273181",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "8fbd84a03b24d225f04387b60eafc449b4615d703ee1ca6a7d24beae5229d574"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-67362175371285026",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "aea6eff95ef7cf18fda6c82a7826b55ff166cea0514eb5c59319ed15b1aa11ab"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-44997729434846244",
+        "type": "GameObject",
+        "name": "ImageTitle",
+        "sha256": "609ca0d1623058b0475f8159dc082e8e43e9195173b437fbaaadcfa54930b5a6"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-41338906224357966",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "e977605b543880707cc27be9d26b841b0ef718cb10b38e4b8fe2629e117f2942"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "-4667365548585230",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "016d397b5d72dea98d1f3676cf58ce7f5bdf93ce4d9541900ef996ec0d127511"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-6881226992909101124",
+        "type": "Sprite",
+        "name": "com_lock_bg",
+        "sha256": "b970857189f1d0bb5d710ff844267e4be5d204a40f3a24d76a4f6c6b10924536"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "20887371717344113",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "210530bcbdbf451a1f9bf6ed92c9962198d8d3864684a28483939c13cc99722c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "46965329784382448",
+        "type": "GameObject",
+        "name": "m_imgTypeQuality",
+        "sha256": "644c2667292eb1ecd85fa7a727138312869ffef9252c02f9b8a674d9e2eaa178"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "148020905859870009",
+        "type": "GameObject",
+        "name": "m_imgLevelUp",
+        "sha256": "47fd7395ffc117fe7e31253fa9cc6e03291a9123c5dc71bd6ae78ab7f3e73d94"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "476925144042156809",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "70cc11d9cedce15d9b27d32d4ffaa01db7151f2d0ce354489fe6ef2c5cd73803"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "533662569718594694",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b81a38965786ecf5279dcaabfd37833af92fbf7850f5382374bc1ab164e3650b"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-1573143879874187933",
+        "type": "Sprite",
+        "name": "com_icon_s_09",
+        "sha256": "9305806e0c05b73e5328078f37a72fd00f752757d348b2af82541dcfc099dd99"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "545752748362664740",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "7a4460b06a0a0602216bd85b05216f949551a38363f99e67eb13376c70703ebb"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "674005766374952543",
+        "type": "GameObject",
+        "name": "m_goItemType",
+        "sha256": "793e80ac4e2a6d4d913688362c6580c99de7c9d58bf69e304cd8a32e75fb6457"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "694439721030362825",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "2075979571d2b0d1dbb33f8f7c649e914c67e8aaaa9c02cf2e0c7089dd7b8af4"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "810519886246375039",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "5472460ab0c866aaa78df61213cb5c22fd314126b970bcd8a81a570f4a2c00af"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "912837646093381859",
+        "type": "GameObject",
+        "name": "m_tfEffBg",
+        "sha256": "c903a2ce4f4e03641e6698921edfb29d698afd2efc76e3c5724303937d24eb86"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "941007071139962448",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e7c507a344e6b50747376d13e9344068ed9eff6d0148e62f92c2a13e54dd08cc"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1051170948684557075",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e9296f25ee326cd8807f71aa4246e214e9220b9900bebd0768adfee4df41767f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1093363192758470559",
+        "type": "GameObject",
+        "name": "ActivityPanel",
+        "sha256": "8e010a19aa41d2a809ba07fc67153f4dd0507a436fa0d09f5769a18212038622"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1095183834512480175",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "d85fd06df44887536ee9316f64bab091c3f9062db85f92dd458efffe46a6a301"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1413484552276797821",
+        "type": "GameObject",
+        "name": "line",
+        "sha256": "4d0016169e7a1170d1bc77081ceb8c47c02231fa3cb3836632384e9f787b8318"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1800255076586075023",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "3c2fa3fc2841a594079fb6f35685eeca8801f673d42a2042dc0a1149c050cebb"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1849924144088508874",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "7f42f88ce8481d9ac28a76e41805c1652409605aee547f184debd71e33475464"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1873659170121658892",
+        "type": "GameObject",
+        "name": "bg",
+        "sha256": "b4ff4d123f25cf29ac36e2d2bed4590876cfa2f48607f415a84412b1e64395da"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1883868082689787077",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d62cf49f617e06def9b6aca3d9a824326cc1d2c57c847e29905af19f8a931801"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1923853294646287435",
+        "type": "GameObject",
+        "name": "MaskButton",
+        "sha256": "28d0188a2e1e5a0f573139e54fc8bbeccf50f614283f9802c2db3021c7c273be"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "1977348822981230626",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "0f099d315afa7ba2201e6be5b341c5c3059ede8c33b2c07d05de53adb220f0b7"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2134615141441005560",
+        "type": "GameObject",
+        "name": "m_btnClose",
+        "sha256": "35b8b1b8fc6ad7ef24f4a9e9c81175d054a1c97ce01157797ece623833736843"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2313951358826625130",
+        "type": "GameObject",
+        "name": "m_imgLevelBg",
+        "sha256": "a8c50905fc2a0a24c3b275da309c7eeca2f96e362e28880cb6484bb817093ce2"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2399552771991897751",
+        "type": "GameObject",
+        "name": "text",
+        "sha256": "37a19c9ce0f63ac310ee704a0cdfc0717dd90033a290d60f4afdcf51496e4ae0"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2414616784123124346",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "50b44854fba0a59532c675c603d0b1018dad24309186129355c0d7afad6d6eba"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-5402777804449232840",
+        "type": "Sprite",
+        "name": "com_icon_number_bg",
+        "sha256": "6df459f9a17e332c73758a28ef84914e203b80c4868d523639dbcb8344eba207"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2432693992788844178",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "75c2308ac6ed71fca904ad8d38867d12afd4b949585350cf5b55e8084440c07d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2688896758426322448",
+        "type": "GameObject",
+        "name": "m_imgQuality",
+        "sha256": "a27d4479bb589797677226fff6634a20d1182a5bd048dc9eb6494b25301f0d0e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2730057606402088038",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "11eb2423deea0d6d70e36f87e99ea6f50272b6052d2959492ccd2b273d7bd009"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-133199916889796710",
+        "type": "Sprite",
+        "name": "com_jiantou02",
+        "sha256": "89aa67e9bb071a3ed328c11cb3e63bfe05b94214be926e940c67562a6a5cd451"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2796267054277315967",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "55d7c0640ff4b5ee03e2dad29b7aadfdd5fa695db6a26921f468cef817e576a7"
+      },
+      {
+        "bundle": "assets_uiraw_activity_yongpan.ab",
+        "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+        "path_id": "-3637661716943657326",
+        "type": "Sprite",
+        "name": "zmzg_mzzx_jinji",
+        "sha256": "03def99a3061809c3b552c0e3f436847426269bae8143502f833fc3c3d16cefe"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "2809507596228236331",
+        "type": "GameObject",
+        "name": "Image",
+        "sha256": "070b860005c68b0b1e161f20bd8b64fd63c3dc845208f7fc9363356fdc09899b"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3005144530507462541",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e9c072ee4a6eba9ae7c031fe81e0edc1600f8e56fb82477a9ea638127019e19c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3011653597534745924",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4a6f8be7944d714160a236d1d406fa7c07c580208edd3656cd3b2ddb398c24cf"
+      },
+      {
+        "bundle": "assets_uiraw_activity_yongpan.ab",
+        "bundle_sha256": "46b39bbc8ef778c565419cd43c93f3ffe40a3e409883102eb2b78b91b10f8bea",
+        "path_id": "2709566732797163083",
+        "type": "Sprite",
+        "name": "zmzg_mzzx_jinji01",
+        "sha256": "c2c192bb5ac60f2729d004866d755c30b33fc1cf8e269814f03a692a9e3f8b48"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3152635480310667800",
+        "type": "GameObject",
+        "name": "ScrollView",
+        "sha256": "904d267fbca6f2387a602e5bb484675ac752c0b33bead367db4754af19ea06e8"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3180890528984572055",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "5d4f222c5a51525b9416cca84856fe3632b3e26391b108c937c876aef3893590"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3368198976868670332",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "e93d90453f383ffd5bc22cd93c580052bc4566371e5ed34b79c5e05c4fe5b4e8"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-6200755754393355754",
+        "type": "Sprite",
+        "name": "com_icon_select",
+        "sha256": "78b3f7c0b8e12858f7fff9cc43ce8a64aa07c0d60ebc787aa4f2f94c45d73eed"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3429316463969781179",
+        "type": "GameObject",
+        "name": "Image",
+        "sha256": "2a69c3c3a23274cf4cc87645f77f6afd3bbb8fc61400639a3e6f1cac1bf77109"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3466851867776645284",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "8c7a2a4d7e452ea617e37391b2403367d9c08148c87c08d6bfd126c0ef1d8782"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3467618780222675246",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "acd64a186698e579d1db87f93b7054ecb8ee0727e0074238898bb89970896a3d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3561991192040677202",
+        "type": "GameObject",
+        "name": "animeNode",
+        "sha256": "c8c0cd9c3c43c6dfcb2d03d94bf109a8b06193afa7343f52f1ee59d9cfa56549"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "3703162210943029967",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "58130892644a33fea089421b410419ce3fd5ad4b5f56191eec5806ed415d4e61"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "8743042469702193464",
+        "type": "Sprite",
+        "name": "com_lock",
+        "sha256": "2aa9eb561ee2829df40677b461dc566b6bc72f9d83237008932ac9d234d65d9f"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4237599051853741845",
+        "type": "GameObject",
+        "name": "ImageBg",
+        "sha256": "5b32dc903179c3708c3e62eef7bf50a005fcdcfc8bfcdcbe4cd6900b0c108b81"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4287441775483115260",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "040c5f8759126d2821b24cdc981ba430b35ec214f1071401ed51e8e612585d74"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4345337457778179268",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "353b2cd82cbdc6574182d3ad1f9e741345ac9741db3430b52ab83253902bcb36"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4698575290355673076",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d33f57cd9e059e139ed7b8fae8d73a704d8acd192c8095383d173499c213a0ff"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4732213245139054034",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "b071764a9bb289578c1a9173c6c8df48330394893589458cbe3e2d0564c015af"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4885577755847428120",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "514f05f57ad08ea79febd45f73a9a731f1a6356cc25a0af85714c4f4cd7e86cd"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "4945848721385219874",
+        "type": "GameObject",
+        "name": "m_goLock",
+        "sha256": "944c9a6c717b9f9c33235ede9370b839a9716d5ceecf271d14341f997e052d57"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5146312214120438122",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "69548d736c4211681bf937eb3a17e0469eed370c4bc159651c006788c6ce203a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5216387842789740538",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "2f30c70ed72339257f1153d52a49f23dcaa010673925ce282f7e0dbafed3c13d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5330418287518960083",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "810bf5f1d096529fa79d7770a183b0f78c00b42356fe9ac52493367ead9b5b4b"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5353562626159493316",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "29cbaba39a37ac007aa50fb4733842489c7371fce9193aa154be14056c6e763d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5414155389318801971",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b955bcf211684dc4aa6f8809a6d35bdde4411d86e8ab556df558aab40c91cf66"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5426516083574193886",
+        "type": "GameObject",
+        "name": "m_itemCommonSelectAward",
+        "sha256": "b77f01f68289c9749e72415488531f11ab1f150ac986a9a1edec85ae9fed0bc5"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5599752438763152184",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b472818950f9cd67ba13d0dc56b4c9fd72b2bd09185844439b76c15ad06bd093"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5605499354650912577",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "b518d1c0edf6967ff98f474aca13bce387670566f93ac5f5aa1f8a8180f9f879"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5720706472093561227",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "baabcb782663b50c7cf20b69520d75a51630d4f446f6cb377cbcbc609d399069"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "5755679805498307938",
+        "type": "GameObject",
+        "name": "m_textItemName",
+        "sha256": "d418bf1f9b97f2785ce409341d48b5283eb45846345f7ac70a1a85b384f14eec"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6056719187264002165",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "635589623b9e5c7403b9a3ba1a30d052a31bd799e37c1ff34844e62ddc7ef7f4"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6288456694520228777",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "d6731fe3794e01a629885f5f1b13339615ef100f76d680978f092ac3508a6713"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6388247859517691817",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "10e04fb9da5fcb985b6ca48a71588a952df14976f716e68548aeafbc54b9df8c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6452807502899795253",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "a900ff4ca082d420cf7678862e724f31c2c99d76bef1bcca87bb915378bc8997"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6486798777423218476",
+        "type": "GameObject",
+        "name": "m_textLevelUp",
+        "sha256": "c3f54b0e2c55bb75004def6a3e30ead8a30ff9f213deb3c6a15bcf0fbf64e845"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6651778372508260885",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "56cf5d66dc05bc0f48d5072f6fc742b8144f71ddbaade61dbe8ee1e8a0ca3156"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6673166849105135649",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "9777d5c11b0945b6f68cb05f99c9a63bfbe77d4fcb5109440de4ddbf3d989545"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "6788035862975490036",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "f5096622b9d5c507973c47da3d7029bfbb5c468584b2998f19e391f765b1889a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7162573469492017948",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "fc7cb1885973ee052bdf09b30f525256467d8828c2e583325068bd8d22e9033c"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7283587498704988973",
+        "type": "GameObject",
+        "name": "m_goRedNote",
+        "sha256": "e8d0f435b8cd00d54624e4ff393f10dcb5ea0b7a9747d146cb1935443366d604"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7347066228364822377",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "8d7ca330f919e99f58ee14110fe8366f9b07431a845af4280eb0ddf3b5fc35fc"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7510647251464460112",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "271823b33cc03787e49b59174985552c469a31120d72fe17b758045fee7bfca6"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7602499388211766512",
+        "type": "GameObject",
+        "name": "m_goNew",
+        "sha256": "028e681296d6cb86b319bdb5256f7d19f8eae77772caedd2dcf6fdb93924414d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7721006771849403588",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "6ea55d4ba56ac3b95a40790b8eeed432f0d723ee17b0b6934573887b9b922b83"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "-3036161200300615235",
+        "type": "Sprite",
+        "name": "com_icon_02",
+        "sha256": "a59c4d506d302761d9255e759bee8840927e36a933187995a0943a60f84424b4"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7764036690024780180",
+        "type": "GameObject",
+        "name": "m_imgIcon",
+        "sha256": "00c4c5b4fc37cee89b7977dd88d73bf481aa8aa292216613042d4d3629d51826"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "7858140733719768116",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b32cba4a88353216cb0ca192aa63336e577594d96b8a217703268816daf0274b"
+      },
+      {
+        "bundle": "assets_uiraw_commonnew.ab",
+        "bundle_sha256": "582bd573ea94be4893c694341e6cc8a97a73bf016781c32d4fb1b98cca7a2898",
+        "path_id": "5114010992914239353",
+        "type": "Sprite",
+        "name": "zmzg_com_hongdian",
+        "sha256": "82e89fe7ca3a8edc6d072b9cd72a568f394860597f782734a3d2543aad87fc02"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8021043410108705524",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "b6a8be4ea903fd564f24a665cac41f34503a4bb34951b0a443752b245fc90029"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8291888896026029917",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "f374fea8c6cdef1a8461a963723118ef408af824d196314d0d075b0baa465576"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8538799250259350350",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "6f1831a32929e1c5172549ef7d5ad00610a1afdda61f78b5399c50b4b866530c"
+      },
+      {
+        "bundle": "assets_uiraw_chapter.ab",
+        "bundle_sha256": "4080ca0fe97dce5f59945bffe51480408c792a3aff424007d6d68fcdff5ca7e2",
+        "path_id": "-3531399085582735935",
+        "type": "Sprite",
+        "name": "com_new",
+        "sha256": "b5d59d8597db6e1261c522fc378584f502ad226b388defdec81fd50de5440047"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8607504499430320533",
+        "type": "MonoBehaviour",
+        "name": "",
+        "sha256": "4fc02c6d5bacf9d008e1a2e0e6dff34d9e7a44b54a3b1633a636ad8983871b53"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8646336100704084950",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "932bdb4a4ef5737c6d95209de54f60f343ea9d98a97ac656e61dfc75e6e9089a"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8720311852149817420",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "34e085dccfe34b1ac0a9f473d33847c9b7f159737b03121c4766209820041ff0"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8783989041528365585",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "241419001344c9427049342a9319ec80ae011972cfd9de2e64cf62c2122f250e"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8835970401914477052",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "23c5c1c6a35cec23ea39fef147e66513d834659894a2ee5a58faffbf0b04e13d"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "8863545208747875081",
+        "type": "GameObject",
+        "name": "m_btnItemSelect",
+        "sha256": "cdf29da7301eb11bfb2254e5033cdf724816a2b820dc8fefeb67d1c6f813d295"
+      },
+      {
+        "bundle": "assets_resources_ui_commonselectawardui.prefab.ab",
+        "bundle_sha256": "759a120916f8091ab15974ebd482726c29676e8f53aa23beb8909cb968b4d6ed",
+        "path_id": "9049005668173698150",
+        "type": "RectTransform",
+        "name": null,
+        "sha256": "6e6e200797f7b91b17773ccad47cee14bf7751332937b734a4993df226be381c"
+      }
+    ],
+    "outputs": [
+      {
+        "file": "images/com_btn_close.webp",
+        "name": "com_btn_close",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-3734965351099267059",
+        "dimensions": [
+          84,
+          86
+        ],
+        "sha256": "833cd07231884e4ccc4357a56c088432b5d7feb6cec914712ae4a8c2d3e64262",
+        "bytes": 4450
+      },
+      {
+        "file": "images/com_tc_small.webp",
+        "name": "com_tc_small",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "4180324618222379630",
+        "dimensions": [
+          582,
+          156
+        ],
+        "sha256": "c997148182d52b5ca61a0668854568c00481309639a5330ad6e46b6f1fd908f3",
+        "bytes": 21320
+      },
+      {
+        "file": "images/com_jianhao1.webp",
+        "name": "com_jianhao1",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "3267973208391049751",
+        "dimensions": [
+          49,
+          53
+        ],
+        "sha256": "c14103721d7f0b44a5683038f9a683a396dde4b36154c8eee686b8f934dd98e7",
+        "bytes": 1546
+      },
+      {
+        "file": "images/zmzg_com_btn_b1.webp",
+        "name": "zmzg_com_btn_b1",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "853442902162350277",
+        "dimensions": [
+          184,
+          68
+        ],
+        "sha256": "58064c7704454fb733a56d1573ea2d0ce105f39e0a195ae89e0ffa64b6067210",
+        "bytes": 6032
+      },
+      {
+        "file": "images/com_shuliang_bg.webp",
+        "name": "com_shuliang_bg",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-2855406306775412611",
+        "dimensions": [
+          50,
+          30
+        ],
+        "sha256": "86bd62ea2c5fb7b91f88eb6f92f9fb0c7cf0cd6e4d81e13e17926afc7ea4c83a",
+        "bytes": 226
+      },
+      {
+        "file": "images/com_chen.webp",
+        "name": "com_chen",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "6497021262915768800",
+        "dimensions": [
+          19,
+          17
+        ],
+        "sha256": "d29961bee49a612cd96e65e6de424f8cb7dcd735992be04a90100ac3963a9454",
+        "bytes": 218
+      },
+      {
+        "file": "images/com_jiahao1.webp",
+        "name": "com_jiahao1",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "890625961955254949",
+        "dimensions": [
+          49,
+          53
+        ],
+        "sha256": "52cee9fb7225d73abb64a8909d1a44dbc09c69d077c41fed452f1bfbda6f0868",
+        "bytes": 1618
+      },
+      {
+        "file": "images/zmzg_yj_ico_mask.webp",
+        "name": "zmzg_yj_ico_mask",
+        "bundle": "assets_uiraw_t5email.ab",
+        "path_id": "-2207941671744389445",
+        "dimensions": [
+          124,
+          124
+        ],
+        "sha256": "8577ea6a32c049e0a5e6aa1dfe30f2362975dd04bd1185bc0a0ad830841debd0",
+        "bytes": 768
+      },
+      {
+        "file": "images/com_zb_icon_04.webp",
+        "name": "com_zb_icon_04",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "8306709822551079681",
+        "dimensions": [
+          29,
+          33
+        ],
+        "sha256": "aa44b8f11ad3811f76c1d7919982ca1840ade1fde9d7971d2744a2d7530487b2",
+        "bytes": 396
+      },
+      {
+        "file": "images/com_zb_jieji01.webp",
+        "name": "com_zb_jieji01",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-8858043535711635253",
+        "dimensions": [
+          39,
+          22
+        ],
+        "sha256": "085842f942a1cf0b07c6e0e9438ce84bf0f056aee61ba52a3a6bf61221312e44",
+        "bytes": 236
+      },
+      {
+        "file": "images/com_tc_gou_bg.webp",
+        "name": "com_tc_gou_bg",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-432770463304665361",
+        "dimensions": [
+          28,
+          28
+        ],
+        "sha256": "f28ffc6184fa7929adb58e0e0d926f4f1297cc72bf6f4e87f03c57298bcacd3c",
+        "bytes": 286
+      },
+      {
+        "file": "images/zmzg_zb_tips_bg.webp",
+        "name": "zmzg_zb_tips_bg",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-2314609503732339467",
+        "dimensions": [
+          480,
+          90
+        ],
+        "sha256": "22ef9124ee2c211fb7902219e0b30dfa6df09ac9b6eb6f69b7337d2a2a9ea23c",
+        "bytes": 2248
+      },
+      {
+        "file": "images/com_daoju_xuanzhong.webp",
+        "name": "com_daoju_xuanzhong",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "4573305578120997303",
+        "dimensions": [
+          108,
+          108
+        ],
+        "sha256": "b367ddae385d479ed667bfb8fb82558f5fe5bbc47292a220e3a4e43f8867115c",
+        "bytes": 1476
+      },
+      {
+        "file": "images/com_zb_jieji02.webp",
+        "name": "com_zb_jieji02",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "2844762127005624254",
+        "dimensions": [
+          38,
+          19
+        ],
+        "sha256": "dd054ccca7291d3e4454dd5c2b3c1eb5d5e124587b482e7910e4747a246b0b5e",
+        "bytes": 182
+      },
+      {
+        "file": "images/zmzg_grxx_dk3.webp",
+        "name": "zmzg_grxx_dk3",
+        "bundle": "assets_uiraw_t5setting.ab",
+        "path_id": "-7706178605306080753",
+        "dimensions": [
+          42,
+          42
+        ],
+        "sha256": "8872e83d42e851e035392bd667f76cdc8cd65af269c5053a1bda2bde9ca27994",
+        "bytes": 314
+      },
+      {
+        "file": "images/com_lingqu.webp",
+        "name": "com_lingqu",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-2003079272481951252",
+        "dimensions": [
+          104,
+          90
+        ],
+        "sha256": "42039111868c9c29fabeb3025bc85f075345506d1f2da1d0745aab6fbe881ed5",
+        "bytes": 4266
+      },
+      {
+        "file": "images/com_line1.webp",
+        "name": "com_line1",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-3876438153747631045",
+        "dimensions": [
+          562,
+          2
+        ],
+        "sha256": "f100031cdadd91f108c630742891fbec3915e2f0d63ca6ea1ee94fba55d52aed",
+        "bytes": 76
+      },
+      {
+        "file": "images/com_tc_gou.webp",
+        "name": "com_tc_gou",
+        "bundle": "assets_uiraw_t5setting.ab",
+        "path_id": "5129113884716137342",
+        "dimensions": [
+          53,
+          46
+        ],
+        "sha256": "9985547490acc08002d9b890c787969e1a8ad40df2a2b21a23feeaa1d3e2a6f1",
+        "bytes": 2190
+      },
+      {
+        "file": "images/icon_baoshi_1.webp",
+        "name": "icon_baoshi_1",
+        "bundle": "assets_uiraw_icon_baoshi.ab",
+        "path_id": "-8658183856631291321",
+        "dimensions": [
+          80,
+          71
+        ],
+        "sha256": "63fbc0684bfc09a66815c624a06078a7e9226ff123b5619c88385fb6c078f7cb",
+        "bytes": 3698
+      },
+      {
+        "file": "images/com_lock_bg.webp",
+        "name": "com_lock_bg",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-6881226992909101124",
+        "dimensions": [
+          31,
+          32
+        ],
+        "sha256": "32567988152b390e46c30a505cc71502174d90355dc06282d61a0293ba9c97ed",
+        "bytes": 90
+      },
+      {
+        "file": "images/com_icon_s_09.webp",
+        "name": "com_icon_s_09",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-1573143879874187933",
+        "dimensions": [
+          28,
+          28
+        ],
+        "sha256": "60b349ded289c576fc60feba7c89eba7ce18b594ebb6483869b1bafd0cbd111d",
+        "bytes": 84
+      },
+      {
+        "file": "images/com_icon_number_bg.webp",
+        "name": "com_icon_number_bg",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-5402777804449232840",
+        "dimensions": [
+          19,
+          19
+        ],
+        "sha256": "fb3e041aedc2b86d459192702ae9236dc35780be064e845506f091b461e9c539",
+        "bytes": 122
+      },
+      {
+        "file": "images/com_jiantou02.webp",
+        "name": "com_jiantou02",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-133199916889796710",
+        "dimensions": [
+          36,
+          42
+        ],
+        "sha256": "e4b7ee15d3cf946d1f20b30e7ad619185a7f93912041ab2987c6637abbcd54d5",
+        "bytes": 972
+      },
+      {
+        "file": "images/zmzg_mzzx_jinji.webp",
+        "name": "zmzg_mzzx_jinji",
+        "bundle": "assets_uiraw_activity_yongpan.ab",
+        "path_id": "-3637661716943657326",
+        "dimensions": [
+          30,
+          30
+        ],
+        "sha256": "845cdc0369896c44acc9a2ec36aad2d152b55b25d3dc33192e77d147a1025ef6",
+        "bytes": 720
+      },
+      {
+        "file": "images/zmzg_mzzx_jinji01.webp",
+        "name": "zmzg_mzzx_jinji01",
+        "bundle": "assets_uiraw_activity_yongpan.ab",
+        "path_id": "2709566732797163083",
+        "dimensions": [
+          64,
+          24
+        ],
+        "sha256": "99c09820dd52a874e865c4df3424ba6f403cb2da881bad99b68aa9fb8d19e30b",
+        "bytes": 524
+      },
+      {
+        "file": "images/com_icon_select.webp",
+        "name": "com_icon_select",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-6200755754393355754",
+        "dimensions": [
+          50,
+          50
+        ],
+        "sha256": "40d63f611497bb08887691b6487603d0c45578130e32077bc7e691de9c5068ff",
+        "bytes": 206
+      },
+      {
+        "file": "images/com_lock.webp",
+        "name": "com_lock",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "8743042469702193464",
+        "dimensions": [
+          26,
+          28
+        ],
+        "sha256": "bcc5bad1f154b07e37aa25926b075c0599270a47dcdec126e0fdaec223ad8724",
+        "bytes": 506
+      },
+      {
+        "file": "images/com_icon_02.webp",
+        "name": "com_icon_02",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "-3036161200300615235",
+        "dimensions": [
+          100,
+          100
+        ],
+        "sha256": "b9b547726b9a676759eec11ddbcdf47599e12db7427acaf3f6e9fc78956deeaf",
+        "bytes": 3508
+      },
+      {
+        "file": "images/zmzg_com_hongdian.webp",
+        "name": "zmzg_com_hongdian",
+        "bundle": "assets_uiraw_commonnew.ab",
+        "path_id": "5114010992914239353",
+        "dimensions": [
+          30,
+          30
+        ],
+        "sha256": "19c7cb3e7260ffc976d69394d6185de14e6351be26055045708d15c12f063971",
+        "bytes": 1000
+      },
+      {
+        "file": "images/com_new.webp",
+        "name": "com_new",
+        "bundle": "assets_uiraw_chapter.ab",
+        "path_id": "-3531399085582735935",
+        "dimensions": [
+          65,
+          54
+        ],
+        "sha256": "6c3a4e374f9e8a90fd34f2df8906649be6a8c8b77872ed416af60359eb49fff8",
+        "bytes": 2348
+      }
+    ]
+  },
+  "outputs": [
+    {
+      "file": "native-box-data.mjs",
+      "sha256": "bbaf68f0033d15371f3ba7a9f5df1c8ebbf428ab4a57dbfbdb871bfe5041a552",
+      "bytes": 26058
+    },
+    {
+      "file": "assets/native-choice-box/images/com_btn_close.webp",
+      "sha256": "833cd07231884e4ccc4357a56c088432b5d7feb6cec914712ae4a8c2d3e64262",
+      "bytes": 4450
+    },
+    {
+      "file": "assets/native-choice-box/images/com_chen.webp",
+      "sha256": "d29961bee49a612cd96e65e6de424f8cb7dcd735992be04a90100ac3963a9454",
+      "bytes": 218
+    },
+    {
+      "file": "assets/native-choice-box/images/com_daoju_xuanzhong.webp",
+      "sha256": "b367ddae385d479ed667bfb8fb82558f5fe5bbc47292a220e3a4e43f8867115c",
+      "bytes": 1476
+    },
+    {
+      "file": "assets/native-choice-box/images/com_icon_02.webp",
+      "sha256": "b9b547726b9a676759eec11ddbcdf47599e12db7427acaf3f6e9fc78956deeaf",
+      "bytes": 3508
+    },
+    {
+      "file": "assets/native-choice-box/images/com_icon_number_bg.webp",
+      "sha256": "fb3e041aedc2b86d459192702ae9236dc35780be064e845506f091b461e9c539",
+      "bytes": 122
+    },
+    {
+      "file": "assets/native-choice-box/images/com_icon_s_09.webp",
+      "sha256": "60b349ded289c576fc60feba7c89eba7ce18b594ebb6483869b1bafd0cbd111d",
+      "bytes": 84
+    },
+    {
+      "file": "assets/native-choice-box/images/com_icon_select.webp",
+      "sha256": "40d63f611497bb08887691b6487603d0c45578130e32077bc7e691de9c5068ff",
+      "bytes": 206
+    },
+    {
+      "file": "assets/native-choice-box/images/com_jiahao1.webp",
+      "sha256": "52cee9fb7225d73abb64a8909d1a44dbc09c69d077c41fed452f1bfbda6f0868",
+      "bytes": 1618
+    },
+    {
+      "file": "assets/native-choice-box/images/com_jianhao1.webp",
+      "sha256": "c14103721d7f0b44a5683038f9a683a396dde4b36154c8eee686b8f934dd98e7",
+      "bytes": 1546
+    },
+    {
+      "file": "assets/native-choice-box/images/com_jiantou02.webp",
+      "sha256": "e4b7ee15d3cf946d1f20b30e7ad619185a7f93912041ab2987c6637abbcd54d5",
+      "bytes": 972
+    },
+    {
+      "file": "assets/native-choice-box/images/com_line1.webp",
+      "sha256": "f100031cdadd91f108c630742891fbec3915e2f0d63ca6ea1ee94fba55d52aed",
+      "bytes": 76
+    },
+    {
+      "file": "assets/native-choice-box/images/com_lingqu.webp",
+      "sha256": "42039111868c9c29fabeb3025bc85f075345506d1f2da1d0745aab6fbe881ed5",
+      "bytes": 4266
+    },
+    {
+      "file": "assets/native-choice-box/images/com_lock.webp",
+      "sha256": "bcc5bad1f154b07e37aa25926b075c0599270a47dcdec126e0fdaec223ad8724",
+      "bytes": 506
+    },
+    {
+      "file": "assets/native-choice-box/images/com_lock_bg.webp",
+      "sha256": "32567988152b390e46c30a505cc71502174d90355dc06282d61a0293ba9c97ed",
+      "bytes": 90
+    },
+    {
+      "file": "assets/native-choice-box/images/com_new.webp",
+      "sha256": "6c3a4e374f9e8a90fd34f2df8906649be6a8c8b77872ed416af60359eb49fff8",
+      "bytes": 2348
+    },
+    {
+      "file": "assets/native-choice-box/images/com_shuliang_bg.webp",
+      "sha256": "86bd62ea2c5fb7b91f88eb6f92f9fb0c7cf0cd6e4d81e13e17926afc7ea4c83a",
+      "bytes": 226
+    },
+    {
+      "file": "assets/native-choice-box/images/com_tc_gou.webp",
+      "sha256": "9985547490acc08002d9b890c787969e1a8ad40df2a2b21a23feeaa1d3e2a6f1",
+      "bytes": 2190
+    },
+    {
+      "file": "assets/native-choice-box/images/com_tc_gou_bg.webp",
+      "sha256": "f28ffc6184fa7929adb58e0e0d926f4f1297cc72bf6f4e87f03c57298bcacd3c",
+      "bytes": 286
+    },
+    {
+      "file": "assets/native-choice-box/images/com_tc_small.webp",
+      "sha256": "c997148182d52b5ca61a0668854568c00481309639a5330ad6e46b6f1fd908f3",
+      "bytes": 21320
+    },
+    {
+      "file": "assets/native-choice-box/images/com_zb_icon_04.webp",
+      "sha256": "aa44b8f11ad3811f76c1d7919982ca1840ade1fde9d7971d2744a2d7530487b2",
+      "bytes": 396
+    },
+    {
+      "file": "assets/native-choice-box/images/com_zb_jieji01.webp",
+      "sha256": "085842f942a1cf0b07c6e0e9438ce84bf0f056aee61ba52a3a6bf61221312e44",
+      "bytes": 236
+    },
+    {
+      "file": "assets/native-choice-box/images/com_zb_jieji02.webp",
+      "sha256": "dd054ccca7291d3e4454dd5c2b3c1eb5d5e124587b482e7910e4747a246b0b5e",
+      "bytes": 182
+    },
+    {
+      "file": "assets/native-choice-box/images/icon_baoshi_1.webp",
+      "sha256": "63fbc0684bfc09a66815c624a06078a7e9226ff123b5619c88385fb6c078f7cb",
+      "bytes": 3698
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_com_btn_b1.webp",
+      "sha256": "58064c7704454fb733a56d1573ea2d0ce105f39e0a195ae89e0ffa64b6067210",
+      "bytes": 6032
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_com_hongdian.webp",
+      "sha256": "19c7cb3e7260ffc976d69394d6185de14e6351be26055045708d15c12f063971",
+      "bytes": 1000
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_grxx_dk3.webp",
+      "sha256": "8872e83d42e851e035392bd667f76cdc8cd65af269c5053a1bda2bde9ca27994",
+      "bytes": 314
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_mzzx_jinji.webp",
+      "sha256": "845cdc0369896c44acc9a2ec36aad2d152b55b25d3dc33192e77d147a1025ef6",
+      "bytes": 720
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_mzzx_jinji01.webp",
+      "sha256": "99c09820dd52a874e865c4df3424ba6f403cb2da881bad99b68aa9fb8d19e30b",
+      "bytes": 524
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_yj_ico_mask.webp",
+      "sha256": "8577ea6a32c049e0a5e6aa1dfe30f2362975dd04bd1185bc0a0ad830841debd0",
+      "bytes": 768
+    },
+    {
+      "file": "assets/native-choice-box/images/zmzg_zb_tips_bg.webp",
+      "sha256": "22ef9124ee2c211fb7902219e0b30dfa6df09ac9b6eb6f69b7337d2a2a9ea23c",
+      "bytes": 2248
+    },
+    {
+      "file": "assets/native-choice-box/items/gyb_cskjtb_txsp.webp",
+      "sha256": "27cb979f20cbd266c8c842e34fdbb56835fb6090a420d67bb81959ce6ed8aaa7",
+      "bytes": 6082
+    },
+    {
+      "file": "assets/native-choice-box/items/gyb_gczhs_txsp.webp",
+      "sha256": "e724bc63c412e8fe7fe6a5a069155962ec0e0d370a16c9b94ca6d5749e26d489",
+      "bytes": 5730
+    },
+    {
+      "file": "assets/native-choice-box/items/gyb_skzy_txsp.webp",
+      "sha256": "918aa856b1433cb6be8fb360a95545969e96cd9c3c1e662244879c73109f1d5a",
+      "bytes": 5610
+    },
+    {
+      "file": "assets/native-choice-box/items/gyb_wszh_txsp.webp",
+      "sha256": "227434f0628815e626d30121ac226526ed293fbe0d8ace67ea0dba029a2fe0fc",
+      "bytes": 6002
+    },
+    {
+      "file": "assets/native-choice-box/items/gyb_yeds_txsp.webp",
+      "sha256": "77960ee3f40cdf6c41fb09be2a7dacee415d49f3d5a4a8d5d22412a8f66e311d",
+      "bytes": 5972
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_bhlhx.webp",
+      "sha256": "12205449a99518c4dc0fe437946e06175e55948368a019a69449cf8c728da23b",
+      "bytes": 5998
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_bhlqx.webp",
+      "sha256": "e46a42ce41fd6cd2833b0455e6454dbf21ee0f967f81fff0f13e4354e95397ea",
+      "bytes": 5424
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_bhlsz.webp",
+      "sha256": "a525918ac64894f1d283dd86267f8586c769f5853a564869d89cb5d6c1abaa60",
+      "bytes": 7222
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csbhhx.webp",
+      "sha256": "d6c7b3246c4579e92070f3749eacd74aac5d0d09441418fa3be6305e6eae06c6",
+      "bytes": 7346
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csbhqx.webp",
+      "sha256": "6bcadfb4b46d9a85a4587a5f7d0a2bde919288ff0316cb9e6b1629f3ffb1faf1",
+      "bytes": 7558
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csbhsz.webp",
+      "sha256": "52f5f4ceb0f57c98316975834efabe3d4520e3a259f5a8ed86992c147f5b242d",
+      "bytes": 7598
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csyhx.webp",
+      "sha256": "4a914cf15c527abc708ca6ec5ad320ae2a63e916687ac969b994a8d98a163e99",
+      "bytes": 5556
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csyqx.webp",
+      "sha256": "fef9210a7ed2cfa810f1e597d88af9d4af908d426b537b6e2b7bd55f4590b592",
+      "bytes": 5606
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_csysz.webp",
+      "sha256": "fa3ccbfb21f80fa89663e3094ea86be08ceaf36d71b298d5483bf38480925cf8",
+      "bytes": 6890
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_jjzlhx.webp",
+      "sha256": "99e8cff3faf59554fc6ddad84397fbe59396bc5566155f5e8674eca5f965a8cf",
+      "bytes": 6254
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_jjzlqx.webp",
+      "sha256": "7cb45c106446fa6b441b842851f9f8463c29700fcb07849ea1f23fc3fe146884",
+      "bytes": 5316
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_jjzlsz.webp",
+      "sha256": "da7c5934901b82ea3cf4d1b93c7b8573031fd97312da9d592e286852f07dfb02",
+      "bytes": 6404
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_klzdhx.webp",
+      "sha256": "728940c077d83192bd1f8473a761937ad8f8ee74ae6bf6739e9d9d7d95fe34d5",
+      "bytes": 6614
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_klzdqx.webp",
+      "sha256": "e2e227987ac727fb6d2e60352c9f3a51d282cf0ab1cc3786e6c2d87a6d4d3710",
+      "bytes": 5896
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_klzdsz.webp",
+      "sha256": "f492c81e9e6033ed5ae3a4b2125f15c937c9cb32094bc88b9eb309db7e772d4c",
+      "bytes": 7014
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_pifu2.webp",
+      "sha256": "9f14e87cca2c577321b8ac039f97cde77fea330c51f56ce37cae070a382bb768",
+      "bytes": 5782
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_xqyyhx.webp",
+      "sha256": "6ede17898d82287d78d83c0978917a9ee3dfe062a9913eed4040155704be3471",
+      "bytes": 6168
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_xqyyqx.webp",
+      "sha256": "d278727a73f709daea0958b2b403d1223d42183ef7f9193e52448ebd70155f46",
+      "bytes": 5430
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_sjbx_xqyysz.webp",
+      "sha256": "804e2e73fd5656fea21e2ca0b6a4990d799f2cb5f6ca83d857e2c48593da46ea",
+      "bytes": 7624
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_wuqi_qiang_54.webp",
+      "sha256": "781133bb1e9ed4ca853e3f97cf0989a87da26161076e185b74e8f8c9b2495817",
+      "bytes": 3334
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_zxbx_hexinpifu2.webp",
+      "sha256": "e7da431ec77151b140f166dd2df01a07021a55fa744dde7b8dc3840b79795f24",
+      "bytes": 6134
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_zxbx_pifu2.webp",
+      "sha256": "be1e097260a094e22b5f8c253f24a67947f61137349f1d1cb914cc95888fc322",
+      "bytes": 6048
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_zxbx_xqjjhx.webp",
+      "sha256": "edb22f4f80e4d6a1d11a718b091196b1ceaa162425551ea2537d578717f978e1",
+      "bytes": 7710
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_zxbx_xqjjqx.webp",
+      "sha256": "b4edd732d7d831db5ec86fa36da09318209d9303ce6f107867a982effebc78d1",
+      "bytes": 7950
+    },
+    {
+      "file": "assets/native-choice-box/items/icon_zxbx_xqjjsz.webp",
+      "sha256": "de205143eb67735203e2012b5fadb0d47e72dcc5f38b8bcecf58af1d3b444e1b",
+      "bytes": 8068
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_aisi.webp",
+      "sha256": "7a367cbe2718d5a65f183c513535c686e30a143440980b3b314c42040fa2656d",
+      "bytes": 3880
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_bing.webp",
+      "sha256": "118ba1f889504d73ba48b380300f661b76e3efe1f6e51031d6dce5c72bb65a09",
+      "bytes": 7868
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_dian.webp",
+      "sha256": "7d98e64cf76833bed40edffe5e0ecb72266bed053aa9cb44bb45496dd0502a71",
+      "bytes": 6920
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_huo.webp",
+      "sha256": "c5b13ff8ed11f5f38079a97a24f16a8c71465589652ee42aa3bb540f7dd2939f",
+      "bytes": 6790
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_long.webp",
+      "sha256": "6ec5d79d19330d688e0268d00c18bb9e6dea0feb32d9c9b0952b0a8f75f934fd",
+      "bytes": 8140
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_mofa.webp",
+      "sha256": "917cd140f09d8e264441177668a4447bd8c68c64db347999d53c437b5651ae9c",
+      "bytes": 7534
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_saiwen.webp",
+      "sha256": "a8c7d844977955ff2bc8912638d7bb750af5700b95b95f4f2302bb72a8cd58b1",
+      "bytes": 3580
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_star.webp",
+      "sha256": "d1dbef79763843316a302c0ad39800a414b2951d3a268da0eca3c07b9df45a37",
+      "bytes": 6352
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_hexing_tailuo.webp",
+      "sha256": "b1d216364ad4e1677becfda7827348495a8b0f173f2f7de48fb1668f7b1042b8",
+      "bytes": 3458
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_bingnan.webp",
+      "sha256": "8908dd182235b31f2413807793b262e07af0a62c392240c8fcde7b016083a30e",
+      "bytes": 9980
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_diannan.webp",
+      "sha256": "8376ccdca78c5c111d1727c845da47c58846ea68284678d9b07ccfba7b4efd2c",
+      "bytes": 8006
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_huonan.webp",
+      "sha256": "58a987876421eabafaf86f5aa17589a4be4a972d46fbfea2c2b6b17e07c1cb59",
+      "bytes": 9160
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_longnan.webp",
+      "sha256": "7fe3a6d3370ef327f8eca0104f2c06c468294c4c311656444286128cd8e5af18",
+      "bytes": 9150
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_mofanan.webp",
+      "sha256": "6e258ead9a4d53b9366c618ddc952970edc01cc70be2bfc81326307125abb5e2",
+      "bytes": 8896
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwu_starnan.webp",
+      "sha256": "f1c43f0ce5060c51b45a456232be9c420b4c37ff4ac61b902cda737afd7cfc04",
+      "bytes": 6566
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwunan_aisi.webp",
+      "sha256": "c01a549b620b22abff8fcf1c9e97df4a7202a5018d12ada176e672a1e2d594e1",
+      "bytes": 6440
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwunan_saiwen.webp",
+      "sha256": "6351a630ac38b28f6abbef67bcf8fff1f44f39da3d38da9cbf83bf2b7937dc63",
+      "bytes": 6190
+    },
+    {
+      "file": "assets/native-choice-box/items/pifu_renwunan_tailuo.webp",
+      "sha256": "c37891dae7d7aa69d2b80901127c43b121dac26ce73e44563799122eca8f52b9",
+      "bytes": 6236
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_baoxiang_tongyong_4.webp",
+      "sha256": "0952ac2d9fda518ec8a9d199a59f81962c0002e0a9e4ba9f67caef8eea756434",
+      "bytes": 6686
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_baoxiang_tongyong_5.webp",
+      "sha256": "3ce7601f4d4593f4db85619185a522077060433e9031169f5cc1da54c257118d",
+      "bytes": 6806
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_baoxiang_tongyong_6.webp",
+      "sha256": "d0bfa6ae4f3624496a2783ffe7569d6e6004463dc27efb4de4f534bcfa9d8c8b",
+      "bytes": 6550
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx5_1.webp",
+      "sha256": "832aae84c2c3952fe45728dfba77951515696807f8f5b3ab2cf80835429a57c5",
+      "bytes": 6016
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx5_2.webp",
+      "sha256": "657155ea2688645dd7df843e99afb5f6bd96df482adc697104828f87323ce6c3",
+      "bytes": 6022
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx5_3.webp",
+      "sha256": "d625b13686d2681fdaac1a3ddd9edda2af529b9545763435beb65e3583a85242",
+      "bytes": 6032
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx6_1.webp",
+      "sha256": "fe8ec663ad70e83141cbbfba9737d5a311c7cebd1c5b676ad1f498a810c678f7",
+      "bytes": 6558
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx6_2.webp",
+      "sha256": "88380fda6aedc31af334ff253d002dfe95762bb59b6e5f70c40a3748f06e87fd",
+      "bytes": 6298
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_sjxpbx6_3.webp",
+      "sha256": "b75322caefff2647d4bb1a428277a186922d7e25be3aaa10831f9866e3ac21c7",
+      "bytes": 6266
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_zxxpbx5.webp",
+      "sha256": "20af96086413fec0a36b60902cdf9fe0bb70326560f78665d146ce05d4b49128",
+      "bytes": 6278
+    },
+    {
+      "file": "assets/native-choice-box/items/zmzg_daoju_zxxpbx6.webp",
+      "sha256": "4ce1aa3440563aa3305cf341b859e44e64376465d5b8edcb6320460c7254b68a",
+      "bytes": 6536
+    },
+    {
+      "file": "assets/native-choice-box/layouts.json",
+      "sha256": "1356466452cfeb28bbf1ee46357438a67501038c7975e2730e2ad044012192f6",
+      "bytes": 70373
+    }
+  ],
+  "notes": [
+    "Only unconditional single-award goods groups are executable here; other source box semantics remain pending.",
+    "Source random RandParam weights are retained. Choice boxes allocate counts per source row without RNG.",
+    "Legacy live activity BootyIDs remain absent; these boxes do not resolve those server pools."
+  ]
+}

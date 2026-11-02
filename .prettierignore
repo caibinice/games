@@ -5,3 +5,14 @@ web/build-manifest.json
 web/src/legacy/
 web/src/pages/legacy/
 games/*/public/app.mjs
+!games/zombie/public/app.mjs
+!games/pvz/public/app.mjs
+
+# Preserve generated APK tables, asset exports and upstream dependencies.
+games/zombie/public/*-data.mjs
+games/zombie/public/native-skill-extra.mjs
+games/zombie/public/client-expanded.mjs
+games/zombie/public/assets/
+games/zombie/tools/local-protocol/*-schema.mjs
+games/zombie/tools/local-protocol/*-source.mjs
+games/zombie/tools/local-protocol/vendor/

@@ -1,0 +1,6 @@
+{
+ "id":"pvz","name":"植物大战僵尸 · 花园保卫战","subtitle":"GARDEN GUARD / 50 LEVELS",
+ "description":"熟悉的豌豆与向日葵，守住你的小院！50关、白天/夜晚/泳池/浓雾/屋顶，13种植物、路障铁桶与橄榄球僵尸、阳光、铲子、割草机。支持电脑和手机横屏全屏。",
+ "color":"#8ec95d","symbol":"❀","version":"20261023-1",
+ "facts":{"levels":50,"chapters":5,"plants":13,"players":1,"layouts":2},"vendors":[]
+}

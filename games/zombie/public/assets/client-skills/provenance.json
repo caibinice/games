@@ -1,0 +1,670 @@
+{
+  "apk_sha256": "7fe65a66a29e69ca7336f0dc42b7ea9ac68e84cf76ac21ca83c214eff99904b6",
+  "schemas": {
+    "BattleCore.BuildConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CEB6C",
+      "fields": [
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "buildType",
+          "int"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "AddSubSkillID",
+          "uint",
+          3
+        ],
+        [
+          "RmvSubSkillID",
+          "uint",
+          2
+        ],
+        [
+          "BuffID1",
+          "int"
+        ],
+        [
+          "BuffID2",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "DontShow",
+          "int"
+        ],
+        [
+          "DontCheckCD",
+          "int"
+        ],
+        [
+          "MainSkillBuild",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.SkillAttrDamageData": {
+      "fields": [
+        [
+          "MagicType",
+          "int"
+        ],
+        [
+          "DamageType",
+          "int"
+        ],
+        [
+          "AttrType",
+          "int"
+        ],
+        [
+          "Param1",
+          "FP"
+        ],
+        [
+          "Param2",
+          "FP"
+        ],
+        [
+          "Param3",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.SkillBaseConfg": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D5C48",
+      "fields": [
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "SkillType",
+          "byte"
+        ],
+        [
+          "CloseAutoUse",
+          "byte"
+        ],
+        [
+          "SkillRangeType",
+          "byte"
+        ],
+        [
+          "DisableMove",
+          "byte"
+        ],
+        [
+          "NotAffectByAttr",
+          "byte"
+        ],
+        [
+          "GCDID",
+          "uint"
+        ],
+        [
+          "SkillDispID",
+          "uint"
+        ],
+        [
+          "CostMP",
+          "uint"
+        ],
+        [
+          "SkillCD",
+          "FP"
+        ],
+        [
+          "MinSkillCD",
+          "FP"
+        ],
+        [
+          "SkillCDMode",
+          "int"
+        ],
+        [
+          "SkillDurationTime",
+          "FP"
+        ],
+        [
+          "DynamicCD",
+          "int"
+        ],
+        [
+          "AttrDamageData",
+          "BattleCore.SkillAttrDamageData",
+          12
+        ],
+        [
+          "BuffID",
+          "int",
+          4
+        ],
+        [
+          "NoTargetCaster",
+          "int"
+        ],
+        [
+          "CanBeSilence",
+          "byte"
+        ],
+        [
+          "SkillCastType",
+          "byte"
+        ],
+        [
+          "FindTargetFailShowTip",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.MagicSkillLevelConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D2638",
+      "fields": [
+        [
+          "ID",
+          "int"
+        ],
+        [
+          "Level",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "BuildID",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffTriggleState": {
+      "fields": [
+        [
+          "StateID",
+          "ushort"
+        ],
+        [
+          "StateParam",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.BuffConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CD3E4",
+      "fields": [
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "TimeType",
+          "byte"
+        ],
+        [
+          "ReplaceType",
+          "byte"
+        ],
+        [
+          "State",
+          "BattleCore.BuffTriggleState"
+        ],
+        [
+          "AddBuffWayType",
+          "byte"
+        ],
+        [
+          "SummonExtend",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.ResAttrImpactData": {
+      "fields": [
+        [
+          "DataType",
+          "short"
+        ],
+        [
+          "AddType",
+          "byte"
+        ],
+        [
+          "Value",
+          "FP"
+        ]
+      ]
+    },
+    "BattleCore.BuffDotTickConfig": {
+      "fields": [
+        [
+          "TickTime",
+          "FP"
+        ],
+        [
+          "TickWhenAdd",
+          "byte"
+        ],
+        [
+          "RemoveAfterDot",
+          "byte"
+        ],
+        [
+          "BindSkill",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffFuncData": {
+      "fields": [
+        [
+          "FuncId",
+          "int"
+        ],
+        [
+          "FuncParam",
+          "int",
+          8
+        ]
+      ]
+    },
+    "BattleCore.BuffAttrConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CD8D8",
+      "fields": [
+        [
+          "BuffID",
+          "int"
+        ],
+        [
+          "StackNum",
+          "int"
+        ],
+        [
+          "DurTime",
+          "FP"
+        ],
+        [
+          "RemoveWhenDie",
+          "byte"
+        ],
+        [
+          "EffectID",
+          "int"
+        ],
+        [
+          "DeathStillEffect",
+          "byte"
+        ],
+        [
+          "DotBanIgnoreDamageCount",
+          "byte"
+        ],
+        [
+          "DotDamageData",
+          "BattleCore.SkillAttrDamageData"
+        ],
+        [
+          "DotTickConfig",
+          "BattleCore.BuffDotTickConfig"
+        ],
+        [
+          "AttrData",
+          "BattleCore.ResAttrImpactData",
+          6
+        ],
+        [
+          "FuncData",
+          "BattleCore.BuffFuncData"
+        ]
+      ]
+    },
+    "BattleCore.SubSkillConfg": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11D5F30",
+      "fields": [
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "SkillDurationTime",
+          "FP"
+        ],
+        [
+          "SkillDurationMode",
+          "int"
+        ],
+        [
+          "SkillDispID",
+          "int"
+        ]
+      ]
+    },
+    "BattleCore.BuildConditionData": {
+      "fields": [
+        [
+          "Type",
+          "uint"
+        ],
+        [
+          "Param1",
+          "uint"
+        ],
+        [
+          "Param2",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuildGroupConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE510",
+      "fields": [
+        [
+          "GroupID",
+          "uint"
+        ],
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "Weight",
+          "uint"
+        ],
+        [
+          "MaxSelectCount",
+          "uint"
+        ],
+        [
+          "DependCondition",
+          "BattleCore.BuildConditionData",
+          5
+        ],
+        [
+          "ConflictCondition",
+          "BattleCore.BuildConditionData",
+          8
+        ],
+        [
+          "BanLuckWheel",
+          "byte"
+        ]
+      ]
+    },
+    "BattleCore.BuildLibraryConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE210",
+      "fields": [
+        [
+          "LibraryID",
+          "uint"
+        ],
+        [
+          "GroupID",
+          "uint"
+        ]
+      ]
+    },
+    "BattleCore.BuffFuncSkillAttrConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x11CE008",
+      "fields": [
+        [
+          "ID",
+          "uint"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "int",
+          5
+        ],
+        [
+          "AttrData",
+          "BattleCore.ResAttrImpactData",
+          3
+        ]
+      ]
+    },
+    "ResDef.BuildConfig": {
+      "header_bytes": 20,
+      "unpack_rva": "0x177AEB0",
+      "fields": [
+        [
+          "BuildID",
+          "uint"
+        ],
+        [
+          "Name",
+          "int"
+        ],
+        [
+          "buildType",
+          "int"
+        ],
+        [
+          "Icon",
+          "string"
+        ],
+        [
+          "Desc",
+          "int"
+        ],
+        [
+          "GunAdd",
+          "byte"
+        ],
+        [
+          "SkillID",
+          "uint"
+        ],
+        [
+          "AddSubSkillID",
+          "uint",
+          3
+        ],
+        [
+          "RmvSubSkillID",
+          "uint",
+          2
+        ],
+        [
+          "BuffID1",
+          "int"
+        ],
+        [
+          "BuffID2",
+          "int"
+        ],
+        [
+          "AttrLibraryID",
+          "uint"
+        ],
+        [
+          "DontShow",
+          "int"
+        ],
+        [
+          "DontCheckCD",
+          "int"
+        ],
+        [
+          "MainSkillBuild",
+          "byte"
+        ]
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "bundle": "assets_resources_config_resbin_fp_skillbaseconfg.bytes.ab",
+      "bundle_sha256": "92b1c7df28a14b4c200408a4a6a52aaaf5b4744dbb8ccb56831871bf02e1c05b",
+      "path_id": "677239067144422609",
+      "name": "SkillBaseConfg",
+      "sha256": "4b5cb9e2aaa4da73f7d8d859726f26a72853587f9cb54b8dce59b2242affa5e6"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_buildconfig.bytes.ab",
+      "bundle_sha256": "3de2e9ec7e07f033952f78bd3387390e90e6e68e97aa83210ccd6aa62de83311",
+      "path_id": "683565164313072736",
+      "name": "BuildConfig",
+      "sha256": "5763b9ee255ee8b96213b59a7f9070db498b72065d497ed163411d3d8e10f21d"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_buildgroupconfig.bytes.ab",
+      "bundle_sha256": "7fc8635ff021f94a2cccadb30a73b9c44f8aaafa8b5fd18b6be7ecbe2e5a80a9",
+      "path_id": "-39952660343838184",
+      "name": "BuildGroupConfig",
+      "sha256": "db3ad67773fc1bf1456ee414cb79b10b5665d178a2c241e6b1c3cae45e2966e6"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_bufffuncskillattrconfig.bytes.ab",
+      "bundle_sha256": "8accb08ee5c8bd0a14b5c5426efd0421ddf208740189e2f1dfd72fa8d9063c55",
+      "path_id": "-5872477655809453663",
+      "name": "BuffFuncSkillAttrConfig",
+      "sha256": "7704be5f764a29cb75b06755efbe6741c287255922bdad9d3c38d4920d6812dc"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_buffconfig.bytes.ab",
+      "bundle_sha256": "aea4e01282b4c956dd8308e704872e2bac1e00de69d025795ab557ef01355a1f",
+      "path_id": "-5556922510959679153",
+      "name": "BuffConfig",
+      "sha256": "9a3317e99092390a9ba8c0bfa5a0a21c0e436a5b387f4ea573a1704c120d89bd"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_buffattrconfig.bytes.ab",
+      "bundle_sha256": "da4181b7ee0129b74c8dc12430f5e0012ad7c95458a0c716ee49c2038aa6569b",
+      "path_id": "457257821680031921",
+      "name": "BuffAttrConfig",
+      "sha256": "5fba212f0f5a32e4e413ad7a0be21bc0cddbaf99e70359ede6c53ecc85f20ebb"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_fp_subskillconfg.bytes.ab",
+      "bundle_sha256": "1b09f273eb7ed8617301b7da1f603184b30babdd921e9df2e36234fa1ccfab54",
+      "path_id": "3135637862778256248",
+      "name": "SubSkillConfg",
+      "sha256": "c01ead66c7b21441172caba0ea4c4a8f2af6ec5919e689047dd7bd93ff1fe029"
+    },
+    {
+      "bundle": "assets_resources_config_resbin_textconfig.bytes.ab",
+      "bundle_sha256": "b4554ddc619ee8bea9e7a899b827e389d27c66b8bd8dc6af2e02ddca1f18ae0d",
+      "path_id": "3593229075507944612",
+      "name": "TextConfig",
+      "sha256": "f9f53f5e66f201e2e8eb9f9ec8e36797083d661a3ac5a9cb16bbcd22cd31737b"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-8062500249004209384",
+      "name": "2011",
+      "sha256": "dbeecb175b00195787bc63927ebabac181e77a67907d590e809c10eada1844b7"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "7351386402616142977",
+      "name": "2021",
+      "sha256": "868b3afd9d764e3723e523898a614556ff005c3ff18452f61a35d1b987e9d6f1"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-6211032997008765765",
+      "name": "2111",
+      "sha256": "cce4690879ec1a53ced2fe87c54f530d0a2f61fe49edc7c3fcf8341bb5d28d16"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "8882968926673333997",
+      "name": "3011",
+      "sha256": "9fda712c2b26b83f64b0a20bc27482d9ad1c29a4e1177b182f1399a472df278a"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-3454833829155594605",
+      "name": "3012",
+      "sha256": "02b35da586307ca116f6b6950b70bf49b530595dcf5a688cee0301a29f4246ae"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-8457589928006388233",
+      "name": "3111",
+      "sha256": "a7d68d52fc3eb405cfaed4c0f081d1f0e22c645504fb38db3a55cbcc57b55656"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-6907159306558460033",
+      "name": "3041",
+      "sha256": "f753892d0ea3bbc1df79bc42b36d4a2b3341e2ff448849aa6b406eb1b79fb3a9"
+    },
+    {
+      "bundle": "assets_resources_skilldisp.ab",
+      "bundle_sha256": "5bb125a759338e7de382035ff0857c994b05cca07ac5964f261d60612bb4323c",
+      "path_id": "-2700309663408930813",
+      "name": "3091",
+      "sha256": "9220ce1d5af9e53275e99cfb88fad8d0e872b932ff1da21f8a027424d0479fce"
+    },
+    {
+      "bundle": "assets_effect_textures_object.ab",
+      "bundle_sha256": "3466e1728cdd284a12bed891ab82a169ad87471957d82ae5891516d374d551c2",
+      "path_id": "-4266883872817462832",
+      "name": "ganbingzidan_zidan_1205_zj_Tex",
+      "sha256": "bc7c5f2bb274ed20746bd3302ea4fa8e59410271f7182901134655f2dc68b2b1"
+    }
+  ],
+  "reference": {
+    "source": "User-supplied community prerequisite diagram; version may differ from APK",
+    "sha256": "cc2e87bb9a84bd15069e0681248e941fd81a10b9f728a4fc8dd5df0397362dcd",
+    "dimensions": [
+      1078,
+      4156
+    ]
+  },
+  "native_skill_count": 14,
+  "native_build_count": 172,
+  "condition_evidence": "RandomBuildCmpt.CheckCondition RVA 0x122D66C: Type 2 = build count; Type 4 = persistent core level.",
+  "outputs": [
+    {
+      "file": "client-skill-data.mjs",
+      "sha256": "b8239de11fc136aafa83f2685eba417adaaae85d9b5f092af30312ff8f3e518f",
+      "bytes": 88055
+    },
+    {
+      "file": "assets/client-skills/community-prerequisites.jpg",
+      "sha256": "cc2e87bb9a84bd15069e0681248e941fd81a10b9f728a4fc8dd5df0397362dcd",
+      "bytes": 318008
+    },
+    {
+      "file": "assets/client-skills/frost-projectile.webp",
+      "sha256": "5d41b3a55096df64899d661a5df149b4b5159b467225ba16a705a92921883976",
+      "bytes": 7310
+    }
+  ]
+}

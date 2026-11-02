@@ -18,7 +18,9 @@
     "deploy:pindou": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games pindou",
     "deploy:goose": "pwsh -NoLogo -NoProfile -File scripts/deploy.ps1 -Games goose",
     "build:frontend": "node scripts/build-frontend.mjs",
-    "format": "prettier --write web/src scripts/build-frontend.mjs games/racer/public/*.mjs games/racer/public/*.css"
+    "format": "prettier --write web/src scripts/build-frontend.mjs games/racer/public/*.mjs games/racer/public/*.css",
+    "format:zombie": "prettier --write games/zombie/public/*.mjs games/zombie/tools/local-protocol/*.mjs",
+    "format:pvz": "prettier --write games/pvz/public/*.mjs"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "6.0.10",
