@@ -67,11 +67,25 @@ import { mazeCarryOver } from './battle-report.mjs';
 import { battleReportTypes } from './battle-report-schema.mjs';
 import { normalGem, migrateHiddenGems } from './gem-policy.mjs';
 import { shopTypes, shopCommands, shopAction } from './shop-state.mjs';
+import { progressionTypes } from './progression-schema.mjs';
+import { CHIP_IDS, createChipItem, chipBoxAction } from './chip-state.mjs';
+import { PROGRESSION_SOURCE as PROGRESS } from './progression-source.mjs';
+import {
+  roleProgress,
+  equipmentStats,
+  wallData,
+  progressionCommands,
+  progressionAction,
+  progressionNotifications,
+  activeBattleSkills,
+  ultraBattleData,
+} from './progression-state.mjs';
 Object.assign(roleTypes, activityGrowthTypes);
 Object.assign(roleTypes, lotteryTypes);
 Object.assign(roleTypes, extensionTypes);
 Object.assign(roleTypes, battleReportTypes);
 Object.assign(roleTypes, shopTypes);
+Object.assign(roleTypes, progressionTypes);
 roleTypes.CSTextConfig = [
   ['ID', 'uint'],
   ['ArgNum', 'short'],
@@ -389,10 +403,20 @@ export function localRoleData(role, now = Date.now(), profile = {}) {
   validateLocalRole(role);
   profile = validateFixtureProfile(profile);
   const seconds = Math.floor(now / 1000),
-    level = profile.level ?? 1,
-    attack = profile.attack ?? 100,
-    maxHp = profile.maxHp ?? 1000,
-    fight = profile.fight ?? 100;
+    progress = roleProgress(role, profile),
+    level = progress.level,
+    equip = equipmentFor(role, seconds, profile),
+    stats = equipmentStats(equip),
+    wall = wallData(role),
+    wallConfig = PROGRESS.WallConfig.find((r) => r.Level === wall.Level),
+    attack = (profile.attack ?? 100) + stats.attack,
+    maxHp = Math.round(
+      (profile.maxHp ?? 1000) +
+        stats.hp +
+        (wallConfig?.AttrDataList.find((r) => r.DataType === 101)?.Value || 0),
+    ),
+    fight = Math.max(1, Math.round((profile.fight ?? 100) + stats.deltaFight));
+  equip.FightVal = stats.fight;
   return {
     BaseData: {
       RoleID: role.id,
@@ -404,7 +428,7 @@ export function localRoleData(role, now = Date.now(), profile = {}) {
       Sex: role.sex,
       BodyType: role.bodyType,
       Level: level,
-      Exp: role.localXp || 0,
+      Exp: progress.exp,
       FightVal: fight,
       Diamond: profile.diamonds ?? 10000,
       Gold: localGold(role, profile),
@@ -417,7 +441,7 @@ export function localRoleData(role, now = Date.now(), profile = {}) {
       FreeRenameTimes: 1,
     },
     BagData: localBagData(role, seconds, profile),
-    EquipData: equipmentFor(role, seconds, profile),
+    EquipData: equip,
     LevelData: campaignData(role),
     GuaJiData: { IsOpen: 1, LastFetchTime: 1, BootyList: { AwardItem: patrolAwards(role) } },
     AttrData: {
@@ -428,6 +452,12 @@ export function localRoleData(role, now = Date.now(), profile = {}) {
       HitRatio: 1,
       MoveSpeed: 3,
       InitSkillCount: 1,
+      MaxMp: Math.max(
+        100,
+        ...activeBattleSkills(role).map(
+          (r) => PROGRESS.WuXueBaseConfig.find((cfg) => cfg.WuXueID === r.SkillID)?.Fury || 0,
+        ),
+      ),
       ShootTimes: 1,
       ShootCount: 1,
       BulletFlySpeed: 0,
@@ -437,11 +467,15 @@ export function localRoleData(role, now = Date.now(), profile = {}) {
     },
     KvAttrData: {},
     FashionData: {},
-    WallData: { Level: 1, SkillData: [] },
+    WallData: wall,
     H5GameData: null,
     GunData: gunData(role),
     ...growthData(role, profile),
-    EndlessLevleData: { DailyTotalChallengeNum: profile.freeActions ? 1000000 : 3, CurrLevel: 1 },
+    EndlessLevleData: {
+      DailyTotalChallengeNum: profile.freeActions ? 1000000 : 3,
+      DayChanceHasBuyNum: profile.freeActions ? 1000000 : 3,
+      CurrLevel: 1,
+    },
     GuildData: guildRoleData(role),
   };
 }
@@ -518,6 +552,7 @@ function localBagData(role, seconds, profile) {
       100002,
       ...GROWTH.MagicSkillConfig.map((r) => r.PieceItemID),
       ...GROWTH.EquipUpLevelConfig.map((r) => r.CostItemID),
+      ...GROWTH.EquipReforgeConfig.map((r) => r.CostItemID),
       ...GROWTH.SkinBaseConfig.map((r) => r.CostItemID),
       ...GROWTH.SkinLevelConfig.flatMap((r) => r.CostItem.map((i) => i.ItemID)),
       ...GROWTH.GunBaseConfig.map((r) => r.UnlockCondParam1),
@@ -527,6 +562,12 @@ function localBagData(role, seconds, profile) {
       ...MECHA_GROWTH.BianShenLevelConfig.map((r) => r.NeedItemID),
       ...MECHA_GROWTH.BianShenSkillLvUpConfig.map((r) => r.NeedItemID),
       ...MECHA_GROWTH.BianShenUpStarLvConfig.flatMap((r) => r.UpStarCostList.map((i) => i.ItemID)),
+      ...PROGRESS.WuXueBaseConfig.map((r) => r.ActiveCostItemID),
+      ...PROGRESS.WuXueLevelUpConfig.map((r) => r.CostItemID),
+      ...PROGRESS.WallConfig.map((r) => r.CostItemId),
+      ...PROGRESS.WallSkillLevelConfig.map((r) => r.CostItemId),
+      ...PROGRESS.UltraWeaponBaseConfig.flatMap((r) => [r.CostItemID, r.PieceID]),
+      ...PROGRESS.UltraWeaponUpLevelConfig.map((r) => r.CostItemID),
     ])
       if (GOOD_IDS.has(id)) goods[id] = Math.max(goods[id] || 0, 1000000);
   }
@@ -537,6 +578,7 @@ function localBagData(role, seconds, profile) {
     IsAll: 1,
     ItemData: [
       ...gemItems(counts, seconds, valid ? (saved.locks ?? []) : [], lockCounts),
+      ...structuredClone((role.localChips || []).filter((r) => CHIP_IDS.has(r.ItemID))),
       ...Object.entries({ 1001: reagent, ...goods })
         .filter(([id, n]) => GOOD_IDS.has(Number(id)) && Number.isInteger(n) && n > 0 && n <= 1e9)
         .map(([id, n], i) => ({
@@ -810,6 +852,7 @@ function equipUpgradeReply(request, role, now, profile) {
         BaseData: data.BaseData,
         EquipData: data.EquipData,
         BagData: data.BagData,
+        AttrData: data.AttrData,
       }),
     },
   ]);
@@ -839,12 +882,13 @@ function equipReforgeReply(request, role, now, profile) {
         r.Quality === detail?.Quality &&
         r.Prefix === detail?.Prefix,
     ),
-    next = GROWTH.EquipReforgeConfig.find(
+    // Quality has intermediate prefix grades (2/1 -> 2/2 -> 3/1).
+    next = GROWTH.EquipReforgeConfig.filter(
       (r) =>
         r.EquipPinJie === cfg?.PinJie &&
-        r.Quality === detail?.Quality + 1 &&
-        r.Prefix === detail?.Prefix,
-    ),
+        (r.Quality > detail?.Quality ||
+          (r.Quality === detail?.Quality && r.Prefix > detail?.Prefix)),
+    ).sort((a, b) => a.Quality - b.Quality || a.Prefix - b.Prefix)[0],
     material = bag.ItemData.find((i) => i.ItemType === 1 && i.ItemID === current?.CostItemID);
   if (
     !detail ||
@@ -857,7 +901,7 @@ function equipReforgeReply(request, role, now, profile) {
     return respond(role, 1);
   if (!profile.freeActions) material.StackCnt -= current.CostItemNum;
   detail.Quality = next.Quality;
-  detail.InitQuality = Math.max(detail.InitQuality || 1, next.Quality);
+  detail.Prefix = next.Prefix;
   const updated = saveBag(saveEquipment(role, profile, equip), profile, bag),
     data = localRoleData(updated, now, profile);
   return respond(updated, 0, [
@@ -865,7 +909,12 @@ function equipReforgeReply(request, role, now, profile) {
       cmd: 2021,
       echo: 0,
       serverTime: seconds,
-      body: packRoleDataGroups({ EquipData: data.EquipData, BagData: data.BagData }),
+      body: packRoleDataGroups({
+        BaseData: data.BaseData,
+        AttrData: data.AttrData,
+        EquipData: data.EquipData,
+        BagData: data.BagData,
+      }),
     },
   ]);
 }
@@ -949,6 +998,7 @@ function oneKeyEquipUpgradeReply(request, role, now, profile) {
               BaseData: data.BaseData,
               EquipData: data.EquipData,
               BagData: data.BagData,
+              AttrData: data.AttrData,
             }),
           },
         ]
@@ -1074,18 +1124,29 @@ function extensionReply(request, role, now, profile) {
 }
 function serviceReply(request, role, now, profile) {
   const seconds = Math.floor(now / 1000),
-    out = mazeCommands.has(request.cmd)
-      ? mazeAction(request, role, profile)
-      : shopCommands.has(request.cmd)
-        ? shopAction(request, role, profile, randomInt)
-        : serviceAction(request, role, seconds, profile);
+    out =
+      request.cmd === 4007
+        ? chipBoxAction(request, role, localBagData(role, seconds, profile), randomInt)
+        : mazeCommands.has(request.cmd)
+          ? mazeAction(request, role, profile)
+          : shopCommands.has(request.cmd)
+            ? shopAction(request, role, profile, randomInt)
+            : progressionCommands.has(request.cmd)
+              ? progressionAction(request, role, profile)
+              : serviceAction(request, role, seconds, profile);
   if (!out) return null;
   let updated = out.role;
   if (out.awards?.length) {
-    const bag = localBagData(updated, seconds, profile);
+    const bag = out.bag || localBagData(updated, seconds, profile);
     let gold = localGold(updated, profile),
       xp = updated.localXp || 0;
     for (const a of resolveAutoUseAwards(out.awards)) {
+      if (a.AwardItemType === 28) {
+        const item = createChipItem(a.AwardItemID, bag, seconds, randomInt);
+        bag.ItemData.push(item);
+        a.AwardItemRunParam = [item.ItemGID, 0];
+        continue;
+      }
       if (a.AwardItemType === 2) {
         if (a.AwardItemID === 99002) gold = Math.min(1e9, gold + a.AwardItemCnt);
         if (a.AwardItemID === 99004) xp = Math.min(1e9, xp + a.AwardItemCnt);
@@ -1109,7 +1170,12 @@ function serviceReply(request, role, now, profile) {
       }
     }
     updated = saveBag(
-      { ...updated, localXp: xp, localGold: { baseline: profile.gold ?? 100000, value: gold } },
+      {
+        ...updated,
+        localChips: bag.ItemData.filter((r) => r.ItemType === 4),
+        localXp: xp,
+        localGold: { baseline: profile.gold ?? 100000, value: gold },
+      },
       profile,
       bag,
     );
@@ -1128,7 +1194,7 @@ function serviceReply(request, role, now, profile) {
     body.writeInt32BE(out.battleStartId);
     notifications.push(localBattleEntry(updated, { body }, now, profile));
   }
-  if (out.awards?.length || out.dirtyGuild || out.dirtyLevel) {
+  if (out.awards?.length || out.dirtyGuild || out.dirtyLevel || out.dirtyRole) {
     const data = localRoleData(updated, now, profile);
     notifications.push({
       cmd: 2021,
@@ -1138,6 +1204,7 @@ function serviceReply(request, role, now, profile) {
         BaseData: data.BaseData,
         BagData: data.BagData,
         GuildData: data.GuildData,
+        ...(out.dirtyRole ? { WallData: data.WallData, AttrData: data.AttrData } : {}),
         ...(out.dirtyLevel ? { LevelData: data.LevelData } : {}),
       }),
     });
@@ -1486,10 +1553,12 @@ export function localBattleEntry(role, request, now = Date.now(), profile = {}) 
         CurGunLevel:
           data.GunData.GunList.find((g) => g.GunID === data.GunData.CurGunID)?.GunLevel || 1,
       },
-      BattleWallData: { BattleWall: { Level: 1 } },
+      BattleWallData: { BattleWall: data.WallData },
       BattleSkinData: { BattleSkin: combatSkins },
       BattleMercenaryData: data.MercenaryData,
       BattleBianShenData: mechaBattleData(role),
+      BattleUltraWeaponData: ultraBattleData(role),
+      ZhaoShiSkillList: activeBattleSkills(role),
     },
     ActorRunData: { Hp: data.AttrData.MaxHp },
     AttrData: attr,
@@ -1523,9 +1592,11 @@ export function localBattleEntry(role, request, now = Date.now(), profile = {}) 
 }
 export function roleSessionReply(request, role, now = Date.now(), profile = {}) {
   if (
+    request.cmd === 4007 ||
     serviceCommands.has(request.cmd) ||
     mazeCommands.has(request.cmd) ||
-    shopCommands.has(request.cmd)
+    shopCommands.has(request.cmd) ||
+    progressionCommands.has(request.cmd)
   ) {
     validateLocalRole(role);
     return serviceReply(request, role, now, validateFixtureProfile(profile));
@@ -1638,6 +1709,18 @@ export function roleSessionReply(request, role, now = Date.now(), profile = {}) 
       },
       notifications: [
         coreNotification(role, profile, seconds),
+        ...progressionNotifications(role).map((n) => ({
+          cmd: n.cmd,
+          echo: 0,
+          serverTime: seconds,
+          body: packRoleStruct(n.type, n.data),
+        })),
+        {
+          cmd: 3014,
+          echo: 0,
+          serverTime: seconds,
+          body: packRoleStruct('CSGuideFuncOpenedRes', nativeFuncOpened(seconds)),
+        },
         ...[guildNotification(role, seconds), guildBuildingNotification()].map((n) => ({
           cmd: n.cmd,
           echo: 0,
@@ -1796,6 +1879,12 @@ export function roleSessionReply(request, role, now = Date.now(), profile = {}) 
             BagData: data.BagData,
             LevelData: data.LevelData,
           }),
+        },
+        {
+          cmd: 3014,
+          echo: 0,
+          serverTime: seconds,
+          body: packRoleStruct('CSGuideFuncOpenedRes', nativeFuncOpened(seconds)),
         },
         ...(role.localMaze?.pending
           ? mazeNotifications(updated).map((n) => ({

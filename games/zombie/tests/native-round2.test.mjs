@@ -21,7 +21,7 @@ function start(role,id){const body=Buffer.alloc(13);body.writeInt32BE(id);return
 function finish(role,win=1,hp=100){const b=Buffer.alloc(16);b[0]=1;b[1]=win;b.writeFloatBE(hp,2);b.writeBigUInt64BE(BigInt(role.pendingBattle.id),6);return {cmd:4254,body:b,echo:91};}
 it('grants a real settlement inventory update and opens the next normal and first elite stages',()=>{
  const started=start(initial,1001).role,out=roleSessionReply(finish(started),started,now+10000,p);expect(out.reply.cmd).toBe(4255);expect(out.role.pendingBattle).toBeNull();
- expect(data(out.role).LevelData.UnlockLevelList.map(s=>s.LevelID)).toEqual([1001,1002,2001]);
+ expect(data(out.role).LevelData.UnlockLevelList.filter(s=>s.LevelID<3000).map(s=>s.LevelID)).toEqual([1001,1002,2001]);
  expect(data(out.role).BaseData.Gold).toBeGreaterThan(p.gold);expect(data(out.role).BagData.ItemData.some(i=>i.ItemID===61001)).toBe(true);expect(out.notifications[0].cmd).toBe(2021);
  expect(start(out.role,1002).reply.body.readInt32BE()).toBe(0);expect(start(out.role,1003).reply.body.readInt32BE()).toBe(1);
 });
@@ -61,7 +61,7 @@ it('uses actual mecha growth tables and a typed five-skill notification',()=>{
 });
 it('quick patrol grants inventory and can repeat without a daily limit',()=>{
  let r=initial;for(let i=0;i<20;i++){const o=roleSessionReply({cmd:12323,body:Buffer.from([0]),echo:i},r,now,free);expect(o.reply.cmd).toBe(12324);expect(o.reply.body.readInt32BE()).toBe(0);r=o.role;}
- expect(r.localPatrol.count).toBe(20);expect(data(r,free).BaseData.Exp).toBe(1100);expect(data(r,free).BagData.ItemData.find(i=>i.ItemID===61001).StackCnt).toBe(data(initial,free).BagData.ItemData.find(i=>i.ItemID===61001).StackCnt+200);
+ expect(r.localPatrol.count).toBe(20);expect(r.localXp).toBe(1100);expect(data(r,free).BaseData).toMatchObject({Level:21,Exp:35});expect(data(r,free).BagData.ItemData.find(i=>i.ItemID===61001).StackCnt).toBe(data(initial,free).BagData.ItemData.find(i=>i.ItemID===61001).StackCnt+200);
 });
 it('opens a personal guild with three bots and repeatable contribution requests',()=>{
  let r=initial;expect(data(r,free).GuildData.GuildUID).toBe('9100000001');

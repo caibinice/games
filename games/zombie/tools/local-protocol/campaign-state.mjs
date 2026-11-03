@@ -1,8 +1,9 @@
 import { CAMPAIGN_ENTRIES, ELITE_ENTRIES } from '../../public/client-expanded.mjs';
 import { ACTIVITY_LEVELS } from './activity-level-source.mjs';
-const entries = [...CAMPAIGN_ENTRIES, ...ELITE_ENTRIES],
+import { PROGRESSION_SOURCE } from './progression-source.mjs';
+const entries = [...CAMPAIGN_ENTRIES, ...ELITE_ENTRIES, ...PROGRESSION_SOURCE.RescueLevels],
   known = new Map(
-    [...entries, ...ACTIVITY_LEVELS.filter((r) => [4, 8].includes(r.LevelType))].map((r) => [
+    [...entries, ...ACTIVITY_LEVELS.filter((r) => [3, 4, 8].includes(r.LevelType))].map((r) => [
       r.LevelID,
       r,
     ]),
@@ -25,7 +26,8 @@ export function campaignUnlocked(role, id) {
   const row = known.get(id);
   if (!row) return false;
   const s = campaignState(role);
-  if (row.LevelType === 4) return true;
+  // Personal-server challenge modes stay open; they are not normal chapters.
+  if ([3, 4, 6].includes(row.LevelType)) return true;
   if (row.LevelType === 8) return !!role.localMaze?.pending;
   if (row.level === 1) return row.LevelType === 1 || !!s.levels[1001]?.wins;
   return !!s.levels[id - 1]?.wins;

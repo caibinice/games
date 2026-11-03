@@ -2,8 +2,22 @@
 // reconstructed official drop rates. Protocol fields use the pinned client.
 import { campaignAwards, claimCampaignStar } from './campaign-state.mjs';
 import { MAZE_SOURCE } from './maze-source.mjs';
+import { SHOP_SOURCE } from './shop-source.mjs';
+import { createHash } from 'node:crypto';
 export function patrolAwards(role) {
-  return campaignAwards(Math.max(1001, role.lastSettlement?.data?.LevelID || 1001));
+  const awards = campaignAwards(Math.max(1001, role.lastSettlement?.data?.LevelID || 1001));
+  // A stable per-claim roll makes the preview and grant agree. Claiming advances
+  // the saved counter, so repeated patrols no longer yield one fixed material.
+  const seed = createHash('sha256')
+    .update(role.id + ':' + (role.localPatrol?.count || 0))
+    .digest();
+  const material = awards.find((r) => r.AwardItemID >= 50001 && r.AwardItemID <= 50006);
+  if (material) material.AwardItemID = 50001 + (seed.readUInt32BE(0) % 6);
+  const rows = SHOP_SOURCE.BootyConfig.filter((r) => r.BootyID === 404001);
+  let n = seed.readUInt32BE(4) % rows.reduce((sum, r) => sum + r.RandParam, 0);
+  const chosen = rows.find((r) => (n -= r.RandParam) < 0);
+  awards.push({ AwardItemType: 1, AwardItemID: chosen.ItemID, AwardItemCnt: 1 });
+  return awards;
 }
 export function patrolNotifications(role, seconds) {
   const awards = patrolAwards(role);

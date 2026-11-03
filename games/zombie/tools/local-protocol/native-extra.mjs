@@ -124,8 +124,25 @@ export function packItemData(d) {
     case 3:
       data = i32(detail.GemDetail?.IsLock);
       break;
+    case 4: {
+      const c = detail.ChipDetail ?? {},
+        sub = c.SubAffixList ?? [];
+      if (sub.length > 4) throw Error('Native chip affix limit');
+      data = join([
+        u32(c.Level),
+        u8(c.InitLevel),
+        i32(c.MainAffix),
+        i32(sub.length),
+        ...sub.map((r) => i32(r.SubAffixID)),
+        i32(c.TotalUseExp),
+        u8(c.IsLock),
+        u8(c.IsNew),
+        i32(c.CurExp),
+      ]);
+      break;
+    }
     default:
-      throw Error('Template supports Goods/Equip/Gem only; Chip needs its own schema');
+      throw Error('Unsupported native inventory item type');
   }
   return join([
     u32(d.ItemGID),
