@@ -29,6 +29,7 @@ export function newDuel(seed) {
     winner: null,
     eventId: 0,
     effect: null,
+    lastMatches: [null, null],
   };
 }
 function rng(g) {
@@ -83,6 +84,13 @@ export function pair(g, slot, a, b) {
     result = E.matchPair(p, a, b);
   if (!result.ok) return result;
   p.matched++;
+  g.lastMatches[slot] = {
+    id: p.matched,
+    path: result.path,
+    points: result.points,
+    combo: result.combo,
+    fruit: type,
+  };
   if (!remaining(p)) {
     g.status = 'finished';
     g.winner = slot;

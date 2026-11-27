@@ -27,7 +27,7 @@ export function newGame({level=1,platform='pc',mode='classic',seed=Date.now(),ca
  const options=normalizeCheats(cheats);
  const g={version:1,platform,mode,level,kind:stage.kind,stage,seed:Number(seed)>>>0,status:'ready',clock:0,score:carry?.score||0,lives:carry?.lives||(mode==='practice'?30:3),cheats:options,assisted:assisted===true||Object.values(options).some(Boolean),
   player:{x,y,w:12,h:28,vx:0,vy:0,dir:1,aimX:1,aimY:0,weapon:carry?.weapon||'N',rapid:false,onGround:true,water:false,prone:false,invulnerableUntil:2000,deadUntil:0,lastFire:-1000,lastGround:0,jumpAt:-1000},
-  cameraX:0,cameraY:stage.kind==='vertical'?stage.height-HEIGHT:0,checkpoint:{x,y},bullets:[],enemyBullets:[],enemies:[],pickups:[],capsules:[],explosions:[],bridges:stage.bridges.map(b=>({...b,triggerAt:0,broken:false})),
+  cameraX:0,cameraY:stage.kind==='vertical'?stage.height-HEIGHT:0,checkpoint:{x,y},bullets:[],enemyBullets:[],enemies:[],pickups:[],capsules:[],explosions:[],impacts:[],bridges:stage.bridges.map(b=>({...b,triggerAt:0,broken:false})),
   hazards:[],movingPlatforms:stage.kind==='vertical'?[{id:1,x:112,y:605,w:32,h:8,baseX:112,previousX:112,phase:0}]:[],events:[],nextId:1,nextRunner:3600,nextCapsule:7500,room:0,cores:[],roomOpen:false,advanceTime:0,transitionUntil:0,boss:null,bossActive:false,bossDefeatedAt:0,spawned:[],jumpHeld:false,jumpBufferUntil:0,dropUntil:0,nextLife:(carry?.score||0)<30000?30000:(Math.floor((carry?.score||0)/100000)+1)*100000};
  if(stage.kind==='base')setupRoom(g);
  else{
@@ -46,12 +46,20 @@ export function newGame({level=1,platform='pc',mode='classic',seed=Date.now(),ca
 export function start(g){if(['ready','paused'].includes(g.status))g.status='running';}
 export function pause(g){if(g.status==='running')g.status='paused';}
 function setupRoom(g){
- g.cores=[];g.roomOpen=false;g.advanceTime=0;g.enemyBullets=[];g.enemies=[];g.player.x=128;g.player.y=204;g.player.vy=0;g.player.onGround=true;
+ g.cores=[];g.impacts=[];g.roomOpen=false;g.advanceTime=0;g.enemyBullets=[];g.enemies=[];g.player.x=128;g.player.y=204;g.player.vy=0;g.player.onGround=true;
  if(g.room===g.stage.rooms-1){activateBoss(g);return;}
  const count=Math.min(3,1+Math.floor(g.room/2));
  for(let i=0;i<count;i++)g.cores.push({id:g.nextId++,x:128+(i-(count-1)/2)*54,y:88-(i%2)*28,w:18,h:22,hp:4+g.room,maxHP:4+g.room,lastFire:0});
 }
 function effect(g,x,y,big=false){g.explosions.push({id:g.nextId++,x,y,bornAt:g.clock,big});}
+function impact(g,b,target,heavy=false){
+ const at=g.clock;
+ // Approximate the contact on the near edge of the target, not the projectile's
+ // end position (which may be several pixels inside at high projectile speeds).
+ const x=clamp(b.x,target.x,target.x+target.w),y=clamp(b.y,target.y,target.y+target.h);
+ g.impacts.push({x,y,bornAt:at,angle:Math.atan2(-b.vy,-b.vx),heavy});
+ if(g.impacts.length>16)g.impacts.shift();
+}
 function addEnemy(g,entry){
  if(g.enemies.length>=14)return;const turret=entry.type==='turret';
  g.enemies.push({id:g.nextId++,type:entry.type,x:entry.x,y:entry.y,w:turret?26:12,h:turret?26:28,vx:0,vy:0,dir:entry.x>g.player.x?-1:1,hp:turret?6:1,lastFire:g.clock+500+random(g)*700,onGround:false,phase:random(g)*6});
@@ -129,19 +137,21 @@ function updateBullets(g,dt){
  for(const b of g.bullets){
   b.x+=b.vx*dt;b.y+=b.vy*dt;b.ttl-=dt*1000;
   const r={x:b.x-3,y:b.y-3,w:b.weapon==='L'?15:6,h:6};
-  for(const e of g.enemies)if(e.hp>0&&!b.hitIds.includes(e.id)&&overlaps(r,body(e))){e.hp-=b.damage;b.hitIds.push(e.id);if(b.weapon!=='L')b.ttl=0;if(e.hp<=0){g.score+=e.type==='turret'?500:100;effect(g,e.x,e.y-12,true);sound(g,'explosion');}break;}
+  for(const e of g.enemies)if(e.hp>0&&!b.hitIds.includes(e.id)&&overlaps(r,body(e))){impact(g,b,body(e),e.type==='turret');e.hp-=b.damage;b.hitIds.push(e.id);if(b.weapon!=='L')b.ttl=0;if(e.hp<=0){g.score+=e.type==='turret'?500:100;effect(g,e.x,e.y-12,true);sound(g,'explosion');}else sound(g,'impact');break;}
   if(b.ttl<=0)continue;
   for(const capsule of g.capsules)if(!capsule.opened&&overlaps(r,{x:capsule.x-12,y:capsule.y-7,w:24,h:14})){
-   capsule.opened=true;b.ttl=0;pickup(g,['S','M','R','F','L','B'][(capsule.id+g.level-2)%6],capsule.x,capsule.y);effect(g,capsule.x,capsule.y);break;
+   impact(g,b,{x:capsule.x-12,y:capsule.y-7,w:24,h:14});sound(g,'impact');capsule.opened=true;b.ttl=0;pickup(g,['S','M','R','F','L','B'][(capsule.id+g.level-2)%6],capsule.x,capsule.y);effect(g,capsule.x,capsule.y);break;
   }
   if(b.ttl<=0)continue;
   for(const core of g.cores)if(core.hp>0&&overlaps(r,{x:core.x-core.w/2,y:core.y-core.h/2,w:core.w,h:core.h})){
-   core.hp-=b.damage;b.ttl=0;if(core.hp<=0){g.score+=500;effect(g,core.x,core.y,true);sound(g,'explosion');}break;
+   impact(g,b,{x:core.x-core.w/2,y:core.y-core.h/2,w:core.w,h:core.h},true);core.hitAt=g.clock;
+   core.hp-=b.damage;b.ttl=0;if(core.hp<=0){g.score+=500;effect(g,core.x,core.y,true);sound(g,'explosion');}else sound(g,'impact');break;
   }
   if(b.ttl<=0)continue;
   const boss=g.boss;if(boss&&boss.hp>0&&overlaps(r,{x:boss.x-boss.w/2,y:boss.y-boss.h,w:boss.w,h:boss.h})){
+   impact(g,b,{x:boss.x-boss.w/2,y:boss.y-boss.h,w:boss.w,h:boss.h},true);
    boss.hp=Math.max(0,boss.hp-b.damage);b.ttl=0;boss.hitAt=g.clock;
-   if(boss.hp===0){g.bossDefeatedAt=g.clock||1;g.score+=5000;g.enemyBullets=[];g.enemies=[];effect(g,boss.x,boss.y-24,true);sound(g,'boss');}
+   if(boss.hp===0){g.bossDefeatedAt=g.clock||1;g.score+=5000;g.enemyBullets=[];g.enemies=[];effect(g,boss.x,boss.y-24,true);sound(g,'boss');}else sound(g,'impact');
   }
  }
  const enemyDt=dt*(g.cheats.slowBullets?.55:1);
@@ -163,6 +173,7 @@ export function step(g,milliseconds,command={}){
  // Bound catch-up and subdivide for swept platform/projectile collision.
  let remaining=Math.min(100,milliseconds);while(remaining>1e-7&&g.status==='running'){
   const ms=Math.min(TICK_MS,remaining),dt=ms/1000;remaining-=ms;g.clock+=ms;
+  while(g.impacts.length&&g.clock-g.impacts[0].bornAt>=260)g.impacts.shift();
   const p=g.player;
   for(const platform of g.movingPlatforms){platform.previousX=platform.x;platform.phase+=dt;platform.x=platform.baseX+Math.sin(platform.phase*.8)*24;if(p.onGround&&p.support===platform.id)p.x+=platform.x-platform.previousX;}
   if(g.bossDefeatedAt&&g.clock-g.bossDefeatedAt>1800){g.status='won';sound(g,'win');g.events.push({type:'levelclear',level:g.level},{type:'won'});break;}
@@ -203,7 +214,7 @@ export function step(g,milliseconds,command={}){
   if(g.score>=g.nextLife){g.lives++;g.nextLife=g.nextLife===30000?100000:g.nextLife+100000;sound(g,'pickup');}
  }
 }
-export const serialize=g=>JSON.stringify({...g,stage:undefined,events:[]});
+export const serialize=g=>JSON.stringify({...g,stage:undefined,impacts:undefined,events:[]});
 export function restore(raw,platform){try{
  const g=typeof raw==='string'?JSON.parse(raw):structuredClone(raw);const stage=STAGES[g.level-1];
  if(!g||g.version!==1||!stage||!Number.isInteger(g.level)||g.kind!==stage.kind||!['pc','mobile'].includes(g.platform)||(platform&&platform!==g.platform)||!MODES.some(([v])=>v===g.mode)||!['ready','running','paused','won','lost'].includes(g.status))return null;
@@ -218,7 +229,7 @@ export function restore(raw,platform){try{
  if(g.boss&&(!Number.isFinite(g.boss.hp)||g.boss.hp<0||g.boss.hp>200))return null;
  if(g.status==='won'&&(!g.boss||g.boss.hp!==0)||g.status==='lost'&&g.lives!==0)return null;
  g.cheats=normalizeCheats(g.cheats);g.assisted=g.assisted===true||Object.values(g.cheats).some(Boolean);
- g.stage=stage;g.events=[];return g;
+ g.stage=stage;g.impacts=[];g.events=[];return g;
  }catch{return null;}}
 export function snapshot(g){return{level:g.level,status:g.status,clock:g.clock,player:{...g.player},bullets:g.bullets.map(b=>({...b})),cameraX:g.cameraX,cameraY:g.cameraY,boss:g.boss?{...g.boss}:null,room:g.room};}
 export function view(g){return{x:g.player.x,y:g.player.y,projectiles:g.bullets.length};}

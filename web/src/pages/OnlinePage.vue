@@ -1,5 +1,5 @@
 <script setup>
-import { ref, shallowRef, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, shallowRef, computed, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 import { createOnlineAudio } from '../online/audio.mjs';
 import { RoomClient } from '../online/client.mjs';
@@ -7,6 +7,7 @@ import * as A from '../online/adapters.mjs';
 import { ContraPrediction } from '../online/prediction.mjs';
 import { SnapshotPresentation } from '../online/presentation.mjs';
 import { pair, POWERS, remaining } from '../online/duel.mjs';
+import { showLinkFx } from '../../../games/lianliankan/public/match-fx.mjs';
 import { fruitSVG, FRUITS } from '../../../games/lianliankan/public/fruits.mjs';
 import TouchStick from '../components/TouchStick.vue';
 import TouchAction from '../components/TouchAction.vue';
@@ -38,6 +39,9 @@ const connection = ref('offline'),
   selected = ref(-1),
   message = ref(''),
   revision = ref(0);
+const duelLayers = [];
+const clearDuelLayers = () => duelLayers.forEach((node) => node?.replaceChildren());
+let seenMatch = [0, 0];
 let audio,
   client,
   raf,
@@ -209,6 +213,8 @@ function network(m) {
     seq = 0;
     seenSeq = -1;
     seenEffect = 0;
+    seenMatch = [0, 0];
+    clearDuelLayers();
     finished = false;
     inputSeq = 0;
     inputAcks = [null, null];
@@ -251,6 +257,7 @@ function network(m) {
   if (m.type === 'frame' && slot.value === 1 && m.round === room.value?.round && m.seq > seenSeq) {
     if (props.id === 'contra' && m.state.netVersion !== 2) predictor = null;
     for (const [index, sound] of (m.state.netSounds || []).entries()) {
+      if (props.id === 'lianliankan' && sound === 'match' && m.state.lastMatches) continue;
       if (m.state.soundSlots?.[index] === 1 && predictor) continue;
       audio?.play(sound);
     }
@@ -262,6 +269,7 @@ function network(m) {
     predictor?.reconcile(world, m.state.inputAcks?.[1], receivedAt);
     if (props.id === 'lianliankan') game.value = world;
     showEffect();
+    if (props.id === 'lianliankan') showMatches();
     if (selected.value >= 0 && previous?.[selected.value] !== own.value?.board[selected.value])
       selected.value = -1;
     if (props.id === 'lianliankan') revision.value++;
@@ -370,10 +378,26 @@ function playPair(player, a, b) {
   const result = pair(world, player, a, b);
   revision.value++;
   if (result.ok) {
-    audio?.play('match');
-    netSounds.push('match');
+    showMatches();
+    if (netSounds.length < 16) netSounds.push('match');
     sentAt = 0;
     showEffect();
+  }
+}
+function showMatches() {
+  // Matches are small, idempotent presentation metadata attached to authoritative snapshots.
+  const current = world;
+  for (const [side, fx] of (current?.lastMatches || []).entries()) {
+    if (!fx || !(fx.id > seenMatch[side])) continue;
+    seenMatch[side] = fx.id;
+    const round = room.value?.round;
+    void nextTick(() => {
+      if (!world || room.value?.round !== round || seenMatch[side] !== fx.id) return;
+      const svg = duelLayers[side];
+      if (svg) showLinkFx(svg, svg.parentElement, fx, { duel: true });
+      // Score chime only for the local player; the other board still shows its own burst.
+      if (side === slot.value) audio?.play('match', fx.combo);
+    });
   }
 }
 function showEffect() {
@@ -558,6 +582,7 @@ async function share() {
   }
 }
 onMounted(async () => {
+  if (props.id === 'lianliankan') window.addEventListener('resize', clearDuelLayers);
   document.addEventListener('keydown', keyboard);
   document.addEventListener('keyup', keyboard);
   window.addEventListener('blur', clearInput);
@@ -587,6 +612,7 @@ onMounted(async () => {
   raf = requestAnimationFrame(frame);
 });
 onBeforeUnmount(() => {
+  window.removeEventListener('resize', clearDuelLayers);
   disposed = true;
   audio?.dispose();
   client?.close();
@@ -831,6 +857,7 @@ onBeforeUnmount(() => {
                   <span v-if="value" v-html="fruitSVG(value)"></span
                   ><small v-if="POWERS[value]">{{ POWERS[value].icon }}</small>
                 </button>
+                <svg :ref="(el) => (duelLayers[side] = el)" class="duel-burst" aria-hidden="true" />
                 <div v-if="game.players[side].frozenUntil > game.clock" class="duel-freeze">
                   ❄ {{ ((game.players[side].frozenUntil - game.clock) / 1000).toFixed(1) }} s
                 </div>
@@ -1336,6 +1363,14 @@ onBeforeUnmount(() => {
 .fogged .duel-grid > button > span {
   filter: blur(3px);
   opacity: 0.6;
+}
+.duel-burst {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 .duel-effect {
   display: block;

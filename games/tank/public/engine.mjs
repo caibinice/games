@@ -147,6 +147,9 @@ var Explosion = class {
     this.cy = center.y;
     this.kind = kind;
   }
+  get age() {
+    return this.elapsed;
+  }
   get timeline() {
     return this.kind === "big" ? BIG_TIMELINE : SMALL_TIMELINE;
   }

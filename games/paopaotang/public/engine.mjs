@@ -156,11 +156,12 @@ function detonate(game,ids) {
     done.add(id);
     const cells=blastCells(game,bomb,originalBoard,originalBombs);
     for(const other of originalBombs)if(cells.includes(indexOf(game,other.x,other.y))&&!done.has(other.id))queue.push(other.id);
-    game.blasts.push({id:game.nextId++,cells,owner:bomb.owner,team:bomb.team,bornAt:game.clock,damageUntil:game.clock+DAMAGE_MS,expiresAt:game.clock+BLAST_MS});
+    const broken=[];
+    game.blasts.push({id:game.nextId++,cells,broken,owner:bomb.owner,team:bomb.team,bornAt:game.clock,damageUntil:game.clock+DAMAGE_MS,expiresAt:game.clock+BLAST_MS});
     for(const i of cells){
       game.items=game.items.filter(item=>indexOf(game,item.x,item.y)!==i||item.visibleAt>game.clock);
       if(game.board[i]!==CRATE)continue;
-      game.board[i]=EMPTY;game.cratesBroken++;if(bomb.team===0)game.score+=20;
+      broken.push(i);game.board[i]=EMPTY;game.cratesBroken++;if(bomb.team===0)game.score+=20;
       if(rng(game)<.54){
         const types=game.version===1?['capacity','power','speed','needle','shield']:levelInfo(game.level).itemTypes;
         // New drops are visible only once the water column has passed.
@@ -302,6 +303,7 @@ export function restore(raw,platform) {
          !Number.isFinite(b.placedAt)||b.placedAt>g.clock)return null;ids.add(b.id);
     }
     for(const b of g.blasts){
+      delete b.broken;
       if(!Array.isArray(b.cells)||b.cells.length>21||b.cells.some(i=>!Number.isInteger(i)||i<0||i>=g.board.length||g.board[i]===WALL)||!Number.isFinite(b.expiresAt)||b.expiresAt<g.clock)return null;
       if(b.damageUntil===undefined){b.bornAt=b.expiresAt-650;b.damageUntil=b.bornAt+DAMAGE_MS;b.expiresAt=b.bornAt+BLAST_MS;}
       if(!Number.isFinite(b.bornAt)||!Number.isFinite(b.damageUntil)||b.bornAt>g.clock||b.damageUntil<b.bornAt||b.damageUntil>b.expiresAt)return null;

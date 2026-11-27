@@ -41,6 +41,8 @@ export default class Explosion {
     this.kind = kind
   }
 
+  get age(): number { return this.elapsed }
+
   private get timeline(): ReadonlyArray<{ shape: ExplosionShape; duration: number }> {
     return this.kind === 'big' ? BIG_TIMELINE : SMALL_TIMELINE
   }

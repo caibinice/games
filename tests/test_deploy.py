@@ -63,6 +63,26 @@ class DeploymentTests(unittest.TestCase):
         self.assertIn('www/release-manifest.json', names)
         self.assertTrue(all(name.startswith('www/') and 'credentials' not in name for name in names))
 
+    def test_static_only_catalog_retains_the_live_unselected_versions_and_hash(self):
+        previous = self.root / 'live'
+        (previous / 'games').mkdir(parents=True)
+        live = json.loads((self.dist / 'games/catalog.json').read_text(encoding='utf-8'))
+        live = [g for g in live if g['id'] != 'pindou']
+        zombie = next(g for g in live if g['id'] == 'zombie')
+        zombie['version'] = 'production-only'
+        live.append({'id': 'future-game', 'version': 'also-retained'})
+        (previous / 'games/catalog.json').write_text(json.dumps(live), encoding='utf-8')
+        deploy.preserve_live_catalog(previous, self.dist, ['pindou'])
+        data = (self.dist / 'games/catalog.json').read_bytes()
+        updated = json.loads(data)
+        self.assertEqual(updated[:-1], live)
+        self.assertEqual(updated[-1], self.manifest['games'][0])
+        self.assertEqual(gzip.decompress((self.dist / 'games/catalog.json.gz').read_bytes()), data)
+        manifest = json.loads((self.dist / 'release-manifest.json').read_text(encoding='utf-8'))
+        entry = next(i for i in manifest['files'] if i['path'] == 'games/catalog.json')
+        self.assertEqual(entry['sha256'], hashlib.sha256(data).hexdigest())
+        self.assertEqual(entry['bytes'], len(data))
+
     def test_rejects_dist_tampering(self):
         (self.dist / 'games/pindou/engine.mjs').write_text('changed', encoding='utf-8')
         with self.assertRaisesRegex(RuntimeError, 'hash mismatch'):

@@ -1,6 +1,6 @@
 """Atomic multi-game/selected-game deployments, using validated dist only."""
 from __future__ import annotations
-import argparse,gzip,hashlib,json,re,subprocess,tarfile
+import argparse,gzip,hashlib,inspect,json,re,subprocess,tarfile
 from datetime import UTC,datetime,timedelta,timezone
 from pathlib import Path
 from config import ROOT,work_root
@@ -93,8 +93,29 @@ def resume_package(path,dist,ids):
    if not member.isfile() or tar.extractfile(member).read()!=expected[member.name].read_bytes():raise RuntimeError('Resume archive differs from current build')
  return package,archive,manifest
 
+def preserve_live_catalog(previous,target,ids):
+ # A static-only update is allowed to be built from a different revision than
+ # unrelated live games. Only replace selected records; keep other live metadata.
+ path='games/catalog.json'
+ live=json.loads((previous/path).read_text(encoding='utf-8'))
+ dist=json.loads((target/path).read_text(encoding='utf-8'))
+ by_id={g['id']:g for g in dist if g['id'] in ids}
+ if set(by_id)!=set(ids) or len({g['id'] for g in live})!=len(live):
+  raise RuntimeError('Invalid selected/live catalogue')
+ merged=[by_id.pop(g['id'],g) for g in live]+list(by_id.values())
+ content=(json.dumps(merged,ensure_ascii=False,indent=2)+'\n').encode()
+ (target/path).write_bytes(content)
+ with (target/(path+'.gz')).open('wb') as raw:
+  with gzip.GzipFile(filename='',fileobj=raw,mode='wb',compresslevel=9,mtime=0) as compressed:
+   compressed.write(content)
+ manifest=target/'release-manifest.json'
+ value=json.loads(manifest.read_text(encoding='utf-8'))
+ entry=next(i for i in value['files'] if i['path']==path)
+ entry.update(bytes=len(content),sha256=hashlib.sha256(content).hexdigest())
+ manifest.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
 def main():
- parser=argparse.ArgumentParser();parser.add_argument('--games','--game',default='all');parser.add_argument('--dry-run',action='store_true');parser.add_argument('--resume-package',type=Path);parser.add_argument('--blog-root',type=Path,default=ROOT.parent/'ai-blog');args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument('--games','--game',default='all');parser.add_argument('--dry-run',action='store_true');parser.add_argument('--static-only',action='store_true',help='Keep live Nginx routes and unselected catalogue entries');parser.add_argument('--resume-package',type=Path);parser.add_argument('--blog-root',type=Path,default=ROOT.parent/'ai-blog');args=parser.parse_args()
  all_ids=[g['id'] for g in catalogue()];ids=all_ids if args.games=='all' else list(dict.fromkeys(args.games.split(',')))
  if not ids or any(i not in all_ids for i in ids):raise RuntimeError('Unknown game selection')
  commit=subprocess.run(['git','-C',str(ROOT),'rev-parse','--short=10','HEAD'],capture_output=True,text=True).stdout.strip() or 'working'
@@ -115,14 +136,28 @@ def main():
  try:
   with remote.client.open_sftp() as sftp:
    with sftp.open(ROUTES,'rb') as f:original=f.read()
-  (backup/'ai-platform-routes.before.conf').write_bytes(original);digest=hashlib.sha256(original).hexdigest();fragment=(ROOT/'deploy/nginx/games.conf').read_text(encoding='utf-8');merged=merge_routes(original.decode(),fragment)
+  (backup/'ai-platform-routes.before.conf').write_bytes(original);digest=hashlib.sha256(original).hexdigest();fragment=(ROOT/'deploy/nginx/games.conf').read_text(encoding='utf-8');merged=None if args.static_only else merge_routes(original.decode(),fragment)
   previous=remote.run('test -L /opt/games/www && readlink -f /opt/games/www || true',timeout=30).strip()
-  rollback={**package,'previous':previous,'legacy_pindou':'/opt/pindou/www','local_backup':str(backup),'remote_backup':f'/opt/games/backups/{release}','routes_sha256_before':digest}
+  if args.static_only and not previous:raise RuntimeError('Static-only publishing requires a live release')
+  rollback={**package,'static_only':args.static_only,'previous':previous,'legacy_pindou':'/opt/pindou/www','local_backup':str(backup),'remote_backup':f'/opt/games/backups/{release}','routes_sha256_before':digest}
   (backup/'rollback.json').write_text(json.dumps(rollback,indent=2),encoding='utf-8')
   upload=f'/tmp/games-{release}.tar.gz';next_conf=f'/tmp/games-routes-{release}.conf'
   uploaded=remote.run(f'sha256sum {upload} 2>/dev/null || true',timeout=15).split() if args.resume_package else []
   if not uploaded or uploaded[0]!=package['sha256']:remote.upload_file(archive,upload,0o600)
-  remote.upload_bytes(merged.encode(),next_conf,0o600)
+  if not args.static_only:remote.upload_bytes(merged.encode(),next_conf,0o600)
+  restore_routes='' if args.static_only else f'cp "$backup/ai-platform-routes.before.conf" {ROUTES}'
+  restore_reload='' if args.static_only else 'nginx -t && systemctl reload nginx'
+  install_routes='' if args.static_only else f'install -m 644 {next_conf} {ROUTES}'
+  activate_reload='' if args.static_only else 'systemctl reload nginx'
+  catalog_merge=''
+  if args.static_only:
+   catalog_merge=f'''[[ -f "$previous/games/catalog.json" ]]
+python3 - "$previous" "$target/www" {' '.join(ids)} <<'PY'
+import gzip,hashlib,json,sys
+from pathlib import Path
+{inspect.getsource(preserve_live_catalog)}
+preserve_live_catalog(Path(sys.argv[1]),Path(sys.argv[2]),sys.argv[3:])
+PY'''
   urls=' '.join(URL+i['path'] for i in manifest['files']);selection=' '.join(ids)
   remote.run(f'''
 set -euo pipefail
@@ -142,9 +177,9 @@ cp {ROUTES} "$backup/ai-platform-routes.before.conf"
 printf '%s\\n' "$previous" > "$backup/previous-release.txt"
 rollback() {{
  trap - ERR
- cp "$backup/ai-platform-routes.before.conf" {ROUTES}
+ {restore_routes}
  if [[ -n "$previous" && -d "$previous" ]]; then ln -sfn "$previous" "$root/www.rollback"; mv -Tf "$root/www.rollback" "$root/www"; else rm -f "$root/www"; fi
- nginx -t && systemctl reload nginx
+ {restore_reload}
  echo 'Games release rolled back'
 }}
 trap rollback ERR
@@ -153,15 +188,16 @@ for game in {selection}; do rm -rf "$target/www/games/$game"; done
 printf '' > "$backup/inherited-sha256.txt"
 (cd "$target/www/games" && find . -mindepth 2 -type f -exec sha256sum {{}} + | sort) > "$backup/inherited-sha256.txt"
 tar -xzf {upload} -C "$target"
+{catalog_merge}
 (cd "$target/www/games" && while read -r hash path; do [[ "$(sha256sum "$path" | cut -d' ' -f1)" = "$hash" ]]; done < "$backup/inherited-sha256.txt")
 chown -R aiapps:aiapps "$target"
 find "$target" -type d -exec chmod 755 {{}} +
 find "$target" -type f -exec chmod 644 {{}} +
 ln -sfn "$target/www" "$root/www.next"
 mv -Tf "$root/www.next" "$root/www"
-install -m 644 {next_conf} {ROUTES}
+{install_routes}
 nginx -t
-systemctl reload nginx
+{activate_reload}
 systemctl is-active --quiet nginx
 printf '%s\n' {urls} | xargs -r -P 8 -n 1 curl -fsS --connect-timeout 5 --max-time 15 --resolve caibinice.com:443:127.0.0.1 -o /dev/null
 for game in {selection}; do
@@ -175,7 +211,7 @@ rm -f {upload} {next_conf}
 echo 'Games release activated: {release}; selected: {selection}'
 ''',root=True,timeout=240)
   mirror=args.blog_root/'deploy/nginx/ai-platform-routes.conf'
-  if mirror.exists():
+  if mirror.exists() and not args.static_only:
    before=mirror.read_bytes();(backup/'ai-platform-routes.blog.before.conf').write_bytes(before);mirror.write_bytes(merge_routes(before.decode(),fragment).encode())
    (args.blog_root/'deploy/nginx/games.conf').write_text(fragment,encoding='utf-8')
   (staging/'deployment.json').write_text(json.dumps(rollback,indent=2),encoding='utf-8')

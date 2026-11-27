@@ -135,6 +135,8 @@ export function capture(id, g) {
                 cx: e.cx,
                 cy: e.cy,
                 shapeValue: e.shape(),
+                age: e.age,
+                kind: e.kind,
               })),
               scorePopups: scene.scorePopups.map((p) => ({ ...p, visible: p.visible })),
               killInfo: scene.killInfo,
@@ -149,6 +151,7 @@ export function capture(id, g) {
       player: rounded(g.player),
       p2: { ...g.p2, player: rounded(g.p2.player) },
       boss: g.boss && rounded(g.boss),
+      ...(g.impacts?.length ? { impacts: g.impacts.map(rounded) } : {}),
       ...Object.fromEntries(CONTRA_ARRAYS.map((k) => [k, g[k].map(rounded)])),
       events: [],
     };

@@ -5,6 +5,25 @@ import {drawFlicker} from './vendor/render/sprites/flicker';
 import {drawPowerUp} from './vendor/render/sprites/powerup';
 import {drawExplosion,explosionSize} from './vendor/render/sprites/explosion';
 import {tankColor} from './vendor/render/tankColor';
+const reducedMotion=typeof matchMedia==='function'?matchMedia('(prefers-reduced-motion: reduce)'):null;
+const directions:Record<string, readonly [number,number]>={up:[0,-1],right:[1,0],down:[0,1],left:[-1,0]};
+function drawDust(c:CanvasRenderingContext2D,e:any){
+ const t=e.age,duration=e.kind==='big'?400:145;
+ if(!Number.isFinite(t)||t<0||t>=duration||reducedMotion?.matches)return;
+ const life=t/duration,big=e.kind==='big',x=e.cx,y=e.cy;
+ c.save();
+ if(big&&life<.58){
+  c.globalAlpha=.68*(1-life/.58);c.strokeStyle='#ffcb74';c.lineWidth=1.3;
+  c.beginPath();c.arc(x,y,6+life*27,0,Math.PI*2);c.stroke();
+ }
+ c.globalAlpha=.95-life*.95;
+ for(let i=0;i<(big?11:5);i++){
+  const a=i*2.4+(x+y)%13*.34,r=3+life*((big?19:7)+(i%4)*3);
+  c.fillStyle=life>.57?'#ac7360':i%3?'#ff9b43':'#fff2a9';
+  c.fillRect(Math.round(x+Math.cos(a)*r),Math.round(y+Math.sin(a)*r+life*life*9),big&&i%5===0?3:2,2);
+ }
+ c.restore();
+}
 const spriteCache=new Map<string,HTMLCanvasElement>();
 function sprite(ctx:CanvasRenderingContext2D,key:string,w:number,h:number,x:number,y:number,paint:(c:CanvasRenderingContext2D)=>void){
   let canvas=spriteCache.get(key);if(!canvas){canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;paint(canvas.getContext('2d')!);spriteCache.set(key,canvas);}
@@ -16,6 +35,7 @@ export function draw(canvas:HTMLCanvasElement,g:any){
  c.save();c.translate(8,16);c.fillStyle='#000';c.fillRect(0,0,208,208);
  const s=g.session,scene=s.scene;
  if(scene){const m=scene.map,time=scene.time;
+  c.save();c.beginPath();c.rect(0,0,208,208);c.clip();
   m.forEachBrick((x:number,y:number)=>sprite(c,'brick'+((x+y)/4%2),4,4,x,y,a=>drawBrick(a,((x+y)/4)%2===0)));
   m.forEachSteel((x:number,y:number)=>sprite(c,'steel',8,8,x,y,drawSteel));
   m.forEachSnow((x:number,y:number)=>sprite(c,'snow',16,16,x,y,drawSnow));
@@ -29,11 +49,18 @@ export function draw(canvas:HTMLCanvasElement,g:any){
    sprite(c,`tank/${t.side}/${t.level}/${color}/${shape}`,16,16,-8,-8,a=>drawTank(a,t.side,t.level,color,shape as 0|1));c.restore();
    if(t.helmetDuration>0){const h=Math.floor(time/(1000/30))%2 as 0|1;sprite(c,'helmet'+h,16,16,t.x,t.y,a=>drawHelmet(a,h));}
   }
-  for(const b of scene.bullets){c.fillStyle='#fff';c.fillRect(Math.round(b.x),Math.round(b.y),3,3);}
+  for(const b of scene.bullets){
+   const x=Math.round(b.x),y=Math.round(b.y),[dx,dy]=directions[b.direction]||[0,0];
+   const color=b.side==='player'?'#ffc469':'#ff926d';
+   c.fillStyle=color;
+   if(!reducedMotion?.matches)for(let i=3;i<7;i++)c.fillRect(x+1-dx*i,y+1-dy*i,1+(dy!==0?1:0),1+(dx!==0?1:0));
+   c.fillRect(x,y,3,3);c.fillStyle='#fff5ca';c.fillRect(x+1,y+1,2,2);
+  }
   for(const f of scene.flickers){const shape=f.shape();sprite(c,'spawn'+shape,16,16,f.x,f.y,a=>drawFlicker(a,shape));}
   m.forEachForest((x:number,y:number)=>sprite(c,'forest',16,16,x,y,drawForest));
-  for(const e of scene.explosions){const shape=e.shape(),size=explosionSize(shape);sprite(c,'explosion'+shape,size,size,e.cx-size/2,e.cy-size/2,a=>drawExplosion(a,shape));}
+  for(const e of scene.explosions){drawDust(c,e);const shape=e.shape(),size=explosionSize(shape);sprite(c,'explosion'+shape,size,size,e.cx-size/2,e.cy-size/2,a=>drawExplosion(a,shape));}
   c.font='7px monospace';c.fillStyle='#fff';for(const p of scene.scorePopups)if(p.visible)c.fillText(String(p.score),p.x,p.y+6);
+  c.restore();
  }
  c.restore();c.font='bold 9px monospace';c.fillStyle='#000';c.fillText('IP',225,150);c.fillText(g.cheats?.infiniteLives?'∞':String(Math.max(0,g.lives-1)),g.cheats?.infiniteLives?229:237,161);
  const remaining=scene?.remainingBotCount??20;for(let i=0;i<remaining;i++){const x=225+i%2*9,y=18+Math.floor(i/2)*10;c.fillStyle='#000';c.fillRect(x,y,6,7);c.fillRect(x+2,y-2,2,4);c.fillStyle='#636363';c.fillRect(x+2,y+3,2,2);}

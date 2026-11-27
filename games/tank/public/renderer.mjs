@@ -817,6 +817,29 @@ function tankColor(tank, time) {
 }
 
 // games/tank/src/renderer.ts
+var reducedMotion = typeof matchMedia === "function" ? matchMedia("(prefers-reduced-motion: reduce)") : null;
+var directions = { up: [0, -1], right: [1, 0], down: [0, 1], left: [-1, 0] };
+function drawDust(c, e) {
+  const t = e.age, duration = e.kind === "big" ? 400 : 145;
+  if (!Number.isFinite(t) || t < 0 || t >= duration || reducedMotion?.matches) return;
+  const life = t / duration, big = e.kind === "big", x = e.cx, y = e.cy;
+  c.save();
+  if (big && life < 0.58) {
+    c.globalAlpha = 0.68 * (1 - life / 0.58);
+    c.strokeStyle = "#ffcb74";
+    c.lineWidth = 1.3;
+    c.beginPath();
+    c.arc(x, y, 6 + life * 27, 0, Math.PI * 2);
+    c.stroke();
+  }
+  c.globalAlpha = 0.95 - life * 0.95;
+  for (let i = 0; i < (big ? 11 : 5); i++) {
+    const a = i * 2.4 + (x + y) % 13 * 0.34, r = 3 + life * ((big ? 19 : 7) + i % 4 * 3);
+    c.fillStyle = life > 0.57 ? "#ac7360" : i % 3 ? "#ff9b43" : "#fff2a9";
+    c.fillRect(Math.round(x + Math.cos(a) * r), Math.round(y + Math.sin(a) * r + life * life * 9), big && i % 5 === 0 ? 3 : 2, 2);
+  }
+  c.restore();
+}
 var spriteCache = /* @__PURE__ */ new Map();
 function sprite(ctx, key, w, h, x, y, paint) {
   let canvas = spriteCache.get(key);
@@ -844,6 +867,10 @@ function draw(canvas, g) {
   const s = g.session, scene = s.scene;
   if (scene) {
     const m = scene.map, time = scene.time;
+    c.save();
+    c.beginPath();
+    c.rect(0, 0, 208, 208);
+    c.clip();
     m.forEachBrick((x, y) => sprite(c, "brick" + (x + y) / 4 % 2, 4, 4, x, y, (a) => drawBrick(a, (x + y) / 4 % 2 === 0)));
     m.forEachSteel((x, y) => sprite(c, "steel", 8, 8, x, y, drawSteel));
     m.forEachSnow((x, y) => sprite(c, "snow", 16, 16, x, y, drawSnow));
@@ -865,8 +892,13 @@ function draw(canvas, g) {
       }
     }
     for (const b of scene.bullets) {
-      c.fillStyle = "#fff";
-      c.fillRect(Math.round(b.x), Math.round(b.y), 3, 3);
+      const x = Math.round(b.x), y = Math.round(b.y), [dx, dy] = directions[b.direction] || [0, 0];
+      const color = b.side === "player" ? "#ffc469" : "#ff926d";
+      c.fillStyle = color;
+      if (!reducedMotion?.matches) for (let i = 3; i < 7; i++) c.fillRect(x + 1 - dx * i, y + 1 - dy * i, 1 + (dy !== 0 ? 1 : 0), 1 + (dx !== 0 ? 1 : 0));
+      c.fillRect(x, y, 3, 3);
+      c.fillStyle = "#fff5ca";
+      c.fillRect(x + 1, y + 1, 2, 2);
     }
     for (const f of scene.flickers) {
       const shape = f.shape();
@@ -874,12 +906,14 @@ function draw(canvas, g) {
     }
     m.forEachForest((x, y) => sprite(c, "forest", 16, 16, x, y, drawForest));
     for (const e of scene.explosions) {
+      drawDust(c, e);
       const shape = e.shape(), size = explosionSize(shape);
       sprite(c, "explosion" + shape, size, size, e.cx - size / 2, e.cy - size / 2, (a) => drawExplosion(a, shape));
     }
     c.font = "7px monospace";
     c.fillStyle = "#fff";
     for (const p of scene.scorePopups) if (p.visible) c.fillText(String(p.score), p.x, p.y + 6);
+    c.restore();
   }
   c.restore();
   c.font = "bold 9px monospace";

@@ -2583,6 +2583,7 @@ function newGame({ level = 1, platform = "pc", mode = "classic", seed = Date.now
     pickups: [],
     capsules: [],
     explosions: [],
+    impacts: [],
     bridges: stage.bridges.map((b) => ({ ...b, triggerAt: 0, broken: false })),
     hazards: [],
     movingPlatforms: stage.kind === "vertical" ? [{ id: 1, x: 112, y: 605, w: 32, h: 8, baseX: 112, previousX: 112, phase: 0 }] : [],
@@ -2626,6 +2627,7 @@ function pause(g) {
 }
 function setupRoom(g) {
   g.cores = [];
+  g.impacts = [];
   g.roomOpen = false;
   g.advanceTime = 0;
   g.enemyBullets = [];
@@ -2643,6 +2645,12 @@ function setupRoom(g) {
 }
 function effect(g, x, y, big = false) {
   g.explosions.push({ id: g.nextId++, x, y, bornAt: g.clock, big });
+}
+function impact(g, b, target, heavy = false) {
+  const at = g.clock;
+  const x = clamp(b.x, target.x, target.x + target.w), y = clamp(b.y, target.y, target.y + target.h);
+  g.impacts.push({ x, y, bornAt: at, angle: Math.atan2(-b.vy, -b.vx), heavy });
+  if (g.impacts.length > 16) g.impacts.shift();
 }
 function addEnemy(g, entry) {
   if (g.enemies.length >= 14) return;
@@ -2816,6 +2824,7 @@ function updateBullets(g, dt) {
     b.ttl -= dt * 1e3;
     const r = { x: b.x - 3, y: b.y - 3, w: b.weapon === "L" ? 15 : 6, h: 6 };
     for (const e of g.enemies) if (e.hp > 0 && !b.hitIds.includes(e.id) && overlaps(r, body(e))) {
+      impact(g, b, body(e), e.type === "turret");
       e.hp -= b.damage;
       b.hitIds.push(e.id);
       if (b.weapon !== "L") b.ttl = 0;
@@ -2823,11 +2832,13 @@ function updateBullets(g, dt) {
         g.score += e.type === "turret" ? 500 : 100;
         effect(g, e.x, e.y - 12, true);
         sound(g, "explosion");
-      }
+      } else sound(g, "impact");
       break;
     }
     if (b.ttl <= 0) continue;
     for (const capsule of g.capsules) if (!capsule.opened && overlaps(r, { x: capsule.x - 12, y: capsule.y - 7, w: 24, h: 14 })) {
+      impact(g, b, { x: capsule.x - 12, y: capsule.y - 7, w: 24, h: 14 });
+      sound(g, "impact");
       capsule.opened = true;
       b.ttl = 0;
       pickup(g, ["S", "M", "R", "F", "L", "B"][(capsule.id + g.level - 2) % 6], capsule.x, capsule.y);
@@ -2836,18 +2847,21 @@ function updateBullets(g, dt) {
     }
     if (b.ttl <= 0) continue;
     for (const core of g.cores) if (core.hp > 0 && overlaps(r, { x: core.x - core.w / 2, y: core.y - core.h / 2, w: core.w, h: core.h })) {
+      impact(g, b, { x: core.x - core.w / 2, y: core.y - core.h / 2, w: core.w, h: core.h }, true);
+      core.hitAt = g.clock;
       core.hp -= b.damage;
       b.ttl = 0;
       if (core.hp <= 0) {
         g.score += 500;
         effect(g, core.x, core.y, true);
         sound(g, "explosion");
-      }
+      } else sound(g, "impact");
       break;
     }
     if (b.ttl <= 0) continue;
     const boss = g.boss;
     if (boss && boss.hp > 0 && overlaps(r, { x: boss.x - boss.w / 2, y: boss.y - boss.h, w: boss.w, h: boss.h })) {
+      impact(g, b, { x: boss.x - boss.w / 2, y: boss.y - boss.h, w: boss.w, h: boss.h }, true);
       boss.hp = Math.max(0, boss.hp - b.damage);
       b.ttl = 0;
       boss.hitAt = g.clock;
@@ -2858,7 +2872,7 @@ function updateBullets(g, dt) {
         g.enemies = [];
         effect(g, boss.x, boss.y - 24, true);
         sound(g, "boss");
-      }
+      } else sound(g, "impact");
     }
   }
   const enemyDt = dt * (g.cheats.slowBullets ? 0.55 : 1);
@@ -2917,6 +2931,7 @@ function step(g, milliseconds, command = {}) {
     const ms = Math.min(TICK_MS, remaining), dt = ms / 1e3;
     remaining -= ms;
     g.clock += ms;
+    while (g.impacts.length && g.clock - g.impacts[0].bornAt >= 260) g.impacts.shift();
     const p = g.player;
     for (const platform of g.movingPlatforms) {
       platform.previousX = platform.x;
@@ -3045,7 +3060,7 @@ function step(g, milliseconds, command = {}) {
     }
   }
 }
-var serialize = (g) => JSON.stringify({ ...g, stage: void 0, events: [] });
+var serialize = (g) => JSON.stringify({ ...g, stage: void 0, impacts: void 0, events: [] });
 function restore(raw, platform) {
   try {
     const g = typeof raw === "string" ? JSON.parse(raw) : structuredClone(raw);
@@ -3065,6 +3080,7 @@ function restore(raw, platform) {
     g.cheats = normalizeCheats(g.cheats);
     g.assisted = g.assisted === true || Object.values(g.cheats).some(Boolean);
     g.stage = stage;
+    g.impacts = [];
     g.events = [];
     return g;
   } catch {

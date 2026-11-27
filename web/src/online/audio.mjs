@@ -1,3 +1,6 @@
+import { playWaterBurst } from '../../../games/paopaotang/public/burst-audio.mjs';
+import { playLinkMatch } from '../../../games/lianliankan/public/match-fx.mjs';
+
 export async function createOnlineAudio(id) {
   if (id === 'tank' || id === 'contra') {
     const m =
@@ -10,7 +13,7 @@ export async function createOnlineAudio(id) {
   }
   let context,
     enabled = true,
-    previous = 0;
+    previous = new Map();
   return {
     async unlock() {
       try {
@@ -22,23 +25,41 @@ export async function createOnlineAudio(id) {
       enabled = value;
     },
     setRunning() {},
-    play(name) {
-      if (!enabled || !context || context.state !== 'running' || performance.now() - previous < 60)
+    play(name, combo) {
+      if (
+        ![
+          'match',
+          'burst',
+          'plant',
+          'trap',
+          'out',
+          'pickup',
+          'rescue',
+          'shield',
+          'win',
+          'lose',
+        ].includes(name)
+      )
         return;
-      previous = performance.now();
+      if (
+        !enabled ||
+        !context ||
+        context.state !== 'running' ||
+        performance.now() - (previous.get(name) ?? -Infinity) < 75
+      )
+        return;
+      previous.set(name, performance.now());
+      if (name === 'burst') return playWaterBurst(context);
+      if (name === 'match') return playLinkMatch(context, combo);
       const notes =
-        name === 'burst'
-          ? [220, 330, 440]
-          : name === 'trap' || name === 'out'
-            ? [330, 220]
-            : [660, 880];
+        name === 'plant' ? [290, 410] : name === 'trap' || name === 'out' ? [330, 220] : [660, 880];
       for (let i = 0; i < notes.length; i++) {
         const o = context.createOscillator(),
           g = context.createGain(),
           at = context.currentTime + i * 0.04;
         o.type = 'sine';
         o.frequency.value = notes[i];
-        g.gain.setValueAtTime(0.035, at);
+        g.gain.setValueAtTime(name === 'plant' ? 0.02 : 0.035, at);
         g.gain.exponentialRampToValueAtTime(0.001, at + 0.11);
         o.connect(g).connect(context.destination);
         o.start(at);

@@ -1,3 +1,4 @@
+import {playWaterBurst} from './burst-audio.mjs';
 import {newGame,start,pause,step,getPlayer,enemiesLeft,livingTeam,stars,serialize,restore,TRAP_MS,applyInput,movementMs,SIMULATION_MS} from './engine.mjs';
 import {LEVEL_COUNT,THEMES,SKINS,DIFFICULTIES,levelInfo,arenaSpec} from './catalog.mjs';
 import {drawArena,avatarSVG} from './renderer.mjs';
@@ -13,7 +14,7 @@ let stored={};try{stored=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch{
 let game=restore(stored.game,platform)||newGame({platform});if(game.status==='running')pause(game);
 const records=stored.records&&typeof stored.records==='object'&&!Array.isArray(stored.records)?stored.records:{};
 let best=Number.isFinite(stored.best)&&stored.best>=0?stored.best:0,sound=stored.sound!==false;
-let lastFrame=performance.now(),accumulator=0,lastHud=0,lastSave=0,audioContext,lastBurstSound=0,nextMusic=0,noteIndex=0;
+let lastFrame=performance.now(),accumulator=0,lastHud=0,lastSave=0,audioContext,nextMusic=0,noteIndex=0;
 let pendingAction=null,resumeAfterDialog=false,toastTimeout,touchDirection=null,touchPointer=null;
 const keys=new Set(),queued={p1:{},p2:{}};
 const canvas=$('game-canvas');
@@ -43,10 +44,16 @@ function tone(frequency,time,duration=.13,volume=.035,type='sine'){
 function audioReady(){
  if(!sound)return false;try{const Context=window.AudioContext||window.webkitAudioContext;if(!Context)return false;audioContext||=new Context();if(audioContext.state==='suspended')audioContext.resume().catch(()=>{});return true;}catch{return false;}
 }
+let lastBurst=-Infinity;
 function sfx(type){
  if(!audioReady())return;try{
- const notes=type==='win'?[523,659,784,1047]:type==='burst'?[190,310,440]:type==='pickup'?[660,880]:type==='trap'?[440,330,220]:type==='rescue'?[440,660,880]:type==='lose'?[392,330,262]:[520,720];
- notes.forEach((frequency,i)=>tone(frequency,audioContext.currentTime+i*.055,.12,type==='burst'?.018:.027));
+ if(type==='burst'){
+  const now=audioContext.currentTime;
+  if(now-lastBurst>=.075){lastBurst=now;playWaterBurst(audioContext);}
+  return;
+ }
+ const notes=type==='win'?[523,659,784,1047]:type==='pickup'?[660,880]:type==='trap'?[440,330,220]:type==='rescue'?[440,660,880]:type==='lose'?[392,330,262]:[520,720];
+ notes.forEach((frequency,i)=>tone(frequency,audioContext.currentTime+i*.055,.12,.027));
  }catch{}
 }
 function music(time){
@@ -135,7 +142,7 @@ function chooseLevels(){
 function handleEvents(){
  for(const e of game.events){
  if(e.type==='plant'&&e.player.startsWith('p'))sfx('plant');
- if(e.type==='burst'&&performance.now()-lastBurstSound>130){sfx('burst');lastBurstSound=performance.now();}
+ if(e.type==='burst')sfx('burst');
  if(e.type==='pickup'&&e.player.startsWith('p')){sfx('pickup');const names={capacity:'水泡数量 +1',power:'水柱长度 +1',speed:'跑鞋速度 +1',needle:'救援针 +1',shield:'获得护盾'};$('game-message').textContent=names[e.item];}
  if(e.type==='trap'&&e.player.startsWith('p')){sfx('trap');$('game-message').textContent=`${e.player.toUpperCase()} 被困住了，快用救援针或让队友帮忙！`;toast(platform==='mobile'?'快点救援针，4.5 秒内自救！':`${e.player.toUpperCase()} 被困住了！用救援针自救，或等队友来救援`);save();}
  if(e.type==='rescue'&&e.player.startsWith('p')){sfx('rescue');$('game-message').textContent='获救啦！短暂保护中，快离开水柱';save();}

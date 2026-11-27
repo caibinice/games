@@ -1,3 +1,4 @@
+import {showLinkFx,playLinkMatch} from './match-fx.mjs';
 import {newGame, startGame, pauseGame, advanceTime, matchPair, findMove, shuffleBoard,
   useHint, extendTime, serialize, restore, DIFFICULTIES, LEVEL_COUNT, chapterName, levelSpec} from './engine.mjs';
 import {FRUITS, fruitSVG} from './fruits.mjs';
@@ -73,14 +74,15 @@ function toast(message) {
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => $('toast').classList.remove('visible'), 2400);
 }
-function playSound(kind) {
+function playSound(kind, combo = 1) {
   if (!sound) return;
   try {
     const Context = window.AudioContext || window.webkitAudioContext;
     if (!Context) return;
     audioContext ||= new Context();
     if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
-    const notes = kind === 'win' ? [523.25, 659.25, 783.99, 1046.5] : kind === 'match' ? [659.25, 880] : kind === 'wrong' ? [220] : [440];
+    if (kind === 'match') { playLinkMatch(audioContext, combo); return; }
+    const notes = kind === 'win' ? [523.25, 659.25, 783.99, 1046.5] : kind === 'wrong' ? [220] : [440];
     notes.forEach((frequency, i) => {
       const oscillator = audioContext.createOscillator(), gain = audioContext.createGain();
       const time = audioContext.currentTime + i * .085;
@@ -208,17 +210,6 @@ function togglePause() {
   if (game.status === 'running') { pauseGame(game); clearEffects(); render(); save(); }
   else if (game.status === 'paused') start();
 }
-function drawPath(path) {
-  const frame = $('board-frame').getBoundingClientRect(), grid = $('board').getBoundingClientRect();
-  const cell = $('board').firstElementChild.getBoundingClientRect();
-  const gap = parseFloat(getComputedStyle($('board')).columnGap) || 0;
-  const points = path.map(({x, y}) => ({
-    x: x === -1 ? (grid.left - frame.left) / 2 : x === game.cols ? frame.width - (frame.right - grid.right) / 2 : grid.left - frame.left + cell.width / 2 + x * (cell.width + gap),
-    y: y === -1 ? (grid.top - frame.top) / 2 : y === game.rows ? frame.height - (frame.bottom - grid.bottom) / 2 : grid.top - frame.top + cell.height / 2 + y * (cell.height + gap),
-  }));
-  $('connection').setAttribute('viewBox', `0 0 ${frame.width} ${frame.height}`);
-  $('connection').innerHTML = `<polyline points="${points.map(p => `${p.x},${p.y}`).join(' ')}"/>${points.filter((_, i) => !i || i === points.length - 1).map(p => `<circle cx="${p.x}" cy="${p.y}" r="3"/>`).join('')}`;
-}
 function ensureMove() {
   if (game.status === 'running' && !findMove(game)) {
     shuffleBoard(game, {automatic: true});
@@ -232,6 +223,7 @@ function selectTile(index) {
   if (selection === index) { selection = null; renderBoard(); return; }
   if (selection === null) { selection = index; renderBoard(); playSound('select'); return; }
   const first = selection;
+  const fruit = game.board[index];
   const result = matchPair(game, first, index);
   if (!result.ok) {
     selection = index;
@@ -244,16 +236,16 @@ function selectTile(index) {
   }
   selection = null; hintPair = []; clearTimeout(hintTimeout); busy = true;
   const token = round;
-  drawPath(result.path);
+  showLinkFx($('connection'), $('board'), {...result,fruit});
   $('board').children[first].classList.add('matched');
   $('board').children[index].classList.add('matched');
   [...$('board').children].forEach(t => { t.disabled = true; t.classList.remove('selected', 'hinted'); });
   $('board-message').textContent = result.combo > 1 ? `${result.combo} 连击！甜蜜 +${result.points} 分` : `找到一对，快乐 +${result.points} 分`;
   bestScore = Math.max(bestScore, game.score);
-  rememberWin(); renderStats(); save(); playSound(game.status === 'won' ? 'win' : 'match');
+  rememberWin(); renderStats(); save(); playSound(game.status === 'won' ? 'win' : 'match', result.combo);
   animationTimeout = setTimeout(() => {
     if (round !== token) return;
-    busy = false; $('connection').replaceChildren();
+    busy = false;
     ensureMove(); render(); save();
     if (game.status === 'won') $('overlay-content').querySelector('button')?.focus({preventScroll: true});
   }, 280);
